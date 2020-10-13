@@ -1,0 +1,5 @@
+version: "3"
+services:
+  metaphactory:
+    volumes:
+      - ./services/metaphactory/apps:/apps

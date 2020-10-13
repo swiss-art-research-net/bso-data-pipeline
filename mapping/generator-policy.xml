@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<generator_policy>
+
+	<generator name="URIorUUID">
+		<custom generatorClass="gr.forth.URIorUUID">
+			<set-arg name="text"></set-arg>
+		</custom>
+	</generator>
+
+	<generator name="ConcatMultipleTerms">
+		<custom generatorClass="gr.forth.ConcatMultipleTerms">
+			<set-arg name="prefix" />
+			<set-arg name="sameTermsDelim" />
+			<set-arg name="diffTermsDelim" />
+			<set-arg name="text1" />
+			<set-arg name="text2" />
+			<set-arg name="text3" />
+			<set-arg name="text4" />
+			<set-arg name="text5" />
+			<set-arg name="text7" />
+			<set-arg name="text8" />
+			<set-arg name="text9" />
+		</custom>
+	</generator>
+
+	<generator name="URIwithTypeAndId" prefix="sari">
+		<pattern>{type}/{id}</pattern>
+	</generator>
+
+	<generator name="URIwith2TypesAndId" prefix="sari">
+		<pattern>{type1}/{type2}/{id}</pattern>
+	</generator>
+
+	<generator name="URIwithGndId" prefix="gnd">
+		<pattern>{id}</pattern>
+	</generator>
+
+	<generator name="URIwithUlanId" prefix="ulan">
+		<pattern>{id}</pattern>
+	</generator>
+
+	<generator name="URIwithWikidataId" prefix="wikidata">
+		<pattern>{id}</pattern>
+	</generator>
+
+	<!-- older ones -->
+	<generator name="TypedLiteralGen">
+		<custom generatorClass="gr.forth.TypedLiteralGenerator">
+			<set-arg name="text"/>
+		</custom>
+	</generator>
+
+
+	<generator name="ArtistURI" prefix="artist">
+		<!-- This is for intermediate node URIs that have non-identifiers as ultimate node being linked to. Unlike the other IntermediateURI generator, this one does not include a "counter" number-->
+		<pattern>{type}/{id}</pattern>
+	</generator>
+
+
+	<generator name="CollectionURI" prefix="inst">
+		<!-- This is for intermediate node URIs that have non-identifiers as ultimate node being linked to. Unlike the other IntermediateURI generator, this one does not include a "counter" number-->
+		<pattern>{type}/{id}</pattern>
+	</generator>
+
+
+	<generator name="DrawingSideURI" prefix="pref">
+		<pattern>{side}/{id}</pattern>
+	</generator>
+
+	<generator name="DrawingVisualURI" prefix="pref">
+		<pattern>{side}/{visual}/{id}</pattern>
+	</generator>
+
+	<generator name="Identifier" prefix="pref">
+		<!-- change this name to Identifier
+This is for node URIs that have identifier numbers as the ultimate node being linked to-->
+		<pattern>{type}/{id}/{identifier}</pattern>
+	</generator>
+
+	<generator name="DrawingSideIdentifier" prefix="pref">
+		<pattern>{side}/{type}/{id}/{identifier}/</pattern>
+	</generator>
+
+	<generator name="IntermediateURI" prefix="pref">
+		<!-- This is for intermediate node URIs that have non-identifiers as ultimate node being linked to. But for production event, which is singular (unlike image), perhaps consider a reduced pattern: {id}/{type}-->
+		<pattern>{type}/{id}/{number}</pattern>
+	</generator>
+
+	<generator name="GenericURI" prefix="pref">
+		<!-- This is for intermediate node URIs that have non-identifiers as ultimate node being linked to. Unlike the other IntermediateURI generator, this one does not include a "counter" number-->
+		<pattern>{type}/{id}</pattern>
+	</generator>
+
+	<generator name="GenericEditionURI" prefix="pref">
+		<!-- This is for intermediate node URIs that have non-identifiers as ultimate node being linked to. Unlike the other IntermediateURI generator, this one does not include a "counter" number-->
+		<pattern>{year}/{type}/{id}</pattern>
+	</generator>
+
+
+	<generator name="LocalTermURI" prefix="pref">
+		<pattern>{hierarchy}/{term}</pattern>
+	</generator>
+
+
+	<generator name="LocalTermURImp" prefix="pref">
+		<pattern>{hierarchy}/{object}/{term}</pattern>
+	</generator>
+
+	<generator name="LocalTermURI2mp" prefix="pref">
+		<pattern>{hierarchy}/{object}/{term}/{type}</pattern>
+	</generator>
+	<generator name="LocalTermURI2" prefix="pref">
+		<pattern>{hierarchy}/{term}/{type}</pattern>
+	</generator>
+	<generator name="LocalTermURI3mp" prefix="pref">
+		<pattern>{hierarchy}/{object}/{term}/{type}/{identifier}</pattern>
+	</generator>
+
+	<generator name="DrawingSideIntermediateURI" prefix="pref">
+		<pattern>{side}/{type}/{id}/{number}</pattern>
+	</generator>
+
+	<generator name="DrawingSideIntermediateURI2" prefix="pref">
+		<pattern>{side}/{type}/{id}</pattern>
+	</generator>
+
+</generator_policy>
+ 

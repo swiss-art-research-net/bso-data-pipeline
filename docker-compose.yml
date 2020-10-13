@@ -1,0 +1,73 @@
+version: "3"
+services:
+
+  3m:
+    image: marketak/3m-docker:1.2
+    container_name: ${PROJECT_NAME}_3m
+    environment:
+      - IP_ADDRESS=0.0.0.0
+    volumes:
+       - 3m-db:/opt/exist/webapp/WEB-INF/data
+       - 3m-data:/opt/3M
+    ports:
+      - 8080:8080
+      - 8081:8081
+
+  blazegraph:
+    image: metaphacts/blazegraph-basic
+    container_name: ${PROJECT_NAME}_blazegraph
+    environment:
+      - JAVA_OPTS=-Xmx1g
+    logging:
+      driver: json-file
+      options:
+        max-size: "200k"
+        max-file: "10"
+    volumes:
+      - blazegraph-data:/blazegraph-data
+      - ./output:/output
+
+  jobs:
+    build: ./services/jobs
+    container_name: ${PROJECT_NAME}_jobs
+    volumes:
+      - ./input:/input
+      - ./output:/output
+      - ./mapping:/mappings
+      - ./scripts:/scripts
+
+  metaphactory:
+    build: ./services/metaphactory
+    container_name: ${PROJECT_NAME}_metaphactory
+    depends_on:
+      - blazegraph
+    environment:
+      - PLATFORM_OPTS=-Dlog4j.configurationFile=file:///var/lib/jetty/webapps/etc/log4j2.xml
+      - JAVA_OPTS=-Xmx1g
+    volumes:
+      - metaphactory-data:/runtime-data
+
+  proxy:
+    build: ./services/proxy
+    container_name: ${PROJECT_NAME}_proxy
+    depends_on:
+      - metaphactory
+      - blazegraph
+      - 3m
+    ports:
+      - $PORT_PROXY:80
+
+  x3mlengine:
+    build: ./services/x3mlEngine
+    container_name: ${PROJECT_NAME}_x3ml
+    volumes:
+      - ./input:/input
+      - ./output:/output
+      - ./mapping:/mappings
+      - ./scripts:/scripts
+
+volumes:
+  blazegraph-data:
+  metaphactory-data:
+  3m-data:
+  3m-db:
