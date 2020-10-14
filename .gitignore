@@ -1,3 +1,5 @@
 .env
 /input
 !/input/.gitkeep
+.ipynb_checkpoints
+*.ipynb
