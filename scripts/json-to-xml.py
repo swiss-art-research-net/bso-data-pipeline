@@ -28,4 +28,4 @@ for row in rawData['rows']:
                 datafield.text = str(row[key])
 
 with open(outputFile, 'wb') as f:
-    f.write(etree.tostring(records, pretty_print=True))
+    f.write(etree.tostring(records, xml_declaration=True, encoding='UTF-8', pretty_print=True))
