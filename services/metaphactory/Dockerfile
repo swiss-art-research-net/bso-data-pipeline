@@ -1,2 +1,2 @@
-FROM metaphacts/metaphacts-platform:3.3.2
+FROM metaphacts/metaphactory:3.6.0
 COPY ./apps /apps
