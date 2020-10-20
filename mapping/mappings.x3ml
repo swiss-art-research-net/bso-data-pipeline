@@ -152,7 +152,10 @@
                     <target_node>
                         <entity variable="artist_or_creator">
                             <type>crm:E21_Person</type>
-                            <instance_generator name="UUID"/>
+                            <instance_generator name="URIwithTypeAndId_hashed">
+                                <arg name="type" type="constant">person</arg>
+                                <arg name="id" type="xpath">subfield[@code='a']/text()</arg>
+                            </instance_generator>
                         </entity>
                     </target_node>
                 </range>
@@ -190,11 +193,36 @@
                     <target_node>
                         <entity variable="artist_or_creator">
                             <type>crm:E21_Person</type>
-                            <instance_generator name="UUID"/>
+                            <instance_generator name="URIwithTypeAndId_hashed">
+                                <arg name="type" type="constant">person</arg>
+                                <arg name="id" type="xpath">subfield[@code='a']/text()</arg>
+                            </instance_generator>
                         </entity>
                     </target_node>
                 </range>
             </link>
         </mapping>
+        <mapping>
+            <domain>
+                <source_node>/records/record/datafield</source_node>
+                <target_node>
+                    <if>
+                        <equals value="100">@tag</equals>
+                    </if>
+                    <entity variable="artist_or_creator">
+                        <type>crm:E21_Person</type>
+                        <instance_generator name="URIwithTypeAndId_hashed">
+                            <arg name="type" type="constant">person</arg>
+                            <arg name="id" type="xpath">subfield[@code='a']/text()</arg>
+                        </instance_generator>
+                        <label_generator name="Literal">
+                            <arg name="text" type="xpath">subfield[@code='a']/text()</arg>
+                            <arg name="language" type="constant"/>
+                        </label_generator>
+                    </entity>
+                </target_node>
+            </domain>
+        </mapping>
     </mappings>
+
 </x3ml>
