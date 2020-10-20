@@ -1,3 +1,3 @@
-FROM researchspace/platform:3.2.1
+FROM researchspace/platform-ci:latest
 ADD ./apps /apps
 VOLUME /apps
