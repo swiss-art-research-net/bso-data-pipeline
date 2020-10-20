@@ -37,12 +37,47 @@
                 <range>
                     <source_node>.</source_node>
                     <target_node>
-                        <entity variable="record">
+                        <entity variable="work">
                             <type>crm:E73_Information_Object</type>
                             <instance_generator name="URIwithTypeSubtypeAndId">
                                 <arg name="type" type="constant">artwork</arg>
                                 <arg name="id" type="xpath">uuid/text()</arg>
-                                <arg name="subtype" type="constant">record</arg>
+                                <arg name="subtype" type="constant">work</arg>
+                            </instance_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>datafield/subfield</relation>
+                    </source_relation>
+                    <target_relation>
+                        <if>
+                            <and>
+                                <if>
+                                    <equals value="245">../@tag</equals>
+                                </if>
+                                <if>
+                                    <equals value="a">@code</equals>
+                                </if>
+                                <if>
+                                    <exists>text()</exists>
+                                </if>
+                            </and>
+                        </if>
+                        <relationship>rdfs:label</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>datafield/subfield</source_node>
+                    <target_node>
+                        <entity>
+                            <type>rdfs:Literal</type>
+                            <instance_generator name="Literal">
+                                <arg name="text" type="xpath">text()</arg>
+                                <arg name="language" type="constant"/>
                             </instance_generator>
                         </entity>
                     </target_node>
@@ -53,7 +88,7 @@
             <domain>
                 <source_node>/records/record</source_node>
                 <target_node>
-                    <entity variable="record">
+                    <entity variable="work">
                         <type>crm:E73_Information_Object</type>
                         <instance_generator name="UUID"/>
                     </entity>
@@ -111,7 +146,7 @@
                 <range>
                     <source_node>.</source_node>
                     <target_node>
-                        <entity variable="record">
+                        <entity variable="work">
                             <type>crm:E73_Information_Object</type>
                             <instance_generator name="UUID"/>
                         </entity>
