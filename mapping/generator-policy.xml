@@ -26,8 +26,12 @@
 	<generator name="URIwith2TypesAndId" prefix="sari">
 		<pattern>{type1}/{type2}/{id}</pattern>
 	</generator>
+
+	<generator name="URIwithSubTypeAndId" prefix="sari">
+		<pattern>{type}/{id}/{subtype}</pattern>
+	</generator>
 		
-		<generator name="placeAppellationUri" prefix="sari" shorten="true">
+	<generator name="placeAppellationUri" prefix="sari" shorten="true">
 		<pattern>place/{place_id}/appellation/{appellation_id}</pattern>
 	</generator>
 		
