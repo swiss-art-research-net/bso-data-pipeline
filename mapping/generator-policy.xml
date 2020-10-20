@@ -7,28 +7,84 @@
 		</custom>
 	</generator>
 
-	<generator name="ConcatMultipleTerms">
-		<custom generatorClass="gr.forth.ConcatMultipleTerms">
-			<set-arg name="prefix" />
-			<set-arg name="sameTermsDelim" />
-			<set-arg name="diffTermsDelim" />
-			<set-arg name="text1" />
-			<set-arg name="text2" />
-			<set-arg name="text3" />
-			<set-arg name="text4" />
-			<set-arg name="text5" />
-			<set-arg name="text7" />
-			<set-arg name="text8" />
-			<set-arg name="text9" />
-		</custom>
+	<generator name="coordinates">
+		<pattern>POINT({lat} {long})</pattern>
+	</generator>
+		
+	<generator name="URIwithType" prefix="sari">
+		<pattern>{type}</pattern>
 	</generator>
 
 	<generator name="URIwithTypeAndId" prefix="sari">
 		<pattern>{type}/{id}</pattern>
 	</generator>
+		
+	<generator name="URIwithTypeAndId_hashed" prefix="sari" shorten="true">
+		<pattern>{type}/{id}</pattern>
+	</generator>
 
 	<generator name="URIwith2TypesAndId" prefix="sari">
 		<pattern>{type1}/{type2}/{id}</pattern>
+	</generator>
+		
+		<generator name="placeAppellationUri" prefix="sari" shorten="true">
+		<pattern>place/{place_id}/appellation/{appellation_id}</pattern>
+	</generator>
+		
+	<generator name="placeIdentifierUri" prefix="sari">
+		<pattern>place/{place_id}/{identifier_type}/{identifier}</pattern>
+	</generator>
+		
+	<generator name="personAppellationUri" prefix="sari" shorten="true">
+		<pattern>person/{person_id}/appellation/{appellation_id}</pattern>
+	</generator>
+		
+	<generator name="personIdentifierUri" prefix="sari">
+		<pattern>person/{person_id}/{identifier_type}/{identifier}</pattern>
+	</generator>
+		
+	<generator name="personBirth" prefix="sari">
+		<pattern>person/{person_id}/birth</pattern>
+	</generator>
+		
+	<generator name="personDeath" prefix="sari">
+		<pattern>person/{person_id}/death</pattern>
+	</generator>
+
+	<generator name="personBiographyInfo" prefix="sari" uuid="true">
+		<pattern>person/{person_id}/biography_information/{lang}/</pattern>
+	</generator>
+		
+		
+	<generator name="personBiography" prefix="sari" uuid="true">
+		<pattern>person/{person_id}/biography/{lang}/</pattern>
+	</generator>
+
+	<generator name="groupIdentifierUri" prefix="sari">
+		<pattern>group/{group_id}/{identifier_type}/{identifier}</pattern>
+	</generator>
+
+	<generator name="groupAppellationUri" prefix="sari" shorten="true">
+		<pattern>group/{group_id}/appellation/{appellation_id}</pattern>
+	</generator>
+
+	<generator name="groupDissolution" prefix="sari">
+		<pattern>group/{group_id}/dissolution</pattern>
+	</generator>
+	<generator name="groupDissolutionTimespan" prefix="sari">
+		<pattern>group/{group_id}/dissolution/timespan</pattern>
+	</generator>
+
+	<generator name="groupFormation" prefix="sari">
+		<pattern>group/{group_id}/formation</pattern>
+	</generator>
+
+	<generator name="groupFormationTimespan" prefix="sari">
+		<pattern>group/{group_id}/formation/timespan</pattern>
+	</generator>
+
+	<generator name="groupBiography" prefix="sari" uuid="true">
+		<pattern>group/{group_id}/biography/{lang}/</pattern>
 	</generator>
 
 	<generator name="URIwithGndId" prefix="gnd">
@@ -38,90 +94,27 @@
 	<generator name="URIwithUlanId" prefix="ulan">
 		<pattern>{id}</pattern>
 	</generator>
-
+		
 	<generator name="URIwithWikidataId" prefix="wikidata">
 		<pattern>{id}</pattern>
 	</generator>
-
-	<!-- older ones -->
-	<generator name="TypedLiteralGen">
+		
+	<generator name="URIwithOneType" prefix="sari" uuid="true">
+		<pattern>{type}/</pattern>
+	</generator>
+		
+	<generator name="dateNormalizerGen">
+		<custom generatorClass="gr.forth.DateNormalizer">
+			<set-arg name="text"/>
+			<set-arg name="bound"/>
+			<set-arg name="report"/>
+		</custom>
+	</generator>
+		
+	<generator name="typedLiteralGen">
 		<custom generatorClass="gr.forth.TypedLiteralGenerator">
 			<set-arg name="text"/>
 		</custom>
-	</generator>
-
-
-	<generator name="ArtistURI" prefix="artist">
-		<!-- This is for intermediate node URIs that have non-identifiers as ultimate node being linked to. Unlike the other IntermediateURI generator, this one does not include a "counter" number-->
-		<pattern>{type}/{id}</pattern>
-	</generator>
-
-
-	<generator name="CollectionURI" prefix="inst">
-		<!-- This is for intermediate node URIs that have non-identifiers as ultimate node being linked to. Unlike the other IntermediateURI generator, this one does not include a "counter" number-->
-		<pattern>{type}/{id}</pattern>
-	</generator>
-
-
-	<generator name="DrawingSideURI" prefix="pref">
-		<pattern>{side}/{id}</pattern>
-	</generator>
-
-	<generator name="DrawingVisualURI" prefix="pref">
-		<pattern>{side}/{visual}/{id}</pattern>
-	</generator>
-
-	<generator name="Identifier" prefix="pref">
-		<!-- change this name to Identifier
-This is for node URIs that have identifier numbers as the ultimate node being linked to-->
-		<pattern>{type}/{id}/{identifier}</pattern>
-	</generator>
-
-	<generator name="DrawingSideIdentifier" prefix="pref">
-		<pattern>{side}/{type}/{id}/{identifier}/</pattern>
-	</generator>
-
-	<generator name="IntermediateURI" prefix="pref">
-		<!-- This is for intermediate node URIs that have non-identifiers as ultimate node being linked to. But for production event, which is singular (unlike image), perhaps consider a reduced pattern: {id}/{type}-->
-		<pattern>{type}/{id}/{number}</pattern>
-	</generator>
-
-	<generator name="GenericURI" prefix="pref">
-		<!-- This is for intermediate node URIs that have non-identifiers as ultimate node being linked to. Unlike the other IntermediateURI generator, this one does not include a "counter" number-->
-		<pattern>{type}/{id}</pattern>
-	</generator>
-
-	<generator name="GenericEditionURI" prefix="pref">
-		<!-- This is for intermediate node URIs that have non-identifiers as ultimate node being linked to. Unlike the other IntermediateURI generator, this one does not include a "counter" number-->
-		<pattern>{year}/{type}/{id}</pattern>
-	</generator>
-
-
-	<generator name="LocalTermURI" prefix="pref">
-		<pattern>{hierarchy}/{term}</pattern>
-	</generator>
-
-
-	<generator name="LocalTermURImp" prefix="pref">
-		<pattern>{hierarchy}/{object}/{term}</pattern>
-	</generator>
-
-	<generator name="LocalTermURI2mp" prefix="pref">
-		<pattern>{hierarchy}/{object}/{term}/{type}</pattern>
-	</generator>
-	<generator name="LocalTermURI2" prefix="pref">
-		<pattern>{hierarchy}/{term}/{type}</pattern>
-	</generator>
-	<generator name="LocalTermURI3mp" prefix="pref">
-		<pattern>{hierarchy}/{object}/{term}/{type}/{identifier}</pattern>
-	</generator>
-
-	<generator name="DrawingSideIntermediateURI" prefix="pref">
-		<pattern>{side}/{type}/{id}/{number}</pattern>
-	</generator>
-
-	<generator name="DrawingSideIntermediateURI2" prefix="pref">
-		<pattern>{side}/{type}/{id}</pattern>
 	</generator>
 
 </generator_policy>
