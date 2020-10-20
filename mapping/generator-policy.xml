@@ -27,7 +27,7 @@
 		<pattern>{type1}/{type2}/{id}</pattern>
 	</generator>
 
-	<generator name="URIwithSubTypeAndId" prefix="sari">
+	<generator name="URIwithTypeSubtypeAndId" prefix="sari">
 		<pattern>{type}/{id}/{subtype}</pattern>
 	</generator>
 		

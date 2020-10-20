@@ -17,11 +17,45 @@
                 <source_node>/records/record</source_node>
                 <target_node>
                     <entity>
-                        <type>crm:E73_Information_Object</type>
+                        <type>crm:E22_Man-Made_Object</type>
                         <instance_generator name="URIwithTypeAndId">
-                            <arg name="type" type="constant">resource</arg>
+                            <arg name="type" type="constant">artwork</arg>
                             <arg name="id" type="xpath">uuid/text()</arg>
                         </instance_generator>
+                    </entity>
+                </target_node>
+            </domain>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>.</relation>
+                    </source_relation>
+                    <target_relation>
+                        <relationship>crm:P128_carries</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>.</source_node>
+                    <target_node>
+                        <entity variable="record">
+                            <type>crm:E73_Information_Object</type>
+                            <instance_generator name="URIwithTypeSubtypeAndId">
+                                <arg name="type" type="constant">artwork</arg>
+                                <arg name="id" type="xpath">uuid/text()</arg>
+                                <arg name="subtype" type="constant">record</arg>
+                            </instance_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+        </mapping>
+        <mapping>
+            <domain>
+                <source_node>/records/record</source_node>
+                <target_node>
+                    <entity variable="record">
+                        <type>crm:E73_Information_Object</type>
+                        <instance_generator name="UUID"/>
                     </entity>
                 </target_node>
             </domain>
@@ -51,8 +85,39 @@
                 </range>
             </link>
         </mapping>
+        <mapping>
+            <domain>
+                <source_node>/records/record</source_node>
+                <target_node>
+                    <entity variable="creation">
+                        <type>crm:E65_Creation</type>
+                        <instance_generator name="URIwithTypeSubtypeAndId">
+                            <arg name="type" type="constant">artwork</arg>
+                            <arg name="id" type="xpath">uuid/text()</arg>
+                            <arg name="subtype" type="constant">creation</arg>
+                        </instance_generator>
+                    </entity>
+                </target_node>
+            </domain>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>.</relation>
+                    </source_relation>
+                    <target_relation>
+                        <relationship>crm:P94_has_created</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>.</source_node>
+                    <target_node>
+                        <entity variable="record">
+                            <type>crm:E73_Information_Object</type>
+                            <instance_generator name="UUID"/>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+        </mapping>
     </mappings>
-
-
-
 </x3ml>
