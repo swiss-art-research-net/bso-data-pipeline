@@ -30,6 +30,15 @@
 	<generator name="URIwithTypeSubtypeAndId" prefix="sari">
 		<pattern>{type}/{id}/{subtype}</pattern>
 	</generator>
+
+	<generator name="URIwithTwoLevelIdHashed" prefix="sari">
+        <custom generatorClass="gr.forth.MultiHashingGenerator">
+            <set-arg name="type"/>
+			<set-arg name="id_HASHED_CONTENTS"/>
+			<set-arg name="subtype"/>
+			<set-arg name="subId_HASHED_CONTENTS"/>
+        </custom>
+    </generator>
 		
 	<generator name="placeAppellationUri" prefix="sari" shorten="true">
 		<pattern>place/{place_id}/appellation/{appellation_id}</pattern>
