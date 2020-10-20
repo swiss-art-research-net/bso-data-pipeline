@@ -1,3 +1,2 @@
-FROM researchspace/platform-ci:latest
-ADD ./apps /apps
-VOLUME /apps
+FROM metaphacts/metaphacts-platform:3.3.2
+COPY ./apps /apps

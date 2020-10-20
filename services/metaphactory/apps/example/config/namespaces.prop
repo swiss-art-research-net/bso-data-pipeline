@@ -1,0 +1,5 @@
+Default=http://rs.example.org/page/
+page=http://rs.example.org/page/
+partial=http://rs.example.org/partial/
+query=http://rs.example.org/query/
+queryPartial=http://rs.example.org/queryPartial/

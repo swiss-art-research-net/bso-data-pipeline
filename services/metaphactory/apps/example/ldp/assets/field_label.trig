@@ -1,0 +1,43 @@
+
+<http://rs.example.org/instances/fields/label/context> {
+  <http://rs.example.org/instances/fields/label> <http://www.metaphacts.com/ontology/fields#insertPattern>
+      <http://rs.example.org/instances/fields/label/query/insert>;
+    <http://www.metaphacts.com/ontology/fields#maxOccurs> "1";
+    <http://www.metaphacts.com/ontology/fields#minOccurs> "1";
+    <http://www.metaphacts.com/ontology/fields#selectPattern> <http://rs.example.org/instances/fields/2jijzc3xunm7vzmbcsor>;
+    <http://www.metaphacts.com/ontology/fields#xsdDatatype> <http://www.w3.org/2001/XMLSchema#string>;
+    <http://www.metaphacts.com/ontology/fields#deletePattern> <http://rs.example.org/instances/fields/label/query/delete>;
+    a <http://www.metaphacts.com/ontology/fields#Field>;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "A human-readable label for the entity";
+    <http://www.w3.org/2000/01/rdf-schema#label> "Label" .
+  
+  <http://rs.example.org/instances/fields/label/query/delete> <http://spinrdf.org/sp#text>
+      """DELETE { 
+  $subject rdfs:label $value .
+
+} WHERE {}""" .
+  
+  <http://rs.example.org/instances/fields/label/query/insert> a <http://spinrdf.org/sp#Query> .
+  
+  <http://rs.example.org/instances/fields/label/query/delete> a <http://spinrdf.org/sp#Query> .
+  
+  <http://rs.example.org/instances/fields/label/query/insert> <http://spinrdf.org/sp#text>
+      """INSERT { 
+  $subject rdfs:label $value .
+
+} WHERE {}""" .
+  
+  <http://rs.example.org/instances/fields/label/query/select> a <http://spinrdf.org/sp#Query>;
+    <http://spinrdf.org/sp#text> """SELECT ?value WHERE {
+    $subject rdfs:label ?value .
+  }""" .
+  
+  <http://rs.example.org/instances/fields/label> a <http://www.w3.org/ns/prov#Entity>;
+    <http://www.w3.org/ns/prov#wasAttributedTo> <http://www.metaphacts.com/resource/user/admin>;
+    <http://www.w3.org/ns/prov#generatedAtTime> "2020-04-06T13:49:20.948+03:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+  
+  <http://www.metaphacts.com/ontologies/platform#fieldDefinitionContainer> <http://www.w3.org/ns/ldp#contains>
+      <http://rs.example.org/instances/fields/label> .
+  
+  <http://rs.example.org/instances/fields/label> a <http://www.w3.org/ns/ldp#Resource> .
+}
