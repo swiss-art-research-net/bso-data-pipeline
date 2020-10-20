@@ -1,5 +1,6 @@
 .env
 /input
+/output/*.ttl
 !/input/.gitkeep
 .ipynb_checkpoints
 *.ipynb
