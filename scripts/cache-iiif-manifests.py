@@ -19,8 +19,7 @@ def fetchManuscript(url, filename):
             json.dump(content, f, indent=4)
     except urllib.error.HTTPError as e:
         print(e)
-        print(url)
-        exit()
+        print(url)        
         
 
 with open(inputFile, 'r') as f:
