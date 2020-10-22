@@ -1,0 +1,9 @@
+Default=http://rs.swissartresearch.net/page/
+sari=http://rs.swissartresearch.net/
+page=http://rs.swissartresearch.net/page/
+partial=http://rs.swissartresearch.net/partial/
+query=http://rs.swissartresearch.net/query/
+queryPartial=http://rs.swissartresearch.net/queryPartial/
+dcterms=http://purl.org/dc/terms/
+dc=http://purl.org/dc/elements/1.1/
+la=https://linked.art/ns/terms/
