@@ -11,6 +11,7 @@
         <namespace prefix="skos" uri="http://www.w3.org/2004/02/skos/core#"/>
         <namespace prefix="sari" uri="https://resource.swissartresearch.net/"/>
         <namespace prefix="dcterms" uri="http://purl.org/dc/terms/" />
+        <namespace prefix="dc" uri="http://purl.org/dc/elements/1.1/" />
         <namespace prefix="la" uri="https://linked.art/ns/terms/"/>
     </namespaces>
     <mappings>
