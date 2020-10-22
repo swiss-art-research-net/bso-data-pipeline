@@ -31,6 +31,10 @@
 		<pattern>{type}/{id}/{subtype}</pattern>
 	</generator>
 
+	<generator name="URIwithTypeSubtypeIdAndCounter" prefix="sari">
+		<pattern>{type}/{id}/{subtype}/{position}</pattern>
+	</generator>
+
 	<generator name="URIwithTwoLevelIdHashed" prefix="sari">
         <custom generatorClass="gr.forth.MultiHashingGenerator">
             <set-arg name="type"/>

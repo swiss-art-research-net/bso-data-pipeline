@@ -10,8 +10,8 @@
         <namespace prefix="wikidata" uri="https://www.wikidata.org/wiki/"/>
         <namespace prefix="skos" uri="http://www.w3.org/2004/02/skos/core#"/>
         <namespace prefix="sari" uri="https://resource.swissartresearch.net/"/>
-        <namespace uri="http://purl.org/dc/terms/" prefix="dcterms"/>
-        <namespace prefix="dc" uri="http://purl.org/dc/elements/1.1/"/>
+        <namespace prefix="dcterms" uri="http://purl.org/dc/terms/" />
+        <namespace prefix="la" uri="https://linked.art/ns/terms/"/>
     </namespaces>
     <mappings>
         <mapping>
@@ -288,32 +288,60 @@
         </mapping>
         <mapping>
             <domain>
-                <source_node>/records/record/datafield</source_node>
+                <source_node>/records/record/images/image</source_node>
                 <target_node>
-                    <if>
-                        <equals value="manifest">@tag</equals>
-                    </if>
                     <entity>
-                        <type/>
-                        <instance_generator name="UUID"/>
+                        <type>crmdig:D1_Digital_Object</type>
+                        <instance_generator name="URIwithTypeSubtypeIdAndCounter">
+                            <arg name="type" type="constant">artwork</arg>
+                            <arg name="id" type="xpath">../../uuid/text()</arg>
+                            <arg name="subtype" type="constant">image</arg>
+                            <arg name="position" type="position"/>
+                        </instance_generator>
                     </entity>
                 </target_node>
             </domain>
             <link>
                 <path>
                     <source_relation>
-                        <relation/>
+                        <relation>url</relation>
                     </source_relation>
                     <target_relation>
-                        <relationship/>
+                        <relationship>la:access_point</relationship>
                     </target_relation>
                 </path>
                 <range>
-                    <source_node/>
+                    <source_node>url</source_node>
                     <target_node>
                         <entity>
-                            <type/>
-                            <instance_generator name="UUID"/>
+                            <type>crmdig:D1_Digital_Object</type>
+                            <instance_generator name="URIorUUID">
+                                <arg name="text" type="xpath">text()</arg>
+                            </instance_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>../../datafield</relation>
+                    </source_relation>
+                    <target_relation>
+                        <if>
+                            <equals value="manifest">@tag</equals>
+                        </if>
+                        <relationship>crm:P106i_forms_part_of</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>../../datafield</source_node>
+                    <target_node>
+                        <entity variable="manifest">
+                            <type>crmdig:D1_Digital_Object</type>
+                            <instance_generator name="URIorUUID">
+                                <arg name="text" type="xpath">text()</arg>
+                            </instance_generator>
                         </entity>
                     </target_node>
                 </range>
