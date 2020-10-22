@@ -41,7 +41,7 @@
                     <source_node>.</source_node>
                     <target_node>
                         <entity variable="work">
-                            <type>crm:E73_Information_Object</type>
+                            <type>crm:E36_Visual_Item</type>
                             <instance_generator name="URIwithTypeSubtypeAndId">
                                 <arg name="type" type="constant">artwork</arg>
                                 <arg name="id" type="xpath">uuid/text()</arg>
@@ -141,7 +141,7 @@
                 <source_node>/records/record</source_node>
                 <target_node>
                     <entity variable="work">
-                        <type>crm:E73_Information_Object</type>
+                        <type>crm:E36_Visual_Item</type>
                         <instance_generator name="UUID"/>
                     </entity>
                 </target_node>
