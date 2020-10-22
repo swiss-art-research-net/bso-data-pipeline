@@ -73,4 +73,4 @@ for i, row in enumerate(rawData['rows']):
     
     outputFile = outputDirectory + outputPrefix + row['UUID'] + ".xml"
     with open(outputFile, 'wb') as f:
-        f.write(etree.tostring(records, pretty_print=True))
+        f.write(etree.tostring(records, xml_declaration=True, encoding='UTF-8', pretty_print=True))
