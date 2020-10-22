@@ -9,7 +9,9 @@
         <namespace prefix="ulan" uri="http://vocab.getty.edu/page/ulan/"/>
         <namespace prefix="wikidata" uri="https://www.wikidata.org/wiki/"/>
         <namespace prefix="skos" uri="http://www.w3.org/2004/02/skos/core#"/>
-		<namespace prefix="sari" uri="https://resource.swissartresearch.net/"/>
+        <namespace prefix="sari" uri="https://resource.swissartresearch.net/"/>
+        <namespace uri="http://purl.org/dc/terms/" prefix="dcterms"/>
+        <namespace prefix="dc" uri="http://purl.org/dc/elements/1.1/"/>
     </namespaces>
     <mappings>
         <mapping>
@@ -79,6 +81,55 @@
                                 <arg name="text" type="xpath">text()</arg>
                                 <arg name="language" type="constant"/>
                             </instance_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>datafield</relation>
+                    </source_relation>
+                    <target_relation>
+                        <if>
+                            <equals value="manifest">@tag</equals>
+                        </if>
+                        <relationship>crm:P129i_is_subject_of</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>datafield</source_node>
+                    <target_node>
+                        <entity variable="manifest">
+                            <type>crmdig:D1_Digital_Object</type>
+                            <instance_generator name="URIorUUID">
+                                <arg name="text" type="xpath">text()</arg>
+                            </instance_generator>
+                            <additional>
+                                <relationship>dcterms:conforms_to</relationship>
+                                <entity>
+                                    <type>crm:E73_Information_Object</type>
+                                    <instance_info>
+                                        <constant/>
+                                    </instance_info>
+                                    <instance_generator name="URIorUUID">
+                                        <arg name="text" type="constant">http://iiif.io/api/presentation</arg>
+                                    </instance_generator>
+                                </entity>
+                            </additional>
+                            <additional>
+                                <relationship>dc:format</relationship>
+                                <entity>
+                                    <type/>
+                                    <instance_info>
+                                        <constant/>
+                                    </instance_info>
+                                    <instance_generator name="Literal">
+                                        <arg name="text" type="constant">application/ld+json;profile="http://iiif.io/api/presentation/3/context.json"</arg>
+                                        <arg name="language" type="constant"/>
+                                    </instance_generator>
+                                </entity>
+                            </additional>
                         </entity>
                     </target_node>
                 </range>
@@ -235,7 +286,38 @@
                 </range>
             </link>
         </mapping>
+        <mapping>
+            <domain>
+                <source_node>/records/record/datafield</source_node>
+                <target_node>
+                    <if>
+                        <equals value="manifest">@tag</equals>
+                    </if>
+                    <entity>
+                        <type/>
+                        <instance_generator name="UUID"/>
+                    </entity>
+                </target_node>
+            </domain>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation/>
+                    </source_relation>
+                    <target_relation>
+                        <relationship/>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node/>
+                    <target_node>
+                        <entity>
+                            <type/>
+                            <instance_generator name="UUID"/>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+        </mapping>
     </mappings>
-
-
 </x3ml>
