@@ -212,16 +212,70 @@
                     </source_relation>
                     <target_relation>
                         <relationship>la:digitally_shown_by</relationship>
+                        <entity>
+                            <type>crmdig:D1_Digital_Object</type>
+                            <instance_generator name="URIwithTypeSubtypeIdAndCounter">
+                                <arg name="type" type="constant">artwork</arg>
+                                <arg name="id" type="xpath">../../uuid/text()</arg>
+                                <arg name="subtype" type="constant">image</arg>
+                                <arg name="position" type="position"/>
+                            </instance_generator>
+                            <additional>
+                                <relationship>crm:P2_has_type</relationship>
+                                <entity>
+                                    <type>crm:E55_Type</type>
+                                    <instance_info>
+                                        <constant/>
+                                    </instance_info>
+                                    <instance_generator name="URIorUUID">
+                                        <arg name="text" type="constant">http://vocab.getty.edu/aat/300215302</arg>
+                                    </instance_generator>
+                                    <label_generator name="Literal">
+                                        <arg name="text" type="constant">Digital Image</arg>
+                                        <arg name="language" type="constant">en</arg>
+                                    </label_generator>
+                                </entity>
+                            </additional>
+                        </entity>
+                        <relationship>la:digitally_available_via</relationship>
                     </target_relation>
                 </path>
                 <range>
                     <source_node>images/image</source_node>
                     <target_node>
                         <entity>
-                            <type>crmdig:D1_Digital_Object</type>
-                            <instance_generator name="URIorUUID">
-                                <arg name="text" type="xpath">url/text()</arg>
+                            <type>la:DigitalService</type>
+                            <instance_generator name="URIwithTypeSubtypeIdCounterAndSuffix">
+                                <arg name="type" type="constant">artwork</arg>
+                                <arg name="id" type="xpath">../../uuid/text()</arg>
+                                <arg name="subtype" type="constant">image</arg>
+                                <arg name="position" type="position"/>
+                                <arg name="suffix" type="constant">iiif</arg>
                             </instance_generator>
+                            <additional>
+                                <relationship>la:access_point</relationship>
+                                <entity>
+                                    <type>crmdig:D1_Digital_Object</type>
+                                    <instance_info>
+                                        <constant/>
+                                    </instance_info>
+                                    <instance_generator name="URIorUUID">
+                                        <arg name="text" type="xpath">url/text()</arg>
+                                    </instance_generator>
+                                </entity>
+                            </additional>
+                            <additional>
+                                <relationship>dcterms:conformsTo</relationship>
+                                <entity>
+                                    <type>crm:E73_Information_Object</type>
+                                    <instance_info>
+                                        <constant/>
+                                    </instance_info>
+                                    <instance_generator name="URIorUUID">
+                                        <arg name="text" type="constant">http://iiif.io/api/image</arg>
+                                    </instance_generator>
+                                </entity>
+                            </additional>
                         </entity>
                     </target_node>
                 </range>
@@ -302,90 +356,6 @@
                             <instance_generator name="Literal">
                                 <arg name="text" type="xpath">text()</arg>
                                 <arg name="language" type="constant"/>
-                            </instance_generator>
-                        </entity>
-                    </target_node>
-                </range>
-            </link>
-        </mapping>
-        <mapping>
-            <domain>
-                <source_node>/records/record/images/image</source_node>
-                <target_node>
-                    <entity>
-                        <type>crmdig:D1_Digital_Object</type>
-                        <instance_generator name="URIwithTypeSubtypeIdAndCounter">
-                            <arg name="type" type="constant">artwork</arg>
-                            <arg name="id" type="xpath">../../uuid/text()</arg>
-                            <arg name="subtype" type="constant">image</arg>
-                            <arg name="position" type="position"/>
-                        </instance_generator>
-                    </entity>
-                </target_node>
-            </domain>
-            <link>
-                <path>
-                    <source_relation>
-                        <relation>url</relation>
-                    </source_relation>
-                    <target_relation>
-                        <relationship>la:digitally_available_via</relationship>
-                        <entity>
-                            <type>la:DigitalService</type>
-                            <instance_generator name="URIwithTypeSubtypeIdCounterAndSuffix">
-                                <arg name="type" type="constant">artwork</arg>
-                                <arg name="id" type="xpath">../../../uuid/text()</arg>
-                                <arg name="subtype" type="constant">image</arg>
-                                <arg name="position" type="position"/>
-                                <arg name="suffix" type="constant">iiif</arg>
-                            </instance_generator>
-                            <additional>
-                                <relationship>dcterms:conformsTo</relationship>
-                                <entity>
-                                    <type>crm:E73_Information_Object</type>
-                                    <instance_info>
-                                        <constant/>
-                                    </instance_info>
-                                    <instance_generator name="URIorUUID">
-                                        <arg name="text" type="constant">http://iiif.io/api/image</arg>
-                                    </instance_generator>
-                                </entity>
-                            </additional>
-                        </entity>
-                        <relationship>la:access_point</relationship>
-                    </target_relation>
-                </path>
-                <range>
-                    <source_node>url</source_node>
-                    <target_node>
-                        <entity>
-                            <type>crmdig:D1_Digital_Object</type>
-                            <instance_generator name="URIorUUID">
-                                <arg name="text" type="xpath">text()</arg>
-                            </instance_generator>
-                        </entity>
-                    </target_node>
-                </range>
-            </link>
-            <link>
-                <path>
-                    <source_relation>
-                        <relation>../../datafield</relation>
-                    </source_relation>
-                    <target_relation>
-                        <if>
-                            <equals value="manifest">@tag</equals>
-                        </if>
-                        <relationship>crm:P106i_forms_part_of</relationship>
-                    </target_relation>
-                </path>
-                <range>
-                    <source_node>../../datafield</source_node>
-                    <target_node>
-                        <entity variable="manifest">
-                            <type>crmdig:D1_Digital_Object</type>
-                            <instance_generator name="URIorUUID">
-                                <arg name="text" type="xpath">text()</arg>
                             </instance_generator>
                         </entity>
                     </target_node>
