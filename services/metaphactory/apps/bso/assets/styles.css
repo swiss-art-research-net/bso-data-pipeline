@@ -11,3 +11,6 @@ a {
 .navbar-inverse {
   background-color: #964a4a;
 }
+.panel-body {
+  padding: 5px;
+}
