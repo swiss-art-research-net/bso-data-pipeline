@@ -1,0 +1,30 @@
+[[> partial:contentHeader]]
+
+<semantic-query
+    query="SELECT ?label WHERE {
+        ?? rdfs:label ?label .
+    } LIMIT 1"
+    template="{{#each bindings}}<h2>{{label.value}}</h2>{{/each}}"
+></semantic-query>
+
+<semantic-table
+    query="SELECT DISTINCT ?image ?IIIFimage WHERE {
+        ?? crm:P128_carries ?work .
+        ?work la:digitally_shown_by ?image .
+        ?image la:digitally_available_via/la:access_point ?IIIFimage
+    }"
+    number-of-displayed-rows="100"
+    tuple-template="{{> template }}"
+>
+    <template id="template">
+        <bs-panel>
+            <semantic-link
+                uri=":viewImage"
+                urlqueryparam-image="{{image.value}}"
+                >
+                <img src="{{IIIFimage.value}}/full/100,100/0/default.jpg">
+            </semantic-link>
+        </bs-panel>
+    </template>
+</semantic-table>
+[[> partial:contentFooter]]
