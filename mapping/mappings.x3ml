@@ -13,6 +13,7 @@
         <namespace prefix="dcterms" uri="http://purl.org/dc/terms/" />
         <namespace prefix="dc" uri="http://purl.org/dc/elements/1.1/" />
         <namespace prefix="la" uri="https://linked.art/ns/terms/"/>
+        <namespace prefix="rso" uri="http://www.researchspace.org/ontology/" />
     </namespaces>
     <mappings>
         <mapping>
@@ -255,6 +256,7 @@
                                 <relationship>la:access_point</relationship>
                                 <entity>
                                     <type>crmdig:D1_Digital_Object</type>
+                                    <type>rso:EX_Digital_Image</type>
                                     <instance_info>
                                         <constant/>
                                     </instance_info>
