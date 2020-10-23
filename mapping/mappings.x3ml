@@ -245,12 +245,11 @@
                     <target_node>
                         <entity>
                             <type>la:DigitalService</type>
-                            <instance_generator name="URIwithTypeSubtypeIdCounterAndSuffix">
+                            <instance_generator name="URIwithOneLevelIdHashed">
                                 <arg name="type" type="constant">artwork</arg>
                                 <arg name="id" type="xpath">../../uuid/text()</arg>
                                 <arg name="subtype" type="constant">image</arg>
-                                <arg name="position" type="position"/>
-                                <arg name="suffix" type="constant">iiif</arg>
+                                <arg name="subId_HASHED_CONTENTS">url/text()</arg>
                             </instance_generator>
                             <additional>
                                 <relationship>la:access_point</relationship>

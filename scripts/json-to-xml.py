@@ -30,15 +30,18 @@ def getImagesFromCachedManifest(manifest):
     if os.path.isfile(manifestFilePath):
         with open(manifestFilePath, 'r') as f:
             content = json.load(f)
-            canvases = [d for d in content['sequences'][0]['canvases']]
-            images = [{
-                'image': c['images'][0]['resource']['service']['@id'],
-                'width': c['width'],
-                'height': c['height']
-            } for c in canvases]
-            return images
+            if 'sequences' in content and len(content['sequences']) > 0:
+                canvases = [d for d in content['sequences'][0]['canvases']]
+                images = [{
+                    'image': c['images'][0]['resource']['service']['@id'],
+                    'width': c['width'],
+                    'height': c['height']
+                } for c in canvases]
+                return images
+            else:
+                print("No sequences found in manifest %s" % manifest)
     else:
-        print("Manifest for %s has not been cached" % row['UUID'])
+        print("Manifest %s has not been cached" % manifest)
     
 def imageListToXml(images):
     imagesNode = etree.Element("images")
@@ -61,13 +64,14 @@ for i, row in enumerate(rawData['rows']):
     records = etree.Element("records")
     record = convertRowToXml(row, keys)
     
-    images = getImagesFromCachedManifest(row['manifest'])
-    if images:
-        record.append(imageListToXml(images))
-    else:
-        print("Aborting due to missing manuscript")
-        print("%d out of %d converted" % (i, len(rawData['rows'])))
-        exit()
+    if row['manifest']:
+        images = getImagesFromCachedManifest(row['manifest'])
+        if images:
+            record.append(imageListToXml(images))
+        else:
+            #print("Aborting due to missing manuscript")
+            print("%d out of %d converted" % (i, len(rawData['rows'])))
+            #exit()
     
     records.append(record)
     
