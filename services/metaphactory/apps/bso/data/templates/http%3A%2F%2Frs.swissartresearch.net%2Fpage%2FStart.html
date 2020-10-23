@@ -2,28 +2,32 @@
 
 <h2>Images</h2>
 
-<semantic-table
-    query="SELECT ?s (SAMPLE(?image) as ?example) WHERE {
-        ?s a crm:E22_Man-Made_Object ;
-        OPTIONAL {
-            ?s crm:P128_carries/la:digitally_shown_by/la:digitally_available_via/la:access_point ?image .
-        }    
-    } GROUP BY ?s"
-    column-configuration='[ 
-        {
-            "variableName": "example", 
-            "displayName": "Image",
-            "cellTemplate": "{{> image }}"
-        },
-        {
-            "variableName": "s", 
-            "displayName": "Work"
-        }
-    ]'
->
-    <template id="image">
-        <img src="{{ example.value }}/pct:12,10,75,50/150,100/0/default.jpg">
-    </template>
-</semantic-table>
+<div class="imageList">
+    <semantic-table
+        query="SELECT ?s (SAMPLE(?image) as ?example) WHERE {
+            ?s a crm:E22_Man-Made_Object ;
+            OPTIONAL {
+                ?s crm:P128_carries/la:digitally_shown_by/la:digitally_available_via/la:access_point ?image .
+            }    
+        } GROUP BY ?s"
+        column-configuration='[ 
+            {
+                "variableName": "example", 
+                "displayName": "Image",
+                "cellTemplate": "{{> image }}"
+            },
+            {
+                "variableName": "s", 
+                "displayName": "Work"
+            }
+        ]'
+    >
+        <template id="image">
+            <bs-panel style="width:180px">
+                <img src="{{ example.value }}/pct:12,10,75,50/150,100/0/default.jpg">
+            </bs-panel>
+        </template>
+    </semantic-table>
+</div>
 
 [[> partial:contentFooter]]
