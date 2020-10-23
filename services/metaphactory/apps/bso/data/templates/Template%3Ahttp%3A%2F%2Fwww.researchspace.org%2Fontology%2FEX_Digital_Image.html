@@ -1,0 +1,10 @@
+[[> partial:contentHeader]]
+
+<div style="height: 700px">
+    <rs-iiif-mirador image-or-region="[[ this ]]"
+        image-id-pattern="BIND (REPLACE(STR(?imageIRI), '^(.*[/])', '') AS ?imageID)" 
+        iiif-server-url="[[singleValueFromSelect "SELECT ?server WHERE { BIND (REPLACE(STR(??), '([^/]+$)', '') AS ?server) }" ]]">
+    </rs-iiif-mirador>
+</div>
+
+[[> partial:contentFooter]]
