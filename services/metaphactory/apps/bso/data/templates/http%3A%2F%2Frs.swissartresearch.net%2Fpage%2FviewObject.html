@@ -2,14 +2,14 @@
 
 <semantic-query
     query="SELECT ?label WHERE {
-        ?? rdfs:label ?label .
+        <[[ urlParam 'objectiri' ]]> rdfs:label ?label .
     } LIMIT 1"
     template="{{#each bindings}}<h2>{{label.value}}</h2>{{/each}}"
 ></semantic-query>
 
 <semantic-table
     query="SELECT DISTINCT ?image ?IIIFimage WHERE {
-        ?? crm:P128_carries ?work .
+        <[[ urlParam 'objectiri' ]]> crm:P128_carries ?work .
         ?work la:digitally_shown_by ?image .
         ?image la:digitally_available_via/la:access_point ?IIIFimage
     }"
@@ -19,7 +19,8 @@
     <template id="template">
         <bs-panel>
             <semantic-link
-                uri="{{IIIFimage.value}}"
+                uri="[[ resolvePrefix 'page:viewImage']]"
+                urlqueryparam-imageiri="{{IIIFimage.value}}"
                 >
                 <img src="{{IIIFimage.value}}/full/300,300/0/default.jpg">
             </semantic-link>
