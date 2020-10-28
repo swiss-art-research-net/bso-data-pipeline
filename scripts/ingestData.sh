@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Takes two arguments
-# first: collections ttl file
-# second: resources ttl
 
 RECORDSFOLDER=/output
 
