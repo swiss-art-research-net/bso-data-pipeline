@@ -396,7 +396,7 @@
                     <if>
                         <equals value="264">@tag</equals>
                     </if>
-                    <entity>
+                    <entity variable="production">
                         <type>crm:E12_Production</type>
                         <instance_generator name="URIwithTypeSubtypeAndId">
                             <arg name="type" type="constant">artwork</arg>
@@ -486,6 +486,36 @@
                                 <arg name="subtype" type="constant">appellation</arg>
                                 <arg name="subId_HASHED_CONTENTS" type="xpath">text()</arg>
                             </instance_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>subfield</relation>
+                    </source_relation>
+                    <target_relation>
+                        <if>
+                            <equals value="c">@code</equals>
+                        </if>
+                        <relationship>crm:P4_has_time-span</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>subfield</source_node>
+                    <target_node>
+                        <entity>
+                            <type>crm:E52_Time-Span</type>
+                            <instance_generator name="URIwith2TypesAndId_hashed">
+                                <arg name="type1" type="constant">event</arg>
+                                <arg name="type2" type="constant">timespan</arg>
+                                <arg name="id" type="xpath">text()</arg>
+                            </instance_generator>
+                            <label_generator name="Literal">
+                                <arg name="text" type="xpath">text()</arg>
+                                <arg name="language" type="constant"/>
+                            </label_generator>
                         </entity>
                     </target_node>
                 </range>
