@@ -1,0 +1,10 @@
+DELETE {
+  GRAPH ?g {
+    ?s ?p ?o
+  }
+} WHERE {
+  GRAPH ?g {
+    ?s ?p ?o
+   }
+  FILTER(REGEX(STR(?g), "http://rs.swissartresearch.net/instances/fields") )
+};
