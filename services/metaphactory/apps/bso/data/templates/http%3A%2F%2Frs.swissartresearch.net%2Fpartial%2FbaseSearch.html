@@ -94,7 +94,36 @@
             <bs-tab event-key='1' title='Table'>
 
               <semantic-search-result>
-                <semantic-table query="SELECT ?subject WHERE {}" id="table-result"></semantic-table>
+                <semantic-table 
+                  id="table-result"
+                  query="SELECT ?subject (SAMPLE(?image) as ?example) WHERE {
+                    OPTIONAL {
+                      ?subject crm:P128_carries/la:digitally_shown_by/la:digitally_available_via/la:access_point ?image .
+                    }    
+                  } GROUP BY ?subject" 
+                  column-configuration='[ 
+                      {
+                          "variableName": "example", 
+                          "displayName": "Image",
+                          "cellTemplate": "{{> image }}"
+                      },
+                      {
+                          "variableName": "subject", 
+                          "displayName": "Work"
+                      }
+                  ]'
+                >
+                  <template id="image">
+                      <semantic-link
+                          uri="[[ resolvePrefix 'page:viewObject' ]]"
+                          urlqueryparam-objectiri="{{s.value}}"
+                      >
+                          <bs-panel style="width:160px">
+                              <img src="{{ example.value }}/pct:12,10,75,50/150,/0/default.jpg">
+                          </bs-panel>
+                      </semantic-link>
+                  </template>
+                </semantic-table>
               </semantic-search-result>
 
             </bs-tab>
