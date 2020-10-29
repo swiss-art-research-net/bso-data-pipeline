@@ -1,0 +1,36 @@
+
+<http://rs.swissartresearch.net/instances/fields/creator_of_object/context> {
+  <http://rs.swissartresearch.net/instances/fields/creator_of_object> <http://www.metaphacts.com/ontology/fields#insertPattern>
+      <http://rs.swissartresearch.net/instances/fields/creator_of_object/query/insert>;
+    <http://www.metaphacts.com/ontology/fields#selectPattern> <http://rs.swissartresearch.net/instances/fields/creator_of_object/query/select>;
+    <http://www.metaphacts.com/ontology/fields#xsdDatatype> <http://www.w3.org/2001/XMLSchema#anyURI>;
+    a <http://www.metaphacts.com/ontology/fields#Field>;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "The creator of the artwork";
+    <http://www.w3.org/2000/01/rdf-schema#label> "Creator" .
+  
+  <http://rs.swissartresearch.net/instances/fields/creator_of_object/query/insert> a <http://spinrdf.org/sp#Query> .
+  
+  <http://rs.swissartresearch.net/instances/fields/creator_of_object/query/delete> a <http://spinrdf.org/sp#Query> .
+  
+  <http://rs.swissartresearch.net/instances/fields/creator_of_object/query/insert> <http://spinrdf.org/sp#text>
+      """INSERT { 
+        ?creation crm:P14_carried_out_by $value .
+      } WHERE {
+        BIND(CONCAT(STR($subject), "/creation") as ?creation)
+}""" .
+  
+  <http://rs.swissartresearch.net/instances/fields/creator_of_object/query/select> a <http://spinrdf.org/sp#Query>;
+    <http://spinrdf.org/sp#text> """SELECT ?value ?label WHERE {
+      $subject crm:P128_carries/crm:P94_was_created_by/crm:P14_carried_out_by $value.
+      ?value rdfs:label ?label.
+    }""" .
+  
+  <http://rs.swissartresearch.net/instances/fields/creator_of_object> a <http://www.w3.org/ns/prov#Entity>;
+    <http://www.w3.org/ns/prov#wasAttributedTo> <http://www.metaphacts.com/resource/user/admin>;
+    <http://www.w3.org/ns/prov#generatedAtTime> "2020-04-06T13:49:20.948+03:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+  
+  <http://www.metaphacts.com/ontologies/platform#fieldDefinitionContainer> <http://www.w3.org/ns/ldp#contains>
+      <http://rs.swissartresearch.net/instances/fields/creator_of_object> .
+  
+  <http://rs.swissartresearch.net/instances/fields/creator_of_object> a <http://www.w3.org/ns/ldp#Resource> .
+}

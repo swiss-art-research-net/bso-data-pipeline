@@ -8,3 +8,5 @@ dcterms=http://purl.org/dc/terms/
 dc=http://purl.org/dc/elements/1.1/
 la=https://linked.art/ns/terms/
 rso=http://www.researchspace.org/ontology/
+crm=http://www.cidoc-crm.org/cidoc-crm/
+crmdig=http://www.ics.forth.gr/isl/CRMdig/
