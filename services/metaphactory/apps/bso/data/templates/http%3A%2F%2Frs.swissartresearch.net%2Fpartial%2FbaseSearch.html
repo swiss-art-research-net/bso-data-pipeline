@@ -1,0 +1,117 @@
+
+<style>
+    .facet-relations{
+        min-width: 200px;
+}
+</style>
+
+  <semantic-search
+    optimizer=blazegraph
+    search-profile='{
+      "categories": [
+        {"iri": "<http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object>", "label": "Thing", "thumbnail": "../images/fcs/things.svg"},
+        {"iri": "<http://www.cidoc-crm.org/cidoc-crm/E21_Person>", "label": "Actor", "thumbnail": "../images/fcs/actors.svg"},
+        {"iri": "<http://rs.swissartresearch.net/Place>", "label": "Place", "thumbnail": "../images/fcs/places.svg"},
+        {"iri": "<http://rs.swissartresearch.net/Time>", "label": "Time", "thumbnail": "../images/fcs/dates.svg"},
+        {"iri": "<http://rs.swissartresearch.net/Concept>", "label": "Concept", "thumbnail": "../images/fcs/concepts.svg"}
+      ],
+      "relations": [
+        {
+          "iri": "<http://rs.swissartresearch.net/Thing_by_Actor>",
+          "hasDomain": "<http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object>",
+          "hasRange": "<http://www.cidoc-crm.org/cidoc-crm/E21_Person>",
+          "label": "by"
+        },
+        {
+          "iri": "<http://rs.swissartresearch.net/Actor_is_creator_of_Thing>",
+          "hasDomain": "<http://www.cidoc-crm.org/cidoc-crm/E21_Person>",
+          "hasRange": "<http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object>",
+          "label": "is creator of"
+        }
+      ]
+    }'
+
+    categories='{
+      "<http://rs.swissartresearch.net/Time>": [{
+        "kind": "date-range"
+      }]
+    }'
+    relations='{
+      "<http://rs.swissartresearch.net/Thing_by_Actor>": [{
+        "kind": "resource",
+        "queryPattern": "
+          {
+            ?subject crm:P128_carries/crm:P94i_was_created_by/crm:P14_carried_out_by ?__value__ .
+          }
+        "
+      }],
+      "<http://rs.swissartresearch.net/Actor_is_creator_of_Thing>": [{
+        "kind": "resource",
+        "queryPattern": "
+          {
+            ?__value__ crm:P128_carries/crm:P94i_was_created_by/crm:P14_carried_out_by ?subject.
+          }
+        "
+      }]
+    }'
+  >
+    [[> @partial-block ]]
+  
+    <div data-flex-layout="row stretch-stretch">
+      <div data-flex-self="size-1of3" style="flex: 0 0 0;">
+        <semantic-search-facet
+          open-by-default=true
+          value-relations='{
+            "<http://www.cidoc-crm.org/cidoc-crm/P128_carries>": {
+              "kind": "date-range",
+              "valuesQuery": "
+                 SELECT ?dateBeginValue ?dateEndValue WHERE {
+                   ?subject crm:P128_carries/crm:P94i_was_created_by/crm:P4_has_time-span/crm:P82_at_some_time_within ?time .
+                   FILTER(STRLEN(?time) = 4) .
+                   BIND(STRDT(CONCAT(?time, \"-01-01\"), xsd:date) as ?dateBeginValue) .
+                   BIND(STRDT(CONCAT(?time, \"-01-01\"), xsd:date) as ?dateEndValue) .
+              } ORDER BY ?dateBeginValue"
+             }
+          }'
+          default-value-queries='{
+            "resource": "
+              SELECT ?value ?label (COUNT(DISTINCT $subject) AS ?count) WHERE {
+                FILTER(?__facetRelationPattern__)
+                {
+                  ?value (rdfs:label|crm:P3_has_note|crm:P82_at_some_time_within) ?label.
+                } UNION {
+                  ?value (crm:P1_is_identified_by/crm:P3_has_note) ?label.
+                }
+              } GROUP BY ?value ?label ORDER BY ?label
+            "
+          }'
+        ></semantic-search-facet>
+      </div>
+  
+      <semantic-search-result-holder>
+        <div data-flex-self="md-full">
+          <bs-tabs unmount-on-exit=true id='search-results' animation=false class='tabs-right'>
+            <bs-tab event-key='1' title='Table'>
+
+              <semantic-search-result>
+                <semantic-table query="SELECT ?subject WHERE {}" id="table-result"></semantic-table>
+              </semantic-search-result>
+
+            </bs-tab>
+          </bs-tabs>
+          <hr>
+          <div class="pull-right" style="display: flex;">
+            <semantic-search-result>
+              <mp-sparql-download id='csv-result' query="SELECT ?subject WHERE { }"
+                                  header="text/csv"
+                                  filename="csv-result.csv"
+                                  >
+                <button class="btn btn-default" style="margin-right:10px">Download CSV</button>
+              </mp-sparql-download>
+            </semantic-search-result>
+          </div>
+        </div>
+      </semantic-search-result-holder>
+    </div>
+  </semantic-search>
+  

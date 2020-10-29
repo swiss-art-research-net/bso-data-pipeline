@@ -1,0 +1,33 @@
+[[> partial:contentHeader]]
+
+
+[[#> partial:baseSearch]]
+  <semantic-search-query-builder
+    resource-selector='{
+      "query": "
+        prefix bds: <http://www.bigdata.com/rdf/search#>
+
+        SELECT DISTINCT ?suggestion ?label WHERE {
+          ?label bds:search ?__token__.
+          ?label bds:relevance ?score.
+          ?label bds:minRelevance \"0.5\".
+          ?label bds:matchAllTerms \"true\".
+          {
+            ?suggestion (rdfs:label|crm:P3_has_note|crm:P82_at_some_time_within) ?label.
+          } UNION {
+            ?suggestion (crm:P1_is_identified_by/crm:P3_has_note) ?label.
+          }
+          FILTER(EXISTS {
+            { FILTER(?__relationPattern__) }
+          })
+        }
+        ORDER BY DESC(?score)
+        LIMIT 30
+      ",
+      "suggestionTupleTemplate": "<span title=\"{{label.value}}\">{{label.value}}</span>",
+      "noSuggestionsTemplate": "<div class=\"suggestion-no-matches\">no matches found</div>"
+    }'
+  ></semantic-search-query-builder>
+[[/ partial:baseSearch]]
+
+[[> partial:contentFooter]]
