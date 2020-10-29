@@ -1,6 +1,5 @@
-<h2>Fields</h2>
 <mp-field-visualization
   subject="[[#if iri]][[iri]][[else]][[urlParam param]][[/if]]"
-  fields="[[fieldDefinitionsFromQuery 'SELECT ?field WHERE { Platform:fieldDefinitionContainer <http://www.w3.org/ns/ldp#contains> ?field . ?field <http://www.metaphacts.com/ontology/fields#domain>/rdfs:subClassOf* crm:E1_CRM_Entity. ?field rdfs:label ?label.} order by ?label']]"
+  fields="[[fieldDefinitionsFromQuery 'SELECT ?field WHERE { Platform:fieldDefinitionContainer <http://www.w3.org/ns/ldp#contains> ?field . ?field rdfs:label ?label.} order by ?label']]"
   template="{{> partial:fieldBasedVisualisation subject='[[#if iri]][[iri]][[else]][[urlParam param]][[/if]]'}}"
 ></mp-field-visualization>

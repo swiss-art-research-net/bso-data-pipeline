@@ -7,6 +7,8 @@
     template="{{#each bindings}}<h2>{{label.value}}</h2>{{/each}}"
 ></semantic-query>
 
+[[> partial:fieldsTable param="objectiri" ]]
+
 <semantic-table
     query="SELECT DISTINCT ?image ?IIIFimage WHERE {
         <[[ urlParam 'objectiri' ]]> crm:P128_carries ?work .
