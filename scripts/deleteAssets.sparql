@@ -6,5 +6,5 @@ DELETE {
   GRAPH ?g {
     ?s ?p ?o
    }
-  FILTER(REGEX(STR(?g), "http://rs.swissartresearch.net/instances/fields") )
+  FILTER(REGEX(STR(?g), "http://rs.swissartresearch.net/instances/fields/") )
 };
