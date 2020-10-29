@@ -1,0 +1,16 @@
+<dl>
+  {{#each fields as |field|}}
+  {{#if field.values}}
+    <dt>
+      {{#each field.label as |l|}}
+        {{ l.value }}
+      {{/each}}
+    </dt>
+    {{#each field.values as |value|}}
+      <dd>
+        {{> partial:fieldValueVisualisation field=field value=value }}
+      </dd>
+    {{/each}}
+  {{/if}}
+  {{/each}}
+</dl>
