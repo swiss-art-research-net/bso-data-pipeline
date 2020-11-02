@@ -3,7 +3,6 @@
 /output/*.ttl
 !/input/.gitkeep
 .ipynb_checkpoints
-*.ipynb
 /manifests
 !/manifests/.gitkeep
 local-scripts
