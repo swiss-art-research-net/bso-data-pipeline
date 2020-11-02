@@ -18,10 +18,6 @@
 	<generator name="URIwithTypeAndId" prefix="sari">
 		<pattern>{type}/{id}</pattern>
 	</generator>
-		
-	<generator name="URIwithTypeAndId_hashed" prefix="sari" shorten="true">
-		<pattern>{type}/{id}</pattern>
-	</generator>
 
 	<generator name="URIwith2TypesAndId" prefix="sari">
 		<pattern>{type1}/{type2}/{id}</pattern>
@@ -49,6 +45,13 @@
 			<set-arg name="id"/>
 			<set-arg name="subtype"/>
 			<set-arg name="subId_HASHED_CONTENTS"/>
+        </custom>
+    </generator>
+
+	<generator name="URIwithTypeAndId_hashed" prefix="sari">
+        <custom generatorClass="gr.forth.MultiHashingGenerator">
+            <set-arg name="type"/>
+			<set-arg name="id_HASHED_CONTENTS"/>
         </custom>
     </generator>
 

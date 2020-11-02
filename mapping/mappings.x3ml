@@ -357,7 +357,7 @@
                             <type>crm:E21_Person</type>
                             <instance_generator name="URIwithTypeAndId_hashed">
                                 <arg name="type" type="constant">person</arg>
-                                <arg name="id" type="xpath">text()</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">text()</arg>
                             </instance_generator>
                             <label_generator name="Literal">
                                 <arg name="text" type="xpath">text()</arg>
@@ -393,7 +393,7 @@
                             <type>crm:E74_Group</type>
                             <instance_generator name="URIwithTypeAndId_hashed">
                                 <arg name="type" type="constant">group</arg>
-                                <arg name="id" type="xpath">text()</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">text()</arg>
                             </instance_generator>
                             <label_generator name="Literal">
                                 <arg name="text" type="xpath">text()</arg>
@@ -415,7 +415,7 @@
                         <type>crm:E21_Person</type>
                         <instance_generator name="URIwithTypeAndId_hashed">
                             <arg name="type" type="constant">person</arg>
-                            <arg name="id" type="xpath">subfield[@code='a']/text()</arg>
+                            <arg name="id_HASHED_CONTENTS" type="xpath">subfield[@code='a']/text()</arg>
                         </instance_generator>
                         <label_generator name="Literal">
                             <arg name="text" type="xpath">subfield[@code='a']/text()</arg>
@@ -687,7 +687,7 @@
                             <type>crm:E53_Place</type>
                             <instance_generator name="URIwithTypeAndId_hashed">
                                 <arg name="type" type="constant">place</arg>
-                                <arg name="id" type="xpath">text()</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">text()</arg>
                             </instance_generator>
                             <label_generator name="Literal">
                                 <arg name="text" type="xpath">text()</arg>
@@ -731,7 +731,7 @@
                             <type>crm:E21_Person</type>
                             <instance_generator name="URIwithTypeAndId_hashed">
                                 <arg name="type" type="constant">person</arg>
-                                <arg name="id" type="xpath">text()</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">text()</arg>
                             </instance_generator>
                             <label_generator name="Literal">
                                 <arg name="text" type="xpath">text()</arg>
