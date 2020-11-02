@@ -335,7 +335,14 @@
                     </source_relation>
                     <target_relation>
                         <if>
-                            <equals value="a">@code</equals>
+                            <and>
+                                <if>
+                                    <equals value="a">@code</equals>
+                                </if>
+                                <if>
+                                    <equals value="">../subfield[@code='c']/text()</equals>
+                                </if>
+                            </and>
                         </if>
                         <relationship>crm:P1_is_identified_by</relationship>
                         <entity>
@@ -359,6 +366,92 @@
                                     </instance_generator>
                                 </entity>
                             </additional>
+                            <additional>
+                                <relationship>crm:P2_has_type</relationship>
+                                <entity>
+                                    <type>crm:E55_Type</type>
+                                    <instance_info>
+                                        <constant/>
+                                    </instance_info>
+                                    <instance_generator name="URIorUUID">
+                                        <arg name="text" type="constant">http://vocab.getty.edu/aat/300266386</arg>
+                                    </instance_generator>
+                                </entity>
+                            </additional>
+                        </entity>
+                        <relationship>rdfs:label</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>subfield</source_node>
+                    <target_node>
+                        <entity>
+                            <type>rdfs:Literal</type>
+                            <instance_generator name="Literal">
+                                <arg name="text" type="xpath">text()</arg>
+                                <arg name="language" type="constant"/>
+                            </instance_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>subfield</relation>
+                    </source_relation>
+                    <target_relation>
+                        <if>
+                            <and>
+                                <if>
+                                    <equals value="a">@code</equals>
+                                </if>
+                                <if>
+                                    <not>
+                                        <if>
+                                            <equals value="">../subfield[@code='c']/text()</equals>
+                                        </if>
+                                    </not>
+                                </if>
+                            </and>
+                        </if>
+                        <relationship>crm:P1_is_identified_by</relationship>
+                        <entity>
+                            <type>crm:E41_Appellation</type>
+                            <type>crm:E33_Linguistic_Object</type>
+                            <instance_generator name="URIwithTwoLevelIdHashed">
+                                <arg name="type" type="constant">person</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">text()</arg>
+                                <arg name="subtype" type="constant">appellation</arg>
+                                <arg name="subId_HASHED_CONTENTS" type="xpath">text()</arg>
+                            </instance_generator>
+                            <label_generator name="Literal">
+                                <arg name="text" type="xpath">concat(text(),', ',../subfield[@code='c']/text())</arg>
+                                <arg name="language" type="constant"/>
+                            </label_generator>
+                            <additional>
+                                <relationship>crm:P2_has_type</relationship>
+                                <entity>
+                                    <type>crm:E55_Type</type>
+                                    <instance_info>
+                                        <constant/>
+                                    </instance_info>
+                                    <instance_generator name="URIorUUID">
+                                        <arg name="text" type="constant">http://vocab.getty.edu/aat/300404670</arg>
+                                    </instance_generator>
+                                </entity>
+                            </additional>
+                        </entity>
+                        <relationship>crm:P106_is_composed_of</relationship>
+                        <entity>
+                            <type>crm:E33_Linguistic_Object</type>
+                            <type>crm:E41_Appellation</type>
+                            <instance_generator name="URIwithTwoLevelIdHashed">
+                                <arg name="type" type="constant">person</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">text()</arg>
+                                <arg name="subtype" type="constant">appellation</arg>
+                                <arg name="subId_HASHED_CONTENTS" type="xpath">../subfield[@code='c']/text()</arg>
+                            </instance_generator>
                             <additional>
                                 <relationship>crm:P2_has_type</relationship>
                                 <entity>
