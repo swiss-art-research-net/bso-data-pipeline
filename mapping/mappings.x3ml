@@ -607,6 +607,60 @@
                 <source_node>/records/record/datafield</source_node>
                 <target_node>
                     <if>
+                        <equals value="110">@tag</equals>
+                    </if>
+                    <entity variable="artist_or_creator_group">
+                        <type>crm:E74_Group</type>
+                        <instance_generator name="UUID"/>
+                    </entity>
+                </target_node>
+            </domain>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>subfield</relation>
+                    </source_relation>
+                    <target_relation>
+                        <if>
+                            <equals value="a">@code</equals>
+                        </if>
+                        <relationship>crm:P1_is_identified_by</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>subfield</source_node>
+                    <target_node>
+                        <entity>
+                            <type>crm:E41_Appellation</type>
+                            <type>crm:E33_Linguistic_Object</type>
+                            <instance_generator name="URIwithTwoLevelIdHashed">
+                                <arg name="type" type="constant">group</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">text()</arg>
+                                <arg name="subtype" type="constant">appellation</arg>
+                                <arg name="subId_HASHED_CONTENTS" type="xpath">text()</arg>
+                            </instance_generator>
+                            <additional>
+                                <relationship>crm:P2_has_type</relationship>
+                                <entity>
+                                    <type>crm:E55_Type</type>
+                                    <instance_info>
+                                        <constant/>
+                                    </instance_info>
+                                    <instance_generator name="URIorUUID">
+                                        <arg name="text" type="constant">http://vocab.getty.edu/aat/300404670</arg>
+                                    </instance_generator>
+                                </entity>
+                            </additional>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+        </mapping>
+        <mapping>
+            <domain>
+                <source_node>/records/record/datafield</source_node>
+                <target_node>
+                    <if>
                         <equals value="264">@tag</equals>
                     </if>
                     <entity variable="production">
