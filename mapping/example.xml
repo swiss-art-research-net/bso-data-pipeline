@@ -369,37 +369,41 @@
         </images>
     </record>
     <record>
-        <uuid>ea220f4b-c0b9-4244-817d-3ade1734cd4c</uuid>
-        <datafield tag="001">005146199</datafield>
-        <datafield tag="007">ki\\\\;cr\|||||||||||</datafield>
-        <datafield tag="008">060109s1751\\\\sz\\\\\\\\\\\\\\\\i\zxx\d</datafield>
+        <uuid>0ddbc7bf-19ef-4326-9b17-ef0765f9f35b</uuid>
+        <datafield tag="001">010864667</datafield>
+        <datafield tag="007">ki\|||;cr\|||||||||||</datafield>
+        <datafield tag="008">161109s1887\\\\sz\|||\|\\\\\||\\\i|zxx\d</datafield>
         <datafield tag="024">
             <subfield code="2">doi</subfield>
-            <subfield code="a">10.7891/e-manuscripta-58785</subfield>
+            <subfield code="a">10.3931/e-rara-57647</subfield>
             <subfield code="a"></subfield>
         </datafield>
+        <datafield tag="110">
+            <subfield code="1">(DE-588)1030357439</subfield>
+            <subfield code="4">pht</subfield>
+            <subfield code="a">Polygraphisches Institut A.-G.</subfield>
+            <subfield code="e">Fotograf</subfield>
+            <subfield code="g"></subfield>
+        </datafield>
         <datafield tag="245">
-            <subfield code="a">Prospect bey dem obern Gyrenbad, gegen dem Glarnerland</subfield>
-            <subfield code="b">nach der Natur gezeichnet</subfield>
-            <subfield code="c">nach Felix Meyer gezeichnet ; von Johann Caspar Füessli</subfield>
-            <subfield code="h">Bildmaterial</subfield>
+            <subfield code="a">[Krematorium im Friedhof Sihlfeld]</subfield>
+            <subfield code="b"></subfield>
+            <subfield code="c">Photogr. Aufnahme und Druck: Polygraphisches Institut Zürich</subfield>
+            <subfield code="h"></subfield>
             <subfield code="n"></subfield>
             <subfield code="p"></subfield>
             <subfield code="a"></subfield>
             <subfield code="c"></subfield>
         </datafield>
-        <datafield tag="260">
-            <subfield code="a">[Schweiz]</subfield>
-            <subfield code="b"></subfield>
-            <subfield code="c">1751</subfield>
-            <subfield code="e"></subfield>
-            <subfield code="f"></subfield>
-            <subfield code="g"></subfield>
+        <datafield tag="264">
+            <subfield code="a">Zürich</subfield>
+            <subfield code="b">Polygraphisches Institut</subfield>
+            <subfield code="c">[nicht vor 1887]</subfield>
         </datafield>
         <datafield tag="300">
-            <subfield code="a">1 Zeichnung</subfield>
-            <subfield code="b">Feder in Schwarz und Grau, grau laviert</subfield>
-            <subfield code="c">Bild 18,3 x 32,2 cm, Blatt 21,3 x 32,2 cm</subfield>
+            <subfield code="a">1 Druckgrafik</subfield>
+            <subfield code="b">Lichtdruck</subfield>
+            <subfield code="c">17,3 x 23 cm</subfield>
             <subfield code="e"></subfield>
         </datafield>
         <datafield tag="336">
@@ -409,72 +413,59 @@
         </datafield>
         <datafield tag="337">
             <subfield code="2">rdamedia;\\ | rdamedia</subfield>
-            <subfield code="a">Computermedien | ohne Hilfsmittel zu benutzen</subfield>
-            <subfield code="b">c | n</subfield>
+            <subfield code="a">ohne Hilfsmittel zu benutzen | Computermedien</subfield>
+            <subfield code="b">n | c</subfield>
         </datafield>
         <datafield tag="338">
             <subfield code="2">rdacarrier;\\ | rdacarrier</subfield>
             <subfield code="a">Blatt | Online-Ressource</subfield>
             <subfield code="b">nb | cr</subfield>
         </datafield>
-        <datafield tag="500">
+        <datafield tag="340">
+            <subfield code="a">Papier</subfield>
+            <subfield code="b">21 x 26,8 cm</subfield>
+            <subfield code="c"></subfield>
+            <subfield code="e"></subfield>
+            <subfield code="i"></subfield>
             <subfield code="5"></subfield>
-            <subfield code="a">Titel des Werkes oben in schwarzer Tinte, unten vom Künstler eigenhändig signiert</subfield>
+            <subfield code="a"></subfield>
         </datafield>
         <datafield tag="520">
-            <subfield code="a">Blick auf die hügelige Landschaft um Girenbad im Kanton Zürich gegen Kanton Glarus</subfield>
+            <subfield code="a">Krematorium im Friedhof Sihlfeld (Zentralfriedhof) an der Aemtlerstrasse 149-151; in Etappen 1877 (Teil A), 1888 (Teil B, 1969 aufgehoben), 1902 (Teil C) und 1912 (Teil D) angelegt; Teil A von Stadtbaumeister Arnold Geiser; 1887, nachdem der Streit um Erd- oder Feuerbestattung entschieden ist, Bau des Krematoriums von A. Geiser</subfield>
         </datafield>
-        <datafield tag="590">\\$aAus der Sammlung Steinfels (Eingang 1925);\\$aBlatt fleckig</datafield>
         <datafield tag="651">
-            <subfield code="1">(DE-588)4021139-3 | (DE-588)1064280676</subfield>
-            <subfield code="2">gnd;\7 | gnd</subfield>
-            <subfield code="a">Glarus | Girenbad bei Turbenthal</subfield>
-            <subfield code="g"></subfield>
+            <subfield code="1">(DE-588)4742182-4 | (DE-588)1062518020 | (DE-588)4325071-3</subfield>
+            <subfield code="2">gnd;\7 | gnd;\7 | gnd</subfield>
+            <subfield code="a">Friedhof Sihlfeld | Zürich-Sihlfeld | Zürich-Wiedikon</subfield>
+            <subfield code="g">Zürich</subfield>
             <subfield code="x"></subfield>
             <subfield code="z"></subfield>
         </datafield>
         <datafield tag="655">
-            <subfield code="2">gnd;\7 | gnd-content</subfield>
-            <subfield code="a">Bildliche Darstellung | Zeichnung</subfield>
+            <subfield code="2">gnd-content</subfield>
+            <subfield code="a">Bild</subfield>
         </datafield>
-        <datafield tag="695">ZG$aAnsicht [Formschlagwort Sondersammlungen]</datafield>
-        <datafield tag="700">
-            <subfield code="1">(DE-588)117752266;1\ | (DE-588)139148213;1\ | (DE-588)129453560</subfield>
-            <subfield code="2"></subfield>
-            <subfield code="4">fmo</subfield>
-            <subfield code="5"></subfield>
-            <subfield code="a">Füssli, Johann Caspar | Meyer, Felix | Steinfels, Friedrich</subfield>
-            <subfield code="c"></subfield>
-            <subfield code="d">1706-1782 | 1653-1713 | 1808-1872</subfield>
-            <subfield code="e">früherer Eigentümer</subfield>
-            <subfield code="g"></subfield>
-        </datafield>
+        <datafield tag="695">ZG$aLichtdruck (Druckverfahren) [Formschlagwort Sondersammlungen];ZG$aAnsicht [Formschlagwort Sondersammlungen]</datafield>
         <datafield tag="852">
             <subfield code="a"></subfield>
             <subfield code="b">Z02 | Z01</subfield>
-            <subfield code="c">GSB | OL</subfield>
+            <subfield code="c">GSM | OL</subfield>
             <subfield code="h"></subfield>
-            <subfield code="j">STF Füssli, Johann Caspar VII 84</subfield>
-            <subfield code="p">ZD401858 | ZD3489971</subfield>
+            <subfield code="j">Zürich 3.1, Zentralfriedhof I, 4</subfield>
+            <subfield code="p">ZD3414340 | ZD3443346</subfield>
         </datafield>
         <datafield tag="856">
-            <subfield code="u">http://dx.doi.org/10.7891/e-manuscripta-58785</subfield>
-            <subfield code="z">Digitalisat in e-manuscripta</subfield>
+            <subfield code="u">http://dx.doi.org/10.3931/e-rara-57647</subfield>
+            <subfield code="x">Z01</subfield>
+            <subfield code="z">Online via e-rara.ch</subfield>
         </datafield>
-        <datafield tag="901">6\$aSteinfels, Friedrich$d1808-1872$1(DE-588)129453560</datafield>
-        <datafield tag="906">\\$iVM Bild = Image</datafield>
-        <datafield tag="993">
-            <subfield code="9">LOCAL</subfield>
-            <subfield code="a">000001621</subfield>
-            <subfield code="x">uzb-ZG</subfield>
-        </datafield>
-        <datafield tag="UUID">ea220f4b-c0b9-4244-817d-3ade1734cd4c</datafield>
-        <datafield tag="manifest">https://www.e-manuscripta.ch/i3f/v20/1753013/manifest</datafield>
+        <datafield tag="UUID">0ddbc7bf-19ef-4326-9b17-ef0765f9f35b</datafield>
+        <datafield tag="manifest">https://www.e-rara.ch/i3f/v20/15554861/manifest</datafield>
         <images>
             <image>
-                <height>4551</height>
-                <width>5331</width>
-                <url type="iiif">https://www.e-manuscripta.ch/zuzneb/i3f/v20/1753014</url>
+                <height>4452</height>
+                <width>4380</width>
+                <url type="iiif">https://www.e-rara.ch/zuz/i3f/v20/15554862</url>
             </image>
         </images>
     </record>
