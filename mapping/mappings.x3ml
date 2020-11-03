@@ -403,6 +403,58 @@
                     </target_node>
                 </range>
             </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>subfield</relation>
+                    </source_relation>
+                    <target_relation>
+                        <if>
+                            <and>
+                                <if>
+                                    <equals value="4">@code</equals>
+                                </if>
+                                <if>
+                                    <equals value="110">../@tag</equals>
+                                </if>
+                            </and>
+                        </if>
+                        <relationship>crm:P9_consists_of</relationship>
+                        <entity variable="creation_role_110_4">
+                            <type>crm:E65_Creation</type>
+                            <instance_generator name="URIwithTypeSubtypeIdAndCounter">
+                                <arg name="type" type="constant">artwork</arg>
+                                <arg name="id" type="xpath">../../uuid/text()</arg>
+                                <arg name="subtype" type="constant">subcreation</arg>
+                                <arg name="position" type="position" />
+                            </instance_generator>
+                            <additional>
+                                <relationship>crm:P2_has_type</relationship>
+                                <entity>
+                                    <type>crm:E55_Type</type>
+                                    <instance_info>
+                                        <constant/>
+                                    </instance_info>
+                                    <instance_generator name="URIwithTypeAndId">
+                                        <arg name="type" type="constant">role</arg>
+                                        <arg name="id" type="xpath">text()</arg>
+                                    </instance_generator>
+                                </entity>
+                            </additional>
+                        </entity>
+                        <relationship>crm:P14_carried_out_by</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>subfield</source_node>
+                    <target_node>
+                        <entity variable="artist_or_creator_group">
+                            <type>crm:E74_Group</type>
+                            <instance_generator name="UUID"/>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
         </mapping>
         <mapping>
             <domain>
