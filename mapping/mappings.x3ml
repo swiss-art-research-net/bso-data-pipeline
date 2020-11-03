@@ -306,6 +306,49 @@
                     </target_node>
                 </range>
             </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>datafield</relation>
+                    </source_relation>
+                    <target_relation>
+                        <if>
+                            <equals value="245">@tag</equals>
+                        </if>
+                        <relationship>crm:P1_is_identified_by</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>datafield</source_node>
+                    <target_node>
+                        <entity variable="title_statement">
+                            <type>crm:E41_Appellation</type>
+                            <type>crm:E33_Linguistic_Object</type>
+                            <instance_generator name="URIwithTypeSubtypeAndId">
+                                <arg name="type" type="constant">artwork</arg>
+                                <arg name="id" type="xpath">../uuid/text()</arg>
+                                <arg name="subtype" type="constant">title</arg>
+                            </instance_generator>
+                            <label_generator name="Literal">
+                                <arg name="text" type="xpath">if (./subfield[@code='c']!='') then concat(./subfield[@code='a']/text(), ': ', ./subfield[@code='b']/text()) else (./subfield[@code='a']/text())</arg>
+                                <arg name="language" type="constant"/>
+                            </label_generator>
+                            <additional>
+                                <relationship>crm:P2_has_type</relationship>
+                                <entity>
+                                    <type>crm:E55_Type</type>
+                                    <instance_info>
+                                        <constant/>
+                                    </instance_info>
+                                    <instance_generator name="URIorUUID">
+                                        <arg name="text" type="constant">http://vocab.getty.edu/aat/300417209</arg>
+                                    </instance_generator>
+                                </entity>
+                            </additional>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
         </mapping>
         <mapping>
             <domain>
@@ -415,58 +458,6 @@
                                     <equals value="4">@code</equals>
                                 </if>
                                 <if>
-                                    <equals value="100">../@tag</equals>
-                                </if>
-                            </and>
-                        </if>
-                        <relationship>crm:P9_consists_of</relationship>
-                        <entity variable="creation_role_110_4">
-                            <type>crm:E65_Creation</type>
-                            <instance_generator name="URIwithTypeSubtypeIdAndCounter">
-                                <arg name="type" type="constant">artwork</arg>
-                                <arg name="id" type="xpath">../../uuid/text()</arg>
-                                <arg name="subtype" type="constant">subcreation</arg>
-                                <arg name="position" type="position" />
-                            </instance_generator>
-                            <additional>
-                                <relationship>crm:P2_has_type</relationship>
-                                <entity>
-                                    <type>crm:E55_Type</type>
-                                    <instance_info>
-                                        <constant/>
-                                    </instance_info>
-                                    <instance_generator name="URIwithTypeAndId">
-                                        <arg name="type" type="constant">role</arg>
-                                        <arg name="id" type="xpath">text()</arg>
-                                    </instance_generator>
-                                </entity>
-                            </additional>
-                        </entity>
-                        <relationship>crm:P14_carried_out_by</relationship>
-                    </target_relation>
-                </path>
-                <range>
-                    <source_node>subfield</source_node>
-                    <target_node>
-                        <entity variable="artist_or_creator">
-                            <type>crm:E21_Person</type>
-                            <instance_generator name="UUID"/>
-                        </entity>
-                    </target_node>
-                </range>
-            </link>
-            <link>
-                <path>
-                    <source_relation>
-                        <relation>subfield</relation>
-                    </source_relation>
-                    <target_relation>
-                        <if>
-                            <and>
-                                <if>
-                                    <equals value="4">@code</equals>
-                                </if>
-                                <if>
                                     <equals value="110">../@tag</equals>
                                 </if>
                             </and>
@@ -475,10 +466,10 @@
                         <entity variable="creation_role_110_4">
                             <type>crm:E65_Creation</type>
                             <instance_generator name="URIwithTypeSubtypeIdAndCounter">
-                                <arg name="type" type="constant">artwork</arg>
+                                <arg name="type" type="xpath">artwork</arg>
                                 <arg name="id" type="xpath">../../uuid/text()</arg>
-                                <arg name="subtype" type="constant">subcreation</arg>
-                                <arg name="position" type="position" />
+                                <arg name="subtype" type="xpath">subcreation</arg>
+                                <arg name="position" type="position"/>
                             </instance_generator>
                             <additional>
                                 <relationship>crm:P2_has_type</relationship>
@@ -911,6 +902,55 @@
                                 <arg name="text" type="xpath">text()</arg>
                                 <arg name="language" type="constant"/>
                             </label_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+        </mapping>
+        <mapping>
+            <domain>
+                <source_node>/records/record/datafield</source_node>
+                <target_node>
+                    <if>
+                        <equals value="245">@tag</equals>
+                    </if>
+                    <entity variable="title_statement">
+                        <type>crm:E41_Appellation</type>
+                        <type>crm:E33_Linguistic_Object</type>
+                        <instance_generator name="UUID"/>
+                    </entity>
+                </target_node>
+            </domain>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>subfield</relation>
+                    </source_relation>
+                    <target_relation>
+                        <if>
+                            <and>
+                                <if>
+                                    <equals value="b">@code</equals>
+                                </if>
+                                <if>
+                                    <not>
+                                        <if>
+                                            <equals value="">text()</equals>
+                                        </if>
+                                    </not>
+                                </if>
+                            </and>
+                        </if>
+                        <relationship>crm:P106_is_composed_of</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>subfield</source_node>
+                    <target_node>
+                        <entity>
+                            <type>crm:E33_Linguistic_Object</type>
+                            <type>crm:E41_Appellation</type>
+                            <instance_generator name="UUID"/>
                         </entity>
                     </target_node>
                 </range>
