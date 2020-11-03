@@ -1,29 +1,29 @@
-Format,Appearances,Example
-____-____,268,1818-1838
-___-___,46,747-814
-ca. Anfang _. Jh.,10,ca. Anfang 4. Jh. 
--____,10,-1309
--___,8,-300
-ca. _./_. Jh.,7, ca. 3./4. Jh.
-ca. _. Jh.,7,ca. 7. Jh.
-ca. _. Jh. v.Chr.,4,ca. 1. Jh. v.Chr. 
-ca. _.Jh.v.Chr.,3,ca. 1.Jh.v.Chr.
-ca. v_. Jh. - _. Jh.,3, ca. v1. Jh. - 1. Jh.
-ca. um ___/__,3,ca. um 889/94
-ca. -_. Jh.,2,ca. -7. Jh.
-ca. Ende _. Jh./Anfang _. Jh.,2,ca. Ende 3. Jh./Anfang 4. Jh.
-__❓-____,2,18XX-1944
-____/____-____,2,1290/1300-1360
-____-____;ZG,1,1647-1709;ZG 
-v___-v__,1,v100-v44
-ca. ___-___,1,ca. 453-526
-❓❓-____,1,XXXX-1558
-__-__,1,14-62
-ca. seit ____,1,ca. seit 1685
-____-,1,1863- 
-ca. __./__. Jahrhundert,1, ca. 13./14. Jahrhundert
-v__-v__,1,v87-v15
-v_-__,1,v1-29 
-ca. ___-ca. ___,1,ca. 456-ca. 531 
-ca. ?-___,1, ca. ?-249
-___-____,1,981-1055 
+Format,Appearances,Example,Interpretation
+____-____,268,1818-1838,1818/1838
+___-___,46,747-814,
+ca. Anfang _. Jh.,10,ca. Anfang 4. Jh. ,
+-____,10,-1309,
+-___,8,-300,
+ca. _./_. Jh.,7, ca. 3./4. Jh.,
+ca. _. Jh.,7,ca. 7. Jh.,
+ca. _. Jh. v.Chr.,4,ca. 1. Jh. v.Chr. ,
+ca. _.Jh.v.Chr.,3,ca. 1.Jh.v.Chr.,
+ca. v_. Jh. - _. Jh.,3, ca. v1. Jh. - 1. Jh.,
+ca. um ___/__,3,ca. um 889/94,
+ca. -_. Jh.,2,ca. -7. Jh.,
+ca. Ende _. Jh./Anfang _. Jh.,2,ca. Ende 3. Jh./Anfang 4. Jh.,
+__❓-____,2,18XX-1944,
+____/____-____,2,1290/1300-1360,1290/1300/1360
+____-____;ZG,1,1647-1709;ZG ,1647/1709
+v___-v__,1,v100-v44,
+ca. ___-___,1,ca. 453-526,
+❓❓-____,1,XXXX-1558,
+__-__,1,14-62,
+ca. seit ____,1,ca. seit 1685,
+____-,1,1863- ,
+ca. __./__. Jahrhundert,1, ca. 13./14. Jahrhundert,
+v__-v__,1,v87-v15,
+v_-__,1,v1-29 ,
+ca. ___-ca. ___,1,ca. 456-ca. 531 ,
+ca. ?-___,1, ca. ?-249,
+___-____,1,981-1055 ,

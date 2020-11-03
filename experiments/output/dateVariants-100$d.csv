@@ -1,14 +1,14 @@
-Format,Appearances,Example
-____-____,5456,1828-1870
-____-,20,1803-
-____-❓❓,10,1800-XXXX
-ca. __./__. Jahrhundert,7,ca. 19./20. Jahrhundert
-ca. __. Jh.-__. Jh.,6,ca. 19. Jh.-20. Jh.
-__./__. Jht.,4,15./16. Jht.
-__.__.____-__.__.____,3,26.09.1810-15.07.1882
-__. Jht.,2,17. Jht.
-____?-____,2,1779?-1847
-<<Das>> Schloss Mörsburg,1,<<Das>> Schloss Mörsburg
-erwähnt ____-____,1,erwähnt 1840-1852
-ca. _. Hälfte __. Jh.,1,ca. 1. Hälfte 18. Jh.
--____,1,-1906
+Format,Appearances,Example,Interpretation
+____-____,5456,1828-1870,1828/1870
+____-,20,1803-,
+____-❓❓,10,1800-XXXX,
+ca. __./__. Jahrhundert,7,ca. 19./20. Jahrhundert,
+ca. __. Jh.-__. Jh.,6,ca. 19. Jh.-20. Jh.,
+__./__. Jht.,4,15./16. Jht.,
+__.__.____-__.__.____,3,26.09.1810-15.07.1882,
+__. Jht.,2,17. Jht.,
+____?-____,2,1779?-1847,1779?/1847
+<<Das>> Schloss Mörsburg,1,<<Das>> Schloss Mörsburg,
+erwähnt ____-____,1,erwähnt 1840-1852,1840/1852
+ca. _. Hälfte __. Jh.,1,ca. 1. Hälfte 18. Jh.,
+-____,1,-1906,
