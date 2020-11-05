@@ -1,368 +1,368 @@
 Format,Appearances,Example,Interpretation
-____,2725,1751,"1751, singleYearWithQualifier"
-zwischen ____ und ____,2113,[zwischen 1854 und 1861],"1854/1861, yearRangeWithQualifier"
-ca. ____,931,[ca. 1838],"1838?, singleYearWithQualifier"
-zwischen ____ und ____?,298,[zwischen 1730 und 1775?],"1730/1775?, yearRangeWithQualifier"
-__ 🌕 __ i.e. __._.____,282,31 Aug. 05 [i.e. 31.8.1905],"31.8.1905, singleDate"
-vor ____,128,[vor 1857],"/1857, beforeYearWithQualifier"
-__ 🌕 ____,117,13 July 1844,"13.7.1844, fullDateWithMonthInLangOrRoman"
-_ 🌕 __ i.e. _._.____,117,5 IV 90 [i.e. 5.4.1890],"5.4.1890, singleDate"
-ca. ____?,115,[ca. 1850?],"1850?, singleYearWithQualifier"
-__ 🌕__ i.e. __._.____,115,29 Aug 08 [i.e. 29.8.1908],"29.8.1908, singleDate"
-🌕 ____,91,[Mai 1843],"5.1843, monthAndYearWithMonthInLangOrRoman"
-_ 🌕 ____,71,4 Oct [18]71,"4.10.1871, fullDateWithMonthInLangOrRoman"
-__ 🌕. __ i.e. __._.____,57,31 V. 89 [i.e. 31.5.1889],"31.5.1889, singleDate"
-_ 🌕__ i.e. _._.____,52,1 Sept 61 [i.e. 1.9.1861],"1.9.1861, singleDate"
-nach ____,48,[nach 1898],"1898/, afterYearWithQualifier"
-um ____,42,[um 1770],"1770?, singleYearWithQualifier"
-__--?,39,[18--?],
-__--,38,[18--],
-_ 🌕 __ i.e. _.__.____,36,4 X 89 [i.e. 4.10.1889],"4.10.1889, singleDate"
-__ 🌕 __ i.e. __.__.____,32,31 VIII 09 [i.e. 31.08.1909],"31.08.1909, singleDate"
-_ 🌕. __ i.e. _._.____,29,1 IV. 90 [i.e. 1.4.1890],"1.4.1890, singleDate"
-____?,28,[1843?],"1843?, singleYearWithQualifier"
-__ 🌕____,26,22 Aug [18]59,"22.8.1859, fullDateWithMonthInLangOrRoman"
-_ 🌕____,24,2 Sept [18]72,"2.9.1872, fullDateWithMonthInLangOrRoman"
-__. 🌕 ____,22,20. Juny 1807,"20.6.1807, fullDateWithMonthInLangOrRoman"
-__ 🌕. ____,20,10 IV. 1900,"10.4.1900, fullDateWithMonthInLangOrRoman"
-_ 🌕. __ i.e. _.__.____,19,4 Oct. 98 [i.e. 4.10.1898],"4.10.1898, singleDate"
-_ 🌕. ____,19,3 X. [18]89,"3.10.1889, fullDateWithMonthInLangOrRoman"
-den __ 🌕 ____,18,den 23 May 1785,"23.5.1785, fullDateWithMonthInLangOrRoman"
-den __. 🌕 ____,12,den 12. Ap. [17]94,"12.0.1794, fullDateWithMonthInLangOrRoman"
-🌕 __ i.e. 🌕 ____,12,Oct 80 [i.e. Oktober 1880],"10.1880, monthAndYearWithMonthInLangOrRoman"
-le __ 🌕 ____,11,le 14 July 1844,"14.7.1844, fullDateWithMonthInLangOrRoman"
-__/__ 🌕 ____,10,24/27 Mai [18]89,"27.5.1889, fullDateWithMonthInLangOrRoman"
-_/_ 🌕 ____,10,8/9 IV 1900,"9.4.1900, fullDateWithMonthInLangOrRoman"
-den _ 🌕 ____,10,den 4 Merz [18]15,"4.3.1815, fullDateWithMonthInLangOrRoman"
-__. 🌕. __ i.e. __._.____,10,20. I. 95 [i.e. 20.1.1895],"20.1.1895, singleDate"
-__. 🌕 __ i.e. __._.____,9,31. III 90 [i.e. 31.3.1890],"31.3.1890, singleDate"
-🌕. ____,9,V. [18]95,"5.1895, monthAndYearWithMonthInLangOrRoman"
-circa ____,8,[circa 1870],"1870?, singleYearWithQualifier"
-um ____?,8,[um 1740?],"1740?, singleYearWithQualifier"
-le __. 🌕 ____,7,le 12. July 1844,"12.7.1844, fullDateWithMonthInLangOrRoman"
-le _. 🌕 ____,7,le 3. May 1783,"3.5.1783, fullDateWithMonthInLangOrRoman"
-den _. 🌕 ____,6,den 1. Jul. 1784,"1.7.1784, fullDateWithMonthInLangOrRoman"
-__/__ 🌕__ i.e. __./__._.____,6,29/30 Aug 09 [i.e. 29./30.8.1909],"30.8.1909, singleDate"
-__ 🌕__ i.e. __.__.____,6,31 Aug 09 [i.e. 31.08.1909],"31.08.1909, singleDate"
-ca. zwischen ____ und ____,6,[ca. zwischen 1860 und 1900],"1860?/1900?, yearRangeWithQualifier"
-__/__ 🌕 __ i.e. __./__._.____,6,25/26 IX 92 [i.e. 25./26.9.1892],"26.9.1892, singleDate"
-_. 🌕. __ i.e. _._.____,6,7. VIII. 95 [i.e. 7.8.1895],"7.8.1895, singleDate"
-A° ____,6,A° 1673,"1673, singleYearWithQualifier"
-ca.____,5,[ca.1910],"1910?, singleYearWithQualifier"
-_. 🌕 ____,5,5. April 1861,"5.4.1861, fullDateWithMonthInLangOrRoman"
-_/_ 🌕 __ i.e. _./_._.____,5,5/6 Sept. 11 [i.e. 5./6.9.1911],"6.9.1911, singleDate"
-vor ____?,5,[vor 1852?],"/1852?, beforeYearWithQualifier"
-🌕____,5,Jan 1799,"1.1799, monthAndYearWithMonthInLangOrRoman"
-🌕__ i.e. 🌕 ____,5,Sept 88 [i.e. September 1888],"9.1888, monthAndYearWithMonthInLangOrRoman"
-____ und ____,5,[1890 und 1904],"1890/1904, yearRangeWithQualifier"
-zwischen ____? und ____?,4,[zwischen 1910? und 1920?],"1910?/1920?, yearRangeWithQualifier"
-_/_ 🌕. ____,4,1/2 IX. [19]09,"2.9.1909, fullDateWithMonthInLangOrRoman"
-_/_ 🌕. __ i.e. _./_._.____,4,5/6 IV. 92 [i.e. 5./6.4.1892],"6.4.1892, singleDate"
-__/_/__ i.e. __._.____,4,24/4/97 [i.e. 24.4.1897],"24.4.1897, singleDate"
-_.🌕.____,4,2.IV.[18]37,"2.4.1837, fullDateWithMonthInLangOrRoman"
-__. ¢,3,[19. Jahrhundert],"18, century"
-_. 🌕. ____,3,4. Oct. 1898,"4.10.1898, fullDateWithMonthInLangOrRoman"
-gezeichnet nach der Natur ____,3,gezeichnet nach der Natur 1765,"1765, singleYearWithQualifier"
-le __. 🌕. ____,3,le 20. octobr. [1782],"20.10.1782, fullDateWithMonthInLangOrRoman"
-le _ 🌕 ____,3,le 5 7bre 1786,"5.9.1786, fullDateWithMonthInLangOrRoman"
-nach _. 🌕 ____,3,[nach 8. November 1792],"8.11.1792, fullDateWithMonthInLangOrRoman"
-_ / __ 🌕 ____,3,7 / 26 August 1859,"26.8.1859, fullDateWithMonthInLangOrRoman"
-__ 🌕 __ aufg. i.e. __._.____,3,27 Mai 60 aufg. [i.e. 27.5.1860],"27.5.1860, singleDate"
-den __. 🌕. ____,3,den 12. 7br. [180]4,"12.9.1804, fullDateWithMonthInLangOrRoman"
-__ 🌕. __ i.e. __.__.____,3,20 XI. 95 [i.e. 20.11.1895],"20.11.1895, singleDate"
-_ 🌕 __. aufg. i.e. _._.____,3,1 April 60. aufg. [i.e. 1.4.1860],"1.4.1860, singleDate"
-__/__ 🌕. __ i.e. __./__._.____,3,24/25 VIII. 08 [i.e. 24./25.8.1908],"25.8.1908, singleDate"
-cop. __ 🌕. __ i.e. __._.____,3,cop. 28 IX. 05 [i.e. 28.9.1905],"28.9.1905, singleDate"
-__/🌕 __ i.e. __._.____,3,31/I 09 [i.e. 31.1.1909],"31.1.1909, singleDate"
-am __. 🌕 ____,3,[am 11. März 1891],"11.3.1891, fullDateWithMonthInLangOrRoman"
-A°. ____,3,[A°. 1729],"1729, singleYearWithQualifier"
-aufgenommen _ 🌕 ____,3,aufgenommen 1 Novbr 1860,"1.0.1860, fullDateWithMonthInLangOrRoman"
+____,2725,1751,1751
+zwischen ____ und ____,2113,[zwischen 1854 und 1861],1854/1861
+ca. ____,931,[ca. 1838],1838?
+zwischen ____ und ____?,298,[zwischen 1730 und 1775?],1730/1775?
+__ 🌕 __ i.e. __._.____,282,31 Aug. 05 [i.e. 31.8.1905],31.8.1905
+vor ____,128,[vor 1857],/1857
+__ 🌕 ____,117,13 July 1844,13.7.1844
+_ 🌕 __ i.e. _._.____,117,5 IV 90 [i.e. 5.4.1890],5.4.1890
+ca. ____?,115,[ca. 1850?],1850?
+__ 🌕__ i.e. __._.____,115,29 Aug 08 [i.e. 29.8.1908],29.8.1908
+🌕 ____,91,[Mai 1843],5.1843
+_ 🌕 ____,71,4 Oct [18]71,4.10.1871
+__ 🌕. __ i.e. __._.____,57,31 V. 89 [i.e. 31.5.1889],31.5.1889
+_ 🌕__ i.e. _._.____,52,1 Sept 61 [i.e. 1.9.1861],1.9.1861
+nach ____,48,[nach 1898],1898/
+um ____,42,[um 1770],1770?
+__--?,39,[18--?],1800?/1899?
+__--,38,[18--],1800/1899
+_ 🌕 __ i.e. _.__.____,36,4 X 89 [i.e. 4.10.1889],4.10.1889
+__ 🌕 __ i.e. __.__.____,32,31 VIII 09 [i.e. 31.08.1909],31.08.1909
+_ 🌕. __ i.e. _._.____,29,1 IV. 90 [i.e. 1.4.1890],1.4.1890
+____?,28,[1843?],1843?
+__ 🌕____,26,22 Aug [18]59,22.8.1859
+_ 🌕____,24,2 Sept [18]72,2.9.1872
+__. 🌕 ____,22,20. Juny 1807,20.6.1807
+__ 🌕. ____,20,10 IV. 1900,10.4.1900
+_ 🌕. __ i.e. _.__.____,19,4 Oct. 98 [i.e. 4.10.1898],4.10.1898
+_ 🌕. ____,19,3 X. [18]89,3.10.1889
+den __ 🌕 ____,18,den 23 May 1785,23.5.1785
+den __. 🌕 ____,12,den 12. Ap. [17]94,12.0.1794
+🌕 __ i.e. 🌕 ____,12,Oct 80 [i.e. Oktober 1880],10.1880
+le __ 🌕 ____,11,le 14 July 1844,14.7.1844
+__/__ 🌕 ____,10,24/27 Mai [18]89,27.5.1889
+_/_ 🌕 ____,10,8/9 IV 1900,9.4.1900
+den _ 🌕 ____,10,den 4 Merz [18]15,4.3.1815
+__. 🌕. __ i.e. __._.____,10,20. I. 95 [i.e. 20.1.1895],20.1.1895
+__. 🌕 __ i.e. __._.____,9,31. III 90 [i.e. 31.3.1890],31.3.1890
+🌕. ____,9,V. [18]95,5.1895
+circa ____,8,[circa 1870],1870?
+um ____?,8,[um 1740?],1740?
+le __. 🌕 ____,7,le 12. July 1844,12.7.1844
+le _. 🌕 ____,7,le 3. May 1783,3.5.1783
+den _. 🌕 ____,6,den 1. Jul. 1784,1.7.1784
+__/__ 🌕__ i.e. __./__._.____,6,29/30 Aug 09 [i.e. 29./30.8.1909],30.8.1909
+__ 🌕__ i.e. __.__.____,6,31 Aug 09 [i.e. 31.08.1909],31.08.1909
+ca. zwischen ____ und ____,6,[ca. zwischen 1860 und 1900],1860?/1900?
+__/__ 🌕 __ i.e. __./__._.____,6,25/26 IX 92 [i.e. 25./26.9.1892],26.9.1892
+_. 🌕. __ i.e. _._.____,6,7. VIII. 95 [i.e. 7.8.1895],7.8.1895
+A° ____,6,A° 1673,1673
+ca.____,5,[ca.1910],1910?
+_. 🌕 ____,5,5. April 1861,5.4.1861
+_/_ 🌕 __ i.e. _./_._.____,5,5/6 Sept. 11 [i.e. 5./6.9.1911],6.9.1911
+vor ____?,5,[vor 1852?],/1852?
+🌕____,5,Jan 1799,1.1799
+🌕__ i.e. 🌕 ____,5,Sept 88 [i.e. September 1888],9.1888
+____ und ____,5,[1890 und 1904],1890/1904
+zwischen ____? und ____?,4,[zwischen 1910? und 1920?],1910?/1920?
+_/_ 🌕. ____,4,1/2 IX. [19]09,2.9.1909
+_/_ 🌕. __ i.e. _./_._.____,4,5/6 IV. 92 [i.e. 5./6.4.1892],6.4.1892
+__/_/__ i.e. __._.____,4,24/4/97 [i.e. 24.4.1897],24.4.1897
+_.🌕.____,4,2.IV.[18]37,2.4.1837
+__. ¢,3,[19. Jahrhundert],18
+_. 🌕. ____,3,4. Oct. 1898,4.10.1898
+gezeichnet nach der Natur ____,3,gezeichnet nach der Natur 1765,1765
+le __. 🌕. ____,3,le 20. octobr. [1782],20.10.1782
+le _ 🌕 ____,3,le 5 7bre 1786,5.9.1786
+nach _. 🌕 ____,3,[nach 8. November 1792],8.11.1792
+_ / __ 🌕 ____,3,7 / 26 August 1859,26.8.1859
+__ 🌕 __ aufg. i.e. __._.____,3,27 Mai 60 aufg. [i.e. 27.5.1860],27.5.1860
+den __. 🌕. ____,3,den 12. 7br. [180]4,12.9.1804
+__ 🌕. __ i.e. __.__.____,3,20 XI. 95 [i.e. 20.11.1895],20.11.1895
+_ 🌕 __. aufg. i.e. _._.____,3,1 April 60. aufg. [i.e. 1.4.1860],1.4.1860
+__/__ 🌕. __ i.e. __./__._.____,3,24/25 VIII. 08 [i.e. 24./25.8.1908],25.8.1908
+cop. __ 🌕. __ i.e. __._.____,3,cop. 28 IX. 05 [i.e. 28.9.1905],28.9.1905
+__/🌕 __ i.e. __._.____,3,31/I 09 [i.e. 31.1.1909],31.1.1909
+am __. 🌕 ____,3,[am 11. März 1891],11.3.1891
+A°. ____,3,[A°. 1729],1729
+aufgenommen _ 🌕 ____,3,aufgenommen 1 Novbr 1860,1.0.1860
 Sommer ____?,2,[Sommer 1837?],
 ____ oder ____,2,[1842 oder 1843],
-ca. ___-,2,[ca. 184-],"1840?/1849?, yearWithPlaceHolderAndQualifier"
-____-____,2,1852-1853,"1852/1853, yearRangeWithQualifier"
-____ 🌕 __,2,1844 July 31,"44.7.1844, fullDateWithMonthInLangOrRoman"
-anno ____,2,a[nn]o 1711,"1711, singleYearWithQualifier"
+ca. ___-,2,[ca. 184-],1840?/1849?
+____-____,2,1852-1853,1852/1853
+____ 🌕 __,2,1844 July 31,44.7.1844
+anno ____,2,a[nn]o 1711,1711
 Schweiz,2,[Schweiz] ,
-ca. ____-____,2,[ca. 1770-1780],"1770?/1780?, yearRangeWithQualifier"
-le _. 🌕. ____,2,le 4. octobr. [17]82,"4.10.1782, fullDateWithMonthInLangOrRoman"
-le __ 🌕. ____,2,le 15 Aost. 1783,"15.8.1783, fullDateWithMonthInLangOrRoman"
-le _ 🌕. ____,2,le 1 Octobr. 1783,"1.10.1783, fullDateWithMonthInLangOrRoman"
-____._.__,2,1784.9.14,"84.9.14, singleDate"
-nach __. 🌕 ____,2,[nach 28. September 1792],"28.9.1792, fullDateWithMonthInLangOrRoman"
+ca. ____-____,2,[ca. 1770-1780],1770?/1780?
+le _. 🌕. ____,2,le 4. octobr. [17]82,4.10.1782
+le __ 🌕. ____,2,le 15 Aost. 1783,15.8.1783
+le _ 🌕. ____,2,le 1 Octobr. 1783,1.10.1783
+____._.__,2,1784.9.14,84.9.14
+nach __. 🌕 ____,2,[nach 28. September 1792],28.9.1792
 Pfingsten ____,2,Pfingsten 1880,
-Den __ 🌕 ____,2,Den 16 Juli 1811,"16.7.1811, fullDateWithMonthInLangOrRoman"
-__/__ 🌕____,2,11/12 Sept [18]72,"12.9.1872, fullDateWithMonthInLangOrRoman"
-_ 🌕. __ i.e. _. __. ____,2,7 X. 89 [i.e. 7. 10. 1889],"7.10.1889, fullDateWithMonthInLangOrRoman"
-__ 🌕__ i.e. __. _. ____,2,14 Sept 81 [i.e. 14. 9. 1881],"14.9.1881, fullDateWithMonthInLangOrRoman"
-_ 🌕 __ .i.e. _._.____,2,4 März 62 [.i.e. 4.3.1862],"4.3.1862, singleDate"
-aufgenommen __ 🌕 ____,2,aufgenommen 17 Oct 1861,"17.10.1861, fullDateWithMonthInLangOrRoman"
-en 🌕. ____,2,en avr. 1817,"4.1817, monthAndYearWithMonthInLangOrRoman"
-aufg. __ 🌕 __ i.e. __._.____,2,aufg. 29 Juni 59 [i.e. 29.6.1859],"29.6.1859, singleDate"
-den __ 🌕____,2,den 30 Jun [18]12,"30.6.1812, fullDateWithMonthInLangOrRoman"
-Aufg __ 🌕 __ i.e. __._.____,2,Aufg 18 März 60 [i.e. 18.3.1860],"18.3.1860, singleDate"
+Den __ 🌕 ____,2,Den 16 Juli 1811,16.7.1811
+__/__ 🌕____,2,11/12 Sept [18]72,12.9.1872
+_ 🌕. __ i.e. _. __. ____,2,7 X. 89 [i.e. 7. 10. 1889],7.10.1889
+__ 🌕__ i.e. __. _. ____,2,14 Sept 81 [i.e. 14. 9. 1881],14.9.1881
+_ 🌕 __ .i.e. _._.____,2,4 März 62 [.i.e. 4.3.1862],4.3.1862
+aufgenommen __ 🌕 ____,2,aufgenommen 17 Oct 1861,17.10.1861
+en 🌕. ____,2,en avr. 1817,4.1817
+aufg. __ 🌕 __ i.e. __._.____,2,aufg. 29 Juni 59 [i.e. 29.6.1859],29.6.1859
+den __ 🌕____,2,den 30 Jun [18]12,30.6.1812
+Aufg __ 🌕 __ i.e. __._.____,2,Aufg 18 März 60 [i.e. 18.3.1860],18.3.1860
 Herbst ____,2,Herbst 1889,
-_/__ 🌕 ____,2,7/20 August 1859,"20.8.1859, fullDateWithMonthInLangOrRoman"
-__. 🌕. ____,2,27. III. 1894,"27.3.1894, fullDateWithMonthInLangOrRoman"
-__ _ __ i.e. __._.____,2,25 4 73 [i.e. 25.4.1873],"25.4.1873, singleDate"
-__ / __ 🌕 __ i.e. __./__._.____,2,14 / 15 IX 92 [i.e. 14./15.9.1892],"15.9.1892, singleDate"
+_/__ 🌕 ____,2,7/20 August 1859,20.8.1859
+__. 🌕. ____,2,27. III. 1894,27.3.1894
+__ _ __ i.e. __._.____,2,25 4 73 [i.e. 25.4.1873],25.4.1873
+__ / __ 🌕 __ i.e. __./__._.____,2,14 / 15 IX 92 [i.e. 14./15.9.1892],15.9.1892
 __ i.e. ____,2,58 [i.e. 1858],
-__._.____,2,23.6.1897,"23.6.1897, singleDate"
-_ 🌕 __ aufg. i.e. _._.____,2,4 April 60 aufg. [i.e. 4.4.1860],"4.4.1860, singleDate"
-Aufg _ 🌕 ____,2,Aufg 3 Juli 1859,"3.7.1859, fullDateWithMonthInLangOrRoman"
-_/__ 🌕 __ i.e. _./__._.____,2,9/10 Aug. 05 [i.e. 9./10.8.1905],"10.8.1905, singleDate"
-Anno ____,2,Anno 1751,"1751, singleYearWithQualifier"
-__ 🌕 ___ i.e. __._.____,2,26 III 904 [i.e. 26.3.1904],"26.3.1904, singleDate"
-Aufg. _ 🌕 ____,2,Aufg. 8 Juli 1859,"8.7.1859, fullDateWithMonthInLangOrRoman"
-____/__,2,1896/97,"1896/97, yearRangeWithQualifier"
-🌕/🌕. ____,2,I/IV. 1904,"1.1904, monthAndYearWithMonthInLangOrRoman"
+__._.____,2,23.6.1897,23.6.1897
+_ 🌕 __ aufg. i.e. _._.____,2,4 April 60 aufg. [i.e. 4.4.1860],4.4.1860
+Aufg _ 🌕 ____,2,Aufg 3 Juli 1859,3.7.1859
+_/__ 🌕 __ i.e. _./__._.____,2,9/10 Aug. 05 [i.e. 9./10.8.1905],10.8.1905
+Anno ____,2,Anno 1751,1751
+__ 🌕 ___ i.e. __._.____,2,26 III 904 [i.e. 26.3.1904],26.3.1904
+Aufg. _ 🌕 ____,2,Aufg. 8 Juli 1859,8.7.1859
+____/__,2,1896/97,1896/97
+🌕/🌕. ____,2,I/IV. 1904,1.1904
 MDCC❓🌕 i.e. ____,2,MDCCXXI [i.e. 1721],
-___-?,2,[175-?],
-🌕 __ i.e. _.____,2,IV 97 [i.e. 4.1897],"4.1897, monthAndYearWithMonthInLangOrRoman"
-_ 🌕 __ i.e. __._.____,2,2 Aug. 97 [i.e. 28.8.1897],"28.8.1897, singleDate"
-zwischen und ____ und ____,2,[zwischen und 1670 und 1712],"1670/1712, yearRangeWithQualifier"
-__. 🌕 __,2,21. Sept. 76,"21.9.76, fullDateWithMonthInLangOrRoman"
-_ 🌕__ i.e. _.__.____,2,4 Nov 66 [i.e. 4.11.1866],"4.11.1866, singleDate"
-nach ____?,2,[nach 1740?],"1740?/, afterYearWithQualifier"
-Aufgenommen __ 🌕b __ i.e. __.__.____,2,Aufgenommen 28 Octb 60 [i.e. 28.10.1860],"28.10.1860, singleDate"
-Aufgenommen _ 🌕 __ i.e. _._.____,2,Aufgenommen 8 Juli 60 [i.e. 8.7.1860],"8.7.1860, singleDate"
-_._.____,2,[8.7.1860],"8.7.1860, singleDate"
-den _ 🌕. ____,2,d[en] 8 Sep. [18]74,"8.9.1874, fullDateWithMonthInLangOrRoman"
-__.🌕.____,2,27.IX.1874,"27.9.1874, fullDateWithMonthInLangOrRoman"
-🌕. __.,1,Febr. 36.,"0.36., monthAndYearWithMonthInLangOrRoman"
-ca. ___-?,1,[ca. 183-?],"1830?/1839?, yearWithPlaceHolderAndQualifier"
-🌕/🌕 ____,1,[Februar/März 1740],"2.1740, monthAndYearWithMonthInLangOrRoman"
-ca. __--,1,[ca. 18--],"1800?/1899?, yearWithPlaceHolderAndQualifier"
-__. ¢?,1,[19. Jahrhundert?],"18?, century"
-le _ 🌕 ____ -,1,le 2 Aout 1844 -,"2.8.1844, fullDateWithMonthInLangOrRoman"
+___-?,2,[175-?],1750?/1759?
+🌕 __ i.e. _.____,2,IV 97 [i.e. 4.1897],4.1897
+_ 🌕 __ i.e. __._.____,2,2 Aug. 97 [i.e. 28.8.1897],28.8.1897
+zwischen und ____ und ____,2,[zwischen und 1670 und 1712],1670/1712
+__. 🌕 __,2,21. Sept. 76,21.9.76
+_ 🌕__ i.e. _.__.____,2,4 Nov 66 [i.e. 4.11.1866],4.11.1866
+nach ____?,2,[nach 1740?],1740?/
+Aufgenommen __ 🌕b __ i.e. __.__.____,2,Aufgenommen 28 Octb 60 [i.e. 28.10.1860],28.10.1860
+Aufgenommen _ 🌕 __ i.e. _._.____,2,Aufgenommen 8 Juli 60 [i.e. 8.7.1860],8.7.1860
+_._.____,2,[8.7.1860],8.7.1860
+den _ 🌕. ____,2,d[en] 8 Sep. [18]74,8.9.1874
+__.🌕.____,2,27.IX.1874,27.9.1874
+🌕. __.,1,Febr. 36.,0.36.
+ca. ___-?,1,[ca. 183-?],1830?/1839?
+🌕/🌕 ____,1,[Februar/März 1740],2.1740
+ca. __--,1,[ca. 18--],1800?/1899?
+__. ¢?,1,[19. Jahrhundert?],18?
+le _ 🌕 ____ -,1,le 2 Aout 1844 -,2.8.1844
 ____ 🌕,1,1844 Septbr,
-🌕 __ = ____,1,July 31 = 1844,"7.1844, monthAndYearWithMonthInLangOrRoman"
-ca. ____/__,1,[ca. 1835/36],"1835?/36?, yearRangeWithQualifier"
-Di. __.t 🌕. ____,1,Di. 16.t Febr. 1835,"1.1835, monthAndYearWithMonthInLangOrRoman"
-🌕 ____?,1,[Oktober 1841?],"10.1841, monthAndYearWithMonthInLangOrRoman"
-zwischen ____ - ____?,1,[zwischen 1770 - 1790?],"1770/1790?, yearRangeWithQualifier"
-nicht nach ____,1,[nicht nach 1895],"/1895, beforeYearWithQualifier"
-le _ 🌕. ____ __h. matin,1,le 3 Aust. 1787 11h. m[atin],"3.8.1787, fullDateWithMonthInLangOrRoman"
-ca. ____/____,1,[ca. 1515/1516],"1515?/1516?, yearRangeWithQualifier"
+🌕 __ = ____,1,July 31 = 1844,7.1844
+ca. ____/__,1,[ca. 1835/36],1835?/36?
+Di. __.t 🌕. ____,1,Di. 16.t Febr. 1835,1.1835
+🌕 ____?,1,[Oktober 1841?],10.1841
+zwischen ____ - ____?,1,[zwischen 1770 - 1790?],1770/1790?
+nicht nach ____,1,[nicht nach 1895],/1895
+le _ 🌕. ____ __h. matin,1,le 3 Aust. 1787 11h. m[atin],3.8.1787
+ca. ____/____,1,[ca. 1515/1516],1515?/1516?
 zwischen ____ und vor ____?,1,[zwischen 1847 und vor 1856?],
-Samstag _. 🌕 ____,1,Samstag 6. May 1854,"6.5.1854, fullDateWithMonthInLangOrRoman"
-__._.____?,1,21.1.[17]83?,"21.1.1783, singleDate"
-vermutlich um ____,1,[vermutlich um 1856],"1856?, singleYearWithQualifier"
-le 🌕. ____,1,le 7br. 1784,"9.1784, monthAndYearWithMonthInLangOrRoman"
-le __._.____,1,le 13.7.1785,"13.7.1785, singleDate"
-... 🌕 ____,1,[...] März [18]62,"3.1862, monthAndYearWithMonthInLangOrRoman"
-den __._.____ um _ Uhr dess Morgens,1,den 17.8.1785 um 9 Uhr dess Morgens,"17.8.1785, singleDate"
-den __._.____ um __ Uhr des Morgens,1,den 20.8.1785 um 10 Uhr des Morgens,"20.8.1785, singleDate"
-le __.__.____,1,le 18.11.1786,"18.11.1786, singleDate"
-le _ 🌕 ____ ... à _ hrs.,1,le 4 October 1787 ... à 2 hrs.,"4.10.1787, fullDateWithMonthInLangOrRoman"
+Samstag _. 🌕 ____,1,Samstag 6. May 1854,6.5.1854
+__._.____?,1,21.1.[17]83?,21.1.1783
+vermutlich um ____,1,[vermutlich um 1856],1856?
+le 🌕. ____,1,le 7br. 1784,9.1784
+le __._.____,1,le 13.7.1785,13.7.1785
+... 🌕 ____,1,[...] März [18]62,3.1862
+den __._.____ um _ Uhr dess Morgens,1,den 17.8.1785 um 9 Uhr dess Morgens,17.8.1785
+den __._.____ um __ Uhr des Morgens,1,den 20.8.1785 um 10 Uhr des Morgens,20.8.1785
+le __.__.____,1,le 18.11.1786,18.11.1786
+le _ 🌕 ____ ... à _ hrs.,1,le 4 October 1787 ... à 2 hrs.,4.10.1787
 den __ten 🌕: ____,1,den 23ten Dec: 1817,
-dn __. 🌕. ____,1,dn 28. 7br. 1792,"28.9.1792, fullDateWithMonthInLangOrRoman"
-d. _. 🌕. ____,1,d. 5. 8br. 1792,"5.10.1792, fullDateWithMonthInLangOrRoman"
-im 🌕 ____,1,im 9br 1792,"1.1792, monthAndYearWithMonthInLangOrRoman"
-den 🌕. ____,1,den Augst. 1794,"8.1794, monthAndYearWithMonthInLangOrRoman"
-Den __ 🌕. ____,1,Den 24 Augst. 1805,"24.8.1805, fullDateWithMonthInLangOrRoman"
-Den __. 🌕 ____,1,Den 28. Jul. 1812,"28.7.1812, fullDateWithMonthInLangOrRoman"
+dn __. 🌕. ____,1,dn 28. 7br. 1792,28.9.1792
+d. _. 🌕. ____,1,d. 5. 8br. 1792,5.10.1792
+im 🌕 ____,1,im 9br 1792,1.1792
+den 🌕. ____,1,den Augst. 1794,8.1794
+Den __ 🌕. ____,1,Den 24 Augst. 1805,24.8.1805
+Den __. 🌕 ____,1,Den 28. Jul. 1812,28.7.1812
 Den . . ____,1,Den . . 1814,
-_... 🌕____,1,2[...] Aug [18]61,"2.8.1861, fullDateWithMonthInLangOrRoman"
-__ / __ 🌕____,1,22 / 29 Aug [18]59,"29.8.1859, fullDateWithMonthInLangOrRoman"
-__ / __ 🌕 ____,1,22 / 30 Aug. [18]59,"30.8.1859, fullDateWithMonthInLangOrRoman"
+_... 🌕____,1,2[...] Aug [18]61,2.8.1861
+__ / __ 🌕____,1,22 / 29 Aug [18]59,29.8.1859
+__ / __ 🌕 ____,1,22 / 30 Aug. [18]59,30.8.1859
 ... ____,1,[...] 1872,
-_/_ 🌕____,1,3/4 Sept [18]86,"4.9.1886, fullDateWithMonthInLangOrRoman"
-Charfreitag __ 🌕 ____,1,Charfreitag 13 April 1900,"13.1.1900, fullDateWithMonthInLangOrRoman"
-_ 🌕 __ i.e._.__.____,1,7 X 89 [i.e.7.10.1889],"7.10.1889, singleDate"
-aufgen. __ 🌕__ i.e. __._.____,1,aufgen. 11 Sept 59 [i.e. 11.9.1859],"11.9.1859, singleDate"
-__ 🌕__ sowie am rechten Bildrand __ 🌕 __ i.e. __._. bzw. __.__.____,1,[11] Sept 59 sowie am rechten Bildrand 24 Oct 59 [i.e. 11.9. bzw. 24.10.1859],"24.10.1859, singleDate"
-den __. 🌕 ____ gzcht,1,den 22. Jul. 1820 gzcht,"22.7.1820, fullDateWithMonthInLangOrRoman"
-__ 🌕... __ __.__.____,1,17 Oct[...] 61 [17.10.1861],"17.10.1861, singleDate"
-__ 🌕__ / __ 🌕 __ i.e. __._. bzw. __.__.____,1,11 Sept 59 / 21 Oct 59 [i.e. 11.9. bzw. 21.10.1859],"21.10.1859, singleDate"
-genau gezeichnet. __ 🌕 ____,1,genau gezeichnet. 24 Juni 1860,"24.1.1860, fullDateWithMonthInLangOrRoman"
-en 🌕 ____,1,en May 1817,"5.1817, monthAndYearWithMonthInLangOrRoman"
-__ 🌕 __ ziemlich genau i.e. __._.____,1,30 V 89 ziemlich genau [i.e. 30.5.1889],"30.5.1889, singleDate"
+_/_ 🌕____,1,3/4 Sept [18]86,4.9.1886
+Charfreitag __ 🌕 ____,1,Charfreitag 13 April 1900,13.1.1900
+_ 🌕 __ i.e._.__.____,1,7 X 89 [i.e.7.10.1889],7.10.1889
+aufgen. __ 🌕__ i.e. __._.____,1,aufgen. 11 Sept 59 [i.e. 11.9.1859],11.9.1859
+__ 🌕__ sowie am rechten Bildrand __ 🌕 __ i.e. __._. bzw. __.__.____,1,[11] Sept 59 sowie am rechten Bildrand 24 Oct 59 [i.e. 11.9. bzw. 24.10.1859],24.10.1859
+den __. 🌕 ____ gzcht,1,den 22. Jul. 1820 gzcht,22.7.1820
+__ 🌕... __ __.__.____,1,17 Oct[...] 61 [17.10.1861],17.10.1861
+__ 🌕__ / __ 🌕 __ i.e. __._. bzw. __.__.____,1,11 Sept 59 / 21 Oct 59 [i.e. 11.9. bzw. 21.10.1859],21.10.1859
+genau gezeichnet. __ 🌕 ____,1,genau gezeichnet. 24 Juni 1860,24.1.1860
+en 🌕 ____,1,en May 1817,5.1817
+__ 🌕 __ ziemlich genau i.e. __._.____,1,30 V 89 ziemlich genau [i.e. 30.5.1889],30.5.1889
 "Am Auffahrtstage ____, __ 🌕",1,"Am Auffahrtstage 1889[,] 30 Mai",
 en 🌕l. ____,1,en avrl. 1817,
 en 🌕l ____,1,en avrl 1817,
-circa ____?,1,[circa 1710?],"1710?, singleYearWithQualifier"
+circa ____?,1,[circa 1710?],1710?
 Mei ____,1,Mei 1780,
 le __ d'av. ____,1,le 20 d'av. [17]84,
-le __._.____ à __h.,1,le 21.7.1785 à 12h.,"21.7.1785, singleDate"
-le __._.____. à __ heures du matin,1,le 31.7.1785. à 11 heures du matin,"31.7.1785, singleDate"
-le _ 🌕 ____ à _h. s.,1,le 1 aoust 1785 à 5h. s.,"1.8.1785, fullDateWithMonthInLangOrRoman"
-le _ 🌕 ____ à _h. du soir,1,le 5 aoust 1785 à 3h. du soir,"5.8.1785, fullDateWithMonthInLangOrRoman"
-le __._.____. à _.h. du matin,1,le 11.8.1785. à 6.h. du matin,"11.8.1785, singleDate"
-le __._.____. à __h. du matin,1,le 10.8.1785. à 10h. du matin,"10.8.1785, singleDate"
-_/_ 🌕 __ i.e. _._. 🌕 ____,1,4/5 April 61 [i.e. 4.5. April 1861],"5.4.1861, fullDateWithMonthInLangOrRoman"
-den __._.____ __. Uhr,1,den 25.8.1785 10. [Uhr],"25.8.1785, singleDate"
-den __. 🌕 ____ abends um _ Uhr,1,den 25. Augst 1785 abends um 3 Uhr,"25.8.1785, fullDateWithMonthInLangOrRoman"
-le __. 🌕 ____ à _h. du soir,1,le 23. mars 1786 à 4h. du soir,"23.3.1786, fullDateWithMonthInLangOrRoman"
-le __. 🌕. ____. à _h. soir,1,le 24. avr. 1786. à 6h. s[oir],"24.4.1786, fullDateWithMonthInLangOrRoman"
+le __._.____ à __h.,1,le 21.7.1785 à 12h.,21.7.1785
+le __._.____. à __ heures du matin,1,le 31.7.1785. à 11 heures du matin,31.7.1785
+le _ 🌕 ____ à _h. s.,1,le 1 aoust 1785 à 5h. s.,1.8.1785
+le _ 🌕 ____ à _h. du soir,1,le 5 aoust 1785 à 3h. du soir,5.8.1785
+le __._.____. à _.h. du matin,1,le 11.8.1785. à 6.h. du matin,11.8.1785
+le __._.____. à __h. du matin,1,le 10.8.1785. à 10h. du matin,10.8.1785
+_/_ 🌕 __ i.e. _._. 🌕 ____,1,4/5 April 61 [i.e. 4.5. April 1861],5.4.1861
+den __._.____ __. Uhr,1,den 25.8.1785 10. [Uhr],25.8.1785
+den __. 🌕 ____ abends um _ Uhr,1,den 25. Augst 1785 abends um 3 Uhr,25.8.1785
+le __. 🌕 ____ à _h. du soir,1,le 23. mars 1786 à 4h. du soir,23.3.1786
+le __. 🌕. ____. à _h. soir,1,le 24. avr. 1786. à 6h. s[oir],24.4.1786
 le __. av. ____. __h. matin,1,le 25. av. 1786. 10h. m[atin],
-le __. 🌕 ____. _h. ssoir,1,le 12. May 1786. 4h. s[soir],"12.5.1786, fullDateWithMonthInLangOrRoman"
-le __. 🌕 ____. _h. soir,1,le 18. juin 1786. 6h. s[oir],"18.6.1786, fullDateWithMonthInLangOrRoman"
-le __ 🌕. ____. à __h. matin,1,le 14 janv. 1787. à 11h. m[atin],"14.1.1787, fullDateWithMonthInLangOrRoman"
+le __. 🌕 ____. _h. ssoir,1,le 12. May 1786. 4h. s[soir],12.5.1786
+le __. 🌕 ____. _h. soir,1,le 18. juin 1786. 6h. s[oir],18.6.1786
+le __ 🌕. ____. à __h. matin,1,le 14 janv. 1787. à 11h. m[atin],14.1.1787
 le _. _ber ____ à _. heures du soir,1,le 4. 8ber 1787 à 3. [heures du] s[oir],
-__/__. 🌕. __ i.e. __./__._.____,1,18/19. II. 99 [i.e. 18./19.2.1899],"19.2.1899, singleDate"
-Travaillé le __ 🌕 ____,1,Travaillé le 25 Juin 1849,"25.5.1849, fullDateWithMonthInLangOrRoman"
+__/__. 🌕. __ i.e. __./__._.____,1,18/19. II. 99 [i.e. 18./19.2.1899],19.2.1899
+Travaillé le __ 🌕 ____,1,Travaillé le 25 Juin 1849,25.5.1849
 le _. 🌕l ____,1,le 1. avrill 1788,
 den __. 🌕l ____,1,den 20. Aprill 1788,
-_. 🌕__ i.e. _._.____,1,2. Sept 61 [i.e. 2.9.1861],"2.9.1861, singleDate"
-_ 🌕__ i.e._._.____,1,2 Sept 61 [i.e.2.9.1861],"2.9.1861, singleDate"
-gez. den __. 🌕 ____. gemalt den __ 🌕 ____,1,gez. den 16. Sept. 1872. gemalt den 17 Februar 1873,"16.9.1872, fullDateWithMonthInLangOrRoman"
-Ostersamstag __ 🌕 ____,1,Ostersamstag 15 IV 1900,"15.4.1900, fullDateWithMonthInLangOrRoman"
-_. 🌕 ____.,1,7. Juli [18]91.,"7.7.1891., fullDateWithMonthInLangOrRoman"
+_. 🌕__ i.e. _._.____,1,2. Sept 61 [i.e. 2.9.1861],2.9.1861
+_ 🌕__ i.e._._.____,1,2 Sept 61 [i.e.2.9.1861],2.9.1861
+gez. den __. 🌕 ____. gemalt den __ 🌕 ____,1,gez. den 16. Sept. 1872. gemalt den 17 Februar 1873,16.9.1872
+Ostersamstag __ 🌕 ____,1,Ostersamstag 15 IV 1900,15.4.1900
+_. 🌕 ____.,1,7. Juli [18]91.,7.7.1891.
 ____. ad. nat.,1,1813. ad. nat.,
-__/_ 🌕____,1,27/8 Sept 1911,"8.9.1911, fullDateWithMonthInLangOrRoman"
-_ 🌕 __ _._.____,1,8 Sept. 11 [8.9.1911],"8.9.1911, singleDate"
-den _. 🌕. ____,1,den 2. 7br. [18]15,"2.9.1815, fullDateWithMonthInLangOrRoman"
-_. 🌕 __ i.e. ____,1,3. Nov. 61 [i.e. 1861],"3.11.1861, fullDateWithMonthInLangOrRoman"
-Montag den __. 🌕 __ i.e. ____,1,Montag den 30. Sept. 67 [i.e. 1867],"30.9.1867, fullDateWithMonthInLangOrRoman"
-aufgenommen den __. 🌕 ____,1,aufgenommen den 15. Juni 1865,"15.6.1865, fullDateWithMonthInLangOrRoman"
-Montag den __. 🌕 ____,1,Montag den 13. März 1871,"13.3.1871, fullDateWithMonthInLangOrRoman"
-Montag den _. 🌕 ____,1,Montag den 6. März 1871,"6.3.1871, fullDateWithMonthInLangOrRoman"
-Donnerstag den _. 🌕 ____,1,Donnerstag den 9. März 1871,"9.3.1871, fullDateWithMonthInLangOrRoman"
-Donnerstag den __. 🌕 ____,1,Donnerstag den 13. April 1871,"13.4.1871, fullDateWithMonthInLangOrRoman"
-gez. den __ 🌕____ fertig gemalt den __. 🌕 __,1,gez. den 16 Sept 1872 fertig gemalt den 13. May 73,"16.9.1872, fullDateWithMonthInLangOrRoman"
-aufgen _ 🌕 ____,1,[aufgen 9 May 1861],"9.5.1861, fullDateWithMonthInLangOrRoman"
-🌕 __ i. e. 🌕 ____,1,Mai 86 [i. e. Mai 1886],"5.1886, monthAndYearWithMonthInLangOrRoman"
+__/_ 🌕____,1,27/8 Sept 1911,8.9.1911
+_ 🌕 __ _._.____,1,8 Sept. 11 [8.9.1911],8.9.1911
+den _. 🌕. ____,1,den 2. 7br. [18]15,2.9.1815
+_. 🌕 __ i.e. ____,1,3. Nov. 61 [i.e. 1861],3.11.1861
+Montag den __. 🌕 __ i.e. ____,1,Montag den 30. Sept. 67 [i.e. 1867],30.9.1867
+aufgenommen den __. 🌕 ____,1,aufgenommen den 15. Juni 1865,15.6.1865
+Montag den __. 🌕 ____,1,Montag den 13. März 1871,13.3.1871
+Montag den _. 🌕 ____,1,Montag den 6. März 1871,6.3.1871
+Donnerstag den _. 🌕 ____,1,Donnerstag den 9. März 1871,9.3.1871
+Donnerstag den __. 🌕 ____,1,Donnerstag den 13. April 1871,13.4.1871
+gez. den __ 🌕____ fertig gemalt den __. 🌕 __,1,gez. den 16 Sept 1872 fertig gemalt den 13. May 73,16.9.1872
+aufgen _ 🌕 ____,1,[aufgen 9 May 1861],9.5.1861
+🌕 __ i. e. 🌕 ____,1,Mai 86 [i. e. Mai 1886],5.1886
 A°. anno ____,1,A°. [anno] 1706,
-ad. nat. __.__.____.,1,ad. nat. 18.11.1818.,"18.11.1818, singleDate"
+ad. nat. __.__.____.,1,ad. nat. 18.11.1818.,18.11.1818
 ____ ad. nat.,1,1813 ad. nat.,
-den __ 🌕 🌕 ____,1,den 10 Mars [März] 1811,"3.1811, monthAndYearWithMonthInLangOrRoman"
-__ / __ 🌕 __ i.e. __./__.__.____,1,16 / 19 Oct 59 [i.e. 16./19.10.1859],"19.10.1859, singleDate"
+den __ 🌕 🌕 ____,1,den 10 Mars [März] 1811,3.1811
+__ / __ 🌕 __ i.e. __./__.__.____,1,16 / 19 Oct 59 [i.e. 16./19.10.1859],19.10.1859
 __ 🌕m ____,1,27 [Novem] 1874,
-__ 🌕 __ aufg i.e. __._.____,1,18 März 60 aufg [i.e. 18.3.1860],"18.3.1860, singleDate"
-aufgen __ 🌕 __ i.e. __._.____,1,aufgen 31 Juli 59 [i.e. 31.7.1859],"31.7.1859, singleDate"
+__ 🌕 __ aufg i.e. __._.____,1,18 März 60 aufg [i.e. 18.3.1860],18.3.1860
+aufgen __ 🌕 __ i.e. __._.____,1,aufgen 31 Juli 59 [i.e. 31.7.1859],31.7.1859
 Am Ostersonntag ____,1,Am Ostersonntag [18]83,
-"den __ 🌕 ____, morgens",1,"den 14 Augst 1793, morgens","14.8.1793, fullDateWithMonthInLangOrRoman"
-_. 🌕 __ i.e. _._.____,1,4. März 62 [i.e. 4.3.1862],"4.3.1862, singleDate"
-__ 🌕 __ i.e.__._.____,1,30 IX 92 [i.e.30.9.1892],"30.9.1892, singleDate"
-🌕__ i.e. _.____,1,Sept 88 [i.e. 9.1888],"9.1888, monthAndYearWithMonthInLangOrRoman"
-_. 🌕 __ aufg. i.e. _._.____,1,4. April 60 aufg. [i.e. 4.4.1860],"4.4.1860, singleDate"
-__ 🌕 __ genau i.e. __._.____,1,22 Mai 89 genau [i.e. 22.5.1889],"22.5.1889, singleDate"
-Palmsonntag __ 🌕 __ i.e. __._.____,1,Palmsonntag 22 III 91 [i.e. 22.3.1891],"22.3.1891, singleDate"
+"den __ 🌕 ____, morgens",1,"den 14 Augst 1793, morgens",14.8.1793
+_. 🌕 __ i.e. _._.____,1,4. März 62 [i.e. 4.3.1862],4.3.1862
+__ 🌕 __ i.e.__._.____,1,30 IX 92 [i.e.30.9.1892],30.9.1892
+🌕__ i.e. _.____,1,Sept 88 [i.e. 9.1888],9.1888
+_. 🌕 __ aufg. i.e. _._.____,1,4. April 60 aufg. [i.e. 4.4.1860],4.4.1860
+__ 🌕 __ genau i.e. __._.____,1,22 Mai 89 genau [i.e. 22.5.1889],22.5.1889
+Palmsonntag __ 🌕 __ i.e. __._.____,1,Palmsonntag 22 III 91 [i.e. 22.3.1891],22.3.1891
 __ 🌕b. ____,1,27 Octb. 1861,
-Pfingstsonntag _ 🌕. __ i.e. _._.____,1,Pfingstsonntag 5 VI. 92 [i.e. 5.6.1892],"5.6.1892, singleDate"
-ca ____,1,ca 1853,"1853?, singleYearWithQualifier"
-__ 🌕 __ i.e. __ 🌕 __,1,26 IX 87 [i.e. 26 IX 87],"26.9.87, fullDateWithMonthInLangOrRoman"
+Pfingstsonntag _ 🌕. __ i.e. _._.____,1,Pfingstsonntag 5 VI. 92 [i.e. 5.6.1892],5.6.1892
+ca ____,1,ca 1853,1853?
+__ 🌕 __ i.e. __ 🌕 __,1,26 IX 87 [i.e. 26 IX 87],26.9.87
 ca. vor ____,1,[ca. vor 1878],
-Ostermontag _ 🌕. ____ i.e. _._.____,1,Ostermontag 8 IV. 1901 [i.e. 8.4.1901],"8.4.1901, singleDate"
-Aufg. __ 🌕 ____,1,Aufg. 31 März 1860,"31.3.1860, fullDateWithMonthInLangOrRoman"
-cop. 🌕 ____,1,cop. Maerz 1884,"3.1884, monthAndYearWithMonthInLangOrRoman"
-__/__ 🌕__,1,20/21 Sept 81,"21.9.81, fullDateWithMonthInLangOrRoman"
-Aufg. __ 🌕 __ i.e. __._.____,1,Aufg. 19 Sept. 58 [i.e. 19.9.1858],"19.9.1858, singleDate"
-_.__.__.__ i.e. ? ____,1,2.11.20.86 [i.e. [?] 1886],"2.11.20, singleDate"
-aufg. _ 🌕 ____,1,aufg. 8 Juli 1859,"8.7.1859, fullDateWithMonthInLangOrRoman"
-Aufg._ 🌕 __ i.e. _._.____,1,Aufg.9 Juli 59 [i.e. 9.7.1859],"9.7.1859, singleDate"
-ca. ____ und ____,1,[ca. 1890 und 1904],"1890?/1904?, yearRangeWithQualifier"
-Aufge __ 🌕 __ i.e. __._.____,1,Aufge 21 April 60 [i.e. 21.4.1860],"21.4.1860, singleDate"
-_ 🌕 __ aufg i.e. _._.____,1,8 Juli 59 aufg [i.e. 8.7.1859],"8.7.1859, singleDate"
-___? i.e. zwischen ____ und ____,1,186? [i.e. zwischen 1860 und 1869],"186?/1860/1869, yearRangeWithQualifier"
-__ 🌕 __ i.e.____,1,13 April 60 [i.e.1860],"13.4.1860, fullDateWithMonthInLangOrRoman"
-Aufg. _ 🌕 __ i.e. _._.____,1,Aufg. 7 Juli 59 [i.e. 7.7.1859],"7.7.1859, singleDate"
+Ostermontag _ 🌕. ____ i.e. _._.____,1,Ostermontag 8 IV. 1901 [i.e. 8.4.1901],8.4.1901
+Aufg. __ 🌕 ____,1,Aufg. 31 März 1860,31.3.1860
+cop. 🌕 ____,1,cop. Maerz 1884,3.1884
+__/__ 🌕__,1,20/21 Sept 81,21.9.81
+Aufg. __ 🌕 __ i.e. __._.____,1,Aufg. 19 Sept. 58 [i.e. 19.9.1858],19.9.1858
+_.__.__.__ i.e. ? ____,1,2.11.20.86 [i.e. [?] 1886],2.11.20
+aufg. _ 🌕 ____,1,aufg. 8 Juli 1859,8.7.1859
+Aufg._ 🌕 __ i.e. _._.____,1,Aufg.9 Juli 59 [i.e. 9.7.1859],9.7.1859
+ca. ____ und ____,1,[ca. 1890 und 1904],1890?/1904?
+Aufge __ 🌕 __ i.e. __._.____,1,Aufge 21 April 60 [i.e. 21.4.1860],21.4.1860
+_ 🌕 __ aufg i.e. _._.____,1,8 Juli 59 aufg [i.e. 8.7.1859],8.7.1859
+___? i.e. zwischen ____ und ____,1,186? [i.e. zwischen 1860 und 1869],186?/1860/1869
+__ 🌕 __ i.e.____,1,13 April 60 [i.e.1860],13.4.1860
+Aufg. _ 🌕 __ i.e. _._.____,1,Aufg. 7 Juli 59 [i.e. 7.7.1859],7.7.1859
 A. ____,1,A. 1897,
 Sptbr. ____,1,Sptbr. 1907,
-🌕 __ 🌕 ____,1,Sept. 07 [September 1907],"07.9.1907, fullDateWithMonthInLangOrRoman"
-__/__ 🌕 __ i.e. __./.__._.____,1,22/24 VIII 08 [i.e. 22./.24.8.1908],"24.8.1908, singleDate"
-Revidirt _ 🌕____,1,Revidirt 7 Sept 1906,"7.6.1906, fullDateWithMonthInLangOrRoman"
-_/_ 🌕. ____ _ 🌕. ____,1,5/6 IV. 1903 7 IX. [19]06,"6.4.1903, fullDateWithMonthInLangOrRoman"
+🌕 __ 🌕 ____,1,Sept. 07 [September 1907],07.9.1907
+__/__ 🌕 __ i.e. __./.__._.____,1,22/24 VIII 08 [i.e. 22./.24.8.1908],24.8.1908
+Revidirt _ 🌕____,1,Revidirt 7 Sept 1906,7.6.1906
+_/_ 🌕. ____ _ 🌕. ____,1,5/6 IV. 1903 7 IX. [19]06,6.4.1903
 _ 🌕ca. ____,1,4 Sept [ca. 1904],
-____. __ 🌕 ____,1,1904. 14 VIII 1905,"14.8.1904, fullDateWithMonthInLangOrRoman"
-__ 🌕/ _ 🌕 ____,1,29 Aug / 1 Sept. 1905,"1.8.1905, fullDateWithMonthInLangOrRoman"
-_ 🌕.__ i.e. _._.____,1,8 VIII.05 [i.e. 8.8.1905],"8.8.1905, singleDate"
-__/__ 🌕____ in diebus annocnis,1,21/22 Aug 1903 in diebus [annocnis],"22.8.1903, fullDateWithMonthInLangOrRoman"
-Ostermontag bei Regen _ 🌕 ___ i.e. _._.____,1,Ostermontag bei Regen 4 IV 904 [i.e. 4.4.1904],"4.4.1904, singleDate"
-Sonntag _ 🌕 ____,1,Sonntag 4 Oct 1903,"4.10.1903, fullDateWithMonthInLangOrRoman"
-_ 🌕. ___ i.e. _.__.____,1,3 X. 903 [i.e. 3.10.1903],"3.10.1903, singleDate"
-__ 🌕 / _.🌕. __ i.e. __._./_._.____,1,19 VIII / 5.IX. 06 [i.e. 19.8./5.9.1906],"5.9.1906, singleDate"
-_ __ __ i.e. _.__.____,1,2 10 91 [i.e. 2.10.1891],"2.10.1891, singleDate"
-"_ 🌕__ oben, _ 🌕__ unten, i.e. _._. bzw. _._.____",1,"5 Aug 94 [oben], 4 Aug 94 [unten], [i.e. 8.5. bzw. 4.8.1894]","4.8.1894, singleDate"
-cop __ 🌕. __ i.e. __._.____,1,cop 29 IX. 05 [i.e. 29.9.1905],"29.9.1905, singleDate"
-aufgen. _ 🌕 ____,1,aufgen. 8 Juli 1859,"8.7.1859, fullDateWithMonthInLangOrRoman"
-__ 🌕 __ bei __° Celsius i.e. __._.____,1,18 VIII 92 bei 30° Celsius [i.e. 18.8.1892],"18.8.1892, singleDate"
-__ 🌕 __ bei __° Celsius! i.e. __._.____,1,18 VIII 92 bei 32° Celsius! [i.e. 18.8.1892],"18.8.1892, singleDate"
-zwischen ____ und ___,1,[zwischen 1860 und 110],"1860/110, yearRangeWithQualifier"
-__ 🌕 / _ 🌕 ____,1,22 VIII / 6 IX 1904,"6.8.1904, fullDateWithMonthInLangOrRoman"
-_/_ 🌕 __ i.e. _./._.__.____,1,1/2 X 93 [i.e. 1./.2.10.1893],"2.10.1893, singleDate"
+____. __ 🌕 ____,1,1904. 14 VIII 1905,14.8.1904
+__ 🌕/ _ 🌕 ____,1,29 Aug / 1 Sept. 1905,1.8.1905
+_ 🌕.__ i.e. _._.____,1,8 VIII.05 [i.e. 8.8.1905],8.8.1905
+__/__ 🌕____ in diebus annocnis,1,21/22 Aug 1903 in diebus [annocnis],22.8.1903
+Ostermontag bei Regen _ 🌕 ___ i.e. _._.____,1,Ostermontag bei Regen 4 IV 904 [i.e. 4.4.1904],4.4.1904
+Sonntag _ 🌕 ____,1,Sonntag 4 Oct 1903,4.10.1903
+_ 🌕. ___ i.e. _.__.____,1,3 X. 903 [i.e. 3.10.1903],3.10.1903
+__ 🌕 / _.🌕. __ i.e. __._./_._.____,1,19 VIII / 5.IX. 06 [i.e. 19.8./5.9.1906],5.9.1906
+_ __ __ i.e. _.__.____,1,2 10 91 [i.e. 2.10.1891],2.10.1891
+"_ 🌕__ oben, _ 🌕__ unten, i.e. _._. bzw. _._.____",1,"5 Aug 94 [oben], 4 Aug 94 [unten], [i.e. 8.5. bzw. 4.8.1894]",4.8.1894
+cop __ 🌕. __ i.e. __._.____,1,cop 29 IX. 05 [i.e. 29.9.1905],29.9.1905
+aufgen. _ 🌕 ____,1,aufgen. 8 Juli 1859,8.7.1859
+__ 🌕 __ bei __° Celsius i.e. __._.____,1,18 VIII 92 bei 30° Celsius [i.e. 18.8.1892],18.8.1892
+__ 🌕 __ bei __° Celsius! i.e. __._.____,1,18 VIII 92 bei 32° Celsius! [i.e. 18.8.1892],18.8.1892
+zwischen ____ und ___,1,[zwischen 1860 und 110],1860/110
+__ 🌕 / _ 🌕 ____,1,22 VIII / 6 IX 1904,6.8.1904
+_/_ 🌕 __ i.e. _./._.__.____,1,1/2 X 93 [i.e. 1./.2.10.1893],2.10.1893
 Charfreitag ____,1,Charfreitag 1904,
-...ion 🌕. ____,1,[...ion] III. 1904,"1.1904, monthAndYearWithMonthInLangOrRoman"
-_/_. 🌕. __ i.e. _./_._.____,1,6/7. IX. 05 [i.e. 6./7.9.1905],"7.9.1905, singleDate"
+...ion 🌕. ____,1,[...ion] III. 1904,1.1904
+_/_. 🌕. __ i.e. _./_._.____,1,6/7. IX. 05 [i.e. 6./7.9.1905],7.9.1905
 🌕on ihm gezeichnet ____,1,Von ihm gezeichnet 1896,
-_ & _ 🌕 ____,1,2 & 4 April 1894,"4.4.1894, fullDateWithMonthInLangOrRoman"
+_ & _ 🌕 ____,1,2 & 4 April 1894,4.4.1894
 Ao. Anno ____,1,Ao. [Anno] 1779,
-Aufgenommen __ 🌕 __ i.e. __.__.____,1,Aufgenommen 21 Octbr 60 [i.e. 21.10.1860],"21.10.1860, singleDate"
-Cop. 🌕 ____,1,Cop. Aug. 1895,"8.1895, monthAndYearWithMonthInLangOrRoman"
+Aufgenommen __ 🌕 __ i.e. __.__.____,1,Aufgenommen 21 Octbr 60 [i.e. 21.10.1860],21.10.1860
+Cop. 🌕 ____,1,Cop. Aug. 1895,8.1895
 M.D. L❓🌕. i.e. ____,1,[M.D.] LXXII. [i.e. 1572],
-🌕__ 🌕 ____,1,Aug 95 [August 1895],"95.8.1895, fullDateWithMonthInLangOrRoman"
-Aufg _ 🌕 ____ __ 🌕,1,Aufg 3 October 1858 16 Nov,"3.10.1858, fullDateWithMonthInLangOrRoman"
+🌕__ 🌕 ____,1,Aug 95 [August 1895],95.8.1895
+Aufg _ 🌕 ____ __ 🌕,1,Aufg 3 October 1858 16 Nov,3.10.1858
 Ostersonntag ____,1,Ostersonntag 1869,
 cop. ____,1,cop. 1896,
-🌕. __ i.e. 🌕 ____,1,V. 93 [i.e. Mai 1893],"5.1893, monthAndYearWithMonthInLangOrRoman"
+🌕. __ i.e. 🌕 ____,1,V. 93 [i.e. Mai 1893],5.1893
 M. D. L🌕. i.e. ____,1,M. D. LVI. [i.e. 1556],
 M DC C🌕🌕. i.e. ____,1,M DC CXVII. [i.e. 1717],
 MDC🌕C🌕 i.e ____,1,MDCXCVI [i.e 1696],
-Sonntag __ 🌕 ____,1,Sonntag 22 Maerz 1896,"22.3.1896, fullDateWithMonthInLangOrRoman"
-__. _ __ i.e. __._.____,1,22. 3 96 [i.e. 22.3.1896],"22.3.1896, singleDate"
-vor _. 🌕 ____,1,[vor 3. Juli 1783],"3.5.1783, fullDateWithMonthInLangOrRoman"
-Ende 🌕 ____,1,Ende Januar 1909,"1.1909, monthAndYearWithMonthInLangOrRoman"
-🌕-🌕 ____,1,Febr-März 1909,"0.1909, monthAndYearWithMonthInLangOrRoman"
+Sonntag __ 🌕 ____,1,Sonntag 22 Maerz 1896,22.3.1896
+__. _ __ i.e. __._.____,1,22. 3 96 [i.e. 22.3.1896],22.3.1896
+vor _. 🌕 ____,1,[vor 3. Juli 1783],3.5.1783
+Ende 🌕 ____,1,Ende Januar 1909,1.1909
+🌕-🌕 ____,1,Febr-März 1909,0.1909
 __. _er ____,1,16. 8er 1788,
-gem. __.🌕.____,1,gem. 22.II.[18]68,"22.2.1868, fullDateWithMonthInLangOrRoman"
-gez. d. 🌕. 🌕 ____ ; gem. d. 🌕. ____,1,gez. d. II. Nov. 1850 ; gem. d. III. 1868,"2.1850, monthAndYearWithMonthInLangOrRoman"
-zwischen __. 🌕. __ und __ 🌕. __ i.e. zwischen __._. und __._.____,1,zwischen 23. VI. 97 und 30 VI. 97 [i.e. zwischen 23.6. und 30.6.1897],"30.6.1897, singleDate"
-__ u __ 🌕 ____,1,16 u 23 Juni 1897,"23.6.1897, fullDateWithMonthInLangOrRoman"
+gem. __.🌕.____,1,gem. 22.II.[18]68,22.2.1868
+gez. d. 🌕. 🌕 ____ ; gem. d. 🌕. ____,1,gez. d. II. Nov. 1850 ; gem. d. III. 1868,2.1850
+zwischen __. 🌕. __ und __ 🌕. __ i.e. zwischen __._. und __._.____,1,zwischen 23. VI. 97 und 30 VI. 97 [i.e. zwischen 23.6. und 30.6.1897],30.6.1897
+__ u __ 🌕 ____,1,16 u 23 Juni 1897,23.6.1897
 Die __. 🌕is ____,1,Die 15. Octobris 1772,
-den __ 🌕 __,1,den 12 Aug. 82,"12.8.82, fullDateWithMonthInLangOrRoman"
-_ 🌕 __ und __. 🌕 i.e. _._. und __._.____,1,9 April 62 und 10. April [i.e. 9.4. und 10.4.1862],"10.4.1862, singleDate"
-_ 🌕 i.e. _._.____,1,9 April [i.e. 9.4.1862],"9.4.1862, singleDate"
+den __ 🌕 __,1,den 12 Aug. 82,12.8.82
+_ 🌕 __ und __. 🌕 i.e. _._. und __._.____,1,9 April 62 und 10. April [i.e. 9.4. und 10.4.1862],10.4.1862
+_ 🌕 i.e. _._.____,1,9 April [i.e. 9.4.1862],9.4.1862
 Ao. ____.,1,[Ao. 1792.],
-🌕.🌕.____,1,II.X.[18]46,"2.1846, monthAndYearWithMonthInLangOrRoman"
-__.🌕./__.🌕.____,1,17.II.[/]25.III.1833,"25.2.1833, fullDateWithMonthInLangOrRoman"
-__.🌕.____ ; __.🌕.____,1,28.II.[18]33 ; 22.IV.[18]38,"28.2.1833, fullDateWithMonthInLangOrRoman"
-"__ 🌕 __ _/_ _ Uhr abd. i.e. __._.____, __.__ Uhr",1,"14 Mai 64 1/2 5 Uhr abd. [i.e. 14.5.1864, 16.30 Uhr]","14.5.1864, singleDate"
-"__ 🌕 __ _ Uhr __ Min i.e. __._.____, _.__ Uhr",1,"14 Mai 64 6 Uhr 10 Min [i.e. 14.5.1864, 6.10 Uhr]","14.5.1864, singleDate"
-zwischen ____ ud ____?,1,[zwischen 1675 ud 1713?],"1675/1713?, yearRangeWithQualifier"
-_. 🌕. __ _._.____,1,6. VIII. 93 [6.8.1893],"6.8.1893, singleDate"
-__. 🌕. __,1,18. VIII. 93,"18.8.93, fullDateWithMonthInLangOrRoman"
-__. 🌕. __ i.e. ____,1,22. VIII. 93 [i.e. 1893],"22.8.1893, fullDateWithMonthInLangOrRoman"
-__. 🌕. __ __._.____,1,27. VIII. 93 [27.8.1893],"27.8.1893, singleDate"
-_ 🌕i.e. _._.____,1,1 Aug [i.e. 1.8.1863],"1.8.1863, singleDate"
-_/_ 🌕__ i.e. _./_._.____,1,1/2 Aug 63 [i.e. 1./2.8.1863],"2.8.1863, singleDate"
-🌕 i.e. 🌕 ____,1,Nov. [i.e. November 1863],"11.1863, monthAndYearWithMonthInLangOrRoman"
+🌕.🌕.____,1,II.X.[18]46,2.1846
+__.🌕./__.🌕.____,1,17.II.[/]25.III.1833,25.2.1833
+__.🌕.____ ; __.🌕.____,1,28.II.[18]33 ; 22.IV.[18]38,28.2.1833
+"__ 🌕 __ _/_ _ Uhr abd. i.e. __._.____, __.__ Uhr",1,"14 Mai 64 1/2 5 Uhr abd. [i.e. 14.5.1864, 16.30 Uhr]",14.5.1864
+"__ 🌕 __ _ Uhr __ Min i.e. __._.____, _.__ Uhr",1,"14 Mai 64 6 Uhr 10 Min [i.e. 14.5.1864, 6.10 Uhr]",14.5.1864
+zwischen ____ ud ____?,1,[zwischen 1675 ud 1713?],1675/1713?
+_. 🌕. __ _._.____,1,6. VIII. 93 [6.8.1893],6.8.1893
+__. 🌕. __,1,18. VIII. 93,18.8.93
+__. 🌕. __ i.e. ____,1,22. VIII. 93 [i.e. 1893],22.8.1893
+__. 🌕. __ __._.____,1,27. VIII. 93 [27.8.1893],27.8.1893
+_ 🌕i.e. _._.____,1,1 Aug [i.e. 1.8.1863],1.8.1863
+_/_ 🌕__ i.e. _./_._.____,1,1/2 Aug 63 [i.e. 1./2.8.1863],2.8.1863
+🌕 i.e. 🌕 ____,1,Nov. [i.e. November 1863],11.1863
 ____ ?,1,[1843 ?],
-Sonnabend __ 🌕 __ i.e. __._.____,1,Sonnabend 11 May 67 [i.e. 11.5.1867],"11.5.1867, singleDate"
-__/🌕. __ i.e. __._.____,1,21/V. 67 [i.e. 21.5.1867],"21.5.1867, singleDate"
-__.__.____,1,[20.10.1866],"20.10.1866, singleDate"
-_/_ 🌕__ i.e. _./_.__.____,1,8/9 Nov 66 [i.e. 8./9.11.1866],"9.11.1866, singleDate"
-__ 🌕__ (nach Laspeyres) i.e. __.__.____,1,25 Nov 66 (nach Laspeyres) [i.e. 25.11.1866],"25.11.1866, singleDate"
-__. 🌕 __ i.e. __.__.____,1,22. XII 66 [i.e. 22.12.1866],"22.12.1866, singleDate"
+Sonnabend __ 🌕 __ i.e. __._.____,1,Sonnabend 11 May 67 [i.e. 11.5.1867],11.5.1867
+__/🌕. __ i.e. __._.____,1,21/V. 67 [i.e. 21.5.1867],21.5.1867
+__.__.____,1,[20.10.1866],20.10.1866
+_/_ 🌕__ i.e. _./_.__.____,1,8/9 Nov 66 [i.e. 8./9.11.1866],9.11.1866
+__ 🌕__ (nach Laspeyres) i.e. __.__.____,1,25 Nov 66 (nach Laspeyres) [i.e. 25.11.1866],25.11.1866
+__. 🌕 __ i.e. __.__.____,1,22. XII 66 [i.e. 22.12.1866],22.12.1866
 zwischen ____ und und ____?,1,[zwischen 1640 und und 1689?],
 ____ aetat. im Alter von __,1,1668 aetat. [im Alter von] 15,
-🌕 🌕 __ i.e. _._.____,1,II Maerz 67 [i.e. 2.3.1867],"2.3.1867, singleDate"
-Aufg. _ 🌕. __ i.e. _.__.____,1,Aufg. 6 Oct. 60 [i.e. 6.10.1860],"6.10.1860, singleDate"
-__ 🌕 ____. ... ad. nat.,1,29 Merz 1813. [...] ad. nat.,"29.3.1813, fullDateWithMonthInLangOrRoman"
-_/_ 🌕 __ i.e. _./_.__.____,1,7/8 Oct 95 [i.e. 7./8.10.1895],"8.10.1895, singleDate"
-Aufgenommen _/_ 🌕 __ i.e. _./_._.____,1,Aufgenommen 6/7 Sept. 60 [i.e. 6./7.9.1860],"7.9.1860, singleDate"
+🌕 🌕 __ i.e. _._.____,1,II Maerz 67 [i.e. 2.3.1867],2.3.1867
+Aufg. _ 🌕. __ i.e. _.__.____,1,Aufg. 6 Oct. 60 [i.e. 6.10.1860],6.10.1860
+__ 🌕 ____. ... ad. nat.,1,29 Merz 1813. [...] ad. nat.,29.3.1813
+_/_ 🌕 __ i.e. _./_.__.____,1,7/8 Oct 95 [i.e. 7./8.10.1895],8.10.1895
+Aufgenommen _/_ 🌕 __ i.e. _./_._.____,1,Aufgenommen 6/7 Sept. 60 [i.e. 6./7.9.1860],7.9.1860
 Aufgenommen __ 🌕b ____,1,Aufgenommen 28 Octb 1860,
-"genau gezeichnet, aufgenommen __ 🌕 ____",1,"genau gezeichnet, aufgenommen 28 October 1860","28.1.1860, fullDateWithMonthInLangOrRoman"
-Aufgenommen __ 🌕. ____,1,Aufgenommen 28 Octob. 1860,"28.10.1860, fullDateWithMonthInLangOrRoman"
-"Aufgenommen __ 🌕 __ oben, aufgenommen __ 🌕 __ unten i.e. __. bzw. __.__.____",1,"Aufgenommen 21 Oct 60 [oben], aufgenommen 28 Oct 60 [unten] [i.e. 21. bzw. 28.10.1860]","28.10.1860, singleDate"
-__.-__._.____?,1,[16.-18.6.1655?],"18.6.1655, singleDate"
-aufgen. _ 🌕 __ i.e. _._.____,1,aufgen. 8 Juli 60 [i.e. 8.7.1860],"8.7.1860, singleDate"
-Aufgenommen am __ 🌕__ i.e. __._.____,1,Aufgenommen am 17 Aug 60 [i.e. 17.8.1860],"17.8.1860, singleDate"
-__ten 🌕 ____,1,21ten Juni 1839,"6.1839, monthAndYearWithMonthInLangOrRoman"
-... __._.____,1,[...] 14.6.[18]63,"14.6.1863, singleDate"
-den __t 🌕____,1,d[en] 12t Sept 1848,"9.1848, monthAndYearWithMonthInLangOrRoman"
+"genau gezeichnet, aufgenommen __ 🌕 ____",1,"genau gezeichnet, aufgenommen 28 October 1860",28.1.1860
+Aufgenommen __ 🌕. ____,1,Aufgenommen 28 Octob. 1860,28.10.1860
+"Aufgenommen __ 🌕 __ oben, aufgenommen __ 🌕 __ unten i.e. __. bzw. __.__.____",1,"Aufgenommen 21 Oct 60 [oben], aufgenommen 28 Oct 60 [unten] [i.e. 21. bzw. 28.10.1860]",28.10.1860
+__.-__._.____?,1,[16.-18.6.1655?],18.6.1655
+aufgen. _ 🌕 __ i.e. _._.____,1,aufgen. 8 Juli 60 [i.e. 8.7.1860],8.7.1860
+Aufgenommen am __ 🌕__ i.e. __._.____,1,Aufgenommen am 17 Aug 60 [i.e. 17.8.1860],17.8.1860
+__ten 🌕 ____,1,21ten Juni 1839,6.1839
+... __._.____,1,[...] 14.6.[18]63,14.6.1863
+den __t 🌕____,1,d[en] 12t Sept 1848,9.1848
 den __ten 🌕us ____,1,d[en] 15ten Julius 1839,
 den __ ... ____,1,d[en] 20 [...] [18]44,
-den _ ten 🌕 ____,1,d[en] 3 ten Juli 1839,"7.1839, monthAndYearWithMonthInLangOrRoman"
+den _ ten 🌕 ____,1,d[en] 3 ten Juli 1839,7.1839
 den __ ten 🌕us ____,1,d[en] 13 ten Julius 1839,
 den ... ten 🌕us ____,1,d[en] [...] ten Julius 1839,
-den _ten 🌕 ____,1,d[en] 9ten Juni 1839,"6.1839, monthAndYearWithMonthInLangOrRoman"
+den _ten 🌕 ____,1,d[en] 9ten Juni 1839,6.1839
 ____ ____,1,1694 [1693],
 __ S. ____,1,21 S. [18]74,
-den _ ... 🌕. ____,1,d[en] 2 [...] Sep. [18]74,"2.9.1874, fullDateWithMonthInLangOrRoman"
-den __ 🌕. ____,1,d[en] 12 Sep. [18]74,"12.9.1874, fullDateWithMonthInLangOrRoman"
-den __ten 🌕 ____,1,d[en] 19ten Juli 1839,"7.1839, monthAndYearWithMonthInLangOrRoman"
-den __en 🌕 ____,1,d[en] 10en Sep [18]74,"9.1874, monthAndYearWithMonthInLangOrRoman"
-__ 🌕__ i.e. __. 🌕 ____,1,31 Aug 52 [i.e. 31. August 1852],"31.8.1852, fullDateWithMonthInLangOrRoman"
+den _ ... 🌕. ____,1,d[en] 2 [...] Sep. [18]74,2.9.1874
+den __ 🌕. ____,1,d[en] 12 Sep. [18]74,12.9.1874
+den __ten 🌕 ____,1,d[en] 19ten Juli 1839,7.1839
+den __en 🌕 ____,1,d[en] 10en Sep [18]74,9.1874
+__ 🌕__ i.e. __. 🌕 ____,1,31 Aug 52 [i.e. 31. August 1852],31.8.1852
 le __e 🌕embre ____,1,le 21e Decembre 1836,
-__. 🌕 __ i.e. __. 🌕 ____,1,[21. Mai 99] [i.e. 21. Mai 1899],"21.5.1899, fullDateWithMonthInLangOrRoman"
+__. 🌕 __ i.e. __. 🌕 ____,1,[21. Mai 99] [i.e. 21. Mai 1899],21.5.1899

@@ -1,29 +1,29 @@
 Format,Appearances,Example,Interpretation
-____-____,268,1818-1838,"1818/1838, yearRangeWithQualifier"
-___-___,46,747-814,
-ca. Anfang _. ¢,10,ca. Anfang 4. Jh. ,"3?, century"
--____,10,-1309,
+____-____,268,1818-1838,1818/1838
+___-___,46,747-814,7470/7479
+ca. Anfang _. ¢,10,ca. Anfang 4. Jh. ,3?
+-____,10,-1309,/1309
 -___,8,-300,
-ca. _./_. ¢,7, ca. 3./4. Jh.,"None, centuryRange"
-ca. _. ¢,7,ca. 7. Jh.,"6?, century"
-ca. _. ¢ v.Chr.,4,ca. 1. Jh. v.Chr. ,"0?, century"
-ca. _.¢v.Chr.,3,ca. 1.Jh.v.Chr.,"0?, century"
-ca. v_. ¢ - _. ¢,3, ca. v1. Jh. - 1. Jh.,"0?, century"
+ca. _./_. ¢,7, ca. 3./4. Jh.,
+ca. _. ¢,7,ca. 7. Jh.,6?
+ca. _. ¢ v.Chr.,4,ca. 1. Jh. v.Chr. ,0?
+ca. _.¢v.Chr.,3,ca. 1.Jh.v.Chr.,0?
+ca. v_. ¢ - _. ¢,3, ca. v1. Jh. - 1. Jh.,0?
 ca. um ___/__,3,ca. um 889/94,
-ca. -_. ¢,2,ca. -7. Jh.,"6?, century"
-ca. Ende _. ¢/Anfang _. ¢,2,ca. Ende 3. Jh./Anfang 4. Jh.,"2?, century"
+ca. -_. ¢,2,ca. -7. Jh.,6?
+ca. Ende _. ¢/Anfang _. ¢,2,ca. Ende 3. Jh./Anfang 4. Jh.,2?
 __❓-____,2,18XX-1944,
-____/____-____,2,1290/1300-1360,"1290/1300/1360, yearRangeWithQualifier"
-____-____;ZG,1,1647-1709;ZG ,"1647/1709, yearRangeWithQualifier"
-v___-v__,1,v100-v44,"1000/1009, yearWithPlaceHolderAndQualifier"
-ca. ___-___,1,ca. 453-526,"4530?/4539?, yearWithPlaceHolderAndQualifier"
-❓❓-____,1,XXXX-1558,
+____/____-____,2,1290/1300-1360,1290/1300/1360
+____-____;ZG,1,1647-1709;ZG ,1647/1709
+v___-v__,1,v100-v44,1000/1009
+ca. ___-___,1,ca. 453-526,4530?/4539?
+❓❓-____,1,XXXX-1558,/1558
 __-__,1,14-62,
 ca. seit ____,1,ca. seit 1685,
-____-,1,1863- ,"1863/, afterYearWithQualifier"
-ca. __./__. ¢,1, ca. 13./14. Jahrhundert,"12?/13?, centuryRange"
+____-,1,1863- ,1863/
+ca. __./__. ¢,1, ca. 13./14. Jahrhundert,12?/13?
 v__-v__,1,v87-v15,
 v_-__,1,v1-29 ,
-ca. ___-ca. ___,1,ca. 456-ca. 531 ,"4560?/4569?, yearWithPlaceHolderAndQualifier"
+ca. ___-ca. ___,1,ca. 456-ca. 531 ,4560?/4569?
 ca. ?-___,1, ca. ?-249,
-___-____,1,981-1055 ,
+___-____,1,981-1055 ,9810/9819
