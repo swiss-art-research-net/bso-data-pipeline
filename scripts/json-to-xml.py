@@ -1,13 +1,16 @@
+from SariDateParser.dateParser import parse
 from lxml import etree
 import json
 import os
 import requests
 import urllib
 
-inputFile = "../input/sari_abzug-utf-8_23_04-tsv.txt"
-manifestDirectory = "../manifests/"
-outputDirectory = "../input/"
+inputFile = "/input/sari_abzug-utf-8_23_04-tsv.txt"
+manifestDirectory = "/manifests/"
+outputDirectory = "/input/"
 outputPrefix = "sari-"
+
+fieldsContainingDates = ['100$d', '260$c', '260$g', '264$c', '533$d', '600$d', '611$d', '700$d']
 
 def convertRowToXml(row, keys):
     record = etree.Element("record")
@@ -17,7 +20,13 @@ def convertRowToXml(row, keys):
         if key in row and row[key] is not None:
             if '$' in key:
                 code = key[4:]
-                etree.SubElement(datafield, "subfield", code=code).text = str(row[key])
+                subfield = etree.SubElement(datafield, "subfield", code=code)
+                subfield.text = str(row[key])
+                # Check if field contains a date
+                if key in fieldsContainingDates:
+                    parsedDate = parse(row[key])
+                    if parsedDate:
+                        subfield.set("parsedDate", parsedDate)
                 # Remove non-separated field content
                 datafield.text = None
             else:
