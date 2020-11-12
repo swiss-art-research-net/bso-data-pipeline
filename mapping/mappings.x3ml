@@ -349,6 +349,28 @@
                     </target_node>
                 </range>
             </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>datafield</relation>
+                    </source_relation>
+                    <target_relation>
+                        <if>
+                            <equals value="651">@tag</equals>
+                        </if>
+                        <relationship>crm:P138_represents</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>datafield</source_node>
+                    <target_node>
+                        <entity variable="subject_geographic">
+                            <type>crm:E53_Place</type>
+                            <instance_generator name="UUID"/>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
         </mapping>
         <mapping>
             <domain>
@@ -995,6 +1017,46 @@
                         <entity>
                             <type>crm:E33_Linguistic_Object</type>
                             <type>crm:E41_Appellation</type>
+                            <instance_generator name="UUID"/>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+        </mapping>
+        <mapping>
+            <domain>
+                <source_node>/records/record/datafield</source_node>
+                <target_node>
+                    <if>
+                        <equals value="651">@tag</equals>
+                    </if>
+                    <entity variable="subjec_geographic">
+                        <type>crm:E53_Place</type>
+                        <instance_generator name="URIwithTypeAndId_hashed">
+                            <arg name="type" type="constant">place</arg>
+                            <arg name="id" type="xpath">subfield[@code='a']/text()</arg>
+                        </instance_generator>
+                        <label_generator name="prefLabel">
+                            <arg name="text" type="xpath">subfield[@code='a']/text()</arg>
+                            <arg name="language" type="constant"/>
+                        </label_generator>
+                    </entity>
+                </target_node>
+            </domain>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation/>
+                    </source_relation>
+                    <target_relation>
+                        <relationship/>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node/>
+                    <target_node>
+                        <entity>
+                            <type/>
                             <instance_generator name="UUID"/>
                         </entity>
                     </target_node>
