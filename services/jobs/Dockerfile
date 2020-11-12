@@ -1,5 +1,5 @@
-FROM python:3
-RUN pip install date-parser-sari lxml python3-urllib3 requests
+FROM python:3.8
+RUN pip install date-parser-sari lxml urllib3 requests edtf
 VOLUME /scripts
 VOLUME /keys
 VOLUME /input
