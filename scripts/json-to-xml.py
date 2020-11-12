@@ -58,7 +58,7 @@ def convertRowToXml(row, keys):
                         subfield.set("parsedDate", parsedDate)
                         daterange = convertEDTFdate(parsedDate)
                         subfield.set("upperDate", daterange['upper'])
-                        subfield.set("lowerdate", daterange['lower'])
+                        subfield.set("lowerDate", daterange['lower'])
                 # Remove non-separated field content
                 datafield.text = None
             else:

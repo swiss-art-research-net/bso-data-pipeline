@@ -330,7 +330,7 @@
                                 <arg name="subtype" type="constant">title</arg>
                             </instance_generator>
                             <label_generator name="Literal">
-                                <arg name="text" type="xpath">if (./subfield[@code='c']!='') then concat(./subfield[@code='a']/text(), ': ', ./subfield[@code='b']/text()) else (./subfield[@code='a']/text())</arg>
+                                <arg name="text" type="xpath">concat(./subfield[@code='a']/text(), ./subfield[@code='a']/text())</arg>
                                 <arg name="language" type="constant"/>
                             </label_generator>
                             <additional>
@@ -902,6 +902,40 @@
                                 <arg name="text" type="xpath">text()</arg>
                                 <arg name="language" type="constant"/>
                             </label_generator>
+                            <additional>
+                                <relationship>crm:P82a_begin_of_the_begin</relationship>
+                                <entity variable="event_from">
+                                    <type>xsd:dateTime</type>
+                                    <instance_info>
+                                        <constant/>
+                                    </instance_info>
+                                    <instance_generator name="URIwith2TypesAndId_hashed">
+                                        <arg name="type1" type="constant">event</arg>
+                                        <arg name="type2" type="constant">from</arg>
+                                        <arg name="id" type="xpath">@lowerDate</arg>
+                                    </instance_generator>
+                                    <label_generator name="Literal">
+                                        <arg name="text" type="xpath">@lowerDate</arg>
+                                    </label_generator>
+                                </entity>
+                            </additional>
+                            <additional>
+                                <relationship>crm:P82b_end_of_the_end</relationship>
+                                <entity variable="event_to">
+                                    <type>xsd:dateTime</type>
+                                    <instance_info>
+                                        <constant/>
+                                    </instance_info>
+                                    <instance_generator name="URIwith2TypesAndId_hashed">
+                                        <arg name="type1" type="constant">event</arg>
+                                        <arg name="type2" type="constant">to</arg>
+                                        <arg name="id" type="xpath">@upperDate</arg>
+                                    </instance_generator>
+                                    <label_generator name="Literal">
+                                        <arg name="text" type="xpath">@upperDate</arg>
+                                    </label_generator>
+                                </entity>
+                            </additional>
                         </entity>
                     </target_node>
                 </range>

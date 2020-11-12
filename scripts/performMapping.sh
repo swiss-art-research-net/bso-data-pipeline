@@ -4,7 +4,7 @@ RECORDSOUTPUTFOLDER=/output
 RECORDMAPPING=/mappings/mappings.x3ml
 GENERATOR=/mappings/generator-policy.xml
 
-BATCHSIZE=10
+BATCHSIZE=1
 
 echo "Mapping Records"
 numfiles=$(ls -l $RECORDSINPUTFOLDER/*.xml | wc -l)
