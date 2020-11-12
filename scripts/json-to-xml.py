@@ -1,5 +1,4 @@
 from edtf import parse_edtf
-from edtf.parser.parser_classes import Interval, Date
 from sariDateParser.dateParser import parse
 from lxml import etree
 import json
@@ -38,8 +37,8 @@ def convertEDTFdate(date):
             lower = d.lower_strict()
             upper = d.upper_strict()
     return {
-        'lower': time.strftime("%m/%d/%Y", lower),
-        'upper': time.strftime("%m/%d/%Y", upper)
+        'lower': time.strftime("%Y-%m-%d", lower),
+        'upper': time.strftime("%Y-%m-%d", upper)
     }
 
 def convertRowToXml(row, keys):
