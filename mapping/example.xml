@@ -14,7 +14,7 @@
       <subfield code="4">art</subfield>
       <subfield code="a">Egli, Jean</subfield>
       <subfield code="c"></subfield>
-      <subfield code="d" parsedDate="1828/1870" upperDate="12/31/1870" lowerdate="01/01/1828">1828-1870</subfield>
+      <subfield code="d" parsedDate="1828/1870" upperDate="1870-12-31" lowerDate="1828-01-01">1828-1870</subfield>
       <subfield code="e">Künstler</subfield>
     </datafield>
     <datafield tag="245">
@@ -30,7 +30,7 @@
     <datafield tag="264">
       <subfield code="a">[Zürich]</subfield>
       <subfield code="b">Ruff u. Hofer gedr.t</subfield>
-      <subfield code="c" parsedDate="1860" upperDate="12/31/1860" lowerdate="01/01/1860">[1860]</subfield>
+      <subfield code="c" parsedDate="1860" upperDate="1860-12-31" lowerDate="1860-01-01">[1860]</subfield>
     </datafield>
     <datafield tag="300">
       <subfield code="a">10 Blätter</subfield>
@@ -67,6 +67,7 @@
     </datafield>
     <datafield tag="651">
       <subfield code="1">(DE-588)4068038-1</subfield>
+      <subfield code="1_2">4068038-1</subfield>
       <subfield code="2">gnd</subfield>
       <subfield code="a">Zürich</subfield>
       <subfield code="g"></subfield>
@@ -98,7 +99,7 @@
       <subfield code="x">Z01</subfield>
       <subfield code="z">Online via e-rara.ch</subfield>
     </datafield>
-    <datafield tag="UUID">f33b0330-d53d-41f8-a7b8-3334be547d0b</datafield>
+    <datafield tag="id">f33b0330-d53d-41f8-a7b8-3334be547d0b</datafield>
     <datafield tag="manifest">https://www.e-rara.ch/i3f/v20/17611827/manifest</datafield>
     <images>
       <image>
@@ -176,7 +177,7 @@
     <datafield tag="264">
       <subfield code="a">Zurich</subfield>
       <subfield code="b">chez R. Dikenmann Peintre</subfield>
-      <subfield code="c" parsedDate="1877/1899" upperDate="12/31/1899" lowerdate="01/01/1877">[zwischen 1877 und 1899]</subfield>
+      <subfield code="c" parsedDate="1877/1899" upperDate="1899-12-31" lowerDate="1877-01-01">[zwischen 1877 und 1899]</subfield>
     </datafield>
     <datafield tag="300">
       <subfield code="a">1 Druckgrafik</subfield>
@@ -208,10 +209,47 @@
     </datafield>
     <datafield tag="590">\\$aMit dem Vermerk "Edition originale 1", stockfleckig$5Exemplar der Zentralbibliothek Zürich, Graphische Sammlung und Fotoarchiv</datafield>
     <datafield tag="651">
-      <subfield code="1">(DE-588)4068038-1 | (DE-588)1140245791 | (DE-588)1137974680 | (DE-588)4093562-0 | (DE-588)4118545-6</subfield>
-      <subfield code="2">gnd;\7 | gnd;\7 | gnd;\7 | gnd;\7 | gnd</subfield>
-      <subfield code="a">Zürich | Waidgut | Waid | Glarner Alpen | Schwyzer Alpen</subfield>
-      <subfield code="g">Zürich | Zürich</subfield>
+      <subfield code="1">(DE-588)4068038-1</subfield>
+      <subfield code="1_2">4068038-1</subfield>
+      <subfield code="2">gnd</subfield>
+      <subfield code="a">Zürich</subfield>
+      <subfield code="g"></subfield>
+      <subfield code="x"></subfield>
+      <subfield code="z"></subfield>
+    </datafield>
+    <datafield tag="651">
+      <subfield code="1">(DE-588)1140245791</subfield>
+      <subfield code="1_2">1140245791</subfield>
+      <subfield code="2">gnd</subfield>
+      <subfield code="a">Waidgut</subfield>
+      <subfield code="g">Zürich</subfield>
+      <subfield code="x"></subfield>
+      <subfield code="z"></subfield>
+    </datafield>
+    <datafield tag="651">
+      <subfield code="1">(DE-588)1137974680</subfield>
+      <subfield code="1_2">1137974680</subfield>
+      <subfield code="2">gnd</subfield>
+      <subfield code="a">Waid</subfield>
+      <subfield code="g">Zürich</subfield>
+      <subfield code="x"></subfield>
+      <subfield code="z"></subfield>
+    </datafield>
+    <datafield tag="651">
+      <subfield code="1">(DE-588)4093562-0</subfield>
+      <subfield code="1_2">4093562-0</subfield>
+      <subfield code="2">gnd</subfield>
+      <subfield code="a">Glarner Alpen</subfield>
+      <subfield code="g"></subfield>
+      <subfield code="x"></subfield>
+      <subfield code="z"></subfield>
+    </datafield>
+    <datafield tag="651">
+      <subfield code="1">(DE-588)4118545-6</subfield>
+      <subfield code="1_2">4118545-6</subfield>
+      <subfield code="2">gnd</subfield>
+      <subfield code="a">Schwyzer Alpen</subfield>
+      <subfield code="g"></subfield>
       <subfield code="x"></subfield>
       <subfield code="z"></subfield>
     </datafield>
@@ -253,7 +291,7 @@
       <subfield code="a">000004538_1</subfield>
       <subfield code="x">uzb-ZG</subfield>
     </datafield>
-    <datafield tag="UUID">8d11181b-3369-4032-8ab2-0514d94314f1</datafield>
+    <datafield tag="id">8d11181b-3369-4032-8ab2-0514d94314f1</datafield>
     <datafield tag="manifest">https://www.e-rara.ch/i3f/v20/15819735/manifest</datafield>
     <images>
       <image>
@@ -286,7 +324,7 @@
     <datafield tag="260">
       <subfield code="a">[Winterthur]</subfield>
       <subfield code="b"></subfield>
-      <subfield code="c" parsedDate="1838?" upperDate="12/31/1838" lowerdate="01/01/1838">[ca. 1838]</subfield>
+      <subfield code="c" parsedDate="1838?" upperDate="1838-12-31" lowerDate="1838-01-01">[ca. 1838]</subfield>
       <subfield code="e"></subfield>
       <subfield code="f"></subfield>
       <subfield code="g"></subfield>
@@ -318,6 +356,7 @@
     </datafield>
     <datafield tag="651">
       <subfield code="1">(DE-588)1058344676</subfield>
+      <subfield code="1_2">1058344676</subfield>
       <subfield code="2">gnd</subfield>
       <subfield code="a">Klosteranlage des Klosters Töss</subfield>
       <subfield code="g">Winterthur-Töss</subfield>
@@ -336,7 +375,7 @@
       <subfield code="5"></subfield>
       <subfield code="a">Werdmüller, Johann Konrad</subfield>
       <subfield code="c"></subfield>
-      <subfield code="d" parsedDate="1819/1892" upperDate="12/31/1892" lowerdate="01/01/1819">1819-1892</subfield>
+      <subfield code="d" parsedDate="1819/1892" upperDate="1892-12-31" lowerDate="1819-01-01">1819-1892</subfield>
       <subfield code="e"></subfield>
       <subfield code="g"></subfield>
     </datafield>
@@ -358,7 +397,7 @@
       <subfield code="a">000001529_31</subfield>
       <subfield code="x">uzb-ZG</subfield>
     </datafield>
-    <datafield tag="UUID">42951b13-79f0-40a8-9e26-bbd4affddd43</datafield>
+    <datafield tag="id">42951b13-79f0-40a8-9e26-bbd4affddd43</datafield>
     <datafield tag="manifest">https://www.e-manuscripta.ch/i3f/v20/1966008/manifest</datafield>
     <images>
       <image>
@@ -398,7 +437,7 @@
     <datafield tag="264">
       <subfield code="a">Zürich</subfield>
       <subfield code="b">Polygraphisches Institut</subfield>
-      <subfield code="c" parsedDate="1887/" upperDate="12/31/9999" lowerdate="01/01/1887">[nicht vor 1887]</subfield>
+      <subfield code="c" parsedDate="1887/" upperDate="9999-12-31" lowerDate="1887-01-01">[nicht vor 1887]</subfield>
     </datafield>
     <datafield tag="300">
       <subfield code="a">1 Druckgrafik</subfield>
@@ -434,10 +473,29 @@
       <subfield code="a">Krematorium im Friedhof Sihlfeld (Zentralfriedhof) an der Aemtlerstrasse 149-151; in Etappen 1877 (Teil A), 1888 (Teil B, 1969 aufgehoben), 1902 (Teil C) und 1912 (Teil D) angelegt; Teil A von Stadtbaumeister Arnold Geiser; 1887, nachdem der Streit um Erd- oder Feuerbestattung entschieden ist, Bau des Krematoriums von A. Geiser</subfield>
     </datafield>
     <datafield tag="651">
-      <subfield code="1">(DE-588)4742182-4 | (DE-588)1062518020 | (DE-588)4325071-3</subfield>
-      <subfield code="2">gnd;\7 | gnd;\7 | gnd</subfield>
-      <subfield code="a">Friedhof Sihlfeld | Zürich-Sihlfeld | Zürich-Wiedikon</subfield>
+      <subfield code="1">(DE-588)4742182-4</subfield>
+      <subfield code="1_2">4742182-4</subfield>
+      <subfield code="2">gnd</subfield>
+      <subfield code="a">Friedhof Sihlfeld</subfield>
       <subfield code="g">Zürich</subfield>
+      <subfield code="x"></subfield>
+      <subfield code="z"></subfield>
+    </datafield>
+    <datafield tag="651">
+      <subfield code="1">(DE-588)1062518020</subfield>
+      <subfield code="1_2">1062518020</subfield>
+      <subfield code="2">gnd</subfield>
+      <subfield code="a">Zürich-Sihlfeld</subfield>
+      <subfield code="g"></subfield>
+      <subfield code="x"></subfield>
+      <subfield code="z"></subfield>
+    </datafield>
+    <datafield tag="651">
+      <subfield code="1">(DE-588)4325071-3</subfield>
+      <subfield code="1_2">4325071-3</subfield>
+      <subfield code="2">gnd</subfield>
+      <subfield code="a">Zürich-Wiedikon</subfield>
+      <subfield code="g"></subfield>
       <subfield code="x"></subfield>
       <subfield code="z"></subfield>
     </datafield>
@@ -459,7 +517,7 @@
       <subfield code="x">Z01</subfield>
       <subfield code="z">Online via e-rara.ch</subfield>
     </datafield>
-    <datafield tag="UUID">0ddbc7bf-19ef-4326-9b17-ef0765f9f35b</datafield>
+    <datafield tag="id">0ddbc7bf-19ef-4326-9b17-ef0765f9f35b</datafield>
     <datafield tag="manifest">https://www.e-rara.ch/i3f/v20/15554861/manifest</datafield>
     <images>
       <image>
