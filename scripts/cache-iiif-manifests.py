@@ -5,7 +5,7 @@ import threading
 import urllib
 import sys
 
-inputFile = "../input/sari_abzug-utf-8_23_04-tsv.txt"
+inputFile = "../input/sari_abzug-utf-8_23_04-tsv.json"
 manifestDirectory = "../manifests/"
 offset = 0 if not len(sys.argv) > 1 else int(sys.argv[1])
 limit = 1000 if not len(sys.argv) > 2 else int(sys.argv[2])

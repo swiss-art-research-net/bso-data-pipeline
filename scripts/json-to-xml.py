@@ -7,7 +7,7 @@ import requests
 import urllib
 import time
 
-inputFile = "/input/sari_abzug-utf-8_23_04-tsv.txt"
+inputFile = "/input/sari_abzug-utf-8_23_04-tsv.json"
 manifestDirectory = "/manifests/"
 outputDirectory = "/input/"
 outputPrefix = "sari-"
