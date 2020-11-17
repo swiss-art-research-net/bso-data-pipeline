@@ -63,7 +63,8 @@ def convertRowToXml(row, keys, externalFields):
                     for k in [d for d in f.keys() if key in d]:
                         code = k.split('_')[1].replace(' ','_')
                         subfield = etree.SubElement(datafield, "subfield", code=code)
-                        subfield.text = str(f[k])
+                        if f[k]:
+                            subfield.text = str(f[k])
         else:
             if key in row and row[key] is not None:
                 if '$' in key:
