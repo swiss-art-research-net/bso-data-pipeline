@@ -368,7 +368,7 @@
                             <type>crm:E53_Place</type>
                             <instance_generator name="URIwithTypeAndId_hashed">
                                 <arg name="type" type="constant">place</arg>
-                                <arg name="id" type="xpath">subfield[@code='a']/text()</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">subfield[@code='a']/text()</arg>
                             </instance_generator>
                         </entity>
                     </target_node>
@@ -1037,7 +1037,7 @@
                         <type>crm:E53_Place</type>
                         <instance_generator name="URIwithTypeAndId_hashed">
                             <arg name="type" type="constant">place</arg>
-                            <arg name="id" type="xpath">subfield[@code='a']/text()</arg>
+                            <arg name="id_HASHED_CONTENTS" type="xpath">subfield[@code='a']/text()</arg>
                         </instance_generator>
                         <label_generator name="Literal">
                             <arg name="text" type="xpath">subfield[@code='a']/text()</arg>
@@ -1049,18 +1049,23 @@
             <link>
                 <path>
                     <source_relation>
-                        <relation/>
+                        <relation>subfield</relation>
                     </source_relation>
                     <target_relation>
-                        <relationship/>
+                        <if>
+                            <equals value="1_2">@code</equals>
+                        </if>
+                        <relationship>crmdig:L54_is_same-as</relationship>
                     </target_relation>
                 </path>
                 <range>
-                    <source_node/>
+                    <source_node>subfield</source_node>
                     <target_node>
                         <entity>
-                            <type/>
-                            <instance_generator name="UUID"/>
+                            <type>crm:E53_Place</type>
+                            <instance_generator name="URIorUUID">
+                                <arg name="text" type="xpath">concat('https://lobid.org/gnd/', substring(text(),9))</arg>
+                            </instance_generator>
                         </entity>
                     </target_node>
                 </range>
