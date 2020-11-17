@@ -7,3 +7,4 @@
 !/manifests/.gitkeep
 local-scripts
 settings.json
+*.numbers
