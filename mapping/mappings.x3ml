@@ -366,7 +366,10 @@
                     <target_node>
                         <entity variable="subject_geographic">
                             <type>crm:E53_Place</type>
-                            <instance_generator name="UUID"/>
+                            <instance_generator name="URIwithTypeAndId_hashed">
+                                <arg name="type" type="constant">place</arg>
+                                <arg name="id" type="xpath">subfield[@code='a']/text()</arg>
+                            </instance_generator>
                         </entity>
                     </target_node>
                 </range>
@@ -1036,7 +1039,7 @@
                             <arg name="type" type="constant">place</arg>
                             <arg name="id" type="xpath">subfield[@code='a']/text()</arg>
                         </instance_generator>
-                        <label_generator name="prefLabel">
+                        <label_generator name="Literal">
                             <arg name="text" type="xpath">subfield[@code='a']/text()</arg>
                             <arg name="language" type="constant"/>
                         </label_generator>
