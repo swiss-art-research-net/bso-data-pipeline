@@ -11,7 +11,7 @@
       "categories": [
         {"iri": "<http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object>", "label": "Thing", "thumbnail": "../images/fcs/things.svg"},
         {"iri": "<http://www.cidoc-crm.org/cidoc-crm/E21_Person>", "label": "Actor", "thumbnail": "../images/fcs/actors.svg"},
-        {"iri": "<http://rs.swissartresearch.net/Place>", "label": "Place", "thumbnail": "../images/fcs/places.svg"},
+        {"iri": "<http://www.cidoc-crm.org/cidoc-crm/E53_Place>", "label": "Place", "thumbnail": "../images/fcs/places.svg"},
         {"iri": "<http://rs.swissartresearch.net/Time>", "label": "Time", "thumbnail": "../images/fcs/dates.svg"},
         {"iri": "<http://rs.swissartresearch.net/Concept>", "label": "Concept", "thumbnail": "../images/fcs/concepts.svg"}
       ],
@@ -21,6 +21,12 @@
           "hasDomain": "<http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object>",
           "hasRange": "<http://www.cidoc-crm.org/cidoc-crm/E21_Person>",
           "label": "by"
+        },
+        {
+          "iri": "<http://rs.swissartresearch.net/Thing_depicts_Place>",
+          "hasDomain": "<http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object>",
+          "hasRange": "<http://www.cidoc-crm.org/cidoc-crm/E53_Place>",
+          "label": "depicts"
         },
         {
           "iri": "<http://rs.swissartresearch.net/Actor_is_creator_of_Thing>",
@@ -42,6 +48,14 @@
         "queryPattern": "
           {
             ?subject crm:P128_carries/crm:P94i_was_created_by/crm:P14_carried_out_by ?__value__ .
+          }
+        "
+      }],
+      "<http://rs.swissartresearch.net/Thing_depicts_Place>": [{
+        "kind": "resource",
+        "queryPattern": "
+          {
+            ?subject crm:P128_carries/crm:P138_represents ?__value__ .
           }
         "
       }],
