@@ -1030,7 +1030,7 @@
                     <if>
                         <equals value="651">@tag</equals>
                     </if>
-                    <entity variable="subjec_geographic">
+                    <entity variable="subject_geographic">
                         <type>crm:E53_Place</type>
                         <instance_generator name="URIwithTypeAndId_hashed">
                             <arg name="type" type="constant">place</arg>
