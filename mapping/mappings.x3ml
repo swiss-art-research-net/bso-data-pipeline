@@ -1077,7 +1077,18 @@
                     </source_relation>
                     <target_relation>
                         <if>
-                            <equals value="g">@code</equals>
+                            <and>
+                                <if>
+                                    <equals value="g">@code</equals>
+                                </if>
+                                <if>
+                                    <not>
+                                        <if>
+                                            <equals value="">text()</equals>
+                                        </if>
+                                    </not>
+                                </if>
+                            </and>
                         </if>
                         <relationship>crm:P3_has_note</relationship>
                     </target_relation>
