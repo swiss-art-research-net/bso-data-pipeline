@@ -422,9 +422,9 @@
                     <source_node>subfield</source_node>
                     <target_node>
                         <entity variable="artist_or_creator">
-                            <type>crm:E21_Person</type>
+                            <type>crm:E39_Actor</type>
                             <instance_generator name="URIwithTypeAndId_hashed">
-                                <arg name="type" type="constant">person</arg>
+                                <arg name="type" type="constant">actor</arg>
                                 <arg name="id_HASHED_CONTENTS" type="xpath">text()</arg>
                             </instance_generator>
                             <label_generator name="Literal">
@@ -458,9 +458,9 @@
                     <source_node>subfield</source_node>
                     <target_node>
                         <entity variable="artist_or_creator_group">
-                            <type>crm:E74_Group</type>
+                            <type>crm:E39_Actor</type>
                             <instance_generator name="URIwithTypeAndId_hashed">
-                                <arg name="type" type="constant">group</arg>
+                                <arg name="type" type="constant">actor</arg>
                                 <arg name="id_HASHED_CONTENTS" type="xpath">text()</arg>
                             </instance_generator>
                             <label_generator name="Literal">
@@ -517,7 +517,7 @@
                     <source_node>subfield</source_node>
                     <target_node>
                         <entity variable="artist_or_creator_group">
-                            <type>crm:E74_Group</type>
+                            <type>crm:E39_Actor</type>
                             <instance_generator name="UUID"/>
                         </entity>
                     </target_node>
@@ -532,9 +532,9 @@
                         <equals value="100">@tag</equals>
                     </if>
                     <entity variable="artist_or_creator">
-                        <type>crm:E21_Person</type>
+                        <type>crm:E39_Actor</type>
                         <instance_generator name="URIwithTypeAndId_hashed">
-                            <arg name="type" type="constant">person</arg>
+                            <arg name="type" type="constant">actor</arg>
                             <arg name="id_HASHED_CONTENTS" type="xpath">subfield[@code='a']/text()</arg>
                         </instance_generator>
                         <label_generator name="Literal">
@@ -565,7 +565,7 @@
                             <type>crm:E41_Appellation</type>
                             <type>crm:E33_Linguistic_Object</type>
                             <instance_generator name="URIwithTwoLevelIdHashed">
-                                <arg name="type" type="constant">person</arg>
+                                <arg name="type" type="constant">actor</arg>
                                 <arg name="id_HASHED_CONTENTS" type="xpath">text()</arg>
                                 <arg name="subtype" type="constant">appellation</arg>
                                 <arg name="subId_HASHED_CONTENTS" type="xpath">text()</arg>
@@ -636,7 +636,7 @@
                             <type>crm:E41_Appellation</type>
                             <type>crm:E33_Linguistic_Object</type>
                             <instance_generator name="URIwithTwoLevelIdHashed">
-                                <arg name="type" type="constant">person</arg>
+                                <arg name="type" type="constant">actor</arg>
                                 <arg name="id_HASHED_CONTENTS" type="xpath">text()</arg>
                                 <arg name="subtype" type="constant">appellation</arg>
                                 <arg name="subId_HASHED_CONTENTS" type="xpath">text()</arg>
@@ -663,7 +663,7 @@
                             <type>crm:E33_Linguistic_Object</type>
                             <type>crm:E41_Appellation</type>
                             <instance_generator name="URIwithTwoLevelIdHashed">
-                                <arg name="type" type="constant">person</arg>
+                                <arg name="type" type="constant">actor</arg>
                                 <arg name="id_HASHED_CONTENTS" type="xpath">text()</arg>
                                 <arg name="subtype" type="constant">appellation</arg>
                                 <arg name="subId_HASHED_CONTENTS" type="xpath">../subfield[@code='c']/text()</arg>
@@ -713,7 +713,7 @@
                     <source_node>subfield</source_node>
                     <target_node>
                         <entity>
-                            <type>crm:E21_Person</type>
+                            <type>crm:E39_Actor</type>
                             <instance_generator name="URIorUUID">
                                 <arg name="text" type="xpath">concat('https://lobid.org/gnd/', substring(text(),9))</arg>
                             </instance_generator>
@@ -730,7 +730,7 @@
                         <equals value="110">@tag</equals>
                     </if>
                     <entity variable="artist_or_creator_group">
-                        <type>crm:E74_Group</type>
+                        <type>crm:E39_Actor</type>
                         <instance_generator name="UUID"/>
                     </entity>
                 </target_node>
@@ -754,7 +754,7 @@
                             <type>crm:E41_Appellation</type>
                             <type>crm:E33_Linguistic_Object</type>
                             <instance_generator name="URIwithTwoLevelIdHashed">
-                                <arg name="type" type="constant">group</arg>
+                                <arg name="type" type="constant">actor</arg>
                                 <arg name="id_HASHED_CONTENTS" type="xpath">text()</arg>
                                 <arg name="subtype" type="constant">appellation</arg>
                                 <arg name="subId_HASHED_CONTENTS" type="xpath">text()</arg>
@@ -791,7 +791,7 @@
                     <source_node>subfield</source_node>
                     <target_node>
                         <entity>
-                            <type>crm:E74_Group</type>
+                            <type>crm:E39_Actor</type>
                             <instance_generator name="URIorUUID">
                                 <arg name="text" type="xpath">concat('https://lobid.org/gnd/', substring(text(),9))</arg>
                             </instance_generator>
@@ -883,9 +883,9 @@
                         </if>
                         <relationship>crm:P14_carried_out_by</relationship>
                         <entity>
-                            <type>crm:E21_Person</type>
+                            <type>crm:E39_Actor</type>
                             <instance_generator name="URIwithTypeAndId_hashed">
-                                <arg name="type" type="constant">person</arg>
+                                <arg name="type" type="constant">actor</arg>
                                 <arg name="id_HASHED_CONTENTS" type="xpath">text()</arg>
                             </instance_generator>
                             <label_generator name="Literal">
@@ -903,7 +903,7 @@
                             <type>crm:E41_Appellation</type>
                             <type>crm:E33_Linguistic_Object</type>
                             <instance_generator name="URIwithTwoLevelIdHashed">
-                                <arg name="type" type="constant">person</arg>
+                                <arg name="type" type="constant">actor</arg>
                                 <arg name="id_HASHED_CONTENTS" type="xpath">text()</arg>
                                 <arg name="subtype" type="constant">appellation</arg>
                                 <arg name="subId_HASHED_CONTENTS" type="xpath">text()</arg>
