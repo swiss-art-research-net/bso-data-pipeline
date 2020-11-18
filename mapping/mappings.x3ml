@@ -491,9 +491,9 @@
                         <entity variable="creation_role_110_4">
                             <type>crm:E65_Creation</type>
                             <instance_generator name="URIwithTypeSubtypeIdAndCounter">
-                                <arg name="type" type="xpath">artwork</arg>
+                                <arg name="type" type="constant">artwork</arg>
                                 <arg name="id" type="xpath">../../uuid/text()</arg>
-                                <arg name="subtype" type="xpath">subcreation</arg>
+                                <arg name="subtype" type="constant">subcreation</arg>
                                 <arg name="position" type="position"/>
                             </instance_generator>
                             <additional>
@@ -1065,6 +1065,31 @@
                             <type>crm:E53_Place</type>
                             <instance_generator name="URIorUUID">
                                 <arg name="text" type="xpath">concat('https://lobid.org/gnd/', substring(text(),9))</arg>
+                            </instance_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>subfield</relation>
+                    </source_relation>
+                    <target_relation>
+                        <if>
+                            <equals value="g">@code</equals>
+                        </if>
+                        <relationship>crm:P3_has_note</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>subfield</source_node>
+                    <target_node>
+                        <entity>
+                            <type>rdfs:Literal</type>
+                            <instance_generator name="Literal">
+                                <arg name="text" type="xpath">text()</arg>
+                                <arg name="language" type="constant"/>
                             </instance_generator>
                         </entity>
                     </target_node>
