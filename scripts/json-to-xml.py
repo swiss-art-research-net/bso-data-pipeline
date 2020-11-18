@@ -17,7 +17,7 @@ outputPrefix = "sari-"
 fieldsContainingDates = ['100$d', '260$c', '260$g', '264$c', '533$d', '600$d', '611$d', '700$d']
 
 # List fields that are loaded from separate files (e.g. curated and/or multi-value fields)
-externalFields = ['651']
+externalFields = ['100', '651']
 
 def convertEDTFdate(date):
     try:
@@ -60,10 +60,13 @@ def convertRowToXml(row, keys, externalFields):
                 for f in fieldsToInclude:
                     # Create a datafield for each set of values
                     datafield = etree.SubElement(record, "datafield", tag=key)
-                    for k in [d for d in f.keys() if key in d]:
-                        code = k.split('_')[1].replace(' ','_')
-                        subfield = etree.SubElement(datafield, "subfield", code=code)
+                    for k in [d for d in f.keys()]:
+                        if key in k:
+                            code = k.split('_')[1].replace(' ','_')
+                        else:
+                            code = k.replace(' ','_')
                         if f[k]:
+                            subfield = etree.SubElement(datafield, "subfield", code=code)
                             subfield.text = str(f[k])
         else:
             if key in row and row[key] is not None:
