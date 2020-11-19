@@ -1,0 +1,3 @@
+[submodule "services/metaphactory/apps/bso"]
+	path = services/metaphactory/apps/bso
+	url = git@github.com:swiss-art-research-net/bso-app.git
