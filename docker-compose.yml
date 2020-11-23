@@ -45,6 +45,11 @@ services:
     environment:
       - PLATFORM_OPTS=-Dlog4j.configurationFile=file:///var/lib/jetty/webapps/etc/log4j2.xml
       - JAVA_OPTS=-Xmx1g
+    logging:
+      driver: json-file
+      options:
+        max-size: "200k"
+        max-file: "10"
     volumes:
       - metaphactory-data:/runtime-data
 
