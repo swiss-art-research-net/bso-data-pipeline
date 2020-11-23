@@ -8,3 +8,4 @@ DELETE {
    }
   FILTER(REGEX(STR(?g), "http://rs.swissartresearch.net/instances/fields/") )
 };
+DROP GRAPH <http://www.metaphacts.com/ontologies/platform#fieldDefinitionContainer>;
