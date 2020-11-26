@@ -1,6 +1,7 @@
 from edtf import parse_edtf
 from sariDateParser.dateParser import parse
 from lxml import etree
+from tqdm import tqdm
 import json
 import os
 import requests
@@ -142,7 +143,7 @@ keys = list(rawData['rows'][0].keys())
 keys.sort()
 
 # Output individual files
-for i, row in enumerate(rawData['rows']):
+for i, row in enumerate(tqdm(rawData['rows'])):
     
     records = etree.Element("records")
     record = convertRowToXml(row, keys, externalFieldContent)
