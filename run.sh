@@ -5,6 +5,17 @@ X3MLCONTAINER=$(echo $PROJECT_NAME)_x3ml
 
 if [[ $NOPROMPT -ne 1 ]]
 then
+  read -p "Download IIIF Manifests? (y/n)" -n 1 -r
+  echo ""
+fi
+if [[ $NOPROMPT || $REPLY =~ ^[Yy]$ ]]
+then
+  docker exec $JOBSCONTAINER bash -c "python /scripts/cache-iiif-manifests.py"
+fi
+
+
+if [[ $NOPROMPT -ne 1 ]]
+then
   read -p "Convert to XML? (y/n)" -n 1 -r
   echo ""
 fi
