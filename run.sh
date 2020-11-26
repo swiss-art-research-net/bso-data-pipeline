@@ -44,6 +44,16 @@ fi
 
 if [[ $NOPROMPT -ne 1 ]]
 then
+  read -p "Retrieve GND data? (y/n)" -n 1 -r
+  echo ""
+fi
+if [[ $NOPROMPT || $REPLY =~ ^[Yy]$ ]]
+then
+  docker exec $X3MLCONTAINER bash -c "python /scripts/extract-gnd-data.py"
+fi
+
+if [[ $NOPROMPT -ne 1 ]]
+then
   read -p "Ingest data? (y/n)" -n 1 -r
   echo ""
 fi
