@@ -1064,7 +1064,7 @@
                         <entity>
                             <type>crm:E53_Place</type>
                             <instance_generator name="URIorUUID">
-                                <arg name="text" type="xpath">concat('https://lobid.org/gnd/', substring(text(),9))</arg>
+                                <arg name="text" type="xpath">concat('https://lobid.org/gnd/', text())</arg>
                             </instance_generator>
                         </entity>
                     </target_node>
