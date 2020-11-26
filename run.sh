@@ -10,7 +10,7 @@ then
 fi
 if [[ $NOPROMPT || $REPLY =~ ^[Yy]$ ]]
 then
-  docker exec $JOBSCONTAINER bash -c "python /scripts/cache-iiif-manifests.py"
+  docker exec $JOBSCONTAINER bash -c "python /scripts/cache-iiif-manifests.py 0 99999"
 fi
 
 
