@@ -32,14 +32,18 @@ gndIdentifiers = list(set(gndIdentifiers))
 # Clear output file
 with open(ttlOutput, 'w') as outputFile:
     outputFile.write('')
+    outputFile.close()
     
 # Retrieve ttl data from GND and append to ttl file
 with open(ttlOutput, 'a') as outputFile:
-    for row in queryResults:
-        url = "%s.ttl" % row[0].replace("https://d-nb.info/gnd/","https://lobid.org/gnd/")
+    for identifier in gndIdentifiers:
+        url = "%s.ttl" % identifier.replace("https://d-nb.info/gnd/","https://lobid.org/gnd/")
         try:
             with request.urlopen(url) as r:
                 content = r.read().decode()
             outputFile.write(content + "\n")
+            outputFile.flush()
         except:
             print("Could not retrieve", url)
+
+    outputFile.close()
