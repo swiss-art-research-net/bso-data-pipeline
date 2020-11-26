@@ -3,14 +3,6 @@ source .env
 JOBSCONTAINER=$(echo $PROJECT_NAME)_jobs
 X3MLCONTAINER=$(echo $PROJECT_NAME)_x3ml
 
-read -p "Execute everything? (y/n)" -n 1 -r
-echo ""
-if [[ $REPLY =~ ^[Yy]$ ]]
-then
-  NOPROMPT=1
-fi
-
-
 if [[ $NOPROMPT -ne 1 ]]
 then
   read -p "Download IIIF Manifests? (y/n)" -n 1 -r
@@ -21,6 +13,12 @@ then
   docker exec $JOBSCONTAINER bash -c "python /scripts/cache-iiif-manifests.py 0 99999"
 fi
 
+read -p "Execute everything else? (y/n)" -n 1 -r
+echo ""
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+  NOPROMPT=1
+fi
 
 if [[ $NOPROMPT -ne 1 ]]
 then
@@ -49,7 +47,7 @@ then
 fi
 if [[ $NOPROMPT || $REPLY =~ ^[Yy]$ ]]
 then
-  docker exec $X3MLCONTAINER bash -c "python /scripts/extract-gnd-data.py"
+  docker exec $JOBSCONTAINER bash -c "python /scripts/extract-gnd-data.py"
 fi
 
 if [[ $NOPROMPT -ne 1 ]]
