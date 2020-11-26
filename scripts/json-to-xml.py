@@ -69,6 +69,14 @@ def convertRowToXml(row, keys, externalFields):
                         if f[k]:
                             subfield = etree.SubElement(datafield, "subfield", code=code)
                             subfield.text = str(f[k])
+                        # Check if field contains a date
+                        if k.replace("_","$") in fieldsContainingDates:
+                            parsedDate = parse(row[k.replace("_","$")])
+                            if parsedDate:
+                                subfield.set("parsedDate", parsedDate)
+                                daterange = convertEDTFdate(parsedDate)
+                                subfield.set("upperDate", daterange['upper'])
+                                subfield.set("lowerDate", daterange['lower'])
         else:
             if key in row and row[key] is not None:
                 if '$' in key:
