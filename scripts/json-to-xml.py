@@ -71,7 +71,7 @@ def convertRowToXml(row, keys, externalFields):
                             subfield.text = str(f[k])
                         # Check if field contains a date
                         if k.replace("_","$") in fieldsContainingDates:
-                            parsedDate = parse(row[k.replace("_","$")])
+                            parsedDate = parse(f[k])
                             if parsedDate:
                                 subfield.set("parsedDate", parsedDate)
                                 daterange = convertEDTFdate(parsedDate)
