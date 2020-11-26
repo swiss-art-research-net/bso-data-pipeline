@@ -3,6 +3,14 @@ source .env
 JOBSCONTAINER=$(echo $PROJECT_NAME)_jobs
 X3MLCONTAINER=$(echo $PROJECT_NAME)_x3ml
 
+read -p "Execute everything? (y/n)" -n 1 -r
+echo ""
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+  NOPROMPT=1
+fi
+
+
 if [[ $NOPROMPT -ne 1 ]]
 then
   read -p "Download IIIF Manifests? (y/n)" -n 1 -r
