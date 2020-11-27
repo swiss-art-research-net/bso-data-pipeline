@@ -70,8 +70,11 @@ def convertRowToXml(row, keys, externalFields):
                             subfield = etree.SubElement(datafield, "subfield", code=code)
                             subfield.text = str(f[k])
                         # Check if field contains a date
-                        if k.replace("_","$") in fieldsContainingDates:
-                            parsedDate = parse(f[k])
+                        if k.replace("_","$") in fieldsContainingDates and f[k]:
+                            try:
+                                parsedDate = parse(f[k])
+                            except:
+                                print("Could not parse", f[k],k)
                             if parsedDate:
                                 subfield.set("parsedDate", parsedDate)
                                 daterange = convertEDTFdate(parsedDate)
