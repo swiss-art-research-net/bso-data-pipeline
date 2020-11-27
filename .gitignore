@@ -1,10 +1,12 @@
 .env
-/input
-/output/*.ttl
-!/input/.gitkeep
+data
+!data/.gitkeep
+!data/source/.gitkeep
+!data/manifests/.gitkeep
+!data/ttl/additional/.gitkeep
+!data/ttl/main/.gitkeep
+!data/xml/.gitkeep
 .ipynb_checkpoints
-/manifests
-!/manifests/.gitkeep
 local-scripts
 settings.json
 *.numbers
