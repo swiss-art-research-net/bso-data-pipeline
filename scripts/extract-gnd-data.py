@@ -4,8 +4,8 @@ import rdflib
 from urllib import request
 from os import listdir
 
-ttlFolder='/output/'
-ttlOutput='/output/gnd.ttl'
+ttlFolder='/data/ttl/main/'
+ttlOutput='/data/ttl/additional/gnd.ttl'
 
 # Look at all Turtle files
 inputFiles = []

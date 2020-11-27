@@ -8,10 +8,10 @@ import requests
 import urllib
 import time
 
-inputFile = "/input/sari_abzug-utf-8_23_04-tsv.json"
-externalFieldsDirectory = "../input/"
-manifestDirectory = "/manifests/"
-outputDirectory = "/input/"
+inputFile = "/data/source/sari_abzug-utf-8_23_04-tsv.json"
+externalFieldsDirectory = "../source/"
+manifestDirectory = "/data/manifests/"
+outputDirectory = "/data/source/"
 outputPrefix = "sari-"
 
 # List fields that contain dates. Those will be passed to the parser

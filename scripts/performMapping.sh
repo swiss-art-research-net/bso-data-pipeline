@@ -1,5 +1,5 @@
-RECORDSINPUTFOLDER=/input
-RECORDSOUTPUTFOLDER=/output
+RECORDSINPUTFOLDER=/data/xml
+RECORDSOUTPUTFOLDER=/data/ttl
 
 RECORDMAPPING=/mappings/mappings.x3ml
 GENERATOR=/mappings/generator-policy.xml

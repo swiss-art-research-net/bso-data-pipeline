@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-RECORDSFOLDER=/output
+RECORDSFOLDER=/data/ttl/main
 
 echo "Ingest RECORDS"
 numfiles=$(ls -l $RECORDSFOLDER/*.ttl | wc -l)

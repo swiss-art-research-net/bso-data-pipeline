@@ -31,10 +31,7 @@ services:
     build: ./services/jobs
     container_name: ${PROJECT_NAME}_jobs
     volumes:
-      - ./input:/input
-      - ./output:/output
-      - ./mapping:/mappings
-      - ./manifests:/manifests
+      - ./data:/data
       - ./scripts:/scripts
 
   metaphactory:
@@ -67,10 +64,8 @@ services:
     build: ./services/x3mlEngine
     container_name: ${PROJECT_NAME}_x3ml
     volumes:
-      - ./input:/input
-      - ./output:/output
-      - ./mapping:/mappings
-      - ./scripts:/scripts
+      - ./data:/data
+      - ./mapping:/mapping
 
 volumes:
   blazegraph-data:
