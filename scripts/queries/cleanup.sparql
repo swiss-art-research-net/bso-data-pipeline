@@ -1,0 +1,28 @@
+
+PREFIX : <http://www.metaphacts.com/resource/>
+PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+DELETE {
+  	?s a xsd:dateTime ;
+    	rdfs:label ?oldDateTimeEntity ;
+    	?p ?oldDateTimeEntity .
+} INSERT {
+	?s ?p ?newDateTimeValue .
+} WHERE {
+  ?oldDateTimeEntity a xsd:dateTime ;
+    rdfs:label ?oldDateTimeValue .
+  ?s ?p ?oldDateTimeEntity .
+  BIND(STRDT(SUBSTR(STR(?oldDateTimeValue),0,10), xsd:date) as ?newDateTimeValue)
+};
+
+DELETE {
+    ?s crm:P82a_begin_of_the_begin ?begin ;
+        crm:P82b_end_of_the_end ?end .
+} WHERE {
+    ?s a crm:E52_Time-Span .
+    ?s crm:P82a_begin_of_the_begin ?begin ;
+        crm:P82b_end_of_the_end ?end .
+    FILTER(STR(?begin) = "0-01-01" || STR(?end) = "9999-12-31")
+}
