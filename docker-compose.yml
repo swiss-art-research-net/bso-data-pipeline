@@ -25,7 +25,7 @@ services:
         max-file: "10"
     volumes:
       - blazegraph-data:/blazegraph-data
-      - ./output:/output
+      - ./data:/data
 
   jobs:
     build: ./services/jobs
