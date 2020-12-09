@@ -1,0 +1,67 @@
+@prefix thes: <http://collection.britishmuseum.org/id/thesauri/> .
+@prefix geoliteral: <http://www.bigdata.com/rdf/geospatial/literals/v1#> .
+@prefix thesUnit: <http://collection.britishmuseum.org/id/thesauri/unit/> .
+@prefix Default: <http://rs.swissartresearch.net/page/> .
+@prefix User: <http://www.metaphacts.com/resource/user/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix la: <https://linked.art/ns/terms/> .
+@prefix : <http://www.metaphacts.com/resource/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix queryPartial: <http://rs.swissartresearch.net/queryPartial/> .
+@prefix rshelp: <http://researchspace.org/help/> .
+@prefix Admin: <http://www.metaphacts.com/resource/admin/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix geo: <http://www.bigdata.com/rdf/geospatial#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rso: <http://www.researchspace.org/ontology/> .
+@prefix wgs84_pos: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix sari: <http://rs.swissartresearch.net/> .
+@prefix thesIdentifier: <http://collection.britishmuseum.org/id/> .
+@prefix thesDimension: <http://collection.britishmuseum.org/id/thesauri/dimension/> .
+@prefix sp: <http://spinrdf.org/sp#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix fts: <http://www.bigdata.com/rdf/fts#> .
+@prefix Help: <http://help.metaphacts.com/resource/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix crminf: <http://www.ics.forth.gr/isl/CRMinf/> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix rsp: <http://www.researchspace.org/resource/> .
+@prefix Platform: <http://www.metaphacts.com/ontologies/platform#> .
+@prefix Assets: <http://www.metaphacts.com/resource/assets/> .
+@prefix partial: <http://rs.swissartresearch.net/partial/> .
+@prefix crmdig: <http://www.ics.forth.gr/isl/CRMdig/> .
+@prefix Repository: <http://www.metaphacts.com/ontologies/repository#> .
+@prefix bmo: <http://collection.britishmuseum.org/id/ontology/> .
+@prefix bds: <http://www.bigdata.com/rdf/search#> .
+@prefix query: <http://rs.swissartresearch.net/query/> .
+
+<http://rs.swissartresearch.net/instances/fields/object_carries_visual_item/context> {
+  <http://rs.swissartresearch.net/instances/fields/object_carries_visual_item> a prov:Entity,
+      <http://www.metaphacts.com/ontology/fields#Field>, <http://www.w3.org/ns/ldp#Resource>;
+    rdfs:comment "The E36 Visual Item carried by the E22 Human-Made Object";
+    rdfs:label "Visual Item"@en;
+    <http://www.metaphacts.com/ontology/fields#insertPattern> <http://rs.swissartresearch.net/instances/fields/object_carries_visual_item/insert>;
+    <http://www.metaphacts.com/ontology/fields#maxOccurs> "1";
+    <http://www.metaphacts.com/ontology/fields#selectPattern> <http://rs.swissartresearch.net/instances/fields/object_carries_visual_item/select>;
+    <http://www.metaphacts.com/ontology/fields#minOccurs> "1";
+    <http://www.metaphacts.com/ontology/fields#domain> crm:E22_Man-Made_object;
+    prov:wasAttributedTo User:admin;
+    <http://www.metaphacts.com/ontology/fields#xsdDatatype> xsd:anyURI;
+    prov:generatedAtTime "2020-11-23T10:40:59.030Z"^^xsd:dateTime;
+    <http://www.metaphacts.com/ontology/fields#range> crm:E36_Visual_Item .
+  
+  <http://rs.swissartresearch.net/instances/fields/object_carries_visual_item/insert> a sp:Query;
+    sp:text """PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
+INSERT { $subject crm:P128_carries $value} WHERE {}""" .
+  
+  <http://rs.swissartresearch.net/instances/fields/object_carries_visual_item/select> a sp:Query;
+    sp:text """PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
+SELECT ?value ?label WHERE {
+  $subject crm:P128_carries ?value.
+  ?value a crm:E36_Visual_Item.
+}""" .
+  
+  <http://www.metaphacts.com/ontologies/platform#fieldDefinitionContainer> <http://www.w3.org/ns/ldp#contains> <http://rs.swissartresearch.net/instances/fields/object_carries_visual_item> .
+}
