@@ -52,6 +52,16 @@ fi
 
 if [[ $NOPROMPT -ne 1 ]]
 then
+  read -p "Retrieve Wikidata data? (y/n)" -n 1 -r
+  echo ""
+fi
+if [[ $NOPROMPT || $REPLY =~ ^[Yy]$ ]]
+then
+  docker exec $JOBSCONTAINER bash -c "python /scripts/extract-wd-data.py"
+fi
+
+if [[ $NOPROMPT -ne 1 ]]
+then
   read -p "Ingest data? (y/n)" -n 1 -r
   echo ""
 fi
@@ -69,7 +79,6 @@ if [[ $NOPROMPT || $REPLY =~ ^[Yy]$ ]]
 then
   docker exec $JOBSCONTAINER bash -c "bash addRelations.sh"
 fi
-
 
 if [[ $NOPROMPT -ne 1 ]]
 then
