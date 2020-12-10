@@ -1,7 +1,7 @@
 FROM python:3.8
 RUN apt update
 RUN apt install -y openssh-server
-RUN pip install date-parser-sari lxml urllib3 requests edtf tqdm rdflib
+RUN pip install date-parser-sari lxml urllib3 requests edtf tqdm rdflib sparqlwrapper
 RUN echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
 RUN echo "root:docker"|chpasswd
 RUN service ssh restart
