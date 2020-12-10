@@ -3,6 +3,7 @@ PREFIX : <http://www.metaphacts.com/resource/>
 PREFIX crmdig: <http://www.ics.forth.gr/isl/CRMdig/>
 PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
 PREFIX gndo: <https://d-nb.info/standards/elementset/gnd#>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
 
 DROP GRAPH sari:relations;
 
@@ -10,8 +11,18 @@ INSERT {
   GRAPH sari:relations {
     ?place crm:P89_falls_within ?parentPlace .
   }
-}WHERE {
+} WHERE {
   ?gndPlace gndo:geographicAreaCode ?gndParentPlace .
   ?place crmdig:L54_is_same-as ?gndPlace .
   ?parentPlace crmdig:L54_is_same-as ?gndParentPlace .
-} 
+};
+
+INSERT {
+  GRAPH sari:relations {
+    ?place crm:P168_place_is_defined_by ?coordinates .
+  }
+} WHERE {
+  ?place a crm:E53_Place ;
+    crmdig:L54_is_same-as ?wdPlace .
+  ?wdPlace wdt:P625 ?coordinates .
+}

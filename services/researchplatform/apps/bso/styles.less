@@ -1,0 +1,161 @@
+// out: assets/styles.css
+
+@col-brand: #964a4a;
+@col-button-primary: #8c133a;
+@col-navbar: #fff;
+@col-bg: #f1f1f1;
+@col-panels: #fff;
+
+@col-white:#fff;
+@col-black:#111;
+@col-lightgrey:#fbfbfb;
+
+@height-breadrumb:44px;
+
+@padding-panel: 5px;
+
+html, body {
+    font-family: 'HK Grotesk', 'Helvetica Neue', Helvetica, sans-serif;
+    background-color: @col-bg;
+}
+
+a {
+    color: lighten(@col-brand, 5%);
+    font-weight: bold;
+}
+
+h2 {
+    padding-top: 2rem;
+}
+
+.btn {
+    &.btn-primary {
+        background-color: @col-button-primary;
+        border-color: lighten(@col-button-primary,4%);
+        &:hover {
+            background-color: lighten(@col-button-primary,10%);  
+        }
+        &, a {
+            color: @col-white;
+        }
+    }
+}
+
+.content {
+    padding-top: 3em;
+}
+
+.facet {
+    background-color: @col-panels;
+    .facet__category-selector-holder {
+        display: none;
+    }
+}
+
+.gap {
+    margin-bottom: 2rem;
+}
+
+.imageList {
+    a {
+        font-size: 1.3em;
+    }
+}
+
+.navbar-default {
+    background-color: @col-navbar;
+    color: @col-black;
+    a.navbar-brand, a.navbar-brand:hover  {
+        color: @col-brand;
+        text-transform: uppercase;
+    }
+    .navbar-nav>li>a, .dropdown-menu>li>a {
+        color: @col-black;
+        &:hover {
+            background: @col-lightgrey;
+            color:@col-black
+        }
+    }
+}
+
+ol.page-breadcrumb {
+    background-color: @col-lightgrey;
+}
+.panel-body {
+    padding: @padding-panel;
+}
+
+.panelView {
+    .DataTable--table-grid-layout {
+        display: block !important;
+    }
+}
+
+.bso-component {
+
+    &.object {
+        .image {
+            img {
+                width: 100%;
+            }
+        }
+        .panel-body {
+            padding: 0;
+        }
+    }
+    &.header {
+        @height: 100px;
+        position: relative;
+        top: @height-breadrumb;
+        background-color: @col-navbar;
+        overflow: hidden;
+        padding: 1rem;
+        height: calc(2rem + @height);
+        .image img {
+            height:@height;
+            width: auto;
+        }
+    }
+    .title {
+        font-weight: bold;
+        font-size: 1.3em;
+        padding-top:0.8em;
+    }
+}
+
+// Fonts
+
+@font-face {
+    font-family: 'HK Grotesk';
+    font-style: normal;
+    font-weight: 200;
+    src: url("/assets/fonts/HKGrotesk-Light.woff2") format("woff2"), url("/assets/fonts/HKGrotesk-Light.woff") format("woff");
+  }
+  @font-face {
+    font-family: 'HK Grotesk';
+    font-style: normal;
+    font-weight: 500;
+    src: url("/assets/fonts/HKGrotesk-Medium.woff2") format("woff2"), url("/assets/fonts/HKGrotesk-Medium.woff") format("woff");
+  }
+  
+  @font-face {
+    font-family: 'HK Grotesk';
+    font-style: normal;
+    font-weight: bold;
+    src: url("/assets/fonts/HKGrotesk-Bold.woff2") format("woff2"), url("/assets/fonts/HKGrotesk-Bold.woff") format("woff");
+  }
+  
+  @font-face {
+    font-family: 'HK Grotesk';
+    font-style: normal;
+    font-weight: normal;
+    src: url("/assets/fonts/HKGrotesk-Regular.woff2") format("woff2"), url("/assets/fonts/HKGrotesk-Regular.woff") format("woff");
+  }
+  
+  @font-face {
+    font-family: 'HK Grotesk';
+    font-style: normal;
+    font-weight: normal;
+    src: url("/assets/fonts/HKGrotesk-Regular.woff2") format("woff2"), url("/assets/fonts/HKGrotesk-Regular.woff") format("woff");
+  }
+  
