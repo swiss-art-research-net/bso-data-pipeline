@@ -40,7 +40,7 @@ services:
       - ./scripts:/scripts
 
   platform:
-    build: ./services/metaphactory
+    build: ./services/researchplatform
     container_name: ${PROJECT_NAME}_platform
     depends_on:
       - blazegraph
