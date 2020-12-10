@@ -1,0 +1,78 @@
+@prefix thes: <http://collection.britishmuseum.org/id/thesauri/> .
+@prefix geoliteral: <http://www.bigdata.com/rdf/geospatial/literals/v1#> .
+@prefix thesUnit: <http://collection.britishmuseum.org/id/thesauri/unit/> .
+@prefix Default: <http://rs.swissartresearch.net/page/> .
+@prefix User: <http://www.metaphacts.com/resource/user/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix la: <https://linked.art/ns/terms/> .
+@prefix : <http://www.metaphacts.com/resource/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix queryPartial: <http://rs.swissartresearch.net/queryPartial/> .
+@prefix rshelp: <http://researchspace.org/help/> .
+@prefix Admin: <http://www.metaphacts.com/resource/admin/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix geo: <http://www.bigdata.com/rdf/geospatial#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rso: <http://www.researchspace.org/ontology/> .
+@prefix wgs84_pos: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix sari: <http://rs.swissartresearch.net/> .
+@prefix thesIdentifier: <http://collection.britishmuseum.org/id/> .
+@prefix thesDimension: <http://collection.britishmuseum.org/id/thesauri/dimension/> .
+@prefix sp: <http://spinrdf.org/sp#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix fts: <http://www.bigdata.com/rdf/fts#> .
+@prefix Help: <http://help.metaphacts.com/resource/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix crminf: <http://www.ics.forth.gr/isl/CRMinf/> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix rsp: <http://www.researchspace.org/resource/> .
+@prefix Platform: <http://www.metaphacts.com/ontologies/platform#> .
+@prefix Assets: <http://www.metaphacts.com/resource/assets/> .
+@prefix partial: <http://rs.swissartresearch.net/partial/> .
+@prefix crmdig: <http://www.ics.forth.gr/isl/CRMdig/> .
+@prefix Repository: <http://www.metaphacts.com/ontologies/repository#> .
+@prefix bmo: <http://collection.britishmuseum.org/id/ontology/> .
+@prefix bds: <http://www.bigdata.com/rdf/search#> .
+@prefix query: <http://rs.swissartresearch.net/query/> .
+
+<http://rs.swissartresearch.net/instances/fields/vantage_point/context> {
+  <http://rs.swissartresearch.net/instances/fields/vantage_point> a <http://www.w3.org/ns/ldp#Resource>,
+      prov:Entity, <http://www.metaphacts.com/ontology/fields#Field>;
+    <http://www.metaphacts.com/ontology/fields#range> crm:E53_Place;
+    <http://www.metaphacts.com/ontology/fields#selectPattern> <http://rs.swissartresearch.net/instances/fields/vantage_point/select>;
+    <http://www.metaphacts.com/ontology/fields#insertPattern> <http://rs.swissartresearch.net/instances/fields/vantage_point/insert>;
+    <http://www.metaphacts.com/ontology/fields#domain> crm:E36_Visual_Item;
+    rdfs:label "Vantage Point"@en;
+    <http://www.metaphacts.com/ontology/fields#askPattern> <http://rs.swissartresearch.net/instances/fields/vantage_point/ask>;
+    prov:wasAttributedTo User:admin;
+    rdfs:comment "The (fictive) location from which a view is depicted";
+    prov:generatedAtTime "2020-11-23T12:11:54.452Z"^^xsd:dateTime .
+  
+  <http://rs.swissartresearch.net/instances/fields/vantage_point/insert> a sp:Query;
+    sp:text """PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
+PREFIX vocab: <https://resource.swissartresearch.net/vocab>
+INSERT { 
+  $subject crm:P138_represents $value .
+  $value crm:P2_has_type vocab:vantagePoint ;
+    rdfs:label \"Vantage Point\".
+} WHERE {}""" .
+  
+  <http://rs.swissartresearch.net/instances/fields/vantage_point/ask> a sp:Query;
+    sp:text """ASK {
+	FILTER(REGEX(STR(?value), \"https://s.geo.admin.ch/\\\\w{10}\", \"i\"))
+}""" .
+  
+  <http://rs.swissartresearch.net/instances/fields/vantage_point/select> a sp:Query;
+    sp:text """PREFIX sari: <http://rs.swissartresearch.net/type/vantagePoint>
+PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
+PREFIX vocab: <https://resource.swissartresearch.net/vocab>
+SELECT ?value WHERE {
+  $subject crm:P138_represents ?value.
+  ?value crm:P2_has_type vocab:vantagePoint
+}""" .
+  
+  <http://www.metaphacts.com/ontologies/platform#fieldDefinitionContainer> <http://www.w3.org/ns/ldp#contains> <http://rs.swissartresearch.net/instances/fields/vantage_point> .
+}
