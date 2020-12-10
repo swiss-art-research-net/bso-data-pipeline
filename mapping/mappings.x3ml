@@ -1077,6 +1077,30 @@
                     </source_relation>
                     <target_relation>
                         <if>
+                            <equals value="wd_id">@code</equals>
+                        </if>
+                        <relationship>crmdig:L54_is_same-as</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>subfield</source_node>
+                    <target_node>
+                        <entity>
+                            <type>crm:E53_Place</type>
+                            <instance_generator name="URIorUUID">
+                                <arg name="text" type="xpath">concat('http://www.wikidata.org/entity/', text())</arg>
+                            </instance_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>subfield</relation>
+                    </source_relation>
+                    <target_relation>
+                        <if>
                             <and>
                                 <if>
                                     <equals value="g">@code</equals>
