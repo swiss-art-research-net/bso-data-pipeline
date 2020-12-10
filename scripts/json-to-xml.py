@@ -8,7 +8,7 @@ import requests
 import urllib
 import time
 
-inputFile = "/data/source/sari_abzug-utf-8_23_04-tsv.json"
+inputFile = "/data/source/sari_abzug-utf-8_23_04-tsv-partial.json"
 externalFieldsDirectory = "/data/source/"
 manifestDirectory = "/data/manifests/"
 outputDirectory = "/data/xml/"
