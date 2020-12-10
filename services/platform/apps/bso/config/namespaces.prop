@@ -11,3 +11,5 @@ rso=http://www.researchspace.org/ontology/
 crm=http://www.cidoc-crm.org/cidoc-crm/
 crmdig=http://www.ics.forth.gr/isl/CRMdig/
 gndo=https://d-nb.info/standards/elementset/gnd#
+wd=http://www.wikidata.org/entity/
+wdt=http://www.wikidata.org/prop/direct/
