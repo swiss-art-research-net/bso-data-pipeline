@@ -34,9 +34,9 @@ services:
       - ./data:/data
       - ./scripts:/scripts
 
-  metaphactory:
-    build: ./services/metaphactory
-    container_name: ${PROJECT_NAME}_metaphactory
+  platform:
+    build: ./services/researchplatform
+    container_name: ${PROJECT_NAME}_platform
     depends_on:
       - blazegraph
     environment:
@@ -48,13 +48,13 @@ services:
         max-size: "200k"
         max-file: "10"
     volumes:
-      - metaphactory-data:/runtime-data
+      - platform-data:/runtime-data
 
   proxy:
     build: ./services/proxy
     container_name: ${PROJECT_NAME}_proxy
     depends_on:
-      - metaphactory
+      - platform
       - blazegraph
       - 3m
     ports:
@@ -70,6 +70,6 @@ services:
 
 volumes:
   blazegraph-data:
-  metaphactory-data:
+  platform-data:
   3m-data:
   3m-db:
