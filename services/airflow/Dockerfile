@@ -1,4 +1,4 @@
-FROM python:3
+FROM python:3.7
 RUN apt update
 RUN apt install -y sshpass
 RUN pip install apache-airflow
