@@ -1,7 +1,7 @@
-RECORDSINPUTFOLDER=/data/xml
+RECORDSINPUTFOLDER=/data/xml/zbz
 RECORDSOUTPUTFOLDER=/data/ttl/main
 
-RECORDMAPPING=/mapping/mappings.x3ml
+RECORDMAPPING=/mapping/mappings-zbz.x3ml
 GENERATOR=/mapping/generator-policy.xml
 
 BATCHSIZE=20
