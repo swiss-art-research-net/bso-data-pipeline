@@ -19,7 +19,7 @@ for file in listdir(ttlFolder):
 
 # Identify WD identifiers by looking at triples where the object is a WD identifier
 wdIdentifiers = []
-for file in inputFiles:
+for file in tqdm(inputFiles):
     g = rdflib.Graph()
     g.parse(ttlFolder + file, format='ttl')
     queryResults = g.query(
