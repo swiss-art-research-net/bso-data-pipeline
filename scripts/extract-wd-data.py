@@ -4,9 +4,10 @@ import rdflib
 
 from os import listdir
 from SPARQLWrapper import SPARQLWrapper, N3
+from tqdm import tqdm
 
-ttlFolder='../data/ttl/main/'
-ttlOutput='../data/ttl/additional/wd.ttl'
+ttlFolder='/data/ttl/main/'
+ttlOutput='/data/ttl/additional/wd.ttl'
 batchSizeForRetrieval = 100
 wdEndpoint = "https://query.wikidata.org/sparql"
 
@@ -46,7 +47,7 @@ def chunker(seq, size):
 sparql = SPARQLWrapper(wdEndpoint)    
 
 with open(ttlOutput, 'ab') as outputFile:
-    for batch in chunker(wdIdentifiers, batchSizeForRetrieval):
+    for batch in tqdm(chunker(wdIdentifiers, batchSizeForRetrieval)):
         query = """
              PREFIX wdt: <http://www.wikidata.org/prop/direct/>
              CONSTRUCT {
