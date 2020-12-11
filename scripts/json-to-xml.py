@@ -11,7 +11,7 @@ import time
 inputFile = "/data/source/sari_abzug-utf-8_23_04-tsv.json"
 externalFieldsDirectory = "/data/source/"
 manifestDirectory = "/data/manifests/"
-outputDirectory = "/data/xml/"
+outputDirectory = "/data/xml/zbz/"
 outputPrefix = "sari-"
 
 # List fields that contain dates. Those will be passed to the parser

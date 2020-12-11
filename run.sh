@@ -22,7 +22,7 @@ fi
 
 if [[ $NOPROMPT -ne 1 ]]
 then
-  read -p "Convert to XML? (y/n)" -n 1 -r
+  read -p "Convert to ZBZ data to XML? (y/n)" -n 1 -r
   echo ""
 fi
 if [[ $NOPROMPT || $REPLY =~ ^[Yy]$ ]]
@@ -32,12 +32,22 @@ fi
 
 if [[ $NOPROMPT -ne 1 ]]
 then
-  read -p "Perform mapping? (y/n)" -n 1 -r
+  read -p "Perform mapping of ZBZ data? (y/n)" -n 1 -r
   echo ""
 fi
 if [[ $NOPROMPT || $REPLY =~ ^[Yy]$ ]]
 then
-  docker exec $X3MLCONTAINER bash -c "bash /scripts/performMapping.sh"
+  docker exec $X3MLCONTAINER bash -c "bash /scripts/performMapping-zbz.sh"
+fi
+
+if [[ $NOPROMPT -ne 1 ]]
+then
+  read -p "Perform mapping of NB data? (y/n)" -n 1 -r
+  echo ""
+fi
+if [[ $NOPROMPT || $REPLY =~ ^[Yy]$ ]]
+then
+  docker exec $X3MLCONTAINER bash -c "bash /scripts/performMapping-nb.sh"
 fi
 
 if [[ $NOPROMPT -ne 1 ]]
