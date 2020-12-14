@@ -32,6 +32,7 @@ services:
     container_name: ${PROJECT_NAME}_jobs
     volumes:
       - ./data:/data
+      - ./mapping:/mapping
       - ./scripts:/scripts
 
   platform:
@@ -59,14 +60,6 @@ services:
       - 3m
     ports:
       - $PORT_PROXY:80
-
-  x3mlengine:
-    build: ./services/x3mlEngine
-    container_name: ${PROJECT_NAME}_x3ml
-    volumes:
-      - ./data:/data
-      - ./mapping:/mapping
-      - ./scripts:/scripts
 
 volumes:
   blazegraph-data:
