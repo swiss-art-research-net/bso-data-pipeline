@@ -13,14 +13,6 @@ services:
        - 3m-db:/opt/exist/webapp/WEB-INF/data
        - 3m-data:/opt/3M
 
-  airflow:
-    build: ./services/airflow
-    container_name: ${PROJECT_NAME}_airflow
-    ports:
-      - $PORT_AIRFLOW:8080
-    volumes:
-      - ./dags:/dags
-
   blazegraph:
     image: metaphacts/blazegraph-basic
     container_name: ${PROJECT_NAME}_blazegraph
