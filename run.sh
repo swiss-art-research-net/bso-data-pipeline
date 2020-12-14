@@ -1,7 +1,6 @@
 source .env
 
 JOBSCONTAINER=$(echo $PROJECT_NAME)_jobs
-X3MLCONTAINER=$(echo $PROJECT_NAME)_x3ml
 
 if [[ $NOPROMPT -ne 1 ]]
 then
@@ -37,7 +36,7 @@ then
 fi
 if [[ $NOPROMPT || $REPLY =~ ^[Yy]$ ]]
 then
-  docker exec $X3MLCONTAINER bash -c "bash /scripts/performMapping-zbz.sh"
+  docker exec $JOBSCONTAINER bash -c "bash /scripts/performMapping-zbz.sh"
 fi
 
 if [[ $NOPROMPT -ne 1 ]]
@@ -47,7 +46,7 @@ then
 fi
 if [[ $NOPROMPT || $REPLY =~ ^[Yy]$ ]]
 then
-  docker exec $X3MLCONTAINER bash -c "bash /scripts/performMapping-nb.sh"
+  docker exec $JOBSCONTAINER bash -c "bash /scripts/performMapping-nb.sh"
 fi
 
 if [[ $NOPROMPT -ne 1 ]]
