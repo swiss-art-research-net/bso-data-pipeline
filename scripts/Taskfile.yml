@@ -34,3 +34,40 @@ tasks:
       BATCHSIZE: 20
     cmds:
       - bash /scripts/performMapping.sh -i {{.INPUT_FOLDER}} -o {{.OUTPUT_FOLDER}} -m {{.MAPPING_FILE}} -g {{.GENERATOR_POLICY}} -b {{.BATCHSIZE}}
+
+  post-retrieve-gnd:
+    cmds:
+      - python /scripts/extract-gnd-data.py
+
+  post-retrieve-wikidata:
+    cmds:
+      - python /scripts/extract-wd-data.py
+
+  ingest-data:
+    vars:
+      MAIN_DATA_FOLDER: /data/ttl/main
+      ADDITIONAL_DATA_FOLDER: /data/ttl/additional
+      ENDPOINT: http://blazegraph:8080/blazegraph/sparql
+
+    cmds:
+      - |
+        echo "Ingest main data"
+        numfiles=$(ls -l {{.MAIN_DATA_FOLDER}}/*.ttl | wc -l)
+        count=1
+        for f in $(ls -1 {{.MAIN_DATA_FOLDER}}/*.ttl); do
+          echo "Ingesting file $count of $numfiles ($f)"
+          curl --silent -X POST {{.ENDPOINT}} --data-urlencode "update=DELETE { ?s ?p ?o } WHERE { GRAPH <file:/$f> { ?s ?p ?o } }" > /dev/null
+          curl --silent -X POST --data-binary "uri=file://$f" {{.ENDPOINT}} > /dev/null
+          count=$((count+1)) 
+        done
+
+        echo "Ingest additional data"
+        numfiles=$(ls -l {{.ADDITIONAL_DATA_FOLDER}}/*.ttl | wc -l)
+        count=1
+        for f in $(ls -1 {{.ADDITIONAL_DATA_FOLDER}}/*.ttl); do
+          echo "Ingesting record $count of $numfiles ($f)"
+          curl --silent -X POST {{.ENDPOINT}} --data-urlencode "update=DELETE { ?s ?p ?o } WHERE { GRAPH <file:/$f> { ?s ?p ?o } }" > /dev/null
+          curl --silent -X POST --data-binary "uri=file://$f" {{.ENDPOINT}} > /dev/null
+          count=$((count+1)) 
+        done
+
