@@ -2,11 +2,35 @@
 
 version: '3'
 
+dotenv: ['.env']
+
 vars:
-  GREETING: Hello, World!
+  GENERATOR_POLICY: /mapping/generator-policy.xml
 
 tasks:
-  default:
+
+  download-iiif-manifests:
     cmds:
-      - echo "{{.GREETING}}"
-    silent: true
+      - python /scripts/cache-iiif-manifests.py {{.IIIF_MANIFESTS_FROM}} {{.IIIF_MANIFESTS_TO}}
+
+  preprocessing-zbz-to-xml:
+    cmds:
+      - python /scripts/json-to-xml.py
+
+  mapping-zbz:
+    vars:
+      INPUT_FOLDER: /data/xml/zbz
+      OUTPUT_FOLDER: /data/ttl/main
+      MAPPING_FILE: /mapping/mappings-zbz.x3ml
+      BATCHSIZE: 20
+    cmds:
+      - bash /scripts/performMapping.sh -i {{.INPUT_FOLDER}} -o {{.OUTPUT_FOLDER}} -m {{.MAPPING_FILE}} -g {{.GENERATOR_POLICY}} -b {{.BATCHSIZE}}
+
+  mapping-nb:
+    vars:
+      INPUT_FOLDER: /data/xml/nb
+      OUTPUT_FOLDER: /data/ttl/main
+      MAPPING_FILE: /mapping/mappings-nb.x3ml
+      BATCHSIZE: 20
+    cmds:
+      - bash /scripts/performMapping.sh -i {{.INPUT_FOLDER}} -o {{.OUTPUT_FOLDER}} -m {{.MAPPING_FILE}} -g {{.GENERATOR_POLICY}} -b {{.BATCHSIZE}}
