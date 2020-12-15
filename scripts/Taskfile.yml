@@ -10,13 +10,16 @@ vars:
 
 tasks:
 
+  default:
+    deps: [preprocessing-zbz-to-xml]
+
   download-iiif-manifests:
     cmds:
       - python /scripts/cache-iiif-manifests.py {{.IIIF_MANIFESTS_FROM}} {{.IIIF_MANIFESTS_TO}}
 
   preprocessing-zbz-to-xml:
     cmds:
-      - python /scripts/json-to-xml.py
+      - python /scripts/json-to-xml.py {{.RECORDS_OFFSET}} {{.RECORDS_LIMIT}}
 
   mapping-zbz:
     vars:
