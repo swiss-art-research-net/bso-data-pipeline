@@ -2,8 +2,6 @@
 
 version: '3'
 
-dotenv: ['.env']
-
 vars:
   ENDPOINT: http://blazegraph:8080/blazegraph/sparql
   GENERATOR_POLICY: /mapping/generator-policy.xml
@@ -14,6 +12,9 @@ tasks:
     deps: [preprocessing-zbz-to-xml]
 
   download-iiif-manifests:
+    vars:
+      IIIF_MANIFESTS_FROM: 0
+      IIIF_MANIFEST_TO: 9999
     cmds:
       - python /scripts/cache-iiif-manifests.py {{.IIIF_MANIFESTS_FROM}} {{.IIIF_MANIFESTS_TO}}
 
