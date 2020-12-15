@@ -12,13 +12,24 @@ tasks:
     deps: [preprocessing-zbz-to-xml]
 
   download-iiif-manifests:
+    desc: Downloads the IIIF Manifests found in the ZBZ data source file
     vars:
       IIIF_MANIFESTS_FROM: 0
       IIIF_MANIFEST_TO: 9999
+    sources:
+      - /data/source/sari_abzug-utf-8_23_04-tsv.json
+    generates:
+      - /data/manifests/*.json
     cmds:
       - python /scripts/cache-iiif-manifests.py {{.IIIF_MANIFESTS_FROM}} {{.IIIF_MANIFESTS_TO}}
 
   preprocessing-zbz-to-xml:
+    desc: Convert the ZBZ data from JSON to XML
+    sources:
+      - /data/source/sari_abzug-utf-8_23_04-tsv.json
+      - /scripts/json-to-xml.py
+    generates:
+      - /data/xml/zbz/*.xml
     cmds:
       - python /scripts/json-to-xml.py {{.RECORDS_OFFSET}} {{.RECORDS_LIMIT}}
 
