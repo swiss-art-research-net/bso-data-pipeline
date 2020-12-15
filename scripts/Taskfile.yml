@@ -5,6 +5,7 @@ version: '3'
 dotenv: ['.env']
 
 vars:
+  ENDPOINT: http://blazegraph:8080/blazegraph/sparql
   GENERATOR_POLICY: /mapping/generator-policy.xml
 
 tasks:
@@ -35,11 +36,11 @@ tasks:
     cmds:
       - bash /scripts/performMapping.sh -i {{.INPUT_FOLDER}} -o {{.OUTPUT_FOLDER}} -m {{.MAPPING_FILE}} -g {{.GENERATOR_POLICY}} -b {{.BATCHSIZE}}
 
-  post-retrieve-gnd:
+  retrieve-gnd:
     cmds:
       - python /scripts/extract-gnd-data.py
 
-  post-retrieve-wikidata:
+  retrieve-wikidata:
     cmds:
       - python /scripts/extract-wd-data.py
 
@@ -57,7 +58,6 @@ tasks:
 
   ingest-data:
     vars:
-      ENDPOINT: http://blazegraph:8080/blazegraph/sparql
       FOLDER: "/data/ttl"
 
     cmds:
@@ -71,3 +71,25 @@ tasks:
           count=$((count+1)) 
         done
 
+  run-query-from-file:
+    vars:
+      QUERY:
+        sh: cat {{.FILE}}
+    cmds:
+      - curl -X POST {{.ENDPOINT}} --data-urlencode "update={{.QUERY}}" 
+
+  add-relations:
+    cmds:
+      - task: run-query-from-file
+        vars: {FILE: "queries/addRelations.sparql"}
+
+  delete-assets:
+    cmds:
+      - task: run-query-from-file
+        vars: {FILE: "queries/deleteAssets.sparql"}
+
+  cleanup:
+    cmds:
+      - task: run-query-from-file
+        vars: {FILE: "queries/cleanup.sparql"}
+    
