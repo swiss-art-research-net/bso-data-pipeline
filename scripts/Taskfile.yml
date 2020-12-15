@@ -25,23 +25,28 @@ tasks:
   mapping-zbz:
     vars:
       INPUT_FOLDER: /data/xml/zbz
-      OUTPUT_FOLDER: /data/ttl/main
+      OUTPUT_FOLDER: /data/ttl/main/zbz
       MAPPING_FILE: /mapping/mappings-zbz.x3ml
       BATCHSIZE: 20
     sources:
-      - /data/xml/zbz
+      - /data/xml/zbz/*.xml
       - /mapping/mappings-zbz.x3ml
     generates:
-      - /data/ttl/main/sari-*.ttl
+      - /data/ttl/main/zbz/*.ttl
     cmds:
       - bash /scripts/performMapping.sh -i {{.INPUT_FOLDER}} -o {{.OUTPUT_FOLDER}} -m {{.MAPPING_FILE}} -g {{.GENERATOR_POLICY}} -b {{.BATCHSIZE}}
 
   mapping-nb:
     vars:
       INPUT_FOLDER: /data/xml/nb
-      OUTPUT_FOLDER: /data/ttl/main
+      OUTPUT_FOLDER: /data/ttl/main/nb
       MAPPING_FILE: /mapping/mappings-nb.x3ml
       BATCHSIZE: 20
+    sources:
+      - /data/xml/nb/*.xml
+      - /mapping/mappings-nb.x3ml
+    generates:
+      - /data/ttl/main/nb/*.ttl
     cmds:
       - bash /scripts/performMapping.sh -i {{.INPUT_FOLDER}} -o {{.OUTPUT_FOLDER}} -m {{.MAPPING_FILE}} -g {{.GENERATOR_POLICY}} -b {{.BATCHSIZE}}
 
@@ -57,7 +62,9 @@ tasks:
     cmds:
       - echo "Ingest main data"
       - task: ingest-data
-        vars: {FOLDER: "/data/ttl/main"}
+        vars: {FOLDER: "/data/ttl/main/zbz"}
+      - task: ingest-data
+        vars: {FOLDER: "/data/ttl/main/nb"}
 
   ingest-data-additional:
     cmds:
