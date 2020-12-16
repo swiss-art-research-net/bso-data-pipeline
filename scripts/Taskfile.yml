@@ -31,7 +31,7 @@ tasks:
     generates:
       - /data/xml/zbz/*.xml
     cmds:
-      - python /scripts/json-to-xml.py {{.RECORDS_OFFSET}} {{.RECORDS_LIMIT}}
+      - python /scripts/json-to-xml.py {{.RECORDS_LIMIT}} {{.RECORDS_OFFSET}}
 
   mapping-zbz:
     desc: Map ZBZ XML data to CIDOC/RDF
