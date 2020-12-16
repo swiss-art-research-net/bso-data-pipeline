@@ -7,6 +7,7 @@ import os
 import requests
 import urllib
 import time
+import sys
 
 inputFile = "/data/source/sari_abzug-utf-8_23_04-tsv.json"
 externalFieldsDirectory = "/data/source/"
@@ -18,7 +19,10 @@ outputPrefix = "sari-"
 fieldsContainingDates = ['100$d', '260$c', '260$g', '264$c', '533$d', '600$d', '611$d', '700$d']
 
 # List fields that are loaded from separate files (e.g. curated and/or multi-value fields)
-externalFields = ['100', '651']
+externalFields = ['100', '264', '651']
+
+limit=int(sys.argv[1]) if len(sys.argv) >1 else 999999
+offset=int(sys.argv[2]) if len(sys.argv) >2 else 0
 
 def convertEDTFdate(date):
     try:
@@ -154,7 +158,7 @@ keys = list(rawData['rows'][0].keys())
 keys.sort()
 
 # Output individual files
-for i, row in enumerate(tqdm(rawData['rows'])):
+for i, row in enumerate(tqdm(rawData['rows'][offset:limit])):
     
     records = etree.Element("records")
     record = convertRowToXml(row, keys, externalFieldContent)

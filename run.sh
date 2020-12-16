@@ -1,7 +1,6 @@
 source .env
 
 JOBSCONTAINER=$(echo $PROJECT_NAME)_jobs
-X3MLCONTAINER=$(echo $PROJECT_NAME)_x3ml
 
 if [[ $NOPROMPT -ne 1 ]]
 then
@@ -10,7 +9,7 @@ then
 fi
 if [[ $NOPROMPT || $REPLY =~ ^[Yy]$ ]]
 then
-  docker exec $JOBSCONTAINER bash -c "python /scripts/cache-iiif-manifests.py 0 99999"
+  docker exec $JOBSCONTAINER bash -c "task download-iiif-manifests --force"
 fi
 
 read -p "Execute everything else? (y/n)" -n 1 -r
@@ -27,7 +26,7 @@ then
 fi
 if [[ $NOPROMPT || $REPLY =~ ^[Yy]$ ]]
 then
-  docker exec $JOBSCONTAINER bash -c "python /scripts/json-to-xml.py"
+  docker exec $JOBSCONTAINER bash -c "task zbz-to-xml"
 fi
 
 if [[ $NOPROMPT -ne 1 ]]
@@ -37,7 +36,7 @@ then
 fi
 if [[ $NOPROMPT || $REPLY =~ ^[Yy]$ ]]
 then
-  docker exec $X3MLCONTAINER bash -c "bash /scripts/performMapping-zbz.sh"
+  docker exec $JOBSCONTAINER bash -c "taks mapping-zbz"
 fi
 
 if [[ $NOPROMPT -ne 1 ]]
@@ -47,7 +46,7 @@ then
 fi
 if [[ $NOPROMPT || $REPLY =~ ^[Yy]$ ]]
 then
-  docker exec $X3MLCONTAINER bash -c "bash /scripts/performMapping-nb.sh"
+  docker exec $JOBSCONTAINER bash -c "task mapping-nb"
 fi
 
 if [[ $NOPROMPT -ne 1 ]]
@@ -57,7 +56,7 @@ then
 fi
 if [[ $NOPROMPT || $REPLY =~ ^[Yy]$ ]]
 then
-  docker exec $JOBSCONTAINER bash -c "python /scripts/extract-gnd-data.py"
+  docker exec $JOBSCONTAINER bash -c "task retrieve-gnd"
 fi
 
 if [[ $NOPROMPT -ne 1 ]]
@@ -67,7 +66,7 @@ then
 fi
 if [[ $NOPROMPT || $REPLY =~ ^[Yy]$ ]]
 then
-  docker exec $JOBSCONTAINER bash -c "python /scripts/extract-wd-data.py"
+  docker exec $JOBSCONTAINER bash -c "task retrieve-wikidata"
 fi
 
 if [[ $NOPROMPT -ne 1 ]]
@@ -77,7 +76,8 @@ then
 fi
 if [[ $NOPROMPT || $REPLY =~ ^[Yy]$ ]]
 then
-  docker exec $JOBSCONTAINER bash -c "bash ingestData.sh"
+  docker exec $JOBSCONTAINER bash -c "task ingest-main-data"
+  docker exec $JOBSCONTAINER bash -c "task ingest-additional-data"
 fi
 
 if [[ $NOPROMPT -ne 1 ]]
@@ -87,7 +87,7 @@ then
 fi
 if [[ $NOPROMPT || $REPLY =~ ^[Yy]$ ]]
 then
-  docker exec $JOBSCONTAINER bash -c "bash addRelations.sh"
+  docker exec $JOBSCONTAINER bash -c "task add-relations"
 fi
 
 if [[ $NOPROMPT -ne 1 ]]
@@ -97,5 +97,5 @@ then
 fi
 if [[ $NOPROMPT || $REPLY =~ ^[Yy]$ ]]
 then
-  docker exec $JOBSCONTAINER bash -c "bash postIngestCleanup.sh"
+  docker exec $JOBSCONTAINER bash -c "task cleanup"
 fi
