@@ -1,6 +1,26 @@
 source .env
 
 JOBSCONTAINER=$(echo $PROJECT_NAME)_jobs
+LIMIT=999999
+
+usage() { echo "Usage: $0 [-l <limit>] [-y <yes to everything>]" 1>&2; exit 1; }
+
+while getopts ":y:l:" o; do
+    case "${o}" in
+        y)
+            NOPROMPT=1
+            ;;
+        l)
+            LIMIT=${OPTARG}
+            ;;
+        *)
+            usage
+            ;;
+    esac
+done
+shift $((OPTIND-1))
+
+echo $LIMIT
 
 if [[ $NOPROMPT -ne 1 ]]
 then
@@ -26,7 +46,7 @@ then
 fi
 if [[ $NOPROMPT || $REPLY =~ ^[Yy]$ ]]
 then
-  docker exec $JOBSCONTAINER bash -c "task zbz-to-xml"
+  docker exec $JOBSCONTAINER bash -c "RECORDS_LIMIT=$LIMIT task zbz-to-xml"
 fi
 
 if [[ $NOPROMPT -ne 1 ]]
