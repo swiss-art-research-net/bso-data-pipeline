@@ -23,7 +23,7 @@ tasks:
     cmds:
       - python /scripts/cache-iiif-manifests.py {{.IIIF_MANIFESTS_FROM}} {{.IIIF_MANIFESTS_TO}}
 
-  preprocessing-zbz-to-xml:
+  zbz-to-xml:
     desc: Convert the ZBZ data from JSON to XML
     sources:
       - /data/source/sari_abzug-utf-8_23_04-tsv.json
