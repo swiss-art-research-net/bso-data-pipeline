@@ -11,3 +11,4 @@ local-scripts
 settings.json
 *.numbers
 __pycache__
+.task
