@@ -10,33 +10,51 @@
       <subfield code="a">10.3931/e-rara-64710</subfield>
     </datafield>
     <datafield tag="100">
+      <subfield code="UUID">f33b0330-d53d-41f8-a7b8-3334be547d0b</subfield>
+      <subfield code="id_person">00e2bef8-100</subfield>
+      <subfield code="subfield">1</subfield>
+      <subfield code="001">003639920</subfield>
       <subfield code="1">(DE-588)1089410395</subfield>
+      <subfield code="doi_2">http://dx.doi.org/10.3931/e-rara-64710</subfield>
+      <subfield code="gnd">1089410395</subfield>
+      <subfield code="GND-Nummer">1089410395</subfield>
+      <subfield code="wikidata_uri">http://www.wikidata.org/entity/Q94919286</subfield>
+      <subfield code="wd_id">Q94919286</subfield>
+      <subfield code="Geburtsdatum">1828</subfield>
+      <subfield code="Sterbedatum">1870</subfield>
+      <subfield code="Beruf_oder_Beschäftigung">Zeichner</subfield>
+      <subfield code="Geschlecht">Männlich</subfield>
       <subfield code="4">art</subfield>
       <subfield code="a">Egli, Jean</subfield>
-      <subfield code="c"></subfield>
+      <subfield code="doi_856_1$u">http://dx.doi.org/10.3931/e-rara-64710</subfield>
       <subfield code="d" parsedDate="1828/1870" upperDate="1870-12-31" lowerDate="1828-01-01">1828-1870</subfield>
       <subfield code="e">Künstler</subfield>
     </datafield>
     <datafield tag="245">
       <subfield code="a">Album der Stadt Zürich</subfield>
-      <subfield code="b"></subfield>
+      <subfield code="b"/>
       <subfield code="c">Jean Egli lith.</subfield>
-      <subfield code="h"></subfield>
-      <subfield code="n"></subfield>
-      <subfield code="p"></subfield>
-      <subfield code="a"></subfield>
-      <subfield code="c"></subfield>
+      <subfield code="h"/>
+      <subfield code="n"/>
+      <subfield code="p"/>
+      <subfield code="a"/>
+      <subfield code="c"/>
     </datafield>
     <datafield tag="264">
+      <subfield code="UUID">f33b0330-d53d-41f8-a7b8-3334be547d0b</subfield>
       <subfield code="a">[Zürich]</subfield>
+      <subfield code="a-gnd">[Zürich]</subfield>
+      <subfield code="a-gnd-id">4068038-1</subfield>
       <subfield code="b">Ruff u. Hofer gedr.t</subfield>
+      <subfield code="b-gnd-id">1123535671</subfield>
+      <subfield code="b-gnd">Ruff u. Hofer gedr.t</subfield>
       <subfield code="c" parsedDate="1860" upperDate="1860-12-31" lowerDate="1860-01-01">[1860]</subfield>
     </datafield>
     <datafield tag="300">
       <subfield code="a">10 Blätter</subfield>
       <subfield code="b">Lithografien</subfield>
-      <subfield code="c"></subfield>
-      <subfield code="e"></subfield>
+      <subfield code="c"/>
+      <subfield code="e"/>
     </datafield>
     <datafield tag="336">
       <subfield code="2">rdacontent</subfield>
@@ -54,7 +72,7 @@
       <subfield code="b">nb | nc | cr</subfield>
     </datafield>
     <datafield tag="500">
-      <subfield code="5"></subfield>
+      <subfield code="5"/>
       <subfield code="a">Keine Titelseite vorhanden; Umschlagtitel verwendet</subfield>
     </datafield>
     <datafield tag="590">\\$aDatierung und Angaben zum Inhalt gemäss Bleistiftnotizen auf der Rückseite des Umschlags$5Exemplar der Zentralbibliothek Zürich, Graphische Sammlung und Fotoarchiv</datafield>
@@ -62,17 +80,18 @@
       <subfield code="1">(DE-588)4001393-5</subfield>
       <subfield code="2">gnd</subfield>
       <subfield code="a">Vedute</subfield>
-      <subfield code="g"></subfield>
-      <subfield code="x"></subfield>
+      <subfield code="g"/>
+      <subfield code="x"/>
     </datafield>
     <datafield tag="651">
+      <subfield code="UUID">f33b0330-d53d-41f8-a7b8-3334be547d0b</subfield>
+      <subfield code="subfield">1</subfield>
+      <subfield code="1">003639920</subfield>
       <subfield code="1">(DE-588)4068038-1</subfield>
       <subfield code="1_2">4068038-1</subfield>
+      <subfield code="wd_id">Q72</subfield>
       <subfield code="2">gnd</subfield>
       <subfield code="a">Zürich</subfield>
-      <subfield code="g"></subfield>
-      <subfield code="x"></subfield>
-      <subfield code="z"></subfield>
     </datafield>
     <datafield tag="655">
       <subfield code="2">gnd-content</subfield>
@@ -84,13 +103,13 @@
       <subfield code="4">pup</subfield>
       <subfield code="a">Zürich</subfield>
       <subfield code="e">Erscheinungsort</subfield>
-      <subfield code="g"></subfield>
+      <subfield code="g"/>
     </datafield>
     <datafield tag="852">
       <subfield code="a">ZAD50 | Einzelne Blätter;4\</subfield>
       <subfield code="b">Z02 | Z02 | Z01</subfield>
       <subfield code="c">GSM | GSM | OL</subfield>
-      <subfield code="h"></subfield>
+      <subfield code="h"/>
       <subfield code="j">PA 255 | G</subfield>
       <subfield code="p">ZM02505838 | ZD3520805</subfield>
     </datafield>
@@ -154,7 +173,7 @@
       </image>
     </images>
   </record>
-  <record>
+<record>
     <uuid>8d11181b-3369-4032-8ab2-0514d94314f1</uuid>
     <datafield tag="001">005134689</datafield>
     <datafield tag="007">ki\|||;cr\|||||||||||</datafield>
@@ -162,28 +181,32 @@
     <datafield tag="024">
       <subfield code="2">doi</subfield>
       <subfield code="a">10.3931/e-rara-58644</subfield>
-      <subfield code="a"></subfield>
     </datafield>
     <datafield tag="245">
       <subfield code="a">Zürich. Vue générale prise depuis la Weid</subfield>
-      <subfield code="b"></subfield>
-      <subfield code="c"></subfield>
-      <subfield code="h"></subfield>
-      <subfield code="n"></subfield>
-      <subfield code="p"></subfield>
-      <subfield code="a"></subfield>
-      <subfield code="c"></subfield>
+      <subfield code="b"/>
+      <subfield code="c"/>
+      <subfield code="h"/>
+      <subfield code="n"/>
+      <subfield code="p"/>
+      <subfield code="a"/>
+      <subfield code="c"/>
     </datafield>
     <datafield tag="264">
+      <subfield code="UUID">8d11181b-3369-4032-8ab2-0514d94314f1</subfield>
       <subfield code="a">Zurich</subfield>
+      <subfield code="a-gnd">Zurich</subfield>
+      <subfield code="a-gnd-id">4068038-1</subfield>
       <subfield code="b">chez R. Dikenmann Peintre</subfield>
+      <subfield code="b-gnd-id">1159174490</subfield>
+      <subfield code="b-gnd">chez R. Dikenmann Peintre</subfield>
       <subfield code="c" parsedDate="1877/1899" upperDate="1899-12-31" lowerDate="1877-01-01">[zwischen 1877 und 1899]</subfield>
     </datafield>
     <datafield tag="300">
       <subfield code="a">1 Druckgrafik</subfield>
       <subfield code="b">Aquatinta koloriert</subfield>
       <subfield code="c">Bild 7,4 x 11,2 cm, Blatt 15 x 21 cm</subfield>
-      <subfield code="e"></subfield>
+      <subfield code="e"/>
     </datafield>
     <datafield tag="336">
       <subfield code="2">rdacontent</subfield>
@@ -201,7 +224,7 @@
       <subfield code="b">nb | cr</subfield>
     </datafield>
     <datafield tag="500">
-      <subfield code="5"></subfield>
+      <subfield code="5"/>
       <subfield code="a">Anonyme/r Künstler/in;\\ | Datierung anhand Bildinhalt: Paul Wunderli kaufte das Waidgut 1877, fügte in den darauffolgenden Jahren einen Turm hinzu und verband beide Bauten mit einem Durchgang; der Bahndamm existierte von 1855-1889;\\ | Weitere, unkolorierte Variante der Druckgrafik vorhanden, Signatur der Zentralbibliothek Zürich, Graphische Sammlung und Fotoarchiv: Zürich 4a, mit Weid I, 22</subfield>
     </datafield>
     <datafield tag="520">
@@ -209,49 +232,56 @@
     </datafield>
     <datafield tag="590">\\$aMit dem Vermerk "Edition originale 1", stockfleckig$5Exemplar der Zentralbibliothek Zürich, Graphische Sammlung und Fotoarchiv</datafield>
     <datafield tag="651">
+      <subfield code="UUID">8d11181b-3369-4032-8ab2-0514d94314f1</subfield>
+      <subfield code="subfield">1</subfield>
+      <subfield code="1">005134689</subfield>
       <subfield code="1">(DE-588)4068038-1</subfield>
       <subfield code="1_2">4068038-1</subfield>
+      <subfield code="wd_id">Q72</subfield>
       <subfield code="2">gnd</subfield>
       <subfield code="a">Zürich</subfield>
-      <subfield code="g"></subfield>
-      <subfield code="x"></subfield>
-      <subfield code="z"></subfield>
     </datafield>
     <datafield tag="651">
+      <subfield code="UUID">8d11181b-3369-4032-8ab2-0514d94314f1</subfield>
+      <subfield code="subfield">2</subfield>
+      <subfield code="1">005134689</subfield>
       <subfield code="1">(DE-588)1140245791</subfield>
       <subfield code="1_2">1140245791</subfield>
+      <subfield code="wd_id">Q72</subfield>
       <subfield code="2">gnd</subfield>
       <subfield code="a">Waidgut</subfield>
       <subfield code="g">Zürich</subfield>
-      <subfield code="x"></subfield>
-      <subfield code="z"></subfield>
     </datafield>
     <datafield tag="651">
+      <subfield code="UUID">8d11181b-3369-4032-8ab2-0514d94314f1</subfield>
+      <subfield code="subfield">3</subfield>
+      <subfield code="1">005134689</subfield>
       <subfield code="1">(DE-588)1137974680</subfield>
       <subfield code="1_2">1137974680</subfield>
+      <subfield code="wd_id">Q84081191</subfield>
       <subfield code="2">gnd</subfield>
       <subfield code="a">Waid</subfield>
       <subfield code="g">Zürich</subfield>
-      <subfield code="x"></subfield>
-      <subfield code="z"></subfield>
     </datafield>
     <datafield tag="651">
+      <subfield code="UUID">8d11181b-3369-4032-8ab2-0514d94314f1</subfield>
+      <subfield code="subfield">4</subfield>
+      <subfield code="1">005134689</subfield>
       <subfield code="1">(DE-588)4093562-0</subfield>
       <subfield code="1_2">4093562-0</subfield>
+      <subfield code="wd_id">Q327218</subfield>
       <subfield code="2">gnd</subfield>
       <subfield code="a">Glarner Alpen</subfield>
-      <subfield code="g"></subfield>
-      <subfield code="x"></subfield>
-      <subfield code="z"></subfield>
     </datafield>
     <datafield tag="651">
+      <subfield code="UUID">8d11181b-3369-4032-8ab2-0514d94314f1</subfield>
+      <subfield code="subfield">5</subfield>
+      <subfield code="1">005134689</subfield>
       <subfield code="1">(DE-588)4118545-6</subfield>
       <subfield code="1_2">4118545-6</subfield>
+      <subfield code="wd_id">Q18630638</subfield>
       <subfield code="2">gnd</subfield>
       <subfield code="a">Schwyzer Alpen</subfield>
-      <subfield code="g"></subfield>
-      <subfield code="x"></subfield>
-      <subfield code="z"></subfield>
     </datafield>
     <datafield tag="655">
       <subfield code="2">gnd-content</subfield>
@@ -262,7 +292,7 @@
       <subfield code="1">(DE-588)4101514-9</subfield>
       <subfield code="4">prt</subfield>
       <subfield code="a">Kunstverlag Rudolf Dikenmann</subfield>
-      <subfield code="b"></subfield>
+      <subfield code="b"/>
       <subfield code="e">Drucker</subfield>
       <subfield code="g">Zürich</subfield>
     </datafield>
@@ -271,13 +301,13 @@
       <subfield code="4">pup</subfield>
       <subfield code="a">Zürich</subfield>
       <subfield code="e">Erscheinungsort</subfield>
-      <subfield code="g"></subfield>
+      <subfield code="g"/>
     </datafield>
     <datafield tag="852">
-      <subfield code="a"></subfield>
+      <subfield code="a"/>
       <subfield code="b">Z02 | Z01</subfield>
       <subfield code="c">GSB | OL</subfield>
-      <subfield code="h"></subfield>
+      <subfield code="h"/>
       <subfield code="j">GRA  1.6 : 1</subfield>
       <subfield code="p">ZD416581 | ZD3452921</subfield>
     </datafield>
@@ -301,39 +331,41 @@
       </image>
     </images>
   </record>
-  <record>
-    <uuid>42951b13-79f0-40a8-9e26-bbd4affddd43</uuid>
-    <datafield tag="001">005145986</datafield>
+<record>
+    <uuid>4b4a9cb6-3a32-4582-8a26-62b818b5795d</uuid>
+    <datafield tag="001">005219259</datafield>
     <datafield tag="007">ki\\\\;cr\|||||||||||</datafield>
-    <datafield tag="008">050617s1838\\\\sz\\\\\\\\\\\\\\\\i\zxx\d</datafield>
+    <datafield tag="008">060708s1848\\\\sz\\\\\\\\\\\\\\\\i\zxx\\</datafield>
     <datafield tag="024">
       <subfield code="2">doi</subfield>
-      <subfield code="a">10.7891/e-manuscripta-71731</subfield>
-      <subfield code="a"></subfield>
+      <subfield code="a">10.3931/e-rara-55941</subfield>
     </datafield>
     <datafield tag="245">
-      <subfield code="a">[Kloster Töss, Kreuzgang]</subfield>
-      <subfield code="b">[Jesus und die Samaritanerin; Speisung der Fünftausend]</subfield>
-      <subfield code="c">[Johann Konrad Werdmüller]</subfield>
+      <subfield code="a">Malerischer Plan &amp; Ansicht der Stadt Zürich &amp; ihrer Umgebung</subfield>
+      <subfield code="b"/>
+      <subfield code="c">Siegfried del. u. sc.</subfield>
       <subfield code="h">Bildmaterial</subfield>
-      <subfield code="n"></subfield>
-      <subfield code="p"></subfield>
-      <subfield code="a"></subfield>
-      <subfield code="c"></subfield>
+      <subfield code="n"/>
+      <subfield code="p"/>
+      <subfield code="a"/>
+      <subfield code="c"/>
     </datafield>
     <datafield tag="260">
-      <subfield code="a">[Winterthur]</subfield>
-      <subfield code="b"></subfield>
-      <subfield code="c" parsedDate="1838?" upperDate="1838-12-31" lowerDate="1838-01-01">[ca. 1838]</subfield>
-      <subfield code="e"></subfield>
-      <subfield code="f"></subfield>
-      <subfield code="g"></subfield>
+      <subfield code="a">Zürich</subfield>
+      <subfield code="b">bei Hch. Fuessli &amp; Cie.</subfield>
+      <subfield code="c" parsedDate="1848?" upperDate="1848-12-31" lowerDate="1848-01-01">[ca. 1848]</subfield>
+      <subfield code="e"/>
+      <subfield code="f"/>
+      <subfield code="g"/>
+    </datafield>
+    <datafield tag="264">
+      <subfield code="UUID">4b4a9cb6-3a32-4582-8a26-62b818b5795d</subfield>
     </datafield>
     <datafield tag="300">
-      <subfield code="a">1 Zeichnung</subfield>
-      <subfield code="b">Aquarell über Bleistift</subfield>
-      <subfield code="c">Bild 14,8 x 19,3 cm, Unterlage 14,9 x 19,6 cm</subfield>
-      <subfield code="e"></subfield>
+      <subfield code="a">1 Druckgraphik</subfield>
+      <subfield code="b">Aquatinta, Blaudruck, koloriert</subfield>
+      <subfield code="c">Bild 30,3 x 46,4 cm, Blatt 39,2 x 56,3 cm</subfield>
+      <subfield code="e"/>
     </datafield>
     <datafield tag="336">
       <subfield code="2">rdacontent</subfield>
@@ -351,99 +383,99 @@
       <subfield code="b">nb | cr</subfield>
     </datafield>
     <datafield tag="500">
-      <subfield code="5"></subfield>
-      <subfield code="a">In: Ludwig Schulthess und Joh. Conrad Werdmueller. Ansichten vom Kloster Toess;\\ | In: Silvia Volkart: Bilderwelt des Spätmittelalters. Die Wandmalereien im Kloster Töss, Winterthur 2011, S. 137</subfield>
+      <subfield code="5"/>
+      <subfield code="a">3. Zustand, mit aller Schrift (Sihlbrücke mit 15 Fensteröffnungen, mit dem 1848 errichteten Zaun vor dem neuen Zeughaus, Menschenstaffage sowie Nummerierung 1-126, Bildtitel, Künstlerbezeichnung und Verlagsadresse);\\ | Von Hand datiert ca. 1850</subfield>
     </datafield>
     <datafield tag="651">
-      <subfield code="1">(DE-588)1058344676</subfield>
-      <subfield code="1_2">1058344676</subfield>
+      <subfield code="UUID">4b4a9cb6-3a32-4582-8a26-62b818b5795d</subfield>
+      <subfield code="subfield">1</subfield>
+      <subfield code="1">005219259</subfield>
+      <subfield code="1">(DE-588)4068038-1</subfield>
+      <subfield code="1_2">4068038-1</subfield>
+      <subfield code="wd_id">Q72</subfield>
       <subfield code="2">gnd</subfield>
-      <subfield code="a">Klosteranlage des Klosters Töss</subfield>
-      <subfield code="g">Winterthur-Töss</subfield>
-      <subfield code="x"></subfield>
-      <subfield code="z"></subfield>
+      <subfield code="a">Zürich</subfield>
     </datafield>
     <datafield tag="655">
-      <subfield code="2">gnd-content</subfield>
-      <subfield code="a">Zeichnung</subfield>
+      <subfield code="2">gnd</subfield>
+      <subfield code="a">Bildliche Darstellung</subfield>
     </datafield>
-    <datafield tag="695">ZG$aAquarell [Formschlagwort Sondersammlungen];ZG$aAnsicht [Formschlagwort Sondersammlungen]</datafield>
+    <datafield tag="695">ZG$aAquatinta [Formschlagwort Sondersammlungen];ZG$aAnsicht [Formschlagwort Sondersammlungen]</datafield>
     <datafield tag="700">
-      <subfield code="1">(DE-588)1072176300</subfield>
-      <subfield code="2"></subfield>
-      <subfield code="4"></subfield>
-      <subfield code="5"></subfield>
-      <subfield code="a">Werdmüller, Johann Konrad</subfield>
-      <subfield code="c"></subfield>
-      <subfield code="d" parsedDate="1819/1892" upperDate="1892-12-31" lowerDate="1819-01-01">1819-1892</subfield>
-      <subfield code="e"></subfield>
-      <subfield code="g"></subfield>
+      <subfield code="1">(DE-588)138437890</subfield>
+      <subfield code="2"/>
+      <subfield code="4"/>
+      <subfield code="5"/>
+      <subfield code="a">Siegfried, Hermann</subfield>
+      <subfield code="c"/>
+      <subfield code="d" parsedDate="1819/1879" upperDate="1879-12-31" lowerDate="1819-01-01">1819-1879</subfield>
+      <subfield code="e"/>
+      <subfield code="g"/>
     </datafield>
     <datafield tag="852">
-      <subfield code="a"></subfield>
+      <subfield code="a"/>
       <subfield code="b">Z02 | Z01</subfield>
       <subfield code="c">GSB | OL</subfield>
-      <subfield code="h"></subfield>
-      <subfield code="j">PAS II 106</subfield>
-      <subfield code="p">ZD401656 | ZD3602083</subfield>
+      <subfield code="h"/>
+      <subfield code="j">Zürich II A 242</subfield>
+      <subfield code="p">ZD442044 | ZD3419385</subfield>
     </datafield>
     <datafield tag="856">
-      <subfield code="u">https://doi.org/10.7891/e-manuscripta-71731</subfield>
-      <subfield code="z">Digitalisat in e-manuscripta</subfield>
+      <subfield code="u">http://dx.doi.org/10.3931/e-rara-55941</subfield>
+      <subfield code="x">Z01</subfield>
+      <subfield code="z">Online via e-rara.ch</subfield>
     </datafield>
     <datafield tag="906">\\$iVM Bild = Image</datafield>
     <datafield tag="993">
       <subfield code="9">LOCAL</subfield>
-      <subfield code="a">000001529_31</subfield>
+      <subfield code="a">000005153</subfield>
       <subfield code="x">uzb-ZG</subfield>
     </datafield>
-    <datafield tag="id">42951b13-79f0-40a8-9e26-bbd4affddd43</datafield>
-    <datafield tag="manifest">https://www.e-manuscripta.ch/i3f/v20/1966008/manifest</datafield>
+    <datafield tag="id">4b4a9cb6-3a32-4582-8a26-62b818b5795d</datafield>
+    <datafield tag="manifest">https://www.e-rara.ch/i3f/v20/15073350/manifest</datafield>
     <images>
       <image>
-        <height>6708</height>
-        <width>6307</width>
-        <url type="iiif">https://www.e-manuscripta.ch/zuzneb/i3f/v20/1966009</url>
+        <height>5273</height>
+        <width>6579</width>
+        <url type="iiif">https://www.e-rara.ch/zuz/i3f/v20/15073351</url>
       </image>
     </images>
   </record>
-  <record>
-    <uuid>0ddbc7bf-19ef-4326-9b17-ef0765f9f35b</uuid>
-    <datafield tag="001">010864667</datafield>
-    <datafield tag="007">ki\|||;cr\|||||||||||</datafield>
-    <datafield tag="008">161109s1887\\\\sz\|||\|\\\\\||\\\i|zxx\d</datafield>
+<record>
+    <uuid>0de7df7d-23f7-4bba-b061-730ff6a3fc18</uuid>
+    <datafield tag="001">005300655</datafield>
+    <datafield tag="007">ki\\\\;cr\|||||||||||</datafield>
+    <datafield tag="008">060421s1742\\\\sz\\\\\\\\\\\\\\\\i\zxx\\</datafield>
     <datafield tag="024">
       <subfield code="2">doi</subfield>
-      <subfield code="a">10.3931/e-rara-57647</subfield>
-      <subfield code="a"></subfield>
-    </datafield>
-    <datafield tag="110">
-      <subfield code="1">(DE-588)1030357439</subfield>
-      <subfield code="4">pht</subfield>
-      <subfield code="a">Polygraphisches Institut A.-G.</subfield>
-      <subfield code="e">Fotograf</subfield>
-      <subfield code="g"></subfield>
+      <subfield code="a">10.3931/e-rara-60518</subfield>
     </datafield>
     <datafield tag="245">
-      <subfield code="a">[Krematorium im Friedhof Sihlfeld]</subfield>
-      <subfield code="b"></subfield>
-      <subfield code="c">Photogr. Aufnahme und Druck: Polygraphisches Institut Zürich</subfield>
-      <subfield code="h"></subfield>
-      <subfield code="n"></subfield>
-      <subfield code="p"></subfield>
-      <subfield code="a"></subfield>
-      <subfield code="c"></subfield>
+      <subfield code="a">Gross Münster</subfield>
+      <subfield code="b"/>
+      <subfield code="c"/>
+      <subfield code="h">Bildmaterial</subfield>
+      <subfield code="n"/>
+      <subfield code="p"/>
+      <subfield code="a"/>
+      <subfield code="c"/>
+    </datafield>
+    <datafield tag="260">
+      <subfield code="a">[Zürich]</subfield>
+      <subfield code="b">[bey Heidegger und Compagnie]</subfield>
+      <subfield code="c" parsedDate="1742" upperDate="1742-12-31" lowerDate="1742-01-01">[1742]</subfield>
+      <subfield code="e"/>
+      <subfield code="f"/>
+      <subfield code="g"/>
     </datafield>
     <datafield tag="264">
-      <subfield code="a">Zürich</subfield>
-      <subfield code="b">Polygraphisches Institut</subfield>
-      <subfield code="c" parsedDate="1887/" upperDate="9999-12-31" lowerDate="1887-01-01">[nicht vor 1887]</subfield>
+      <subfield code="UUID">0de7df7d-23f7-4bba-b061-730ff6a3fc18</subfield>
     </datafield>
     <datafield tag="300">
-      <subfield code="a">1 Druckgrafik</subfield>
-      <subfield code="b">Lichtdruck</subfield>
-      <subfield code="c">17,3 x 23 cm</subfield>
-      <subfield code="e"></subfield>
+      <subfield code="a">1 Druckgraphik</subfield>
+      <subfield code="b">Radierung und Kupferstich</subfield>
+      <subfield code="c">Bild und Blatt 7,7 x 13,5 cm</subfield>
+      <subfield code="e"/>
     </datafield>
     <datafield tag="336">
       <subfield code="2">rdacontent</subfield>
@@ -460,70 +492,79 @@
       <subfield code="a">Blatt | Online-Ressource</subfield>
       <subfield code="b">nb | cr</subfield>
     </datafield>
-    <datafield tag="340">
-      <subfield code="a">Papier</subfield>
-      <subfield code="b">21 x 26,8 cm</subfield>
-      <subfield code="c"></subfield>
-      <subfield code="e"></subfield>
-      <subfield code="i"></subfield>
-      <subfield code="5"></subfield>
-      <subfield code="a"></subfield>
+    <datafield tag="500">
+      <subfield code="5"/>
+      <subfield code="a">Anonyme/r Künstler/in;\\ | Weitere, kolorierte Variante der Druckgrafik unter derselben Signatur vorhanden;\\ | Erschienen in: Hans Heinrich Bluntschli: Memorabilia Tigurina, oder, Merkwürdigkeiten der Stadt und Landschaft Zürich, 3. Auflage, Zürich 1742, S. 193</subfield>
     </datafield>
-    <datafield tag="520">
-      <subfield code="a">Krematorium im Friedhof Sihlfeld (Zentralfriedhof) an der Aemtlerstrasse 149-151; in Etappen 1877 (Teil A), 1888 (Teil B, 1969 aufgehoben), 1902 (Teil C) und 1912 (Teil D) angelegt; Teil A von Stadtbaumeister Arnold Geiser; 1887, nachdem der Streit um Erd- oder Feuerbestattung entschieden ist, Bau des Krematoriums von A. Geiser</subfield>
+    <datafield tag="562">
+      <subfield code="5">Exemplar der Zentralbibliothek Zürich, Graphische Sammlung und Fotoarchiv</subfield>
+      <subfield code="a">Handschriftliche Nummerierung oben rechts (Feder schwarz): "No 19b[?]"</subfield>
+      <subfield code="b"/>
+      <subfield code="c"/>
+      <subfield code="e"/>
     </datafield>
+    <datafield tag="590">\\$aBlatt an allen vier Seiten beschnitten$5Exemplar der Zentralbibliothek Zürich, Graphische Sammlung und Fotoarchiv</datafield>
     <datafield tag="651">
-      <subfield code="1">(DE-588)4742182-4</subfield>
-      <subfield code="1_2">4742182-4</subfield>
+      <subfield code="UUID">0de7df7d-23f7-4bba-b061-730ff6a3fc18</subfield>
+      <subfield code="subfield">1</subfield>
+      <subfield code="1">005300655</subfield>
+      <subfield code="1">(DE-588)4458464-7</subfield>
+      <subfield code="1_2">4458464-7</subfield>
+      <subfield code="wd_id">Q684948</subfield>
       <subfield code="2">gnd</subfield>
-      <subfield code="a">Friedhof Sihlfeld</subfield>
+      <subfield code="a">Großmünster</subfield>
       <subfield code="g">Zürich</subfield>
-      <subfield code="x"></subfield>
-      <subfield code="z"></subfield>
-    </datafield>
-    <datafield tag="651">
-      <subfield code="1">(DE-588)1062518020</subfield>
-      <subfield code="1_2">1062518020</subfield>
-      <subfield code="2">gnd</subfield>
-      <subfield code="a">Zürich-Sihlfeld</subfield>
-      <subfield code="g"></subfield>
-      <subfield code="x"></subfield>
-      <subfield code="z"></subfield>
-    </datafield>
-    <datafield tag="651">
-      <subfield code="1">(DE-588)4325071-3</subfield>
-      <subfield code="1_2">4325071-3</subfield>
-      <subfield code="2">gnd</subfield>
-      <subfield code="a">Zürich-Wiedikon</subfield>
-      <subfield code="g"></subfield>
-      <subfield code="x"></subfield>
-      <subfield code="z"></subfield>
     </datafield>
     <datafield tag="655">
       <subfield code="2">gnd-content</subfield>
       <subfield code="a">Bild</subfield>
     </datafield>
-    <datafield tag="695">ZG$aLichtdruck (Druckverfahren) [Formschlagwort Sondersammlungen];ZG$aAnsicht [Formschlagwort Sondersammlungen]</datafield>
+    <datafield tag="695">ZG$aRadierung [Formschlagwort Sondersammlungen];ZG$aKupferstich [Formschlagwort Sondersammlungen];ZG$aAnsicht [Formschlagwort Sondersammlungen]</datafield>
+    <datafield tag="700">
+      <subfield code="1">(DE-588)1036688089</subfield>
+      <subfield code="2"/>
+      <subfield code="4">edt</subfield>
+      <subfield code="5"/>
+      <subfield code="a">Bluntschli, Hans Heinrich</subfield>
+      <subfield code="c"/>
+      <subfield code="d"/>
+      <subfield code="e">Herausgeber</subfield>
+      <subfield code="g"/>
+    </datafield>
+    <datafield tag="710">
+      <subfield code="1">(DE-588)6146082-5</subfield>
+      <subfield code="4">pbl</subfield>
+      <subfield code="a">Heidegger und Co.</subfield>
+      <subfield code="b"/>
+      <subfield code="e">Verlag</subfield>
+      <subfield code="g"/>
+    </datafield>
     <datafield tag="852">
-      <subfield code="a"></subfield>
+      <subfield code="a"/>
       <subfield code="b">Z02 | Z01</subfield>
       <subfield code="c">GSM | OL</subfield>
-      <subfield code="h"></subfield>
-      <subfield code="j">Zürich 3.1, Zentralfriedhof I, 4</subfield>
-      <subfield code="p">ZD3414340 | ZD3443346</subfield>
+      <subfield code="h"/>
+      <subfield code="j">Zch. D 1 Grossmünster-Qu. Grossmünster I, 2</subfield>
+      <subfield code="p">ZD517318 | ZD3470612</subfield>
     </datafield>
     <datafield tag="856">
-      <subfield code="u">http://dx.doi.org/10.3931/e-rara-57647</subfield>
+      <subfield code="u">http://dx.doi.org/10.3931/e-rara-60518</subfield>
       <subfield code="x">Z01</subfield>
       <subfield code="z">Online via e-rara.ch</subfield>
     </datafield>
-    <datafield tag="id">0ddbc7bf-19ef-4326-9b17-ef0765f9f35b</datafield>
-    <datafield tag="manifest">https://www.e-rara.ch/i3f/v20/15554861/manifest</datafield>
+    <datafield tag="906">\\$iVM Bild = Image</datafield>
+    <datafield tag="993">
+      <subfield code="9">LOCAL</subfield>
+      <subfield code="a">000004560_3</subfield>
+      <subfield code="x">uzb-ZG</subfield>
+    </datafield>
+    <datafield tag="id">0de7df7d-23f7-4bba-b061-730ff6a3fc18</datafield>
+    <datafield tag="manifest">https://www.e-rara.ch/i3f/v20/16392337/manifest</datafield>
     <images>
       <image>
-        <height>4452</height>
-        <width>4380</width>
-        <url type="iiif">https://www.e-rara.ch/zuz/i3f/v20/15554862</url>
+        <height>1769</height>
+        <width>2243</width>
+        <url type="iiif">https://www.e-rara.ch/zuz/i3f/v20/16392338</url>
       </image>
     </images>
   </record>
