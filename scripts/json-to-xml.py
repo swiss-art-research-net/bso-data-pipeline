@@ -177,3 +177,4 @@ for i, row in enumerate(tqdm(rawData['rows'][offset:limit])):
     outputFile = outputDirectory + outputPrefix + row['id'] + ".xml"
     with open(outputFile, 'wb') as f:
         f.write(etree.tostring(records, xml_declaration=True, encoding='UTF-8', pretty_print=True))
+        f.close()
