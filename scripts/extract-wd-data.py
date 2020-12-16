@@ -2,7 +2,7 @@ import json
 import urllib.request
 import rdflib
 
-from os import listdir
+from os import path, walk
 from SPARQLWrapper import SPARQLWrapper, N3
 from tqdm import tqdm
 
@@ -12,16 +12,16 @@ batchSizeForRetrieval = 100
 wdEndpoint = "https://query.wikidata.org/sparql"
 
 # Look at all Turtle files
-inputFiles = []
-for file in listdir(ttlFolder):
-    if file.endswith('.ttl'):
-        inputFiles.append(file)
+inputFiles = [path.join(root, name)
+             for root, dirs, files in walk(ttlFolder)
+             for name in files
+             if name.endswith((".ttl"))]
 
 # Identify WD identifiers by looking at triples where the object is a WD identifier
 wdIdentifiers = []
 for file in tqdm(inputFiles):
     g = rdflib.Graph()
-    g.parse(ttlFolder + file, format='ttl')
+    g.parse(file, format='ttl')
     queryResults = g.query(
     """SELECT DISTINCT ?wd WHERE {
         ?s ?p ?wd .
