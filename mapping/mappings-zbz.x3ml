@@ -898,7 +898,7 @@
                             </and>
                         </if>
                         <relationship>crm:P14_carried_out_by</relationship>
-                        <entity>
+                        <entity variable="production_actor">
                             <type>crm:E39_Actor</type>
                             <instance_generator name="URIwithTypeAndId_hashed">
                                 <arg name="type" type="constant">actor</arg>
@@ -1017,6 +1017,38 @@
                     <target_node>
                         <entity>
                             <type>crm:E53_Place</type>
+                            <instance_generator name="URIorUUID">
+                                <arg name="text" type="xpath">concat('https://d-nb.info/gnd/', text())</arg>
+                            </instance_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>subfield</relation>
+                    </source_relation>
+                    <target_relation>
+                        <if>
+                            <equals value="b-gnd-id">@code</equals>
+                        </if>
+                        <relationship>crm:P14_carried_out_by</relationship>
+                        <entity variable="production_actor">
+                            <type>crm:E39_Actor</type>
+                            <instance_generator name="URIwithTypeAndId_hashed">
+                                <arg name="type" type="constant">actor</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">../subfield[@code='b']/text()</arg>
+                            </instance_generator>
+                        </entity>
+                        <relationship>crmdig:L54_is_same-as</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>subfield</source_node>
+                    <target_node>
+                        <entity>
+                            <type>crm:E39_Actor</type>
                             <instance_generator name="URIorUUID">
                                 <arg name="text" type="xpath">concat('https://d-nb.info/gnd/', text())</arg>
                             </instance_generator>
