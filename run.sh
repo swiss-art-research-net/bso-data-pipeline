@@ -36,7 +36,7 @@ then
 fi
 if [[ $NOPROMPT || $REPLY =~ ^[Yy]$ ]]
 then
-  docker exec $JOBSCONTAINER bash -c "taks mapping-zbz"
+  docker exec $JOBSCONTAINER bash -c "task mapping-zbz"
 fi
 
 if [[ $NOPROMPT -ne 1 ]]
@@ -76,8 +76,8 @@ then
 fi
 if [[ $NOPROMPT || $REPLY =~ ^[Yy]$ ]]
 then
-  docker exec $JOBSCONTAINER bash -c "task ingest-main-data"
-  docker exec $JOBSCONTAINER bash -c "task ingest-additional-data"
+  docker exec $JOBSCONTAINER bash -c "task ingest-data-main"
+  docker exec $JOBSCONTAINER bash -c "task ingest-data-additional"
 fi
 
 if [[ $NOPROMPT -ne 1 ]]
