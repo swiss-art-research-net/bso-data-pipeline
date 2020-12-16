@@ -34,6 +34,7 @@ tasks:
       - python /scripts/json-to-xml.py {{.RECORDS_OFFSET}} {{.RECORDS_LIMIT}}
 
   mapping-zbz:
+    desc: Map ZBZ XML data to CIDOC/RDF
     vars:
       INPUT_FOLDER: /data/xml/zbz
       OUTPUT_FOLDER: /data/ttl/main/zbz
@@ -48,6 +49,7 @@ tasks:
       - bash /scripts/performMapping.sh -i {{.INPUT_FOLDER}} -o {{.OUTPUT_FOLDER}} -m {{.MAPPING_FILE}} -g {{.GENERATOR_POLICY}} -b {{.BATCHSIZE}}
 
   mapping-nb:
+    desc: Map SNB XML data to CIDOC/RDF
     vars:
       INPUT_FOLDER: /data/xml/nb
       OUTPUT_FOLDER: /data/ttl/main/nb
@@ -62,14 +64,27 @@ tasks:
       - bash /scripts/performMapping.sh -i {{.INPUT_FOLDER}} -o {{.OUTPUT_FOLDER}} -m {{.MAPPING_FILE}} -g {{.GENERATOR_POLICY}} -b {{.BATCHSIZE}}
 
   retrieve-gnd:
+    desc: Extracts relevant data from GND based on identifiers found in the mappd TTL files
+    sources:
+      - /data/ttl/main/*/*.ttl
+    generates:
+      - /data/ttl/additional/gnd.ttl
     cmds:
       - python /scripts/extract-gnd-data.py
 
   retrieve-wikidata:
+    desc: Extracts relevant data from Wikidata based on identifiers found in the mappd TTL files
+    sources:
+      - /data/ttl/main/*/*.ttl
+    generates:
+      - /data/ttl/additional/wd.ttl
     cmds:
       - python /scripts/extract-wd-data.py
 
   ingest-data-main:
+    desc: Ingest the TTL files located in the data/ttl/main folder to the Blazegraph instance
+    sources:
+      - /data/ttl/main/*/*.ttl
     cmds:
       - echo "Ingest main data"
       - task: ingest-data
@@ -78,15 +93,15 @@ tasks:
         vars: {FOLDER: "/data/ttl/main/nb"}
 
   ingest-data-additional:
+    desc: Ingest the TTL files located in the data/ttl/additional folder to the Blazegraph instance
+    sources:
+      - /data/ttl/additional/*.ttl
     cmds:
       - echo "Ingest additional data"
       - task: ingest-data
         vars: {FOLDER: "/data/ttl/additional"}
 
   ingest-data:
-    vars:
-      FOLDER: "/data/ttl"
-
     cmds:
       - |
         numfiles=$(ls -l {{.FOLDER}}/*.ttl | wc -l)
@@ -106,16 +121,19 @@ tasks:
       - curl -X POST {{.ENDPOINT}} --data-urlencode "update={{.QUERY}}" 
 
   add-relations:
+    desc: Materialise triples defined through the queries/addRelations.sparql query in the Blazegraph instance
     cmds:
       - task: run-query-from-file
         vars: {FILE: "queries/addRelations.sparql"}
 
   delete-assets:
+    desc: Delete the assets (field definitions, etc.) from the Blazegraph instance
     cmds:
       - task: run-query-from-file
         vars: {FILE: "queries/deleteAssets.sparql"}
 
   cleanup:
+    desc: Run Cleanup query (located in queries/cleanup.sparql)
     cmds:
       - task: run-query-from-file
         vars: {FILE: "queries/cleanup.sparql"}
