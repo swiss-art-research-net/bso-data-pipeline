@@ -2,22 +2,22 @@ import json
 import rdflib
 
 from urllib import request
-from os import listdir
+from os import path, walk
 
 ttlFolder='/data/ttl/main/'
 ttlOutput='/data/ttl/additional/gnd.ttl'
 
 # Look at all Turtle files
-inputFiles = []
-for file in listdir(ttlFolder):
-    if file.endswith('.ttl'):
-        inputFiles.append(file)
+inputFiles = [path.join(root, name)
+             for root, dirs, files in walk(ttlFolder)
+             for name in files
+             if name.endswith((".ttl"))]
 
 # Identify GND identifiers by looking at triples where the object is  a GND identifier
 gndIdentifiers = []
 for file in inputFiles:
     g = rdflib.Graph()
-    g.parse(ttlFolder + file, format='ttl')
+    g.parse(file, format='ttl')
     queryResults = g.query(
     """SELECT DISTINCT ?gnd WHERE {
         ?s ?p ?gnd .
