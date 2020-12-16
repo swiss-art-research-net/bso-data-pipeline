@@ -1,0 +1,122 @@
+# https://taskfile.dev
+
+version: '3'
+
+vars:
+  ENDPOINT: http://blazegraph:8080/blazegraph/sparql
+  GENERATOR_POLICY: /mapping/generator-policy.xml
+
+tasks:
+
+  default:
+    deps: [preprocessing-zbz-to-xml]
+
+  download-iiif-manifests:
+    desc: Downloads the IIIF Manifests found in the ZBZ data source file
+    vars:
+      IIIF_MANIFESTS_FROM: 0
+      IIIF_MANIFEST_TO: 9999
+    sources:
+      - /data/source/sari_abzug-utf-8_23_04-tsv.json
+    generates:
+      - /data/manifests/*.json
+    cmds:
+      - python /scripts/cache-iiif-manifests.py {{.IIIF_MANIFESTS_FROM}} {{.IIIF_MANIFESTS_TO}}
+
+  zbz-to-xml:
+    desc: Convert the ZBZ data from JSON to XML
+    sources:
+      - /data/source/sari_abzug-utf-8_23_04-tsv.json
+      - /scripts/json-to-xml.py
+    generates:
+      - /data/xml/zbz/*.xml
+    cmds:
+      - python /scripts/json-to-xml.py {{.RECORDS_OFFSET}} {{.RECORDS_LIMIT}}
+
+  mapping-zbz:
+    vars:
+      INPUT_FOLDER: /data/xml/zbz
+      OUTPUT_FOLDER: /data/ttl/main/zbz
+      MAPPING_FILE: /mapping/mappings-zbz.x3ml
+      BATCHSIZE: 20
+    sources:
+      - /data/xml/zbz/*.xml
+      - /mapping/mappings-zbz.x3ml
+    generates:
+      - /data/ttl/main/zbz/*.ttl
+    cmds:
+      - bash /scripts/performMapping.sh -i {{.INPUT_FOLDER}} -o {{.OUTPUT_FOLDER}} -m {{.MAPPING_FILE}} -g {{.GENERATOR_POLICY}} -b {{.BATCHSIZE}}
+
+  mapping-nb:
+    vars:
+      INPUT_FOLDER: /data/xml/nb
+      OUTPUT_FOLDER: /data/ttl/main/nb
+      MAPPING_FILE: /mapping/mappings-nb.x3ml
+      BATCHSIZE: 20
+    sources:
+      - /data/xml/nb/*.xml
+      - /mapping/mappings-nb.x3ml
+    generates:
+      - /data/ttl/main/nb/*.ttl
+    cmds:
+      - bash /scripts/performMapping.sh -i {{.INPUT_FOLDER}} -o {{.OUTPUT_FOLDER}} -m {{.MAPPING_FILE}} -g {{.GENERATOR_POLICY}} -b {{.BATCHSIZE}}
+
+  retrieve-gnd:
+    cmds:
+      - python /scripts/extract-gnd-data.py
+
+  retrieve-wikidata:
+    cmds:
+      - python /scripts/extract-wd-data.py
+
+  ingest-data-main:
+    cmds:
+      - echo "Ingest main data"
+      - task: ingest-data
+        vars: {FOLDER: "/data/ttl/main/zbz"}
+      - task: ingest-data
+        vars: {FOLDER: "/data/ttl/main/nb"}
+
+  ingest-data-additional:
+    cmds:
+      - echo "Ingest additional data"
+      - task: ingest-data
+        vars: {FOLDER: "/data/ttl/additional"}
+
+  ingest-data:
+    vars:
+      FOLDER: "/data/ttl"
+
+    cmds:
+      - |
+        numfiles=$(ls -l {{.FOLDER}}/*.ttl | wc -l)
+        count=1
+        for f in $(ls -1 {{.FOLDER}}/*.ttl); do
+          echo "Ingesting file $count of $numfiles ($f)"
+          curl --silent -X POST {{.ENDPOINT}} --data-urlencode "update=DELETE { ?s ?p ?o } WHERE { GRAPH <file:/$f> { ?s ?p ?o } }" > /dev/null
+          curl --silent -X POST --data-binary "uri=file://$f" {{.ENDPOINT}} > /dev/null
+          count=$((count+1)) 
+        done
+
+  run-query-from-file:
+    vars:
+      QUERY:
+        sh: cat {{.FILE}}
+    cmds:
+      - curl -X POST {{.ENDPOINT}} --data-urlencode "update={{.QUERY}}" 
+
+  add-relations:
+    cmds:
+      - task: run-query-from-file
+        vars: {FILE: "queries/addRelations.sparql"}
+
+  delete-assets:
+    cmds:
+      - task: run-query-from-file
+        vars: {FILE: "queries/deleteAssets.sparql"}
+
+  cleanup:
+    cmds:
+      - task: run-query-from-file
+        vars: {FILE: "queries/cleanup.sparql"}
+    
