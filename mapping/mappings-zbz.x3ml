@@ -843,7 +843,7 @@
                             <equals value="a">@code</equals>
                         </if>
                         <relationship>crm:P7_took_place_at</relationship>
-                        <entity>
+                        <entity variable="production_place">
                             <type>crm:E53_Place</type>
                             <instance_generator name="URIwithTypeAndId_hashed">
                                 <arg name="type" type="constant">place</arg>
@@ -988,6 +988,38 @@
                                     </label_generator>
                                 </entity>
                             </additional>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>subfield</relation>
+                    </source_relation>
+                    <target_relation>
+                        <if>
+                            <equals value="a-gnd-id">@code</equals>
+                        </if>
+                        <relationship>crm:P7_took_place_at</relationship>
+                        <entity variable="production_place">
+                            <type>crm:E53_Place</type>
+                            <instance_generator name="URIwithTypeAndId_hashed">
+                                <arg name="type" type="constant">place</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">../subfield[@code='a']/text()</arg>
+                            </instance_generator>
+                        </entity>
+                        <relationship>crmdig:L54_is_same-as</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>subfield</source_node>
+                    <target_node>
+                        <entity>
+                            <type>crm:E53_Place</type>
+                            <instance_generator name="URIorUUID">
+                                <arg name="text" type="xpath">concat('https://d-nb.info/gnd/', text())</arg>
+                            </instance_generator>
                         </entity>
                     </target_node>
                 </range>
