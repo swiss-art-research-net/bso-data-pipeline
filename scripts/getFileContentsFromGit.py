@@ -1,7 +1,9 @@
 import base64
 import requests
 import json
+import re
 import sys
+from urllib.request import urlopen
 
 # Call with arguments:
 # 1: GitHub username
@@ -33,4 +35,38 @@ fileURL = 'https://api.github.com/repos/' + repo + '/git/blobs/' + requestedFile
 fileRequest = requests.get(fileURL, auth=(username, token))
 
 # Output to console
-print( base64.b64decode( fileRequest.json()['content'] ).decode('UTF-8', 'ignore') )
+
+result = base64.b64decode( fileRequest.json()['content'] ).decode('UTF-8', 'ignore')
+if not "https://git-lfs.github.com/spec/v1" in result:
+    print( result )
+else:
+    # Download from GIT LFS
+    sha = re.findall(r'sha256:([a-z0-9]*)', result)[0]
+    size = int(re.findall(r'size ([0-9]*)', result)[0])
+
+    url =  "https://github.com/" + repo + ".git/info/lfs/objects/batch"
+    data = {
+        'operation': 'download', 
+        'transfer': ['basic'], 
+        'objects': [
+            {'oid': sha, 'size': size}
+        ]}
+    headers = {'Content-type': 'application/json', 'Accept': 'application/vnd.git-lfs+json'}
+
+    r = requests.post(url, data=json.dumps(data), headers=headers, auth=(username, token))
+    downloadurl = r.json()['objects'][0]['actions']['download']['href']
+
+    response = requests.get(downloadurl, stream=True)
+    totalLength = response.headers.get('content-length')
+
+    if totalLength is None: # no content length header
+        print(response.content.decode('UTF-8', 'ignore'))
+    else:
+        dl = 0
+        totalLength = int(totalLength)
+        for data in response.iter_content(chunk_size=4096):
+            dl += len(data)
+            print(data.decode('UTF-8', 'ignore'))
+            done = int(50 * dl / totalLength)
+            sys.stderr.write("\r[%s%s]" % ('=' * done, ' ' * (50-done)) )    
+            sys.stderr.flush()
