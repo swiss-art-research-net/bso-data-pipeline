@@ -9,7 +9,7 @@ import sys
 # 3: Repository
 # 4: path to file
 if len(sys.argv) < 5:
-    sys.stderr.write("Insufficient arguments")
+    sys.stderr.write("Insufficient arguments\n")
     exit()
 username = sys.argv[1]
 token = sys.argv[2]
