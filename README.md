@@ -15,3 +15,11 @@ Run the project with
 ```
 docker-compose up -d
 ```
+
+# Troubleshooting
+
+If the BSO app is missing, you might have cloned the repository without submodules. To pull the submodules after cloning the repository, run
+```
+git submodule init
+git submodule update
+```
