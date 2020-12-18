@@ -1,6 +1,7 @@
 import json
 import urllib.request
 import rdflib
+import time
 
 from os import path, walk
 from SPARQLWrapper import SPARQLWrapper, N3
@@ -62,4 +63,5 @@ with open(ttlOutput, 'ab') as outputFile:
         """ % ( "(<" + ">)\n(<".join(batch) + ">)" )
         sparql.setQuery(query)
         results = sparql.query().convert()
+        time.sleep(3)
         outputFile.write(results.serialize(format='turtle'))
