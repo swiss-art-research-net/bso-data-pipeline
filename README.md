@@ -1,8 +1,10 @@
-# About
+# Bilder der Schweiz Online
+
+## About
 
 This contains the pipeline for converting BSO input data into CIDOC/RDF
 
-# How to use
+## How to use
 
 Prerequisites: [Docker](http://docker.io) including Docker Compose
 
@@ -15,6 +17,16 @@ Run the project with
 ```
 docker-compose up -d
 ```
+
+## Initialisation
+
+To download the source data create a [GitHub personal access token](https://github.com/settings/tokens) and add it to the `.env` file, along with your username.
+
+Download the source files by runnning
+`sh downloadSources.sh`
+
+Run the ETL pipeline through
+`sh run.sh`
 
 # Troubleshooting
 
