@@ -60,8 +60,8 @@ def convertRowToXml(row, keys, externalFields):
         if key.split('$')[0] in externalFields.keys():
             # Ignore the subfields as they will be loaded from the external fields
             if not '$' in key:
-                # Select the field values based on the UUIDs
-                fieldsToInclude = [d for d in externalFields[key] if d['UUID'] == row['id']]
+                # Select the field values based on the ids
+                fieldsToInclude = [d for d in externalFields[key] if d['id'] == row['id']]
                 for f in fieldsToInclude:
                     # Create a datafield for each set of values
                     datafield = etree.SubElement(record, "datafield", tag=key)
