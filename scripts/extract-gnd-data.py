@@ -3,6 +3,7 @@ import rdflib
 
 from urllib import request
 from os import path, walk
+from tqdm import tqdm
 
 ttlFolder='/data/ttl/main/'
 ttlOutput='/data/ttl/additional/gnd.ttl'
@@ -36,7 +37,7 @@ with open(ttlOutput, 'w') as outputFile:
     
 # Retrieve ttl data from GND and append to ttl file
 with open(ttlOutput, 'a') as outputFile:
-    for identifier in gndIdentifiers:
+    for identifier in tqdm(gndIdentifiers):
         url = "%s.ttl" % identifier.replace("https://d-nb.info/gnd/","https://lobid.org/gnd/")
         try:
             with request.urlopen(url) as r:
