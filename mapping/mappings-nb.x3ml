@@ -243,12 +243,108 @@
                 <range>
                     <source_node>DetailData/DataElement</source_node>
                     <target_node>
-                        <entity>
+                        <entity variable="work_creation_date">
                             <type>crm:E52_Time-Span</type>
                             <instance_generator name="URIwith2TypesAndId_hashed">
                                 <arg name="type1" type="constant">event</arg>
                                 <arg name="type2" type="constant">timespan</arg>
                                 <arg name="id" type="xpath">./ElementValue/DateRange/TextRepresentation/text()</arg>
+                            </instance_generator>
+                            <label_generator name="Literal">
+                                <arg name="text" type="xpath">./ElementValue/DateRange/TextRepresentation/text()</arg>
+                                <arg name="language" type="constant">de</arg>
+                            </label_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>DetailData/DataElement/ElementValue/DateRange/FromDate</relation>
+                    </source_relation>
+                    <target_relation>
+                        <if>
+                            <and>
+                                <if>
+                                    <equals value="7">../../../@ElementId</equals>
+                                </if>
+                                <if>
+                                    <not>
+                                        <if>
+                                            <equals value="">text()</equals>
+                                        </if>
+                                    </not>
+                                </if>
+                            </and>
+                        </if>
+                        <relationship>crm:P94i_was_created_by</relationship>
+                        <entity variable="work_creation">
+                            <type>crm:E65_Creation</type>
+                            <instance_generator name="UUID"/>
+                        </entity>
+                        <relationship>crm:P4_has_time-span</relationship>
+                        <entity variable="work_creation_date">
+                            <type>crm:E52_Time-Span</type>
+                            <instance_generator name="UUID"/>
+                        </entity>
+                        <relationship>crm:P82a_begin_of_the_begin</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>DetailData/DataElement/ElementValue/DateRange/FromDate</source_node>
+                    <target_node>
+                        <entity>
+                            <type>xsd:dateTime</type>
+                            <instance_generator name="Literal">
+                                <arg name="text" type="xpath">text()</arg>
+                                <arg name="language" type="constant"/>
+                            </instance_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>DetailData/DataElement/ElementValue/DateRange/ToDate</relation>
+                    </source_relation>
+                    <target_relation>
+                        <if>
+                            <and>
+                                <if>
+                                    <equals value="7">../../../@ElementId</equals>
+                                </if>
+                                <if>
+                                    <not>
+                                        <if>
+                                            <equals value="">text()</equals>
+                                        </if>
+                                    </not>
+                                </if>
+                            </and>
+                        </if>
+                        <relationship>crm:P94i_was_created_by</relationship>
+                        <entity variable="work_creation">
+                            <type>crm:E65_Creation</type>
+                            <instance_generator name="UUID"/>
+                        </entity>
+                        <relationship>crm:P4_has_time-span</relationship>
+                        <entity variable="work_creation_date">
+                            <type>crm:E52_Time-Span</type>
+                            <instance_generator name="UUID"/>
+                        </entity>
+                        <relationship>crm:P82b_end_of_the_end</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>DetailData/DataElement/ElementValue/DateRange/ToDate</source_node>
+                    <target_node>
+                        <entity>
+                            <type>xsd:dateTime</type>
+                            <instance_generator name="Literal">
+                                <arg name="text" type="xpath">text()</arg>
+                                <arg name="language" type="constant"/>
                             </instance_generator>
                         </entity>
                     </target_node>
