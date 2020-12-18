@@ -8,6 +8,9 @@ import sys
 # 2: GitHub personal access token
 # 3: Repository
 # 4: path to file
+if len(sys.argv) < 5:
+    sys.stderr.write("Insufficient arguments")
+    exit()
 username = sys.argv[1]
 token = sys.argv[2]
 repo = sys.argv[3]
