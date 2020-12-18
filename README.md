@@ -28,7 +28,7 @@ Download the source files by runnning
 Run the ETL pipeline through
 `sh run.sh`
 
-# Troubleshooting
+## Troubleshooting
 
 If the BSO app is missing, you might have cloned the repository without submodules. To pull the submodules after cloning the repository, run
 ```
