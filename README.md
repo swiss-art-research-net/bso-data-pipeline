@@ -52,8 +52,8 @@ task: Available tasks for this project:
 * mapping-zbz:                  Map ZBZ XML data to CIDOC/RDF
 * prepare-xml-records-nb:       Extract individual records from the NB data
 * prepare-xml-records-zbz:      Convert the ZBZ data from JSON to individual XML Records
-* retrieve-gnd:                 Extracts relevant data from GND based on identifiers found in the mappd TTL files
-* retrieve-wikidata:            Extracts relevant data from Wikidata based on identifiers found in the mappd TTL files
+* retrieve-gnd:                 Extracts relevant data from GND based on identifiers found in the mapped TTL files
+* retrieve-wikidata:            Extracts relevant data from Wikidata based on identifiers found in the mapped TTL files
 ```
 
 To run a specific task type `task` followed by the task name, e.g.:
