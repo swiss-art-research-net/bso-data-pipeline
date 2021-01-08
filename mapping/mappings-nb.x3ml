@@ -186,8 +186,6 @@
                                         <arg name="text" type="xpath">./ElementValue/TextValue/text()</arg>
                                         <arg name="language" type="constant"/>
                                     </label_generator>
-
-
                                 </entity>
                             </additional>
                         </entity>
@@ -351,6 +349,39 @@
                             <instance_generator name="Literal">
                                 <arg name="text" type="xpath">text()</arg>
                                 <arg name="language" type="constant"/>
+                            </instance_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>DetailData/DataElement</relation>
+                    </source_relation>
+                    <target_relation>
+                        <if>
+                            <equals value="11040">@ElementId</equals>
+                        </if>
+                        <relationship>la:digitally_shown_by</relationship>
+                        <entity>
+                            <type>crmdig:D1_Digital_Object</type>
+                            <instance_generator name="URIwithTypeSubtypeAndId">
+                                <arg name="type" type="constant">work</arg>
+                                <arg name="id" type="xpath">../../@Id</arg>
+                                <arg name="subtype" type="constant">wikimedia</arg>
+                            </instance_generator>
+                        </entity>
+                        <relationship>la:access_point</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>DetailData/DataElement</source_node>
+                    <target_node>
+                        <entity>
+                            <type>crm:E42_Identifier</type>
+                            <instance_generator name="URIorUUID">
+                                <arg name="text" type="xpath">ElementValue/TextValue/text()</arg>
                             </instance_generator>
                         </entity>
                     </target_node>
