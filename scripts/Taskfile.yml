@@ -27,11 +27,11 @@ tasks:
     desc: Convert the ZBZ data from JSON to XML
     sources:
       - /data/source/sari_abzug-utf-8_23_04-tsv.json
-      - /scripts/json-to-xml.py
+      - /scripts/zbz-json-to-xml.py
     generates:
       - /data/xml/zbz/*.xml
     cmds:
-      - python /scripts/json-to-xml.py {{.RECORDS_LIMIT}} {{.RECORDS_OFFSET}}
+      - python /scripts/zbz-json-to-xml.py {{.RECORDS_LIMIT}} {{.RECORDS_OFFSET}}
 
   mapping-zbz:
     desc: Map ZBZ XML data to CIDOC/RDF
