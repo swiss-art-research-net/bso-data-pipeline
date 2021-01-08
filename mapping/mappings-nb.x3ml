@@ -301,7 +301,7 @@
                         <entity>
                             <type>xsd:dateTime</type>
                             <instance_generator name="Literal">
-                                <arg name="text" type="xpath">text()</arg>
+                                <arg name="text" type="xpath">@fullDate</arg>
                                 <arg name="language" type="constant"/>
                             </instance_generator>
                         </entity>
@@ -347,7 +347,7 @@
                         <entity>
                             <type>xsd:dateTime</type>
                             <instance_generator name="Literal">
-                                <arg name="text" type="xpath">text()</arg>
+                                <arg name="text" type="xpath">@fullDate</arg>
                                 <arg name="language" type="constant"/>
                             </instance_generator>
                         </entity>
@@ -367,9 +367,9 @@
                         <entity>
                             <type>crmdig:D1_Digital_Object</type>
                             <instance_generator name="URIwithTypeSubtypeAndId">
-                                <arg name="type" type="constant">work</arg>
+                                <arg name="type" type="constant">wikimedia</arg>
                                 <arg name="id" type="xpath">../../@Id</arg>
-                                <arg name="subtype" type="constant">wikimedia</arg>
+                                <arg name="subtype" type="constant">work</arg>
                             </instance_generator>
                         </entity>
                         <relationship>la:access_point</relationship>
