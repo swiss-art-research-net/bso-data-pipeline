@@ -71,7 +71,7 @@ tasks:
       - bash /scripts/performMapping.sh -i {{.INPUT_FOLDER}} -o {{.OUTPUT_FOLDER}} -m {{.MAPPING_FILE}} -g {{.GENERATOR_POLICY}} -b {{.BATCHSIZE}}
 
   retrieve-gnd:
-    desc: Extracts relevant data from GND based on identifiers found in the mappd TTL files
+    desc: Extracts relevant data from GND based on identifiers found in the mapped TTL files
     sources:
       - /data/ttl/main/*/*.ttl
     generates:
@@ -80,7 +80,7 @@ tasks:
       - python /scripts/extract-gnd-data.py
 
   retrieve-wikidata:
-    desc: Extracts relevant data from Wikidata based on identifiers found in the mappd TTL files
+    desc: Extracts relevant data from Wikidata based on identifiers found in the mapped TTL files
     sources:
       - /data/ttl/main/*/*.ttl
     generates:
