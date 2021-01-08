@@ -1,18 +1,6 @@
 version: "3"
 services:
 
-  3m:
-    image: marketak/3m-docker:1.2
-    container_name: ${PROJECT_NAME}_3m
-    environment:
-      - IP_ADDRESS=0.0.0.0
-    ports:
-      - 8080:8080
-      - 8081:8081
-    volumes:
-       - 3m-db:/opt/exist/webapp/WEB-INF/data
-       - 3m-data:/opt/3M
-
   blazegraph:
     image: metaphacts/blazegraph-basic
     container_name: ${PROJECT_NAME}_blazegraph
