@@ -46,7 +46,7 @@ then
 fi
 if [[ $NOPROMPT || $REPLY =~ ^[Yy]$ ]]
 then
-  docker exec $JOBSCONTAINER bash -c "RECORDS_LIMIT=$LIMIT task zbz-prepare-xml-records"
+  docker exec $JOBSCONTAINER bash -c "RECORDS_LIMIT=$LIMIT task prepare-xml-records-zbz"
 fi
 
 if [[ $NOPROMPT -ne 1 ]]
@@ -56,7 +56,7 @@ then
 fi
 if [[ $NOPROMPT || $REPLY =~ ^[Yy]$ ]]
 then
-  docker exec $JOBSCONTAINER bash -c "RECORDS_LIMIT=$LIMIT task nb-prepare-xml-records"
+  docker exec $JOBSCONTAINER bash -c "RECORDS_LIMIT=$LIMIT task prepare-xml-records-nb"
 fi
 
 if [[ $NOPROMPT -ne 1 ]]
