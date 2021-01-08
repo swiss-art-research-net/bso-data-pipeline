@@ -51,7 +51,7 @@ fi
 
 if [[ $NOPROMPT -ne 1 ]]
 then
-  read -p "Pepa datare NB to XML? (y/n)" -n 1 -r
+  read -p "Pepare NB data to XML? (y/n)" -n 1 -r
   echo ""
 fi
 if [[ $NOPROMPT || $REPLY =~ ^[Yy]$ ]]
