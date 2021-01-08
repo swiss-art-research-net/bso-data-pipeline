@@ -45,7 +45,6 @@ services:
     depends_on:
       - platform
       - blazegraph
-      - 3m
     ports:
       - $PORT_PROXY:80
 
