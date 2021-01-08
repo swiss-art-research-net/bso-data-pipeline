@@ -182,6 +182,12 @@
                                         <arg name="type" type="constant">actor</arg>
                                         <arg name="id_HASHED_CONTENTS" type="xpath">./ElementValue/TextValue/text()</arg>
                                     </instance_generator>
+                                    <label_generator name="Literal">
+                                        <arg name="text" type="xpath">./ElementValue/TextValue/text()</arg>
+                                        <arg name="language" type="constant"/>
+                                    </label_generator>
+
+
                                 </entity>
                             </additional>
                         </entity>
