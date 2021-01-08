@@ -24,7 +24,7 @@
             <DataElement ElementName="Entstehungszeitraum" ElementId="7" ElementType="Datumsbereich (von/bis)" ElementTypeId="2">
                 <ElementValue Sequence="1">
                     <DateRange DateOperator="exact">
-                        <FromDate>+1901</FromDate>
+                        <FromDate fullDate="1901-01-01">+1901</FromDate>
                         <FromApproxIndicator>false</FromApproxIndicator>
                         <ToDate/>
                         <ToApproxIndicator>false</ToApproxIndicator>
@@ -187,7 +187,7 @@
             <DataElement ElementName="Entstehungszeitraum" ElementId="7" ElementType="Datumsbereich (von/bis)" ElementTypeId="2">
                 <ElementValue Sequence="1">
                     <DateRange DateOperator="exact">
-                        <FromDate>+1901</FromDate>
+                        <FromDate fullDate="1901-01-01">+1901</FromDate>
                         <FromApproxIndicator>false</FromApproxIndicator>
                         <ToDate/>
                         <ToApproxIndicator>false</ToApproxIndicator>
@@ -350,7 +350,7 @@
             <DataElement ElementName="Entstehungszeitraum" ElementId="7" ElementType="Datumsbereich (von/bis)" ElementTypeId="2">
                 <ElementValue Sequence="1">
                     <DateRange DateOperator="exact">
-                        <FromDate>+1901</FromDate>
+                        <FromDate fullDate="1901-01-01">+1901</FromDate>
                         <FromApproxIndicator>false</FromApproxIndicator>
                         <ToDate/>
                         <ToApproxIndicator>false</ToApproxIndicator>
@@ -513,7 +513,7 @@
             <DataElement ElementName="Entstehungszeitraum" ElementId="7" ElementType="Datumsbereich (von/bis)" ElementTypeId="2">
                 <ElementValue Sequence="1">
                     <DateRange DateOperator="exact">
-                        <FromDate>+1901</FromDate>
+                        <FromDate fullDate="1901-01-01">+1901</FromDate>
                         <FromApproxIndicator>false</FromApproxIndicator>
                         <ToDate/>
                         <ToApproxIndicator>false</ToApproxIndicator>
