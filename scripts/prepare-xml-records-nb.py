@@ -1,3 +1,4 @@
+import re
 import sys
 from lxml import etree
 from tqdm import tqdm
@@ -9,6 +10,26 @@ inputFile = '/data/source/nb-allRecords.xml'
 outputDir = '/data/xml/nb'
 
 root = etree.parse(inputFile)
+
+def getDateForDateElement(date):
+    if not date.text:
+        return False
+        
+    patternCeYear = r'\+\d{4}'
+    if re.match(patternCeYear, date.text):
+        year = date.text[1:].zfill(4)
+        if date.tag == 'FromDate':
+            return "%s-01-01" % year
+        else:
+            return "%s-12-31" % year
+    return False
+
+dates = root.xpath("//FromDate|//ToDate")
+for date in dates:
+    fullDate = getDateForDateElement(date)
+    if fullDate:
+        date.set("fullDate", fullDate)
+
 collection = root.getroot()
 records = root.findall("Record")
 
