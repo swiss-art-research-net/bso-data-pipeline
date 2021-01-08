@@ -41,12 +41,22 @@ fi
 
 if [[ $NOPROMPT -ne 1 ]]
 then
-  read -p "Convert to ZBZ data to XML? (y/n)" -n 1 -r
+  read -p "Prepare ZBZ data in XML? (y/n)" -n 1 -r
   echo ""
 fi
 if [[ $NOPROMPT || $REPLY =~ ^[Yy]$ ]]
 then
-  docker exec $JOBSCONTAINER bash -c "RECORDS_LIMIT=$LIMIT task zbz-to-xml"
+  docker exec $JOBSCONTAINER bash -c "RECORDS_LIMIT=$LIMIT task zbz-prepare-xml-records"
+fi
+
+if [[ $NOPROMPT -ne 1 ]]
+then
+  read -p "Pepa datare NB to XML? (y/n)" -n 1 -r
+  echo ""
+fi
+if [[ $NOPROMPT || $REPLY =~ ^[Yy]$ ]]
+then
+  docker exec $JOBSCONTAINER bash -c "RECORDS_LIMIT=$LIMIT task nb-prepare-xml-records"
 fi
 
 if [[ $NOPROMPT -ne 1 ]]

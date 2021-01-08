@@ -8,9 +8,6 @@ vars:
 
 tasks:
 
-  default:
-    deps: [preprocessing-zbz-to-xml]
-
   download-iiif-manifests:
     desc: Downloads the IIIF Manifests found in the ZBZ data source file
     vars:
@@ -23,15 +20,25 @@ tasks:
     cmds:
       - python /scripts/cache-iiif-manifests.py {{.IIIF_MANIFESTS_FROM}} {{.IIIF_MANIFESTS_TO}}
 
-  zbz-to-xml:
-    desc: Convert the ZBZ data from JSON to XML
+  zbz-prepare-xml-records:
+    desc: Convert the ZBZ data from JSON to individual XML Records
     sources:
       - /data/source/sari_abzug-utf-8_23_04-tsv.json
-      - /scripts/zbz-json-to-xml.py
+      - /scripts/zbz-prepare-xml-records.py
     generates:
       - /data/xml/zbz/*.xml
     cmds:
-      - python /scripts/zbz-json-to-xml.py {{.RECORDS_LIMIT}} {{.RECORDS_OFFSET}}
+      - python /scripts/zbz-prepare-xml-records.py {{.RECORDS_LIMIT}} {{.RECORDS_OFFSET}}
+
+  nb-prepare-xml-records:
+    desc: Extract individual records from the NB data
+    sources:
+      - /data/source/nb-allRecords.xml
+      - /scripts/nb-prepare-xml-records.py
+    generates:
+      - /data/xml/nb/*.xml
+    cmds:
+      - python /scripts/nb-prepare-xml-records.py {{.RECORDS_LIMIT}} {{.RECORDS_OFFSET}}
 
   mapping-zbz:
     desc: Map ZBZ XML data to CIDOC/RDF

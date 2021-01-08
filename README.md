@@ -50,9 +50,10 @@ task: Available tasks for this project:
 * ingest-data-main:             Ingest the TTL files located in the data/ttl/main folder to the Blazegraph instance
 * mapping-nb:                   Map SNB XML data to CIDOC/RDF
 * mapping-zbz:                  Map ZBZ XML data to CIDOC/RDF
+* nb-prepare-xml-records:       Extract individual records from the NB data
 * retrieve-gnd:                 Extracts relevant data from GND based on identifiers found in the mappd TTL files
 * retrieve-wikidata:            Extracts relevant data from Wikidata based on identifiers found in the mappd TTL files
-* zbz-to-xml:                   Convert the ZBZ data from JSON to XML
+* zbz-prepare-xml-records:                   Convert the ZBZ data from JSON to XML
 ```
 
 To run a specific task type `task` followed by the task name, e.g.:
