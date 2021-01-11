@@ -415,6 +415,33 @@
                     </target_node>
                 </range>
             </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>Coordinates</relation>
+                    </source_relation>
+                    <target_relation>
+                        <relationship>crm:P138_represents</relationship>
+                        <entity variable="represented_place">
+                            <type>crm:E53_Place</type>
+                            <instance_generator name="UUID"/>
+                        </entity>
+                        <relationship>crm:P168_place_is_defined_by</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>Coordinates</source_node>
+                    <target_node>
+                        <entity>
+                            <type>rdfs:Literal</type>
+                            <instance_generator name="coordinates">
+                                <arg name="lat" type="xpath">@latitude</arg>
+                                <arg name="long" type="xpath">@longitude</arg>
+                            </instance_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
         </mapping>
         <mapping>
             <domain>
@@ -429,25 +456,6 @@
                     </entity>
                 </target_node>
             </domain>
-            <link>
-                <path>
-                    <source_relation>
-                        <relation/>
-                    </source_relation>
-                    <target_relation>
-                        <relationship/>
-                    </target_relation>
-                </path>
-                <range>
-                    <source_node/>
-                    <target_node>
-                        <entity>
-                            <type/>
-                            <instance_generator name="UUID"/>
-                        </entity>
-                    </target_node>
-                </range>
-            </link>
         </mapping>
     </mappings>
 </x3ml>
