@@ -394,7 +394,7 @@
                     </source_relation>
                     <target_relation>
                         <if>
-                            <equals value="Geografika">/Thesaurus/text()</equals>
+                            <equals value="Geografika">Thesaurus/text()</equals>
                         </if>
                         <relationship>crm:P138_represents</relationship>
                     </target_relation>
@@ -406,8 +406,11 @@
                             <type>crm:E53_Place</type>
                             <instance_generator name="URIwithTypeAndId_hashed">
                                 <arg name="type" type="constant">place</arg>
-                                <arg name="id_HASHED_CONTENTS" type="xpath">/IdName/text()</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">IdName/text()</arg>
                             </instance_generator>
+                            <label_generator name="Literal">
+                                <arg name="text" type="xpath">Name/text()</arg>
+                            </label_generator>
                         </entity>
                     </target_node>
                 </range>
@@ -418,7 +421,7 @@
                 <source_node>/Collection/Record/Descriptors/Descriptor</source_node>
                 <target_node>
                     <if>
-                        <equals value="Geografika">/Thesaurus/text()</equals>
+                        <equals value="Geografika">Thesaurus/text()</equals>
                     </if>
                     <entity variable="represented_place">
                         <type>crm:E53_Place</type>
