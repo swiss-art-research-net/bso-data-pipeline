@@ -10,12 +10,30 @@ DELETE {
     	rdfs:label ?oldDateTimeEntity ;
     	?p ?oldDateTimeEntity .
 } INSERT {
-	?s ?p ?newDateTimeValue .
+  GRAPH ?g {
+    ?s ?p ?newDateTimeValue .
+  }
 } WHERE {
-  ?oldDateTimeEntity a xsd:dateTime ;
-    rdfs:label ?oldDateTimeValue .
-  ?s ?p ?oldDateTimeEntity .
+  GRAPH ?g {
+    ?oldDateTimeEntity a xsd:dateTime ;
+      rdfs:label ?oldDateTimeValue .
+    ?s ?p ?oldDateTimeEntity .
+  }
   BIND(STRDT(SUBSTR(STR(?oldDateTimeValue),0,10), xsd:date) as ?newDateTimeValue)
+};
+
+# Convert Point statements to wkt:literals
+DELETE {
+  ?place crm:P168_place_is_defined_by ?oldPointStatement .
+} INSERT {
+  GRAPH ?g {
+    ?place crm:P168_place_is_defined_by ?newPointStatement .
+  }
+} WHERE {
+  GRAPH ?g {
+    ?place crm:P168_place_is_defined_by ?oldPointStatement .
+  }
+  BIND(STRDT(?oldPointStatement, <http://www.opengis.net/ont/geosparql#wktLiteral>) as ?newPointStatement)
 };
 
 # Delete open end time statements
