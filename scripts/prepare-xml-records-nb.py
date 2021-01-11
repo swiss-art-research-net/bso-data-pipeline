@@ -33,6 +33,32 @@ for date in dates:
 collection = root.getroot()
 records = root.findall("Record")
 
+def convertSwissGridToLatLong(x, y):
+    # https://www.swisstopo.admin.ch/en/maps-data-online/calculation-services/navref.html
+    # Example: https://geodesy.geo.admin.ch/reframe/navref?format=json&easting=683195&northing=248031&altitude=NaN&input=lv03&output=etrf93-ed
+    import requests
+    from string import Template
+    urlTemplate = Template("https://geodesy.geo.admin.ch/reframe/navref?format=json&easting=$x&northing=$y&altitude=NaN&input=lv03&output=etrf93-ed")
+    url = urlTemplate.substitute(x=x, y=y)
+    try:
+        response = requests.get(url)
+        data = response.json()
+        return data
+    except:
+        print("No connection")
+    return False
+
+for record in tqdm(records[offset:limit]):
+    xCoord = record.xpath("DetailData/DataElement[@ElementId='10161']/ElementValue/TextValue")
+    yCoord = record.xpath("DetailData/DataElement[@ElementId='10162']/ElementValue/TextValue")
+    if len(xCoord) and len(yCoord):
+        x = xCoord[0].text
+        y = yCoord[0].text
+        coordinates = convertSwissGridToLatLong(x, y)
+        elemCoord = etree.SubElement(record, "Coordinates")
+        elemCoord.set("longitude", coordinates['easting'])
+        elemCoord.set("latitude", coordinates['northing'])
+
 for record in tqdm(records[offset:limit]):
     collection.clear()
     id = record.get("Id")
