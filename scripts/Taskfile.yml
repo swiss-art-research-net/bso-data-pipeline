@@ -95,9 +95,13 @@ tasks:
     cmds:
       - echo "Ingest main data"
       - task: ingest-data
-        vars: {FOLDER: "/data/ttl/main/zbz"}
+        vars: 
+          FOLDER: /data/ttl/main/zbz
+          GRAPH: https://resource.swissartresearch.net/graph/nb
       - task: ingest-data
-        vars: {FOLDER: "/data/ttl/main/nb"}
+        vars: 
+          FOLDER: /data/ttl/main/nb
+          GRAPH: https://resource.swissartresearch.net/graph/zbz
 
   ingest-data-additional:
     desc: Ingest the TTL files located in the data/ttl/additional folder to the Blazegraph instance
@@ -106,17 +110,19 @@ tasks:
     cmds:
       - echo "Ingest additional data"
       - task: ingest-data
-        vars: {FOLDER: "/data/ttl/additional"}
+        vars: 
+          FOLDER: /data/ttl/additional
+          GRAPH: https://resource.swissartresearch.net/graph/external
 
   ingest-data:
     cmds:
       - |
         numfiles=$(ls -l {{.FOLDER}}/*.ttl | wc -l)
         count=1
+        curl --silent -X POST {{.ENDPOINT}} --data-urlencode "update=DELETE { ?s ?p ?o } WHERE { GRAPH <{{.GRAPH}}> { ?s ?p ?o } }" > /dev/null
         for f in $(ls -1 {{.FOLDER}}/*.ttl); do
           echo "Ingesting file $count of $numfiles ($f)"
-          curl --silent -X POST {{.ENDPOINT}} --data-urlencode "update=DELETE { ?s ?p ?o } WHERE { GRAPH <file:/$f> { ?s ?p ?o } }" > /dev/null
-          curl --silent -X POST --data-binary "uri=file://$f" {{.ENDPOINT}} > /dev/null
+          curl --silent -X POST --data-binary "uri=file://$f" {{.ENDPOINT}}?context-uri={{.GRAPH}} > /dev/null
           count=$((count+1)) 
         done
 
