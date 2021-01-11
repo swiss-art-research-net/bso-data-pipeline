@@ -435,8 +435,8 @@
                         <entity>
                             <type>rdfs:Literal</type>
                             <instance_generator name="coordinates">
-                                <arg name="lat" type="xpath">@latitude</arg>
-                                <arg name="long" type="xpath">@longitude</arg>
+                                <arg name="long" type="xpath">@latitude</arg>
+                                <arg name="lat" type="xpath">@longitude</arg>
                             </instance_generator>
                         </entity>
                     </target_node>
