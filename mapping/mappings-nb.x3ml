@@ -387,6 +387,64 @@
                     </target_node>
                 </range>
             </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>Descriptors/Descriptor</relation>
+                    </source_relation>
+                    <target_relation>
+                        <if>
+                            <equals value="Geografika">/Thesaurus/text()</equals>
+                        </if>
+                        <relationship>crm:P138_represents</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>Descriptors/Descriptor</source_node>
+                    <target_node>
+                        <entity variable="represented_place">
+                            <type>crm:E53_Place</type>
+                            <instance_generator name="URIwithTypeAndId_hashed">
+                                <arg name="type" type="constant">place</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">/IdName/text()</arg>
+                            </instance_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+        </mapping>
+        <mapping>
+            <domain>
+                <source_node>/Collection/Record/Descriptors/Descriptor</source_node>
+                <target_node>
+                    <if>
+                        <equals value="Geografika">/Thesaurus/text()</equals>
+                    </if>
+                    <entity variable="represented_place">
+                        <type>crm:E53_Place</type>
+                        <instance_generator name="UUID"/>
+                    </entity>
+                </target_node>
+            </domain>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation/>
+                    </source_relation>
+                    <target_relation>
+                        <relationship/>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node/>
+                    <target_node>
+                        <entity>
+                            <type/>
+                            <instance_generator name="UUID"/>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
         </mapping>
     </mappings>
 </x3ml>
