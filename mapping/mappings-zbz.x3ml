@@ -1115,6 +1115,61 @@
                     </target_node>
                 </range>
             </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>../datafield</relation>
+                    </source_relation>
+                    <target_relation>
+                        <if>
+                            <and>
+                                <if>
+                                    <equals value="250">@tag</equals>
+                                </if>
+                                <if>
+                                    <equals value="a">./subfield/@code</equals>
+                                </if>
+                            </and>
+                        </if>
+                        <relationship>crm:P67i_is_referred_to_by</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>../datafield</source_node>
+                    <target_node>
+                        <entity>
+                            <type>crm:E73_Information_Object</type>
+                            <instance_generator name="URIwithTypeSubtypeIdAnd1Level">
+                                <arg name="type" type="constant">artwork</arg>
+                                <arg name="id" type="xpath">../uuid/text()</arg>
+                                <arg name="subtype" type="constant">production</arg>
+                                <arg name="level1" type="constant">edition_statement</arg>
+                            </instance_generator>
+                            <label_generator name="Literal">
+                                <arg name="text" type="xpath">./subfield[@code='a']/text()</arg>
+                                <arg name="language" type="constant"/>
+                            </label_generator>
+                            <additional>
+                                <relationship>crm:P2_has_type</relationship>
+                                <entity>
+                                    <type>crm:E55_Type</type>
+                                    <instance_info>
+                                        <constant/>
+                                    </instance_info>
+                                    <instance_generator name="URIwithTypeAndId">
+                                        <arg name="type" type="constant">type</arg>
+                                        <arg name="id" type="constant">edition_statement</arg>
+                                    </instance_generator>
+                                    <label_generator name="Literal">
+                                        <arg name="text" type="constant">Edition Statement</arg>
+                                        <arg name="language" type="constant"/>
+                                    </label_generator>
+                                </entity>
+                            </additional>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
         </mapping>
         <mapping>
             <domain>
