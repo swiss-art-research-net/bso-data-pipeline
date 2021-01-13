@@ -361,6 +361,9 @@
                                 <if>
                                     <equals value="h">@code</equals>
                                 </if>
+                                <if>
+                                    <exists>text()</exists>
+                                </if>
                             </and>
                         </if>
                         <relationship>crm:P2_has_type</relationship>
