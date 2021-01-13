@@ -347,6 +347,42 @@
                     </target_node>
                 </range>
             </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>datafield/subfield</relation>
+                    </source_relation>
+                    <target_relation>
+                        <if>
+                            <and>
+                                <if>
+                                    <equals value="245">../@tag</equals>
+                                </if>
+                                <if>
+                                    <equals value="h">@code</equals>
+                                </if>
+                            </and>
+                        </if>
+                        <relationship>crm:P2_has_type</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>datafield/subfield</source_node>
+                    <target_node>
+                        <entity variable="work_medium">
+                            <type>crm:E55_Type</type>
+                            <instance_generator name="URIwithTypeAndId">
+                                <arg name="type" type="constant">type</arg>
+                                <arg name="id" type="xpath">lower-case(text())</arg>
+                            </instance_generator>
+                            <label_generator name="Literal">
+                                <arg name="text" type="xpath">text()</arg>
+                                <arg name="language" type="constant"/>
+                            </label_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
         </mapping>
         <mapping>
             <domain>
