@@ -97,11 +97,11 @@ tasks:
       - task: ingest-data
         vars: 
           FOLDER: /data/ttl/main/zbz
-          GRAPH: https://resource.swissartresearch.net/graph/nb
+          GRAPH: https://resource.swissartresearch.net/graph/zbz
       - task: ingest-data
         vars: 
           FOLDER: /data/ttl/main/nb
-          GRAPH: https://resource.swissartresearch.net/graph/zbz
+          GRAPH: https://resource.swissartresearch.net/graph/nb
 
   ingest-data-additional:
     desc: Ingest the TTL files located in the data/ttl/additional folder to the Blazegraph instance
