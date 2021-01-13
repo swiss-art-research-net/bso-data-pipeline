@@ -311,6 +311,42 @@
                     </target_node>
                 </range>
             </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>datafield/subfield</relation>
+                    </source_relation>
+                    <target_relation>
+                        <if>
+                            <and>
+                                <if>
+                                    <equals value="340">../@tag</equals>
+                                </if>
+                                <if>
+                                    <equals value="a">@code</equals>
+                                </if>
+                            </and>
+                        </if>
+                        <relationship>crm:P45_consists_of</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>datafield/subfield</source_node>
+                    <target_node>
+                        <entity variable="work_material">
+                            <type>crm:E57_Material</type>
+                            <instance_generator name="URIwithTypeAndId">
+                                <arg name="type" type="constant">type</arg>
+                                <arg name="id" type="xpath">lower-case(text())</arg>
+                            </instance_generator>
+                            <label_generator name="Literal">
+                                <arg name="text" type="xpath">text()</arg>
+                                <arg name="language" type="constant"/>
+                            </label_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
         </mapping>
         <mapping>
             <domain>
@@ -479,7 +515,7 @@
                                 <arg name="subtype" type="constant">title</arg>
                             </instance_generator>
                             <label_generator name="Literal">
-                                <arg name="text" type="xpath">concat(./subfield[@code='a']/text(), ./subfield[@code='a']/text())</arg>
+                                <arg name="text" type="xpath">concat(./subfield[@code='a']/text(), ./subfield[@code='b']/text())</arg>
                                 <arg name="language" type="constant"/>
                             </label_generator>
                             <additional>
