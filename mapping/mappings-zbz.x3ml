@@ -259,7 +259,7 @@
                 <range>
                     <source_node>datafield</source_node>
                     <target_node>
-                        <entity variable="work_dimension">
+                        <entity variable="work_extent">
                             <type>crm:E54_Dimension</type>
                             <instance_generator name="URIwithTypeSubtypeAndId">
                                 <arg name="type" type="constant">work</arg>
@@ -268,6 +268,43 @@
                             </instance_generator>
                             <label_generator name="Literal">
                                 <arg name="text" type="xpath">./subfield[@code='a']/text()</arg>
+                                <arg name="language" type="constant"/>
+                            </label_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>datafield/subfield</relation>
+                    </source_relation>
+                    <target_relation>
+                        <if>
+                            <and>
+                                <if>
+                                    <equals value="300">../@tag</equals>
+                                </if>
+                                <if>
+                                    <equals value="c">@code</equals>
+                                </if>
+                            </and>
+                        </if>
+                        <relationship>crm:P43_has_dimension</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>datafield/subfield</source_node>
+                    <target_node>
+                        <entity variable="work_dimension">
+                            <type>crm:E54_Dimension</type>
+                            <instance_generator name="URIwithTypeSubtypeAndId">
+                                <arg name="type" type="constant">work</arg>
+                                <arg name="id" type="xpath">../../uuid/text()</arg>
+                                <arg name="subtype" type="constant">dimension</arg>
+                            </instance_generator>
+                            <label_generator name="Literal">
+                                <arg name="text" type="xpath">text()</arg>
                                 <arg name="language" type="constant"/>
                             </label_generator>
                         </entity>
