@@ -498,7 +498,11 @@
                                     <equals value="300">@tag</equals>
                                 </if>
                                 <if>
-                                    <equals value="b">./subfield/@code</equals>
+                                    <not>
+                                        <if>
+                                            <equals value="">./subfield[@code='b']/text()</equals>
+                                        </if>
+                                    </not>
                                 </if>
                             </and>
                         </if>
@@ -1408,6 +1412,4 @@
             </link>
         </mapping>
     </mappings>
-
-
 </x3ml>
