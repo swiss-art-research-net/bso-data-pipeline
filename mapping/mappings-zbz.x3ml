@@ -199,11 +199,11 @@
                         <relationship>crmdig:L11_had_output</relationship>
                         <entity>
                             <type>crmdig:D1_Digital_Object</type>
-                            <instance_generator name="URIwithTypeSubtypeIdAndCounter">
+                            <instance_generator name="URIwithTypeSubtypeIdAnd1Level">
                                 <arg name="type" type="constant">artwork</arg>
                                 <arg name="id" type="xpath">../uuid/text()</arg>
                                 <arg name="subtype" type="constant">digitization</arg>
-                                <arg name="position" type="constant">output</arg>
+                                <arg name="level1" type="constant">output</arg>
                             </instance_generator>
                         </entity>
                         <relationship>crm:P1_is_identified_by</relationship>
