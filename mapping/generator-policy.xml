@@ -35,6 +35,18 @@
 		<pattern>{type}/{id}/{subtype}/{position}</pattern>
 	</generator>
 
+	<generator name="URIwithTypeSubtypeIdAnd1Level" prefix="sari">
+		<pattern>{type}/{id}/{subtype}/{level1}</pattern>
+	</generator>
+
+	<generator name="URIwithTypeSubtypeIdAnd2Levels" prefix="sari">
+		<pattern>{type}/{id}/{subtype}/{level1}/{level2}</pattern>
+	</generator>
+
+	<generator name="URIwithTypeSubtypeIdAnd3Levels" prefix="sari">
+		<pattern>{type}/{id}/{subtype}/{level1}/{level2}/{level3}</pattern>
+	</generator>
+
 	<generator name="URIwithTypeSubtypeIdCounterAndSuffix" prefix="sari">
 		<pattern>{type}/{id}/{subtype}/{position}/{suffix}</pattern>
 	</generator>
