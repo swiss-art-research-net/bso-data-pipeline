@@ -876,6 +876,38 @@
                     </target_node>
                 </range>
             </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>datafield</relation>
+                    </source_relation>
+                    <target_relation>
+                        <if>
+                            <equals value="700">@tag</equals>
+                        </if>
+                        <relationship>crm:P94i_was_created_by</relationship>
+                        <entity variable="creation">
+                            <type>crm:E65_Creation</type>
+                            <instance_generator name="UUID"/>
+                        </entity>
+                        <relationship>crm:P9_consists_of</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>datafield</source_node>
+                    <target_node>
+                        <entity>
+                            <type>crm:E65_Creation</type>
+                            <instance_generator name="URIwithTypeSubtypeIdAnd1Level">
+                                <arg name="type" type="constant">artwork</arg>
+                                <arg name="id" type="xpath">../uuid/text()</arg>
+                                <arg name="subtype" type="constant">subcreation</arg>
+                                <arg name="level1" type="xpath">./subfield[@code='id_person']/text()</arg>
+                            </instance_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
         </mapping>
         <mapping>
             <domain>
@@ -2186,5 +2218,80 @@
                 </range>
             </link>
         </mapping>
+        <mapping>
+            <domain>
+                <source_node>/records/record/datafield</source_node>
+                <target_node>
+                    <if>
+                        <equals value="700">@tag</equals>
+                    </if>
+                    <entity>
+                        <type>crm:E65_Creation</type>
+                        <instance_generator name="URIwithTypeSubtypeIdAnd1Level">
+                            <arg name="type" type="constant">artwork</arg>
+                            <arg name="id" type="xpath">../uuid/text()</arg>
+                            <arg name="subtype" type="constant">subcreation</arg>
+                            <arg name="level1" type="xpath">./subfield[@code='id_person']/text()</arg>
+                        </instance_generator>
+                    </entity>
+                </target_node>
+            </domain>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>subfield</relation>
+                    </source_relation>
+                    <target_relation>
+                        <if>
+                            <equals value="a">@code</equals>
+                        </if>
+                        <relationship>crm:P14_carried_out_by</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>subfield</source_node>
+                    <target_node>
+                        <entity>
+                            <type>crm:E39_Actor</type>
+                            <instance_generator name="URIwithTypeAndId">
+                                <arg name="type" type="constant">actor</arg>
+                                <arg name="id" type="xpath">../subfield[@code='id_person']/text()</arg>
+                            </instance_generator>
+                            <label_generator name="Literal">
+                                <arg name="text" type="xpath">text()</arg>
+                                <arg name="language" type="constant"/>
+                            </label_generator>
+                            <additional>
+                                <relationship>crmdig:L54_is_same-as</relationship>
+                                <entity>
+                                    <type>crm:E39_Actor</type>
+                                    <instance_info>
+                                        <constant/>
+                                    </instance_info>
+                                    <instance_generator name="URIorUUID">
+                                        <arg name="text" type="xpath">../subfield[@code='wikidata_uri']/text()</arg>
+                                    </instance_generator>
+                                </entity>
+                            </additional>
+                            <additional>
+                                <relationship>crmdig:L54_is_same-as</relationship>
+                                <entity>
+                                    <type>crm:E39_Actor</type>
+                                    <instance_info>
+                                        <constant/>
+                                    </instance_info>
+                                    <instance_generator name="URIorUUID">
+                                        <arg name="text" type="xpath">concat('https://d-nb.info/gnd/', ../subfield[@code='gnd']/text())</arg>
+                                    </instance_generator>
+                                </entity>
+                            </additional>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+        </mapping>
     </mappings>
+
+
+
 </x3ml>
