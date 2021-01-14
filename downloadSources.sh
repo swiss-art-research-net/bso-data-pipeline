@@ -12,6 +12,7 @@ download () {
 }
 
 download "data/zbz/curate/100_curate.json" "data/source/100.json"
+download "data/zbz/curate/110_curate.json" "data/source/110.json"
 download "data/zbz/curate/264_curate.txt" "data/source/264.json"
 download "data/zbz/curate/651_curate.txt" "data/source/651.json"
 download "data/zbz/source/sari_abzug-utf-8_23_04-tsv.txt" "data/source/sari_abzug-utf-8_23_04-tsv.json"
