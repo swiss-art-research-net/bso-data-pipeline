@@ -429,6 +429,47 @@
                     </target_node>
                 </range>
             </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>datafield</relation>
+                    </source_relation>
+                    <target_relation>
+                        <if>
+                            <equals value="655">@tag</equals>
+                        </if>
+                        <relationship>crm:P2_has_type</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>datafield</source_node>
+                    <target_node>
+                        <entity>
+                            <type>crm:E55_Type</type>
+                            <instance_generator name="URIwithTypeAndId">
+                                <arg name="type" type="constant">type</arg>
+                                <arg name="id" type="xpath">replace(lower-case(./subfield[@code='a']/text()),' ', '-')</arg>
+                            </instance_generator>
+                            <label_generator name="Literal">
+                                <arg name="text" type="xpath">./subfield[@code='a']/text()</arg>
+                                <arg name="language" type="constant"/>
+                            </label_generator>
+                            <additional>
+                                <relationship>crmdig:L54_is_same-as</relationship>
+                                <entity>
+                                    <type>crm:E55_Type</type>
+                                    <instance_info>
+                                        <constant/>
+                                    </instance_info>
+                                    <instance_generator name="URIorUUID">
+                                        <arg name="text" type="xpath">concat('https://d-nb.info/gnd/',./subfield[@code='1']/text())</arg>
+                                    </instance_generator>
+                                </entity>
+                            </additional>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
         </mapping>
         <mapping>
             <domain>
