@@ -158,7 +158,7 @@ keys = list(rawData['rows'][0].keys())
 keys.sort()
 
 # Output individual files
-for i, row in enumerate(tqdm(rawData['rows'][offset:limit])):
+for i, row in enumerate(tqdm(rawData['rows'][offset:limit+offset])):
     
     records = etree.Element("records")
     record = convertRowToXml(row, keys, externalFieldContent)
