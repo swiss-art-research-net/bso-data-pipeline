@@ -777,6 +777,35 @@
                     </target_node>
                 </range>
             </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>datafield</relation>
+                    </source_relation>
+                    <target_relation>
+                        <if>
+                            <equals value="611">@tag</equals>
+                        </if>
+                        <relationship>crm:P138_represents</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>datafield</source_node>
+                    <target_node>
+                        <entity variable="subject_event">
+                            <type>crm:E7_Activity</type>
+                            <instance_generator name="URIwithTypeAndId_hashed">
+                                <arg name="type" type="constant">event</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">./subfield[@code='a']/text()</arg>
+                            </instance_generator>
+                            <label_generator name="Literal">
+                                <arg name="text" type="xpath">./subfield[@code='a']/text()</arg>
+                                <arg name="language" type="constant"/>
+                            </label_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
         </mapping>
         <mapping>
             <domain>
@@ -1889,7 +1918,7 @@
                         <entity>
                             <type>crm:E52_Time-Span</type>
                             <instance_generator name="URIwithTypeSubtypeIdAnd1Level">
-                                <arg name="type" type="constant">pergrogroupupson</arg>
+                                <arg name="type" type="constant">group</arg>
                                 <arg name="id" type="xpath">../subfield[@code='id_institution']/text()</arg>
                                 <arg name="subtype" type="constant">formation</arg>
                                 <arg name="level1" type="constant">date</arg>
@@ -1915,6 +1944,101 @@
                                     </instance_info>
                                     <instance_generator name="typedLiteralGen">
                                         <arg name="text" type="xpath">concat("31-11-", text())</arg>
+                                    </instance_generator>
+                                </entity>
+                            </additional>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+        </mapping>
+        <mapping>
+            <domain>
+                <source_node>/records/record/datafield</source_node>
+                <target_node>
+                    <if>
+                        <equals value="611">@tag</equals>
+                    </if>
+                    <entity variable="subject_event">
+                        <type>crm:E7_Activity</type>
+                        <instance_generator name="URIwithTypeAndId_hashed">
+                            <arg name="type" type="constant">event</arg>
+                            <arg name="id_HASHED_CONTENTS" type="xpath">./subfield[@code='a']/text()</arg>
+                        </instance_generator>
+                        <label_generator name="Literal">
+                            <arg name="text" type="xpath">./subfield[@code='a']/text()</arg>
+                            <arg name="language" type="constant"/>
+                        </label_generator>
+                    </entity>
+                </target_node>
+            </domain>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>subfield</relation>
+                    </source_relation>
+                    <target_relation>
+                        <if>
+                            <equals value="gnd">@code</equals>
+                        </if>
+                        <relationship>crmdig:L54_is_same-as</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>subfield</source_node>
+                    <target_node>
+                        <entity>
+                            <type>crm:E7_Activity</type>
+                            <instance_generator name="URIorUUID">
+                                <arg name="text" type="xpath">concat('https://d-nb.info/gnd/', text())</arg>
+                            </instance_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>subfield</relation>
+                    </source_relation>
+                    <target_relation>
+                        <if>
+                            <equals value="d">@code</equals>
+                        </if>
+                        <relationship>crm:P4_has_time-span</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>subfield</source_node>
+                    <target_node>
+                        <entity>
+                            <type>crm:E52_Time-Span</type>
+                            <instance_generator name="URIwithTypeSuptypeAndId_hashed">
+                                <arg name="type" type="constant">event</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">../subfield[@code='a']/text()</arg>
+                                <arg name="subtype" type="constant">date</arg>
+                            </instance_generator>
+                            <additional>
+                                <relationship>crm:P82a_begin_of_the_begin</relationship>
+                                <entity>
+                                    <type>xsd:dateTime</type>
+                                    <instance_info>
+                                        <constant/>
+                                    </instance_info>
+                                    <instance_generator name="typedLiteralGen">
+                                        <arg name="text" type="xpath">@lowerDate</arg>
+                                    </instance_generator>
+                                </entity>
+                            </additional>
+                            <additional>
+                                <relationship>crm:P82b_end_of_the_end</relationship>
+                                <entity>
+                                    <type>xsd:dateTime</type>
+                                    <instance_info>
+                                        <constant/>
+                                    </instance_info>
+                                    <instance_generator name="typedLiteralGen">
+                                        <arg name="text" type="xpath">@upperDate</arg>
                                     </instance_generator>
                                 </entity>
                             </additional>
