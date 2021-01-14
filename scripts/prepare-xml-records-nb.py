@@ -48,7 +48,7 @@ def convertSwissGridToLatLong(x, y):
         print("No connection")
     return False
 
-for record in tqdm(records[offset:limit]):
+for record in tqdm(records[offset:limit+offset]):
     xCoord = record.xpath("DetailData/DataElement[@ElementId='10161']/ElementValue/TextValue")
     yCoord = record.xpath("DetailData/DataElement[@ElementId='10162']/ElementValue/TextValue")
     if len(xCoord) and len(yCoord):
@@ -59,7 +59,7 @@ for record in tqdm(records[offset:limit]):
         elemCoord.set("longitude", coordinates['easting'])
         elemCoord.set("latitude", coordinates['northing'])
 
-for record in tqdm(records[offset:limit]):
+for record in tqdm(records[offset:limit+offset]):
     collection.clear()
     id = record.get("Id")
     collection.append(record)
