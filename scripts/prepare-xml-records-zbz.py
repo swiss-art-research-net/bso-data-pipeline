@@ -19,7 +19,7 @@ outputPrefix = "sari-"
 fieldsContainingDates = ['100$d', '260$c', '260$g', '264$c', '533$d', '600$d', '611$d', '700$d']
 
 # List fields that are loaded from separate files (e.g. curated and/or multi-value fields)
-externalFields = ['100', '110', '264', '600', '651']
+externalFields = ['100', '110', '264', '600', '610', '651']
 
 limit=int(sys.argv[1]) if len(sys.argv) >1 else 999999
 offset=int(sys.argv[2]) if len(sys.argv) >2 else 0
