@@ -173,7 +173,7 @@
       </image>
     </images>
   </record>
-<record>
+  <record>
     <uuid>8d11181b-3369-4032-8ab2-0514d94314f1</uuid>
     <datafield tag="001">005134689</datafield>
     <datafield tag="007">ki\|||;cr\|||||||||||</datafield>
@@ -331,7 +331,7 @@
       </image>
     </images>
   </record>
-<record>
+  <record>
     <uuid>4b4a9cb6-3a32-4582-8a26-62b818b5795d</uuid>
     <datafield tag="001">005219259</datafield>
     <datafield tag="007">ki\\\\;cr\|||||||||||</datafield>
@@ -441,7 +441,7 @@
       </image>
     </images>
   </record>
-<record>
+  <record>
     <uuid>0de7df7d-23f7-4bba-b061-730ff6a3fc18</uuid>
     <datafield tag="001">005300655</datafield>
     <datafield tag="007">ki\\\\;cr\|||||||||||</datafield>
@@ -565,6 +565,144 @@
         <height>1769</height>
         <width>2243</width>
         <url type="iiif">https://www.e-rara.ch/zuz/i3f/v20/16392338</url>
+      </image>
+    </images>
+  </record>
+  <record>
+    <uuid>6d4bdba6-4ecd-45d8-a3f0-1554fb0afa0d</uuid>
+    <datafield tag="001">005203731</datafield>
+    <datafield tag="007">ki\\\\;cr\|||||||||||</datafield>
+    <datafield tag="008">060713s1838\\\\sz\\\\\\\\\\\\\\\\i\zxx\\</datafield>
+    <datafield tag="024">
+      <subfield code="2">doi</subfield>
+      <subfield code="a">10.7891/e-manuscripta-51326</subfield>
+    </datafield>
+    <datafield tag="245">
+      <subfield code="a">[Kirchhof von] Richterswil</subfield>
+      <subfield code="b"></subfield>
+      <subfield code="c">[Gottfried Keller]</subfield>
+      <subfield code="h">Bildmaterial</subfield>
+      <subfield code="n"></subfield>
+      <subfield code="p"></subfield>
+      <subfield code="a"></subfield>
+      <subfield code="c"></subfield>
+    </datafield>
+    <datafield tag="260">
+      <subfield code="a">[Schweiz]</subfield>
+      <subfield code="b"></subfield>
+      <subfield code="c" parsedDate="1838" upperDate="1838-12-31" lowerDate="1838-01-01">1838</subfield>
+      <subfield code="e"></subfield>
+      <subfield code="f"></subfield>
+      <subfield code="g"></subfield>
+    </datafield>
+    <datafield tag="264">
+      <subfield code="id">6d4bdba6-4ecd-45d8-a3f0-1554fb0afa0d</subfield>
+    </datafield>
+    <datafield tag="300">
+      <subfield code="a">1 Zeichnung</subfield>
+      <subfield code="b">Aquarell und Gouache über Bleistift</subfield>
+      <subfield code="c">Bild und Blatt 16,4 x 24,5 cm</subfield>
+      <subfield code="e"></subfield>
+    </datafield>
+    <datafield tag="336">
+      <subfield code="2">rdacontent</subfield>
+      <subfield code="a">unbewegtes Bild</subfield>
+      <subfield code="b">sti</subfield>
+    </datafield>
+    <datafield tag="337">
+      <subfield code="2">rdamedia;\\ | rdamedia</subfield>
+      <subfield code="a">Computermedien | ohne Hilfsmittel zu benutzen</subfield>
+      <subfield code="b">c | n</subfield>
+    </datafield>
+    <datafield tag="338">
+      <subfield code="2">rdacarrier;\\ | rdacarrier</subfield>
+      <subfield code="a">Blatt | Online-Ressource</subfield>
+      <subfield code="b">nb | cr</subfield>
+    </datafield>
+    <datafield tag="500">
+      <subfield code="5"></subfield>
+      <subfield code="a">Aus dem Nachlass von Gottfried Keller</subfield>
+    </datafield>
+    <datafield tag="510">
+      <subfield code="a">Bruno Weber: Gottfried Keller. Landschaftsmaler, Zürich 1990, S. 38, Nr. 24</subfield>
+      <subfield code="b"></subfield>
+      <subfield code="c"></subfield>
+      <subfield code="u"></subfield>
+    </datafield>
+    <datafield tag="520">
+      <subfield code="a">Kirche und Kirchhof von Richterswil mit Blick auf den Zürichsee und die Berge im Winter. Der mit weissen Rosen bekränzte Anker im Schnee soll auf das Grab von Henriette Keller (1818-1838) hinweisen</subfield>
+    </datafield>
+    <datafield tag="600">
+      <subfield code="id">6d4bdba6-4ecd-45d8-a3f0-1554fb0afa0d</subfield>
+      <subfield code="id_person">cf1741a1-600</subfield>
+      <subfield code="doi_856_1$u">http://dx.doi.org/10.7891/e-manuscripta-51326</subfield>
+      <subfield code="subfield">1</subfield>
+      <subfield code="1">005203731</subfield>
+      <subfield code="1">(DE-588)1089448139</subfield>
+      <subfield code="gnd">1089448139</subfield>
+      <subfield code="GND-Nummer">1089448139</subfield>
+      <subfield code="Bevorzugter_Name">Keller, Henriette</subfield>
+      <subfield code="ULAN">Keller, Henriette</subfield>
+      <subfield code="wiki3">Keller, Henriette</subfield>
+      <subfield code="Biografische_oder_historische_Angaben">Schneiderin</subfield>
+      <subfield code="Geburtsdatum">1818</subfield>
+      <subfield code="Sterbedatum">1838</subfield>
+      <subfield code="a">Keller, Henriette</subfield>
+      <subfield code="d" parsedDate="1818/1838" upperDate="1838-12-31" lowerDate="1818-01-01">1818-1838</subfield>
+    </datafield>
+    <datafield tag="651">
+      <subfield code="id">6d4bdba6-4ecd-45d8-a3f0-1554fb0afa0d</subfield>
+      <subfield code="subfield">1</subfield>
+      <subfield code="1">005203731</subfield>
+      <subfield code="1">(DE-588)1058355384</subfield>
+      <subfield code="1_2">1058355384</subfield>
+      <subfield code="wd_id">Q1145216</subfield>
+      <subfield code="2">gnd</subfield>
+      <subfield code="a">Reformierte Pfarrkirche Richterswil</subfield>
+      <subfield code="g">Richterswil</subfield>
+    </datafield>
+    <datafield tag="655">
+      <subfield code="2">gnd;\7 | gnd-content</subfield>
+      <subfield code="a">Bildliche Darstellung | Zeichnung</subfield>
+    </datafield>
+    <datafield tag="695">ZG$aAnsicht [Formschlagwort Sondersammlungen]</datafield>
+    <datafield tag="700">
+      <subfield code="1">(DE-588)11856109X;1\ | (DE-588)11856109X</subfield>
+      <subfield code="2"></subfield>
+      <subfield code="4">fmo</subfield>
+      <subfield code="5"></subfield>
+      <subfield code="a">Keller, Gottfried | Keller, Gottfried</subfield>
+      <subfield code="c"></subfield>
+      <subfield code="d" parsedDate="1819/1890" upperDate="1890-12-31" lowerDate="1819-01-01">1819-1890 | 1819-1890</subfield>
+      <subfield code="e">früherer Eigentümer</subfield>
+      <subfield code="g"></subfield>
+    </datafield>
+    <datafield tag="852">
+      <subfield code="a"></subfield>
+      <subfield code="b">Z02 | Z01</subfield>
+      <subfield code="c">GSM | OL</subfield>
+      <subfield code="h"></subfield>
+      <subfield code="j">GKN 32</subfield>
+      <subfield code="p">ZD434027 | ZD3420422</subfield>
+    </datafield>
+    <datafield tag="856">
+      <subfield code="u">http://dx.doi.org/10.7891/e-manuscripta-51326</subfield>
+      <subfield code="z">Digitalisat in e-manuscripta</subfield>
+    </datafield>
+    <datafield tag="901">6\$aKeller, Gottfried$d1819-1890$1(DE-588)11856109X</datafield>
+    <datafield tag="906">\\$iVM Bild = Image</datafield>
+    <datafield tag="993">
+      <subfield code="9">LOCAL</subfield>
+      <subfield code="a">000005187</subfield>
+      <subfield code="x">uzb-ZG</subfield>
+    </datafield>
+    <datafield tag="id">6d4bdba6-4ecd-45d8-a3f0-1554fb0afa0d</datafield>
+    <datafield tag="manifest">https://www.e-manuscripta.ch/i3f/v20/1617708/manifest</datafield>
+    <images>
+      <image>
+        <height>5046</height>
+        <width>5532</width>
+        <url type="iiif">https://www.e-manuscripta.ch/zuzneb/i3f/v20/1617709</url>
       </image>
     </images>
   </record>
