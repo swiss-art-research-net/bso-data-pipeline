@@ -328,6 +328,9 @@
                                 <if>
                                     <equals value="a">@code</equals>
                                 </if>
+                                <if>
+                                    <exists>text()</exists>
+                                </if>
                             </and>
                         </if>
                         <relationship>crm:P45_consists_of</relationship>
