@@ -473,6 +473,42 @@
                     </target_node>
                 </range>
             </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>datafield</relation>
+                    </source_relation>
+                    <target_relation>
+                        <if>
+                            <equals value="751">@tag</equals>
+                        </if>
+                        <relationship>crm:P108i_was_produced_by</relationship>
+                        <entity variable="production">
+                            <type>crm:E12_Production</type>
+                            <instance_generator name="URIwithTypeSubtypeAndId">
+                                <arg name="type" type="constant">artwork</arg>
+                                <arg name="id" type="xpath">../uuid/text()</arg>
+                                <arg name="subtype" type="constant">production</arg>
+                            </instance_generator>
+                        </entity>
+                        <relationship>crm:P9_consists_of</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>datafield</source_node>
+                    <target_node>
+                        <entity variable="production_additional">
+                            <type>crm:E12_Production</type>
+                            <instance_generator name="URIwithTypeSubtypeIdAnd1Level">
+                                <arg name="type" type="constant">artwork</arg>
+                                <arg name="id" type="xpath">../uuid/text()</arg>
+                                <arg name="subtype" type="constant">production</arg>
+                                <arg name="level1" type="xpath">./subfield[@code='4']/text()</arg>
+                            </instance_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
         </mapping>
         <mapping>
             <domain>
@@ -2472,6 +2508,95 @@
                                 <arg name="text" type="xpath">text()</arg>
                                 <arg name="language" type="constant"/>
                             </label_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+        </mapping>
+        <mapping>
+            <domain>
+                <source_node>/records/record/datafield</source_node>
+                <target_node>
+                    <if>
+                        <equals value="751">@tag</equals>
+                    </if>
+                    <entity variable="production_additional">
+                        <type>crm:E12_Production</type>
+                        <instance_generator name="URIwithTypeSubtypeIdAnd1Level">
+                            <arg name="type" type="constant">artwork</arg>
+                            <arg name="id" type="xpath">../uuid/text()</arg>
+                            <arg name="subtype" type="constant">production</arg>
+                            <arg name="level1" type="xpath">./subfield[@code='4']/text()</arg>
+                        </instance_generator>
+                    </entity>
+                </target_node>
+            </domain>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>subfield</relation>
+                    </source_relation>
+                    <target_relation>
+                        <if>
+                            <equals value="e">@code</equals>
+                        </if>
+                        <relationship>crm:P2_has_type</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>subfield</source_node>
+                    <target_node>
+                        <entity>
+                            <type>crm:E55_Type</type>
+                            <instance_generator name="URIwithTypeAndId">
+                                <arg name="type" type="constant">type</arg>
+                                <arg name="id" type="xpath">lower-case(text())</arg>
+                            </instance_generator>
+                            <label_generator name="Literal">
+                                <arg name="text" type="xpath">text()</arg>
+                                <arg name="language" type="constant"/>
+                            </label_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>subfield</relation>
+                    </source_relation>
+                    <target_relation>
+                        <if>
+                            <equals value="a">@code</equals>
+                        </if>
+                        <relationship>crm:P7_took_place_at</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>subfield</source_node>
+                    <target_node>
+                        <entity>
+                            <type>crm:E53_Place</type>
+                            <instance_generator name="URIwithTypeAndId_hashed">
+                                <arg name="type" type="constant">place</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">text()</arg>
+                            </instance_generator>
+                            <label_generator name="Literal">
+                                <arg name="text" type="xpath">text()</arg>
+                                <arg name="language" type="constant"/>
+                            </label_generator>
+                            <additional>
+                                <relationship>crmdig:L54_is_same-as</relationship>
+                                <entity>
+                                    <type>crm:E53_Place</type>
+                                    <instance_info>
+                                        <constant/>
+                                    </instance_info>
+                                    <instance_generator name="URIorUUID">
+                                        <arg name="text" type="xpath">concat('https://d-nb.info/gnd/',./subfield[@code='1']/text())</arg>
+                                    </instance_generator>
+                                </entity>
+                            </additional>
                         </entity>
                     </target_node>
                 </range>
