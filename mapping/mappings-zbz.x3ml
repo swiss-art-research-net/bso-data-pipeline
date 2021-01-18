@@ -680,7 +680,7 @@
                                 <arg name="subtype" type="constant">title</arg>
                             </instance_generator>
                             <label_generator name="Literal">
-                                <arg name="text" type="xpath">concat(./subfield[@code='a']/text(), ./subfield[@code='b']/text())</arg>
+                                <arg name="text" type="xpath">if (subfield[@code='b']/text()) then (concat(./subfield[@code='a']/text(), ' - ', ./subfield[@code='b']/text())) else (./subfield[@code='a']/text())</arg>
                                 <arg name="language" type="constant"/>
                             </label_generator>
                             <additional>
@@ -1786,6 +1786,7 @@
                 </range>
             </link>
         </mapping>
+
         <mapping>
             <domain>
                 <source_node>/records/record/datafield</source_node>
@@ -1796,7 +1797,11 @@
                     <entity variable="title_statement">
                         <type>crm:E41_Appellation</type>
                         <type>crm:E33_Linguistic_Object</type>
-                        <instance_generator name="UUID"/>
+                        <instance_generator name="URIwithTypeSubtypeAndId">
+                            <arg name="type" type="constant">artwork</arg>
+                            <arg name="id" type="xpath">../uuid/text()</arg>
+                            <arg name="subtype" type="constant">title</arg>
+                        </instance_generator>
                     </entity>
                 </target_node>
             </domain>
@@ -1812,11 +1817,7 @@
                                     <equals value="b">@code</equals>
                                 </if>
                                 <if>
-                                    <not>
-                                        <if>
-                                            <equals value="">text()</equals>
-                                        </if>
-                                    </not>
+                                    <exists>text()</exists>
                                 </if>
                             </and>
                         </if>
@@ -1829,7 +1830,16 @@
                         <entity>
                             <type>crm:E33_Linguistic_Object</type>
                             <type>crm:E41_Appellation</type>
-                            <instance_generator name="UUID"/>
+                            <instance_generator name="URIwithTypeSubtypeIdAnd1Level">
+                                <arg name="type" type="constant">artwork</arg>
+                                <arg name="id" type="xpath">../../uuid/text()</arg>
+                                <arg name="subtype" type="constant">title</arg>
+                                <arg name="level1" type="constant">additional</arg>
+                            </instance_generator>
+                            <label_generator name="Literal">
+                                <arg name="text" type="xpath">text()</arg>
+                                <arg name="language" type="constant"/>
+                            </label_generator>
                         </entity>
                     </target_node>
                 </range>
