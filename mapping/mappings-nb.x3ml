@@ -34,7 +34,7 @@
                                     <constant/>
                                 </instance_info>
                                 <instance_generator name="URIorUUID">
-                                    <arg name="text" type="constant">https://www.nb.admin.ch/</arg>
+                                    <arg name="text" type="constant">http://d-nb.info/gnd/10171799-4</arg>
                                 </instance_generator>
                                 <label_generator name="Literal">
                                     <arg name="text" type="constant">Schweizerische Nationalbibliothek</arg>
