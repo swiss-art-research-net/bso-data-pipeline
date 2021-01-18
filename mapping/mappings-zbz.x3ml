@@ -714,7 +714,7 @@
                 <range>
                     <source_node>datafield</source_node>
                     <target_node>
-                        <entity variable="subject_geographic">
+                        <entity>
                             <type>crm:E53_Place</type>
                             <instance_generator name="URIwithTypeAndId_hashed">
                                 <arg name="type" type="constant">place</arg>
@@ -722,6 +722,20 @@
                             </instance_generator>
                         </entity>
                     </target_node>
+                    <comments>
+                        <comment type="">
+                            <rationale>subject geographic</rationale>
+                            <alternatives/>
+                            <typical_mistakes/>
+                            <local_habits/>
+                            <link_to_cook_book/>
+                            <example>
+                                <example_source/>
+                                <example_target/>
+                            </example>
+                            <comments_last_update date="" person=""/>
+                        </comment>
+                    </comments>
                 </range>
             </link>
             <link>
@@ -817,7 +831,7 @@
                 <range>
                     <source_node>datafield</source_node>
                     <target_node>
-                        <entity variable="subject_person">
+                        <entity>
                             <type>crm:E21_Person</type>
                             <instance_generator name="URIwithTypeAndId">
                                 <arg name="type" type="constant">person</arg>
@@ -829,6 +843,20 @@
                             </label_generator>
                         </entity>
                     </target_node>
+                    <comments>
+                        <comment type="">
+                            <rationale>subject person</rationale>
+                            <alternatives/>
+                            <typical_mistakes/>
+                            <local_habits/>
+                            <link_to_cook_book/>
+                            <example>
+                                <example_source/>
+                                <example_target/>
+                            </example>
+                            <comments_last_update date="" person=""/>
+                        </comment>
+                    </comments>
                 </range>
             </link>
             <link>
@@ -846,7 +874,7 @@
                 <range>
                     <source_node>datafield</source_node>
                     <target_node>
-                        <entity variable="subject_group">
+                        <entity>
                             <type>crm:E74_Group</type>
                             <instance_generator name="URIwithTypeAndId">
                                 <arg name="type" type="constant">group</arg>
@@ -858,6 +886,20 @@
                             </label_generator>
                         </entity>
                     </target_node>
+                    <comments>
+                        <comment type="">
+                            <rationale>subject group</rationale>
+                            <alternatives/>
+                            <typical_mistakes/>
+                            <local_habits/>
+                            <link_to_cook_book/>
+                            <example>
+                                <example_source/>
+                                <example_target/>
+                            </example>
+                            <comments_last_update date="" person=""/>
+                        </comment>
+                    </comments>
                 </range>
             </link>
             <link>
@@ -875,7 +917,7 @@
                 <range>
                     <source_node>datafield</source_node>
                     <target_node>
-                        <entity variable="subject_event">
+                        <entity>
                             <type>crm:E7_Activity</type>
                             <instance_generator name="URIwithTypeAndId_hashed">
                                 <arg name="type" type="constant">event</arg>
@@ -887,6 +929,20 @@
                             </label_generator>
                         </entity>
                     </target_node>
+                    <comments>
+                        <comment type="">
+                            <rationale>subject event</rationale>
+                            <alternatives/>
+                            <typical_mistakes/>
+                            <local_habits/>
+                            <link_to_cook_book/>
+                            <example>
+                                <example_source/>
+                                <example_target/>
+                            </example>
+                            <comments_last_update date="" person=""/>
+                        </comment>
+                    </comments>
                 </range>
             </link>
             <link>
@@ -904,7 +960,7 @@
                 <range>
                     <source_node>datafield</source_node>
                     <target_node>
-                        <entity variable="subject_type">
+                        <entity>
                             <type>crm:E55_Type</type>
                             <instance_generator name="URIwithTypeAndId">
                                 <arg name="type" type="constant">type</arg>
@@ -1029,7 +1085,7 @@
                 <range>
                     <source_node>subfield</source_node>
                     <target_node>
-                        <entity variable="artist_or_creator">
+                        <entity>
                             <type>crm:E39_Actor</type>
                             <instance_generator name="URIwithTypeAndId_hashed">
                                 <arg name="type" type="constant">actor</arg>
@@ -1041,6 +1097,20 @@
                             </label_generator>
                         </entity>
                     </target_node>
+                    <comments>
+                        <comment type="">
+                            <rationale>artist or creator</rationale>
+                            <alternatives/>
+                            <typical_mistakes/>
+                            <local_habits/>
+                            <link_to_cook_book/>
+                            <example>
+                                <example_source/>
+                                <example_target/>
+                            </example>
+                            <comments_last_update date="" person=""/>
+                        </comment>
+                    </comments>
                 </range>
             </link>
             <link>
@@ -1065,7 +1135,7 @@
                 <range>
                     <source_node>subfield</source_node>
                     <target_node>
-                        <entity variable="artist_or_creator_group">
+                        <entity>
                             <type>crm:E39_Actor</type>
                             <instance_generator name="URIwithTypeAndId_hashed">
                                 <arg name="type" type="constant">actor</arg>
@@ -1077,6 +1147,20 @@
                             </label_generator>
                         </entity>
                     </target_node>
+                    <comments>
+                        <comment type="">
+                            <rationale>artist or creator group</rationale>
+                            <alternatives/>
+                            <typical_mistakes/>
+                            <local_habits/>
+                            <link_to_cook_book/>
+                            <example>
+                                <example_source/>
+                                <example_target/>
+                            </example>
+                            <comments_last_update date="" person=""/>
+                        </comment>
+                    </comments>
                 </range>
             </link>
             <link>
@@ -1124,11 +1208,25 @@
                 <range>
                     <source_node>subfield</source_node>
                     <target_node>
-                        <entity variable="artist_or_creator_group">
+                        <entity>
                             <type>crm:E39_Actor</type>
                             <instance_generator name="UUID"/>
                         </entity>
                     </target_node>
+                    <comments>
+                        <comment type="">
+                            <rationale>artist or creator group</rationale>
+                            <alternatives/>
+                            <typical_mistakes/>
+                            <local_habits/>
+                            <link_to_cook_book/>
+                            <example>
+                                <example_source/>
+                                <example_target/>
+                            </example>
+                            <comments_last_update date="" person=""/>
+                        </comment>
+                    </comments>
                 </range>
             </link>
         </mapping>
@@ -2043,7 +2141,7 @@
                     <source_node>subfield</source_node>
                     <target_node>
                         <entity>
-                            <type>crm:E21_Person</type>
+                            <type>crm:E74_Group</type>
                             <instance_generator name="URIorUUID">
                                 <arg name="text" type="xpath">concat('https://d-nb.info/gnd/', text())</arg>
                             </instance_generator>
@@ -2214,7 +2312,7 @@
                     <if>
                         <equals value="650">@tag</equals>
                     </if>
-                    <entity variable="subject_type">
+                    <entity>
                         <type>crm:E55_Type</type>
                         <instance_generator name="URIwithTypeAndId">
                             <arg name="type" type="constant">type</arg>
