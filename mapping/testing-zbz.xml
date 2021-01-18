@@ -1,0 +1,204 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<records>
+  <record>
+    <uuid>unique-identifier</uuid>
+    <datafield tag="024">
+      <subfield code="2">doi 024-2</subfield>
+      <subfield code="a">10.3931/e-rara-doi-identifier 024-a</subfield>
+    </datafield>
+    <datafield tag="100">
+      <subfield code="a">Artist 1, Name 100-a</subfield>
+      <subfield code="c">Artist 1, Additional 100-c</subfield>
+      <subfield code="id_person">artist-1-100-id_person</subfield>
+      <subfield code="1">(DE-588)1089410395 100-1</subfield>
+      <subfield code="4">art 100-4</subfield> 
+      <subfield code="d" parsedDate="1828/1870" upperDate="1870-12-31" lowerDate="1828-01-01">1828-1870 100-d</subfield>
+      <subfield code="e">Künstler 100-e</subfield>
+    </datafield>
+    <datafield tag="100">
+      <subfield code="a">Artist 2, Name 100-a</subfield>
+      <subfield code="c">Artist 2, Additional 100-x</subfield>
+      <subfield code="id_person">artist-2-100-id_person</subfield>
+      <subfield code="1">(DE-588)1289410395 100-1</subfield>
+      <subfield code="4">art 100-4</subfield>
+      <subfield code="d" parsedDate="1830/1870" upperDate="1870-12-31" lowerDate="1830-01-01">1830-1870 100-d</subfield>
+      <subfield code="e">Künstler 100-e</subfield>
+    </datafield>
+    <datafield tag="110">
+      <subfield code="a">Group 1, Name 110-a</subfield>
+      <subfield code="c">Group 1, Additional 110-c</subfield>
+      <subfield code="id_group">group-1-110-id_group</subfield>
+      <subfield code="1">(DE-588)1289410335 110-1</subfield>
+      <subfield code="4">art 110-4</subfield>
+      <subfield code="e">Künstlergruppe 110-e</subfield>
+    </datafield>
+    <datafield tag="110">
+      <subfield code="a">Group 2, Name 110-a</subfield>
+      <subfield code="c">Group 2, Additional 110-c</subfield>
+      <subfield code="id_group">group-2-110-id_group</subfield>
+      <subfield code="1">(DE-588)1289412335 110-1</subfield>
+      <subfield code="4">art 110-4</subfield>
+      <subfield code="e">Künstlergruppe 110-e</subfield>
+    </datafield>
+    <datafield tag="245">
+      <subfield code="a">Title of work 245-a</subfield>
+      <subfield code="b">Remainder of Title 245-b</subfield>
+      <subfield code="c">Artist name (unused) 245-c</subfield>
+      <subfield code="h">Medium name 245-h</subfield>
+      </datafield>
+    <datafield tag="264">
+      <subfield code="a">Varying title of work 264-a</subfield>
+      <subfield code="b">Remainder of varying title of work 264-b</subfield>
+      <subfield code="g">Miscellaneous information 264-g</subfield>
+      <subfield code="i">Sources of title 265-i</subfield>
+    </datafield>
+    <datafield tag="300">
+      <subfield code="a">Extent 300-a</subfield>
+      <subfield code="b">Other physical details 300-b</subfield>
+      <subfield code="c">Dimension 300-c</subfield>
+    </datafield>
+    <datafield tag="336">
+      <subfield code="2">rdacontent</subfield>
+      <subfield code="a">content type term 336-a</subfield>
+      <subfield code="b">content-type-code-336-b</subfield>
+    </datafield>
+    <datafield tag="340">
+      <subfield code="a">Material base 340-a</subfield>
+    </datafield>
+    <datafield tag="500">
+      <subfield code="a">General Note 500-a</subfield>
+    </datafield>
+    <datafield tag="510">
+      <subfield code="a">Name of source 510-a</subfield>
+      <subfield code="b">Coverage of source 510-b</subfield>
+      <subfield code="c">Location of source 510-c</subfield>
+      <subfield code="u">URI of source 510-u</subfield>
+    </datafield>
+    <datafield tag="600">
+      <subfield code="a">Subject Person 1 Name 600-a</subfield>
+      <subfield code="c">Subject Person 1 Name Title 600-c</subfield>
+      <subfield code="1">Subject Person 1 URI 600-1</subfield>
+    </datafield>
+    <datafield tag="600">
+      <subfield code="a">Subject Person 2 Name 600-a</subfield>
+      <subfield code="c">Subject Person 2 Name Title 600-c</subfield>
+      <subfield code="1">Subject Person 2 URI 600-1</subfield>
+    </datafield>
+    <datafield tag="610">
+      <subfield code="a">Subject Person 1 Name 610-a</subfield>
+      <subfield code="1">Subject Person 1 URI 610-1</subfield>
+    </datafield>
+    <datafield tag="610">
+      <subfield code="a">Subject Person 2 Name 610-a</subfield>
+      <subfield code="1">Subject Person 2 URI 610-1</subfield>
+    </datafield>
+    <datafield tag="611">
+      <subfield code="a">Subject Meeting 1 Name 611-a</subfield>
+      <subfield code="c">Subject Meeting 1 Location 611-c</subfield>
+      <subfield code="d">Subject Meeting 1 Date 611-d</subfield>
+      <subfield code="1">Subject Meeting 1 URI 611-1</subfield>   
+    </datafield>
+    <datafield tag="611">
+      <subfield code="a">Subject Meeting 2 Name 611-a</subfield>
+      <subfield code="c">Subject Meeting 2 Location 611-c</subfield>
+      <subfield code="d">Subject Meeting 2 Date 611-d</subfield>
+      <subfield code="1">Subject Meeting 2 URI 611-1</subfield>   
+    </datafield>
+    <datafield tag="630">
+      <subfield code="a">Subject Added Title 1 Name 630-a</subfield>
+      <subfield code="1">Subject Added Title 1 URI 630-1</subfield>   
+    </datafield>
+    <datafield tag="630">
+      <subfield code="a">Subject Added Title 2 Name 630-a</subfield>
+      <subfield code="1">Subject Added Title 2 URI 630-1</subfield>   
+    </datafield>
+    <datafield tag="650">
+      <subfield code="a">Subject Chronological Term 1 650-a</subfield>
+    </datafield>
+    <datafield tag="650">
+      <subfield code="a">Subject Chronological Term 2 650-a</subfield>
+    </datafield>
+    <datafield tag="651">
+      <subfield code="a">Subject Geographic 1 Name 651-a</subfield>
+      <subfield code="g">Subject Geographic 1 Misc 651-g</subfield>
+      <subfield code="1">Subject Geographic 1 URI 651-1</subfield>
+    </datafield>
+    <datafield tag="651">
+      <subfield code="a">Subject Geographic 2 Name 651-a</subfield>
+      <subfield code="g">Subject Geographic 2 Misc 651-g</subfield>
+      <subfield code="1">Subject Geographic 2 URI 651-1</subfield>
+    </datafield>
+    <datafield tag="655">
+      <subfield code="2">gnd-content</subfield>
+      <subfield code="a">Index Term 1 655-a</subfield>
+    </datafield>
+    <datafield tag="655">
+      <subfield code="2">gnd-content</subfield>
+      <subfield code="a">Index Term 2 655-a</subfield>
+    </datafield>
+    <datafield tag="700">
+      <subfield code="a">Subject Person 1 Name 700-a</subfield>
+      <subfield code="c">Subject Person 1 Name Title 700-c</subfield>
+      <subfield code="e">Subject Person 1 Relator Title 700-e</subfield>
+      <subfield code="1">Subject Person 1 URI 700-1</subfield>
+      <subfield code="4">Subject Person 1 Relationship 700-4</subfield>
+    </datafield>
+    <datafield tag="700">
+      <subfield code="a">Subject Person 2 Name 700-a</subfield>
+      <subfield code="c">Subject Person 2 Name Title 700-c</subfield>
+      <subfield code="e">Subject Person 2 Relator Title 700-e</subfield>
+      <subfield code="1">Subject Person 2 URI 700-1</subfield>
+      <subfield code="4">Subject Person 2 Relationship 700-4</subfield>
+    </datafield>
+    <datafield tag="710">
+      <subfield code="a">Subject Corporate 1 Name 710-a</subfield>
+      <subfield code="e">Subject Corporate 1 Relator Title 710-e</subfield>
+      <subfield code="1">Subject Corporate 1 URI 710-1</subfield>
+      <subfield code="4">Subject Corporate 1 Relationship 710-4</subfield>
+    </datafield>
+    <datafield tag="710">
+      <subfield code="a">Subject Corporate 2 Name 710-a</subfield>
+      <subfield code="e">Subject Corporate 2 Relator Title 710-e</subfield>
+      <subfield code="1">Subject Corporate 2 URI 710-1</subfield>
+      <subfield code="4">Subject Corporate 2 Relationship 710-4</subfield>
+    </datafield>
+    <datafield tag="751">
+      <subfield code="a">Added Geographic 1 Name 751-a</subfield>
+      <subfield code="1">Added Geographic 1 URI 751-1</subfield>
+    </datafield>
+    <datafield tag="751">
+      <subfield code="a">Added Geographic 2 Name 751-a</subfield>
+      <subfield code="1">Added Geographic 2 URI 751-1</subfield>
+    </datafield>
+    <datafield tag="773">
+      <subfield code="d">Host Item Entry 1 Place 751-d</subfield>
+      <subfield code="g">Host Item Entry 1 Related 751-g</subfield>
+      <subfield code="t">Host Item Entry 1 Title 751-t</subfield>
+    </datafield>
+    <datafield tag="773">
+      <subfield code="d">Host Item Entry 2 Place 751-d</subfield>
+      <subfield code="g">Host Item Entry 2 Related 751-g</subfield>
+      <subfield code="t">Host Item Entry 2 Title 751-t</subfield>
+    </datafield>
+
+    <datafield tag="852">
+      <subfield code="a">Location 852-a</subfield>
+      <subfield code="b">Sublocation 852-b</subfield>
+      <subfield code="c">Shelving location 852-b</subfield>
+      <subfield code="j">Shelving Control Number 852-j</subfield>
+      <subfield code="p">Piece designation 852-p</subfield>
+    </datafield>
+    <datafield tag="856">
+      <subfield code="u">Electronic Resource URI 856-u</subfield>
+    </datafield>
+    <datafield tag="id">unique-identifier</datafield>
+    <datafield tag="manifest">https://www.e-rara.ch/i3f/v20/17611827/manifest</datafield>
+    <images>
+      <image>
+        <height>4577</height>
+        <width>4510</width>
+        <url type="iiif">https://www.e-rara.ch/zuz/i3f/v20/16259108</url>
+      </image>
+    </images>
+  </record>
+</records>
