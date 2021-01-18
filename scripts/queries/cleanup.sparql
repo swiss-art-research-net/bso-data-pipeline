@@ -4,24 +4,6 @@ PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-# Convert xsd:dateTime entitites to xsd:date values
-DELETE {
-  	?s a xsd:dateTime ;
-    	rdfs:label ?oldDateTimeEntity ;
-    	?p ?oldDateTimeEntity .
-} INSERT {
-  GRAPH ?g {
-    ?s ?p ?newDateTimeValue .
-  }
-} WHERE {
-  GRAPH ?g {
-    ?oldDateTimeEntity a xsd:dateTime ;
-      rdfs:label ?oldDateTimeValue .
-    ?s ?p ?oldDateTimeEntity .
-  }
-  BIND(STRDT(SUBSTR(STR(?oldDateTimeValue),0,10), xsd:date) as ?newDateTimeValue)
-};
-
 # Convert Point statements to wkt:literals
 DELETE {
   ?place crm:P168_place_is_defined_by ?oldPointStatement .
@@ -33,7 +15,8 @@ DELETE {
   GRAPH ?g {
     ?place crm:P168_place_is_defined_by ?oldPointStatement .
   }
-  BIND(STRDT(?oldPointStatement, <http://www.opengis.net/ont/geosparql#wktLiteral>) as ?newPointStatement)
+  BIND(STRDT(STR(?oldPointStatement), <http://www.opengis.net/ont/geosparql#wktLiteral>) as ?newPointStatement)
+  FILTER(?oldPointStatement !=?newPointStatement)
 };
 
 # Delete open end time statements
