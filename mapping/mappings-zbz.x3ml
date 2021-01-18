@@ -2243,7 +2243,7 @@
                     <source_node>subfield</source_node>
                     <target_node>
                         <entity>
-                            <type>crm:E7_Activity</type>
+                            <type>crm:E55_Type</type>
                             <instance_generator name="URIorUUID">
                                 <arg name="text" type="xpath">concat('https://d-nb.info/gnd/', text())</arg>
                             </instance_generator>
@@ -2267,7 +2267,7 @@
                     <source_node>subfield</source_node>
                     <target_node>
                         <entity>
-                            <type>crm:E7_Activity</type>
+                            <type>crm:E55_Type</type>
                             <instance_generator name="URIorUUID">
                                 <arg name="text" type="xpath">text()</arg>
                             </instance_generator>
