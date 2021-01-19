@@ -1,3 +1,4 @@
+import csv
 import re
 import sys
 from lxml import etree
@@ -6,12 +7,60 @@ from tqdm import tqdm
 limit = int(sys.argv[1]) if len(sys.argv) >1 else 999999
 offset = int(sys.argv[2]) if len(sys.argv) >2 else 0
 
+# Set paths for input and output files
 inputFile = '/data/source/nb-allRecords.xml'
 outputDir = '/data/xml/nb'
 
+# List externally loaded csv files
+# (these files contain data that has been added in open Refine)
+curatedDataFiles = [
+    "../data/source/nb-curation-personen.csv",
+    "../data/source/nb-curation-koerperschaften.csv",
+    "../data/source/nb-curation-geografika.csv"
+]
+
+# Column in CSV file used to match against IdName
+curatedKey = "Raw"
+
+# Columns to add
+curatedFieldsToAdd = ["GND-Nummer", "GND-Kennung", "WD"]
+
+# Read inputfile
 root = etree.parse(inputFile)
 
+
+collection = root.getroot()
+records = root.findall("Record")
+
+# Read all curated data into a list
+curatedData = []
+for curatedDataFile in curatedDataFiles:
+    with open(curatedDataFile, 'r') as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            curatedData.append(row)
+
+# For each descriptor add curated data for available Thesaurus
+descriptors = root.xpath("//Descriptor")
+
+for descriptor in descriptors:
+    thesaurus = descriptor.find("Thesaurus").text
+    key = descriptor.find("IdName").text
+    try:
+        dataToAdd = [d for d in curatedData if d['Thesaurus'] == thesaurus and d[curatedKey] == key][0]
+    except:
+        continue
+    for field in curatedFieldsToAdd:
+        if field in dataToAdd:
+            el = etree.SubElement(descriptor, field)
+            el.text = dataToAdd[field]
+
+# Define functions
 def getDateForDateElement(date):
+    """
+        Add day and month information for years
+        Jan 1 or Dec 31 depending on whether it is a beginning or end date
+    """
     if not date.text:
         return False
         
@@ -24,15 +73,12 @@ def getDateForDateElement(date):
             return "%s-12-31" % year
     return False
 
+# For each date element add full date information
 dates = root.xpath("//FromDate|//ToDate")
 for date in dates:
     fullDate = getDateForDateElement(date)
     if fullDate:
         date.set("fullDate", fullDate)
-
-collection = root.getroot()
-records = root.findall("Record")
-
 
 # Omit: Coordinates is a deprecated field
 #
@@ -62,6 +108,10 @@ records = root.findall("Record")
 #         elemCoord.set("longitude", coordinates['easting'])
 #         elemCoord.set("latitude", coordinates['northing'])
 
+collection = root.getroot()
+records = root.findall("Record")
+
+# Output each record individually
 for record in tqdm(records[offset:limit+offset]):
     collection.clear()
     id = record.get("Id")
