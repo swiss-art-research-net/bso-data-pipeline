@@ -152,7 +152,10 @@ externalFieldContent = {}
 for externalField in externalFields:
     filePath = externalFieldsDirectory + externalField + '.json'
     with open(filePath, 'r') as f:
-         externalFieldContent[externalField] = json.load(f)['rows']
+        try:
+            externalFieldContent[externalField] = json.load(f)['rows']
+        except:
+            exit("Could not read data from " + filePath)
 
 keys = list(rawData['rows'][0].keys())
 keys.sort()
