@@ -144,6 +144,7 @@
                 <Thesaurus>Personen</Thesaurus>
                 <IdName>FotografIn  (Personen\B\Berchem, Max van (1863 - 1921))</IdName>
                 <SeeAlso>Berchem, Max van (1863 - 1921)</SeeAlso>
+                <GND-Nummer>119369893</GND-Nummer>
             </Descriptor>
             <Descriptor>
                 <Name>Fotografie</Name>
@@ -155,13 +156,14 @@
                 <Thesaurus>Geografika</Thesaurus>
                 <IdName>Zürich (Stadt)  (Geografika\Europa\Schweiz\Zürich)</IdName>
                 <SeeAlso>Zürich</SeeAlso>
+                <GND-Kennung>4068038-1</GND-Kennung>
+                <WD>Q72</WD>
             </Descriptor>
         </Descriptors>
         <AdministrativeData>
             <LastEditedOn>2020-11-13</LastEditedOn>
             <CreatedOn>2015-01-06</CreatedOn>
         </AdministrativeData>
-        <Coordinates longitude="8.540291136467493" latitude="47.37786171638496"/>
     </Record>
     <Record Id="863687" ParentId="545275" Level="Dokument" IdName="EAD-6581   Zürich, Grossmünster, Portail, vue d'ensemble, 1901 (Dokument)">
         <DetailData>
@@ -308,6 +310,7 @@
                 <Thesaurus>Personen</Thesaurus>
                 <IdName>FotografIn  (Personen\B\Berchem, Max van (1863 - 1921))</IdName>
                 <SeeAlso>Berchem, Max van (1863 - 1921)</SeeAlso>
+                <GND-Nummer>119369893</GND-Nummer>
             </Descriptor>
             <Descriptor>
                 <Name>Fotografie</Name>
@@ -319,13 +322,14 @@
                 <Thesaurus>Geografika</Thesaurus>
                 <IdName>Zürich (Stadt)  (Geografika\Europa\Schweiz\Zürich)</IdName>
                 <SeeAlso>Zürich</SeeAlso>
+                <GND-Kennung>4068038-1</GND-Kennung>
+                <WD>Q72</WD>
             </Descriptor>
         </Descriptors>
         <AdministrativeData>
             <LastEditedOn>2020-11-13</LastEditedOn>
             <CreatedOn>2015-06-24</CreatedOn>
         </AdministrativeData>
-        <Coordinates longitude="8.540291136467493" latitude="47.37786171638496"/>
     </Record>
     <Record Id="863691" ParentId="545275" Level="Dokument" IdName="EAD-6582   Zürich, Grossmünster, vue partielle intérieure, 1901 (Dokument)">
         <DetailData>
@@ -472,6 +476,7 @@
                 <Thesaurus>Personen</Thesaurus>
                 <IdName>FotografIn  (Personen\B\Berchem, Max van (1863 - 1921))</IdName>
                 <SeeAlso>Berchem, Max van (1863 - 1921)</SeeAlso>
+                <GND-Nummer>119369893</GND-Nummer>
             </Descriptor>
             <Descriptor>
                 <Name>Fotografie</Name>
@@ -483,13 +488,14 @@
                 <Thesaurus>Geografika</Thesaurus>
                 <IdName>Zürich (Stadt)  (Geografika\Europa\Schweiz\Zürich)</IdName>
                 <SeeAlso>Zürich</SeeAlso>
+                <GND-Kennung>4068038-1</GND-Kennung>
+                <WD>Q72</WD>
             </Descriptor>
         </Descriptors>
         <AdministrativeData>
             <LastEditedOn>2020-11-13</LastEditedOn>
             <CreatedOn>2015-06-24</CreatedOn>
         </AdministrativeData>
-        <Coordinates longitude="8.540291136467493" latitude="47.37786171638496"/>
     </Record>
     <Record Id="863720" ParentId="545275" Level="Dokument" IdName="EAD-6583   Zürich, Grossmünster, vue partielle intérieure, 1901 (Dokument)">
         <DetailData>
@@ -636,6 +642,7 @@
                 <Thesaurus>Personen</Thesaurus>
                 <IdName>FotografIn  (Personen\B\Berchem, Max van (1863 - 1921))</IdName>
                 <SeeAlso>Berchem, Max van (1863 - 1921)</SeeAlso>
+                <GND-Nummer>119369893</GND-Nummer>
             </Descriptor>
             <Descriptor>
                 <Name>Fotografie</Name>
@@ -647,12 +654,13 @@
                 <Thesaurus>Geografika</Thesaurus>
                 <IdName>Zürich (Stadt)  (Geografika\Europa\Schweiz\Zürich)</IdName>
                 <SeeAlso>Zürich</SeeAlso>
+                <GND-Kennung>4068038-1</GND-Kennung>
+                <WD>Q72</WD>
             </Descriptor>
         </Descriptors>
         <AdministrativeData>
             <LastEditedOn>2020-11-13</LastEditedOn>
             <CreatedOn>2015-06-24</CreatedOn>
         </AdministrativeData>
-        <Coordinates longitude="8.540291136467493" latitude="47.37786171638496"/>
     </Record>
 </Collection>
