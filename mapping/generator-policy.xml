@@ -152,7 +152,7 @@
 		<pattern>{id}</pattern>
 	</generator>
 		
-	<generator name="URIwithWikidataId" prefix="wikidata">
+	<generator name="URIwithWikidataId" prefix="wd">
 		<pattern>{id}</pattern>
 	</generator>
 		
