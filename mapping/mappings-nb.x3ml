@@ -500,6 +500,10 @@
                                         <arg name="type" type="constant">type</arg>
                                         <arg name="id" type="xpath">../Name/text()</arg>
                                     </instance_generator>
+                                    <label_generator name="Literal">
+                                        <arg name="text" type="xpath">../Name/text()</arg>
+                                        <arg name="language" type="constant"/>
+                                    </label_generator>
                                 </entity>
                             </additional>
                         </entity>
