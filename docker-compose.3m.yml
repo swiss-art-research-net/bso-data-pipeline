@@ -2,7 +2,7 @@ version: "3"
 services:
 
   3m:
-    image: marketak/3m-docker:1.2
+    image: swissartresearx/3m-docker:latest
     container_name: ${PROJECT_NAME}_3m
     environment:
       - IP_ADDRESS=0.0.0.0
