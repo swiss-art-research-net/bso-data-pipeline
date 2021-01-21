@@ -14,6 +14,7 @@
         <namespace prefix="dc" uri="http://purl.org/dc/elements/1.1/" />
         <namespace prefix="la" uri="https://linked.art/ns/terms/"/>
         <namespace prefix="rso" uri="http://www.researchspace.org/ontology/" />
+        <namespace prefix="wd" uri="http://www.wikidata.org/entity/"/>
     </namespaces>
     <mappings>
         <mapping>
@@ -452,10 +453,55 @@
                     </if>
                     <entity variable="represented_place">
                         <type>crm:E53_Place</type>
-                        <instance_generator name="UUID"/>
+                        <instance_generator name="URIwithTypeAndId_hashed">
+                            <arg name="type" type="constant">place</arg>
+                            <arg name="id_HASHED_CONTENTS" type="xpath">IdName/text()</arg>
+                        </instance_generator>
                     </entity>
                 </target_node>
             </domain>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>GND-Kennung</relation>
+                    </source_relation>
+                    <target_relation>
+                        <relationship>crmdig:L54_is_same-as</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>GND-Kennung</source_node>
+                    <target_node>
+                        <entity>
+                            <type>crm:E53_Place</type>
+                            <instance_generator name="URIwithGndId">
+                                <arg name="id" type="xpath">text()</arg>
+                            </instance_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>WD</relation>
+                    </source_relation>
+                    <target_relation>
+                        <relationship>crmdig:L54_is_same-as</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>WD</source_node>
+                    <target_node>
+                        <entity>
+                            <type>crm:E53_Place</type>
+                            <instance_generator name="URIwithWikidataId">
+                                <arg name="id" type="xpath">text()</arg>
+                            </instance_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
         </mapping>
     </mappings>
 </x3ml>
