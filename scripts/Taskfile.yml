@@ -94,14 +94,28 @@ tasks:
       - /data/ttl/main/*/*.ttl
     cmds:
       - echo "Ingest main data"
-      - task: ingest-data
-        vars: 
-          FOLDER: /data/ttl/main/zbz
-          GRAPH: https://resource.swissartresearch.net/graph/zbz
+      - task: ingest-data-nb
+      - task: ingest-data-zbz
+
+  ingest-data-nb:
+    desc: Ingest the TTL files located in the data/ttl/main/nb folder to the Blazegraph instance
+    sources:
+      - /data/ttl/main/nb/*.ttl
+    cmds:
       - task: ingest-data
         vars: 
           FOLDER: /data/ttl/main/nb
           GRAPH: https://resource.swissartresearch.net/graph/nb
+
+  ingest-data-zbz:
+    desc: Ingest the TTL files located in the data/ttl/main/zbz folder to the Blazegraph instance
+    sources:
+      - /data/ttl/main/zbz/*.ttl
+    cmds:
+      - task: ingest-data
+        vars: 
+          FOLDER: /data/ttl/main/zbz
+          GRAPH: https://resource.swissartresearch.net/graph/zbz
 
   ingest-data-additional:
     desc: Ingest the TTL files located in the data/ttl/additional folder to the Blazegraph instance
