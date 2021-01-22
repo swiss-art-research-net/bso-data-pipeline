@@ -28,7 +28,6 @@ curatedFieldsToAdd = ["GND-Nummer", "GND-Kennung", "WD"]
 # Read inputfile
 root = etree.parse(inputFile)
 
-
 collection = root.getroot()
 records = root.findall("Record")
 
@@ -54,6 +53,40 @@ for descriptor in descriptors:
         if field in dataToAdd:
             el = etree.SubElement(descriptor, field)
             el.text = dataToAdd[field]
+
+# The names in the descriptors do not exactly match the ones used in the DataFields, for example...
+#
+#   <DataElement ElementName="KünstlerIn" ElementId="10927" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
+#     <ElementValue Sequence="1">
+#       <TextValue>Keller, Hans Heinrich</TextValue>
+#     </ElementValue>
+#   </DataElement>
+#
+#  ...has the corresponding Person Element...
+#
+#   <DataElement ElementName="Personen" ElementId="11053" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
+#     <ElementValue Sequence="1">
+#       <TextValue>BildendeR KünstlerIn  / Personen / K / Keller, Hans Heinrich / 1778 - 1862</TextValue>
+#     </ElementValue>
+#   </DataElement>
+#
+#  ...and Descriptor
+#
+#   <Descriptor>
+#     <Name>BildendeR KünstlerIn</Name>
+#     <Thesaurus>Personen</Thesaurus>
+#     <IdName>BildendeR KünstlerIn  (Personen\K\Keller, Hans Heinrich (1778 - 1862))</IdName>
+#     <SeeAlso>Keller, Hans Heinrich (1778 - 1862)</SeeAlso>
+#     <GND-Nummer>1018634584</GND-Nummer>
+#   </Descriptor>
+#
+#  Neither the Person Element nor the Descriptor specify the role exactly. They define the person as BilndendeR Künstlerin,
+#  but the DataElement can be more specific with regardsd to KünstlerIn or FotografIn (based on current data).
+#  
+#  Therefore, the Descriptor is added to the relevant DataElement by checking for the occurrence of the TextValue
+#  (e.g. Keller, Hans Heinrich) in the Descriptor's IdName (e.g. BildendeR KünstlerIn  (Personen\K\Keller, Hans Heinrich (1778 - 1862)))
+
+
 
 # Define functions
 def getDateForDateElement(date):
