@@ -148,6 +148,10 @@
 		<pattern>group/{group_id}/biography/{lang}/</pattern>
 	</generator>
 
+	<generator name="URIwithAatId" prefix="aat">
+		<pattern>{id}</pattern>
+	</generator>
+
 	<generator name="URIwithGndId" prefix="gnd">
 		<pattern>{id}</pattern>
 	</generator>

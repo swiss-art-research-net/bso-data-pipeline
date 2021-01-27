@@ -14,6 +14,7 @@
         <namespace prefix="dc" uri="http://purl.org/dc/elements/1.1/" />
         <namespace prefix="la" uri="https://linked.art/ns/terms/"/>
         <namespace prefix="rso" uri="http://www.researchspace.org/ontology/" />
+        <namespace prefix="aat" uri="http://vocab.getty.edu/aat/" />
     </namespaces>
     <mappings>
         <mapping>
@@ -426,9 +427,13 @@
                                     <instance_info>
                                         <constant/>
                                     </instance_info>
-                                    <instance_generator name="URIorUUID">
-                                        <arg name="text" type="constant">http://vocab.getty.edu/aat/300435416</arg>
+                                    <instance_generator name="URIwithAatId">
+                                        <arg name="id" type="constant">300435416</arg>
                                     </instance_generator>
+                                    <label_generator name="Literal">
+                                        <arg name="text" type="constant">descriptive note</arg>
+                                        <arg name="language" type="constant"/>
+                                    </label_generator>
                                 </entity>
                             </additional>
                         </entity>
@@ -470,6 +475,22 @@
                                     <instance_generator name="URIorUUID">
                                         <arg name="text" type="xpath">concat('https://d-nb.info/gnd/',./subfield[@code='1']/text())</arg>
                                     </instance_generator>
+                                </entity>
+                            </additional>
+                            <additional>
+                                <relationship>crm:P2_has_type</relationship>
+                                <entity>
+                                    <type>crm:E55_Type</type>
+                                    <instance_info>
+                                        <constant/>
+                                    </instance_info>
+                                    <instance_generator name="URIwithAatId">
+                                        <arg name="id" type="constant">300056462</arg>
+                                    </instance_generator>
+                                    <label_generator name="Literal">
+                                        <arg name="text" type="constant">art genres</arg>
+                                        <arg name="language" type="constant"/>
+                                    </label_generator>
                                 </entity>
                             </additional>
                         </entity>
@@ -570,8 +591,8 @@
                                     <instance_info>
                                         <constant/>
                                     </instance_info>
-                                    <instance_generator name="URIorUUID">
-                                        <arg name="text" type="constant">http://vocab.getty.edu/aat/300215302</arg>
+                                    <instance_generator name="URIwithAatId">
+                                        <arg name="id" type="constant">300215302</arg>
                                     </instance_generator>
                                     <label_generator name="Literal">
                                         <arg name="text" type="constant">Digital Image</arg>
@@ -690,9 +711,13 @@
                                     <instance_info>
                                         <constant/>
                                     </instance_info>
-                                    <instance_generator name="URIorUUID">
-                                        <arg name="text" type="constant">http://vocab.getty.edu/aat/300417209</arg>
+                                    <instance_generator name="URIwithAatId">
+                                        <arg name="id" type="constant">300417209</arg>
                                     </instance_generator>
+                                    <label_generator name="Literal">
+                                        <arg name="text" type="constant">full titles</arg>
+                                        <arg name="language" type="constant"/>
+                                    </label_generator>
                                 </entity>
                             </additional>
                         </entity>
@@ -1283,9 +1308,13 @@
                                     <instance_info>
                                         <constant/>
                                     </instance_info>
-                                    <instance_generator name="URIorUUID">
-                                        <arg name="text" type="constant">http://vocab.getty.edu/aat/300404670</arg>
+                                    <instance_generator name="URIwithAatId">
+                                        <arg name="id" type="constant">300404670</arg>
                                     </instance_generator>
+                                    <label_generator name="Literal">
+                                        <arg name="text" type="constant">preferred terms</arg>
+                                        <arg name="language" type="constant"/>
+                                    </label_generator>
                                 </entity>
                             </additional>
                             <additional>
@@ -1295,9 +1324,13 @@
                                     <instance_info>
                                         <constant/>
                                     </instance_info>
-                                    <instance_generator name="URIorUUID">
-                                        <arg name="text" type="constant">http://vocab.getty.edu/aat/300266386</arg>
+                                    <instance_generator name="URIwithAatId">
+                                        <arg name="id" type="constant">300266386</arg>
                                     </instance_generator>
+                                    <label_generator name="Literal">
+                                        <arg name="text" type="constant">personal names</arg>
+                                        <arg name="language" type="constant"/>
+                                    </label_generator>
                                 </entity>
                             </additional>
                         </entity>
@@ -1358,9 +1391,13 @@
                                     <instance_info>
                                         <constant/>
                                     </instance_info>
-                                    <instance_generator name="URIorUUID">
-                                        <arg name="text" type="constant">http://vocab.getty.edu/aat/300404670</arg>
+                                    <instance_generator name="URIwithAatId">
+                                        <arg name="id" type="constant">300404670</arg>
                                     </instance_generator>
+                                    <label_generator name="Literal">
+                                        <arg name="text" type="constant">preferred terms</arg>
+                                        <arg name="language" type="constant"/>
+                                    </label_generator>
                                 </entity>
                             </additional>
                         </entity>
@@ -1381,9 +1418,13 @@
                                     <instance_info>
                                         <constant/>
                                     </instance_info>
-                                    <instance_generator name="URIorUUID">
-                                        <arg name="text" type="constant">http://vocab.getty.edu/aat/300266386</arg>
+                                    <instance_generator name="URIwithAatId">
+                                        <arg name="id" type="xpath">300266386</arg>
                                     </instance_generator>
+                                    <label_generator name="Literal">
+                                        <arg name="text" type="constant">personal names</arg>
+                                        <arg name="language" type="constant"/>
+                                    </label_generator>
                                 </entity>
                             </additional>
                         </entity>
@@ -1472,9 +1513,13 @@
                                     <instance_info>
                                         <constant/>
                                     </instance_info>
-                                    <instance_generator name="URIorUUID">
-                                        <arg name="text" type="constant">http://vocab.getty.edu/aat/300404670</arg>
+                                    <instance_generator name="URIwithAatId">
+                                        <arg name="id" type="xpath">300404670</arg>
                                     </instance_generator>
+                                    <label_generator name="Literal">
+                                        <arg name="text" type="constant">preferred terms</arg>
+                                        <arg name="language" type="constant"/>
+                                    </label_generator>
                                 </entity>
                             </additional>
                         </entity>
