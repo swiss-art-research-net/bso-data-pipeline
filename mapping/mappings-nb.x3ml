@@ -21,7 +21,7 @@
             <domain>
                 <source_node>/Collection/Record</source_node>
                 <target_node>
-                    <entity global_variable="artwork">
+                    <entity>
                         <type>crm:E22_Man-Made_Object</type>
                         <instance_generator name="URIwithTypeAndId">
                             <arg name="type" type="constant">artwork</arg>
@@ -179,7 +179,7 @@
                 <range>
                     <source_node>DetailData/DataElement</source_node>
                     <target_node>
-                        <entity variable="work_creation_date">
+                        <entity>
                             <type>crm:E52_Time-Span</type>
                             <instance_generator name="URIwith2TypesAndId_hashed">
                                 <arg name="type1" type="constant">event</arg>
@@ -342,11 +342,11 @@
                 <range>
                     <source_node>Descriptors/Descriptor</source_node>
                     <target_node>
-                        <entity variable="represented_place">
+                        <entity>
                             <type>crm:E53_Place</type>
                             <instance_generator name="URIwithTypeAndId_hashed">
                                 <arg name="type" type="constant">place</arg>
-                                <arg name="id_HASHED_CONTENTS" type="xpath">IdName/text()</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">if (GND-Kennung/text()) then (GND-Kennung/text()) else (IdName/text())</arg>
                             </instance_generator>
                             <label_generator name="Literal">
                                 <arg name="text" type="xpath">Name/text()</arg>
@@ -367,7 +367,7 @@
                         <type>crm:E53_Place</type>
                         <instance_generator name="URIwithTypeAndId_hashed">
                             <arg name="type" type="constant">place</arg>
-                            <arg name="id_HASHED_CONTENTS" type="xpath">IdName/text()</arg>
+                            <arg name="id_HASHED_CONTENTS" type="xpath">if (GND-Kennung/text()) then (GND-Kennung/text()) else (IdName/text())</arg>
                         </instance_generator>
                     </entity>
                 </target_node>
@@ -426,7 +426,7 @@
                         <type>crm:E39_Actor</type>
                         <instance_generator name="URIwithTypeAndId_hashed">
                             <arg name="type" type="constant">actor</arg>
-                            <arg name="id_HASHED_CONTENTS" type="xpath">./IdName/text()</arg>
+                            <arg name="id_HASHED_CONTENTS" type="xpath">if (GND-Nummer/text()) then (GND-Nummer/text()) else (IdName/text())</arg>
                         </instance_generator>
                         <label_generator name="Literal">
                             <arg name="text" type="xpath">./SeeAlso/text()</arg>
@@ -528,7 +528,7 @@
                             <type>crm:E39_Actor</type>
                             <instance_generator name="URIwithTypeAndId_hashed">
                                 <arg name="type" type="constant">actor</arg>
-                                <arg name="id_HASHED_CONTENTS" type="xpath">text()</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">if (../GND-Nummer/text()) then (../GND-Nummer/text()) else (text())</arg>
                             </instance_generator>
                         </entity>
                     </target_node>
@@ -550,7 +550,7 @@
                             <type>crm:E39_Actor</type>
                             <instance_generator name="URIwithTypeAndId_hashed">
                                 <arg name="type" type="constant">actor</arg>
-                                <arg name="id_HASHED_CONTENTS" type="xpath">text()</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">if (../GND-Nummer/text()) then (../GND-Nummer/text()) else (text())</arg>
                             </instance_generator>
                         </entity>
                     </target_node>
@@ -603,7 +603,7 @@
                                     </instance_info>
                                     <instance_generator name="URIwithTypeAndId_hashed">
                                         <arg name="type" type="constant">actor</arg>
-                                        <arg name="id_HASHED_CONTENTS" type="xpath">text()</arg>
+                                        <arg name="id_HASHED_CONTENTS" type="xpath">if (../GND-Nummer/text()) then (../GND-Nummer/text()) else (text())</arg>
                                     </instance_generator>
                                     <label_generator name="Literal">
                                         <arg name="text" type="xpath">../SeeAlso/text()</arg>
@@ -648,7 +648,7 @@
                             <type>crm:E39_Actor</type>
                             <instance_generator name="URIwithTypeAndId_hashed">
                                 <arg name="type" type="constant">actor</arg>
-                                <arg name="id_HASHED_CONTENTS" type="xpath">text()</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">if (../GND-Nummer/text()) then (../GND-Nummer/text()) else (text())</arg>
                             </instance_generator>
                         </entity>
                     </target_node>
