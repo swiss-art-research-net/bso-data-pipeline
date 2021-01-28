@@ -1718,7 +1718,7 @@
                             <type>crm:E53_Place</type>
                             <instance_generator name="URIwithTypeAndId_hashed">
                                 <arg name="type" type="constant">place</arg>
-                                <arg name="id_HASHED_CONTENTS" type="xpath">text()</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">if (../subfield[@code='a-gnd-id']/text()) ../subfield[@code='a-gnd-id']/text() else text()</arg>
                             </instance_generator>
                             <label_generator name="Literal">
                                 <arg name="text" type="xpath">text()</arg>
@@ -1773,7 +1773,7 @@
                             <type>crm:E39_Actor</type>
                             <instance_generator name="URIwithTypeAndId_hashed">
                                 <arg name="type" type="constant">actor</arg>
-                                <arg name="id_HASHED_CONTENTS" type="xpath">text()</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">if (../subfield[@code='b-gnd-id']/text()) ../subfield[@code='b-gnd-id']/text() else text()</arg>
                             </instance_generator>
                             <label_generator name="Literal">
                                 <arg name="text" type="xpath">text()</arg>
@@ -1865,7 +1865,7 @@
                             <type>crm:E53_Place</type>
                             <instance_generator name="URIwithTypeAndId_hashed">
                                 <arg name="type" type="constant">place</arg>
-                                <arg name="id_HASHED_CONTENTS" type="xpath">../subfield[@code='a']/text()</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">text()</arg>
                             </instance_generator>
                         </entity>
                         <relationship>crmdig:L54_is_same-as</relationship>
@@ -1897,7 +1897,7 @@
                             <type>crm:E39_Actor</type>
                             <instance_generator name="URIwithTypeAndId_hashed">
                                 <arg name="type" type="constant">actor</arg>
-                                <arg name="id_HASHED_CONTENTS" type="xpath">../subfield[@code='b']/text()</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">text()</arg>
                             </instance_generator>
                         </entity>
                         <relationship>crmdig:L54_is_same-as</relationship>
