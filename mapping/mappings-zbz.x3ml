@@ -1388,7 +1388,7 @@
                         <type>crm:E39_Actor</type>
                         <instance_generator name="URIwithTypeAndId_hashed">
                             <arg name="type" type="constant">actor</arg>
-                            <arg name="id_HASHED_CONTENTS" type="xpath">if (../subfield[@code='gnd']/text()) then (../subfield[@code='gnd']/text()) else (text())</arg>
+                            <arg name="id_HASHED_CONTENTS" type="xpath">if (subfield[@code='gnd']/text()) then (subfield[@code='gnd']/text()) else (subfield[@code='a']/text())</arg>
                         </instance_generator>
                         <label_generator name="Literal">
                             <arg name="text" type="xpath">subfield[@code='a']/text()</arg>
@@ -1613,7 +1613,7 @@
                         <equals value="110">@tag</equals>
                     </if>
                     <entity variable="artist_or_creator_group">
-                        <type>crm:E39_Actor</type>
+                        <type>crm:E74_Group</type>
                         <instance_generator name="UUID"/>
                     </entity>
                 </target_node>
@@ -1678,7 +1678,7 @@
                     <source_node>subfield</source_node>
                     <target_node>
                         <entity>
-                            <type>crm:E39_Actor</type>
+                            <type>crm:E74_Group</type>
                             <instance_generator name="URIorUUID">
                                 <arg name="text" type="xpath">concat('https://d-nb.info/gnd/', substring(text(),9))</arg>
                             </instance_generator>
@@ -2605,7 +2605,7 @@
                             <type>crm:E39_Actor</type>
                             <instance_generator name="URIwithTypeAndId">
                                 <arg name="type" type="constant">actor</arg>
-                                <arg name="id" type="xpath">../subfield[@code='id_person']/text()</arg>
+                                <arg name="id" type="xpath">if (../subfield[@code='gnd']/text()) then (../subfield[@code='gnd']/text()) else text()</arg>
                             </instance_generator>
                             <label_generator name="Literal">
                                 <arg name="text" type="xpath">text()</arg>
