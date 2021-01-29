@@ -16,7 +16,7 @@ inputFiles = [path.join(root, name)
 
 # Identify GND identifiers by looking at triples where the object is  a GND identifier
 gndIdentifiers = []
-for file in inputFiles:
+for file in tqdm(inputFiles):
     g = rdflib.Graph()
     g.parse(file, format='ttl')
     queryResults = g.query(
