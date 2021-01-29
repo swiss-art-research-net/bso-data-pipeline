@@ -522,9 +522,6 @@
                                     <instance_info>
                                         <constant/>
                                     </instance_info>
-                                    <instance_generator name="URIorUUID">
-                                        <arg name="text" type="xpath">concat('https://d-nb.info/gnd/',./subfield[@code='1']/text())</arg>
-                                    </instance_generator>
                                 </entity>
                             </additional>
                             <additional>
@@ -2888,7 +2885,7 @@
                                         <constant/>
                                     </instance_info>
                                     <instance_generator name="URIorUUID">
-                                        <arg name="text" type="xpath">concat('https://d-nb.info/gnd/',./subfield[@code='1']/text())</arg>
+                                        <arg name="text" type="xpath">concat('https://d-nb.info/gnd/',./subfield[@code='gnd']/text())</arg>
                                     </instance_generator>
                                 </entity>
                             </additional>
@@ -2898,6 +2895,4 @@
             </link>
         </mapping>
     </mappings>
-
-
 </x3ml>
