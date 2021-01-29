@@ -72,19 +72,11 @@ tasks:
 
   retrieve-gnd:
     desc: Extracts relevant data from GND based on identifiers found in the mapped TTL files
-    sources:
-      - /data/ttl/main/*/*.ttl
-    generates:
-      - /data/ttl/additional/gnd.ttl
     cmds:
       - python /scripts/extract-gnd-data.py
 
   retrieve-wikidata:
     desc: Extracts relevant data from Wikidata based on identifiers found in the mapped TTL files
-    sources:
-      - /data/ttl/main/*/*.ttl
-    generates:
-      - /data/ttl/additional/wd.ttl
     cmds:
       - python /scripts/extract-wd-data.py
 
