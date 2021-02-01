@@ -580,6 +580,82 @@
                     </target_node>
                 </range>
             </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>uuid</relation>
+                    </source_relation>
+                    <target_relation>
+                        <relationship>crm:P70i_is_documented_in</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>uuid</source_node>
+                    <target_node>
+                        <entity>
+                            <type>crm:E31_Document</type>
+                            <instance_generator name="URIwithTypeSubtypeAndId">
+                                <arg name="type" type="constant">artwork</arg>
+                                <arg name="id" type="xpath">text()</arg>
+                                <arg name="subtype" type="constant">meta</arg>
+                            </instance_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+        </mapping>
+        <mapping>
+            <domain>
+                <source_node>/records/record/uuid</source_node>
+                <target_node>
+                    <entity variable="metadata">
+                        <type>crm:E31_Document</type>
+                        <instance_generator name="URIwithTypeSubtypeAndId">
+                            <arg name="type" type="constant">artwork</arg>
+                            <arg name="id" type="xpath">text()</arg>
+                            <arg name="subtype" type="constant">meta</arg>
+                        </instance_generator>
+                    </entity>
+                </target_node>
+            </domain>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>.</relation>
+                    </source_relation>
+                    <target_relation>
+                        <relationship>crm:P94i_was_created_by</relationship>
+                        <entity>
+                            <type>crm:E65_Creation</type>
+                            <instance_generator name="URIwithTypeSubtypeIdAnd1Level">
+                                <arg name="type" type="constant">artwork</arg>
+                                <arg name="id" type="xpath">text()</arg>
+                                <arg name="subtype" type="constant">meta</arg>
+                                <arg name="level1" type="constant">creation</arg>
+                            </instance_generator>
+                        </entity>
+                        <relationship>crm:P14_carried_out_by</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>.</source_node>
+                    <target_node>
+                        <entity variable="metadata_creator">
+                            <type>crm:E39_Actor</type>
+                            <instance_info>
+                                <constant>https://d-nb.info/gnd/1012546-2</constant>
+                            </instance_info>
+                            <instance_generator name="URIorUUID">
+                                <arg name="text" type="constant">https://d-nb.info/gnd/1012546-2</arg>
+                            </instance_generator>
+                            <label_generator name="Literal">
+                                <arg name="text" type="constant">Zentralbibliothek Zürich</arg>
+                                <arg name="language" type="constant">de</arg>
+                            </label_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
         </mapping>
         <mapping>
             <domain>
@@ -1420,7 +1496,11 @@
                                     <equals value="a">@code</equals>
                                 </if>
                                 <if>
-                                    <equals value="">../subfield[@code='c']/text()</equals>
+                                    <not>
+                                        <if>
+                                            <exists>../subfield[@code='c']/text()</exists>
+                                        </if>
+                                    </not>
                                 </if>
                             </and>
                         </if>
@@ -1466,6 +1546,20 @@
                                     </label_generator>
                                 </entity>
                             </additional>
+                            <additional>
+                                <relationship>crm:P70i_is_documented_in</relationship>
+                                <entity>
+                                    <type>crm:E31_Document</type>
+                                    <instance_info>
+                                        <constant/>
+                                    </instance_info>
+                                    <instance_generator name="URIwithTypeSubtypeAndId">
+                                        <arg name="type" type="constant">artwork</arg>
+                                        <arg name="id" type="xpath">../../uuid/text()</arg>
+                                        <arg name="subtype" type="constant">meta</arg>
+                                    </instance_generator>
+                                </entity>
+                            </additional>
                         </entity>
                         <relationship>rdfs:label</relationship>
                     </target_relation>
@@ -1495,11 +1589,7 @@
                                     <equals value="a">@code</equals>
                                 </if>
                                 <if>
-                                    <not>
-                                        <if>
-                                            <equals value="">../subfield[@code='c']/text()</equals>
-                                        </if>
-                                    </not>
+                                    <exists>../subfield[@code='c']/text()</exists>
                                 </if>
                             </and>
                         </if>
@@ -1531,6 +1621,20 @@
                                         <arg name="text" type="constant">preferred terms</arg>
                                         <arg name="language" type="constant"/>
                                     </label_generator>
+                                </entity>
+                            </additional>
+                            <additional>
+                                <relationship>crm:P70i_is_documented_in</relationship>
+                                <entity>
+                                    <type>crm:E31_Document</type>
+                                    <instance_info>
+                                        <constant/>
+                                    </instance_info>
+                                    <instance_generator name="URIwithTypeSubtypeAndId">
+                                        <arg name="type" type="constant">artwork</arg>
+                                        <arg name="id" type="xpath">../../uuid/text()</arg>
+                                        <arg name="subtype" type="constant">meta</arg>
+                                    </instance_generator>
                                 </entity>
                             </additional>
                         </entity>
@@ -1655,6 +1759,20 @@
                                     </label_generator>
                                 </entity>
                             </additional>
+                            <additional>
+                                <relationship>crm:P70i_is_documented_in</relationship>
+                                <entity>
+                                    <type>crm:E31_Document</type>
+                                    <instance_info>
+                                        <constant/>
+                                    </instance_info>
+                                    <instance_generator name="URIwithTypeSubtypeAndId">
+                                        <arg name="type" type="constant">artwork</arg>
+                                        <arg name="id" type="xpath">../../uuid/text()</arg>
+                                        <arg name="subtype" type="constant">meta</arg>
+                                    </instance_generator>
+                                </entity>
+                            </additional>
                         </entity>
                     </target_node>
                 </range>
@@ -1741,6 +1859,20 @@
                                 <arg name="text" type="xpath">text()</arg>
                                 <arg name="language" type="constant"/>
                             </label_generator>
+                            <additional>
+                                <relationship>crm:P70i_is_documented_in</relationship>
+                                <entity>
+                                    <type>crm:E31_Document</type>
+                                    <instance_info>
+                                        <constant/>
+                                    </instance_info>
+                                    <instance_generator name="URIwithTypeSubtypeAndId">
+                                        <arg name="type" type="constant">artwork</arg>
+                                        <arg name="id" type="xpath">../../uuid/text()</arg>
+                                        <arg name="subtype" type="constant">meta</arg>
+                                    </instance_generator>
+                                </entity>
+                            </additional>
                         </entity>
                     </target_node>
                 </range>
@@ -1796,6 +1928,20 @@
                                 <arg name="text" type="xpath">text()</arg>
                                 <arg name="language" type="constant"/>
                             </label_generator>
+                            <additional>
+                                <relationship>crm:P70i_is_documented_in</relationship>
+                                <entity>
+                                    <type>crm:E31_Document</type>
+                                    <instance_info>
+                                        <constant/>
+                                    </instance_info>
+                                    <instance_generator name="URIwithTypeSubtypeAndId">
+                                        <arg name="type" type="constant">artwork</arg>
+                                        <arg name="id" type="xpath">../../uuid/text()</arg>
+                                        <arg name="subtype" type="constant">meta</arg>
+                                    </instance_generator>
+                                </entity>
+                            </additional>
                         </entity>
                     </target_node>
                 </range>
@@ -2893,6 +3039,27 @@
                     </target_node>
                 </range>
             </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation/>
+                    </source_relation>
+                    <target_relation>
+                        <relationship/>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node/>
+                    <target_node>
+                        <entity>
+                            <type/>
+                            <instance_generator name="UUID"/>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
         </mapping>
     </mappings>
+
+
 </x3ml>
