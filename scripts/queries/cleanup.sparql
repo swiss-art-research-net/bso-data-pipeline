@@ -33,5 +33,5 @@ DELETE {
 } WHERE {
     ?s a crm:E52_Time-Span .
     ?s crm:P82b_end_of_the_end ?end .
-    FILTER(STRSTARTS(?end, "9999-12-31"))
+    FILTER(STRSTARTS(?end, "9999"))
 };
