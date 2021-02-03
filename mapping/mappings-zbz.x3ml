@@ -516,15 +516,6 @@
                                 <arg name="language" type="constant"/>
                             </label_generator>
                             <additional>
-                                <relationship>crmdig:L54_is_same-as</relationship>
-                                <entity>
-                                    <type>crm:E55_Type</type>
-                                    <instance_info>
-                                        <constant/>
-                                    </instance_info>
-                                </entity>
-                            </additional>
-                            <additional>
                                 <relationship>crm:P2_has_type</relationship>
                                 <entity>
                                     <type>crm:E55_Type</type>
@@ -574,7 +565,7 @@
                                 <arg name="type" type="constant">artwork</arg>
                                 <arg name="id" type="xpath">../uuid/text()</arg>
                                 <arg name="subtype" type="constant">production</arg>
-                                <arg name="level1" type="xpath">./subfield[@code='4']/text()</arg>
+                                <arg name="level1" type="xpath">if (./subfield[@code='4']/text()) then (./subfield[@code='4']/text()) else ('rel')</arg>
                             </instance_generator>
                         </entity>
                     </target_node>
@@ -2964,7 +2955,7 @@
                             <arg name="type" type="constant">artwork</arg>
                             <arg name="id" type="xpath">../uuid/text()</arg>
                             <arg name="subtype" type="constant">production</arg>
-                            <arg name="level1" type="xpath">./subfield[@code='4']/text()</arg>
+                            <arg name="level1" type="xpath">if (./subfield[@code='4']/text()) then (./subfield[@code='4']/text()) else ('rel')</arg>
                         </instance_generator>
                     </entity>
                 </target_node>
@@ -3035,25 +3026,6 @@
                                     </instance_generator>
                                 </entity>
                             </additional>
-                        </entity>
-                    </target_node>
-                </range>
-            </link>
-            <link>
-                <path>
-                    <source_relation>
-                        <relation/>
-                    </source_relation>
-                    <target_relation>
-                        <relationship/>
-                    </target_relation>
-                </path>
-                <range>
-                    <source_node/>
-                    <target_node>
-                        <entity>
-                            <type/>
-                            <instance_generator name="UUID"/>
                         </entity>
                     </target_node>
                 </range>
