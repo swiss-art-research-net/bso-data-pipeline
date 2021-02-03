@@ -1133,7 +1133,7 @@
                 <range>
                     <source_node>datafield</source_node>
                     <target_node>
-                        <entity variable="creation_700">
+                        <entity>
                             <type>crm:E65_Creation</type>
                             <instance_generator name="URIwithTypeSubtypeIdAnd1Level">
                                 <arg name="type" type="constant">artwork</arg>
@@ -1197,7 +1197,7 @@
                 <range>
                     <source_node>datafield</source_node>
                     <target_node>
-                        <entity variable="creator_700">
+                        <entity>
                             <type>crm:E39_Actor</type>
                             <instance_generator name="URIwithTypeAndId_hashed">
                                 <arg name="type" type="constant">actor</arg>
@@ -2549,7 +2549,7 @@
                                         <constant/>
                                     </instance_info>
                                     <instance_generator name="typedLiteralGen">
-                                        <arg name="text" type="xpath">concat(text(),"-01-01-")</arg>
+                                        <arg name="text" type="xpath">concat(text(),"-01-01")</arg>
                                     </instance_generator>
                                 </entity>
                             </additional>
@@ -2561,7 +2561,7 @@
                                         <constant/>
                                     </instance_info>
                                     <instance_generator name="typedLiteralGen">
-                                        <arg name="text" type="xpath">concat(text(),"-12-31-")</arg>
+                                        <arg name="text" type="xpath">concat(text(),"-12-31")</arg>
                                     </instance_generator>
                                 </entity>
                             </additional>
@@ -3154,7 +3154,7 @@
                                         <constant/>
                                     </instance_info>
                                     <instance_generator name="typedLiteralGen">
-                                        <arg name="text" type="xpath">concat("01-01-", text())</arg>
+                                        <arg name="text" type="xpath">concat(text(), "-01-01")</arg>
                                     </instance_generator>
                                 </entity>
                             </additional>
@@ -3166,7 +3166,7 @@
                                         <constant/>
                                     </instance_info>
                                     <instance_generator name="typedLiteralGen">
-                                        <arg name="text" type="xpath">concat("31-11-", text())</arg>
+                                        <arg name="text" type="xpath">concat(text(), "-12-31")</arg>
                                     </instance_generator>
                                 </entity>
                             </additional>
@@ -3213,7 +3213,7 @@
                                         <constant/>
                                     </instance_info>
                                     <instance_generator name="typedLiteralGen">
-                                        <arg name="text" type="xpath">concat("01-01-", text())</arg>
+                                        <arg name="text" type="xpath">concat(text(), "-01-01")</arg>
                                     </instance_generator>
                                 </entity>
                             </additional>
@@ -3225,7 +3225,7 @@
                                         <constant/>
                                     </instance_info>
                                     <instance_generator name="typedLiteralGen">
-                                        <arg name="text" type="xpath">concat("31-11-", text())</arg>
+                                        <arg name="text" type="xpath">concat(text(), "12-31")</arg>
                                     </instance_generator>
                                 </entity>
                             </additional>
