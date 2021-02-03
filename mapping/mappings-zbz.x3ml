@@ -1133,7 +1133,7 @@
                 <range>
                     <source_node>datafield</source_node>
                     <target_node>
-                        <entity>
+                        <entity variable="creation_700">
                             <type>crm:E65_Creation</type>
                             <instance_generator name="URIwithTypeSubtypeIdAnd1Level">
                                 <arg name="type" type="constant">artwork</arg>
@@ -1173,6 +1173,40 @@
                                 <arg name="subtype" type="constant">subcreation</arg>
                                 <arg name="subId_HASHED_CONTENTS" type="xpath">./subfield[@code='a']/text()</arg>
                             </instance_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>datafield</relation>
+                    </source_relation>
+                    <target_relation>
+                        <if>
+                            <equals value="700">@tag</equals>
+                        </if>
+                        <relationship>crm:P94i_was_created_by</relationship>
+                        <entity variable="creation">
+                            <type>crm:E65_Creation</type>
+                            <instance_generator name="UUID"/>
+                        </entity>
+                        <relationship>crm:P14_carried_out_by</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>datafield</source_node>
+                    <target_node>
+                        <entity variable="creator_700">
+                            <type>crm:E39_Actor</type>
+                            <instance_generator name="URIwithTypeAndId_hashed">
+                                <arg name="type" type="constant">actor</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">if (subfield[@code='gnd']/text()) then (subfield[@code='gnd']/text()) else (subfield[@code='a']/text())</arg>
+                            </instance_generator>
+                            <label_generator name="Literal">
+                                <arg name="text" type="xpath">subfield[@code='a']/text()</arg>
+                                <arg name="language" type="constant"/>
+                            </label_generator>
                         </entity>
                     </target_node>
                 </range>
@@ -2735,38 +2769,14 @@
                     <target_node>
                         <entity>
                             <type>crm:E39_Actor</type>
-                            <instance_generator name="URIwithTypeAndId">
+                            <instance_generator name="URIwithTypeAndId_hashed">
                                 <arg name="type" type="constant">actor</arg>
-                                <arg name="id" type="xpath">if (../subfield[@code='gnd']/text()) then (../subfield[@code='gnd']/text()) else text()</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">if (../subfield[@code='gnd']/text()) then (../subfield[@code='gnd']/text()) else text()</arg>
                             </instance_generator>
                             <label_generator name="Literal">
                                 <arg name="text" type="xpath">text()</arg>
                                 <arg name="language" type="constant"/>
                             </label_generator>
-                            <additional>
-                                <relationship>crmdig:L54_is_same-as</relationship>
-                                <entity>
-                                    <type>crm:E39_Actor</type>
-                                    <instance_info>
-                                        <constant/>
-                                    </instance_info>
-                                    <instance_generator name="URIorUUID">
-                                        <arg name="text" type="xpath">../subfield[@code='wikidata_uri']/text()</arg>
-                                    </instance_generator>
-                                </entity>
-                            </additional>
-                            <additional>
-                                <relationship>crmdig:L54_is_same-as</relationship>
-                                <entity>
-                                    <type>crm:E39_Actor</type>
-                                    <instance_info>
-                                        <constant/>
-                                    </instance_info>
-                                    <instance_generator name="URIorUUID">
-                                        <arg name="text" type="xpath">concat('https://d-nb.info/gnd/', ../subfield[@code='gnd']/text())</arg>
-                                    </instance_generator>
-                                </entity>
-                            </additional>
                         </entity>
                     </target_node>
                 </range>
@@ -3021,6 +3031,201 @@
                                     </instance_info>
                                     <instance_generator name="URIorUUID">
                                         <arg name="text" type="xpath">concat('https://d-nb.info/gnd/',./subfield[@code='gnd']/text())</arg>
+                                    </instance_generator>
+                                </entity>
+                            </additional>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+        </mapping>
+        <mapping>
+            <domain>
+                <source_node>/records/record/datafield/subfield</source_node>
+                <target_node>
+                    <if>
+                        <and>
+                            <if>
+                                <equals value="700">../@tag</equals>
+                            </if>
+                            <if>
+                                <equals value="a">@code</equals>
+                            </if>
+                        </and>
+                    </if>
+                    <entity>
+                        <type>crm:E39_Actor</type>
+                        <instance_info/>
+                        <instance_generator name="URIwithTypeAndId_hashed">
+                            <arg name="type" type="constant">actor</arg>
+                            <arg name="id_HASHED_CONTENTS" type="xpath">if (../subfield[@code='gnd']/text()) then (../subfield[@code='gnd']/text()) else (text())</arg>
+                        </instance_generator>
+                        <label_generator name="Literal">
+                            <arg name="text" type="xpath">text()</arg>
+                            <arg name="language" type="constant"/>
+                        </label_generator>
+                    </entity>
+                </target_node>
+            </domain>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>../subfield</relation>
+                    </source_relation>
+                    <target_relation>
+                        <if>
+                            <equals value="gnd">@code</equals>
+                        </if>
+                        <relationship>crmdig:L54_is_same-as</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>../subfield</source_node>
+                    <target_node>
+                        <entity>
+                            <type>crm:E39_Actor</type>
+                            <instance_generator name="URIorUUID">
+                                <arg name="text" type="xpath">concat('https://d-nb.info/gnd/', text())</arg>
+                            </instance_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>../subfield</relation>
+                    </source_relation>
+                    <target_relation>
+                        <if>
+                            <equals value="wikidata_uri">@code</equals>
+                        </if>
+                        <relationship>crmdig:L54_is_same-as</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>../subfield</source_node>
+                    <target_node>
+                        <entity>
+                            <type>crm:E39_Actor</type>
+                            <instance_generator name="URIorUUID">
+                                <arg name="text" type="xpath">text()</arg>
+                            </instance_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>../subfield</relation>
+                    </source_relation>
+                    <target_relation>
+                        <if>
+                            <equals value="Geburtsdatum">@code</equals>
+                        </if>
+                        <relationship>crm:P98i_was_born</relationship>
+                        <entity>
+                            <type>crm:E67_Birth</type>
+                            <instance_generator name="URIwithTypeSuptypeAndId_hashed">
+                                <arg name="type" type="constant">actor</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">if (../subfield[@code='gnd']/text()) then ../subfield[@code='gnd']/text() else ../subfield[@code='a']/text()</arg>
+                                <arg name="subtype" type="constant">birth</arg>
+                            </instance_generator>
+                        </entity>
+                        <relationship>crm:P4_has_time-span</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>../subfield</source_node>
+                    <target_node>
+                        <entity>
+                            <type>crm:E52_Time-Span</type>
+                            <instance_generator name="URIwithTypeSuptypeAndId_hashed">
+                                <arg name="type" type="constant">actor</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">if (../subfield[@code='gnd']/text()) then ../subfield[@code='gnd']/text() else ../subfield[@code='a']/text()</arg>
+                                <arg name="subtype" type="constant">birthDate</arg>
+                            </instance_generator>
+                            <additional>
+                                <relationship>crm:P82a_begin_of_the_begin</relationship>
+                                <entity>
+                                    <type>xsd:dateTime</type>
+                                    <instance_info>
+                                        <constant/>
+                                    </instance_info>
+                                    <instance_generator name="typedLiteralGen">
+                                        <arg name="text" type="xpath">concat("01-01-", text())</arg>
+                                    </instance_generator>
+                                </entity>
+                            </additional>
+                            <additional>
+                                <relationship>crm:P82b_end_of_the_end</relationship>
+                                <entity>
+                                    <type>xsd:dateTime</type>
+                                    <instance_info>
+                                        <constant/>
+                                    </instance_info>
+                                    <instance_generator name="typedLiteralGen">
+                                        <arg name="text" type="xpath">concat("31-11-", text())</arg>
+                                    </instance_generator>
+                                </entity>
+                            </additional>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>../subfield</relation>
+                    </source_relation>
+                    <target_relation>
+                        <if>
+                            <equals value="Sterbedatum">@code</equals>
+                        </if>
+                        <relationship>crm:P100i_died_in</relationship>
+                        <entity>
+                            <type>crm:E67_Birth</type>
+                            <instance_generator name="URIwithTypeSuptypeAndId_hashed">
+                                <arg name="type" type="constant">actor</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">if (../subfield[@code='gnd']/text()) then ../subfield[@code='gnd']/text() else ../subfield[@code='a']/text()</arg>
+                                <arg name="subtype" type="constant">death</arg>
+                            </instance_generator>
+                        </entity>
+                        <relationship>crm:P4_has_time-span</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>../subfield</source_node>
+                    <target_node>
+                        <entity>
+                            <type>crm:E52_Time-Span</type>
+                            <instance_generator name="URIwithTypeSuptypeAndId_hashed">
+                                <arg name="type" type="constant">actor</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">if (../subfield[@code='gnd']/text()) then ../subfield[@code='gnd']/text() else ../subfield[@code='a']/text()</arg>
+                                <arg name="subtype" type="constant">deathDate</arg>
+                            </instance_generator>
+                            <additional>
+                                <relationship>crm:P82a_begin_of_the_begin</relationship>
+                                <entity>
+                                    <type>xsd:dateTime</type>
+                                    <instance_info>
+                                        <constant/>
+                                    </instance_info>
+                                    <instance_generator name="typedLiteralGen">
+                                        <arg name="text" type="xpath">concat("01-01-", text())</arg>
+                                    </instance_generator>
+                                </entity>
+                            </additional>
+                            <additional>
+                                <relationship>crm:P82b_end_of_the_end</relationship>
+                                <entity>
+                                    <type>xsd:dateTime</type>
+                                    <instance_info>
+                                        <constant/>
+                                    </instance_info>
+                                    <instance_generator name="typedLiteralGen">
+                                        <arg name="text" type="xpath">concat("31-11-", text())</arg>
                                     </instance_generator>
                                 </entity>
                             </additional>
