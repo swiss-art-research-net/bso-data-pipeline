@@ -2324,9 +2324,9 @@
                         <relationship>crm:P98i_was_born</relationship>
                         <entity>
                             <type>crm:E67_Birth</type>
-                            <instance_generator name="URIwithTypeSubtypeAndId">
-                                <arg name="type" type="constant">person</arg>
-                                <arg name="id" type="xpath">../subfield[@code='id_person']/text()</arg>
+                            <instance_generator name="URIwithTypeSuptypeAndId_hashed">
+                                <arg name="type" type="constant">actor</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">if (../subfield[@code='gnd']/text()) then ../subfield[@code='gnd']/text() else ../subfield[@code='a']/text()</arg>
                                 <arg name="subtype" type="constant">birth</arg>
                             </instance_generator>
                         </entity>
@@ -2338,11 +2338,10 @@
                     <target_node>
                         <entity>
                             <type>crm:E52_Time-Span</type>
-                            <instance_generator name="URIwithTypeSubtypeIdAnd1Level">
-                                <arg name="type" type="constant">person</arg>
-                                <arg name="id" type="xpath">../subfield[@code='id_person']/text()</arg>
-                                <arg name="subtype" type="constant">birth</arg>
-                                <arg name="level1" type="constant">date</arg>
+                            <instance_generator name="URIwithTypeSuptypeAndId_hashed">
+                                <arg name="type" type="constant">actor</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">if (../subfield[@code='gnd']/text()) then ../subfield[@code='gnd']/text() else ../subfield[@code='a']/text()</arg>
+                                <arg name="subtype" type="constant">birthDate</arg>
                             </instance_generator>
                             <additional>
                                 <relationship>crm:P82a_begin_of_the_begin</relationship>
@@ -2384,9 +2383,9 @@
                         <relationship>crm:P100i_died_in</relationship>
                         <entity>
                             <type>crm:E67_Birth</type>
-                            <instance_generator name="URIwithTypeSubtypeAndId">
-                                <arg name="type" type="constant">person</arg>
-                                <arg name="id" type="xpath">../subfield[@code='id_person']/text()</arg>
+                            <instance_generator name="URIwithTypeSuptypeAndId_hashed">
+                                <arg name="type" type="constant">actor</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">if (../subfield[@code='gnd']/text()) then ../subfield[@code='gnd']/text() else ../subfield[@code='a']/text()</arg>
                                 <arg name="subtype" type="constant">death</arg>
                             </instance_generator>
                         </entity>
@@ -2398,11 +2397,10 @@
                     <target_node>
                         <entity>
                             <type>crm:E52_Time-Span</type>
-                            <instance_generator name="URIwithTypeSubtypeIdAnd1Level">
-                                <arg name="type" type="constant">person</arg>
-                                <arg name="id" type="xpath">../subfield[@code='id_person']/text()</arg>
-                                <arg name="subtype" type="constant">death</arg>
-                                <arg name="level1" type="constant">date</arg>
+                            <instance_generator name="URIwithTypeSuptypeAndId_hashed">
+                                <arg name="type" type="constant">actor</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">if (../subfield[@code='gnd']/text()) then ../subfield[@code='gnd']/text() else ../subfield[@code='a']/text()</arg>
+                                <arg name="subtype" type="constant">deathDate</arg>
                             </instance_generator>
                             <additional>
                                 <relationship>crm:P82a_begin_of_the_begin</relationship>
