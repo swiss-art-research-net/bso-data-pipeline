@@ -1223,6 +1223,44 @@
                     </target_node>
                 </range>
             </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>datafield/subfield</relation>
+                    </source_relation>
+                    <target_relation>
+                        <if>
+                            <equals value="710">../@tag</equals>
+                        </if>
+                        <relationship>crm:P94i_was_created_by</relationship>
+                        <entity variable="creation">
+                            <type>crm:E65_Creation</type>
+                            <instance_generator name="URIwithTypeSubtypeAndId">
+                                <arg name="type" type="constant">artwork</arg>
+                                <arg name="id" type="xpath">../uuid/text()</arg>
+                                <arg name="subtype" type="constant">creation</arg>
+                            </instance_generator>
+                        </entity>
+                        <relationship>crm:P14_carried_out_by</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>datafield/subfield</source_node>
+                    <target_node>
+                        <entity>
+                            <type>crm:E74_Group</type>
+                            <instance_generator name="URIwithTypeAndId_hashed">
+                                <arg name="type" type="constant">group</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">if (../subfield[@code='gnd']/text()) then (../subfield[@code='gnd']/text()) else (../subfield[@code='a']/text())</arg>
+                            </instance_generator>
+                            <label_generator name="Literal">
+                                <arg name="text" type="xpath">../subfield[@code='a']/text()</arg>
+                                <arg name="language" type="constant"/>
+                            </label_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
         </mapping>
         <mapping>
             <domain>
@@ -2881,11 +2919,11 @@
                 <range>
                     <source_node>subfield</source_node>
                     <target_node>
-                        <entity>
+                        <entity variable="710_group_a">
                             <type>crm:E74_Group</type>
                             <instance_generator name="URIwithTypeAndId_hashed">
-                                <arg name="type" type="constant">actor</arg>
-                                <arg name="id_HASHED_CONTENTS" type="xpath">text()</arg>
+                                <arg name="type" type="constant">group</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">if (../subfield[@code='gnd']/text()) then (../subfield[@code='gnd']/text()) else (text())</arg>
                             </instance_generator>
                             <label_generator name="Literal">
                                 <arg name="text" type="xpath">text()</arg>
@@ -2922,7 +2960,7 @@
                 <range>
                     <source_node>subfield</source_node>
                     <target_node>
-                        <entity>
+                        <entity variable="710_type_4">
                             <type>crm:E55_Type</type>
                             <instance_generator name="URIwithTypeAndId">
                                 <arg name="type" type="constant">type</arg>
@@ -2947,7 +2985,7 @@
                 <range>
                     <source_node>subfield</source_node>
                     <target_node>
-                        <entity>
+                        <entity variable="710_type_e">
                             <type>crm:E55_Type</type>
                             <instance_generator name="URIwithTypeAndId">
                                 <arg name="type" type="constant">type</arg>
