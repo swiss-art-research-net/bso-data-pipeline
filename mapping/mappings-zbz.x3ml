@@ -3094,7 +3094,7 @@
                 <range>
                     <source_node>../subfield</source_node>
                     <target_node>
-                        <entity>
+                        <entity variable="700_actor_gnd">
                             <type>crm:E39_Actor</type>
                             <instance_generator name="URIorUUID">
                                 <arg name="text" type="xpath">concat('https://d-nb.info/gnd/', text())</arg>
@@ -3118,7 +3118,7 @@
                 <range>
                     <source_node>../subfield</source_node>
                     <target_node>
-                        <entity>
+                        <entity variable="700_actor_wd">
                             <type>crm:E39_Actor</type>
                             <instance_generator name="URIorUUID">
                                 <arg name="text" type="xpath">text()</arg>
