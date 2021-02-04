@@ -654,7 +654,11 @@
                 <target_node>
                     <entity variable="work">
                         <type>crm:E36_Visual_Item</type>
-                        <instance_generator name="UUID"/>
+                        <instance_generator name="URIwithTypeSubtypeAndId">
+                            <arg name="type" type="constant">artwork</arg>
+                            <arg name="id" type="xpath">uuid/text()</arg>
+                            <arg name="subtype" type="constant">work</arg>
+                        </instance_generator>
                     </entity>
                 </target_node>
             </domain>
@@ -1125,7 +1129,11 @@
                         <relationship>crm:P94i_was_created_by</relationship>
                         <entity variable="creation">
                             <type>crm:E65_Creation</type>
-                            <instance_generator name="UUID"/>
+                            <instance_generator name="URIwithTypeSubtypeAndId">
+                                <arg name="type" type="constant">artwork</arg>
+                                <arg name="id" type="xpath">../uuid/text()</arg>
+                                <arg name="subtype" type="constant">creation</arg>
+                            </instance_generator>
                         </entity>
                         <relationship>crm:P9_consists_of</relationship>
                     </target_relation>
@@ -1189,7 +1197,11 @@
                         <relationship>crm:P94i_was_created_by</relationship>
                         <entity variable="creation">
                             <type>crm:E65_Creation</type>
-                            <instance_generator name="UUID"/>
+                            <instance_generator name="URIwithTypeSubtypeAndId">
+                                <arg name="type" type="constant">artwork</arg>
+                                <arg name="id" type="xpath">../uuid/text()</arg>
+                                <arg name="subtype" type="constant">creation</arg>
+                            </instance_generator>
                         </entity>
                         <relationship>crm:P14_carried_out_by</relationship>
                     </target_relation>
@@ -2767,11 +2779,11 @@
                 <range>
                     <source_node>subfield</source_node>
                     <target_node>
-                        <entity>
+                        <entity variable="700_actor_a">
                             <type>crm:E39_Actor</type>
                             <instance_generator name="URIwithTypeAndId_hashed">
                                 <arg name="type" type="constant">actor</arg>
-                                <arg name="id_HASHED_CONTENTS" type="xpath">if (../subfield[@code='gnd']/text()) then (../subfield[@code='gnd']/text()) else text()</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">if (../subfield[@code='gnd']/text()) then (../subfield[@code='gnd']/text()) else (text())</arg>
                             </instance_generator>
                             <label_generator name="Literal">
                                 <arg name="text" type="xpath">text()</arg>
@@ -2796,7 +2808,7 @@
                 <range>
                     <source_node>subfield</source_node>
                     <target_node>
-                        <entity>
+                        <entity variable="700_type_4">
                             <type>crm:E55_Type</type>
                             <instance_generator name="URIwithTypeAndId">
                                 <arg name="type" type="constant">type</arg>
@@ -2821,7 +2833,7 @@
                 <range>
                     <source_node>subfield</source_node>
                     <target_node>
-                        <entity>
+                        <entity variable="700_type_e">
                             <type>crm:E55_Type</type>
                             <instance_generator name="URIwithTypeAndId">
                                 <arg name="type" type="constant">type</arg>
@@ -3053,7 +3065,7 @@
                             </if>
                         </and>
                     </if>
-                    <entity>
+                    <entity variable="700_actor_a">
                         <type>crm:E39_Actor</type>
                         <instance_info/>
                         <instance_generator name="URIwithTypeAndId_hashed">
@@ -3139,7 +3151,7 @@
                 <range>
                     <source_node>../subfield</source_node>
                     <target_node>
-                        <entity>
+                        <entity variable="700_actor_Geburtsdatum">
                             <type>crm:E52_Time-Span</type>
                             <instance_generator name="URIwithTypeSuptypeAndId_hashed">
                                 <arg name="type" type="constant">actor</arg>
@@ -3198,7 +3210,7 @@
                 <range>
                     <source_node>../subfield</source_node>
                     <target_node>
-                        <entity>
+                        <entity variable="700_actor_Sterbedatum">
                             <type>crm:E52_Time-Span</type>
                             <instance_generator name="URIwithTypeSuptypeAndId_hashed">
                                 <arg name="type" type="constant">actor</arg>
