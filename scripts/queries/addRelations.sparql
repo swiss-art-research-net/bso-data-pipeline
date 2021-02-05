@@ -14,4 +14,15 @@ INSERT {
   ?gndPlace gndo:geographicAreaCode ?gndParentPlace .
   ?place crmdig:L54_is_same-as ?gndPlace .
   ?parentPlace crmdig:L54_is_same-as ?gndParentPlace .
-} 
+};
+
+INSERT {
+  ?subject a sari:Person .
+} WHERE {
+  VALUES(?actor_or_person) {
+    (crm:E39_Actor)
+    (crm:E21_Person)
+  }
+  ?subject a ?actor_or_person .
+  FILTER(REGEX(STR(?subject), 'swissartresearch.net'))
+}
