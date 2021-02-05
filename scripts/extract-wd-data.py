@@ -52,9 +52,14 @@ with open(ttlOutput, 'ab') as outputFile:
         query = """
              PREFIX wdt: <http://www.wikidata.org/prop/direct/>
              CONSTRUCT {
-                 ?entity wdt:P625 ?coordinates .
+                 ?entity wdt:P625 ?coordinates ;
+                    wdt:P18 ?image .
              } WHERE {
-                 ?entity wdt:P625 ?coordinates .
+                 {
+                    ?entity wdt:P625 ?coordinates .
+                 } UNION {
+                     ?entity wdt:P18 ?image .
+                 }
                  VALUES (?entity) {
                      %s
                  }
