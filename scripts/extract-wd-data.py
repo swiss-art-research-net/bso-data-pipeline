@@ -11,6 +11,7 @@ ttlFolder='/data/ttl/main/'
 ttlOutput='/data/ttl/additional/wd.ttl'
 batchSizeForRetrieval = 100
 wdEndpoint = "https://query.wikidata.org/sparql"
+agent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36"
 
 # Look at all Turtle files
 inputFiles = [path.join(root, name)
@@ -45,7 +46,7 @@ def chunker(seq, size):
 
 # Retrieve relevant data from Wikidata and append to ttl file
 
-sparql = SPARQLWrapper(wdEndpoint)    
+sparql = SPARQLWrapper(wdEndpoint, agent=agent)    
 
 with open(ttlOutput, 'ab') as outputFile:
     for batch in tqdm(chunker(wdIdentifiers, batchSizeForRetrieval)):
@@ -67,6 +68,9 @@ with open(ttlOutput, 'ab') as outputFile:
 
         """ % ( "(<" + ">)\n(<".join(batch) + ">)" )
         sparql.setQuery(query)
-        results = sparql.query().convert()
+        try:
+            results = sparql.query().convert()
+        except urllib.error.HTTPError as exception:
+            print(exception)
         time.sleep(3)
         outputFile.write(results.serialize(format='turtle'))
