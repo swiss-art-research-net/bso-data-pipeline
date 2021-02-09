@@ -14,6 +14,13 @@
             <DataElement ElementName="FotografIn" ElementId="10817" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
                 <ElementValue Sequence="1">
                     <TextValue>Berchem, Max van</TextValue>
+                    <Descriptor>
+                        <Name>FotografIn</Name>
+                        <Thesaurus>Personen</Thesaurus>
+                        <IdName>FotografIn  (Personen\B\Berchem, Max van (1863 - 1921))</IdName>
+                        <SeeAlso>Berchem, Max van (1863 - 1921)</SeeAlso>
+                        <GND-Nummer>119369893</GND-Nummer>
+                    </Descriptor>
                 </ElementValue>
             </DataElement>
             <DataElement ElementName="Titel" ElementId="1" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
@@ -180,6 +187,13 @@
             <DataElement ElementName="FotografIn" ElementId="10817" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
                 <ElementValue Sequence="1">
                     <TextValue>Berchem, Max van</TextValue>
+                    <Descriptor>
+                        <Name>FotografIn</Name>
+                        <Thesaurus>Personen</Thesaurus>
+                        <IdName>FotografIn  (Personen\B\Berchem, Max van (1863 - 1921))</IdName>
+                        <SeeAlso>Berchem, Max van (1863 - 1921)</SeeAlso>
+                        <GND-Nummer>119369893</GND-Nummer>
+                    </Descriptor>
                 </ElementValue>
             </DataElement>
             <DataElement ElementName="Titel" ElementId="1" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
@@ -346,6 +360,13 @@
             <DataElement ElementName="FotografIn" ElementId="10817" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
                 <ElementValue Sequence="1">
                     <TextValue>Berchem, Max van</TextValue>
+                    <Descriptor>
+                        <Name>FotografIn</Name>
+                        <Thesaurus>Personen</Thesaurus>
+                        <IdName>FotografIn  (Personen\B\Berchem, Max van (1863 - 1921))</IdName>
+                        <SeeAlso>Berchem, Max van (1863 - 1921)</SeeAlso>
+                        <GND-Nummer>119369893</GND-Nummer>
+                    </Descriptor>
                 </ElementValue>
             </DataElement>
             <DataElement ElementName="Titel" ElementId="1" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
@@ -512,6 +533,13 @@
             <DataElement ElementName="FotografIn" ElementId="10817" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
                 <ElementValue Sequence="1">
                     <TextValue>Berchem, Max van</TextValue>
+                    <Descriptor>
+                        <Name>FotografIn</Name>
+                        <Thesaurus>Personen</Thesaurus>
+                        <IdName>FotografIn  (Personen\B\Berchem, Max van (1863 - 1921))</IdName>
+                        <SeeAlso>Berchem, Max van (1863 - 1921)</SeeAlso>
+                        <GND-Nummer>119369893</GND-Nummer>
+                    </Descriptor>
                 </ElementValue>
             </DataElement>
             <DataElement ElementName="Titel" ElementId="1" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
