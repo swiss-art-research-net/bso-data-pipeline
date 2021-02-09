@@ -1,3 +1,4 @@
+import copy
 import csv
 import re
 import sys
@@ -18,6 +19,7 @@ curatedDataFiles = [
     "../data/source/nb-curation-koerperschaften.csv",
     "../data/source/nb-curation-geografika.csv"
 ]
+curatedNamesFile = "../data/source/nb-curation-names.csv"
 
 # Column in CSV file used to match against IdName
 curatedKey = "Raw"
@@ -38,6 +40,13 @@ for curatedDataFile in curatedDataFiles:
         reader = csv.DictReader(f)
         for row in reader:
             curatedData.append(row)
+
+# Read curated names into a list
+curatedNames = []
+with open(curatedNamesFile, 'r') as f:
+    reader = csv.DictReader(f)
+    for row in reader:
+        curatedNames.append(row)
 
 # For each descriptor add curated data for available Thesaurus
 descriptors = root.xpath("//Descriptor")
@@ -86,7 +95,42 @@ for descriptor in descriptors:
 #  Therefore, the Descriptor is added to the relevant DataElement by checking for the occurrence of the TextValue
 #  (e.g. Keller, Hans Heinrich) in the Descriptor's IdName (e.g. BildendeR KünstlerIn  (Personen\K\Keller, Hans Heinrich (1778 - 1862)))
 
+# Element IDs in which such names appear
+elementIdsWithCuratedNames = ['10817', '10927']
 
+# Helper functions for matching the names
+def cleanName(name):
+    return re.sub(r'[^A-Za-z]+', '', name)
+
+def matchNameWithCuratedNames(name, curatedNames):
+    for curatedName in curatedNames:
+        if name in curatedName['Raw']:
+            return curatedName['normalised name']
+    print("Not found ", name)
+    return False
+
+dataElementXPath = '|'.join(["DetailData/DataElement[@ElementId='%s']" % d for d in elementIdsWithCuratedNames])
+
+for record in records:
+    
+    # Extract Elements containing names
+    recordElements = record.xpath(dataElementXPath)
+    recordDescriptors = record.xpath("Descriptors/Descriptor[Thesaurus/text()='Personen']")
+    
+    if len(recordElements):
+        for recordElement in recordElements:
+            # Extract ElementValues (there can be several)
+            values = recordElement.xpath("ElementValue")
+            for value in values:
+                name = value.find("TextValue").text
+                matchedName = matchNameWithCuratedNames(name, curatedNames)
+
+                if matchedName:
+                    # If a match is found, copy the descriptor directly into the Element
+                    for descriptor in recordDescriptors:
+                        idName = descriptor.find("IdName").text
+                        if cleanName(matchedName) in cleanName(idName):
+                            value.append(copy.deepcopy(descriptor))
 
 # Define functions
 def getDateForDateElement(date):
