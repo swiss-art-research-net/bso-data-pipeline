@@ -20,6 +20,11 @@ docker-compose up -d
 
 ## Initialisation
 
+To include the [BSO App](https://github.com/swiss-art-research-net/bso-app) when cloning, clone with:
+```
+git clone --recurse-submodules git@github.com:swiss-art-research-net/bso-data-pipeline.git
+```
+
 To download the source data create a [GitHub personal access token](https://github.com/settings/tokens) and add it to the `.env` file, along with your username.
 
 Download the source files by runnning
