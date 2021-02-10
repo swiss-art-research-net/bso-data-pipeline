@@ -17,6 +17,13 @@ INSERT {
   ?parentPlace crmdig:L54_is_same-as ?gndParentPlace .
 };
 
+INSERT DATA {
+  search:Object rdfs:label 'Object' .
+  search:Person rdfs:label 'Person' .
+  search:Place rdfs:label 'Place' .
+  search:Type rdfs:label 'Type' .
+};
+ 
 INSERT {
   ?subject a search:Person .
 } WHERE {
