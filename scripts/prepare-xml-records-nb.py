@@ -98,7 +98,7 @@ for descriptor in descriptors:
 # Element IDs in which such names appear
 elementIdsWithCuratedNames = ['10817', '10927']
 
-# Helper functions for matching the names
+# Helper functions for matching the names and roles
 def cleanName(name):
     return re.sub(r'[^A-Za-z]+', '', name)
 
@@ -107,6 +107,18 @@ def matchNameWithCuratedNames(name, curatedNames):
         if name in curatedName['Raw']:
             return curatedName['normalised name']
     print("Not found ", name)
+    return False
+
+def matchRoleWithCuratedNames(name, curatedNames):
+    # We use the name list to match roles as well. Eventually one could use a smaller list of only the roles as well
+    for curatedName in curatedNames:
+        if curatedName['normalised role'] and curatedName['normalised role'] in name:
+            roles = curatedName['normalised role'].split("/") 
+            gndRoles = curatedName['gnd role'].split(";")
+            returnRoles = []
+            for i in range(min(len(roles), len(gndRoles))):
+                returnRoles.append({"label": roles[i], "gnd": gndRoles[i]})
+            return returnRoles
     return False
 
 dataElementXPath = '|'.join(["DetailData/DataElement[@ElementId='%s']" % d for d in elementIdsWithCuratedNames])
@@ -123,14 +135,21 @@ for record in records:
             values = recordElement.xpath("ElementValue")
             for value in values:
                 name = value.find("TextValue").text
-                matchedName = matchNameWithCuratedNames(name, curatedNames)
 
+                matchedName = matchNameWithCuratedNames(name, curatedNames)
                 if matchedName:
                     # If a match is found, copy the descriptor directly into the Element
                     for descriptor in recordDescriptors:
                         idName = descriptor.find("IdName").text
                         if cleanName(matchedName) in cleanName(idName):
                             value.append(copy.deepcopy(descriptor))
+
+                matchedRoles = matchRoleWithCuratedNames(name, curatedNames)
+                if matchedRoles:
+                    for role in matchedRoles:
+                        roleElement = etree.SubElement(value, "Role")
+                        roleElement.set("gnd", role['gnd'])
+                        roleElement.text = role['label']
 
 # Define functions
 def getDateForDateElement(date):
