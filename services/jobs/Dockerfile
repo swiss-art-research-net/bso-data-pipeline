@@ -2,7 +2,7 @@ FROM python:3.8
 RUN apt update
 RUN apt install -y openssh-server default-jre
 # Install Python packages
-RUN pip install date-parser-sari lxml urllib3 requests edtf tqdm rdflib sparqlwrapper
+RUN pip install date-parser-sari lxml urllib3 requests edtf tqdm rdflib sparqlwrapper PyYAML
 
 # Install x3ml Mapping engine
 RUN mkdir x3ml

@@ -122,6 +122,16 @@ fi
 
 if [[ $NOPROMPT -ne 1 ]]
 then
+  read -p "Materialise fields? (y/n)" -n 1 -r
+  echo ""
+fi
+if [[ $NOPROMPT || $REPLY =~ ^[Yy]$ ]]
+then
+  docker exec $JOBSCONTAINER bash -c "task materialise-field-definitions"
+fi
+
+if [[ $NOPROMPT -ne 1 ]]
+then
   read -p "Cleanup? (y/n)" -n 1 -r
   echo ""
 fi
