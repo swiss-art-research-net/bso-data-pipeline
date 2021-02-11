@@ -119,6 +119,15 @@ tasks:
       - /data/ttl/main/nb/*.ttl
     cmds:
       - bash /scripts/performMapping.sh -i {{.INPUT_FOLDER}} -o {{.OUTPUT_FOLDER}} -m {{.MAPPING_FILE}} -g {{.GENERATOR_POLICY}} -b {{.BATCHSIZE}}
+  
+  materialise-field-definitions:
+    desc: Materialises the field definitions as propertes in the graph
+    vars:
+      FIELD_DEFINITIONS: /bso-app-src/fieldDefinitions.yml
+      QUERY:
+        sh: python /scripts/generate-materialise-query-from-field-definitions.py {{.FIELD_DEFINITIONS}}
+    cmds:
+      - curl -X POST {{.ENDPOINT}} --data-urlencode "update={{.QUERY}}" 
 
   prepare-xml-records-zbz:
     desc: Convert the ZBZ data from JSON to individual XML Records
