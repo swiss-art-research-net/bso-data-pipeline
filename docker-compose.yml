@@ -50,7 +50,7 @@ services:
       - $PORT_PROXY:80
 
   researchspace:
-    image: researchspace/platform-ci
+    image: researchspace/platform-ci:latest
     container_name: ${PROJECT_NAME}_researchspace
     restart: unless-stopped
     ports:
