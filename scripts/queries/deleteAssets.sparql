@@ -15,4 +15,14 @@ DELETE {
   <http://www.researchspace.org/resource/system/fieldDefinitionContainer> <http://www.w3.org/ns/ldp#contains> ?s .
   ?s ?p1 ?o1 .
   ?s1 ?p2 ?s .
-}
+};
+DELETE {
+  ?s ?p1 ?o1 .
+  ?s1 ?p2 ?s .
+} WHERE {
+  <http://www.metaphacts.com/ontologies/platform#fieldDefinitionContainer> <http://www.w3.org/ns/ldp#contains> ?s .
+  ?s ?p1 ?o1 .
+  ?s1 ?p2 ?s .
+};
+DROP GRAPH <http://www.researchspace.org/resource/system/fieldDefinitionContainer/context>;
+DROP GRAPH <http://www.metaphacts.com/ontologies/platform#fieldDefinitionContainer>
