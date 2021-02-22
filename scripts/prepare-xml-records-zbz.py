@@ -13,7 +13,7 @@ inputFile = "/data/source/sari_abzug-utf-8_23_04-tsv.json"
 externalFieldsDirectory = "/data/source/"
 manifestDirectory = "/data/manifests/"
 outputDirectory = "/data/xml/zbz/"
-outputPrefix = "sari-"
+outputPrefix = "zbz-record-"
 
 # List fields that contain dates. Those will be passed to the parser
 fieldsContainingDates = ['100$d', '260$c', '260$g', '264$c', '533$d', '600$d', '611$d', '700$d']
@@ -54,6 +54,7 @@ def convertEDTFdate(date):
 def convertRowToXml(row, keys, externalFields):
     record = etree.Element("record")
     etree.SubElement(record, "uuid").text = row['id']
+    etree.SubElement(record, "record-identifier").text = "zbz-" + row['001']
     datafield = False
     for key in keys:
         # Check if key is a field that gets loaded externally (check only part before $ if present)
@@ -177,7 +178,7 @@ for i, row in enumerate(tqdm(rawData['rows'][offset:limit+offset])):
     
     records.append(record)
     
-    outputFile = outputDirectory + outputPrefix + row['id'] + ".xml"
+    outputFile = outputDirectory + outputPrefix + row['001'] + ".xml"
     with open(outputFile, 'wb') as f:
         f.write(etree.tostring(records, xml_declaration=True, encoding='UTF-8', pretty_print=True))
         f.close()
