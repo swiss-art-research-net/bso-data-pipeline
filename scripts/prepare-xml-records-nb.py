@@ -211,6 +211,9 @@ records = root.findall("Record")
 for record in tqdm(records[offset:limit+offset]):
     collection.clear()
     id = record.get("Id")
+    parentId = record.get("ParentId")
+    record.set("RecordIdentifier", "nb-" + id)
+    record.set("ParentRecordIdentifier", "nb-" + parentId)
     collection.append(record)
     outputFile = "%s/nb-record-%s.xml" % (outputDir, id)
     with open(outputFile, 'wb') as f:
