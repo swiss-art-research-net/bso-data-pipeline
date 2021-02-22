@@ -25,7 +25,7 @@
                         <type>crm:E22_Man-Made_Object</type>
                         <instance_generator name="URIwithTypeAndId">
                             <arg name="type" type="constant">artwork</arg>
-                            <arg name="id" type="xpath">uuid/text()</arg>
+                            <arg name="id" type="xpath">record-identifier/text()</arg>
                         </instance_generator>
                         <additional>
                             <relationship>crm:P109_has_former_or_current_curator</relationship>
@@ -62,7 +62,7 @@
                             <type>crm:E36_Visual_Item</type>
                             <instance_generator name="URIwithTypeSubtypeAndId">
                                 <arg name="type" type="constant">artwork</arg>
-                                <arg name="id" type="xpath">uuid/text()</arg>
+                                <arg name="id" type="xpath">record-identifier/text()</arg>
                                 <arg name="subtype" type="constant">work</arg>
                             </instance_generator>
                         </entity>
@@ -172,7 +172,7 @@
                             <type>crm:E12_Production</type>
                             <instance_generator name="URIwithTypeSubtypeAndId">
                                 <arg name="type" type="constant">artwork</arg>
-                                <arg name="id" type="xpath">../uuid/text()</arg>
+                                <arg name="id" type="xpath">../record-identifier/text()</arg>
                                 <arg name="subtype" type="constant">production</arg>
                             </instance_generator>
                         </entity>
@@ -193,7 +193,7 @@
                             <type>crmdig:D2_Digitization_Process</type>
                             <instance_generator name="URIwithTypeSubtypeAndId">
                                 <arg name="type" type="constant">artwork</arg>
-                                <arg name="id" type="xpath">../uuid/text()</arg>
+                                <arg name="id" type="xpath">../record-identifier/text()</arg>
                                 <arg name="subtype" type="constant">digitization</arg>
                             </instance_generator>
                         </entity>
@@ -202,7 +202,7 @@
                             <type>crmdig:D1_Digital_Object</type>
                             <instance_generator name="URIwithTypeSubtypeIdAnd1Level">
                                 <arg name="type" type="constant">artwork</arg>
-                                <arg name="id" type="xpath">../uuid/text()</arg>
+                                <arg name="id" type="xpath">../record-identifier/text()</arg>
                                 <arg name="subtype" type="constant">digitization</arg>
                                 <arg name="level1" type="constant">output</arg>
                             </instance_generator>
@@ -264,7 +264,7 @@
                             <type>crm:E54_Dimension</type>
                             <instance_generator name="URIwithTypeSubtypeAndId">
                                 <arg name="type" type="constant">work</arg>
-                                <arg name="id" type="xpath">../uuid/text()</arg>
+                                <arg name="id" type="xpath">../record-identifier/text()</arg>
                                 <arg name="subtype" type="constant">extent</arg>
                             </instance_generator>
                             <label_generator name="Literal">
@@ -321,7 +321,7 @@
                             <type>crm:E54_Dimension</type>
                             <instance_generator name="URIwithTypeSubtypeAndId">
                                 <arg name="type" type="constant">work</arg>
-                                <arg name="id" type="xpath">../../uuid/text()</arg>
+                                <arg name="id" type="xpath">../../record-identifier/text()</arg>
                                 <arg name="subtype" type="constant">dimension</arg>
                             </instance_generator>
                             <label_generator name="Literal">
@@ -462,7 +462,7 @@
                             <type>crm:E73_Information_Object</type>
                             <instance_generator name="URIwithTypeSubtypeIdAnd1Level">
                                 <arg name="type" type="constant">artwork</arg>
-                                <arg name="id" type="xpath">../uuid/text()</arg>
+                                <arg name="id" type="xpath">../record-identifier/text()</arg>
                                 <arg name="subtype" type="constant">work</arg>
                                 <arg name="level1" type="constant">summary</arg>
                             </instance_generator>
@@ -549,7 +549,7 @@
                             <type>crm:E12_Production</type>
                             <instance_generator name="URIwithTypeSubtypeAndId">
                                 <arg name="type" type="constant">artwork</arg>
-                                <arg name="id" type="xpath">../uuid/text()</arg>
+                                <arg name="id" type="xpath">../record-identifier/text()</arg>
                                 <arg name="subtype" type="constant">production</arg>
                             </instance_generator>
                         </entity>
@@ -563,7 +563,7 @@
                             <type>crm:E12_Production</type>
                             <instance_generator name="URIwithTypeSubtypeIdAnd1Level">
                                 <arg name="type" type="constant">artwork</arg>
-                                <arg name="id" type="xpath">../uuid/text()</arg>
+                                <arg name="id" type="xpath">../record-identifier/text()</arg>
                                 <arg name="subtype" type="constant">production</arg>
                                 <arg name="level1" type="xpath">if (./subfield[@code='4']/text()) then (./subfield[@code='4']/text()) else ('rel')</arg>
                             </instance_generator>
@@ -574,14 +574,14 @@
             <link>
                 <path>
                     <source_relation>
-                        <relation>uuid</relation>
+                        <relation>record-identifier</relation>
                     </source_relation>
                     <target_relation>
                         <relationship>crm:P70i_is_documented_in</relationship>
                     </target_relation>
                 </path>
                 <range>
-                    <source_node>uuid</source_node>
+                    <source_node>record-identifier</source_node>
                     <target_node>
                         <entity>
                             <type>crm:E31_Document</type>
@@ -597,7 +597,7 @@
         </mapping>
         <mapping>
             <domain>
-                <source_node>/records/record/uuid</source_node>
+                <source_node>/records/record/record-identifier</source_node>
                 <target_node>
                     <entity variable="metadata">
                         <type>crm:E31_Document</type>
@@ -656,7 +656,7 @@
                         <type>crm:E36_Visual_Item</type>
                         <instance_generator name="URIwithTypeSubtypeAndId">
                             <arg name="type" type="constant">artwork</arg>
-                            <arg name="id" type="xpath">uuid/text()</arg>
+                            <arg name="id" type="xpath">record-identifier/text()</arg>
                             <arg name="subtype" type="constant">work</arg>
                         </instance_generator>
                     </entity>
@@ -698,7 +698,7 @@
                             <type>crmdig:D1_Digital_Object</type>
                             <instance_generator name="URIwithTypeSubtypeIdAndCounter">
                                 <arg name="type" type="constant">artwork</arg>
-                                <arg name="id" type="xpath">../../uuid/text()</arg>
+                                <arg name="id" type="xpath">../../record-identifier/text()</arg>
                                 <arg name="subtype" type="constant">image</arg>
                                 <arg name="position" type="position"/>
                             </instance_generator>
@@ -729,7 +729,7 @@
                             <type>la:DigitalService</type>
                             <instance_generator name="URIwithOneLevelIdHashed">
                                 <arg name="type" type="constant">artwork</arg>
-                                <arg name="id" type="xpath">../../uuid/text()</arg>
+                                <arg name="id" type="xpath">../../record-identifier/text()</arg>
                                 <arg name="subtype" type="constant">image</arg>
                                 <arg name="subId_HASHED_CONTENTS">url/text()</arg>
                             </instance_generator>
@@ -788,7 +788,7 @@
                             <type>crm:E65_Creation</type>
                             <instance_generator name="URIwithTypeSubtypeAndId">
                                 <arg name="type" type="constant">artwork</arg>
-                                <arg name="id" type="xpath">../uuid/text()</arg>
+                                <arg name="id" type="xpath">../record-identifier/text()</arg>
                                 <arg name="subtype" type="constant">creation</arg>
                             </instance_generator>
                         </entity>
@@ -815,7 +815,7 @@
                             <type>crm:E33_Linguistic_Object</type>
                             <instance_generator name="URIwithTypeSubtypeAndId">
                                 <arg name="type" type="constant">artwork</arg>
-                                <arg name="id" type="xpath">../uuid/text()</arg>
+                                <arg name="id" type="xpath">../record-identifier/text()</arg>
                                 <arg name="subtype" type="constant">title</arg>
                             </instance_generator>
                             <label_generator name="Literal">
@@ -906,7 +906,7 @@
                             <type>crm:E65_Creation</type>
                             <instance_generator name="URIwithTypeSubtypeAndId">
                                 <arg name="type" type="constant">artwork</arg>
-                                <arg name="id" type="xpath">../uuid/text()</arg>
+                                <arg name="id" type="xpath">../record-identifier/text()</arg>
                                 <arg name="subtype" type="constant">creation</arg>
                             </instance_generator>
                         </entity>
@@ -1131,7 +1131,7 @@
                             <type>crm:E65_Creation</type>
                             <instance_generator name="URIwithTypeSubtypeAndId">
                                 <arg name="type" type="constant">artwork</arg>
-                                <arg name="id" type="xpath">../uuid/text()</arg>
+                                <arg name="id" type="xpath">../record-identifier/text()</arg>
                                 <arg name="subtype" type="constant">creation</arg>
                             </instance_generator>
                         </entity>
@@ -1145,7 +1145,7 @@
                             <type>crm:E65_Creation</type>
                             <instance_generator name="URIwithTypeSubtypeIdAnd1Level">
                                 <arg name="type" type="constant">artwork</arg>
-                                <arg name="id" type="xpath">../uuid/text()</arg>
+                                <arg name="id" type="xpath">../record-identifier/text()</arg>
                                 <arg name="subtype" type="constant">subcreation</arg>
                                 <arg name="level1" type="xpath">./subfield[@code='id_person']/text()</arg>
                             </instance_generator>
@@ -1177,7 +1177,7 @@
                             <type>crm:E65_Creation</type>
                             <instance_generator name="URIwithOneLevelIdHashed">
                                 <arg name="type" type="constant">artwork</arg>
-                                <arg name="id" type="xpath">../uuid/text()</arg>
+                                <arg name="id" type="xpath">../record-identifier/text()</arg>
                                 <arg name="subtype" type="constant">subcreation</arg>
                                 <arg name="subId_HASHED_CONTENTS" type="xpath">./subfield[@code='a']/text()</arg>
                             </instance_generator>
@@ -1199,7 +1199,7 @@
                             <type>crm:E65_Creation</type>
                             <instance_generator name="URIwithTypeSubtypeAndId">
                                 <arg name="type" type="constant">artwork</arg>
-                                <arg name="id" type="xpath">../uuid/text()</arg>
+                                <arg name="id" type="xpath">../record-identifier/text()</arg>
                                 <arg name="subtype" type="constant">creation</arg>
                             </instance_generator>
                         </entity>
@@ -1237,7 +1237,7 @@
                             <type>crm:E65_Creation</type>
                             <instance_generator name="URIwithTypeSubtypeAndId">
                                 <arg name="type" type="constant">artwork</arg>
-                                <arg name="id" type="xpath">../uuid/text()</arg>
+                                <arg name="id" type="xpath">../record-identifier/text()</arg>
                                 <arg name="subtype" type="constant">creation</arg>
                             </instance_generator>
                         </entity>
@@ -1280,7 +1280,7 @@
                         <type>crm:E65_Creation</type>
                         <instance_generator name="URIwithTypeSubtypeAndId">
                             <arg name="type" type="constant">artwork</arg>
-                            <arg name="id" type="xpath">../uuid/text()</arg>
+                            <arg name="id" type="xpath">../record-identifier/text()</arg>
                             <arg name="subtype" type="constant">creation</arg>
                         </instance_generator>
                     </entity>
@@ -1407,7 +1407,7 @@
                             <type>crm:E65_Creation</type>
                             <instance_generator name="URIwithTypeSubtypeIdAndCounter">
                                 <arg name="type" type="constant">artwork</arg>
-                                <arg name="id" type="xpath">../../uuid/text()</arg>
+                                <arg name="id" type="xpath">../../record-identifier/text()</arg>
                                 <arg name="subtype" type="constant">subcreation</arg>
                                 <arg name="position" type="position"/>
                             </instance_generator>
@@ -1476,7 +1476,7 @@
                             <type>crm:E65_Creation</type>
                             <instance_generator name="URIwithTypeSubtypeIdAndCounter">
                                 <arg name="type" type="constant">artwork</arg>
-                                <arg name="id" type="xpath">../../uuid/text()</arg>
+                                <arg name="id" type="xpath">../../record-identifier/text()</arg>
                                 <arg name="subtype" type="constant">subcreation</arg>
                                 <arg name="position" type="position"/>
                             </instance_generator>
@@ -1630,7 +1630,7 @@
                                     </instance_info>
                                     <instance_generator name="URIwithTypeSubtypeAndId">
                                         <arg name="type" type="constant">artwork</arg>
-                                        <arg name="id" type="xpath">../../uuid/text()</arg>
+                                        <arg name="id" type="xpath">../../record-identifier/text()</arg>
                                         <arg name="subtype" type="constant">meta</arg>
                                     </instance_generator>
                                 </entity>
@@ -1707,7 +1707,7 @@
                                     </instance_info>
                                     <instance_generator name="URIwithTypeSubtypeAndId">
                                         <arg name="type" type="constant">artwork</arg>
-                                        <arg name="id" type="xpath">../../uuid/text()</arg>
+                                        <arg name="id" type="xpath">../../record-identifier/text()</arg>
                                         <arg name="subtype" type="constant">meta</arg>
                                     </instance_generator>
                                 </entity>
@@ -1843,7 +1843,7 @@
                                     </instance_info>
                                     <instance_generator name="URIwithTypeSubtypeAndId">
                                         <arg name="type" type="constant">artwork</arg>
-                                        <arg name="id" type="xpath">../../uuid/text()</arg>
+                                        <arg name="id" type="xpath">../../record-identifier/text()</arg>
                                         <arg name="subtype" type="constant">meta</arg>
                                     </instance_generator>
                                 </entity>
@@ -1888,7 +1888,7 @@
                         <type>crm:E12_Production</type>
                         <instance_generator name="URIwithTypeSubtypeAndId">
                             <arg name="type" type="constant">artwork</arg>
-                            <arg name="id" type="xpath">../uuid/text()</arg>
+                            <arg name="id" type="xpath">../record-identifier/text()</arg>
                             <arg name="subtype" type="constant">production</arg>
                         </instance_generator>
                     </entity>
@@ -1943,7 +1943,7 @@
                                     </instance_info>
                                     <instance_generator name="URIwithTypeSubtypeAndId">
                                         <arg name="type" type="constant">artwork</arg>
-                                        <arg name="id" type="xpath">../../uuid/text()</arg>
+                                        <arg name="id" type="xpath">../../record-identifier/text()</arg>
                                         <arg name="subtype" type="constant">meta</arg>
                                     </instance_generator>
                                 </entity>
@@ -2012,7 +2012,7 @@
                                     </instance_info>
                                     <instance_generator name="URIwithTypeSubtypeAndId">
                                         <arg name="type" type="constant">artwork</arg>
-                                        <arg name="id" type="xpath">../../uuid/text()</arg>
+                                        <arg name="id" type="xpath">../../record-identifier/text()</arg>
                                         <arg name="subtype" type="constant">meta</arg>
                                     </instance_generator>
                                 </entity>
@@ -2159,7 +2159,7 @@
                             <type>crm:E73_Information_Object</type>
                             <instance_generator name="URIwithTypeSubtypeIdAnd1Level">
                                 <arg name="type" type="constant">artwork</arg>
-                                <arg name="id" type="xpath">../uuid/text()</arg>
+                                <arg name="id" type="xpath">../record-identifier/text()</arg>
                                 <arg name="subtype" type="constant">production</arg>
                                 <arg name="level1" type="constant">edition_statement</arg>
                             </instance_generator>
@@ -2200,7 +2200,7 @@
                         <type>crm:E12_Production</type>
                         <instance_generator name="URIwithTypeSubtypeAndId">
                             <arg name="type" type="constant">artwork</arg>
-                            <arg name="id" type="xpath">../uuid/text()</arg>
+                            <arg name="id" type="xpath">../record-identifier/text()</arg>
                             <arg name="subtype" type="constant">production</arg>
                         </instance_generator>
                     </entity>
@@ -2267,7 +2267,7 @@
                         <type>crm:E33_Linguistic_Object</type>
                         <instance_generator name="URIwithTypeSubtypeAndId">
                             <arg name="type" type="constant">artwork</arg>
-                            <arg name="id" type="xpath">../uuid/text()</arg>
+                            <arg name="id" type="xpath">../record-identifier/text()</arg>
                             <arg name="subtype" type="constant">title</arg>
                         </instance_generator>
                     </entity>
@@ -2300,7 +2300,7 @@
                             <type>crm:E41_Appellation</type>
                             <instance_generator name="URIwithTypeSubtypeIdAnd1Level">
                                 <arg name="type" type="constant">artwork</arg>
-                                <arg name="id" type="xpath">../../uuid/text()</arg>
+                                <arg name="id" type="xpath">../../record-identifier/text()</arg>
                                 <arg name="subtype" type="constant">title</arg>
                                 <arg name="level1" type="constant">additional</arg>
                             </instance_generator>
@@ -2861,7 +2861,7 @@
                         <type>crm:E65_Creation</type>
                         <instance_generator name="URIwithTypeSubtypeIdAnd1Level">
                             <arg name="type" type="constant">artwork</arg>
-                            <arg name="id" type="xpath">../uuid/text()</arg>
+                            <arg name="id" type="xpath">../record-identifier/text()</arg>
                             <arg name="subtype" type="constant">subcreation</arg>
                             <arg name="level1" type="xpath">./subfield[@code='id_person']/text()</arg>
                         </instance_generator>
@@ -2963,7 +2963,7 @@
                         <type>crm:E65_Creation</type>
                         <instance_generator name="URIwithOneLevelIdHashed">
                             <arg name="type" type="constant">artwork</arg>
-                            <arg name="id" type="xpath">../uuid/text()</arg>
+                            <arg name="id" type="xpath">../record-identifier/text()</arg>
                             <arg name="subtype" type="constant">subcreation</arg>
                             <arg name="subId_HASHED_CONTENTS" type="xpath">./subfield[@code='a']/text()</arg>
                         </instance_generator>
@@ -3077,7 +3077,7 @@
                         <type>crm:E12_Production</type>
                         <instance_generator name="URIwithTypeSubtypeIdAnd1Level">
                             <arg name="type" type="constant">artwork</arg>
-                            <arg name="id" type="xpath">../uuid/text()</arg>
+                            <arg name="id" type="xpath">../record-identifier/text()</arg>
                             <arg name="subtype" type="constant">production</arg>
                             <arg name="level1" type="xpath">if (./subfield[@code='4']/text()) then (./subfield[@code='4']/text()) else ('rel')</arg>
                         </instance_generator>
