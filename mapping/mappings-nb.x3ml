@@ -86,10 +86,15 @@
                     <target_node>
                         <entity>
                             <type>crm:E42_Identifier</type>
-                            <instance_generator name="Constant">
+                            <instance_generator name="URIwithTypeSubtypeAndId">
+                                <arg name="type" type="constant">artwork</arg>
+                                <arg name="id" type="xpath">../../@RecordIdentifier</arg>
+                                <arg name="subtype" type="constant">signature</arg>
+                            </instance_generator>
+                            <label_generator name="Literal">
                                 <arg name="text" type="xpath">./ElementValue/TextValue/text()</arg>
                                 <arg name="language" type="constant"/>
-                            </instance_generator>
+                            </label_generator>
                         </entity>
                     </target_node>
                 </range>
@@ -267,6 +272,36 @@
                                 <arg name="id" type="xpath">../../@RecordIdentifier</arg>
                                 <arg name="subtype" type="constant">meta</arg>
                             </instance_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>DetailData/DataElement</relation>
+                    </source_relation>
+                    <target_relation>
+                        <if>
+                            <equals value="10165">@ElementId</equals>
+                        </if>
+                        <relationship>crm:P1_is_identified_by</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>DetailData/DataElement</source_node>
+                    <target_node>
+                        <entity>
+                            <type>crm:E42_Identifier</type>
+                            <instance_generator name="URIwithTypeSubtypeAndId">
+                                <arg name="type" type="constant">artwork</arg>
+                                <arg name="id" type="xpath">../../@RecordIdentifier</arg>
+                                <arg name="subtype" type="constant">documentNumber</arg>
+                            </instance_generator>
+                            <label_generator name="Literal">
+                                <arg name="text" type="xpath">./ElementValue/TextValue/text()</arg>
+                                <arg name="language" type="constant"/>
+                            </label_generator>
                         </entity>
                     </target_node>
                 </range>
