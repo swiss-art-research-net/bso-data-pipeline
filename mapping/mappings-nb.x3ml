@@ -405,7 +405,7 @@
                 <range>
                     <source_node>DetailData/DataElement</source_node>
                     <target_node>
-                        <entity>
+                        <entity variable="work_creation_date">
                             <type>crm:E52_Time-Span</type>
                             <instance_generator name="URIwith2TypesAndId_hashed">
                                 <arg name="type1" type="constant">event</arg>
@@ -717,6 +717,45 @@
                                     </label_generator>
                                 </entity>
                             </additional>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>DetailData/DataElement/ElementValue</relation>
+                    </source_relation>
+                    <target_relation>
+                        <if>
+                            <equals value="10110">../@ElementId</equals>
+                        </if>
+                        <relationship>crm:P94i_was_created_by</relationship>
+                        <entity variable="work_creation">
+                            <type>crm:E65_Creation</type>
+                            <instance_generator name="URIwithTypeSubtypeAndId">
+                                <arg name="type" type="constant">artwork</arg>
+                                <arg name="id" type="xpath">../../../@RecordIdentifier</arg>
+                                <arg name="subtype" type="constant">creation</arg>
+                            </instance_generator>
+                        </entity>
+                        <relationship>crm:P4_has_time-span</relationship>
+                        <entity variable="work_creation_date">
+                            <type>crm:E52_Time-Span</type>
+                            <instance_generator name="UUID"/>
+                        </entity>
+                        <relationship>crm:P3_has_note</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>DetailData/DataElement/ElementValue</source_node>
+                    <target_node>
+                        <entity>
+                            <type>rdfs:Literal</type>
+                            <instance_generator name="Literal">
+                                <arg name="text" type="xpath">TextValue/text()</arg>
+                                <arg name="language" type="constant"/>
+                            </instance_generator>
                         </entity>
                     </target_node>
                 </range>
