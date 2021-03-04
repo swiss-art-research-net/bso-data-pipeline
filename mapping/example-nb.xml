@@ -1,5 +1,5 @@
 <Collection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Created="2020-12-01" SchemaName="" xsi:noNamespaceSchemaLocation="scopeExportSchema.xsd">
-    <Record Id="789058" ParentId="545275" Level="Dokument" IdName="EAD-6580   Zürich, Rathaus, Südfassade, vue d'ensemble, 1901 (Dokument)">
+    <Record Id="789058" ParentId="545275" Level="Dokument" IdName="EAD-6580   Zürich, Rathaus, Südfassade, vue d'ensemble, 1901 (Dokument)" RecordIdentifier="nb-789058" ParentRecordIdentifier="nb-545275">
         <DetailData>
             <DataElement ElementName="Signatur" ElementId="2" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
                 <ElementValue Sequence="1">
@@ -172,7 +172,7 @@
             <CreatedOn>2015-01-06</CreatedOn>
         </AdministrativeData>
     </Record>
-    <Record Id="863687" ParentId="545275" Level="Dokument" IdName="EAD-6581   Zürich, Grossmünster, Portail, vue d'ensemble, 1901 (Dokument)">
+    <Record Id="863687" ParentId="545275" Level="Dokument" IdName="EAD-6581   Zürich, Grossmünster, Portail, vue d'ensemble, 1901 (Dokument)" RecordIdentifier="nb-863687" ParentRecordIdentifier="nb-545275">
         <DetailData>
             <DataElement ElementName="Signatur" ElementId="2" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
                 <ElementValue Sequence="1">
@@ -345,7 +345,7 @@
             <CreatedOn>2015-06-24</CreatedOn>
         </AdministrativeData>
     </Record>
-    <Record Id="863691" ParentId="545275" Level="Dokument" IdName="EAD-6582   Zürich, Grossmünster, vue partielle intérieure, 1901 (Dokument)">
+    <Record Id="863691" ParentId="545275" Level="Dokument" IdName="EAD-6582   Zürich, Grossmünster, vue partielle intérieure, 1901 (Dokument)" RecordIdentifier="nb-863691" ParentRecordIdentifier="nb-545275">
         <DetailData>
             <DataElement ElementName="Signatur" ElementId="2" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
                 <ElementValue Sequence="1">
@@ -518,7 +518,7 @@
             <CreatedOn>2015-06-24</CreatedOn>
         </AdministrativeData>
     </Record>
-    <Record Id="863720" ParentId="545275" Level="Dokument" IdName="EAD-6583   Zürich, Grossmünster, vue partielle intérieure, 1901 (Dokument)">
+    <Record Id="863720" ParentId="545275" Level="Dokument" IdName="EAD-6583   Zürich, Grossmünster, vue partielle intérieure, 1901 (Dokument)" RecordIdentifier="nb-863720" ParentRecordIdentifier="nb-545275">
         <DetailData>
             <DataElement ElementName="Signatur" ElementId="2" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
                 <ElementValue Sequence="1">
@@ -691,7 +691,7 @@
             <CreatedOn>2015-06-24</CreatedOn>
         </AdministrativeData>
     </Record>
-    <Record Id="476941" ParentId="546442" Level="Dokument" IdName="GS-GUGE-ABERLI-B-1   Prospect der Stadt Bern von der Morgen Seite = Vue de la ville de Berne du Côté du Levant, 1764- (Dokument)">
+    <Record Id="476941" ParentId="546442" Level="Dokument" IdName="GS-GUGE-ABERLI-B-1   Prospect der Stadt Bern von der Morgen Seite = Vue de la ville de Berne du Côté du Levant, 1764- (Dokument)" RecordIdentifier="nb-476941" ParentRecordIdentifier="nb-546442">
         <DetailData>
             <DataElement ElementName="Signatur" ElementId="2" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
                 <ElementValue Sequence="1">
