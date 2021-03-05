@@ -7,6 +7,7 @@ if len(sys.argv) < 2:
     exit("Please provide path to field definition YAML file")
 
 fieldDefinitionsFile = sys.argv[1]
+namedGraph = sys.argv[2] if len(sys.argv) > 2 else False
 output = ''
 
 with open(fieldDefinitionsFile, 'r') as f:
@@ -15,13 +16,24 @@ with open(fieldDefinitionsFile, 'r') as f:
 for prefix in model['namespaces'].keys():
     output += "PREFIX %s: <%s>\n" % (prefix, model['namespaces'][prefix])
 
-template = Template("""
-    INSERT {
-        ?subject <$uri> ?value
-    } WHERE {
-        $query
-    };
-""")
+if namedGraph:
+    template = Template("""
+        INSERT {
+            GRAPH <$graph> {
+                ?subject <$uri> ?value .
+            }
+        } WHERE {
+            $query
+        };
+    """)
+else:
+    template = Template("""
+        INSERT {
+            ?subject <$uri> ?value
+        } WHERE {
+            $query
+        };
+    """)
 
 for field in model['fields']:
     uri = model['prefix'] + field['id']
@@ -31,7 +43,10 @@ for field in model['fields']:
     except:
         print("No query found for " + field['id'])
     selectQueryPart = selectQueryPart.replace('$','?').replace('"',"'")
-    query = template.substitute(uri=uri, query=selectQueryPart)
+    if namedGraph:
+        query = template.substitute(uri=uri, query=selectQueryPart, graph=namedGraph)
+    else:
+        query = template.substitute(uri=uri, query=selectQueryPart)
     output += query
 
 print(output)
