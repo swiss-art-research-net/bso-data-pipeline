@@ -124,8 +124,9 @@ tasks:
     desc: Materialises the field definitions as propertes in the graph
     vars:
       FIELD_DEFINITIONS: /bso-app-src/fieldDefinitions.yml
+      GRAPH: https://resource.swissartresearch.net/graph/fields
       QUERY:
-        sh: python /scripts/generate-materialise-query-from-field-definitions.py {{.FIELD_DEFINITIONS}}
+        sh: python /scripts/generate-materialise-query-from-field-definitions.py {{.FIELD_DEFINITIONS}} {{.GRAPH}}
     cmds:
       - curl -X POST {{.ENDPOINT}} --data-urlencode "update={{.QUERY}}" 
 
