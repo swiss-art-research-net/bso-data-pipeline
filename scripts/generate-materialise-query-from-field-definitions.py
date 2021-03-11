@@ -17,6 +17,7 @@ for prefix in model['namespaces'].keys():
     output += "PREFIX %s: <%s>\n" % (prefix, model['namespaces'][prefix])
 
 if namedGraph:
+    output += "DROP GRAPH <%s> ;" % namedGraph
     template = Template("""
         INSERT {
             GRAPH <$graph> {
