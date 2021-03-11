@@ -3,6 +3,7 @@
   <record>
     <uuid>f33b0330-d53d-41f8-a7b8-3334be547d0b</uuid>
     <datafield tag="001">003639920</datafield>
+    <record-identifier>zbz-003639920</record-identifier>
     <datafield tag="007">ki\|||;cr\|||||||||||</datafield>
     <datafield tag="008">990903s1860\\\\sz\\\\\\\\\\\\00\\\\zxx\d</datafield>
     <datafield tag="024">
@@ -192,6 +193,7 @@
   <record>
     <uuid>8d11181b-3369-4032-8ab2-0514d94314f1</uuid>
     <datafield tag="001">005134689</datafield>
+    <record-identifier>zbz-005134689</record-identifier>
     <datafield tag="007">ki\|||;cr\|||||||||||</datafield>
     <datafield tag="008">060309q18771899sz\\\\\\\\\\\\\\\\||zxx\\</datafield>
     <datafield tag="024">
@@ -364,6 +366,7 @@
   <record>
     <uuid>4b4a9cb6-3a32-4582-8a26-62b818b5795d</uuid>
     <datafield tag="001">005219259</datafield>
+    <record-identifier>zbz-005219259</record-identifier>
     <datafield tag="007">ki\\\\;cr\|||||||||||</datafield>
     <datafield tag="008">060708s1848\\\\sz\\\\\\\\\\\\\\\\i\zxx\\</datafield>
     <datafield tag="024">
@@ -487,6 +490,7 @@
   <record>
     <uuid>0de7df7d-23f7-4bba-b061-730ff6a3fc18</uuid>
     <datafield tag="001">005300655</datafield>
+    <record-identifier>zbz-005300655</record-identifier>
     <datafield tag="007">ki\\\\;cr\|||||||||||</datafield>
     <datafield tag="008">060421s1742\\\\sz\\\\\\\\\\\\\\\\i\zxx\\</datafield>
     <datafield tag="024">
@@ -626,6 +630,7 @@
   <record>
     <uuid>6d4bdba6-4ecd-45d8-a3f0-1554fb0afa0d</uuid>
     <datafield tag="001">005203731</datafield>
+    <record-identifier>zbz-005203731</record-identifier>
     <datafield tag="007">ki\\\\;cr\|||||||||||</datafield>
     <datafield tag="008">060713s1838\\\\sz\\\\\\\\\\\\\\\\i\zxx\\</datafield>
     <datafield tag="024">
