@@ -20,11 +20,11 @@ tasks:
       - task: run-query-from-file
         vars: {FILE: "queries/cleanup.sparql"}
 
-  delete-assets:
-    desc: Delete the assets (field definitions, etc.) from the Blazegraph instance
+  delete-field-defininitions:
+    desc: Delete the field definitions from the Blazegraph instance
     cmds:
       - task: run-query-from-file
-        vars: {FILE: "queries/deleteAssets.sparql"}
+        vars: {FILE: "queries/deleteFieldDefinitions.sparql"}
 
   download-iiif-manifests:
     desc: Downloads the IIIF Manifests found in the ZBZ data source file
