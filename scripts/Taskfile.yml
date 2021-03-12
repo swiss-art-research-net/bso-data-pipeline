@@ -20,7 +20,7 @@ tasks:
       - task: run-query-from-file
         vars: {FILE: "queries/cleanup.sparql"}
 
-  delete-field-defininitions:
+  delete-field-definitions:
     desc: Delete the field definitions from the Blazegraph instance
     cmds:
       - task: run-query-from-file
