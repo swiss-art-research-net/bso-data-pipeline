@@ -4,6 +4,7 @@ services:
   blazegraph:
     image: metaphacts/blazegraph-basic
     container_name: ${PROJECT_NAME}_blazegraph
+    restart: unless-stopped
     environment:
       - JAVA_OPTS=-Xmx1g
     logging:
@@ -18,6 +19,7 @@ services:
   jobs:
     build: ./services/jobs
     container_name: ${PROJECT_NAME}_jobs
+    restart: unless-stopped
     volumes:
       - ./data:/data
       - ./mapping:/mapping
@@ -27,6 +29,7 @@ services:
   platform:
     image: swissartresearx/metaphacts-community:4.0.0
     container_name: ${PROJECT_NAME}_platform
+    restart: unless-stopped
     depends_on:
       - blazegraph
     environment:
@@ -43,6 +46,7 @@ services:
   proxy:
     build: ./services/proxy
     container_name: ${PROJECT_NAME}_proxy
+    restart: unless-stopped
     depends_on:
       - platform
       - blazegraph
