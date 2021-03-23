@@ -1,5 +1,7 @@
 FROM python:3.8
-ENV LANG C.UTF-8
+ENV LC_ALL=en_US.UTF-8
+ENV LANG=en_US.UTF-8
+ENV LANGUAGE=en_US.UTF-8
 RUN apt update
 RUN apt install -y default-jre
 # Install Python packages
