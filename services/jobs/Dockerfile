@@ -1,6 +1,6 @@
 FROM python:3.8
 RUN apt update
-RUN apt install -y openssh-server default-jre
+RUN apt install -y default-jre
 # Install Python packages
 RUN pip install date-parser-sari lxml urllib3 requests edtf tqdm rdflib sparqlwrapper PyYAML
 
