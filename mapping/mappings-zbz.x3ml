@@ -1419,7 +1419,7 @@
                                         <constant/>
                                     </instance_info>
                                     <instance_generator name="URIwithTypeAndId">
-                                        <arg name="type" type="constant">role</arg>
+                                        <arg name="type" type="constant">type</arg>
                                         <arg name="id" type="xpath">text()</arg>
                                     </instance_generator>
                                 </entity>
@@ -1488,7 +1488,7 @@
                                         <constant/>
                                     </instance_info>
                                     <instance_generator name="URIwithTypeAndId">
-                                        <arg name="type" type="constant">role</arg>
+                                        <arg name="type" type="constant">type</arg>
                                         <arg name="id" type="xpath">text()</arg>
                                     </instance_generator>
                                 </entity>
