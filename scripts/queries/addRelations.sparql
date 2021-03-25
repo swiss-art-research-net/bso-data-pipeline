@@ -1,5 +1,5 @@
-PREFIX sari: <http://rs.swissartresearch.net/>
-PREFIX search: <http://rs.swissartresearch.net/search/>
+PREFIX sari: <http://platform.swissartresearch.net/>
+PREFIX search: <http://platform.swissartresearch.net/search/>
 PREFIX : <http://www.metaphacts.com/resource/>
 PREFIX crmdig: <http://www.ics.forth.gr/isl/CRMdig/>
 PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
