@@ -1,0 +1,12 @@
+version: "3"
+services:
+
+  proxy:
+    build: ./services/proxy
+    container_name: ${PROJECT_NAME}_proxy
+    restart: unless-stopped
+    depends_on:
+      - platform
+      - blazegraph
+    ports:
+      - $PORT_PROXY:80
