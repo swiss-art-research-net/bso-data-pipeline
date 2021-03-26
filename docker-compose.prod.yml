@@ -10,4 +10,4 @@ services:
 networks:
   proxy:
     external:
-      name: sari-nginx_proxy_network
+      name: saringinx_proxy_network
