@@ -1,0 +1,13 @@
+version: "3"
+services:
+  platform:
+    environment:
+      LETSENCRYPT_EMAIL: ${LETSENCRYPT_EMAIL}
+      VIRTUAL_HOST: ${HOST_NAME}
+    networks:
+    - proxy
+
+networks:
+  proxy:
+    external:
+      name: sari-nginx_proxy_network
