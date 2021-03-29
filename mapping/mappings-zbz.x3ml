@@ -615,6 +615,13 @@
                                         </if>
                                     </not>
                                 </if>
+                                <if>
+                                    <not>
+                                        <if>
+                                            <equals value="fmo">./subfield[@code='4']/text()</equals>
+                                        </if>
+                                    </not>
+                                </if>
                             </and>
                         </if>
                         <relationship>crm:P108i_was_produced_by</relationship>
@@ -695,6 +702,13 @@
                                     <not>
                                         <if>
                                             <equals value="art">./subfield[@code='4']/text()</equals>
+                                        </if>
+                                    </not>
+                                </if>
+                                <if>
+                                    <not>
+                                        <if>
+                                            <equals value="fmo">./subfield[@code='4']/text()</equals>
                                         </if>
                                     </not>
                                 </if>
@@ -1593,6 +1607,19 @@
                                 <arg name="subtype" type="constant">subcreation</arg>
                                 <arg name="level1" type="xpath">../subfield[@code='id_person']/text()</arg>
                             </instance_generator>
+                            <additional>
+                                <relationship>crm:P2_has_type</relationship>
+                                <entity>
+                                    <type>crm:E55_Type</type>
+                                    <instance_info>
+                                        <constant/>
+                                    </instance_info>
+                                    <instance_generator name="URIwithTypeAndId">
+                                        <arg name="type" type="constant">type</arg>
+                                        <arg name="id" type="constant">art</arg>
+                                    </instance_generator>
+                                </entity>
+                            </additional>
                         </entity>
                     </target_node>
                 </range>
@@ -3066,6 +3093,13 @@
                                 <not>
                                     <if>
                                         <equals value="art">./subfield[@code='4']/text()</equals>
+                                    </if>
+                                </not>
+                            </if>
+                            <if>
+                                <not>
+                                    <if>
+                                        <equals value="fmo">./subfield[@code='4']/text()</equals>
                                     </if>
                                 </not>
                             </if>
