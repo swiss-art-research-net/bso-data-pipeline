@@ -153,7 +153,6 @@
                     </target_node>
                 </range>
             </link>
-
             <link>
                 <path>
                     <source_relation>
@@ -510,7 +509,6 @@
                     </target_node>
                 </range>
             </link>
-
             <link>
                 <path>
                     <source_relation>
@@ -783,6 +781,51 @@
                     </target_node>
                 </range>
             </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>datafield</relation>
+                    </source_relation>
+                    <target_relation>
+                        <if>
+                            <and>
+                                <if>
+                                    <equals value="300">@tag</equals>
+                                </if>
+                                <if>
+                                    <exists>./subfield[@code='b']/text()</exists>
+                                </if>
+                            </and>
+                        </if>
+                        <relationship>crm:P108i_was_produced_by</relationship>
+                        <entity variable="production">
+                            <type>crm:E12_Production</type>
+                            <instance_generator name="URIwithTypeSubtypeAndId">
+                                <arg name="type" type="constant">artwork</arg>
+                                <arg name="id" type="xpath">../record-identifier/text()</arg>
+                                <arg name="subtype" type="constant">production</arg>
+                            </instance_generator>
+                        </entity>
+                        <relationship>crm:P32_used_general_technique</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>datafield</source_node>
+                    <target_node>
+                        <entity variable="300b">
+                            <type>crm:E55_Type</type>
+                            <instance_generator name="URIwithTypeAndId_hashed">
+                                <arg name="type" type="constant">method</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">./subfield[@code='b']/text()</arg>
+                            </instance_generator>
+                            <label_generator name="Literal">
+                                <arg name="text" type="xpath">./subfield[@code='b']/text()</arg>
+                                <arg name="language" type="constant"/>
+                            </label_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
         </mapping>
         <mapping>
             <domain>
@@ -1047,51 +1090,6 @@
                             <comments_last_update date="" person=""/>
                         </comment>
                     </comments>
-                </range>
-            </link>
-            <link>
-                <path>
-                    <source_relation>
-                        <relation>datafield</relation>
-                    </source_relation>
-                    <target_relation>
-                        <if>
-                            <and>
-                                <if>
-                                    <equals value="300">@tag</equals>
-                                </if>
-                                <if>
-                                    <exists>./subfield[@code='b']/text()</exists>
-                                </if>
-                            </and>
-                        </if>
-                        <relationship>crm:P94i_was_created_by</relationship>
-                        <entity variable="creation">
-                            <type>crm:E65_Creation</type>
-                            <instance_generator name="URIwithTypeSubtypeAndId">
-                                <arg name="type" type="constant">artwork</arg>
-                                <arg name="id" type="xpath">../record-identifier/text()</arg>
-                                <arg name="subtype" type="constant">creation</arg>
-                            </instance_generator>
-                        </entity>
-                        <relationship>crm:P33_used_specific_technique</relationship>
-                    </target_relation>
-                </path>
-                <range>
-                    <source_node>datafield</source_node>
-                    <target_node>
-                        <entity variable="300b">
-                            <type>crm:E29_Design_or_Procedure</type>
-                            <instance_generator name="URIwithTypeAndId_hashed">
-                                <arg name="type" type="constant">method</arg>
-                                <arg name="id_HASHED_CONTENTS" type="xpath">./subfield[@code='b']/text()</arg>
-                            </instance_generator>
-                            <label_generator name="Literal">
-                                <arg name="text" type="xpath">./subfield[@code='b']/text()</arg>
-                                <arg name="language" type="constant"/>
-                            </label_generator>
-                        </entity>
-                    </target_node>
                 </range>
             </link>
             <link>
@@ -3417,4 +3415,6 @@
             </link>
         </mapping>
     </mappings>
+
+
 </x3ml>
