@@ -65,3 +65,38 @@ INSERT {
   ?subject a crm:E22_Man-Made_Object
   FILTER(REGEX(STR(?subject), 'swissartresearch.net/artwork'))
 };
+
+INSERT DATA {
+  GRAPH sari:relations {
+    search:artist a crm:E55_Type ;
+      rdfs:label 'artist' .
+  }
+};
+
+INSERT {
+  GRAPH sari:relations {
+    ?type crmdig:L54_is_same-as search:artist .
+  }
+} WHERE {
+  ?creation crm:P9_consists_of ?subcreation .
+  ?subcreation crm:P2_has_type ?type .
+  VALUES (?type) {
+    (<https://resource.swissartresearch.net/type/MalerIn>)
+    (<https://resource.swissartresearch.net/type/ZeichnerIn>)
+    (<https://resource.swissartresearch.net/type/disegnatore>)
+    (<https://resource.swissartresearch.net/type/pittore>)
+    (<https://resource.swissartresearch.net/type/peintre>)
+    (<https://resource.swissartresearch.net/type/desinateur>)
+    (<https://resource.swissartresearch.net/type/FotografIn>)
+    (<https://resource.swissartresearch.net/type/Malerin>)
+    (<https://resource.swissartresearch.net/type/Fotograf>)
+    (<https://resource.swissartresearch.net/type/dessinteur>)
+    (<https://resource.swissartresearch.net/type/dessinateur%3F>)
+    (<https://resource.swissartresearch.net/type/art>)
+    (<https://resource.swissartresearch.net/type/aut>)
+    (<https://resource.swissartresearch.net/type/art%2C%20prm>)
+    (<https://resource.swissartresearch.net/type/art%2C%20prm>)
+    (<https://resource.swissartresearch.net/type/pht>)
+    (<https://resource.swissartresearch.net/type/pht%2C%20edt>)
+  }
+}
