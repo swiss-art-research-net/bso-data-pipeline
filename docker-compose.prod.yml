@@ -1,5 +1,13 @@
 version: "3"
 services:
+  blazegraph:
+    networks:
+    - internal
+
+  jobs:
+    networks:
+    - internal
+
   platform:
     environment:
       LETSENCRYPT_EMAIL: ${LETSENCRYPT_EMAIL}
@@ -7,9 +15,15 @@ services:
       VIRTUAL_HOST: ${HOST_NAME}
       VIRTUAL_PORT: 8080
     networks:
+    - internal
     - proxy
 
+  researchspace:
+    networks:
+    - internal
+
 networks:
+  internal:
   proxy:
     external:
-      name: saringinx_proxy_network
+      name: nginx_proxy_network
