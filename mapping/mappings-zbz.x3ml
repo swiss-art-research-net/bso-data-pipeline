@@ -3967,7 +3967,7 @@
                             </if>
                         </or>
                     </if>
-                    <entity>
+                    <entity variable="700_actor">
                         <type>crm:E39_Actor</type>
                         <instance_generator name="URIwithTypeAndId_hashed">
                             <arg name="type" type="constant">actor</arg>
