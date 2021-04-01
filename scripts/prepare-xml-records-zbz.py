@@ -163,13 +163,16 @@ def postProcess(record):
                 # Remove the field
                 datafieldTemplate = copy.copy(datafield)
                 datafield.getparent().remove(datafield)
-                # Create individual fields per role
-                for i, roleCode in enumerate(roleCodes):
-                    newDatafield = copy.copy(datafieldTemplate)
-                    newDatafield.find(".subfield[@code='id_person']").text = newDatafield.find(".subfield[@code='id_person']").text + "-" + str(i)
-                    newDatafield.find("./subfield[@code='4']").text = roleCodes[i]
-                    newDatafield.find("./subfield[@code='e']").text = roleNames[i]
-                    record.append(newDatafield)
+                if len(roleCodes) == len(roleNames):
+                    # Create individual fields per role
+                    for i, roleCode in enumerate(roleCodes):
+                        newDatafield = copy.copy(datafieldTemplate)
+                        newDatafield.find(".subfield[@code='id_person']").text = newDatafield.find(".subfield[@code='id_person']").text + "-" + str(i)
+                        newDatafield.find("./subfield[@code='4']").text = roleCodes[i]
+                        newDatafield.find("./subfield[@code='e']").text = roleNames[i]
+                        record.append(newDatafield)
+                else:
+                    print("Inconsistent roles in", record.find("./record-identifier").text)
 
     return record
 
