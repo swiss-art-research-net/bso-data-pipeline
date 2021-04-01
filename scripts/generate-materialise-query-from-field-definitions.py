@@ -37,17 +37,18 @@ else:
     """)
 
 for field in model['fields']:
-    uri = model['prefix'] + field['id']
-    selectQuery = [d for d in field['queries'] if 'select' in d.keys()][0]['select']
-    try:
-        selectQueryPart = re.findall(r'{(.*)}\s*$', selectQuery)[0]
-    except:
-        print("No query found for " + field['id'])
-    selectQueryPart = selectQueryPart.replace('$','?').replace('"',"'")
-    if namedGraph:
-        query = template.substitute(uri=uri, query=selectQueryPart, graph=namedGraph)
-    else:
-        query = template.substitute(uri=uri, query=selectQueryPart)
-    output += query
+    if 'materialise' in field and field['materialise'] == True:
+        uri = model['prefix'] + field['id']
+        selectQuery = [d for d in field['queries'] if 'select' in d.keys()][0]['select']
+        try:
+            selectQueryPart = re.findall(r'{(.*)}\s*$', selectQuery)[0]
+        except:
+            print("No query found for " + field['id'])
+        selectQueryPart = selectQueryPart.replace('$','?').replace('"',"'")
+        if namedGraph:
+            query = template.substitute(uri=uri, query=selectQueryPart, graph=namedGraph)
+        else:
+            query = template.substitute(uri=uri, query=selectQueryPart)
+        output += query
 
 print(output)
