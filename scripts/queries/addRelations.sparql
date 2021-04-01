@@ -99,5 +99,14 @@ INSERT {
     (<https://resource.swissartresearch.net/type/art%2C%20prm>)
     (<https://resource.swissartresearch.net/type/pht>)
     (<https://resource.swissartresearch.net/type/pht%2C%20edt>)
+    (<https://resource.swissartresearch.net/type/art%2C%20art>)
+    (<https://resource.swissartresearch.net/type/art%2C%20plt>)
+    (<https://resource.swissartresearch.net/type/art%2C%20pht>)
+    (<https://resource.swissartresearch.net/type/art%2C%20cmp>)
+    (<https://resource.swissartresearch.net/type/art%2C%20cre>)
+    (<https://resource.swissartresearch.net/type/pht%2C%20art>)
+    (<https://resource.swissartresearch.net/type/art%2C%20pht%2C%20art>)
+    (<https://resource.swissartresearch.net/type/com%2C%20pht>)
+    (<https://resource.swissartresearch.net/type/pht%2C%20cre>)
   }
 }
