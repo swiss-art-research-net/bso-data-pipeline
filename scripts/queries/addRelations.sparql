@@ -109,4 +109,16 @@ INSERT {
     (<https://resource.swissartresearch.net/type/com%2C%20pht>)
     (<https://resource.swissartresearch.net/type/pht%2C%20cre>)
   }
+};
+
+INSERT {
+	GRAPH ?g {
+      ?event crm:P14_carried_out_by ?actor .
+  }
+} WHERE {
+  GRAPH ?g {
+    ?event crm:P9_consists_of ?subevent .
+    ?subevent crm:P14_carried_out_by ?actor .
+    FILTER NOT EXISTS { ?event crm:P14_carried_out_by ?actor . }
+  }
 }
