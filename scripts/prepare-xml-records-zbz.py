@@ -2,6 +2,7 @@ from edtf import parse_edtf
 from sariDateParser.dateParser import parse
 from lxml import etree
 from tqdm import tqdm
+import copy
 import json
 import os
 import requests
@@ -144,6 +145,34 @@ def imageListToXml(images):
         etree.SubElement(imageNode, "url", type="iiif").text = image['image']
     return imagesNode
 
+def postProcess(record):
+    """
+    Execute additional steps on the XML output
+    """
+
+    # Duplicate field 700 if there are several roles
+    datafields700 = record.findall("./datafield[@tag='700']")
+    if len(datafields700):
+        for datafield in datafields700:
+            subfield4 = datafield.find("./subfield[@code='4']")
+            subfieldE = datafield.find("./subfield[@code='e']")
+            # If subfield 4 contains a comma, there are several roles defined
+            if subfield4 is not None and ',' in subfield4.text:
+                roleCodes = subfield4.text.split(', ')
+                roleNames = subfieldE.text.split(', ')
+                # Remove the field
+                datafieldTemplate = copy.copy(datafield)
+                datafield.getparent().remove(datafield)
+                # Create individual fields per role
+                for i, roleCode in enumerate(roleCodes):
+                    newDatafield = copy.copy(datafieldTemplate)
+                    newDatafield.find(".subfield[@code='id_person']").text = newDatafield.find(".subfield[@code='id_person']").text + "-" + str(i)
+                    newDatafield.find("./subfield[@code='4']").text = roleCodes[i]
+                    newDatafield.find("./subfield[@code='e']").text = roleNames[i]
+                    record.append(newDatafield)
+
+    return record
+
 # Read main data file
 with open(inputFile, 'r') as f:
     rawData = json.load(f)
@@ -175,6 +204,8 @@ for i, row in enumerate(tqdm(rawData['rows'][offset:limit+offset])):
             #print("Aborting due to missing manuscript")
             print("%d out of %d converted" % (i, len(rawData['rows'])))
             #exit()
+    
+    record = postProcess(record)
     
     records.append(record)
     
