@@ -10,6 +10,9 @@ import urllib
 import time
 import sys
 
+sys.path.append("./helpers")
+import dateOverrides
+
 inputFile = "/data/source/sari_abzug-utf-8_23_04-tsv.json"
 externalFieldsDirectory = "/data/source/"
 manifestDirectory = "/data/manifests/"
@@ -78,7 +81,7 @@ def convertRowToXml(row, keys, externalFields):
                         # Check if field contains a date
                         if k.replace("_","$") in fieldsContainingDates and f[k]:
                             try:
-                                parsedDate = parse(f[k])
+                                parsedDate = parseDate(f[k])
                             except:
                                 print("Could not parse", f[k],k)
                             if parsedDate:
@@ -94,7 +97,7 @@ def convertRowToXml(row, keys, externalFields):
                     subfield.text = str(row[key])
                     # Check if field contains a date
                     if key in fieldsContainingDates:
-                        parsedDate = parse(row[key])
+                        parsedDate = parseDate(row[key])
                         if parsedDate:
                             subfield.set("parsedDate", parsedDate)
                             daterange = convertEDTFdate(parsedDate)
@@ -144,6 +147,12 @@ def imageListToXml(images):
         etree.SubElement(imageNode, "width").text = str(image['width'])
         etree.SubElement(imageNode, "url", type="iiif").text = image['image']
     return imagesNode
+
+def parseDate(date):
+    if date in dateOverrides.zbz:
+        return dateOverrides.zbz[date]
+    else:
+        return parse(date)
 
 def postProcess(record):
     """
