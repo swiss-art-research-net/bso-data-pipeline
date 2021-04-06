@@ -16,119 +16,119 @@
 }
 
 
-    <http://platform.swissartresearch.net/instances/knowledgePatterns/collection/context> {
+    <https://platform.swissartresearch.net/instances/knowledgePatterns/collection/context> {
 
-        <http://www.researchspace.org/resource/system/knowledgePatternContainer> ldp:contains <http://platform.swissartresearch.net/instances/knowledgePatterns/collection> .
+        <http://www.researchspace.org/resource/system/knowledgePatternContainer> ldp:contains <https://platform.swissartresearch.net/instances/knowledgePatterns/collection> .
  
-        <http://platform.swissartresearch.net/instances/knowledgePatterns/collection> 
+        <https://platform.swissartresearch.net/instances/knowledgePatterns/collection> 
             rdfs:label "Collection" ;
             rdfs:comment "The holding collection or institution of the work" ;
             rsfield:xsdDatatype xsd:anyURI ; 
             rsfield:domain crm:E22_Man-Made_Object ; 
             rsfield:range crm:E39_Actor ; 
-                rsfield:selectPattern <http://platform.swissartresearch.net/instances/knowledgePatterns/collection/query/select> ;
+                rsfield:selectPattern <https://platform.swissartresearch.net/instances/knowledgePatterns/collection/query/select> ;
     
         a rsfield:Field, ldp:Resource, prov:Entity ;
         prov:wasAttributedTo rsuser:admin ;
         prov:generatedAtTime "2021-01-08T11:43:46.111Z"^^xsd:dateTime .
 
-                <http://platform.swissartresearch.net/instances/knowledgePatterns/collection/query/select> a sp:Query;
+                <https://platform.swissartresearch.net/instances/knowledgePatterns/collection/query/select> a sp:Query;
                     sp:text """SELECT ?value WHERE { $subject crm:P109_has_former_or_current_curator ?value . }""" .
     
     }
-    <http://platform.swissartresearch.net/instances/knowledgePatterns/creator_of_object/context> {
+    <https://platform.swissartresearch.net/instances/knowledgePatterns/creator_of_object/context> {
 
-        <http://www.researchspace.org/resource/system/knowledgePatternContainer> ldp:contains <http://platform.swissartresearch.net/instances/knowledgePatterns/creator_of_object> .
+        <http://www.researchspace.org/resource/system/knowledgePatternContainer> ldp:contains <https://platform.swissartresearch.net/instances/knowledgePatterns/creator_of_object> .
  
-        <http://platform.swissartresearch.net/instances/knowledgePatterns/creator_of_object> 
+        <https://platform.swissartresearch.net/instances/knowledgePatterns/creator_of_object> 
             rdfs:label "Creator" ;
             rdfs:comment "The creator of the artwork" ;
             rsfield:xsdDatatype xsd:anyURI ; 
             rsfield:domain crm:E22_Man-Made_Object ; 
             rsfield:range crm:E39_Actor ; 
-                rsfield:insertPattern <http://platform.swissartresearch.net/instances/knowledgePatterns/creator_of_object/query/insert> ;
-                rsfield:selectPattern <http://platform.swissartresearch.net/instances/knowledgePatterns/creator_of_object/query/select> ;
+                rsfield:insertPattern <https://platform.swissartresearch.net/instances/knowledgePatterns/creator_of_object/query/insert> ;
+                rsfield:selectPattern <https://platform.swissartresearch.net/instances/knowledgePatterns/creator_of_object/query/select> ;
     
         a rsfield:Field, ldp:Resource, prov:Entity ;
         prov:wasAttributedTo rsuser:admin ;
         prov:generatedAtTime "2021-01-08T11:43:46.111Z"^^xsd:dateTime .
 
-                <http://platform.swissartresearch.net/instances/knowledgePatterns/creator_of_object/query/insert> a sp:Query;
+                <https://platform.swissartresearch.net/instances/knowledgePatterns/creator_of_object/query/insert> a sp:Query;
                     sp:text """INSERT { ?creation crm:P14_carried_out_by $value . } WHERE { BIND(CONCAT(STR($subject), "/creation") as ?creation) }""" .
-                <http://platform.swissartresearch.net/instances/knowledgePatterns/creator_of_object/query/select> a sp:Query;
+                <https://platform.swissartresearch.net/instances/knowledgePatterns/creator_of_object/query/select> a sp:Query;
                     sp:text """SELECT ?value ?label WHERE { $subject crm:P128_carries/crm:P94i_was_created_by/crm:P14_carried_out_by ?value. OPTIONAL { BIND(URI(CONCAT(STR($subject), "/meta")) as ?subject_meta ) ?value crm:P1_is_identified_by ?appellation . ?appellation rdfs:label ?label ; crm:P70i_is_documented_in ?subject_meta . } }""" .
     
     }
-    <http://platform.swissartresearch.net/instances/knowledgePatterns/objects_created/context> {
+    <https://platform.swissartresearch.net/instances/knowledgePatterns/objects_created/context> {
 
-        <http://www.researchspace.org/resource/system/knowledgePatternContainer> ldp:contains <http://platform.swissartresearch.net/instances/knowledgePatterns/objects_created> .
+        <http://www.researchspace.org/resource/system/knowledgePatternContainer> ldp:contains <https://platform.swissartresearch.net/instances/knowledgePatterns/objects_created> .
  
-        <http://platform.swissartresearch.net/instances/knowledgePatterns/objects_created> 
+        <https://platform.swissartresearch.net/instances/knowledgePatterns/objects_created> 
             rdfs:label "Created" ;
             rdfs:comment "Objects that were created by an actor" ;
             rsfield:xsdDatatype xsd:anyURI ; 
             rsfield:domain crm:E39_Actor ; 
             rsfield:range crm:E22_Man-Made_Object ; 
-                rsfield:selectPattern <http://platform.swissartresearch.net/instances/knowledgePatterns/objects_created/query/select> ;
+                rsfield:selectPattern <https://platform.swissartresearch.net/instances/knowledgePatterns/objects_created/query/select> ;
     
         a rsfield:Field, ldp:Resource, prov:Entity ;
         prov:wasAttributedTo rsuser:admin ;
         prov:generatedAtTime "2021-01-08T11:43:46.111Z"^^xsd:dateTime .
 
-                <http://platform.swissartresearch.net/instances/knowledgePatterns/objects_created/query/select> a sp:Query;
+                <https://platform.swissartresearch.net/instances/knowledgePatterns/objects_created/query/select> a sp:Query;
                     sp:text """SELECT ?value ?label WHERE { ?value crm:P128_carries/crm:P94i_was_created_by/crm:P14_carried_out_by $subject ; rdfs:label ?object_label . OPTIONAL { ?value crm:P128_carries/crm:P94i_was_created_by/crm:P9_consists_of ?subcreation . ?subcreation crm:P14_carried_out_by $subject ; crm:P2_has_type/rdfs:label ?role_label . } BIND(IF(BOUND(?role_label), CONCAT(?object_label, " (", ?role_label, ")"), ?object_label) as ?label) } """ .
     
     }
-    <http://platform.swissartresearch.net/instances/knowledgePatterns/object_depicts/context> {
+    <https://platform.swissartresearch.net/instances/knowledgePatterns/object_depicts/context> {
 
-        <http://www.researchspace.org/resource/system/knowledgePatternContainer> ldp:contains <http://platform.swissartresearch.net/instances/knowledgePatterns/object_depicts> .
+        <http://www.researchspace.org/resource/system/knowledgePatternContainer> ldp:contains <https://platform.swissartresearch.net/instances/knowledgePatterns/object_depicts> .
  
-        <http://platform.swissartresearch.net/instances/knowledgePatterns/object_depicts> 
+        <https://platform.swissartresearch.net/instances/knowledgePatterns/object_depicts> 
             rdfs:label "Depicts" ;
             rdfs:comment "The entity that is depicted by the object" ;
             rsfield:xsdDatatype xsd:anyURI ; 
             rsfield:domain crm:E22_Man-Made_Object ; 
             rsfield:range crm:E1_CRM_Entity ; 
-                rsfield:selectPattern <http://platform.swissartresearch.net/instances/knowledgePatterns/object_depicts/query/select> ;
-                rsfield:insertPattern <http://platform.swissartresearch.net/instances/knowledgePatterns/object_depicts/query/insert> ;
+                rsfield:selectPattern <https://platform.swissartresearch.net/instances/knowledgePatterns/object_depicts/query/select> ;
+                rsfield:insertPattern <https://platform.swissartresearch.net/instances/knowledgePatterns/object_depicts/query/insert> ;
     
         a rsfield:Field, ldp:Resource, prov:Entity ;
         prov:wasAttributedTo rsuser:admin ;
         prov:generatedAtTime "2021-01-08T11:43:46.111Z"^^xsd:dateTime .
 
-                <http://platform.swissartresearch.net/instances/knowledgePatterns/object_depicts/query/select> a sp:Query;
+                <https://platform.swissartresearch.net/instances/knowledgePatterns/object_depicts/query/select> a sp:Query;
                     sp:text """SELECT ?value WHERE { $subject crm:P128_carries/crm:P138_represents ?value . }""" .
-                <http://platform.swissartresearch.net/instances/knowledgePatterns/object_depicts/query/insert> a sp:Query;
+                <https://platform.swissartresearch.net/instances/knowledgePatterns/object_depicts/query/insert> a sp:Query;
                     sp:text """INSERT { ?work crm:P138_represents $value . } WHERE { $subject crm:P128_carries ?work . }""" .
     
     }
-    <http://platform.swissartresearch.net/instances/knowledgePatterns/label/context> {
+    <https://platform.swissartresearch.net/instances/knowledgePatterns/label/context> {
 
-        <http://www.researchspace.org/resource/system/knowledgePatternContainer> ldp:contains <http://platform.swissartresearch.net/instances/knowledgePatterns/label> .
+        <http://www.researchspace.org/resource/system/knowledgePatternContainer> ldp:contains <https://platform.swissartresearch.net/instances/knowledgePatterns/label> .
  
-        <http://platform.swissartresearch.net/instances/knowledgePatterns/label> 
+        <https://platform.swissartresearch.net/instances/knowledgePatterns/label> 
             rdfs:label "Label" ;
             rdfs:comment "A human-readable label for the entity" ;
             rsfield:maxOccurs "1" ; 
             rsfield:xsdDatatype xsd:string ; 
-                rsfield:insertPattern <http://platform.swissartresearch.net/instances/knowledgePatterns/label/query/insert> ;
-                rsfield:selectPattern <http://platform.swissartresearch.net/instances/knowledgePatterns/label/query/select> ;
+                rsfield:insertPattern <https://platform.swissartresearch.net/instances/knowledgePatterns/label/query/insert> ;
+                rsfield:selectPattern <https://platform.swissartresearch.net/instances/knowledgePatterns/label/query/select> ;
     
         a rsfield:Field, ldp:Resource, prov:Entity ;
         prov:wasAttributedTo rsuser:admin ;
         prov:generatedAtTime "2021-01-08T11:43:46.111Z"^^xsd:dateTime .
 
-                <http://platform.swissartresearch.net/instances/knowledgePatterns/label/query/insert> a sp:Query;
+                <https://platform.swissartresearch.net/instances/knowledgePatterns/label/query/insert> a sp:Query;
                     sp:text """INSERT { $subject rdfs:label $value . } WHERE {}""" .
-                <http://platform.swissartresearch.net/instances/knowledgePatterns/label/query/select> a sp:Query;
+                <https://platform.swissartresearch.net/instances/knowledgePatterns/label/query/select> a sp:Query;
                     sp:text """SELECT ?value WHERE { $subject rdfs:label ?value . }""" .
     
     }
-    <http://platform.swissartresearch.net/instances/knowledgePatterns/object_carries_visual_item/context> {
+    <https://platform.swissartresearch.net/instances/knowledgePatterns/object_carries_visual_item/context> {
 
-        <http://www.researchspace.org/resource/system/knowledgePatternContainer> ldp:contains <http://platform.swissartresearch.net/instances/knowledgePatterns/object_carries_visual_item> .
+        <http://www.researchspace.org/resource/system/knowledgePatternContainer> ldp:contains <https://platform.swissartresearch.net/instances/knowledgePatterns/object_carries_visual_item> .
  
-        <http://platform.swissartresearch.net/instances/knowledgePatterns/object_carries_visual_item> 
+        <https://platform.swissartresearch.net/instances/knowledgePatterns/object_carries_visual_item> 
             rdfs:label "Visual Item" ;
             rdfs:comment "The E36 Visual Item carried by the E22 Human-Made Object" ;
             rsfield:minOccurs "1" ; 
@@ -136,16 +136,16 @@
             rsfield:xsdDatatype xsd:anyURI ; 
             rsfield:domain crm:E22_Man-Made_Object ; 
             rsfield:range crm:E36_Visual_item ; 
-                rsfield:insertPattern <http://platform.swissartresearch.net/instances/knowledgePatterns/object_carries_visual_item/query/insert> ;
-                rsfield:selectPattern <http://platform.swissartresearch.net/instances/knowledgePatterns/object_carries_visual_item/query/select> ;
+                rsfield:insertPattern <https://platform.swissartresearch.net/instances/knowledgePatterns/object_carries_visual_item/query/insert> ;
+                rsfield:selectPattern <https://platform.swissartresearch.net/instances/knowledgePatterns/object_carries_visual_item/query/select> ;
     
         a rsfield:Field, ldp:Resource, prov:Entity ;
         prov:wasAttributedTo rsuser:admin ;
         prov:generatedAtTime "2021-01-08T11:43:46.111Z"^^xsd:dateTime .
 
-                <http://platform.swissartresearch.net/instances/knowledgePatterns/object_carries_visual_item/query/insert> a sp:Query;
+                <https://platform.swissartresearch.net/instances/knowledgePatterns/object_carries_visual_item/query/insert> a sp:Query;
                     sp:text """INSERT { $subject crm:P128_carries $value} WHERE {}""" .
-                <http://platform.swissartresearch.net/instances/knowledgePatterns/object_carries_visual_item/query/select> a sp:Query;
+                <https://platform.swissartresearch.net/instances/knowledgePatterns/object_carries_visual_item/query/select> a sp:Query;
                     sp:text """SELECT ?value WHERE { $subject crm:P128_carries ?value . ?value a crm:E36_Visual_Item . }""" .
     
     }

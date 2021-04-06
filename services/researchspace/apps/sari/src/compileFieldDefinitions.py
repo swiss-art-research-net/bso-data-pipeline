@@ -4,7 +4,7 @@ inputFile = '../../../../researchplatform/apps/bso/src/fieldDefinitions.yml'
 outputFile = '../ldp/assets/fieldDefinitions.trig'
 
 model = generator.loadSourceFromFile(inputFile)
-model['prefix'] = 'http://platform.swissartresearch.net/instances/knowledgePatterns/'
+model['prefix'] = 'https://platform.swissartresearch.net/instances/knowledgePatterns/'
 
 output = generator.generate(model, generator.RESEARCHSPACE)
 output = output.replace("fieldDefinitionContainer","knowledgePatternContainer")
