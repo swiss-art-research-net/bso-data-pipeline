@@ -46,7 +46,7 @@ tasks:
         curl --silent -X POST {{.ENDPOINT}} --data-urlencode "update=DELETE { ?s ?p ?o } WHERE { GRAPH <{{.GRAPH}}> { ?s ?p ?o } }" > /dev/null
         for f in $(ls -1 {{.FOLDER}}/*.ttl); do
           echo "Ingesting file $count of $numfiles ($f)"
-          curl --silent -X POST --data-binary "uri=file://$f" {{.ENDPOINT}}?context-uri={{.GRAPH}} > /dev/null
+          curl --silent -X POST --data-binary "uri=file://$f" {{.ENDPOINT}}?context-uri={{if .GRAPH}}{{.GRAPH}}{{else}}file://$f{{end}} > /dev/null
           count=$((count+1)) 
         done
 
@@ -80,6 +80,15 @@ tasks:
           FOLDER: /data/ttl/main/nb
           GRAPH: https://resource.swissartresearch.net/graph/nb
 
+  ingest-data-nb-as-individual-graphs:
+    desc: Ingest the TTL files located in the data/ttl/main/nb folder to the Blazegraph instance, placing each file into an individual named graph
+    sources:
+      - /data/ttl/main/nb/*.ttl
+    cmds:
+      - task: ingest-data
+        vars: 
+          FOLDER: /data/ttl/main/nb
+
   ingest-data-zbz:
     desc: Ingest the TTL files located in the data/ttl/main/zbz folder to the Blazegraph instance
     sources:
@@ -89,6 +98,15 @@ tasks:
         vars: 
           FOLDER: /data/ttl/main/zbz
           GRAPH: https://resource.swissartresearch.net/graph/zbz
+
+  ingest-data-zbz-as-individual-graphs:
+    desc: Ingest the TTL files located in the data/ttl/main/zbz folder to the Blazegraph instance, placing each file into an individual named graph
+    sources:
+      - /data/ttl/main/zbz/*.ttl
+    cmds:
+      - task: ingest-data
+        vars: 
+          FOLDER: /data/ttl/main/zbz
 
   mapping-zbz:
     desc: Map ZBZ XML data to CIDOC/RDF
