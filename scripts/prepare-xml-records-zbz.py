@@ -159,10 +159,10 @@ def postProcess(record):
     Execute additional steps on the XML output
     """
 
-    # Duplicate field 700 if there are several roles
-    datafields700 = record.findall("./datafield[@tag='700']")
-    if len(datafields700):
-        for datafield in datafields700:
+    # Duplicate fields 700 and 710 if there are several roles
+    datafields7x0 = record.findall("./datafield[@tag='700']") + record.findall("./datafield[@tag='710']")
+    if len(datafields7x0):
+        for datafield in datafields7x0:
             subfield4 = datafield.find("./subfield[@code='4']")
             subfieldE = datafield.find("./subfield[@code='e']")
             # If subfield 4 contains a comma, there are several roles defined
@@ -175,7 +175,8 @@ def postProcess(record):
                     # Create individual fields per role
                 for i, roleCode in enumerate(roleCodes):
                     newDatafield = copy.copy(datafieldTemplate)
-                    newDatafield.find(".subfield[@code='id_person']").text = newDatafield.find(".subfield[@code='id_person']").text + "-" + str(i)
+                    if newDatafield.find(".subfield[@code='id_person']") is not None:
+                        newDatafield.find(".subfield[@code='id_person']").text = newDatafield.find(".subfield[@code='id_person']").text + "-" + str(i)
                     newDatafield.find("./subfield[@code='4']").text = roleCodes[i]
                     if len(roleNames) > i:
                         newDatafield.find("./subfield[@code='e']").text = roleNames[i]
