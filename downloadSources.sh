@@ -1,6 +1,6 @@
 #!/bin/bash
 source .env
-REPO=swiss-art-research-net/BSO
+REPO=swiss-art-research-net/bso-data
 
 
 download () {
