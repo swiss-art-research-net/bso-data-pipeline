@@ -159,10 +159,10 @@ def postProcess(record):
     Execute additional steps on the XML output
     """
 
-    # Duplicate fields 700 and 710 if there are several roles
-    datafields7x0 = record.findall("./datafield[@tag='700']") + record.findall("./datafield[@tag='710']")
-    if len(datafields7x0):
-        for datafield in datafields7x0:
+    # Duplicate fields 100, 110, 700 and 710 if there are several roles
+    datafieldsWithSeveralRoles = record.findall("./datafield[@tag='100']") + record.findall("./datafield[@tag='110']") + record.findall("./datafield[@tag='700']") + record.findall("./datafield[@tag='710']")
+    if len(datafieldsWithSeveralRoles):
+        for datafield in datafieldsWithSeveralRoles:
             subfield4 = datafield.find("./subfield[@code='4']")
             subfieldE = datafield.find("./subfield[@code='e']")
             # If subfield 4 contains a comma, there are several roles defined
