@@ -870,6 +870,58 @@
                     </target_node>
                 </range>
             </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>DetailData/DataElement</relation>
+                    </source_relation>
+                    <target_relation>
+                        <if>
+                            <equals value="10971">@ElementId</equals>
+                        </if>
+                        <relationship>crm:P9_consists_of</relationship>
+                        <entity>
+                            <type>crm:E11_Modification</type>
+                            <instance_generator name="URIwithTypeSubtypeIdAndCounter">
+                                <arg name="type" type="constant">artwork</arg>
+                                <arg name="id" type="xpath">../../@RecordIdentifier</arg>
+                                <arg name="subtype" type="constant">production</arg>
+                                <arg name="position" type="position"/>
+                            </instance_generator>
+                            <additional>
+                                <relationship>crm:P2_has_type</relationship>
+                                <entity>
+                                    <type>crm:E55_Type</type>
+                                    <instance_info>
+                                        <constant/>
+                                    </instance_info>
+                                    <instance_generator name="URIwithTypeAndId">
+                                        <arg name="type" type="constant">type</arg>
+                                        <arg name="id" type="xpath">lower-case(ElementValue/TextValue/text())</arg>
+                                    </instance_generator>
+                                    <label_generator name="Literal">
+                                        <arg name="text" type="xpath">lower-case(ElementValue/TextValue/text())</arg>
+                                        <arg name="language" type="constant"/>
+                                    </label_generator>
+                                </entity>
+                            </additional>
+                        </entity>
+                        <relationship>crm:P31_has_modified</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>DetailData/DataElement</source_node>
+                    <target_node>
+                        <entity>
+                            <type>crm:E22_Man-Made_Object</type>
+                            <instance_generator name="URIwithTypeAndId">
+                                <arg name="type" type="constant">artwork</arg>
+                                <arg name="id" type="xpath">../../@RecordIdentifier</arg>
+                            </instance_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
         </mapping>
         <mapping>
             <domain>
@@ -1686,6 +1738,4 @@
             </link>
         </mapping>
     </mappings>
-
-
 </x3ml>
