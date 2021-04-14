@@ -8,7 +8,7 @@ download () {
   localpath=$2
 
   echo "Downloading $remotepath"
-  python3 scripts/getFileContentsFromGit.py $GITHUB_USERNAME $GITHUB_PERSONAL_ACCESS_TOKEN $REPO $remotepath > $localpath
+  python3 scripts/getFileContentsFromGit.py $GITHUB_USERNAME $GITHUB_PERSONAL_ACCESS_TOKEN $REPO $remotepath $localpath
 }
 
 download "data/zbz/curate/100_curate.json" "data/source/100.json"
@@ -28,4 +28,5 @@ download "data/nb/nb-curation-geografika.csv" "data/source/nb-curation-geografik
 download "data/nb/nb-curation-koerperschaften.csv" "data/source/nb-curation-koerperschaften.csv"
 download "data/nb/nb-curation-names.csv" "data/source/nb-curation-names.csv"
 download "data/zbz/source/sari_abzug-utf-8_23_04-tsv.txt" "data/source/sari_abzug-utf-8_23_04-tsv.json"
-download "data/nb/source/WMC_Records_20201201.xml" "data/source/nb-allRecords.xml"
+download "data/nb/source/WMC_Records_20201201.xml" "data/source/nb-records.xml"
+download "data/nb/source/Gugelman.xml" "data/source/nb-parentrecords.xml"

@@ -161,7 +161,7 @@ tasks:
   prepare-xml-records-nb:
     desc: Extract individual records from the NB data
     sources:
-      - /data/source/nb-allRecords.xml
+      - /data/source/nb-records.xml
       - /scripts/prepare-xml-records-nb.py
     generates:
       - /data/xml/nb/*.xml
