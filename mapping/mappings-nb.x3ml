@@ -72,6 +72,29 @@
             <link>
                 <path>
                     <source_relation>
+                        <relation>.</relation>
+                    </source_relation>
+                    <target_relation>
+                        <relationship>crm:P108i_was_produced_by</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>.</source_node>
+                    <target_node>
+                        <entity variable="production">
+                            <type>crm:E12_Production</type>
+                            <instance_generator name="URIwithTypeSubtypeAndId">
+                                <arg name="type" type="constant">artwork</arg>
+                                <arg name="id" type="xpath">@RecordIdentifier</arg>
+                                <arg name="subtype" type="constant">production</arg>
+                            </instance_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+            <link>
+                <path>
+                    <source_relation>
                         <relation>DetailData/DataElement</relation>
                     </source_relation>
                     <target_relation>
@@ -730,43 +753,6 @@
                     </target_node>
                 </range>
             </link>
-            <link>
-                <path>
-                    <source_relation>
-                        <relation>DetailData/DataElement</relation>
-                    </source_relation>
-                    <target_relation>
-                        <if>
-                            <equals value="10483">@ElementId</equals>
-                        </if>
-                        <relationship>crm:P108i_was_produced_by</relationship>
-                        <entity>
-                            <type>crm:E12_Production</type>
-                            <instance_generator name="URIwithTypeSubtypeAndId">
-                                <arg name="type" type="constant">artwork</arg>
-                                <arg name="id" type="xpath">../../@RecordIdentifier</arg>
-                                <arg name="subtype" type="constant">production</arg>
-                            </instance_generator>
-                        </entity>
-                        <relationship>crm:P32_used_general_technique</relationship>
-                    </target_relation>
-                </path>
-                <range>
-                    <source_node>DetailData/DataElement</source_node>
-                    <target_node>
-                        <entity>
-                            <type>crm:E55_Type</type>
-                            <instance_generator name="URIwithTypeAndId">
-                                <arg name="type" type="constant">type</arg>
-                                <arg name="id" type="xpath">lower-case(ElementValue/TextValue/text())</arg>
-                            </instance_generator>
-                            <label_generator name="Literal">
-                                <arg name="text" type="xpath">ElementValue/TextValue/text()</arg>
-                            </label_generator>
-                        </entity>
-                    </target_node>
-                </range>
-            </link>
         </mapping>
         <mapping>
             <domain>
@@ -837,6 +823,49 @@
                                 <arg name="text" type="xpath">ElementValue/TextValue/text()</arg>
                                 <arg name="language" type="constant"/>
                             </instance_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+        </mapping>
+        <mapping>
+            <domain>
+                <source_node>/Collection/Record</source_node>
+                <target_node>
+                    <entity variable="production">
+                        <type>crm:E12_Production</type>
+                        <instance_generator name="URIwithTypeSubtypeAndId">
+                            <arg name="type" type="constant">artwork</arg>
+                            <arg name="id" type="xpath">@RecordIdentifier</arg>
+                            <arg name="subtype" type="constant">production</arg>
+                        </instance_generator>
+                    </entity>
+                </target_node>
+            </domain>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>DetailData/DataElement</relation>
+                    </source_relation>
+                    <target_relation>
+                        <if>
+                            <equals value="10483">@ElementId</equals>
+                        </if>
+                        <relationship>crm:P32_used_general_technique</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>DetailData/DataElement</source_node>
+                    <target_node>
+                        <entity>
+                            <type>crm:E55_Type</type>
+                            <instance_generator name="URIwithTypeAndId">
+                                <arg name="type" type="constant">type</arg>
+                                <arg name="id" type="xpath">lower-case(ElementValue/TextValue/text())</arg>
+                            </instance_generator>
+                            <label_generator name="Literal">
+                                <arg name="text" type="xpath">ElementValue/TextValue/text()</arg>
+                            </label_generator>
                         </entity>
                     </target_node>
                 </range>
@@ -1657,4 +1686,6 @@
             </link>
         </mapping>
     </mappings>
+
+
 </x3ml>
