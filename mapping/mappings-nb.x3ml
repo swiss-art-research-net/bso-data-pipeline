@@ -193,6 +193,10 @@
                                 <arg name="type" type="constant">type</arg>
                                 <arg name="id" type="xpath">ElementValue/TextValue/text()</arg>
                             </instance_generator>
+                            <label_generator name="Literal">
+                                <arg name="text" type="xpath">ElementValue/TextValue/text()</arg>
+                                <arg name="language" type="constant"/>
+                            </label_generator>
                         </entity>
                     </target_node>
                 </range>
