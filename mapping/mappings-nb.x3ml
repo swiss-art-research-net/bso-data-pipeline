@@ -678,7 +678,7 @@
                             </instance_generator>
                             <label_generator name="Literal">
                                 <arg name="text" type="xpath">./ElementValue/DateRange/TextRepresentation/text()</arg>
-                                <arg name="language" type="constant">de</arg>
+                                <arg name="language" type="constant"/>
                             </label_generator>
                         </entity>
                     </target_node>
@@ -719,7 +719,7 @@
                             </instance_generator>
                             <label_generator name="Literal">
                                 <arg name="text" type="xpath">../TextRepresentation/text()</arg>
-                                <arg name="language" type="constant">de</arg>
+                                <arg name="language" type="constant"/>
                             </label_generator>
                         </entity>
                         <relationship>crm:P82a_begin_of_the_begin</relationship>
@@ -730,9 +730,8 @@
                     <target_node>
                         <entity>
                             <type>xsd:dateTime</type>
-                            <instance_generator name="Literal">
+                            <instance_generator name="typedLiteralGen">
                                 <arg name="text" type="xpath">@fullDate</arg>
-                                <arg name="language" type="constant"/>
                             </instance_generator>
                         </entity>
                     </target_node>
@@ -773,7 +772,7 @@
                             </instance_generator>
                             <label_generator name="Literal">
                                 <arg name="text" type="xpath">../TextRepresentation/text()</arg>
-                                <arg name="language" type="constant">de</arg>
+                                <arg name="language" type="constant"/>
                             </label_generator>
                         </entity>
                         <relationship>crm:P82b_end_of_the_end</relationship>
@@ -784,9 +783,8 @@
                     <target_node>
                         <entity>
                             <type>xsd:dateTime</type>
-                            <instance_generator name="Literal">
+                            <instance_generator name="typedLiteralGen">
                                 <arg name="text" type="xpath">@fullDate</arg>
-                                <arg name="language" type="constant"/>
                             </instance_generator>
                         </entity>
                     </target_node>
