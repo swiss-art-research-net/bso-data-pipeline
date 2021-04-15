@@ -34,6 +34,7 @@ for inputFile in inputFiles:
     for record in collection.findall("//Record"):
         root.append(record)
 
+# Extract all Record elements. We will further work with this representation of the data
 records = root.findall("Record")
 
 # Filter records that either don't have an image or don't show up as a parent of another record
@@ -84,6 +85,51 @@ for descriptor in descriptors:
             el = etree.SubElement(descriptor, field)
             el.text = dataToAdd[field]
 
+# Process DataElements that have several values in one ElementValue by splitting the TextValue and adding extra ElementValues
+#
+# For example in ID 476941 the Element 10927 contains a TextValue that refers to two artists:
+#
+#            <DataElement ElementName="KünstlerIn" ElementId="10927" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
+#              <ElementValue Sequence="1">
+#                <TextValue>Aberli, Johann Ludwig [MalerIn/ZeichnerIn];
+#Zingg, Adrian [StecherIn]</TextValue>
+#               </ElementValue>
+#            </DataElement>
+#            
+# This should become:
+#
+#            <DataElement ElementName="KünstlerIn" ElementId="10927" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
+#              <ElementValue Sequence="1-0">
+#                <TextValue>Aberli, Johann Ludwig [MalerIn/ZeichnerIn]</TextValue>
+#              </ElementValue>
+#              <ElementValue Sequence="1-1">
+#                <TextValue>Zingg, Adrian [StecherIn]</TextValue>
+#              </ElementValue>
+#            </DataElement>
+
+elementIdsWithMultipleNames = ['10817', '10927']
+dataElementXPath = '|'.join(["DetailData/DataElement[@ElementId='%s']" % d for d in elementIdsWithMultipleNames])
+
+for record in records:
+    dataElementsContainingNames = record.xpath(dataElementXPath)
+    if len(dataElementsContainingNames):
+        for dataElement in dataElementsContainingNames:
+            elementValues = dataElement.findall('./ElementValue')
+            for elementValue in elementValues:
+                text = elementValue.find("./TextValue").text
+                if ";" in text:
+                    # Extract data
+                    values = text.split(";\n")
+                    sequence = elementValue.get("Sequence")
+                    # Remove ElementValue
+                    dataElement.remove(elementValue)
+                    # Create new ElementValue elements for each value
+                    for i, value in enumerate(values):
+                        newElementValue = etree.SubElement(dataElement, "ElementValue")
+                        newElementValue.set("Sequence", "%s-%d" % (sequence, i))
+                        newTextValue = etree.SubElement(newElementValue, "TextValue")
+                        newTextValue.text = value
+
 # The names in the descriptors do not exactly match the ones used in the DataFields, for example...
 #
 #   <DataElement ElementName="KünstlerIn" ElementId="10927" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
@@ -117,7 +163,6 @@ for descriptor in descriptors:
 #  (e.g. Keller, Hans Heinrich) in the Descriptor's IdName (e.g. BildendeR KünstlerIn  (Personen\K\Keller, Hans Heinrich (1778 - 1862)))
 
 # Element IDs in which such names appear
-elementIdsWithCuratedNames = ['10817', '10927']
 
 # Helper functions for matching the names and roles
 def cleanName(name):
@@ -142,8 +187,10 @@ def matchRoleWithCuratedNames(name, curatedNames):
             return returnRoles
     return False
 
+elementIdsWithCuratedNames = ['10817', '10927']
 dataElementXPath = '|'.join(["DetailData/DataElement[@ElementId='%s']" % d for d in elementIdsWithCuratedNames])
 
+# Find a match for each person and add curate data on role
 for record in records:
     
     # Extract Elements containing names
@@ -164,6 +211,8 @@ for record in records:
                         idName = descriptor.find("IdName").text
                         if cleanName(matchedName) in cleanName(idName):
                             value.append(copy.deepcopy(descriptor))
+                else:
+                    print("Unmatched name in Record", record.get('Id'))
 
                 matchedRoles = matchRoleWithCuratedNames(name, curatedNames)
                 if matchedRoles:
@@ -172,7 +221,9 @@ for record in records:
                         roleElement.set("gnd", role['gnd'])
                         roleElement.text = role['label']
 
-# Define functions
+# Records contain date description as date ranges
+# Here we add the full date information for easier representation as xsd:date later
+
 def getDateForDateElement(date):
     """
         Add day and month information for years
@@ -196,34 +247,6 @@ for date in dates:
     fullDate = getDateForDateElement(date)
     if fullDate:
         date.set("fullDate", fullDate)
-
-# Omit: Coordinates is a deprecated field
-#
-# 
-# def convertSwissGridToLatLong(x, y):
-#     # https://www.swisstopo.admin.ch/en/maps-data-online/calculation-services/navref.html
-#     # Example: https://geodesy.geo.admin.ch/reframe/navref?format=json&easting=683195&northing=248031&altitude=NaN&input=lv03&output=etrf93-ed
-#     import requests
-#     from string import Template
-#     urlTemplate = Template("https://geodesy.geo.admin.ch/reframe/navref?format=json&easting=$x&northing=$y&altitude=NaN&input=lv03&output=etrf93-ed")
-#     url = urlTemplate.substitute(x=x, y=y)
-#     try:
-#         response = requests.get(url)
-#         data = response.json()
-#         return data
-#     except:
-#         print("No connection")
-#     return False
-# for record in tqdm(records[offset:limit+offset]):
-#     xCoord = record.xpath("DetailData/DataElement[@ElementId='10161']/ElementValue/TextValue")
-#     yCoord = record.xpath("DetailData/DataElement[@ElementId='10162']/ElementValue/TextValue")
-#     if len(xCoord) and len(yCoord):
-#         x = xCoord[0].text
-#         y = yCoord[0].text
-#         coordinates = convertSwissGridToLatLong(x, y)
-#         elemCoord = etree.SubElement(record, "Coordinates")
-#         elemCoord.set("longitude", coordinates['easting'])
-#         elemCoord.set("latitude", coordinates['northing'])
 
 collection = root
 
