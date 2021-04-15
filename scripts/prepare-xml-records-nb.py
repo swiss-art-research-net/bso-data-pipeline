@@ -9,7 +9,7 @@ limit = int(sys.argv[1]) if len(sys.argv) >1 else 999999
 offset = int(sys.argv[2]) if len(sys.argv) >2 else 0
 
 # Set paths for input and output files
-inputFile = '/data/source/nb-records.xml'
+inputFiles = ['../data/source/nb-records.xml', '../data/source/nb-parentrecords.xml']
 outputDir = '/data/xml/nb'
 
 # List externally loaded csv files
@@ -27,11 +27,32 @@ curatedKey = "Raw"
 # Columns to add
 curatedFieldsToAdd = ["GND-Nummer", "GND-Kennung", "WD"]
 
-# Read inputfile
-root = etree.parse(inputFile)
+# Read input files
+root = etree.XML("<Collection/>")
+for inputFile in inputFiles:
+    collection = etree.parse(inputFile)
+    for record in collection.findall("//Record"):
+        root.append(record)
 
-collection = root.getroot()
 records = root.findall("Record")
+
+# Filter records that either don't have an image or don't show up as a parent of another record
+parentIDs = []
+orphans = []
+
+for record in records:
+    parentIDs.append(record.get('ParentId'))
+
+parentIDs = list(set(parentIDs))
+
+for record in records:
+    recordID = record.get('Id')
+    image = record.find('.//DataElement[@ElementId="11040"]')
+    # If record contains no image and is not a parent of another record, mark as orphan
+    if image is None and recordID not in parentIDs:
+        orphans.append(recordID)
+
+records = [d for d in records if d.get('Id') not in orphans]
 
 # Read all curated data into a list
 curatedData = []
@@ -204,8 +225,7 @@ for date in dates:
 #         elemCoord.set("longitude", coordinates['easting'])
 #         elemCoord.set("latitude", coordinates['northing'])
 
-collection = root.getroot()
-records = root.findall("Record")
+collection = root
 
 # Output each record individually
 for record in tqdm(records[offset:limit+offset]):
