@@ -40,7 +40,7 @@ fileRequest = requests.get(fileURL, auth=(username, token))
 result = base64.b64decode( fileRequest.json()['content'] ).decode('UTF-8', 'ignore')
 if not "https://git-lfs.github.com/spec/v1" in result:
     with open(localfile, 'w') as f:
-        f.write(result)
+        f.write(result, encoding='utf-8')
 else:
     # Download from GIT LFS
     sha = re.findall(r'sha256:([a-z0-9]*)', result)[0]
@@ -70,7 +70,7 @@ else:
         totalLength = int(totalLength)
         for data in response.iter_content(chunk_size=4096):
             dl += len(data)
-            f.write(data.decode('UTF-8', 'ignore'))
+            f.write(data.decode('UTF-8', 'ignore'), encoding='utf-8')
             done = int(50 * dl / totalLength)
             sys.stderr.write("\r[%s%s]" % ('=' * done, ' ' * (50-done)) )    
             sys.stderr.flush()
