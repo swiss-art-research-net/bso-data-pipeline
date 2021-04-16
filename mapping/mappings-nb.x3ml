@@ -165,7 +165,7 @@
                         <entity variable="parent">
                             <type>crm:E22_Man-Made_Object</type>
                             <instance_generator name="URIwithTypeAndId">
-                                <arg name="type" type="constant">archivalunit</arg>
+                                <arg name="type" type="constant">artwork</arg>
                                 <arg name="id" type="xpath">./@ParentRecordIdentifier</arg>
                             </instance_generator>
                         </entity>
