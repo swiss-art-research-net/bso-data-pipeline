@@ -85,6 +85,15 @@ for descriptor in descriptors:
             el = etree.SubElement(descriptor, field)
             el.text = dataToAdd[field]
 
+# Some fields that contain the URL to the image on wikimedia (Element ID 11040) contain the same link twice 
+# (often url encoded and not url encoded), separated by a newline. Here we remove the second value
+for record in records:
+    imageElement = record.find('.//DataElement[@ElementId="11040"]')
+    if imageElement is not None and "\n" in imageElement.find('./ElementValue/TextValue').text:
+        values = imageElement.find('./ElementValue/TextValue').text.split("\n")
+        imageElement.find('./ElementValue/TextValue').text = values[0]
+    
+
 # Process DataElements that have several values in one ElementValue by splitting the TextValue and adding extra ElementValues
 #
 # For example in ID 476941 the Element 10927 contains a TextValue that refers to two artists:
