@@ -12,6 +12,11 @@ services:
     volumes:
        - 3m-db:/opt/exist/webapp/WEB-INF/data
        - 3m-data:/opt/3M
+    logging:
+      driver: json-file
+      options:
+        max-size: "200k"
+        max-file: "10"
 
 volumes:
   3m-data:
