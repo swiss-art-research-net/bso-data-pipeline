@@ -1,0 +1,36 @@
+version: "3"
+services:
+
+  researchspace:
+    image: researchspace/platform-ci:latest
+    container_name: ${PROJECT_NAME}_researchspace
+    restart: unless-stopped
+    ports:
+      - $PORT_RESEARCHSPACE:8080
+    environment:
+      PLATFORM_OPTS: >-
+        -Dconfig.environment.sparqlEndpoint=http://blazegraph:8080/blazegraph/sparql
+        -Dlog4j.configurationFile=classpath:org/researchspace/logging/log4j2.xml
+        -Dconfig.storage.images.type=nonVersionedFile
+        -Dconfig.storage.images.mutable=true
+        -Dconfig.storage.images.root=/images
+        -Dconfig.storage.tmp.type=nonVersionedFile
+        -Dconfig.storage.tmp.mutable=true
+        -Dconfig.storage.tmp.root=/tmp-data
+    volumes:
+       - researchspace-images:/images:rw
+       - researchspace-temp:/tmp-data:rw
+       - researchspace-data:/runtime-data
+       - ./services/researchspace/apps:/apps
+    depends_on:
+      - blazegraph
+    logging:
+      driver: json-file
+      options:
+        max-size: "200k"
+        max-file: "10"
+
+volumes:
+  researchspace-data:
+  researchspace-images:
+  researchspace-temp:
