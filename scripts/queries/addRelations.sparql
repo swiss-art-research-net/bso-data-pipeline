@@ -74,44 +74,6 @@ INSERT DATA {
 };
 
 INSERT {
-  GRAPH sari:relations {
-    ?type crmdig:L54_is_same-as search:artist .
-  }
-} WHERE {
-  ?creation crm:P9_consists_of ?subcreation .
-  ?subcreation crm:P2_has_type ?type .
-  VALUES (?type) {
-    (<https://resource.swissartresearch.net/type/MalerIn>)
-    (<https://resource.swissartresearch.net/type/ZeichnerIn>)
-    (<https://resource.swissartresearch.net/type/disegnatore>)
-    (<https://resource.swissartresearch.net/type/pittore>)
-    (<https://resource.swissartresearch.net/type/peintre>)
-    (<https://resource.swissartresearch.net/type/desinateur>)
-    (<https://resource.swissartresearch.net/type/FotografIn>)
-    (<https://resource.swissartresearch.net/type/Malerin>)
-    (<https://resource.swissartresearch.net/type/Fotograf>)
-    (<https://resource.swissartresearch.net/type/dessinteur>)
-    (<https://resource.swissartresearch.net/type/dessinateur%3F>)
-    (<https://resource.swissartresearch.net/type/art>)
-    (<https://resource.swissartresearch.net/type/aut>)
-    (<https://resource.swissartresearch.net/type/cre>)
-    (<https://resource.swissartresearch.net/type/art%2C%20prm>)
-    (<https://resource.swissartresearch.net/type/art%2C%20prm>)
-    (<https://resource.swissartresearch.net/type/pht>)
-    (<https://resource.swissartresearch.net/type/pht%2C%20edt>)
-    (<https://resource.swissartresearch.net/type/art%2C%20art>)
-    (<https://resource.swissartresearch.net/type/art%2C%20plt>)
-    (<https://resource.swissartresearch.net/type/art%2C%20pht>)
-    (<https://resource.swissartresearch.net/type/art%2C%20cmp>)
-    (<https://resource.swissartresearch.net/type/art%2C%20cre>)
-    (<https://resource.swissartresearch.net/type/pht%2C%20art>)
-    (<https://resource.swissartresearch.net/type/art%2C%20pht%2C%20art>)
-    (<https://resource.swissartresearch.net/type/com%2C%20pht>)
-    (<https://resource.swissartresearch.net/type/pht%2C%20cre>)
-  }
-};
-
-INSERT {
 	GRAPH ?g {
       ?event crm:P14_carried_out_by ?actor .
   }
