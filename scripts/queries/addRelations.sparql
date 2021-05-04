@@ -66,13 +66,6 @@ INSERT {
   FILTER(REGEX(STR(?subject), 'swissartresearch.net/artwork'))
 };
 
-INSERT DATA {
-  GRAPH sari:relations {
-    search:artist a crm:E55_Type ;
-      rdfs:label 'artist' .
-  }
-};
-
 INSERT {
 	GRAPH ?g {
       ?event crm:P14_carried_out_by ?actor .
