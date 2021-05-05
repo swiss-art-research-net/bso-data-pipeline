@@ -34,6 +34,7 @@ INSERT {
   VALUES(?actor_or_person) {
     (crm:E39_Actor)
     (crm:E21_Person)
+    (crm:E74_Group)
   }
   ?subject a ?actor_or_person .
   FILTER(REGEX(STR(?subject), 'swissartresearch.net'))
