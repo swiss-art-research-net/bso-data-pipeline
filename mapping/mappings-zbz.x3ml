@@ -3715,7 +3715,7 @@
                                         <constant/>
                                     </instance_info>
                                     <instance_generator name="URIorUUID">
-                                        <arg name="text" type="xpath">concat('https://d-nb.info/gnd/',./subfield[@code='gnd']/text())</arg>
+                                        <arg name="text" type="xpath">concat('https://d-nb.info/gnd/',../subfield[@code='gnd']/text())</arg>
                                     </instance_generator>
                                 </entity>
                             </additional>
