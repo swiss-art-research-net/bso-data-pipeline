@@ -38,7 +38,12 @@ tasks:
     cmds:
       - python /scripts/cache-iiif-manifests.py {{.IIIF_MANIFESTS_FROM}} {{.IIIF_MANIFESTS_TO}}
 
-  ingest-data:
+  ingest-data-from-file:
+    cmds:
+      - echo "Ingest {{.NAME}}"
+      - curl -X POST -H 'Content-Type:application/rdf+xml	' --data-binary '@{{.FILE}}' {{.ENDPOINT}}?context-uri={{.GRAPH}}
+
+  ingest-data-from-folder:
     cmds:
       - |
         numfiles=$(ls -l {{.FOLDER}}/*.ttl | wc -l)
@@ -56,7 +61,7 @@ tasks:
       - /data/ttl/additional/*.ttl
     cmds:
       - echo "Ingest additional data"
-      - task: ingest-data
+      - task: ingest-data-from-folder
         vars: 
           FOLDER: /data/ttl/additional
           GRAPH: https://resource.swissartresearch.net/graph/external
@@ -75,7 +80,7 @@ tasks:
     sources:
       - /data/ttl/main/nb/*.ttl
     cmds:
-      - task: ingest-data
+      - task: ingest-data-from-folder
         vars: 
           FOLDER: /data/ttl/main/nb
           GRAPH: https://resource.swissartresearch.net/graph/nb
@@ -85,7 +90,7 @@ tasks:
     sources:
       - /data/ttl/main/nb/*.ttl
     cmds:
-      - task: ingest-data
+      - task: ingest-data-from-folder
         vars: 
           FOLDER: /data/ttl/main/nb
 
@@ -94,7 +99,7 @@ tasks:
     sources:
       - /data/ttl/main/zbz/*.ttl
     cmds:
-      - task: ingest-data
+      - task: ingest-data-from-folder
         vars: 
           FOLDER: /data/ttl/main/zbz
           GRAPH: https://resource.swissartresearch.net/graph/zbz
@@ -104,9 +109,28 @@ tasks:
     sources:
       - /data/ttl/main/zbz/*.ttl
     cmds:
-      - task: ingest-data
+      - task: ingest-data-from-folder
         vars: 
           FOLDER: /data/ttl/main/zbz
+
+  ingest-ontologies:
+    desc: Ingests the ontologies into individual named Graphs
+    cmds:
+      - task: ingest-data-from-file
+        vars:
+          NAME: CIDOC-CRM
+          FILE: /mapping/schemas/cidoc_crm_v6.2.rdfs
+          GRAPH: http://www.cidoc-crm.org/cidoc-crm/
+      - task: ingest-data-from-file
+        vars:
+          NAME: CRMdig
+          FILE: /mapping/schemas/CRMdig_v3.2.1.rdfs
+          GRAPH: http://www.ics.forth.gr/isl/CRMdig/
+      - task: ingest-data-from-file
+        vars:
+          NAME: CRMinf
+          FILE: /mapping/schemas/CRMinf_v0.7_.rdfs
+          GRAPH: http://www.ics.forth.gr/isl/CRMinf/
 
   mapping-zbz:
     desc: Map ZBZ XML data to CIDOC/RDF
