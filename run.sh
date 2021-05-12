@@ -112,6 +112,16 @@ fi
 
 if [[ $NOPROMPT -ne 1 ]]
 then
+  read -p "Ingest ontologies? (y/n)" -n 1 -r
+  echo ""
+fi
+if [[ $NOPROMPT || $REPLY =~ ^[Yy]$ ]]
+then
+  docker exec $JOBSCONTAINER bash -c "task ingest-ontologies"
+fi
+
+if [[ $NOPROMPT -ne 1 ]]
+then
   read -p "Add relations? (y/n)" -n 1 -r
   echo ""
 fi
