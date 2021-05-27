@@ -47,4 +47,31 @@ DELETE {
   <https://d-nb.info/gnd/> ?p ?o .
 } WHERE {
   <https://d-nb.info/gnd/> ?p ?o .
-}
+};
+
+# Merge duplicate entries
+#   When entries are duplicates in GND and different identifiers are used in the data,
+#   this results in separate entities for the same entity in our platform.
+#   If this is a result of the data obtained from the sources, we merge them in post-processing
+#   as we want to avoid changing source data that may be overwritten with future updates
+DELETE {
+  ?secondary ?p1 ?o1 .
+  ?s2 ?p2 ?secondary .
+} INSERT {
+  GRAPH ?g1 {
+    ?primary ?p1 ?o1 .
+  }
+  GRAPH ?g2 {
+    ?s2 ?p2 ?primary .
+  }
+} WHERE {
+  GRAPH ?g1 {
+    ?secondary ?p1 ?o1 .
+  }
+  GRAPH ?g2 {
+    ?s2 ?p2 ?secondary .
+  }
+  VALUES(?primary ?secondary ?label) {
+    (<https://resource.swissartresearch.net/actor/E31E74B9-5038-3884-B046-F63C8DD473E3> <https://resource.swissartresearch.net/actor/36187FE6-BE8A-3204-A03F-8621E693A3B1> "Burri, Johann Ulrich")
+  }
+};
