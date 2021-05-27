@@ -35,3 +35,16 @@ DELETE {
     ?s crm:P82b_end_of_the_end ?end .
     FILTER(STRSTARTS(?end, "9999"))
 };
+
+# Delete links to empty GND identifier
+DELETE {
+  ?s ?p <https://d-nb.info/gnd/> .
+} WHERE {
+  ?s ?p <https://d-nb.info/gnd/> .
+};
+
+DELETE {
+  <https://d-nb.info/gnd/> ?p ?o .
+} WHERE {
+  <https://d-nb.info/gnd/> ?p ?o .
+}
