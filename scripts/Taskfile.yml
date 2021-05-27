@@ -46,19 +46,25 @@ tasks:
   ingest-data-from-folder:
     cmds:
       - |
-        numfiles=$(ls -l {{.FOLDER}}/*.ttl | wc -l)
+        numfiles=$(ls -l {{.FOLDER}}/*.{ttl,trig} | wc -l)
         count=1
-        curl --silent -X POST {{.ENDPOINT}} --data-urlencode "update=DROP GRAPH <{{.GRAPH}}>" > /dev/null
+        {{if .GRAPH}}curl --silent -X POST {{.ENDPOINT}} --data-urlencode "update=DROP GRAPH <{{.GRAPH}}>" > /dev/null{{end}}
         for f in $(ls -1 {{.FOLDER}}/*.ttl); do
-          echo "Ingesting file $count of $numfiles ($f)"
+          echo "Ingesting TTL file $count of $numfiles ($f)"
           curl --silent -X POST --data-binary "uri=file://$f" {{.ENDPOINT}}?context-uri={{if .GRAPH}}{{.GRAPH}}{{else}}file://$f{{end}} > /dev/null
+          count=$((count+1)) 
+        done
+        for f in $(ls -1 {{.FOLDER}}/*.trig); do
+          echo "Ingesting TRIG file $count of $numfiles ($f)"
+          curl --silent -X POST --data-binary "uri=file://$f" {{.ENDPOINT}}{{if .GRAPH}}?context-uri={{.GRAPH}}{{end}} > /dev/null
           count=$((count+1)) 
         done
 
   ingest-data-additional:
-    desc: Ingest the TTL files located in the data/ttl/additional folder to the Blazegraph instance
+    desc: Ingest the TTL and Trig files located in the data/ttl/additional folder to the Blazegraph instance
     sources:
       - /data/ttl/additional/*.ttl
+      - /data/ttl/additional/*.trig
     cmds:
       - echo "Ingest additional data"
       - task: ingest-data-from-folder

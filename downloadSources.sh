@@ -30,3 +30,6 @@ download "data/nb/nb-curation-names.csv" "data/source/nb-curation-names.csv"
 download "data/zbz/source/sari_abzug-utf-8_23_04-tsv.txt" "data/source/sari_abzug-utf-8_23_04-tsv.json"
 download "data/nb/source/WMC_Records_20201201.xml" "data/source/nb-records.xml"
 download "data/nb/source/Gugelman.xml" "data/source/nb-parentrecords.xml"
+
+download "data/sari/prefLabels.trig" "data/ttl/additional/prefLabels.trig"
+download "data/sari/zbzTypeLabels.trig" "data/ttl/additional/zbzTypeLabels.trig"
