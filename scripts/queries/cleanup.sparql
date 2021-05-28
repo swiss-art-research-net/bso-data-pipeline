@@ -25,7 +25,7 @@ DELETE {
 } WHERE {
     ?s a crm:E52_Time-Span .
     ?s crm:P82a_begin_of_the_begin ?begin .
-    FILTER(STRSTARTS(?begin, "0-01-01"))
+    FILTER(STRSTARTS(?begin, '0-01-01'))
 };
 
 DELETE {
@@ -33,7 +33,7 @@ DELETE {
 } WHERE {
     ?s a crm:E52_Time-Span .
     ?s crm:P82b_end_of_the_end ?end .
-    FILTER(STRSTARTS(?end, "9999"))
+    FILTER(STRSTARTS(?end, '9999'))
 };
 
 # Delete links to empty GND identifier
