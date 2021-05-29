@@ -625,7 +625,14 @@
                 <source_node>/records/record/datafield</source_node>
                 <target_node>
                     <if>
-                        <equals value="700">@tag</equals>
+                        <or>
+                            <if>
+                                <equals value="700">@tag</equals>
+                            </if>
+                            <if>
+                                <equals value="710">@tag</equals>
+                            </if>
+                        </or>
                     </if>
                     <entity variable="object">
                         <type>crm:E22_Man-Made_Object</type>
@@ -862,7 +869,14 @@
                 <source_node>/records/record/datafield</source_node>
                 <target_node>
                     <if>
-                        <equals value="700">@tag</equals>
+                        <or>
+                            <if>
+                                <equals value="700">@tag</equals>
+                            </if>
+                            <if>
+                                <equals value="710">@tag</equals>
+                            </if>
+                        </or>
                     </if>
                     <entity variable="production">
                         <type>crm:E12_Production</type>
@@ -909,11 +923,11 @@
                     <target_node>
                         <entity variable="subproduction">
                             <type>crm:E12_Production</type>
-                            <instance_generator name="URIwithTypeSubtypeIdAnd1Level">
+                            <instance_generator name="URIwithOneLevelIdHashed">
                                 <arg name="type" type="constant">artwork</arg>
                                 <arg name="id" type="xpath">../../record-identifier/text()</arg>
                                 <arg name="subtype" type="constant">subproduction</arg>
-                                <arg name="level1" type="xpath">../subfield[@code='id_person']/text()</arg>
+                                <arg name="subId_HASHED_CONTENTS" type="xpath">../subfield[@code='a']/text()</arg>
                             </instance_generator>
                         </entity>
                     </target_node>
@@ -972,33 +986,22 @@
                 <source_node>/records/record/datafield</source_node>
                 <target_node>
                     <if>
-                        <and>
+                        <or>
                             <if>
                                 <equals value="700">@tag</equals>
                             </if>
                             <if>
-                                <not>
-                                    <if>
-                                        <equals value="fmo">./subfield[@code='4']/text()</equals>
-                                    </if>
-                                </not>
+                                <equals value="710">@tag</equals>
                             </if>
-                            <if>
-                                <not>
-                                    <if>
-                                        <equals value="art">./subfield[@code='4']/text()</equals>
-                                    </if>
-                                </not>
-                            </if>
-                        </and>
+                        </or>
                     </if>
                     <entity variable="subproduction">
                         <type>crm:E12_Production</type>
-                        <instance_generator name="URIwithTypeSubtypeIdAnd1Level">
+                        <instance_generator name="URIwithOneLevelIdHashed">
                             <arg name="type" type="constant">artwork</arg>
                             <arg name="id" type="xpath">../record-identifier/text()</arg>
                             <arg name="subtype" type="constant">subproduction</arg>
-                            <arg name="level1" type="xpath">./subfield[@code='id_person']/text()</arg>
+                            <arg name="subId_HASHED_CONTENTS" type="xpath">./subfield[@code='a']/text()</arg>
                         </instance_generator>
                     </entity>
                 </target_node>
@@ -1015,7 +1018,18 @@
                                     <equals value="4">@code</equals>
                                 </if>
                                 <if>
-                                    <exists>text()</exists>
+                                    <not>
+                                        <if>
+                                            <equals value="fmo">text()</equals>
+                                        </if>
+                                    </not>
+                                </if>
+                                <if>
+                                    <not>
+                                        <if>
+                                            <equals value="art">text()</equals>
+                                        </if>
+                                    </not>
                                 </if>
                             </and>
                         </if>
@@ -1046,7 +1060,25 @@
                     </source_relation>
                     <target_relation>
                         <if>
-                            <equals value="4">@code</equals>
+                            <and>
+                                <if>
+                                    <equals value="4">@code</equals>
+                                </if>
+                                <if>
+                                    <not>
+                                        <if>
+                                            <equals value="fmo">../subfield[@code='4']/text()</equals>
+                                        </if>
+                                    </not>
+                                </if>
+                                <if>
+                                    <not>
+                                        <if>
+                                            <equals value="art">../subfield[@code='4']/text()</equals>
+                                        </if>
+                                    </not>
+                                </if>
+                            </and>
                         </if>
                         <relationship>crm:P2_has_type</relationship>
                     </target_relation>
