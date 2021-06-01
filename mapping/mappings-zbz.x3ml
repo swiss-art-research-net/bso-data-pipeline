@@ -1875,7 +1875,14 @@
                     </source_relation>
                     <target_relation>
                         <if>
-                            <equals value="a">@code</equals>
+                            <and>
+                                <if>
+                                    <equals value="a">@code</equals>
+                                </if>
+                                <if>
+                                    <exists>text()</exists>
+                                </if>
+                            </and>
                         </if>
                         <relationship>crm:P67i_is_referred_to_by</relationship>
                     </target_relation>
@@ -1887,12 +1894,12 @@
                             <type>crm:E73_Information_Object</type>
                             <instance_generator name="URIwithTypeSubtypeIdAnd1Level">
                                 <arg name="type" type="constant">artwork</arg>
-                                <arg name="id" type="xpath">../record-identifier/text()</arg>
+                                <arg name="id" type="xpath">../../record-identifier/text()</arg>
                                 <arg name="subtype" type="constant">production</arg>
                                 <arg name="level1" type="constant">edition_statement</arg>
                             </instance_generator>
                             <label_generator name="Literal">
-                                <arg name="text" type="xpath">./subfield[@code='a']/text()</arg>
+                                <arg name="text" type="xpath">text()</arg>
                                 <arg name="language" type="constant"/>
                             </label_generator>
                             <additional>
