@@ -1381,7 +1381,18 @@
                                 <equals value="700">@tag</equals>
                             </if>
                             <if>
-                                <equals value="art">./subfield[@code='4']/text()</equals>
+                                <or>
+                                    <if>
+                                        <equals value="art">./subfield[@code='4']/text()</equals>
+                                    </if>
+                                    <if>
+                                        <not>
+                                            <if>
+                                                <exists>./subfield[@code='4']/text()</exists>
+                                            </if>
+                                        </not>
+                                    </if>
+                                </or>
                             </if>
                         </and>
                     </if>
@@ -1457,14 +1468,25 @@
                 <source_node>/records/record/datafield</source_node>
                 <target_node>
                     <if>
-                        <or>
+                        <and>
                             <if>
                                 <equals value="700">@tag</equals>
                             </if>
                             <if>
-                                <equals value="art">./subfield[@code='4']/text()</equals>
+                                <or>
+                                    <if>
+                                        <equals value="art">./subfield[@code='4']/text()</equals>
+                                    </if>
+                                    <if>
+                                        <not>
+                                            <if>
+                                                <exists>./subfield[@code='4']/text()</exists>
+                                            </if>
+                                        </not>
+                                    </if>
+                                </or>
                             </if>
-                        </or>
+                        </and>
                     </if>
                     <entity variable="subcreation">
                         <type>crm:E65_Creation</type>
