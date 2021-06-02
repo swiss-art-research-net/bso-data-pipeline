@@ -1280,7 +1280,7 @@
                                 <arg name="type" type="constant">artwork</arg>
                                 <arg name="id" type="xpath">../../record-identifier/text()</arg>
                                 <arg name="subtype" type="constant">subcreation</arg>
-                                <arg name="position" type="xpath">text()</arg>
+                                <arg name="position" type="xpath">concat(../@tag, '-', text())</arg>
                             </instance_generator>
                         </entity>
                     </target_node>
@@ -1307,7 +1307,7 @@
                             <arg name="type" type="constant">artwork</arg>
                             <arg name="id" type="xpath">../record-identifier/text()</arg>
                             <arg name="subtype" type="constant">subcreation</arg>
-                            <arg name="position" type="xpath">./subfield[@code='subfield']/text()</arg>
+                            <arg name="position" type="xpath">concat(../@tag, '-', ./subfield[@code='subfield']/text())</arg>
                         </instance_generator>
                     </entity>
                 </target_node>
@@ -1456,7 +1456,7 @@
                                 <arg name="type" type="constant">artwork</arg>
                                 <arg name="id" type="xpath">../../record-identifier/text()</arg>
                                 <arg name="subtype" type="constant">subcreation</arg>
-                                <arg name="position" type="xpath">text()</arg>
+                                <arg name="position" type="xpath">concat(../@tag, '-', text())</arg>
                             </instance_generator>
                         </entity>
                     </target_node>
@@ -1494,7 +1494,7 @@
                             <arg name="type" type="constant">artwork</arg>
                             <arg name="id" type="xpath">../record-identifier/text()</arg>
                             <arg name="subtype" type="constant">subcreation</arg>
-                            <arg name="position" type="xpath">./subfield[@code='subfield']/text()</arg>
+                            <arg name="position" type="xpath">concat(../@tag, '-', ./subfield[@code='subfield']/text())</arg>
                         </instance_generator>
                     </entity>
                 </target_node>
