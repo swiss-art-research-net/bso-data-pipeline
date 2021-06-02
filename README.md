@@ -28,10 +28,14 @@ git clone --recurse-submodules git@github.com:swiss-art-research-net/bso-data-pi
 To download the source data create a [GitHub personal access token](https://github.com/settings/tokens) and add it to the `.env` file, along with your username.
 
 Download the source files by runnning
-`sh downloadSources.sh`
+```sh
+bash downloadSources.sh
+```
 
 Run the ETL pipeline through
-`sh run.sh`
+```sh
+bash run.sh
+```
 
 This will execute all tasks defined in the taskfile
 ### Tasks
