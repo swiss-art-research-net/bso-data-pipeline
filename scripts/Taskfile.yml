@@ -151,7 +151,7 @@ tasks:
     generates:
       - /data/ttl/main/zbz/*.ttl
     cmds:
-      - rm {{.OUTPUT_FOLDER}}/*.ttl
+      - rm -f {{.OUTPUT_FOLDER}}/*.ttl
       - bash /scripts/performMapping.sh -i {{.INPUT_FOLDER}} -o {{.OUTPUT_FOLDER}} -m {{.MAPPING_FILE}} -g {{.GENERATOR_POLICY}} -b {{.BATCHSIZE}}
 
   mapping-nb:
@@ -167,7 +167,7 @@ tasks:
     generates:
       - /data/ttl/main/nb/*.ttl
     cmds:
-      - rm {{.OUTPUT_FOLDER}}/*.ttl
+      - rm -f {{.OUTPUT_FOLDER}}/*.ttl
       - bash /scripts/performMapping.sh -i {{.INPUT_FOLDER}} -o {{.OUTPUT_FOLDER}} -m {{.MAPPING_FILE}} -g {{.GENERATOR_POLICY}} -b {{.BATCHSIZE}}
   
   materialise-field-definitions:
@@ -188,7 +188,7 @@ tasks:
     generates:
       - /data/xml/zbz/*.xml
     cmds:
-      - rm /data/xml/zbz/*.xml
+      - rm -f /data/xml/zbz/*.xml
       - python /scripts/prepare-xml-records-zbz.py {{.RECORDS_LIMIT}} {{.RECORDS_OFFSET}}
 
   prepare-xml-records-nb:
@@ -199,7 +199,7 @@ tasks:
     generates:
       - /data/xml/nb/*.xml
     cmds:
-      - rm /data/xml/nb/*.xml
+      - rm -f /data/xml/nb/*.xml
       - python /scripts/prepare-xml-records-nb.py {{.RECORDS_LIMIT}} {{.RECORDS_OFFSET}}
 
   retrieve-gnd:
