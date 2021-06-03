@@ -43,6 +43,23 @@
                                 </label_generator>
                             </entity>
                         </additional>
+                        <additional>
+                            <relationship>crm:P2_has_type</relationship>
+                            <entity>
+                                <type>crm:E55_Type</type>
+                                <instance_info>
+                                    <constant/>
+                                </instance_info>
+                                <instance_generator name="URIwithTypeAndId">
+                                    <arg name="type" type="constant">type</arg>
+                                    <arg name="id" type="xpath">lower-case(@Level)</arg>
+                                </instance_generator>
+                                <label_generator name="Literal">
+                                    <arg name="text" type="xpath">@Level</arg>
+                                    <arg name="language" type="constant"/>
+                                </label_generator>
+                            </entity>
+                        </additional>
                     </entity>
                 </target_node>
             </domain>
