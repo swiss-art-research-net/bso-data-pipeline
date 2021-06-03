@@ -15,6 +15,7 @@
         <namespace prefix="la" uri="https://linked.art/ns/terms/"/>
         <namespace prefix="rso" uri="http://www.researchspace.org/ontology/" />
         <namespace prefix="wd" uri="http://www.wikidata.org/entity/"/>
+        <namespace prefix="aat" uri="http://vocab.getty.edu/aat/" />
     </namespaces>
     <mappings>
         <mapping>
