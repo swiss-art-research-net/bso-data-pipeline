@@ -50,8 +50,9 @@
                                 <instance_info>
                                     <constant/>
                                 </instance_info>
-                                <instance_generator name="URIwithTypeAndId">
-                                    <arg name="type" type="constant">type</arg>
+                                <instance_generator name="URIwith2TypesAndId">
+                                    <arg name="type1" type="constant">type</arg>
+                                    <arg name="type2" type="constant">level</arg>
                                     <arg name="id" type="xpath">lower-case(@Level)</arg>
                                 </instance_generator>
                                 <label_generator name="Literal">
@@ -770,6 +771,51 @@
                                     </label_generator>
                                 </entity>
                             </additional>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+        </mapping>
+        <mapping>
+            <domain>
+                <source_node>/Collection/Record</source_node>
+                <target_node>
+                    <entity variable="object-level">
+                        <type>crm:E55_Type</type>
+                        <instance_info/>
+                        <instance_generator name="URIwith2TypesAndId">
+                            <arg name="type1" type="constant">type</arg>
+                            <arg name="type2" type="constant">level</arg>
+                            <arg name="id" type="xpath">lower-case(@Level)</arg>
+                        </instance_generator>
+                        <label_generator name="Literal">
+                            <arg name="text" type="xpath">@Level</arg>
+                            <arg name="language" type="constant"/>
+                        </label_generator>
+                    </entity>
+                </target_node>
+            </domain>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>@Level</relation>
+                    </source_relation>
+                    <target_relation>
+                        <relationship>crm:P2_has_type</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>@Level</source_node>
+                    <target_node>
+                        <entity>
+                            <type>crm:E55_Type</type>
+                            <instance_generator name="URIwithAatId">
+                                <arg name="id" type="constant">300404023</arg>
+                            </instance_generator>
+                            <label_generator name="Literal">
+                                <arg name="text" type="constant">subgroups (archival divisions)</arg>
+                                <arg name="language" type="constant"/>
+                            </label_generator>
                         </entity>
                     </target_node>
                 </range>
