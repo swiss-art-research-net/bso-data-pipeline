@@ -2,8 +2,8 @@
 <records>
   <record>
     <uuid>f33b0330-d53d-41f8-a7b8-3334be547d0b</uuid>
-    <datafield tag="001">003639920</datafield>
     <record-identifier>zbz-003639920</record-identifier>
+    <datafield tag="001">003639920</datafield>
     <datafield tag="007">ki\|||;cr\|||||||||||</datafield>
     <datafield tag="008">990903s1860\\\\sz\\\\\\\\\\\\00\\\\zxx\d</datafield>
     <datafield tag="024">
@@ -94,7 +94,7 @@
       <subfield code="subfield">1</subfield>
       <subfield code="1">003639920</subfield>
       <subfield code="1">(DE-588)4068038-1</subfield>
-      <subfield code="1_2">4068038-1</subfield>
+      <subfield code="gnd">4068038-1</subfield>
       <subfield code="wd_id">Q72</subfield>
       <subfield code="2">gnd</subfield>
       <subfield code="a">Zürich</subfield>
@@ -192,8 +192,8 @@
   </record>
   <record>
     <uuid>8d11181b-3369-4032-8ab2-0514d94314f1</uuid>
-    <datafield tag="001">005134689</datafield>
     <record-identifier>zbz-005134689</record-identifier>
+    <datafield tag="001">005134689</datafield>
     <datafield tag="007">ki\|||;cr\|||||||||||</datafield>
     <datafield tag="008">060309q18771899sz\\\\\\\\\\\\\\\\||zxx\\</datafield>
     <datafield tag="024">
@@ -254,7 +254,7 @@
       <subfield code="subfield">1</subfield>
       <subfield code="1">005134689</subfield>
       <subfield code="1">(DE-588)4068038-1</subfield>
-      <subfield code="1_2">4068038-1</subfield>
+      <subfield code="gnd">4068038-1</subfield>
       <subfield code="wd_id">Q72</subfield>
       <subfield code="2">gnd</subfield>
       <subfield code="a">Zürich</subfield>
@@ -264,8 +264,7 @@
       <subfield code="subfield">2</subfield>
       <subfield code="1">005134689</subfield>
       <subfield code="1">(DE-588)1140245791</subfield>
-      <subfield code="1_2">1140245791</subfield>
-      <subfield code="wd_id">Q72</subfield>
+      <subfield code="gnd">1140245791</subfield>
       <subfield code="2">gnd</subfield>
       <subfield code="a">Waidgut</subfield>
       <subfield code="g">Zürich</subfield>
@@ -275,8 +274,7 @@
       <subfield code="subfield">3</subfield>
       <subfield code="1">005134689</subfield>
       <subfield code="1">(DE-588)1137974680</subfield>
-      <subfield code="1_2">1137974680</subfield>
-      <subfield code="wd_id">Q84081191</subfield>
+      <subfield code="gnd">1137974680</subfield>
       <subfield code="2">gnd</subfield>
       <subfield code="a">Waid</subfield>
       <subfield code="g">Zürich</subfield>
@@ -286,8 +284,7 @@
       <subfield code="subfield">4</subfield>
       <subfield code="1">005134689</subfield>
       <subfield code="1">(DE-588)4093562-0</subfield>
-      <subfield code="1_2">4093562-0</subfield>
-      <subfield code="wd_id">Q327218</subfield>
+      <subfield code="gnd">4093562-0</subfield>
       <subfield code="2">gnd</subfield>
       <subfield code="a">Glarner Alpen</subfield>
     </datafield>
@@ -296,8 +293,7 @@
       <subfield code="subfield">5</subfield>
       <subfield code="1">005134689</subfield>
       <subfield code="1">(DE-588)4118545-6</subfield>
-      <subfield code="1_2">4118545-6</subfield>
-      <subfield code="wd_id">Q18630638</subfield>
+      <subfield code="gnd">4118545-6</subfield>
       <subfield code="2">gnd</subfield>
       <subfield code="a">Schwyzer Alpen</subfield>
     </datafield>
@@ -365,8 +361,8 @@
   </record>
   <record>
     <uuid>4b4a9cb6-3a32-4582-8a26-62b818b5795d</uuid>
-    <datafield tag="001">005219259</datafield>
     <record-identifier>zbz-005219259</record-identifier>
+    <datafield tag="001">005219259</datafield>
     <datafield tag="007">ki\\\\;cr\|||||||||||</datafield>
     <datafield tag="008">060708s1848\\\\sz\\\\\\\\\\\\\\\\i\zxx\\</datafield>
     <datafield tag="024">
@@ -424,7 +420,7 @@
       <subfield code="subfield">1</subfield>
       <subfield code="1">005219259</subfield>
       <subfield code="1">(DE-588)4068038-1</subfield>
-      <subfield code="1_2">4068038-1</subfield>
+      <subfield code="gnd">4068038-1</subfield>
       <subfield code="wd_id">Q72</subfield>
       <subfield code="2">gnd</subfield>
       <subfield code="a">Zürich</subfield>
@@ -489,8 +485,8 @@
   </record>
   <record>
     <uuid>0de7df7d-23f7-4bba-b061-730ff6a3fc18</uuid>
-    <datafield tag="001">005300655</datafield>
     <record-identifier>zbz-005300655</record-identifier>
+    <datafield tag="001">005300655</datafield>
     <datafield tag="007">ki\\\\;cr\|||||||||||</datafield>
     <datafield tag="008">060421s1742\\\\sz\\\\\\\\\\\\\\\\i\zxx\\</datafield>
     <datafield tag="024">
@@ -556,7 +552,7 @@
       <subfield code="subfield">1</subfield>
       <subfield code="1">005300655</subfield>
       <subfield code="1">(DE-588)4458464-7</subfield>
-      <subfield code="1_2">4458464-7</subfield>
+      <subfield code="gnd">4458464-7</subfield>
       <subfield code="wd_id">Q684948</subfield>
       <subfield code="2">gnd</subfield>
       <subfield code="a">Großmünster</subfield>
@@ -629,8 +625,8 @@
   </record>
   <record>
     <uuid>6d4bdba6-4ecd-45d8-a3f0-1554fb0afa0d</uuid>
-    <datafield tag="001">005203731</datafield>
     <record-identifier>zbz-005203731</record-identifier>
+    <datafield tag="001">005203731</datafield>
     <datafield tag="007">ki\\\\;cr\|||||||||||</datafield>
     <datafield tag="008">060713s1838\\\\sz\\\\\\\\\\\\\\\\i\zxx\\</datafield>
     <datafield tag="024">
@@ -715,8 +711,7 @@
       <subfield code="subfield">1</subfield>
       <subfield code="1">005203731</subfield>
       <subfield code="1">(DE-588)1058355384</subfield>
-      <subfield code="1_2">1058355384</subfield>
-      <subfield code="wd_id">Q1145216</subfield>
+      <subfield code="gnd">1058355384</subfield>
       <subfield code="2">gnd</subfield>
       <subfield code="a">Reformierte Pfarrkirche Richterswil</subfield>
       <subfield code="g">Richterswil</subfield>

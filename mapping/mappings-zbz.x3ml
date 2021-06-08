@@ -3174,7 +3174,7 @@
                     </source_relation>
                     <target_relation>
                         <if>
-                            <equals value="1_2">@code</equals>
+                            <equals value="gnd">@code</equals>
                         </if>
                         <relationship>crmdig:L54_is_same-as</relationship>
                     </target_relation>
