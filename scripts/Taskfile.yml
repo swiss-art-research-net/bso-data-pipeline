@@ -184,6 +184,7 @@ tasks:
     desc: Convert the ZBZ data from JSON to individual XML Records
     sources:
       - /data/source/sari_abzug-utf-8_23_04-tsv.json
+      - /data/source/*.json
       - /scripts/prepare-xml-records-zbz.py
     generates:
       - /data/xml/zbz/*.xml
@@ -194,7 +195,8 @@ tasks:
   prepare-xml-records-nb:
     desc: Extract individual records from the NB data
     sources:
-      - /data/source/nb-records.xml
+      - /data/source/nb-*.xml
+      - /data/source/nb-*.csv
       - /scripts/prepare-xml-records-nb.py
     generates:
       - /data/xml/nb/*.xml
