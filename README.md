@@ -37,7 +37,15 @@ Run the ETL pipeline through
 bash run.sh
 ```
 
-This will execute all tasks defined in the taskfile
+This will execute all tasks defined in the taskfile.
+
+To only process a limited number of records (for testing purposes) add the `-l` parameter:
+```sh
+bash run.sh -l 20
+```
+
+This will process 20 records from each collection.
+
 ### Tasks
 
 To interact with the task runner, connect to the jobs container (the name of the container depends on your setting of the project name):
