@@ -839,15 +839,18 @@
             <link>
                 <path>
                     <source_relation>
-                        <relation>.</relation>
+                        <relation>DetailData/DataElement</relation>
                     </source_relation>
                     <target_relation>
+                        <if>
+                            <equals value="11040">@ElementId</equals>
+                        </if>
                         <relationship>la:digitally_shown_by</relationship>
                         <entity>
                             <type>crmdig:D1_Digital_Object</type>
                             <instance_generator name="URIwithTypeSubtypeAndId">
                                 <arg name="type" type="constant">artwork</arg>
-                                <arg name="id" type="xpath">@RecordIdentifier</arg>
+                                <arg name="id" type="xpath">../../@RecordIdentifier</arg>
                                 <arg name="subtype" type="constant">image</arg>
                             </instance_generator>
                             <additional>
@@ -871,13 +874,13 @@
                     </target_relation>
                 </path>
                 <range>
-                    <source_node>.</source_node>
+                    <source_node>DetailData/DataElement</source_node>
                     <target_node>
                         <entity>
                             <type>la:DigitalService</type>
                             <instance_generator name="URIwithTypeSubtypeIdAnd1Level">
                                 <arg name="type" type="constant">artwork</arg>
-                                <arg name="id" type="xpath">@RecordIdentifier</arg>
+                                <arg name="id" type="xpath">../../@RecordIdentifier</arg>
                                 <arg name="subtype" type="constant">image</arg>
                                 <arg name="level1" type="constant">iiif</arg>
                             </instance_generator>
@@ -890,7 +893,7 @@
                                         <constant/>
                                     </instance_info>
                                     <instance_generator name="URIorUUID">
-                                        <arg name="text" type="xpath">concat('https://bso-iiif.swissartresearch.net/iiif/2/', @RecordIdentifier)</arg>
+                                        <arg name="text" type="xpath">concat('https://bso-iiif.swissartresearch.net/iiif/2/', ../../@RecordIdentifier)</arg>
                                     </instance_generator>
                                 </entity>
                             </additional>
