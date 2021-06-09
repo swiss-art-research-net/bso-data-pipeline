@@ -59,21 +59,24 @@ To list available tasks, run:
 This will output a list of tasks:
 ```
 task: Available tasks for this project:
-* add-relations:                Materialise triples defined through the queries/addRelations.sparql query in the Blazegraph instance
-* cleanup:                      Run Cleanup query (located in queries/cleanup.sparql)
-* delete-assets:                Delete the assets (field definitions, etc.) from the Blazegraph instance
-* download-iiif-manifests:      Downloads the IIIF Manifests found in the ZBZ data source file
-* ingest-data-additional:       Ingest the TTL files located in the data/ttl/additional folder to the Blazegraph instance
-* ingest-data-main:             Ingest the TTL files located in the data/ttl/main folder to the Blazegraph instance
-* ingest-data-nb:               Ingest the TTL files located in the data/ttl/main/nb folder to the Blazegraph instance
-* ingest-data-zbz:              Ingest the TTL files located in the data/ttl/main/zbz folder to the Blazegraph instance
-* mapping-nb:                   Map SNB XML data to CIDOC/RDF
-* mapping-zbz:                  Map ZBZ XML data to CIDOC/RDF
-* materialise-field-definitions:Materialises the field definitions as propertes in the graph
-* prepare-xml-records-nb:       Extract individual records from the NB data
-* prepare-xml-records-zbz:      Convert the ZBZ data from JSON to individual XML Records
-* retrieve-gnd:                 Extracts relevant data from GND based on identifiers found in the mapped TTL files
-* retrieve-wikidata:            Extracts relevant data from Wikidata based on identifiers found in the mapped TTL files
+* add-relations:                        Materialise triples defined through the queries/addRelations.sparql query in the Blazegraph instance
+* cleanup:                              Run Cleanup query (located in queries/cleanup.sparql)
+* delete-field-definitions:             Delete the field definitions from the Blazegraph instance
+* download-iiif-manifests:              Downloads the IIIF Manifests found in the ZBZ data source file
+* ingest-data-additional:               Ingest the TTL and Trig files located in the data/ttl/additional folder to the Blazegraph instance
+* ingest-data-main:                     Ingest the TTL files located in the data/ttl/main folder to the Blazegraph instance
+* ingest-data-nb:                       Ingest the TTL files located in the data/ttl/main/nb folder to the Blazegraph instance
+* ingest-data-nb-as-individual-graphs:  Ingest the TTL files located in the data/ttl/main/nb folder to the Blazegraph instance, placing each file into an individual named graph
+* ingest-data-zbz:                      Ingest the TTL files located in the data/ttl/main/zbz folder to the Blazegraph instance
+* ingest-data-zbz-as-individual-graphs: Ingest the TTL files located in the data/ttl/main/zbz folder to the Blazegraph instance, placing each file into an individual named graph
+* ingest-ontologies:                    Ingests the ontologies into individual named Graphs
+* mapping-nb:                           Map SNB XML data to CIDOC/RDF
+* mapping-zbz:                          Map ZBZ XML data to CIDOC/RDF
+* materialise-field-definitions:        Materialises the field definitions as propertes in the graph
+* prepare-xml-records-nb:               Extract individual records from the NB data
+* prepare-xml-records-zbz:              Convert the ZBZ data from JSON to individual XML Records
+* retrieve-gnd:                         Extracts relevant data from GND based on identifiers found in the mapped TTL files
+* retrieve-wikidata:                    Extracts relevant data from Wikidata based on identifiers found in the mapped TTL file                                         
 ```
 
 To run a specific task type `task` followed by the task name, e.g.:
