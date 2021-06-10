@@ -37,7 +37,7 @@ Run the ETL pipeline through
 bash run.sh
 ```
 
-This will execute all tasks defined in the taskfile.
+This will execute all relevant tasks to populate the platform with the data.
 
 To only process a limited number of records (for testing purposes) add the `-l` parameter:
 ```sh
