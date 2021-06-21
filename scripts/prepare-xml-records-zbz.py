@@ -3,30 +3,150 @@ from sariDateParser.dateParser import parse
 from lxml import etree
 from tqdm import tqdm
 import copy
+import csv
 import json
 import os
 import requests
 import urllib
+import unicodedata
 import time
 import sys
 
 sys.path.append("./helpers")
 import dateOverrides
 
-inputFile = "/data/source/sari_abzug-utf-8_23_04-tsv.json"
-externalFieldsDirectory = "/data/source/"
-manifestDirectory = "/data/manifests/"
-outputDirectory = "/data/xml/zbz/"
+inputFiles = [
+    '../data/source/BIBLIOGRAPHIC_8971984070005508_1.xml',
+    '../data/source/BIBLIOGRAPHIC_8971984070005508_2.xml',
+    '../data/source/BIBLIOGRAPHIC_8971984070005508_3.xml',
+    '../data/source/BIBLIOGRAPHIC_8971984070005508_4.xml',
+    '../data/source/BIBLIOGRAPHIC_8972912360005508_1.xml',
+    '../data/source/BIBLIOGRAPHIC_8972912360005508_2.xml',
+    '../data/source/BIBLIOGRAPHIC_8972912360005508_3.xml',
+    '../data/source/BIBLIOGRAPHIC_8972912360005508_4.xml',
+    '../data/source/BIBLIOGRAPHIC_8972912360005508_5.xml',
+    '../data/source/BIBLIOGRAPHIC_8972912360005508_6.xml',
+    '../data/source/BIBLIOGRAPHIC_8972912360005508_7.xml',
+    '../data/source/BIBLIOGRAPHIC_8972912360005508_8.xml',
+    '../data/source/BIBLIOGRAPHIC_8972912360005508_9.xml',
+    '../data/source/BIBLIOGRAPHIC_8972912360005508_10.xml',
+    '../data/source/BIBLIOGRAPHIC_8972912360005508_11.xml',
+    '../data/source/BIBLIOGRAPHIC_8972912360005508_12.xml',
+    '../data/source/BIBLIOGRAPHIC_8972912360005508_13.xml',
+    '../data/source/BIBLIOGRAPHIC_8972912360005508_14.xml',
+    '../data/source/BIBLIOGRAPHIC_8972912360005508_15.xml',
+    '../data/source/BIBLIOGRAPHIC_8972912360005508_16.xml',
+    '../data/source/BIBLIOGRAPHIC_8972912360005508_17.xml',
+    '../data/source/BIBLIOGRAPHIC_8972912360005508_18.xml',
+    '../data/source/BIBLIOGRAPHIC_8972912360005508_19.xml',
+    '../data/source/BIBLIOGRAPHIC_8972912360005508_20.xml'
+]
+
+curatedFilesPre = '../data/source/zbz-curation-'
+manifestDirectory = "../data/manifests/"
+doisFile = '../data/source/zbz-dois.csv'
+outputDirectory = "../data/xml/zbz/"
 outputPrefix = "zbz-record-"
 
 # List fields that contain dates. Those will be passed to the parser
 fieldsContainingDates = ['100$d', '260$c', '260$g', '264$c', '533$d', '600$d', '611$d', '700$d']
 
-# List fields that are loaded from separate files (e.g. curated and/or multi-value fields)
-externalFields = ['100', '110', '264', '600', '610', '611', '650', '651', '655', '700', '710', '751']
-
+# List fields that are loaded from separate files (e.g. curated fields)
+curatedFields = {
+    '100': [['a', 'd']],
+    '110': [['a']],
+    '264': [['a'], ['b']],
+    '600': [['a', 'b']],
+    '610': [['a', 'g']],
+    '611': [['a', 'c', 'd']],
+    '650': [['a', 'g']],
+    '651': [['a', 'g']],
+    '655': [['a']],
+    '700': [['a', 'd']],
+    '710': [['a']],
+    '751': [['a', 'g']]
+}
 limit=int(sys.argv[1]) if len(sys.argv) >1 else 999999
 offset=int(sys.argv[2]) if len(sys.argv) >2 else 0
+
+# Define functions
+   
+def addCuratedData(record):
+    datafields = record.findall("datafield")
+    # Look through every datafield
+    for datafield in datafields:
+        tag = datafield.get("tag")
+        # Check if datafield has been curated
+        if tag in curatedFields.keys():
+            # Look at subfields to match
+            for subfieldList in curatedFields[tag]:
+                curatedFileId = tag + "-" + '_'.join(subfieldList)
+                # Establish conditions for subfields to match
+                conditions = {}
+                for subfield in subfieldList:
+                    value = datafield.find("subfield[@code='%s']" % subfield)
+                    value = value.text if value is not None else None
+                    conditions[tag + "_" + subfield] = value
+                    
+                # Find rows that match all subfield
+                matches = []
+                for row in curatedFiles[curatedFileId]['content']:
+                    isMatch = True
+                    for column in conditions.keys():
+                        if not compare_strs(row[column],conditions[column]):
+                            isMatch = False
+                            break
+                    if isMatch:
+                        matches.append(row)
+                
+                if len(matches) > 1:
+                    print("Found several candidates")
+                    print(matches)
+                    
+                if len(matches) >= 1:
+                    for column in matches[0]: 
+                        if column not in conditions:
+                            newSubfield = etree.SubElement(datafield, "subfield")
+                            newSubfield.set("code", column)
+                            newSubfield.text = matches[0][column]
+    
+    return record
+
+def addImages(record):
+    if record.find("datafield[@tag='manifest']") is not None:
+        images = getImagesFromCachedManifest(record.find("datafield[@tag='manifest']").text)
+        if images:
+            record.append(imageListToXml(images))
+    return record
+
+def addRecordIdentifier(record):
+    identifier = record.find("controlfield[@tag='001']").text
+    field = etree.SubElement(record, "record-identifier")
+    field.text = "zbz-" + identifier
+    return record
+
+def addManifest(record):
+    identifier = record.find("controlfield[@tag='001']").text
+    try:
+        manifestURL = manifests[identifier]
+    except:
+        print("Could not find IIIF manifest for", identifier)
+        return record
+    
+    manifestDatafield = etree.SubElement(record, "datafield")
+    manifestDatafield.set("tag", "manifest")
+    manifestDatafield.text = manifestURL
+    return record
+
+def compare_strs(s1, s2):
+    def NFD(s):
+        return unicodedata.normalize('NFD', s)
+    if s1 is None:
+        s1 = ''
+    if s2 is None:
+        s2 = ''
+
+    return NFD(s1) == NFD(s2)
 
 def convertEDTFdate(date):
     try:
@@ -54,61 +174,6 @@ def convertEDTFdate(date):
         'lower': time.strftime("%Y-%m-%d", lower),
         'upper': time.strftime("%Y-%m-%d", upper)
     }
-
-def convertRowToXml(row, keys, externalFields):
-    record = etree.Element("record")
-    etree.SubElement(record, "uuid").text = row['id']
-    etree.SubElement(record, "record-identifier").text = "zbz-" + row['001']
-    datafield = False
-    for key in keys:
-        # Check if key is a field that gets loaded externally (check only part before $ if present)
-        if key.split('$')[0] in externalFields.keys():
-            # Ignore the subfields as they will be loaded from the external fields
-            if not '$' in key:
-                # Select the field values based on the ids
-                fieldsToInclude = [d for d in externalFields[key] if d['id'] == row['id']]
-                for f in fieldsToInclude:
-                    # Create a datafield for each set of values
-                    datafield = etree.SubElement(record, "datafield", tag=key)
-                    for k in [d for d in f.keys()]:
-                        if key in k:
-                            code = k.split('_')[1].replace(' ','_')
-                        else:
-                            code = k.replace(' ','_')
-                        if f[k]:
-                            subfield = etree.SubElement(datafield, "subfield", code=code)
-                            subfield.text = str(f[k])
-                        # Check if field contains a date
-                        if k.replace("_","$") in fieldsContainingDates and f[k]:
-                            try:
-                                parsedDate = parseDate(f[k])
-                            except:
-                                print("Could not parse", f[k],k)
-                            if parsedDate:
-                                subfield.set("parsedDate", parsedDate)
-                                daterange = convertEDTFdate(parsedDate)
-                                subfield.set("upperDate", daterange['upper'])
-                                subfield.set("lowerDate", daterange['lower'])
-        else:
-            if key in row and row[key] is not None:
-                if '$' in key:
-                    code = key[4:]
-                    subfield = etree.SubElement(datafield, "subfield", code=code)
-                    subfield.text = str(row[key])
-                    # Check if field contains a date
-                    if key in fieldsContainingDates:
-                        parsedDate = parseDate(row[key])
-                        if parsedDate:
-                            subfield.set("parsedDate", parsedDate)
-                            daterange = convertEDTFdate(parsedDate)
-                            subfield.set("upperDate", daterange['upper'])
-                            subfield.set("lowerDate", daterange['lower'])
-                    # Remove non-separated field content
-                    datafield.text = None
-                else:
-                    datafield = etree.SubElement(record, "datafield", tag=key)
-                    datafield.text = str(row[key])
-    return record
 
 def downgradeEDTF(date):
     """
@@ -154,73 +219,76 @@ def parseDate(date):
     else:
         return parse(date)
 
-def postProcess(record):
-    """
-    Execute additional steps on the XML output
-    """
-
-    # Duplicate fields 100, 110, 700 and 710 if there are several roles
-    datafieldsWithSeveralRoles = record.findall("./datafield[@tag='100']") + record.findall("./datafield[@tag='110']") + record.findall("./datafield[@tag='700']") + record.findall("./datafield[@tag='710']")
-    if len(datafieldsWithSeveralRoles):
-        for datafield in datafieldsWithSeveralRoles:
-            subfield4 = datafield.find("./subfield[@code='4']")
-            subfieldE = datafield.find("./subfield[@code='e']")
-            # If subfield 4 contains a comma, there are several roles defined
-            if subfield4 is not None and ',' in subfield4.text:
-                roleCodes = subfield4.text.split(', ')
-                roleNames = subfieldE.text.split(', ')
-                # Remove the field
-                datafieldTemplate = copy.copy(datafield)
-                datafield.getparent().remove(datafield)
-                    # Create individual fields per role
-                for i, roleCode in enumerate(roleCodes):
-                    newDatafield = copy.copy(datafieldTemplate)
-                    if newDatafield.find(".subfield[@code='id_person']") is not None:
-                        newDatafield.find(".subfield[@code='id_person']").text = newDatafield.find(".subfield[@code='id_person']").text + "-" + str(i)
-                    newDatafield.find("./subfield[@code='4']").text = roleCodes[i]
-                    if len(roleNames) > i:
-                        newDatafield.find("./subfield[@code='e']").text = roleNames[i]
-                    record.append(newDatafield)
-
+def processDates(record):
+    for dateField in fieldsContainingDates:
+        parts = dateField.split('$')
+        xpath = "datafield[@tag='%s']/subfield[@code='%s']" % (parts[0], parts[1])
+        subfields = record.findall(xpath)
+        if subfields is not None:
+            for subfield in subfields:
+                try:
+                    parsedDate = parseDate(subfield.text)
+                except:
+                    print("Could not parse date")
+                if parsedDate:
+                    subfield.set("parsedDate", parsedDate)
+                    daterange = convertEDTFdate(parsedDate)
+                    subfield.set("upperDate", daterange['upper'])
+                    subfield.set("lowerDate", daterange['lower'])
     return record
 
-# Read main data file
-with open(inputFile, 'r') as f:
-    rawData = json.load(f)
+
+# Read main data files
+root = etree.XML("<collection/>")
+for inputFile in inputFiles:
+    collection = etree.parse(inputFile)
+    for record in collection.findall("//record"):
+        root.append(record)
+records = root.findall(".//record")
 
 # Read fields from external files
-externalFieldContent = {}
-for externalField in externalFields:
-    filePath = externalFieldsDirectory + externalField + '.json'
-    with open(filePath, 'r') as f:
+curatedFiles = {}
+for tag in curatedFields.keys():
+    for subfieldList in curatedFields[tag]:
+        subfieldListId = '_'.join(subfieldList)
+        
+        filename = curatedFilesPre + tag + '-' + subfieldListId + '.csv'
         try:
-            externalFieldContent[externalField] = json.load(f)['rows']
+            content = []
+            with open(filename, 'r') as f:
+                reader = csv.DictReader(f)
+                for row in reader:
+                    content.append(row)
+                    
+            curatedFiles[tag + "-" + subfieldListId] = {
+                "tag": tag,
+                "content": content,
+                "subfields" : subfieldList,
+                "filename" : filename
+            }
         except:
-            exit("Could not read data from " + filePath)
+            print("Could not process", filename)
 
-keys = list(rawData['rows'][0].keys())
-keys.sort()
+# Read manifest data
+manifests = {}
+with open(doisFile, 'r') as f:
+    reader = csv.DictReader(f)
+    for row in reader:
+        manifests[row['id']] = row['manifest']
 
 # Output individual files
-for i, row in enumerate(tqdm(rawData['rows'][offset:limit+offset])):
-    
-    records = etree.Element("records")
-    record = convertRowToXml(row, keys, externalFieldContent)
-    
-    if row['manifest']:
-        images = getImagesFromCachedManifest(row['manifest'])
-        if images:
-            record.append(imageListToXml(images))
-        else:
-            #print("Aborting due to missing manuscript")
-            print("%d out of %d converted" % (i, len(rawData['rows'])))
-            #exit()
-    
-    record = postProcess(record)
-    
-    records.append(record)
-    
-    outputFile = outputDirectory + outputPrefix + row['001'] + ".xml"
+collection = root
+
+for record in records[:10]:
+    record = addRecordIdentifier(record)
+    record = addCuratedData(record)
+    record = addManifest(record)
+    record = addImages(record)
+    record = processDates(record)
+        
+    collection.clear()
+    collection.append(record)
+    outputFile = outputDirectory + outputPrefix + record.find("controlfield[@tag='001']").text + ".xml"
     with open(outputFile, 'wb') as f:
-        f.write(etree.tostring(records, xml_declaration=True, encoding='UTF-8', pretty_print=True))
+        f.write(etree.tostring(collection, xml_declaration=True, encoding='UTF-8', pretty_print=True))
         f.close()
