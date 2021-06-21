@@ -19,7 +19,7 @@
     <mappings>
         <mapping>
             <domain>
-                <source_node>/records/record</source_node>
+                <source_node>/collection/record</source_node>
                 <target_node>
                     <entity variable="object">
                         <type>crm:E22_Man-Made_Object</type>
@@ -167,7 +167,7 @@
             <link>
                 <path>
                     <source_relation>
-                        <relation>datafield</relation>
+                        <relation>controlfield</relation>
                     </source_relation>
                     <target_relation>
                         <if>
@@ -177,7 +177,7 @@
                     </target_relation>
                 </path>
                 <range>
-                    <source_node>datafield</source_node>
+                    <source_node>controlfield</source_node>
                     <target_node>
                         <entity>
                             <type>crm:E42_Identifier</type>
@@ -343,7 +343,7 @@
         </mapping>
         <mapping>
             <domain>
-                <source_node>/records/record/record-identifier</source_node>
+                <source_node>/collection/record/record-identifier</source_node>
                 <target_node>
                     <entity variable="metadata">
                         <type>crm:E31_Document</type>
@@ -396,7 +396,7 @@
         </mapping>
         <mapping>
             <domain>
-                <source_node>/records/record/datafield</source_node>
+                <source_node>/collection/record/datafield</source_node>
                 <target_node>
                     <if>
                         <equals value="245">@tag</equals>
@@ -497,7 +497,7 @@
         </mapping>
         <mapping>
             <domain>
-                <source_node>/records/record/datafield</source_node>
+                <source_node>/collection/record/datafield</source_node>
                 <target_node>
                     <if>
                         <equals value="300">@tag</equals>
@@ -622,7 +622,7 @@
         </mapping>
         <mapping>
             <domain>
-                <source_node>/records/record/datafield</source_node>
+                <source_node>/collection/record/datafield</source_node>
                 <target_node>
                     <if>
                         <equals value="340">@tag</equals>
@@ -675,7 +675,7 @@
         </mapping>
         <mapping>
             <domain>
-                <source_node>/records/record/datafield</source_node>
+                <source_node>/collection/record/datafield</source_node>
                 <target_node>
                     <if>
                         <or>
@@ -744,7 +744,7 @@
         </mapping>
         <mapping>
             <domain>
-                <source_node>/records/record</source_node>
+                <source_node>/collection/record</source_node>
                 <target_node>
                     <entity variable="work">
                         <type>crm:E36_Visual_Item</type>
@@ -1087,7 +1087,7 @@
         </mapping>
         <mapping>
             <domain>
-                <source_node>/records/record/datafield</source_node>
+                <source_node>/collection/record/datafield</source_node>
                 <target_node>
                     <if>
                         <equals value="245">@tag</equals>
@@ -1208,7 +1208,7 @@
         </mapping>
         <mapping>
             <domain>
-                <source_node>/records/record/datafield</source_node>
+                <source_node>/collection/record/datafield</source_node>
                 <target_node>
                     <if>
                         <or>
@@ -1289,7 +1289,7 @@
         </mapping>
         <mapping>
             <domain>
-                <source_node>/records/record/datafield</source_node>
+                <source_node>/collection/record/datafield</source_node>
                 <target_node>
                     <if>
                         <or>
@@ -1373,7 +1373,7 @@
         </mapping>
         <mapping>
             <domain>
-                <source_node>/records/record/datafield</source_node>
+                <source_node>/collection/record/datafield</source_node>
                 <target_node>
                     <if>
                         <and>
@@ -1465,7 +1465,7 @@
         </mapping>
         <mapping>
             <domain>
-                <source_node>/records/record/datafield</source_node>
+                <source_node>/collection/record/datafield</source_node>
                 <target_node>
                     <if>
                         <and>
@@ -1560,7 +1560,7 @@
         </mapping>
         <mapping>
             <domain>
-                <source_node>/records/record/datafield</source_node>
+                <source_node>/collection/record/datafield</source_node>
                 <target_node>
                     <if>
                         <or>
@@ -1853,7 +1853,7 @@
         </mapping>
         <mapping>
             <domain>
-                <source_node>/records/record/datafield</source_node>
+                <source_node>/collection/record/datafield</source_node>
                 <target_node>
                     <if>
                         <equals value="250">@tag</equals>
@@ -1926,7 +1926,7 @@
         </mapping>
         <mapping>
             <domain>
-                <source_node>/records/record/datafield</source_node>
+                <source_node>/collection/record/datafield</source_node>
                 <target_node>
                     <if>
                         <equals value="260">@tag</equals>
@@ -1992,7 +1992,7 @@
         </mapping>
         <mapping>
             <domain>
-                <source_node>/records/record/datafield</source_node>
+                <source_node>/collection/record/datafield</source_node>
                 <target_node>
                     <if>
                         <equals value="264">@tag</equals>
@@ -2266,7 +2266,7 @@
         </mapping>
         <mapping>
             <domain>
-                <source_node>/records/record/datafield</source_node>
+                <source_node>/collection/record/datafield</source_node>
                 <target_node>
                     <if>
                         <equals value="300">@tag</equals>
@@ -2320,7 +2320,7 @@
         </mapping>
         <mapping>
             <domain>
-                <source_node>/records/record/datafield</source_node>
+                <source_node>/collection/record/datafield</source_node>
                 <target_node>
                     <if>
                         <or>
@@ -2437,7 +2437,7 @@
         </mapping>
         <mapping>
             <domain>
-                <source_node>/records/record/datafield</source_node>
+                <source_node>/collection/record/datafield</source_node>
                 <target_node>
                     <if>
                         <or>
@@ -2557,7 +2557,7 @@
         </mapping>
         <mapping>
             <domain>
-                <source_node>/records/record/datafield</source_node>
+                <source_node>/collection/record/datafield</source_node>
                 <target_node>
                     <if>
                         <equals value="751">@tag</equals>
@@ -2599,7 +2599,7 @@
         </mapping>
         <mapping>
             <domain>
-                <source_node>/records/record/datafield</source_node>
+                <source_node>/collection/record/datafield</source_node>
                 <target_node>
                     <if>
                         <equals value="751">@tag</equals>
@@ -2717,7 +2717,7 @@
         </mapping>
         <mapping>
             <domain>
-                <source_node>/records/record/datafield</source_node>
+                <source_node>/collection/record/datafield</source_node>
                 <target_node>
                     <if>
                         <equals value="600">@tag</equals>
@@ -2880,7 +2880,7 @@
         </mapping>
         <mapping>
             <domain>
-                <source_node>/records/record/datafield</source_node>
+                <source_node>/collection/record/datafield</source_node>
                 <target_node>
                     <if>
                         <equals value="610">@tag</equals>
@@ -2985,7 +2985,7 @@
         </mapping>
         <mapping>
             <domain>
-                <source_node>/records/record/datafield</source_node>
+                <source_node>/collection/record/datafield</source_node>
                 <target_node>
                     <if>
                         <equals value="611">@tag</equals>
@@ -3080,7 +3080,7 @@
         </mapping>
         <mapping>
             <domain>
-                <source_node>/records/record/datafield</source_node>
+                <source_node>/collection/record/datafield</source_node>
                 <target_node>
                     <if>
                         <equals value="650">@tag</equals>
@@ -3149,7 +3149,7 @@
         </mapping>
         <mapping>
             <domain>
-                <source_node>/records/record/datafield</source_node>
+                <source_node>/collection/record/datafield</source_node>
                 <target_node>
                     <if>
                         <equals value="651">@tag</equals>
@@ -3198,7 +3198,14 @@
                     </source_relation>
                     <target_relation>
                         <if>
-                            <equals value="wd_id">@code</equals>
+                            <and>
+                                <if>
+                                    <equals value="wd_id">@code</equals>
+                                </if>
+                                <if>
+                                    <exists>text()</exists>
+                                </if>
+                            </and>
                         </if>
                         <relationship>crmdig:L54_is_same-as</relationship>
                     </target_relation>
