@@ -1,11 +1,12 @@
 from tqdm import tqdm
+import csv
 import json
 import requests
 import threading
 import urllib
 import sys
 
-inputFile = "../data/source/sari_abzug-utf-8_23_04-tsv.json"
+inputFile = "../data/source/zbz-dois.csv"
 manifestDirectory = "../data/manifests/"
 offset = 0 if not len(sys.argv) > 1 else int(sys.argv[1])
 limit = 99999 if not len(sys.argv) > 2 else int(sys.argv[2])
@@ -23,9 +24,12 @@ def fetchManuscript(url, filename):
         
 
 with open(inputFile, 'r') as f:
-    rawData = json.load(f)
+    rawData = []
+    reader = csv.DictReader(f)
+    for row in reader:
+        rawData.append(row)
 
-rowsWithManifests = [d for d in rawData['rows'] if d['manifest'] is not None]
+rowsWithManifests = [d for d in rawData if d['manifest'] is not None]
 
 urlsAndFilenames = [{
     "manifest": d['manifest'],
