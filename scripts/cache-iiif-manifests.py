@@ -1,3 +1,4 @@
+from os.path import isfile
 from tqdm import tqdm
 import csv
 import json
@@ -37,7 +38,10 @@ urlsAndFilenames = [{
 } for d in rowsWithManifests]
 
 for row in tqdm(urlsAndFilenames[offset:offset + limit]):
-    fetchManuscript(row['manifest'], row['filename'])
+    if isfile(row['filename']):
+        print("Already exists", row['filename'])
+    else:
+        fetchManuscript(row['manifest'], row['filename'])
 
 # threads = [threading.Thread(target=fetchManuscript, args=(d['manifest'], d['filename'])) for d in urlsAndFilenames[offset:offset + limit]]
 # for thread in threads:
