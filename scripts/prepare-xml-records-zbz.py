@@ -279,7 +279,7 @@ with open(doisFile, 'r') as f:
 # Output individual files
 collection = root
 
-for record in records[:10]:
+for record in tqdm(records):
     record = addRecordIdentifier(record)
     record = addCuratedData(record)
     record = addManifest(record)
