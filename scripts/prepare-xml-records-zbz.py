@@ -19,27 +19,7 @@ inputFiles = [
     '../data/source/BIBLIOGRAPHIC_8971984070005508_1.xml',
     '../data/source/BIBLIOGRAPHIC_8971984070005508_2.xml',
     '../data/source/BIBLIOGRAPHIC_8971984070005508_3.xml',
-    '../data/source/BIBLIOGRAPHIC_8971984070005508_4.xml',
-    '../data/source/BIBLIOGRAPHIC_8972912360005508_1.xml',
-    '../data/source/BIBLIOGRAPHIC_8972912360005508_2.xml',
-    '../data/source/BIBLIOGRAPHIC_8972912360005508_3.xml',
-    '../data/source/BIBLIOGRAPHIC_8972912360005508_4.xml',
-    '../data/source/BIBLIOGRAPHIC_8972912360005508_5.xml',
-    '../data/source/BIBLIOGRAPHIC_8972912360005508_6.xml',
-    '../data/source/BIBLIOGRAPHIC_8972912360005508_7.xml',
-    '../data/source/BIBLIOGRAPHIC_8972912360005508_8.xml',
-    '../data/source/BIBLIOGRAPHIC_8972912360005508_9.xml',
-    '../data/source/BIBLIOGRAPHIC_8972912360005508_10.xml',
-    '../data/source/BIBLIOGRAPHIC_8972912360005508_11.xml',
-    '../data/source/BIBLIOGRAPHIC_8972912360005508_12.xml',
-    '../data/source/BIBLIOGRAPHIC_8972912360005508_13.xml',
-    '../data/source/BIBLIOGRAPHIC_8972912360005508_14.xml',
-    '../data/source/BIBLIOGRAPHIC_8972912360005508_15.xml',
-    '../data/source/BIBLIOGRAPHIC_8972912360005508_16.xml',
-    '../data/source/BIBLIOGRAPHIC_8972912360005508_17.xml',
-    '../data/source/BIBLIOGRAPHIC_8972912360005508_18.xml',
-    '../data/source/BIBLIOGRAPHIC_8972912360005508_19.xml',
-    '../data/source/BIBLIOGRAPHIC_8972912360005508_20.xml'
+    '../data/source/BIBLIOGRAPHIC_8971984070005508_4.xml'
 ]
 
 curatedFilesPre = '../data/source/zbz-curation-'
