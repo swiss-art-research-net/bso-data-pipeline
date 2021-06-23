@@ -873,7 +873,7 @@
                             <type>crm:E53_Place</type>
                             <instance_generator name="URIwithTypeAndId_hashed">
                                 <arg name="type" type="constant">place</arg>
-                                <arg name="id_HASHED_CONTENTS" type="xpath">if (subfield[@code='1_2']/text()) then subfield[@code='1_2']/text() else subfield[@code='a']/text()</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">if (subfield[@code='gnd']/text()) then subfield[@code='gnd']/text() else subfield[@code='a']/text()</arg>
                             </instance_generator>
                             <label_generator name="Literal">
                                 <arg name="text" type="xpath">subfield[@code='a']/text()</arg>
@@ -919,7 +919,7 @@
                                 <arg name="id" type="xpath">./subfield[@code='b']/text()</arg>
                             </instance_generator>
                             <label_generator name="Literal">
-                                <arg name="text" type="xpath">./subfield[@code='a']/text()</arg>
+                                <arg name="text" type="xpath">if(./subfield[@code='a']/text()) then (./subfield[@code='a']/text()) else (./subfield[@code='b']/text())</arg>
                                 <arg name="language" type="constant"/>
                             </label_generator>
                         </entity>
@@ -2028,7 +2028,7 @@
                             <type>crm:E53_Place</type>
                             <instance_generator name="URIwithTypeAndId_hashed">
                                 <arg name="type" type="constant">place</arg>
-                                <arg name="id_HASHED_CONTENTS" type="xpath">if (../subfield[@code='a-gnd-id']/text()) then ../subfield[@code='a-gnd-id']/text() else text()</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">if (../subfield[@code='264_a-gnd-id']/text()) then ../subfield[@code='264_a-gnd-id']/text() else text()</arg>
                             </instance_generator>
                             <label_generator name="Literal">
                                 <arg name="text" type="xpath">text()</arg>
@@ -2093,7 +2093,7 @@
                             <type>crm:E39_Actor</type>
                             <instance_generator name="URIwithTypeAndId_hashed">
                                 <arg name="type" type="constant">actor</arg>
-                                <arg name="id_HASHED_CONTENTS" type="xpath">if (../subfield[@code='b-gnd-id']/text()) then ../subfield[@code='b-gnd-id']/text() else text()</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">if (../subfield[@code='264_b-gnd-id']/text()) then ../subfield[@code='264_b-gnd-id']/text() else text()</arg>
                             </instance_generator>
                             <label_generator name="Literal">
                                 <arg name="text" type="xpath">text()</arg>
@@ -2201,7 +2201,7 @@
                         <if>
                             <and>
                                 <if>
-                                    <equals value="a-gnd-id">@code</equals>
+                                    <equals value="264_a-gnd-id">@code</equals>
                                 </if>
                                 <if>
                                     <exists>text()</exists>
@@ -2238,7 +2238,7 @@
                     </source_relation>
                     <target_relation>
                         <if>
-                            <equals value="b-gnd-id">@code</equals>
+                            <equals value="264_b-gnd-id">@code</equals>
                         </if>
                         <relationship>crm:P14_carried_out_by</relationship>
                         <entity variable="production_actor">
@@ -3158,7 +3158,7 @@
                         <type>crm:E53_Place</type>
                         <instance_generator name="URIwithTypeAndId_hashed">
                             <arg name="type" type="constant">place</arg>
-                            <arg name="id_HASHED_CONTENTS" type="xpath">if (subfield[@code='1_2']/text()) then subfield[@code='1_2']/text() else subfield[@code='a']/text()</arg>
+                            <arg name="id_HASHED_CONTENTS" type="xpath">if (subfield[@code='gnd']/text()) then subfield[@code='gnd']/text() else subfield[@code='a']/text()</arg>
                         </instance_generator>
                         <label_generator name="Literal">
                             <arg name="text" type="xpath">subfield[@code='a']/text()</arg>
@@ -3278,7 +3278,7 @@
                             <type>crm:E33_Linguistic_Object</type>
                             <instance_generator name="URIwithTwoLevelIdHashed">
                                 <arg name="type" type="constant">place</arg>
-                                <arg name="id_HASHED_CONTENTS" type="xpath">if (../subfield[@code='1_2']/text()) then ../subfield[@code='1_2']/text() else ../subfield[@code='a']/text()</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">if (../subfield[@code='gnd']/text()) then ../subfield[@code='gnd']/text() else ../subfield[@code='a']/text()</arg>
                                 <arg name="subtype" type="constant">appellation</arg>
                                 <arg name="subId_HASHED_CONTENTS" type="xpath">text()</arg>
                             </instance_generator>
