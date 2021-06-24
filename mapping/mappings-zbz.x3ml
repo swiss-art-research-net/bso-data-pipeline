@@ -1692,7 +1692,14 @@
                     </source_relation>
                     <target_relation>
                         <if>
-                            <equals value="gnd">@code</equals>
+                            <and>
+                                <if>
+                                    <equals value="gnd">@code</equals>
+                                </if>
+                                <if>
+                                    <exists>text()</exists>
+                                </if>
+                            </and>
                         </if>
                         <relationship>crmdig:L54_is_same-as</relationship>
                     </target_relation>
@@ -2239,7 +2246,14 @@
                     </source_relation>
                     <target_relation>
                         <if>
-                            <equals value="264_b-gnd-id">@code</equals>
+                            <and>
+                                <if>
+                                    <equals value="264_b-gnd-id">@code</equals>
+                                </if>
+                                <if>
+                                    <exists>text()</exists>
+                                </if>
+                            </and>
                         </if>
                         <relationship>crm:P14_carried_out_by</relationship>
                         <entity variable="production_actor">
@@ -2665,18 +2679,6 @@
                                 <arg name="text" type="xpath">text()</arg>
                                 <arg name="language" type="constant"/>
                             </label_generator>
-                            <additional>
-                                <relationship>crmdig:L54_is_same-as</relationship>
-                                <entity>
-                                    <type>crm:E53_Place</type>
-                                    <instance_info>
-                                        <constant/>
-                                    </instance_info>
-                                    <instance_generator name="URIwithGndId">
-                                        <arg name="id" type="xpath">../subfield[@code='gnd']/text()</arg>
-                                    </instance_generator>
-                                </entity>
-                            </additional>
                         </entity>
                         <relationship>crm:P1_is_identified_by</relationship>
                     </target_relation>
@@ -2715,6 +2717,45 @@
                     </target_node>
                 </range>
             </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>subfield</relation>
+                    </source_relation>
+                    <target_relation>
+                        <if>
+                            <and>
+                                <if>
+                                    <equals value="gnd">@code</equals>
+                                </if>
+                                <if>
+                                    <exists>text()</exists>
+                                </if>
+                            </and>
+                        </if>
+                        <relationship>crm:P7_took_place_at</relationship>
+                        <entity>
+                            <type>crm:E53_Place</type>
+                            <instance_generator name="URIwithTypeAndId_hashed">
+                                <arg name="type" type="constant">place</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">text()</arg>
+                            </instance_generator>
+                        </entity>
+                        <relationship>crmdig:L54_is_same-as</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>subfield</source_node>
+                    <target_node>
+                        <entity>
+                            <type>crm:E53_Place</type>
+                            <instance_generator name="URIwithGndId">
+                                <arg name="id" type="xpath">text()</arg>
+                            </instance_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
         </mapping>
         <mapping>
             <domain>
@@ -2743,7 +2784,14 @@
                     </source_relation>
                     <target_relation>
                         <if>
-                            <equals value="gnd">@code</equals>
+                            <and>
+                                <if>
+                                    <equals value="gnd">@code</equals>
+                                </if>
+                                <if>
+                                    <exists>text()</exists>
+                                </if>
+                            </and>
                         </if>
                         <relationship>crmdig:L54_is_same-as</relationship>
                     </target_relation>
@@ -2906,7 +2954,14 @@
                     </source_relation>
                     <target_relation>
                         <if>
-                            <equals value="gnd">@code</equals>
+                            <and>
+                                <if>
+                                    <equals value="gnd">@code</equals>
+                                </if>
+                                <if>
+                                    <exists>text()</exists>
+                                </if>
+                            </and>
                         </if>
                         <relationship>crmdig:L54_is_same-as</relationship>
                     </target_relation>
@@ -3011,7 +3066,14 @@
                     </source_relation>
                     <target_relation>
                         <if>
-                            <equals value="gnd">@code</equals>
+                            <and>
+                                <if>
+                                    <equals value="gnd">@code</equals>
+                                </if>
+                                <if>
+                                    <exists>text()</exists>
+                                </if>
+                            </and>
                         </if>
                         <relationship>crmdig:L54_is_same-as</relationship>
                     </target_relation>
@@ -3106,7 +3168,14 @@
                     </source_relation>
                     <target_relation>
                         <if>
-                            <equals value="gnd">@code</equals>
+                            <and>
+                                <if>
+                                    <equals value="gnd">@code</equals>
+                                </if>
+                                <if>
+                                    <exists>text()</exists>
+                                </if>
+                            </and>
                         </if>
                         <relationship>crmdig:L54_is_same-as</relationship>
                     </target_relation>
@@ -3175,7 +3244,14 @@
                     </source_relation>
                     <target_relation>
                         <if>
-                            <equals value="gnd">@code</equals>
+                            <and>
+                                <if>
+                                    <equals value="gnd">@code</equals>
+                                </if>
+                                <if>
+                                    <exists>text()</exists>
+                                </if>
+                            </and>
                         </if>
                         <relationship>crmdig:L54_is_same-as</relationship>
                     </target_relation>
