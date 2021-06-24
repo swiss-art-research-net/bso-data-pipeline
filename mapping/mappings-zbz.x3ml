@@ -1723,7 +1723,14 @@
                     </source_relation>
                     <target_relation>
                         <if>
-                            <equals value="wd_id">@code</equals>
+                            <and>
+                                <if>
+                                    <equals value="wd_id">@code</equals>
+                                </if>
+                                <if>
+                                    <exists>text()</exists>
+                                </if>
+                            </and>
                         </if>
                         <relationship>crmdig:L54_is_same-as</relationship>
                     </target_relation>
@@ -3199,7 +3206,14 @@
                     </source_relation>
                     <target_relation>
                         <if>
-                            <equals value="wd_id">@code</equals>
+                            <and>
+                                <if>
+                                    <equals value="wd_id">@code</equals>
+                                </if>
+                                <if>
+                                    <exists>text()</exists>
+                                </if>
+                            </and>
                         </if>
                         <relationship>crmdig:L54_is_same-as</relationship>
                     </target_relation>
