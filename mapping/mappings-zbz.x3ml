@@ -15,6 +15,7 @@
         <namespace prefix="la" uri="https://linked.art/ns/terms/"/>
         <namespace prefix="rso" uri="http://www.researchspace.org/ontology/" />
         <namespace prefix="aat" uri="http://vocab.getty.edu/aat/" />
+        <namespace prefix="wd" uri="http://www.wikidata.org/entity/"/>
     </namespaces>
     <mappings>
         <mapping>
@@ -1715,7 +1716,7 @@
                     </source_relation>
                     <target_relation>
                         <if>
-                            <equals value="wikidata_uri">@code</equals>
+                            <equals value="wd_id">@code</equals>
                         </if>
                         <relationship>crmdig:L54_is_same-as</relationship>
                     </target_relation>
@@ -1725,8 +1726,8 @@
                     <target_node>
                         <entity variable="actor-wd">
                             <type>crm:E39_Actor</type>
-                            <instance_generator name="URIorUUID">
-                                <arg name="text" type="xpath">text()</arg>
+                            <instance_generator name="URIwithWikidataId">
+                                <arg name="id" type="xpath">text()</arg>
                             </instance_generator>
                         </entity>
                     </target_node>
@@ -3129,7 +3130,7 @@
                     </source_relation>
                     <target_relation>
                         <if>
-                            <equals value="wikidata_uri">@code</equals>
+                            <equals value="wd_id">@code</equals>
                         </if>
                         <relationship>crmdig:L54_is_same-as</relationship>
                     </target_relation>
@@ -3139,8 +3140,8 @@
                     <target_node>
                         <entity>
                             <type>crm:E55_Type</type>
-                            <instance_generator name="URIorUUID">
-                                <arg name="text" type="xpath">text()</arg>
+                            <instance_generator name="URIwithWikidataId">
+                                <arg name="id" type="xpath">text()</arg>
                             </instance_generator>
                         </entity>
                     </target_node>
@@ -3215,8 +3216,8 @@
                     <target_node>
                         <entity>
                             <type>crm:E53_Place</type>
-                            <instance_generator name="URIorUUID">
-                                <arg name="text" type="xpath">concat('http://www.wikidata.org/entity/', text())</arg>
+                            <instance_generator name="URIwithWikidataId">
+                                <arg name="id" type="xpath">text()</arg>
                             </instance_generator>
                         </entity>
                     </target_node>
