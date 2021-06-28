@@ -231,7 +231,16 @@ for record in records:
                         roleElement.text = role['label']
 
 # Records contain date description as date ranges
-# Here we add the full date information for easier representation as xsd:date later
+#
+# Date ranges are specified using different Date Operators, for example
+# whether a date range specifes an exact date, or a period, before or after a date.
+# However, if the date is not a range, but a single date, only the FromDate
+# tag is filled, whether or not the date refers to a beginnig or end of an (unknown)
+# range. For easier mapping, we move some of the dates to the ToDate tag, for example
+# when a date Range is specified as "before", we want the date to be in ToDate, but not
+# in FromDate
+#
+# We also add the full date information for easier representation as xsd:date later
 
 def getDateForDateElement(date):
     """
@@ -249,6 +258,16 @@ def getDateForDateElement(date):
         else:
             return "%s-12-31" % year
     return False
+
+# Switch from/to dates for "before" and "To" date ranges
+dateRanges = root.xpath("//DateRange")
+for dateRange in dateRanges:
+    operator = dateRange.get("DateOperator")
+    if operator == "before" or operator == "To":
+        fromDate = dateRange.find("FromDate")
+        toDate = dateRange.find("ToDate")
+        toDate.text = fromDate.text
+        fromDate.text = ""
 
 # For each date element add full date information
 dates = root.xpath("//FromDate|//ToDate")
