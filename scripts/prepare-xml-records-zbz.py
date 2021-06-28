@@ -217,6 +217,41 @@ def processDates(record):
                     subfield.set("lowerDate", daterange['lower'])
     return record
 
+def splitMultiValueFields(record):
+    # Adds separate datafields for datafields that contain multiple values
+    # e.g. 264 sometimes contains several subfields with code a and b
+    # Find subfields that have at least 2 code a's
+    subfieldAInSecondPlace = record.xpath("datafield/subfield[@code='a'][2]")
+    for subfield in subfieldAInSecondPlace:
+        datafield = subfield.getparent()
+        tag = datafield.get("tag")
+        # Determine the number of subfields by looking at the number of subfields with code a
+        numSubfields = len(datafield.findall("subfield[@code='a']"))
+        # Determine the codes that are used
+        codes = sorted(list(set([d.get('code') for d in datafield.findall("subfield")])))
+        # For every subfield
+        for i in range(numSubfields):
+            index = i+1
+            # Add a new subfield
+            newDatafield = etree.SubElement(record, "datafield")
+            newDatafield.set("tag", tag)
+            # Mark the index of the subfield
+            indexSubfield = etree.SubElement(newDatafield, "subfield")
+            indexSubfield.set("code", "index")
+            indexSubfield.text = str(i)
+            # Iterate through the subfield codes and if there is a subfield at the
+            # respective index, add it
+            for code in codes:
+                value = datafield.xpath("subfield[@code='%s'][%d]" % (code, index))
+                if value is not None and len(value):
+                    newSubfield = etree.SubElement(newDatafield, "subfield")
+                    newSubfield.set("code", code)
+                    newSubfield.text = value[0].text
+        # Remove the parent
+        record.remove(datafield)
+    
+    return record
+
 
 # Read main data files
 root = etree.XML("<collection/>")
@@ -261,6 +296,7 @@ collection = root
 
 for record in tqdm(records[offset:offset + limit]):
     record = addRecordIdentifier(record)
+    record = splitMultiValueFields(record)
     record = addCuratedData(record)
     record = addManifest(record)
     record = addImages(record)
