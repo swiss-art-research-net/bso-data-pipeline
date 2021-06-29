@@ -1,4 +1,5 @@
 from edtf import parse_edtf
+from joblib import Parallel, delayed
 from sariDateParser.dateParser import parse
 from lxml import etree
 from tqdm import tqdm
@@ -302,9 +303,12 @@ for record in tqdm(records[offset:offset + limit]):
     record = addImages(record)
     record = processDates(record)
         
+def saveRecord(record):
     collection.clear()
     collection.append(record)
     outputFile = outputDirectory + outputPrefix + record.find("controlfield[@tag='001']").text + ".xml"
     with open(outputFile, 'wb') as f:
         f.write(etree.tostring(collection, xml_declaration=True, encoding='UTF-8', pretty_print=True))
         f.close()
+
+Parallel(n_jobs=4, prefer="threads")(delayed(saveRecord)(d) for d in records[offset:offset + limit])

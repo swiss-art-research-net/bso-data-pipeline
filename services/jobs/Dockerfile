@@ -9,7 +9,7 @@ RUN locale-gen en_US.UTF-8
 RUN apt update
 RUN apt install -y default-jre
 # Install Python packages
-RUN pip install date-parser-sari lxml urllib3 requests edtf tqdm rdflib sparqlwrapper PyYAML
+RUN pip install date-parser-sari lxml urllib3 requests edtf tqdm rdflib sparqlwrapper PyYAML joblib
 
 # Install x3ml Mapping engine
 RUN mkdir x3ml
