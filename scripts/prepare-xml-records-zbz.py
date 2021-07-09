@@ -58,37 +58,27 @@ def addCuratedData(record):
         tag = datafield.get("tag")
         # Check if datafield has been curated
         if tag in curatedFields.keys():
-            # Look at subfields to match
             for subfieldList in curatedFields[tag]:
                 curatedFileId = tag + "-" + '_'.join(subfieldList)
-                # Establish conditions for subfields to match
+                
                 conditions = {}
                 for subfield in subfieldList:
                     value = datafield.find("subfield[@code='%s']" % subfield)
-                    value = value.text if value is not None else None
+                    value = value.text if value is not None else ""
                     conditions[tag + "_" + subfield] = value
-                    
-                # Find rows that match all subfield
-                matches = []
-                for row in curatedFiles[curatedFileId]['content']:
-                    isMatch = True
-                    for column in conditions.keys():
-                        if not compare_strs(row[column],conditions[column]):
-                            isMatch = False
-                            break
-                    if isMatch:
-                        matches.append(row)
                 
-                if len(matches) > 1:
-                    print("Found several candidates")
-                    print(matches)
-                    
-                if len(matches) >= 1:
-                    for column in matches[0]: 
+                lookupHash = json.dumps(list(conditions.values()))
+        
+                if not set(list(conditions.values())) == {''}: # Skip if the condition is empty
+                    index = curatedFiles[curatedFileId]['lookup'][lookupHash]
+                
+                    match = curatedFiles[curatedFileId]['content'][index]
+
+                    for column in match: 
                         if column not in conditions:
                             newSubfield = etree.SubElement(datafield, "subfield")
                             newSubfield.set("code", column)
-                            newSubfield.text = matches[0][column]
+                            newSubfield.text = match[column]
     
     return record
 
@@ -274,13 +264,20 @@ for tag in curatedFields.keys():
                 reader = csv.DictReader(f)
                 for row in reader:
                     content.append(row)
-                    
+            
+            lookup = {}
+            for i, row in enumerate(content):
+                lookupHash = json.dumps([row[tag + '_' + subfield] for subfield in subfieldList])
+                lookup[lookupHash] = i
+            
             curatedFiles[tag + "-" + subfieldListId] = {
                 "tag": tag,
                 "content": content,
+                "lookup": lookup,
                 "subfields" : subfieldList,
                 "filename" : filename
             }
+                
         except:
             print("Could not process", filename)
 
