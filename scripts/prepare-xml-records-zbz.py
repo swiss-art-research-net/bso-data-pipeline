@@ -67,18 +67,20 @@ def addCuratedData(record):
                     value = value.text if value is not None else ""
                     conditions[tag + "_" + subfield] = value
                 
-                lookupHash = hash(json.dumps(list(conditions.values())))
+                lookupHash = customHash(list(conditions.values()))
         
                 if not set(list(conditions.values())) == {''}: # Skip if the condition is empty
-                    index = curatedFiles[curatedFileId]['lookup'][lookupHash]
-                
-                    match = curatedFiles[curatedFileId]['content'][index]
+                    try:
+                        index = curatedFiles[curatedFileId]['lookup'][lookupHash]
+                        match = curatedFiles[curatedFileId]['content'][index]
 
-                    for column in match: 
-                        if column not in conditions:
-                            newSubfield = etree.SubElement(datafield, "subfield")
-                            newSubfield.set("code", column)
-                            newSubfield.text = match[column]
+                        for column in match: 
+                            if column not in conditions:
+                                newSubfield = etree.SubElement(datafield, "subfield")
+                                newSubfield.set("code", column)
+                                newSubfield.text = match[column]
+                    except:
+                        print("Key error for", conditions, lookupHash)
     
     return record
 
@@ -108,16 +110,6 @@ def addManifest(record):
     manifestDatafield.text = manifestURL
     return record
 
-def compare_strs(s1, s2):
-    def NFD(s):
-        return unicodedata.normalize('NFD', s)
-    if s1 is None:
-        s1 = ''
-    if s2 is None:
-        s2 = ''
-
-    return NFD(s1) == NFD(s2)
-
 def convertEDTFdate(date):
     try:
         d = parse_edtf(downgradeEDTF(date))
@@ -144,6 +136,12 @@ def convertEDTFdate(date):
         'lower': time.strftime("%Y-%m-%d", lower),
         'upper': time.strftime("%Y-%m-%d", upper)
     }
+    
+def customHash(list):
+    def NFD(s):
+        return unicodedata.normalize('NFD', s)
+
+    return NFD(json.dumps(list, ensure_ascii=False))
 
 def downgradeEDTF(date):
     """
@@ -267,7 +265,7 @@ for tag in curatedFields.keys():
             
             lookup = {}
             for i, row in enumerate(content):
-                lookupHash = hash(json.dumps([row[tag + '_' + subfield] for subfield in subfieldList]))
+                lookupHash = customHash([row[tag + '_' + subfield] for subfield in subfieldList])
                 lookup[lookupHash] = i
             
             curatedFiles[tag + "-" + subfieldListId] = {
