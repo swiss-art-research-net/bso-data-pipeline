@@ -32,7 +32,7 @@ tasks:
       IIIF_MANIFESTS_FROM: 0
       IIIF_MANIFEST_TO: 9999
     sources:
-      - /data/source/sari_abzug-utf-8_23_04-tsv.json
+      - /data/source/zbz-doi.csv
     generates:
       - /data/manifests/*.json
     cmds:
