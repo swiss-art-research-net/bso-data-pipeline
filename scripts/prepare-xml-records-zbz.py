@@ -67,7 +67,7 @@ def addCuratedData(record):
                     value = value.text if value is not None else ""
                     conditions[tag + "_" + subfield] = value
                 
-                lookupHash = json.dumps(list(conditions.values()))
+                lookupHash = hash(json.dumps(list(conditions.values())))
         
                 if not set(list(conditions.values())) == {''}: # Skip if the condition is empty
                     index = curatedFiles[curatedFileId]['lookup'][lookupHash]
@@ -267,7 +267,7 @@ for tag in curatedFields.keys():
             
             lookup = {}
             for i, row in enumerate(content):
-                lookupHash = json.dumps([row[tag + '_' + subfield] for subfield in subfieldList])
+                lookupHash = hash(json.dumps([row[tag + '_' + subfield] for subfield in subfieldList]))
                 lookup[lookupHash] = i
             
             curatedFiles[tag + "-" + subfieldListId] = {
