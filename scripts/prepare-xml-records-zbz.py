@@ -137,11 +137,11 @@ def convertEDTFdate(date):
         'upper': time.strftime("%Y-%m-%d", upper)
     }
     
-def customHash(list):
+def customHash(l):
     def NFD(s):
         return unicodedata.normalize('NFD', s)
 
-    return hash(NFD(json.dumps(list, ensure_ascii=False)))
+    return hash(NFD(json.dumps(l, ensure_ascii=False)))
 
 def downgradeEDTF(date):
     """
