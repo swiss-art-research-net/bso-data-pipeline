@@ -141,7 +141,7 @@ def customHash(list):
     def NFD(s):
         return unicodedata.normalize('NFD', s)
 
-    return NFD(json.dumps(list, ensure_ascii=False))
+    return hash(NFD(json.dumps(list, ensure_ascii=False)))
 
 def downgradeEDTF(date):
     """
