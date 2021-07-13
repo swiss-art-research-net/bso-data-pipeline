@@ -38,7 +38,7 @@ urlsAndFilenames = [{
 } for d in rowsWithManifests]
 
 for row in tqdm(urlsAndFilenames[offset:offset + limit]):
-    if not isfile(row['filename']):
+    if not isfile(row['filename']) and row['manifest']:
     #    print("Already exists", row['filename'])
     #else:
         fetchManuscript(row['manifest'], row['filename'])
