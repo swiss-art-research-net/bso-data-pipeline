@@ -40,4 +40,4 @@ download "data/nb/source/Gugelman.xml" "data/source/nb-parentrecords.xml"
 
 download "data/sari/prefLabels.trig" "data/ttl/additional/prefLabels.trig"
 download "data/sari/zbzTypeLabels.trig" "data/ttl/additional/zbzTypeLabels.trig"
-download "data/sari/documentRegions.trig" "data/ttl/additional/documentRegions.trig"
+#download "data/sari/documentRegions.trig" "data/ttl/additional/documentRegions.trig"
