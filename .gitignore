@@ -8,6 +8,7 @@ data
 !data/xml/.gitkeep
 !services/researchspace/apps/sari/data
 !scripts/data
+experiments/output/*.xml
 .ipynb_checkpoints
 local-scripts
 settings.json
