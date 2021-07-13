@@ -38,13 +38,6 @@ urlsAndFilenames = [{
 } for d in rowsWithManifests]
 
 for row in tqdm(urlsAndFilenames[offset:offset + limit]):
-    if not isfile(row['filename']) and row['manifest']:
-    #    print("Already exists", row['filename'])
-    #else:
-        fetchManuscript(row['manifest'], row['filename'])
-
-# threads = [threading.Thread(target=fetchManuscript, args=(d['manifest'], d['filename'])) for d in urlsAndFilenames[offset:offset + limit]]
-# for thread in threads:
-#     thread.start()
-# for thread in threads:
-#     thread.join()
+    if not isfile(row['filename']):
+        if row['manifest']:
+            fetchManuscript(row['manifest'], row['filename'])
