@@ -876,7 +876,7 @@
                 <range>
                     <source_node>DetailData/DataElement</source_node>
                     <target_node>
-                        <entity>
+                        <entity variable="bso-iiif">
                             <type>la:DigitalService</type>
                             <instance_generator name="URIwithTypeSubtypeIdAnd1Level">
                                 <arg name="type" type="constant">artwork</arg>
@@ -1287,7 +1287,7 @@
                 <range>
                     <source_node>DetailData/DataElement</source_node>
                     <target_node>
-                        <entity>
+                        <entity variable="wikimedia-url">
                             <type>crm:E42_Identifier</type>
                             <instance_generator name="URIorUUID">
                                 <arg name="text" type="xpath">ElementValue/TextValue/text()</arg>
