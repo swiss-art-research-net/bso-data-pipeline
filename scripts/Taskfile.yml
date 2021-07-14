@@ -20,11 +20,11 @@ tasks:
       - task: run-query-from-file
         vars: {FILE: "queries/cleanup.sparql"}
 
-  delete-field-definitions:
-    desc: Delete the field definitions from the Blazegraph instance
+  delete-document-regions:
+    desc: Delete the generated document regions from the Blazegraph instance
     cmds:
       - task: run-query-from-file
-        vars: {FILE: "queries/deleteFieldDefinitions.sparql"}
+        vars: {FILE: "queries/deleteDocumentRegions.sparql"}
 
   download-iiif-manifests:
     desc: Downloads the IIIF Manifests found in the ZBZ data source file
@@ -51,12 +51,12 @@ tasks:
         count=1
         {{if .GRAPH}}curl --silent -X POST {{.ENDPOINT}} --data-urlencode "update=DROP GRAPH <{{.GRAPH}}>" > /dev/null{{end}}
         for f in $(ls -1 {{.FOLDER}}/*.ttl); do
-          echo "Ingesting TTL file $count of $numfiles ($f)"
+          echo "Ingesting file $count of $numfiles ($f)"
           curl --silent -X POST --data-binary "uri=file://$f" {{.ENDPOINT}}?context-uri={{if .GRAPH}}{{.GRAPH}}{{else}}file://$f{{end}} > /dev/null
           count=$((count+1)) 
         done
         for f in $(ls -1 {{.FOLDER}}/*.trig); do
-          echo "Ingesting TRIG file $count of $numfiles ($f)"
+          echo "Ingesting file $count of $numfiles ($f)"
           curl --silent -X POST --data-binary "uri=file://$f" {{.ENDPOINT}}{{if .GRAPH}}?context-uri={{.GRAPH}}{{end}} > /dev/null
           count=$((count+1)) 
         done
