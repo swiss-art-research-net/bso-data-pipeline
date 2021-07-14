@@ -61,7 +61,7 @@ tasks:
         done
 
   ingest-data-additional:
-    desc: Ingest the TTL and Trig files located in the data/ttl/additional folder to the Blazegraph instance
+    desc: Ingest the TTL and Trig files located in the data/ttl/additional folder to the Blazegraph instance. If a GRAPH is specified, the TTL files will be ingested into this named graph. For Trig files, the named graph specified in the files will be used.
     sources:
       - /data/ttl/additional/*.ttl
       - /data/ttl/additional/*.trig
