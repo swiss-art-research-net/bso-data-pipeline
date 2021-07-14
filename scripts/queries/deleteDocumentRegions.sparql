@@ -1,0 +1,12 @@
+
+PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
+DELETE {
+  GRAPH ?g {
+    ?s ?p ?o
+  }
+} WHERE {
+  GRAPH ?g {
+    ?s ?p ?o .
+    ?region crm:P33_used_specific_technique <https://github.com/swiss-art-research-net/bso-image-segmentation> .
+   }
+};
