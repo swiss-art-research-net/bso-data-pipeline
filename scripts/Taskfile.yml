@@ -20,11 +20,11 @@ tasks:
       - task: run-query-from-file
         vars: {FILE: "queries/cleanup.sparql"}
 
-  delete-document-regions:
-    desc: Delete the generated document regions from the Blazegraph instance
+  delete-image-regions:
+    desc: Delete the generated image regions from the Blazegraph instance
     cmds:
       - task: run-query-from-file
-        vars: {FILE: "queries/deleteDocumentRegions.sparql"}
+        vars: {FILE: "queries/deleteImageRegions.sparql"}
 
   download-iiif-manifests:
     desc: Downloads the IIIF Manifests found in the ZBZ data source file
