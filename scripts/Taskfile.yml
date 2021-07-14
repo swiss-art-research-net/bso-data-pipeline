@@ -44,6 +44,7 @@ tasks:
       - curl -X POST -H 'Content-Type:application/rdf+xml	' --data-binary '@{{.FILE}}' {{.ENDPOINT}}?context-uri={{.GRAPH}}
 
   ingest-data-from-folder:
+    desc: Ingests data from a specified folder. If a named graph is specified (GRAPH), TTL files will be ingested into it. Otherwise, the filename will be used as named graph. Named Graphs specified in Trig files will be used as defined
     cmds:
       - |
         numfiles=$(ls -l {{.FOLDER}}/*.{ttl,trig} | wc -l)
@@ -61,7 +62,7 @@ tasks:
         done
 
   ingest-data-additional:
-    desc: Ingest the TTL and Trig files located in the data/ttl/additional folder to the Blazegraph instance. If a GRAPH is specified, the TTL files will be ingested into this named graph. For Trig files, the named graph specified in the files will be used.
+    desc: Ingest the TTL and Trig files located in the data/ttl/additional folder to the Blazegraph instance. 
     sources:
       - /data/ttl/additional/*.ttl
       - /data/ttl/additional/*.trig
