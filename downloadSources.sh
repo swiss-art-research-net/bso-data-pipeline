@@ -37,6 +37,7 @@ download "data/nb/nb-curation-koerperschaften.csv" "data/source/nb-curation-koer
 download "data/nb/nb-curation-names.csv" "data/source/nb-curation-names.csv"
 download "data/nb/source/WMC_Records_20201201.xml" "data/source/nb-records.xml"
 download "data/nb/source/Gugelman.xml" "data/source/nb-parentrecords.xml"
+download "data/nb/source/GS_Grafikansichten_20210706.xml" "data/source/nb-records-2.xml"
 
 download "data/sari/prefLabels.trig" "data/ttl/additional/prefLabels.trig"
 download "data/sari/zbzTypeLabels.trig" "data/ttl/additional/zbzTypeLabels.trig"
