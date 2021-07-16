@@ -10,7 +10,7 @@ limit = int(sys.argv[1]) if len(sys.argv) >1 else 999999
 offset = int(sys.argv[2]) if len(sys.argv) >2 else 0
 
 # Set paths for input and output files
-inputFiles = ['../data/source/nb-records.xml', '../data/source/nb-parentrecords.xml']
+inputFiles = ['../data/source/nb-records.xml', '../data/source/nb-parentrecords.xml', '../data/source/nb-records-2.xml',]
 outputDir = '/data/xml/nb'
 
 # List externally loaded csv files
