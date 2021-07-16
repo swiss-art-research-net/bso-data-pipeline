@@ -1,6 +1,7 @@
 import copy
 import csv
 import re
+import unicodedata
 import sys
 from lxml import etree
 from tqdm import tqdm
@@ -178,9 +179,14 @@ def cleanName(name):
     return re.sub(r'[^A-Za-z]+', '', name)
 
 def matchNameWithCuratedNames(name, curatedNames):
+
+    def NFD(s):
+        return unicodedata.normalize('NFD', s)
+
     for curatedName in curatedNames:
-        if name in curatedName['Raw']:
+        if NFD(name) in NFD(curatedName['Raw']):
             return curatedName['normalised name']
+            
     print("Not found ", name)
     return False
 
