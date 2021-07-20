@@ -205,6 +205,18 @@ def matchRoleWithCuratedNames(name, curatedNames):
 elementIdsWithCuratedNames = ['10817', '10927']
 dataElementXPath = '|'.join(["DetailData/DataElement[@ElementId='%s']" % d for d in elementIdsWithCuratedNames])
 
+# Extract all descriptor elements
+allDescriptors = []
+descriptorIdNameHash = {}
+
+for record in records:
+    recordDescriptors = record.xpath("Descriptors/Descriptor[Thesaurus/text()='Personen']")
+    for descriptor in recordDescriptors:
+        idName = descriptor.find("IdName").text
+        if idName not in descriptorIdNameHash:
+            descriptorIdNameHash[idName] = len(allDescriptors)
+            allDescriptors.append(descriptor)
+
 # Find a match for each person and add curate data on role
 for record in records:
     
@@ -226,6 +238,16 @@ for record in records:
                         idName = descriptor.find("IdName").text
                         if cleanName(matchedName) in cleanName(idName):
                             value.append(copy.deepcopy(descriptor))
+                            break
+                    else:
+                        # Sometimes no descriptor is present together with the record,
+                        # but there are matching descriptors elswehere in the dataset.
+                        # Here we look for a suitable descriptors among all of them
+                        for descriptor in allDescriptors:
+                            idName = descriptor.find("IdName").text
+                            if cleanName(matchedName) in cleanName(idName):
+                                value.append(copy.deepcopy(descriptor))
+                                break
                 else:
                     print("Unmatched name in Record", record.get('Id'))
 
