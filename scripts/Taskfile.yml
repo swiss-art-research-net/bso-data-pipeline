@@ -184,8 +184,8 @@ tasks:
   prepare-xml-records-zbz:
     desc: Convert the ZBZ data from JSON to individual XML Records
     sources:
-      - /data/source/sari_abzug-utf-8_23_04-tsv.json
-      - /data/source/*.json
+      - /data/source/BIBLIOGRAPHIC_*.xml
+      - /data/source/zbz-*.csv
       - /scripts/prepare-xml-records-zbz.py
     generates:
       - /data/xml/zbz/*.xml
