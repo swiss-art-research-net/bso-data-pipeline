@@ -306,6 +306,11 @@ for record in tqdm(records):
                             descriptor = externalDescriptors.getPersonDescriptorByName(record.get('Id'), matchedName)
                         if descriptor != False:
                             value.append(copy.deepcopy(descriptor))
+
+                    # Add a normalised name so we can create a single entity for
+                    # persons that lack a GND identifier
+                    normalisedName = etree.SubElement(value, "NormalisedName")
+                    normalisedName.text = matchedName
                 else:
                     print("Unmatched name in Record", record.get('Id'))
 
