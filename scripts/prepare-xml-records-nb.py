@@ -194,7 +194,7 @@ def matchNameWithCuratedNames(name, curatedNames):
 def matchRoleWithCuratedNames(name, curatedNames):
     # We use the name list to match roles as well. Eventually one could use a smaller list of only the roles as well
     for curatedName in curatedNames:
-        if curatedName['normalised role'] and curatedName['normalised role'] in name:
+        if curatedName['normalised role'] and curatedName['Role'] in name:
             roles = curatedName['normalised role'].split("/") 
             gndRoles = curatedName['gnd role'].split(";")
             returnRoles = []
