@@ -10,7 +10,7 @@ limit = int(sys.argv[1]) if len(sys.argv) >1 else 999999
 offset = int(sys.argv[2]) if len(sys.argv) >2 else 0
 
 # Set paths for input and output files
-inputFiles = ['../data/source/nb-records.xml', '../data/source/nb-parentrecords.xml', '../data/source/nb-records-2.xml',]
+inputFiles = ['../data/source/nb-records.xml', '../data/source/nb-parentrecords.xml']
 outputDir = '/data/xml/nb'
 
 # List externally loaded csv files
@@ -21,6 +21,7 @@ curatedDataFiles = [
     "../data/source/nb-curation-geografika.csv"
 ]
 curatedNamesFile = "../data/source/nb-curation-names.csv"
+externalDescriptorsFile = "../data/source/nb-external-descriptors.csv"
 
 # Column in CSV file used to match against IdName
 curatedKey = "Raw"
@@ -205,20 +206,77 @@ def matchRoleWithCuratedNames(name, curatedNames):
 elementIdsWithCuratedNames = ['10817', '10927']
 dataElementXPath = '|'.join(["DetailData/DataElement[@ElementId='%s']" % d for d in elementIdsWithCuratedNames])
 
-# Extract all descriptor elements
-allDescriptors = []
-descriptorIdNameHash = {}
+# Create a helper class to identify Person Descriptors among all records if no suitable
+# Descriptor is present with the record itself. The Class will suggest a matching and store
+# the matching in a CSV file for later retrieval or manual adjustment
 
-for record in records:
-    recordDescriptors = record.xpath("Descriptors/Descriptor[Thesaurus/text()='Personen']")
-    for descriptor in recordDescriptors:
-        idName = descriptor.find("IdName").text
-        if idName not in descriptorIdNameHash:
-            descriptorIdNameHash[idName] = len(allDescriptors)
-            allDescriptors.append(descriptor)
+class NBExternalDescriptors:
+    import csv
+    
+    allPersonDescriptors = []
+    personDescriptorIdNameHash = {}
+    externalDescriptors = []
+    externalDescriptorFilename = ""
+    
+    def __init__(self, records, filename):
+        from os import path
+        # Read all Person descriptors
+        for record in records:
+            recordDescriptors = record.xpath("Descriptors/Descriptor[Thesaurus/text()='Personen']")
+            for descriptor in recordDescriptors:
+                idName = descriptor.find("IdName").text
+                if idName not in self.personDescriptorIdNameHash:
+                    self.personDescriptorIdNameHash[idName] = len(self.allPersonDescriptors)
+                    self.allPersonDescriptors.append(descriptor)
+                    
+        # Read external descriptors
+        self.externalDescriptorFilename = filename
+        if path.isfile(filename):
+            with open(filename, 'r') as f:
+                reader = csv.DictReader(f)
+                for row in reader:
+                    self.externalDescriptors.append(row)
+    
+    def cleanName(name):
+        return re.sub(r'[^A-Za-z]+', '', name)
+
+    def getDescriptorForRecordAndName(self, recordId, name):
+        for externalDescriptor in self.externalDescriptors:
+            if externalDescriptor['recordId'] == recordId and externalDescriptor['matchedName'] == name:
+                return self.allPersonDescriptors[self.personDescriptorIdNameHash[externalDescriptor['idName']]]
+        return False
+    
+    def getPersonDescriptorByName(self, recordId, name):
+        for descriptor in self.allPersonDescriptors:
+            idName = descriptor.find("IdName").text
+            if cleanName(name) in cleanName(idName):
+                if not self.getDescriptorForRecordAndName(recordId, name):
+                    self.addExternalDescriptor(recordId, matchedName, idName)
+                return descriptor
+        return False
+    
+    def addExternalDescriptor(self, recordId, matchedName, idName):
+        self.externalDescriptors.append({
+            "recordId": recordId,
+            "matchedName": matchedName,
+            "idName": idName
+        })
+        self.writeExternalDescriptors()
+    
+    def writeExternalDescriptors(self):
+        externalDescriptors = sorted(self.externalDescriptors, key=lambda k: k['recordId']) 
+        with open(self.externalDescriptorFilename, 'w') as f:
+            writer = csv.DictWriter(f, fieldnames=externalDescriptors[0].keys())
+            writer.writeheader()
+            for row in externalDescriptors:
+                writer.writerow(row)
+
+
+externalDescriptors = NBExternalDescriptors(records, externalDescriptorsFile)
 
 # Find a match for each person and add curate data on role
-for record in records:
+print("Processing Descriptors")
+for record in tqdm(records):
     
     # Extract Elements containing names
     recordElements = record.xpath(dataElementXPath)
@@ -240,14 +298,14 @@ for record in records:
                             value.append(copy.deepcopy(descriptor))
                             break
                     else:
-                        # Sometimes no descriptor is present together with the record,
+                        # Sometimes no descriptor is present together with the record
                         # but there are matching descriptors elswehere in the dataset.
                         # Here we look for a suitable descriptors among all of them
-                        for descriptor in allDescriptors:
-                            idName = descriptor.find("IdName").text
-                            if cleanName(matchedName) in cleanName(idName):
-                                value.append(copy.deepcopy(descriptor))
-                                break
+                        descriptor = externalDescriptors.getDescriptorForRecordAndName(record.get('Id'), matchedName)
+                        if descriptor == False:
+                            descriptor = externalDescriptors.getPersonDescriptorByName(record.get('Id'), matchedName)
+                        if descriptor != False:
+                            value.append(copy.deepcopy(descriptor))
                 else:
                     print("Unmatched name in Record", record.get('Id'))
 
@@ -307,6 +365,7 @@ for date in dates:
 collection = root
 
 # Output each record individually
+print("Outputting Files")
 for record in tqdm(records[offset:limit+offset]):
     collection.clear()
     id = record.get("Id")
