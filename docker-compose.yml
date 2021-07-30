@@ -19,7 +19,7 @@ services:
   jobs:
     build: ./services/jobs
     container_name: ${PROJECT_NAME}_jobs
-    image: idsarideploy01.uzh.ch/swissartresearx/bso-jobs
+    image: swissartresearx/bso-jobs
     restart: unless-stopped
     volumes:
       - ./data:/data
