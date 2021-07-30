@@ -86,6 +86,7 @@ To run a specific task type `task` followed by the task name, e.g.:
 If the task is already up to date, it will not run. To force a task to run, type the command followed by `--force`
 
 `task cleanup --force`
+
 ## Troubleshooting
 
 If the BSO app is missing, you might have cloned the repository without submodules. To pull the submodules after cloning the repository, run
