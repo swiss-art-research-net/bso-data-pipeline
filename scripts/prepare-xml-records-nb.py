@@ -8,6 +8,7 @@ from tqdm import tqdm
 
 limit = int(sys.argv[1]) if len(sys.argv) >1 else 999999
 offset = int(sys.argv[2]) if len(sys.argv) >2 else 0
+idsToOutput=str(sys.argv[3]) if len(sys.argv) >3 else False
 
 # Set paths for input and output files
 inputFiles = ['../data/source/nb-records.xml', '../data/source/nb-parentrecords.xml']
@@ -368,6 +369,11 @@ for date in dates:
         date.set("fullDate", fullDate)
 
 collection = root
+
+# Filter ids to output if argument is set
+if idsToOutput:
+    listOfIds = idsToOutput.split(',')
+    records = [d for d in records if d.get("Id") in listOfIds]
 
 # Output each record individually
 print("Outputting Files")

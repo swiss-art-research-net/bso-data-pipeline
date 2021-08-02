@@ -48,6 +48,7 @@ curatedFields = {
 }
 limit=int(sys.argv[1]) if len(sys.argv) >1 else 999999
 offset=int(sys.argv[2]) if len(sys.argv) >2 else 0
+idsToOutput=str(sys.argv[3]) if len(sys.argv) >3 else False
 
 # Define functions
    
@@ -288,6 +289,11 @@ with open(doisFile, 'r') as f:
 
 # Output individual files
 collection = root
+
+# Filter ids to output if argument is set
+if idsToOutput:
+    listOfIds = idsToOutput.split(',')
+    records = [d for d in records if d.find("controlfield[@tag='001']").text in listOfIds]
 
 for record in tqdm(records[offset:offset + limit]):
     record = addRecordIdentifier(record)
