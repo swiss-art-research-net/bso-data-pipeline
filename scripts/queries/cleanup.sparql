@@ -74,5 +74,16 @@ DELETE {
   VALUES(?primary ?secondary ?label) {
     (<https://resource.swissartresearch.net/actor/E31E74B9-5038-3884-B046-F63C8DD473E3> <https://resource.swissartresearch.net/actor/36187FE6-BE8A-3204-A03F-8621E693A3B1> 'Burri, Johann Ulrich')
     (<https://resource.swissartresearch.net/actor/B3494F86-ACF1-3D28-956A-184F8319DE34> <https://resource.swissartresearch.net/actor/5F5DFE27-F3C1-3624-9FE1-CC61F08F0D8C> 'Fischer, Heinrich')
+    (<https://resource.swissartresearch.net/actor/1629E9CA-1554-3EAC-A27B-70FB7F4AAB40> <https://resource.swissartresearch.net/actor/FA2B7FBB-082E-362B-96E5-C122148787BB> 'Füssli, Heinrich')
+    (<https://resource.swissartresearch.net/actor/583ECC0C-D4D6-3993-8595-62EB22A370D5> <https://resource.swissartresearch.net/actor/DFBD5E5E-0BA2-31C0-8DDA-73A569B983BE> 'Füssli, Johann Heinrich')
+    (<https://resource.swissartresearch.net/actor/EA2053E4-51E1-3D31-993F-3DC52936F9A2> <https://resource.swissartresearch.net/actor/65042257-F9BE-301E-825C-C55A0B7F746B> 'Füssli, Johann Melchior')
+    (<https://resource.swissartresearch.net/actor/BCC4B25E-D416-3F4D-B76A-0E9A08BA45B5> <https://resource.swissartresearch.net/actor/D3913635-B17B-30C5-B10C-FA17A0FD2316> 'Gmelin, Wilhelm Friiedrich')
+    (<https://resource.swissartresearch.net/actor/C040769A-079C-3A8E-9B81-C4E88369B4EC> <https://resource.swissartresearch.net/actor/304F417A-743B-349F-881A-38CB3B1C828E> 'Hofer, Andreas')
+    (<https://resource.swissartresearch.net/actor/4DB4C258-131B-3543-93D3-9B51C4EDB2BA> <https://resource.swissartresearch.net/actor/C684B599-0197-3F30-8730-39A16C007808> 'Honegger, Johann Jakob')
+    (<https://resource.swissartresearch.net/actor/78A03582-6911-32F9-9027-54BF48220C39> <https://resource.swissartresearch.net/actor/F5EC7465-8769-3894-9682-BAB9F76BBB3C> 'L\'Evêque, Henri')
+    (<https://resource.swissartresearch.net/actor/B553C476-E551-3E5F-98E5-0DF6D2207BA9> <https://resource.swissartresearch.net/actor/4CA28C47-7769-3AB0-9B3D-88430453E315> 'Leu, Hans')
+    (<https://resource.swissartresearch.net/actor/3B76B513-4952-3B62-922B-E8483D664F63> <https://resource.swissartresearch.net/actor/0CC6407A-48BA-3745-AF1B-D9318733D253> 'Maurer, Heinrich')
+    (<https://resource.swissartresearch.net/actor/F1B918FA-D3E9-3D65-84FC-BBB8B468CE7E> <https://resource.swissartresearch.net/actor/FB61FE3A-F499-34EC-840E-9CAF99CCB9A2> 'Weber Johannes')
+    (<https://resource.swissartresearch.net/actor/9DF4D3E5-6A8E-38EA-AAC8-DA0A88574825> <https://resource.swissartresearch.net/actor/777436B2-949A-3BD1-ACFE-9C71FCB4ACF3> 'Wolf, Caspar')
   }
 };
