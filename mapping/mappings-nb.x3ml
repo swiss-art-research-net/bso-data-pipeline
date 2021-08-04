@@ -1681,6 +1681,21 @@
                             </not>
                         </if>
                         <relationship>crm:P1_is_identified_by</relationship>
+                        <entity>
+                            <type>crm:E41_Appellation</type>
+                            <type>crm:E33_Linguistic_Object</type>
+                            <instance_generator name="URIwithTwoLevelIdHashed">
+                                <arg name="type" type="constant">actor</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">if (../GND-Kennung/text()) then (../GND-Kennung/text()) else (../IdNameForMapping/text())</arg>
+                                <arg name="subtype" type="constant">appellation</arg>
+                                <arg name="subId_HASHED_CONTENTS" type="xpath">text()</arg>
+                            </instance_generator>
+                            <label_generator name="Literal">
+                                <arg name="text" type="xpath">text()</arg>
+                                <arg name="language" type="constant"/>
+                            </label_generator>
+                        </entity>
+                        <relationship>crm:P70i_is_documented_in</relationship>
                     </target_relation>
                     <comments>
                         <comment type="">
@@ -1900,6 +1915,4 @@
             </link>
         </mapping>
     </mappings>
-
-
 </x3ml>
