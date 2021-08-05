@@ -62,6 +62,21 @@
                                 </label_generator>
                             </entity>
                         </additional>
+                        <additional>
+                            <relationship>crm:P1_is_identified_by</relationship>
+                            <entity>
+                                <type>crm:E42_Identifier</type>
+                                <instance_generator name="URIwithTypeSubtypeAndId">
+                                    <arg name="type" type="constant">artwork</arg>
+                                    <arg name="id" type="xpath">@RecordIdentifier</arg>
+                                    <arg name="subtype" type="constant">id</arg>
+                                </instance_generator>
+                                <label_generator name="Literal">
+                                    <arg name="text" type="xpath">@Id</arg>
+                                    <arg name="language" type="constant"/>
+                                </label_generator>
+                            </entity>
+                        </additional>
                     </entity>
                 </target_node>
             </domain>
