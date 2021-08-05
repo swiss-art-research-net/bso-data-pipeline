@@ -370,6 +370,19 @@ for date in dates:
 
 collection = root
 
+# Add an additional tag to Descriptors which is used for generating the URIs.
+# If no GND is present, the IdName can be used. However, the IdName sometimes
+# contains additional whitespace, which can cause same entities to produce
+# different URIs. Therefore, we add an additional tag here with a cleaned
+# version of the IdName
+for record in records:
+    recordDescriptors = record.findall("Descriptors/Descriptor")
+    for d in recordDescriptors:
+        idName = d.find("IdName").text
+        cleandIdName = idName.replace(" ","")
+        mappingIdNameElement = etree.SubElement(d, "IdNameForMapping")
+        mappingIdNameElement.text = cleandIdName
+
 # Filter ids to output if argument is set
 if idsToOutput:
     listOfIds = idsToOutput.split(',')

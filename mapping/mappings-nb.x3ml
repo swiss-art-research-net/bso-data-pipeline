@@ -1330,7 +1330,7 @@
                             <type>crm:E53_Place</type>
                             <instance_generator name="URIwithTypeAndId_hashed">
                                 <arg name="type" type="constant">place</arg>
-                                <arg name="id_HASHED_CONTENTS" type="xpath">if (GND-Kennung/text()) then (GND-Kennung/text()) else (IdName/text())</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">if (GND-Kennung/text()) then (GND-Kennung/text()) else (IdNameForMapping/text())</arg>
                             </instance_generator>
                             <label_generator name="Literal">
                                 <arg name="text" type="xpath">Name/text()</arg>
@@ -1553,7 +1553,7 @@
                         <type>crm:E53_Place</type>
                         <instance_generator name="URIwithTypeAndId_hashed">
                             <arg name="type" type="constant">place</arg>
-                            <arg name="id_HASHED_CONTENTS" type="xpath">if (GND-Kennung/text()) then (GND-Kennung/text()) else (IdName/text())</arg>
+                            <arg name="id_HASHED_CONTENTS" type="xpath">if (GND-Kennung/text()) then (GND-Kennung/text()) else (IdNameForMapping/text())</arg>
                         </instance_generator>
                     </entity>
                 </target_node>
@@ -1615,7 +1615,7 @@
                             <type>crm:E33_Linguistic_Object</type>
                             <instance_generator name="URIwithTwoLevelIdHashed">
                                 <arg name="type" type="constant">place</arg>
-                                <arg name="id_HASHED_CONTENTS" type="xpath">if (../GND-Kennung/text()) then (../GND-Kennung/text()) else (../IdName/text())</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">if (../GND-Kennung/text()) then (../GND-Kennung/text()) else (../IdNameForMapping/text())</arg>
                                 <arg name="subtype" type="constant">appellation</arg>
                                 <arg name="subId_HASHED_CONTENTS" type="xpath">text()</arg>
                             </instance_generator>
@@ -1653,12 +1653,8 @@
                         <type>crm:E39_Actor</type>
                         <instance_generator name="URIwithTypeAndId_hashed">
                             <arg name="type" type="constant">actor</arg>
-                            <arg name="id_HASHED_CONTENTS" type="xpath">if (GND-Nummer/text()) then (GND-Nummer/text()) else (IdName/text())</arg>
+                            <arg name="id_HASHED_CONTENTS" type="xpath">if (GND-Nummer/text()) then (GND-Nummer/text()) else (IdNameForMapping/text())</arg>
                         </instance_generator>
-                        <label_generator name="Literal">
-                            <arg name="text" type="xpath">./SeeAlso/text()</arg>
-                            <arg name="language" type="constant"/>
-                        </label_generator>
                     </entity>
                 </target_node>
             </domain>
@@ -1692,13 +1688,20 @@
                         <relation>SeeAlso</relation>
                     </source_relation>
                     <target_relation>
+                        <if>
+                            <not>
+                                <if>
+                                    <equals value="BildendeR KünstlerIn">text()</equals>
+                                </if>
+                            </not>
+                        </if>
                         <relationship>crm:P1_is_identified_by</relationship>
                         <entity>
                             <type>crm:E41_Appellation</type>
                             <type>crm:E33_Linguistic_Object</type>
                             <instance_generator name="URIwithTwoLevelIdHashed">
                                 <arg name="type" type="constant">actor</arg>
-                                <arg name="id_HASHED_CONTENTS" type="xpath">if (../GND-Kennung/text()) then (../GND-Kennung/text()) else (../IdName/text())</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">if (../GND-Kennung/text()) then (../GND-Kennung/text()) else (../IdNameForMapping/text())</arg>
                                 <arg name="subtype" type="constant">appellation</arg>
                                 <arg name="subId_HASHED_CONTENTS" type="xpath">text()</arg>
                             </instance_generator>
@@ -1709,6 +1712,20 @@
                         </entity>
                         <relationship>crm:P70i_is_documented_in</relationship>
                     </target_relation>
+                    <comments>
+                        <comment type="">
+                            <rationale>There are some inconsistencies with Names of Persons and Roles. Ultimately, Name should contain the Role (relationship), not the entity name. See Also currently contains the name, but sometimes the role. Here we ignore the role that we encountered in See Also</rationale>
+                            <alternatives/>
+                            <typical_mistakes/>
+                            <local_habits/>
+                            <link_to_cook_book/>
+                            <example>
+                                <example_source/>
+                                <example_target/>
+                            </example>
+                            <comments_last_update date="" person=""/>
+                        </comment>
+                    </comments>
                 </path>
                 <range>
                     <source_node>SeeAlso</source_node>
@@ -1751,7 +1768,7 @@
             <link>
                 <path>
                     <source_relation>
-                        <relation>IdName</relation>
+                        <relation>IdNameForMapping</relation>
                     </source_relation>
                     <target_relation>
                         <relationship>crm:P108i_was_produced_by</relationship>
@@ -1810,7 +1827,7 @@
                     </target_relation>
                 </path>
                 <range>
-                    <source_node>IdName</source_node>
+                    <source_node>IdNameForMapping</source_node>
                     <target_node>
                         <entity>
                             <type>crm:E39_Actor</type>
