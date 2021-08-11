@@ -98,6 +98,22 @@ def addRecordIdentifier(record):
     field.text = "zbz-" + identifier
     return record
 
+def addTagNumbering(record):
+    datafields = record.findall('datafield')
+    prevTag = ''
+    index = 1
+    for datafield in datafields:
+        tag = datafield.get('tag')
+        if tag == prevTag:
+            index += 1
+        else:
+            prevTag = tag
+            index = 1
+        subfield = etree.SubElement(datafield, 'subfield')
+        subfield.set('code','subfield')
+        subfield.text = str(index)
+    return record
+
 def addManifest(record):
     identifier = record.find("controlfield[@tag='001']").text
     try:
@@ -299,6 +315,7 @@ for record in tqdm(records[offset:offset + limit]):
     record = addRecordIdentifier(record)
     record = splitMultiValueFields(record)
     record = addCuratedData(record)
+    record = addTagNumbering(record)
     record = addManifest(record)
     record = addImages(record)
     record = processDates(record)
