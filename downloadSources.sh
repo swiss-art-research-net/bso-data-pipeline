@@ -39,6 +39,11 @@ download "data/nb/nb-external-descriptors.csv" "data/source/nb-external-descript
 download "data/nb/source/WMC_Records_20201201.xml" "data/source/nb-records.xml"
 download "data/nb/source/Gugelman.xml" "data/source/nb-parentrecords.xml"
 
+download "data/sff/source/SFF-Datenbank-Export.csv" "data/source/SFF-Datenbank-Export.csv"
+download "data/sff/sff-curation-keywords.csv" "data/source/sff-curation-keywords.csv"
+download "data/sff/sff-curation-ortsbezug.csv" "data/source/sff-curation-ortsbezug.csv"
+download "data/sff/sff-curation-artists.csv" "data/source/sff-curation-artists.csv"
+
 download "data/sari/prefLabels.trig" "data/ttl/additional/prefLabels.trig"
 download "data/sari/zbzTypeLabels.trig" "data/ttl/additional/zbzTypeLabels.trig"
 download "data/sari/imageRegions.trig" "data/ttl/additional/imageRegions.trig"
