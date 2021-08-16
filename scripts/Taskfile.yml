@@ -139,6 +139,38 @@ tasks:
           FILE: /mapping/schemas/CRMinf_v0.7_.rdfs
           GRAPH: http://www.ics.forth.gr/isl/CRMinf/
 
+  mapping-nb:
+    desc: Map SNB XML data to CIDOC/RDF
+    vars:
+      INPUT_FOLDER: /data/xml/nb
+      OUTPUT_FOLDER: /data/ttl/main/nb
+      MAPPING_FILE: /mapping/mappings-nb.x3ml
+      BATCHSIZE: 20
+    sources:
+      - /data/xml/nb/*.xml
+      - /mapping/mappings-nb.x3ml
+    generates:
+      - /data/ttl/main/nb/*.ttl
+    cmds:
+      - rm -f {{.OUTPUT_FOLDER}}/*.ttl
+      - bash /scripts/performMapping.sh -i {{.INPUT_FOLDER}} -o {{.OUTPUT_FOLDER}} -m {{.MAPPING_FILE}} -g {{.GENERATOR_POLICY}} -b {{.BATCHSIZE}}
+
+  mapping-sff:
+    desc: Map SFF XML data to CIDOC/RDF
+    vars:
+      INPUT_FOLDER: /data/xml/sff
+      OUTPUT_FOLDER: /data/ttl/main/sff
+      MAPPING_FILE: /mapping/mappings-sff.x3ml
+      BATCHSIZE: 20
+    sources:
+      - /data/xml/sff/*.xml
+      - /mapping/mappings-sff.x3ml
+    generates:
+      - /data/ttl/main/sff/*.ttl
+    cmds:
+      - rm -f {{.OUTPUT_FOLDER}}/*.ttl
+      - bash /scripts/performMapping.sh -i {{.INPUT_FOLDER}} -o {{.OUTPUT_FOLDER}} -m {{.MAPPING_FILE}} -g {{.GENERATOR_POLICY}} -b {{.BATCHSIZE}}
+      
   mapping-zbz:
     desc: Map ZBZ XML data to CIDOC/RDF
     vars:
@@ -155,22 +187,6 @@ tasks:
       - rm -f {{.OUTPUT_FOLDER}}/*.ttl
       - bash /scripts/performMapping.sh -i {{.INPUT_FOLDER}} -o {{.OUTPUT_FOLDER}} -m {{.MAPPING_FILE}} -g {{.GENERATOR_POLICY}} -b {{.BATCHSIZE}}
 
-  mapping-nb:
-    desc: Map SNB XML data to CIDOC/RDF
-    vars:
-      INPUT_FOLDER: /data/xml/nb
-      OUTPUT_FOLDER: /data/ttl/main/nb
-      MAPPING_FILE: /mapping/mappings-nb.x3ml
-      BATCHSIZE: 20
-    sources:
-      - /data/xml/nb/*.xml
-      - /mapping/mappings-nb.x3ml
-    generates:
-      - /data/ttl/main/nb/*.ttl
-    cmds:
-      - rm -f {{.OUTPUT_FOLDER}}/*.ttl
-      - bash /scripts/performMapping.sh -i {{.INPUT_FOLDER}} -o {{.OUTPUT_FOLDER}} -m {{.MAPPING_FILE}} -g {{.GENERATOR_POLICY}} -b {{.BATCHSIZE}}
-  
   materialise-field-definitions:
     desc: Materialises the field definitions as propertes in the graph
     vars:
