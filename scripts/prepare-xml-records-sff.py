@@ -15,6 +15,9 @@ curatedFilesPre = '../data/source/sff-curation-'
 # Manually curated list of artists and roles
 artistsFile = '../data/source/sff-curation-artists.csv'
 
+# Correspondence between record IDs and image files
+imagesFile = '../data/source/sff-images.csv'
+
 # Define output directory and prefix for naming xml files
 outputDirectory = '../data/xml/sff/'
 outputPrefix = 'sff-record-'
@@ -88,6 +91,19 @@ def addCuratedData(record):
                             newSubfield.text = match[column]
                 except:
                     print("Could not find matching data for", valueTag.find('text').text)
+    return record
+
+def addImageData(record):
+    recordIdentifier = record.find('record-identifier').text
+    try:
+        imageData = imagesData[recordIdentifier]
+    except:
+        print("Could not find an image for", recordIdentifier)
+        return record
+    
+    imageTag = etree.SubElement(record, 'image')
+    imageTag.set('filename', imageData['filename'])
+    imageTag.text = imageData['image_id']
     return record
 
 def addRecordIdentifier(record):
@@ -183,6 +199,15 @@ with open(artistsFile, 'r') as f:
     for row in reader:
         artistsData.append(row)
 
+imagesData = {}
+with open(imagesFile, 'r') as f:
+    reader = csv.DictReader(f)
+    for row in reader:
+        imagesData[row['record_id']] = {
+            'image_id': row['image_id'],
+            'filename': row['filename']
+        }
+
 # Output individual XML files
 collection = etree.XML("<collection/>")
 
@@ -192,6 +217,7 @@ for row in tqdm(inputData[offset:offset + limit]):
     record = addRecordIdentifier(record)
     record = splitMultiValueFields(record)
     record = addArtistsData(record)
+    record = addImageData(record)
     record = addCuratedData(record)
     
     collection.clear()
