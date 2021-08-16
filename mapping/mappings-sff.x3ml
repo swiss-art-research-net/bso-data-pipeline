@@ -368,6 +368,30 @@
                                 <arg name="text" type="xpath">text()</arg>
                                 <arg name="language" type="constant"/>
                             </label_generator>
+                            <additional>
+                                <relationship>crm:P82a_begin_of_the_begin</relationship>
+                                <entity>
+                                    <type>xsd:dateTime</type>
+                                    <instance_info>
+                                        <constant/>
+                                    </instance_info>
+                                    <instance_generator name="typedLiteralGen">
+                                        <arg name="text" type="xpath">concat(../Entstvon/text(),'-01-01')</arg>
+                                    </instance_generator>
+                                </entity>
+                            </additional>
+                            <additional>
+                                <relationship>crm:P82b_end_of_the_end</relationship>
+                                <entity>
+                                    <type>xsd:dateTime</type>
+                                    <instance_info>
+                                        <constant/>
+                                    </instance_info>
+                                    <instance_generator name="typedLiteralGen">
+                                        <arg name="text" type="xpath">concat(../Entstbis/text(),'-12-31')</arg>
+                                    </instance_generator>
+                                </entity>
+                            </additional>
                         </entity>
                     </target_node>
                 </range>
