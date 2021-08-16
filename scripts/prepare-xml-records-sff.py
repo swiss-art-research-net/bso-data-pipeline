@@ -211,6 +211,11 @@ with open(imagesFile, 'r') as f:
 # Output individual XML files
 collection = etree.XML("<collection/>")
 
+# Filter ids to output if argument is set
+if idsToOutput:
+    listOfIds = idsToOutput.split(',')
+    inputData = [d for d in inputData if d["Inv. Nr."] in listOfIds]
+
 for row in tqdm(inputData[offset:offset + limit]):
     record = convertRowToXMLRecord(row)
     
