@@ -32,13 +32,6 @@ then
   docker exec $JOBSCONTAINER bash -c "task download-iiif-manifests --force"
 fi
 
-read -p "Execute everything else? (y/n)" -n 1 -r
-echo ""
-if [[ $REPLY =~ ^[Yy]$ ]]
-then
-  NOPROMPT=1
-fi
-
 if [[ $NOPROMPT -ne 1 ]]
 then
   read -p "Prepare ZBZ data in XML? (y/n)" -n 1 -r
@@ -57,6 +50,16 @@ fi
 if [[ $NOPROMPT || $REPLY =~ ^[Yy]$ ]]
 then
   docker exec $JOBSCONTAINER bash -c "RECORDS_LIMIT=$LIMIT task prepare-xml-records-nb"
+fi
+
+if [[ $NOPROMPT -ne 1 ]]
+then
+  read -p "Pepare SFF data to XML? (y/n)" -n 1 -r
+  echo ""
+fi
+if [[ $NOPROMPT || $REPLY =~ ^[Yy]$ ]]
+then
+  docker exec $JOBSCONTAINER bash -c "RECORDS_LIMIT=$LIMIT task prepare-xml-records-sff"
 fi
 
 if [[ $NOPROMPT -ne 1 ]]
