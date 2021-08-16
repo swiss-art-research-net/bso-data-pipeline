@@ -212,6 +212,166 @@
                     </target_node>
                 </range>
             </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>Titel</relation>
+                    </source_relation>
+                    <target_relation>
+                        <relationship>crm:P1_is_identified_by</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>Titel</source_node>
+                    <target_node>
+                        <entity>
+                            <type>crm:E41_Appellation</type>
+                            <type>crm:E33_Linguistic_Object</type>
+                            <instance_generator name="URIwithTypeSubtypeAndId">
+                                <arg name="type" type="constant">artwork</arg>
+                                <arg name="id" type="xpath">../record-identifier/text()</arg>
+                                <arg name="subtype" type="constant">title</arg>
+                            </instance_generator>
+                            <label_generator name="Literal">
+                                <arg name="text" type="xpath">text()</arg>
+                                <arg name="language" type="constant"/>
+                            </label_generator>
+                            <additional>
+                                <relationship>crm:P2_has_type</relationship>
+                                <entity>
+                                    <type>crm:E55_Type</type>
+                                    <instance_info>
+                                        <constant/>
+                                    </instance_info>
+                                    <instance_generator name="URIwithAatId">
+                                        <arg name="id" type="constant">300417209</arg>
+                                    </instance_generator>
+                                    <label_generator name="Literal">
+                                        <arg name="text" type="constant">full titles</arg>
+                                        <arg name="language" type="constant">en</arg>
+                                    </label_generator>
+                                </entity>
+                            </additional>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>image</relation>
+                    </source_relation>
+                    <target_relation>
+                        <relationship>la:digitally_shown_by</relationship>
+                        <entity>
+                            <type>crmdig:D1_Digital_Object</type>
+                            <instance_generator name="URIwithTypeSubtypeAndId">
+                                <arg name="type" type="constant">artwork</arg>
+                                <arg name="id" type="xpath">../record-identifier/text()</arg>
+                                <arg name="subtype" type="constant">image</arg>
+                            </instance_generator>
+                            <additional>
+                                <relationship>crm:P2_has_type</relationship>
+                                <entity>
+                                    <type>crm:E55_Type</type>
+                                    <instance_info>
+                                        <constant/>
+                                    </instance_info>
+                                    <instance_generator name="URIwithAatId">
+                                        <arg name="id" type="constant">300215302</arg>
+                                    </instance_generator>
+                                    <label_generator name="Literal">
+                                        <arg name="text" type="constant">Digital Image</arg>
+                                        <arg name="language" type="constant">en</arg>
+                                    </label_generator>
+                                </entity>
+                            </additional>
+                        </entity>
+                        <relationship>la:digitally_available_via</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>image</source_node>
+                    <target_node>
+                        <entity variable="bso-iiif">
+                            <type>la:DigitalService</type>
+                            <instance_generator name="URIwithTypeSubtypeIdAnd1Level">
+                                <arg name="type" type="constant">artwork</arg>
+                                <arg name="id" type="xpath">../record-identifier/text()</arg>
+                                <arg name="subtype" type="constant">image</arg>
+                                <arg name="level1" type="constant">iiif</arg>
+                            </instance_generator>
+                            <additional>
+                                <relationship>la:access_point</relationship>
+                                <entity>
+                                    <type>crmdig:D1_Digital_Object</type>
+                                    <type>rso:EX_Digital_Image</type>
+                                    <instance_info>
+                                        <constant/>
+                                    </instance_info>
+                                    <instance_generator name="URIorUUID">
+                                        <arg name="text" type="xpath">concat('https://bso-iiif.swissartresearch.net/iiif/2/', text())</arg>
+                                    </instance_generator>
+                                </entity>
+                            </additional>
+                            <additional>
+                                <relationship>dcterms:conformsTo</relationship>
+                                <entity>
+                                    <type>crm:E73_Information_Object</type>
+                                    <instance_info>
+                                        <constant/>
+                                    </instance_info>
+                                    <instance_generator name="URIorUUID">
+                                        <arg name="text" type="constant">http://iiif.io/api/image</arg>
+                                    </instance_generator>
+                                </entity>
+                            </additional>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+        </mapping>
+        <mapping>
+            <domain>
+                <source_node>/collection/record</source_node>
+                <target_node>
+                    <entity variable="creation">
+                        <type>crm:E65_Creation</type>
+                        <instance_generator name="URIwithTypeSubtypeAndId">
+                            <arg name="type" type="constant">artwork</arg>
+                            <arg name="id" type="xpath">record-identifier/text()</arg>
+                            <arg name="subtype" type="constant">creation</arg>
+                        </instance_generator>
+                    </entity>
+                </target_node>
+            </domain>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>Datierung</relation>
+                    </source_relation>
+                    <target_relation>
+                        <relationship>crm:P4_has_time-span</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>Datierung</source_node>
+                    <target_node>
+                        <entity>
+                            <type>crm:E52_Time-Span</type>
+                            <instance_generator name="URIwith2TypesAndId_hashed">
+                                <arg name="type1" type="constant">event</arg>
+                                <arg name="type2" type="constant">timespan</arg>
+                                <arg name="id" type="xpath">text()</arg>
+                            </instance_generator>
+                            <label_generator name="Literal">
+                                <arg name="text" type="xpath">text()</arg>
+                                <arg name="language" type="constant"/>
+                            </label_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
         </mapping>
         <mapping>
             <domain>
@@ -375,8 +535,6 @@
                 </range>
             </link>
         </mapping>
-
-
         <mapping>
             <domain>
                 <source_node>/collection/record/KünsterIn/values/value</source_node>
@@ -539,8 +697,6 @@
                 </range>
             </link>
         </mapping>
-
-
         <mapping>
             <domain>
                 <source_node>/collection/record/KünsterIn/values/value</source_node>
