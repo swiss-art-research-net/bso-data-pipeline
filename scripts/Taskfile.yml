@@ -81,6 +81,7 @@ tasks:
       - echo "Ingest main data"
       - task: ingest-data-nb
       - task: ingest-data-zbz
+      - task: ingest-data-sff
 
   ingest-data-nb:
     desc: Ingest the TTL files located in the data/ttl/main/nb folder to the Blazegraph instance
@@ -100,6 +101,16 @@ tasks:
       - task: ingest-data-from-folder
         vars: 
           FOLDER: /data/ttl/main/nb
+
+  ingest-data-sff:
+    desc: Ingest the TTL files located in the data/ttl/main/sff folder to the Blazegraph instance
+    sources:
+      - /data/ttl/main/sff/*.ttl
+    cmds:
+      - task: ingest-data-from-folder
+        vars: 
+          FOLDER: /data/ttl/main/sff
+          GRAPH: https://resource.swissartresearch.net/graph/sff
 
   ingest-data-zbz:
     desc: Ingest the TTL files located in the data/ttl/main/zbz folder to the Blazegraph instance
@@ -170,7 +181,7 @@ tasks:
     cmds:
       - rm -f {{.OUTPUT_FOLDER}}/*.ttl
       - bash /scripts/performMapping.sh -i {{.INPUT_FOLDER}} -o {{.OUTPUT_FOLDER}} -m {{.MAPPING_FILE}} -g {{.GENERATOR_POLICY}} -b {{.BATCHSIZE}}
-      
+
   mapping-zbz:
     desc: Map ZBZ XML data to CIDOC/RDF
     vars:
