@@ -1,0 +1,167 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<collection>
+    <record>
+        <InvNrIntern>GABRI10680</InvNrIntern>
+        <KünsterIn>
+            <values>
+                <value creation="true" production="true">
+                    <text>Lory père</text>
+                    <id>Lory père</id>
+                    <gnd>119240106</gnd>
+                    <wd>Q18511605</wd>
+                    <fullName>Lory Gabriel Ludwig (Lory père)</fullName>
+                    <roles>
+                        <roleValue gnd="4200345-3">Zeichner</roleValue>
+                        <roleValue gnd="4158107-6">Stecher</roleValue>
+                    </roles>
+                </value>
+                <value production="true">
+                    <text>Lafond</text>
+                    <id>Lafond</id>
+                    <gnd>136239269</gnd>
+                    <wd>Q26279967</wd>
+                    <fullName>Lafond Simon Daniel</fullName>
+                    <roles>
+                        <roleValue gnd="4158107-6">Stecher</roleValue>
+                    </roles>
+                </value>
+                <value creation="true">
+                    <text>Zehender</text>
+                    <id>Zehender</id>
+                    <gnd>1089376081</gnd>
+                    <wd>Q30304604</wd>
+                    <fullName>Zehender Karl Ludwig</fullName>
+                    <roles>
+                        <roleValue gnd="4200345-3">Zeichner</roleValue>
+                    </roles>
+                </value>
+            </values>
+        </KünsterIn>
+        <Titel>Recueil de paysages suisses dessinés d'après nature, dans une course par la vallée d'Ober-Hasly et les cantons de Schweitz et d'Ury, par Lory, Lafond et Zehender. en 1797. Accompagné d'un texte pour servir d'itinéraire aux artistes et aux amateurs de voyages pittoresques</Titel>
+        <Entstvon>1797</Entstvon>
+        <Entstbis>1798</Entstbis>
+        <Datierung>1797/98</Datierung>
+        <Technik>13 nummerierte handkolorierte Umrissradierungen, mit einem Titelblatt, einer Widmung an Jakob Samuel Wyttenbach, 4 Textseiten enthaltend Erläuterungen zu den Abbildungen, und einem Reisebericht über 34 Seiten; gebunden in marmoriertem Einband, mit einer mit "Voyage en Suisse" beschrifteten Etikette auf dem Vorderdeckel</Technik>
+        <Zuständigkeit>Prov</Zuständigkeit>
+        <Werkstatus></Werkstatus>
+        <KaufmStatus></KaufmStatus>
+        <Salestatus></Salestatus>
+        <Edition></Edition>
+        <Material>Papier</Material>
+        <Material2></Material2>
+        <EditionÜbers></EditionÜbers>
+        <Bemerkungen>
+            <values>
+                <value>
+                    <text></text>
+                </value>
+            </values>
+        </Bemerkungen>
+        <BezKünstler>Titelblatt bezeichnet mit "Recueil / de / paysages suisses / dessinés d'après nature, / dans une course / par la vallée d'Ober-Hasly / et les cantons / de Schweitz et d'Ury, / par / Lory, Lafond et Zehender. / en 1797. / Accompagné d'un texte / pour servir d'itinéraire aux artistes et aux amateurs / de voyages pittoresques.", und mit Publikationsangaben "À Berne / chez les artistes associés. / Avec privilège."; jede Abbildung nummeriert und betitelt, wie folgendermassen: , -   Key plate, nicht nummeriert (Radierung), 1) "Vue sur le Lac de Brientz et le petit Lac de Goldswyl / prés de Rinkenberg." , 2) "Chute du Giessbach / au Bord du Lac de Brientz.", 3) "Chûte du Wandelbach, / dans la Vallée d'Oberhasli.", 4) "Vue de la Vallee d'Oberhasli prise au bas de la Tour Resti.", 5) "Chutes du Dorf et Alpbach / à Meyringuen", 6) "Chute superieure du Reichenbach, / dans la Vallée d'Oberhasli.", 7) "Le Port de Fluelen. / dans le Canton d'Ury", 9) "Staeg prés de Twing Uri. / Sur la Route du St: Gotthardt.", 10) "Le Pont du Diable. / Sur le Mont St.-Gotthardt dans le Canton d'Ury.", 11) "Vue de Brounnen et d'une Partie du Lac des Quatres Cantons / prise a Wyl", 12) "Schweiz, Chef-Lieu du Canton, / ainsi nommé.", 13) "Vue de l'Isle de Schwanau, / Sur le Lac de Lowerz." , 8) "Burgle Lieu de Naissance de Guillaume Tell, / dans le Canton d'Ury." </BezKünstler>
+        <Bezfremd>Auf der Innenseite des Vorderdeckels oben links mit Bleistift nummeriert "297"</Bezfremd>
+        <Zertifikat></Zertifikat>
+        <ZertifikatÜbers></ZertifikatÜbers>
+        <TitelÜbers></TitelÜbers>
+        <TechnikÜbers></TechnikÜbers>
+        <InvDatum>00.00.00</InvDatum>
+        <Provenienz>Das Exlibris von Heinrich Fehlmann klebt auf der Innenseite des Vorderdeckels</Provenienz>
+        <Gattung>B - Bücher</Gattung>
+        <TitelÜbers2></TitelÜbers2>
+        <InvNr>SFF_B_1610</InvNr>
+        <Keywords>
+            <values>
+                <value>
+                    <text>See</text>
+                    <gnd>4054084-4</gnd>
+                    <wd>Q23397</wd>
+                </value>
+                <value>
+                    <text>Berge</text>
+                    <gnd>4144619-7</gnd>
+                    <wd>Q8502</wd>
+                </value>
+                <value>
+                    <text>Dorf</text>
+                    <gnd>4012775-8</gnd>
+                    <wd>Q532</wd>
+                </value>
+                <value>
+                    <text>Spaziergänger</text>
+                    <gnd>4381129-2</gnd>
+                    <wd></wd>
+                </value>
+            </values>
+        </Keywords>
+        <TechnikÜbers2></TechnikÜbers2>
+        <EditionÜbers2></EditionÜbers2>
+        <Ortsbezug>
+            <values>
+                <value>
+                    <text>Brunnen (Schwyz)</text>
+                    <gnd>4284930-5</gnd>
+                    <wd>Q675405</wd>
+                </value>
+                <value>
+                    <text>Vierwaldstättersee (Kanton Luzern, Schwyz, Uri, Obwalden, Nidwalden)</text>
+                    <gnd>4063511-9</gnd>
+                    <wd>Q14381</wd>
+                </value>
+                <value>
+                    <text>für weitere Ortsbezüge, vgl. die Einzelblätter in der Sammlung der SFF</text>
+                    <gnd></gnd>
+                    <wd></wd>
+                </value>
+            </values>
+        </Ortsbezug>
+        <Masse1Suffix></Masse1Suffix>
+        <Masse1Prefix></Masse1Prefix>
+        <RefNr></RefNr>
+        <InschriftÜbers2></InschriftÜbers2>
+        <ZertÜbers2></ZertÜbers2>
+        <Datumstempel>03-Jul-19</Datumstempel>
+        <Zeitstempel>ERROR,  </Zeitstempel>
+        <Ueberprüftam>00.00.00</Ueberprüftam>
+        <Ueberprüftvon></Ueberprüftvon>
+        <Sortation>0</Sortation>
+        <pID>A10B01EA7708CE4786CD7DAEA1CA1373</pID>
+        <Ort-Standort></Ort-Standort>
+        <Bereich-Standort></Bereich-Standort>
+        <EinDat-Standort>00.00.00</EinDat-Standort>
+        <OZLNr-Standort></OZLNr-Standort>
+        <OZLWertCHF-Standort>0</OZLWertCHF-Standort>
+        <Bemerkungen-Standort></Bemerkungen-Standort>
+        <TranspDossier-Standort></TranspDossier-Standort>
+        <TranspHinweise-Standort></TranspHinweise-Standort>
+        <Transportstatus-Standort></Transportstatus-Standort>
+        <recID-Standort>2017050000000000000</recID-Standort>
+        <pID-Standort>958E87352CE38044BCF9AF7AFAE369CC</pID-Standort>
+        <Eigentümerin-Fibu></Eigentümerin-Fibu>
+        <Partner-Fibu></Partner-Fibu>
+        <MarktwertDatum-Fibu>00.00.00</MarktwertDatum-Fibu>
+        <Marktwert-Fibu>0</Marktwert-Fibu>
+        <MarktwertWährung-Fibu></MarktwertWährung-Fibu>
+        <Anteil-Fibu>0</Anteil-Fibu>
+        <Datumstempel-Fibu>00.00.00</Datumstempel-Fibu>
+        <Bemerkungen-Fibu></Bemerkungen-Fibu>
+        <recID-Fibu>15106</recID-Fibu>
+        <Reserve1-Fibu></Reserve1-Fibu>
+        <Reserve2-Fibu></Reserve2-Fibu>
+        <Reserve3-Fibu></Reserve3-Fibu>
+        <Reserve4-Fibu></Reserve4-Fibu>
+        <Reserve5-Fibu></Reserve5-Fibu>
+        <Reserve6-Fibu></Reserve6-Fibu>
+        <Reserve7-Fibu></Reserve7-Fibu>
+        <Reserve8-Fibu></Reserve8-Fibu>
+        <Reserve9-Fibu></Reserve9-Fibu>
+        <Reserve10-Fibu></Reserve10-Fibu>
+        <pID-Fibu>7582CFBC2B96DB45A394A7FFCDC90CE2</pID-Fibu>
+        <VPCHF></VPCHF>
+        <VPEUR></VPEUR>
+        <VPUSD></VPUSD>
+        <VersWert></VersWert>
+        <Einkauf></Einkauf>
+        <Verkauf></Verkauf>
+        <Produktionskosten>0</Produktionskosten>
+        <record-identifier>sff-SFF_B_1610</record-identifier>
+    </record>
+</collection>
