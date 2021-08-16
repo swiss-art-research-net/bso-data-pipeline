@@ -178,6 +178,9 @@
                         <relation>BezKünstler</relation>
                     </source_relation>
                     <target_relation>
+                        <if>
+                            <exists>text()</exists>
+                        </if>
                         <relationship>crm:P128_carries</relationship>
                     </target_relation>
                 </path>
@@ -221,6 +224,9 @@
                         <relation>Bezfremd</relation>
                     </source_relation>
                     <target_relation>
+                        <if>
+                            <exists>text()</exists>
+                        </if>
                         <relationship>crm:P129i_is_subject_of</relationship>
                     </target_relation>
                 </path>
