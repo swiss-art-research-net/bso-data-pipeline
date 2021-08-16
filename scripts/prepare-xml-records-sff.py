@@ -31,7 +31,14 @@ idsToOutput=str(sys.argv[3]) if len(sys.argv) >3 else False
 def addArtistsData(record):
     artistTagName = "KünsterIn"
     artistValues = record.findall(artistTagName + '/values/value')
+    
+    # Curated data is added as is, except if the fields are specified here
     fieldsToTreatSeparately = ['role', 'role_gnd']
+    
+    # Context is set as 'production' per default, except for
+    # roles specified here, where it is set to 'creation'
+    creationContext = ['Zeichner', 'Autor', 'Maler', 'Zeichnerin', 'Kartograph']
+    
     for value in artistValues:
         artistIdName = value.find('text').text
         if not artistIdName:
@@ -55,6 +62,10 @@ def addArtistsData(record):
                     roleElement = etree.SubElement(rolesElement, 'roleValue')
                     roleElement.set('gnd', roles_gnd[i])
                     roleElement.text = role
+                    if role in creationContext:
+                        value.set('creation', 'true')
+                    else:
+                        value.set('production', 'true')
                         
     return record
 
