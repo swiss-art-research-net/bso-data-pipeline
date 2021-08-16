@@ -93,7 +93,7 @@ def addCuratedData(record):
 def addRecordIdentifier(record):
     identifier = record.find("InvNr").text
     field = etree.SubElement(record, "record-identifier")
-    field.text = "sff-" + identifier
+    field.text = identifier
     return record
 
 def cleanKeyForTags(key):
