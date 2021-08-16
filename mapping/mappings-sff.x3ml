@@ -1065,6 +1065,9 @@
                         <relation>gnd</relation>
                     </source_relation>
                     <target_relation>
+                        <if>
+                            <exists>text()</exists>
+                        </if>
                         <relationship>crmdig:L54_is_same-as</relationship>
                     </target_relation>
                 </path>
@@ -1086,6 +1089,9 @@
                         <relation>wd</relation>
                     </source_relation>
                     <target_relation>
+                        <if>
+                            <exists>text()</exists>
+                        </if>
                         <relationship>crmdig:L54_is_same-as</relationship>
                     </target_relation>
                 </path>
