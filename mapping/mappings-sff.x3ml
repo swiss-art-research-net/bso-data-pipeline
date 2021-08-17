@@ -127,6 +127,9 @@
                         <relation>Material</relation>
                     </source_relation>
                     <target_relation>
+                        <if>
+                            <exists>text()</exists>
+                        </if>
                         <relationship>crm:P45_consists_of</relationship>
                     </target_relation>
                 </path>
@@ -1324,6 +1327,4 @@
             </link>
         </mapping>
     </mappings>
-
-
 </x3ml>
