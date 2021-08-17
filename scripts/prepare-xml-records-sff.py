@@ -48,27 +48,28 @@ def addArtistsData(record):
             return record
         artistData = False
         try:
-            artistData = [d for d in artistsData if d['id'] == artistIdName][0]
+            allArtistData = [d for d in artistsData if d['id'] == artistIdName]
         except:
             print("Could not find artist data for", artistIdName)
             
-        if artistData:
-            for key in artistData.keys():
-                if key not in fieldsToTreatSeparately:
-                    newElement = etree.SubElement(value, key)
-                    newElement.text = artistData[key]
-            if artistData['role']:
-                roles = artistData['role'].split(', ')
-                roles_gnd = artistData['role_gnd'].split(', ')
-                rolesElement = etree.SubElement(value, 'roles')
-                for i, role in enumerate(roles):
-                    roleElement = etree.SubElement(rolesElement, 'roleValue')
-                    roleElement.set('gnd', roles_gnd[i])
-                    roleElement.text = role
-                    if role in creationContext:
-                        value.set('creation', 'true')
-                    else:
-                        value.set('production', 'true')
+        if len(allArtistData) > 0:
+            for artistData in allArtistData:
+                for key in artistData.keys():
+                    if key not in fieldsToTreatSeparately:
+                        newElement = etree.SubElement(value, key)
+                        newElement.text = artistData[key]
+                if artistData['role']:
+                    roles = artistData['role'].split(', ')
+                    roles_gnd = artistData['role_gnd'].split(', ')
+                    rolesElement = etree.SubElement(value, 'roles')
+                    for i, role in enumerate(roles):
+                        roleElement = etree.SubElement(rolesElement, 'roleValue')
+                        roleElement.set('gnd', roles_gnd[i])
+                        roleElement.text = role
+                        if role in creationContext:
+                            value.set('creation', 'true')
+                        else:
+                            value.set('production', 'true')
                         
     return record
 
