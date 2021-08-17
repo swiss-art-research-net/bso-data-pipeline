@@ -794,6 +794,10 @@
                                 <arg name="type" type="constant">type</arg>
                                 <arg name="id" type="xpath">lower-case(text())</arg>
                             </instance_generator>
+                            <label_generator name="Literal">
+                                <arg name="text" type="xpath">text()</arg>
+                                <arg name="language" type="constant"/>
+                            </label_generator>
                             <additional>
                                 <relationship>crmdig:L54_is_same-as</relationship>
                                 <entity>
@@ -996,6 +1000,10 @@
                                 <arg name="type" type="constant">type</arg>
                                 <arg name="id" type="xpath">lower-case(text())</arg>
                             </instance_generator>
+                            <label_generator name="Literal">
+                                <arg name="text" type="xpath">text()</arg>
+                                <arg name="language" type="constant"/>
+                            </label_generator>
                             <additional>
                                 <relationship>crmdig:L54_is_same-as</relationship>
                                 <entity>
@@ -1316,4 +1324,6 @@
             </link>
         </mapping>
     </mappings>
+
+
 </x3ml>
