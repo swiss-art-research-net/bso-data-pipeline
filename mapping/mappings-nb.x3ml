@@ -1928,6 +1928,58 @@
                     </target_node>
                 </range>
             </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>.</relation>
+                    </source_relation>
+                    <target_relation>
+                        <if>
+                            <and>
+                                <if>
+                                    <equals value="10817">../@ElementId</equals>
+                                </if>
+                                <if>
+                                    <not>
+                                        <if>
+                                            <exists>Role/text()</exists>
+                                        </if>
+                                    </not>
+                                </if>
+                            </and>
+                        </if>
+                        <relationship>crm:P2_has_type</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>.</source_node>
+                    <target_node>
+                        <entity variable="constant_role_photographer">
+                            <type>crm:E55_Type</type>
+                            <instance_generator name="URIwithTypeAndId">
+                                <arg name="type" type="constant">type</arg>
+                                <arg name="id" type="constant">FotografIn</arg>
+                            </instance_generator>
+                            <label_generator name="Literal">
+                                <arg name="text" type="constant">FotografIn</arg>
+                                <arg name="language" type="constant"/>
+                            </label_generator>
+                            <additional>
+                                <relationship>crmdig:L54_is_same-as</relationship>
+                                <entity>
+                                    <type>crm:E55_Type</type>
+                                    <instance_info>
+                                        <constant/>
+                                    </instance_info>
+                                    <instance_generator name="URIwithGndId">
+                                        <arg name="id" type="constant">4045893-3</arg>
+                                    </instance_generator>
+                                </entity>
+                            </additional>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
         </mapping>
     </mappings>
 </x3ml>
