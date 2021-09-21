@@ -20,6 +20,12 @@ tasks:
       - task: run-query-from-file
         vars: {FILE: "queries/cleanup.sparql"}
 
+  delete-field-definitions:
+    desc: Delete the field definitions stored in the database
+    cmds:
+      - task: run-query-from-file
+        vars: {FILE: "queries/deleteFieldDefinitions.sparql"}
+
   delete-image-regions:
     desc: Delete the generated image regions from the Blazegraph instance
     cmds:
