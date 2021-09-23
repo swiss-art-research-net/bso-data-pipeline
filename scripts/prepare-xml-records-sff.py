@@ -137,7 +137,6 @@ def convertRowToXMLRecord(row):
 def splitMultiValueFields(record):
     multiValueSeparators = {
         "KünsterIn": "/",
-        "Bemerkungen": "/",
         "Keywords": ",",
         "Ortsbezug": r"\)[,|;]"
     }
