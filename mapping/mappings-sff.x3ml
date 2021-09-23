@@ -153,7 +153,7 @@
             <link>
                 <path>
                     <source_relation>
-                        <relation>Bemerkungen/values/value/text</relation>
+                        <relation>Bemerkungen</relation>
                     </source_relation>
                     <target_relation>
                         <if>
@@ -163,7 +163,7 @@
                     </target_relation>
                 </path>
                 <range>
-                    <source_node>Bemerkungen/values/value/text</source_node>
+                    <source_node>Bemerkungen</source_node>
                     <target_node>
                         <entity>
                             <type>rdfs:Literal</type>
