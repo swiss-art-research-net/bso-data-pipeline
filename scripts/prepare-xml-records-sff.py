@@ -68,8 +68,10 @@ def addArtistsData(record):
                         roleElement.text = role
                         if role in creationContext:
                             value.set('creation', 'true')
+                            roleElement.set('creation', 'true')
                         else:
                             value.set('production', 'true')
+                            roleElement.set('production', 'true')
                         
     return record
 

@@ -775,7 +775,14 @@
                 <source_node>/collection/record/KünsterIn/values/value/roles/roleValue</source_node>
                 <target_node>
                     <if>
-                        <equals value="true">../../@creation</equals>
+                        <and>
+                            <if>
+                                <equals value="true">../../@creation</equals>
+                            </if>
+                            <if>
+                                <equals value="true">@creation</equals>
+                            </if>
+                        </and>
                     </if>
                     <entity variable="subcreation">
                         <type>crm:E65_Creation</type>
@@ -981,7 +988,14 @@
                 <source_node>/collection/record/KünsterIn/values/value/roles/roleValue</source_node>
                 <target_node>
                     <if>
-                        <equals value="true">../../@production</equals>
+                        <and>
+                            <if>
+                                <equals value="true">../../@production</equals>
+                            </if>
+                            <if>
+                                <equals value="true">@production</equals>
+                            </if>
+                        </and>
                     </if>
                     <entity variable="subproduction">
                         <type>crm:E12_Production</type>
