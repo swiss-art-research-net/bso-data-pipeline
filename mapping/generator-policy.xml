@@ -63,6 +63,15 @@
 			<set-arg name="subId_HASHED_CONTENTS"/>
         </custom>
     </generator>
+	<generator name="URIwithOneLevelIdAndSuffixHashed" prefix="sari">
+        <custom generatorClass="gr.forth.MultiHashingGenerator">
+            <set-arg name="type"/>
+			<set-arg name="id"/>
+			<set-arg name="subtype"/>
+			<set-arg name="subId_HASHED_CONTENTS"/>
+			<set-arg name="suffix"/>
+        </custom>
+    </generator>
 
 	<generator name="URIwithTypeAndId_hashed" prefix="sari">
         <custom generatorClass="gr.forth.MultiHashingGenerator">
