@@ -106,6 +106,8 @@ def addImageData(record):
     
     imageTag = etree.SubElement(record, 'image')
     imageTag.set('filename', imageData['filename'])
+    imageTag.set('width', imageData['width'])
+    imageTag.set('height', imageData['height'])
     imageTag.text = imageData['image_id']
     return record
 
@@ -207,7 +209,9 @@ with open(imagesFile, 'r') as f:
     for row in reader:
         imagesData[row['record_id']] = {
             'image_id': row['image_id'],
-            'filename': row['filename']
+            'filename': row['filename'],
+            'width': row['width'],
+            'height': row['height']
         }
 
 # Output individual XML files
