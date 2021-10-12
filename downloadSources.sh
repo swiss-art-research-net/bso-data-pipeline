@@ -36,6 +36,7 @@ download "data/nb/nb-curation-geografika.csv" "data/source/nb-curation-geografik
 download "data/nb/nb-curation-koerperschaften.csv" "data/source/nb-curation-koerperschaften.csv"
 download "data/nb/nb-curation-names.csv" "data/source/nb-curation-names.csv"
 download "data/nb/nb-external-descriptors.csv" "data/source/nb-external-descriptors.csv"
+download "data/nb/nb-image-sizes.csv" "data/source/nb-image-sizes.csv"
 download "data/nb/source/WMC_Records_20201201.xml" "data/source/nb-records.xml"
 download "data/nb/source/Gugelman.xml" "data/source/nb-parentrecords.xml"
 
