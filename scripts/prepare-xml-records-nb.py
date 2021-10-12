@@ -22,6 +22,7 @@ curatedDataFiles = [
     "../data/source/nb-curation-geografika.csv"
 ]
 curatedNamesFile = "../data/source/nb-curation-names.csv"
+imageSizesFile = "../data/source/nb-image-sizes.csv"
 externalDescriptorsFile = "../data/source/nb-external-descriptors.csv"
 
 # Column in CSV file used to match against IdName
@@ -96,6 +97,24 @@ for record in records:
         values = imageElement.find('./ElementValue/TextValue').text.split("\n")
         imageElement.find('./ElementValue/TextValue').text = values[0]
     
+# Image sizes are stored in a separate CSV file, which we previously generated based on the IIIF Manifests.
+# We add the image sizes to the XML here
+imageSizes = []
+imageSizesHash = {}
+with open(imageSizesFile, 'r') as f:
+    reader = csv.DictReader(f)
+    for i, row in enumerate(reader):
+        imageSizes.append(row)
+        imageSizesHash[row['id']] = i
+        
+
+for record in records:
+    recordId = record.get('Id')
+    imageElement = record.find('.//DataElement[@ElementId="11040"]/ElementValue')
+    if recordId in imageSizesHash:
+        sizes = imageSizes[imageSizesHash[recordId]]
+        etree.SubElement(imageElement, 'Width').text =  sizes['width']
+        etree.SubElement(imageElement, 'Height').text =  sizes['height']
 
 # Process DataElements that have several values in one ElementValue by splitting the TextValue and adding extra ElementValues
 #
