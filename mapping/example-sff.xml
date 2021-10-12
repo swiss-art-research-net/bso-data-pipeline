@@ -11,8 +11,8 @@
                     <wd>Q18511605</wd>
                     <fullName>Lory Gabriel Ludwig (Lory père)</fullName>
                     <roles>
-                        <roleValue gnd="4200345-3">Zeichner</roleValue>
-                        <roleValue gnd="4158107-6">Stecher</roleValue>
+                        <roleValue gnd="4200345-3" creation="true">Zeichner</roleValue>
+                        <roleValue gnd="4158107-6" production="true">Stecher</roleValue>
                     </roles>
                 </value>
                 <value production="true">
@@ -22,7 +22,7 @@
                     <wd>Q26279967</wd>
                     <fullName>Lafond Simon Daniel</fullName>
                     <roles>
-                        <roleValue gnd="4158107-6">Stecher</roleValue>
+                        <roleValue gnd="4158107-6" production="true">Stecher</roleValue>
                     </roles>
                 </value>
                 <value creation="true">
@@ -32,7 +32,7 @@
                     <wd>Q30304604</wd>
                     <fullName>Zehender Karl Ludwig</fullName>
                     <roles>
-                        <roleValue gnd="4200345-3">Zeichner</roleValue>
+                        <roleValue gnd="4200345-3" creation="true">Zeichner</roleValue>
                     </roles>
                 </value>
             </values>
@@ -50,13 +50,7 @@
         <Material>Papier</Material>
         <Material2></Material2>
         <EditionÜbers></EditionÜbers>
-        <Bemerkungen>
-            <values>
-                <value>
-                    <text></text>
-                </value>
-            </values>
-        </Bemerkungen>
+        <Bemerkungen></Bemerkungen>
         <BezKünstler>Titelblatt bezeichnet mit "Recueil / de / paysages suisses / dessinés d'après nature, / dans une course / par la vallée d'Ober-Hasly / et les cantons / de Schweitz et d'Ury, / par / Lory, Lafond et Zehender. / en 1797. / Accompagné d'un texte / pour servir d'itinéraire aux artistes et aux amateurs / de voyages pittoresques.", und mit Publikationsangaben "À Berne / chez les artistes associés. / Avec privilège."; jede Abbildung nummeriert und betitelt, wie folgendermassen: , -   Key plate, nicht nummeriert (Radierung), 1) "Vue sur le Lac de Brientz et le petit Lac de Goldswyl / prés de Rinkenberg." , 2) "Chute du Giessbach / au Bord du Lac de Brientz.", 3) "Chûte du Wandelbach, / dans la Vallée d'Oberhasli.", 4) "Vue de la Vallee d'Oberhasli prise au bas de la Tour Resti.", 5) "Chutes du Dorf et Alpbach / à Meyringuen", 6) "Chute superieure du Reichenbach, / dans la Vallée d'Oberhasli.", 7) "Le Port de Fluelen. / dans le Canton d'Ury", 9) "Staeg prés de Twing Uri. / Sur la Route du St: Gotthardt.", 10) "Le Pont du Diable. / Sur le Mont St.-Gotthardt dans le Canton d'Ury.", 11) "Vue de Brounnen et d'une Partie du Lac des Quatres Cantons / prise a Wyl", 12) "Schweiz, Chef-Lieu du Canton, / ainsi nommé.", 13) "Vue de l'Isle de Schwanau, / Sur le Lac de Lowerz." , 8) "Burgle Lieu de Naissance de Guillaume Tell, / dans le Canton d'Ury." </BezKünstler>
         <Bezfremd>Auf der Innenseite des Vorderdeckels oben links mit Bleistift nummeriert "297"</Bezfremd>
         <Zertifikat></Zertifikat>
@@ -163,6 +157,6 @@
         <Verkauf></Verkauf>
         <Produktionskosten>0</Produktionskosten>
         <record-identifier>SFF_B_1610</record-identifier>
-        <image filename="SFF_B_1610.JPG">SFF_B_1610</image>
+        <image filename="SFF_B_1610.JPG" width="2624" height="3936">SFF_B_1610</image>
     </record>
 </collection>
