@@ -48,5 +48,5 @@ download "data/sff/sff-curation-artists.csv" "data/source/sff-curation-artists.c
 
 download "data/sari/prefLabels.trig" "data/ttl/additional/prefLabels.trig"
 download "data/sari/zbzTypeLabels.trig" "data/ttl/additional/zbzTypeLabels.trig"
-download "data/sari/imageRegions.trig" "data/ttl/additional/imageRegions.trig"
-# download "data/sari/smapshot-classifications.trig" "data/ttl/additional/smapshot-classifications.trig"
+download "data/sari/smapshot-classifications.trig" "data/ttl/additional/smapshot-classifications.trig"
+#download "data/sari/imageRegions.trig" "data/ttl/additional/imageRegions.trig"
