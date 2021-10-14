@@ -597,6 +597,149 @@
         </mapping>
         <mapping>
             <domain>
+                <source_node>/collection/record/image</source_node>
+                <target_node>
+                    <entity>
+                        <type>crmdig:D1_Digital_Object</type>
+                        <instance_generator name="URIwithTypeSubtypeAndId">
+                            <arg name="type" type="constant">artwork</arg>
+                            <arg name="id" type="xpath">../record-identifier/text()</arg>
+                            <arg name="subtype" type="constant">image</arg>
+                        </instance_generator>
+                    </entity>
+                </target_node>
+            </domain>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>@width</relation>
+                    </source_relation>
+                    <target_relation>
+                        <relationship>crm:P43_has_dimension</relationship>
+                        <entity>
+                            <type>crm:E54_Dimension</type>
+                            <instance_generator name="URIwithTypeSubtypeIdAnd1Level">
+                                <arg name="type" type="constant">artwork</arg>
+                                <arg name="id" type="xpath">../../record-identifier/text()</arg>
+                                <arg name="subtype" type="constant">image</arg>
+                                <arg name="level1" type="constant">width</arg>
+                            </instance_generator>
+                            <additional>
+                                <relationship>crm:P2_has_type</relationship>
+                                <entity>
+                                    <type>crm:E55_Type</type>
+                                    <instance_info>
+                                        <constant/>
+                                    </instance_info>
+                                    <instance_generator name="URIwithAatId">
+                                        <arg name="id" type="constant">300055647</arg>
+                                    </instance_generator>
+                                    <label_generator name="Literal">
+                                        <arg name="text" type="constant">width</arg>
+                                        <arg name="language" type="constant">en</arg>
+                                    </label_generator>
+                                </entity>
+                            </additional>
+                            <additional>
+                                <relationship>crm:P91_has_unit</relationship>
+                                <entity>
+                                    <type>crm:E58_Measurement_Unit</type>
+                                    <instance_info>
+                                        <constant/>
+                                    </instance_info>
+                                    <instance_generator name="URIwithAatId">
+                                        <arg name="id" type="constant">300266190</arg>
+                                    </instance_generator>
+                                    <label_generator name="Literal">
+                                        <arg name="text" type="constant">pixels</arg>
+                                        <arg name="language" type="constant">en</arg>
+                                    </label_generator>
+                                </entity>
+                            </additional>
+                        </entity>
+                        <relationship>crm:P90_has_value</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>@width</source_node>
+                    <target_node>
+                        <entity>
+                            <type>rdfs:Literal</type>
+                            <instance_generator name="Literal">
+                                <arg name="text" type="xpath">../../image/@width</arg>
+                                <arg name="language" type="constant"/>
+                            </instance_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>@height</relation>
+                    </source_relation>
+                    <target_relation>
+                        <relationship>crm:P43_has_dimension</relationship>
+                        <entity>
+                            <type>crm:E54_Dimension</type>
+                            <instance_generator name="URIwithTypeSubtypeIdAnd1Level">
+                                <arg name="type" type="constant">artwork</arg>
+                                <arg name="id" type="xpath">../../record-identifier/text()</arg>
+                                <arg name="subtype" type="constant">image</arg>
+                                <arg name="level1" type="constant">height</arg>
+                            </instance_generator>
+                            <additional>
+                                <relationship>crm:P2_has_type</relationship>
+                                <entity>
+                                    <type>crm:E55_Type</type>
+                                    <instance_info>
+                                        <constant/>
+                                    </instance_info>
+                                    <instance_generator name="URIwithAatId">
+                                        <arg name="id" type="constant">300055644</arg>
+                                    </instance_generator>
+                                    <label_generator name="Literal">
+                                        <arg name="text" type="constant">height</arg>
+                                        <arg name="language" type="constant">en</arg>
+                                    </label_generator>
+                                </entity>
+                            </additional>
+                            <additional>
+                                <relationship>crm:P91_has_unit</relationship>
+                                <entity>
+                                    <type>crm:E58_Measurement_Unit</type>
+                                    <instance_info>
+                                        <constant/>
+                                    </instance_info>
+                                    <instance_generator name="URIwithAatId">
+                                        <arg name="id" type="constant">300266190</arg>
+                                    </instance_generator>
+                                    <label_generator name="Literal">
+                                        <arg name="text" type="constant">pixels</arg>
+                                        <arg name="language" type="constant">en</arg>
+                                    </label_generator>
+                                </entity>
+                            </additional>
+                        </entity>
+                        <relationship>crm:P90_has_value</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>@height</source_node>
+                    <target_node>
+                        <entity>
+                            <type>rdfs:Literal</type>
+                            <instance_generator name="Literal">
+                                <arg name="text" type="xpath">../../image/@height</arg>
+                                <arg name="language" type="constant"/>
+                            </instance_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+        </mapping>
+        <mapping>
+            <domain>
                 <source_node>/collection/record</source_node>
                 <target_node>
                     <entity variable="creation">
