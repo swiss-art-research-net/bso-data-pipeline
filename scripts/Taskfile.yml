@@ -148,7 +148,7 @@ tasks:
       - task: ingest-data-from-file
         vars:
           NAME: CIDOC-CRM
-          FILE: /mapping/schemas/cidoc_crm_v6.2.rdfs
+          FILE: /mapping/schemas/CIDOC_CRM_7.1.1_RDFS_Impl_v1.1.rdfs
           GRAPH: http://www.cidoc-crm.org/cidoc-crm/
       - task: ingest-data-from-file
         vars:
