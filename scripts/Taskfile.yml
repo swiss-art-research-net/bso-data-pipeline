@@ -44,6 +44,23 @@ tasks:
     cmds:
       - python /scripts/cache-iiif-manifests.py {{.IIIF_MANIFESTS_FROM}} {{.IIIF_MANIFESTS_TO}}
 
+  generate-iiif-manifests:
+    desc: Generates IIIF Manifests based on the data present in the triple store
+    cmds:
+      - python /scripts/generate-iiif-manifests.py {{.IIIF_MANIFESTS_LIMIT}} {{.IIIF_MANIFESTS_OFFSET}}
+
+  ingest-data-additional:
+    desc: Ingest the TTL and Trig files located in the data/ttl/additional folder to the Blazegraph instance. 
+    sources:
+      - /data/ttl/additional/*.ttl
+      - /data/ttl/additional/*.trig
+    cmds:
+      - echo "Ingest additional data"
+      - task: ingest-data-from-folder
+        vars: 
+          FOLDER: /data/ttl/additional
+          GRAPH: https://resource.swissartresearch.net/graph/external
+
   ingest-data-from-file:
     cmds:
       - echo "Ingest {{.NAME}}"
@@ -66,18 +83,6 @@ tasks:
           curl --silent -X POST --data-binary "uri=file://$f" {{.ENDPOINT}}{{if .GRAPH}}?context-uri={{.GRAPH}}{{end}} > /dev/null
           count=$((count+1)) 
         done
-
-  ingest-data-additional:
-    desc: Ingest the TTL and Trig files located in the data/ttl/additional folder to the Blazegraph instance. 
-    sources:
-      - /data/ttl/additional/*.ttl
-      - /data/ttl/additional/*.trig
-    cmds:
-      - echo "Ingest additional data"
-      - task: ingest-data-from-folder
-        vars: 
-          FOLDER: /data/ttl/additional
-          GRAPH: https://resource.swissartresearch.net/graph/external
 
   ingest-data-main:
     desc: Ingest the TTL files located in the data/ttl/main folder to the Blazegraph instance
