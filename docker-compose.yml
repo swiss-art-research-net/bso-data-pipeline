@@ -25,6 +25,7 @@ services:
       - ./data:/data
       - ./mapping:/mapping
       - ./scripts:/scripts
+      - ./static:/static
       - ./services/researchplatform/apps/bso/src:/bso-app-src
 
   platform:
