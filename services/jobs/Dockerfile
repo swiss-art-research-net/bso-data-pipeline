@@ -23,8 +23,10 @@ RUN sh -c "$(curl -ssL https://taskfile.dev/install.sh)" -- -d
 RUN mkdir /data
 RUN mkdir /mapping
 RUN mkdir /scripts
+RUN mkdir /static
 VOLUME /data
 VOLUME /mapping
+VOLUME /static
 WORKDIR /scripts
 
 # Start ssh service on entry
