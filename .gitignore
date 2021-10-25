@@ -9,6 +9,7 @@ data
 !services/researchspace/apps/sari/data
 !scripts/data
 experiments/output/*.xml
+/static/iiif
 .ipynb_checkpoints
 local-scripts
 settings.json

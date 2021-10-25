@@ -33,7 +33,7 @@
         prov:generatedAtTime "2021-01-08T11:43:46.111Z"^^xsd:dateTime .
 
                 <https://platform.swissartresearch.net/instances/knowledgePatterns/collection/query/select> a sp:Query;
-                    sp:text """SELECT ?value WHERE { $subject crm:P109_has_former_or_current_curator ?value . }""" .
+                    sp:text """SELECT ?value WHERE { $subject crm:P109_has_current_or_former_curator ?value . }""" .
     
     }
     <https://platform.swissartresearch.net/instances/knowledgePatterns/creator_of_object/context> {
