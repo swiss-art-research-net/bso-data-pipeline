@@ -23,13 +23,13 @@
                 <source_node>/collection/record</source_node>
                 <target_node>
                     <entity variable="object">
-                        <type>crm:E22_Man-Made_Object</type>
+                        <type>crm:E22_Human-Made_Object</type>
                         <instance_generator name="URIwithTypeAndId">
                             <arg name="type" type="constant">artwork</arg>
                             <arg name="id" type="xpath">record-identifier/text()</arg>
                         </instance_generator>
                         <additional>
-                            <relationship>crm:P109_has_former_or_current_curator</relationship>
+                            <relationship>crm:P109_has_current_or_former_curator</relationship>
                             <entity>
                                 <type>crm:E39_Actor</type>
                                 <instance_info>
@@ -335,6 +335,63 @@
                                         <arg name="text" type="constant">art genres</arg>
                                         <arg name="language" type="constant"/>
                                     </label_generator>
+                                </entity>
+                            </additional>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>datafield</relation>
+                    </source_relation>
+                    <target_relation>
+                        <if>
+                            <and>
+                                <if>
+                                    <equals value="773">@tag</equals>
+                                </if>
+                                <if>
+                                    <exists>subfield[@code='w']/text()</exists>
+                                </if>
+                            </and>
+                        </if>
+                        <relationship>crm:P46i_forms_part_of</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>datafield</source_node>
+                    <target_node>
+                        <entity>
+                            <type>crm:E22_Man-Made_Object</type>
+                            <instance_generator name="URIwithTypeAndId_hashed">
+                                <arg name="type" type="constant">artwork</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">./subfield[@code='w']/text()</arg>
+                            </instance_generator>
+                            <additional>
+                                <relationship>rdfs:label</relationship>
+                                <entity>
+                                    <type>rdfs:Literal</type>
+                                    <instance_info>
+                                        <constant/>
+                                    </instance_info>
+                                    <instance_generator name="Literal">
+                                        <arg name="text" type="xpath">./subfield[@code='t']/text()</arg>
+                                        <arg name="language" type="constant"/>
+                                    </instance_generator>
+                                </entity>
+                            </additional>
+                            <additional>
+                                <relationship>crm:P109_has_current_or_former_curator</relationship>
+                                <entity>
+                                    <type>crm:E39_Actor</type>
+                                    <instance_info>
+                                        <constant/>
+                                    </instance_info>
+                                    <instance_generator name="URIwithGndId">
+                                        <arg name="id" type="constant">1012546-2</arg>
+                                    </instance_generator>
                                 </entity>
                             </additional>
                         </entity>
