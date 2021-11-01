@@ -21,6 +21,10 @@ imagesFile = '../data/source/sff-images.csv'
 # Export of dimensions table
 dimensionsFile = '../data/source/sff-werk-masse.csv'
 
+# Export of literature and literature links table
+literatureFile = '../data/source/sff-literatur.csv'
+literatureLinksFile = '../data/source/sff-literatur-links.csv'
+
 # Define output directory and prefix for naming xml files
 outputDirectory = '../data/xml/sff/'
 outputPrefix = 'sff-record-'
@@ -130,6 +134,36 @@ def addImageData(record):
     imageTag.text = imageData['image_id']
     return record
 
+def addLiteratureData(record):
+    recordId = record.find('InvNrIntern').text
+    literatureLinks  = [d for d in literatureLinksData if d['WerkInv. Nr.'] == recordId]
+    if len(literatureLinks) == 0:
+        return record
+
+    literatureListTag = etree.SubElement(record, "literatureList")
+    for literatureLink in literatureLinks:
+        literatureTag = etree.SubElement(literatureListTag, "literature")
+        for key in literatureLink.keys():
+            if key and literatureLink[key]:
+                newTag = etree.SubElement(literatureTag, cleanKeyForTags(key))
+                newTag.text = literatureLink[key]
+    
+        literatureDetails = [d for d in literatureData if d['Lit. Nr.'] == literatureLink['Lit. Nr.']]
+        if len(literatureDetails) == 0:
+            raise Exception("Could not find corresponding entry in literature list for " + literatureLink['Lit. Nr.'])
+        elif len(literatureDetails) > 1:
+            print(literatureDetails)
+            raise Exception("Found several matching entries for " + literatureLink['Lit. Nr.'])
+        else:
+            detailsTag = etree.SubElement(literatureTag, "details")
+            for key in literatureDetails[0].keys():
+                if key and literatureDetails[0][key]:
+                    newTag = etree.SubElement(detailsTag, cleanKeyForTags(key))
+                    newTag.text = literatureDetails[0][key]
+
+
+    return record
+
 def addRecordIdentifier(record):
     identifier = record.find("InvNr").text
     field = etree.SubElement(record, "record-identifier")
@@ -137,7 +171,7 @@ def addRecordIdentifier(record):
     return record
 
 def cleanKeyForTags(key):
-    cleanedKey = re.sub(r'[\s.*_]', '', key)
+    cleanedKey = re.sub(r'[\s.*_,]', '', key)
     cleanedKey = re.sub(r'[()]', '-', cleanedKey)
     cleanedKey = re.sub(r'-$', '', cleanedKey)
     return cleanedKey
@@ -239,6 +273,17 @@ with open(dimensionsFile, 'r') as f:
     for row in reader:
         dimensionsData.append(row)
 
+literatureData = []
+with open(literatureFile, 'r') as f:
+    reader = csv.DictReader(f)
+    for row in reader:
+        literatureData.append(row)
+
+literatureLinksData = []
+with open(literatureLinksFile, 'r') as f:
+    reader = csv.DictReader(f)
+    for row in reader:
+        literatureLinksData.append(row)
 
 # Output individual XML files
 collection = etree.XML("<collection/>")
@@ -257,6 +302,7 @@ for row in tqdm(inputData[offset:offset + limit]):
     record = addImageData(record)
     record = addCuratedData(record)
     record = addDimensionData(record)
+    record = addLiteratureData(record)
     
     collection.clear()
     collection.append(record)
