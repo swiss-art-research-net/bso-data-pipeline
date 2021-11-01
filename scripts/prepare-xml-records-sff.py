@@ -18,6 +18,9 @@ artistsFile = '../data/source/sff-curation-artists.csv'
 # Correspondence between record IDs and image files
 imagesFile = '../data/source/sff-images.csv'
 
+# Export of dimensions table
+dimensionsFile = '../data/source/sff-werk-masse.csv'
+
 # Define output directory and prefix for naming xml files
 outputDirectory = '../data/xml/sff/'
 outputPrefix = 'sff-record-'
@@ -94,6 +97,22 @@ def addCuratedData(record):
                             newSubfield.text = match[column]
                 except:
                     print("Could not find matching data for", valueTag.find('text').text)
+    return record
+
+def addDimensionData(record):
+    recordId = record.find('InvNrIntern').text
+    dimensionsRows  = [d for d in dimensionsData if d['Werk Inv. Nr.'] == recordId]
+    if len(dimensionsRows) == 0:
+        print("Could not find dimension of " + recordId)
+        return record
+
+    dimensionsTag = etree.SubElement(record, "dimensions")
+    for dimensionsRow in dimensionsRows:
+        dimensionTag = etree.SubElement(dimensionsTag, "dimension")
+        for key in dimensionsRow.keys():
+            if key and dimensionsRow[key]:
+                newTag = etree.SubElement(dimensionTag, cleanKeyForTags(key))
+                newTag.text = dimensionsRow[key]
     return record
 
 def addImageData(record):
@@ -214,6 +233,13 @@ with open(imagesFile, 'r') as f:
             'height': row['height']
         }
 
+dimensionsData = []
+with open(dimensionsFile, 'r') as f:
+    reader = csv.DictReader(f)
+    for row in reader:
+        dimensionsData.append(row)
+
+
 # Output individual XML files
 collection = etree.XML("<collection/>")
 
@@ -230,6 +256,7 @@ for row in tqdm(inputData[offset:offset + limit]):
     record = addArtistsData(record)
     record = addImageData(record)
     record = addCuratedData(record)
+    record = addDimensionData(record)
     
     collection.clear()
     collection.append(record)
