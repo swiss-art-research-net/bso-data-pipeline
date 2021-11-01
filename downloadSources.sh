@@ -41,6 +41,7 @@ download "data/nb/source/WMC_Records_20201201.xml" "data/source/nb-records.xml"
 download "data/nb/source/Gugelman.xml" "data/source/nb-parentrecords.xml"
 
 download "data/sff/source/SFF-Datenbank-Export.csv" "data/source/SFF-Datenbank-Export.csv"
+download "data/sff/source/Werk_Masse.csv" "data/source/sff-werk-masse.csv"
 download "data/sff/sff-images.csv" "data/source/sff-images.csv"
 download "data/sff/sff-curation-keywords.csv" "data/source/sff-curation-keywords.csv"
 download "data/sff/sff-curation-ortsbezug.csv" "data/source/sff-curation-ortsbezug.csv"
