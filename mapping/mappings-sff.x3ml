@@ -327,6 +327,38 @@
                     </target_node>
                 </range>
             </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>dimensions/dimension</relation>
+                    </source_relation>
+                    <target_relation>
+                        <relationship>crm:P46_is_composed_of</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>dimensions/dimension</source_node>
+                    <target_node>
+                        <entity>
+                            <type>crm:E24_Physical_Human-Made_Thing</type>
+                            <instance_generator name="URIwithTypeSubtypeIdAnd1Level">
+                                <arg name="type" type="constant">artwork</arg>
+                                <arg name="id" type="xpath">../../record-identifier/text()</arg>
+                                <arg name="subtype" type="constant">part</arg>
+                                <arg name="level1" type="xpath">UUID/text()</arg>
+                            </instance_generator>
+                            <label_generator name="Literal">
+                                <arg name="text" type="xpath">Prefix/text()</arg>
+                                <arg name="language" type="constant">de</arg>
+                            </label_generator>
+                            <label_generator name="Literal">
+                                <arg name="text" type="xpath">Prefix2/text()</arg>
+                                <arg name="language" type="constant">en</arg>
+                            </label_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
         </mapping>
         <mapping>
             <domain>
@@ -1493,6 +1525,132 @@
                             <instance_generator name="URIwithGndId">
                                 <arg name="id" type="xpath">text()</arg>
                             </instance_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+        </mapping>
+        <mapping>
+            <domain>
+                <source_node>/collection/record/dimensions/dimension</source_node>
+                <target_node>
+                    <entity>
+                        <type>crm:E24_Physical_Human-Made_Thing</type>
+                        <instance_generator name="URIwithTypeSubtypeIdAnd1Level">
+                            <arg name="type" type="constant">artwork</arg>
+                            <arg name="id" type="xpath">../../record-identifier/text()</arg>
+                            <arg name="subtype" type="constant">part</arg>
+                            <arg name="level1" type="xpath">UUID/text()</arg>
+                        </instance_generator>
+                    </entity>
+                </target_node>
+            </domain>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>typeuri</relation>
+                    </source_relation>
+                    <target_relation>
+                        <relationship>crm:P2_has_type</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>typeuri</source_node>
+                    <target_node>
+                        <entity>
+                            <type>crm:E55_Type</type>
+                            <instance_generator name="URIorUUID">
+                                <arg name="text" type="xpath">text()</arg>
+                            </instance_generator>
+                            <label_generator name="Literal">
+                                <arg name="text" type="xpath">../type/text()</arg>
+                                <arg name="language" type="constant">en</arg>
+                            </label_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>Höhe</relation>
+                    </source_relation>
+                    <target_relation>
+                        <if>
+                            <not>
+                                <if>
+                                    <equals value="0">text()</equals>
+                                </if>
+                            </not>
+                        </if>
+                        <relationship>crm:P43_has_dimension</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>Höhe</source_node>
+                    <target_node>
+                        <entity>
+                            <type>crm:E54_Dimension</type>
+                            <instance_generator name="URIwithTypeSubtypeIdAnd2Levels">
+                                <arg name="type" type="constant">artwork</arg>
+                                <arg name="id" type="xpath">../../../record-identifier/text()</arg>
+                                <arg name="subtype" type="constant">part</arg>
+                                <arg name="level1" type="xpath">../UUID/text()</arg>
+                                <arg name="level2" type="constant">height</arg>
+                            </instance_generator>
+                            <label_generator name="Literal">
+                                <arg name="text" type="constant">height</arg>
+                                <arg name="language" type="constant">en</arg>
+                            </label_generator>
+                            <label_generator name="Literal">
+                                <arg name="text" type="constant">Höhe</arg>
+                                <arg name="language" type="constant">de</arg>
+                            </label_generator>
+                            <additional>
+                                <relationship>crm:P2_has_type</relationship>
+                                <entity>
+                                    <type>crm:E55_Type</type>
+                                    <instance_info>
+                                        <constant/>
+                                    </instance_info>
+                                    <instance_generator name="URIwithAatId">
+                                        <arg name="id" type="constant">300055644</arg>
+                                    </instance_generator>
+                                    <label_generator name="Constant">
+                                        <arg name="text" type="constant">height</arg>
+                                        <arg name="language" type="constant">en</arg>
+                                    </label_generator>
+                                </entity>
+                            </additional>
+                            <additional>
+                                <relationship>crm:P90_has_value</relationship>
+                                <entity>
+                                    <type>rdfs:Literal</type>
+                                    <instance_info>
+                                        <constant/>
+                                    </instance_info>
+                                    <instance_generator name="Literal">
+                                        <arg name="text" type="xpath">text()</arg>
+                                        <arg name="language" type="constant"/>
+                                    </instance_generator>
+                                </entity>
+                            </additional>
+                            <additional>
+                                <relationship>crm:P91_has_unit</relationship>
+                                <entity>
+                                    <type>crm:E58_Measurement_Unit</type>
+                                    <instance_info>
+                                        <constant/>
+                                    </instance_info>
+                                    <instance_generator name="URIwithAatId">
+                                        <arg name="id" type="constant">300379098</arg>
+                                    </instance_generator>
+                                    <label_generator name="Literal">
+                                        <arg name="text" type="constant">cm</arg>
+                                        <arg name="language" type="constant"/>
+                                    </label_generator>
+                                </entity>
+                            </additional>
                         </entity>
                     </target_node>
                 </range>
