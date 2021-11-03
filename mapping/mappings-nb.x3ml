@@ -605,6 +605,36 @@
                         <if>
                             <equals value="10217">@ElementId</equals>
                         </if>
+                        <relationship>crm:P46_is_composed_of</relationship>
+                        <entity>
+                            <type>crm:E24_Physical_Human-Made_Thing</type>
+                            <instance_generator name="URIwithTypeSubtypeIdAnd1Level">
+                                <arg name="type" type="constant">artwork</arg>
+                                <arg name="id" type="xpath">../../@RecordIdentifier</arg>
+                                <arg name="subtype" type="constant">part</arg>
+                                <arg name="level1" type="xpath">@ElementId</arg>
+                            </instance_generator>
+                            <additional>
+                                <relationship>crm:P2_has_type</relationship>
+                                <entity>
+                                    <type>crm:E55_Type</type>
+                                    <instance_info>
+                                        <constant/>
+                                    </instance_info>
+                                    <instance_generator name="URIwithAatId">
+                                        <arg name="id" type="constant">300264387</arg>
+                                    </instance_generator>
+                                    <label_generator name="Literal">
+                                        <arg name="text" type="constant">image</arg>
+                                        <arg name="language" type="constant">en</arg>
+                                    </label_generator>
+                                    <label_generator name="Literal">
+                                        <arg name="text" type="constant">Bild</arg>
+                                        <arg name="language" type="constant">de</arg>
+                                    </label_generator>
+                                </entity>
+                            </additional>
+                        </entity>
                         <relationship>crm:P43_has_dimension</relationship>
                     </target_relation>
                 </path>
@@ -623,26 +653,6 @@
                                 <arg name="text" type="xpath">ElementValue/TextValue/text()</arg>
                                 <arg name="language" type="constant"/>
                             </label_generator>
-                            <additional>
-                                <relationship>crm:P2_has_type</relationship>
-                                <entity>
-                                    <type>crm:E55_Type</type>
-                                    <instance_info>
-                                        <constant/>
-                                    </instance_info>
-                                    <instance_generator name="URIorUUID">
-                                        <arg name="text" type="constant">https://resources.swissartresearch.net/type/nb/10217</arg>
-                                    </instance_generator>
-                                    <label_generator name="Literal">
-                                        <arg name="text" type="constant">image size</arg>
-                                        <arg name="language" type="constant">en</arg>
-                                    </label_generator>
-                                    <label_generator name="Literal">
-                                        <arg name="text" type="constant">Masse Bild</arg>
-                                        <arg name="language" type="constant">de</arg>
-                                    </label_generator>
-                                </entity>
-                            </additional>
                         </entity>
                     </target_node>
                 </range>
@@ -656,7 +666,36 @@
                         <if>
                             <equals value="11042">@ElementId</equals>
                         </if>
-                        <relationship>crm:P43_has_dimension</relationship>
+                        <relationship>crm:P46_is_composed_of</relationship><entity>
+                        <type>crm:E24_Physical_Human-Made_Thing</type>
+                        <instance_generator name="URIwithTypeSubtypeIdAnd1Level">
+                            <arg name="type" type="constant">artwork</arg>
+                            <arg name="id" type="xpath">../../@RecordIdentifier</arg>
+                            <arg name="subtype" type="constant">part</arg>
+                            <arg name="level1" type="xpath">@ElementId</arg>
+                        </instance_generator>
+                        <additional>
+                            <relationship>crm:P2_has_type</relationship>
+                            <entity>
+                                <type>crm:E55_Type</type>
+                                <instance_info>
+                                    <constant/>
+                                </instance_info>
+                                <instance_generator name="URIwithAatId">
+                                    <arg name="id" type="constant">300022755</arg>
+                                </instance_generator>
+                                <label_generator name="Literal">
+                                    <arg name="text" type="constant">plate</arg>
+                                    <arg name="language" type="constant">en</arg>
+                                </label_generator>
+                                <label_generator name="Literal">
+                                    <arg name="text" type="constant">Druckplatte</arg>
+                                    <arg name="language" type="constant">de</arg>
+                                </label_generator>
+                            </entity>
+                        </additional>
+                    </entity>
+                    <relationship>crm:P43_has_dimension</relationship>
                     </target_relation>
                 </path>
                 <range>
@@ -668,29 +707,12 @@
                                 <arg name="type" type="constant">artwork</arg>
                                 <arg name="id" type="xpath">../../@RecordIdentifier</arg>
                                 <arg name="subtype" type="constant">dimension</arg>
-                                <arg name="level1" type="constant">carrier</arg>
+                                <arg name="level1" type="constant">plate</arg>
                             </instance_generator>
                             <label_generator name="Literal">
                                 <arg name="text" type="xpath">ElementValue/TextValue/text()</arg>
                                 <arg name="language" type="constant"/>
                             </label_generator>
-                            <additional>
-                                <relationship>crm:P2_has_type</relationship>
-                                <entity>
-                                    <type>crm:E55_Type</type>
-                                    <instance_generator name="URIorUUID">
-                                        <arg name="text" type="constant">https://resources.swissartresearch.net/type/nb/11042</arg>
-                                    </instance_generator>
-                                    <label_generator name="Literal">
-                                        <arg name="text" type="constant">carrier size</arg>
-                                        <arg name="language" type="constant">en</arg>
-                                    </label_generator>
-                                    <label_generator name="Literal">
-                                        <arg name="text" type="constant">Masse Plattenrand</arg>
-                                        <arg name="language" type="constant">de</arg>
-                                    </label_generator>
-                                </entity>
-                            </additional>
                         </entity>
                     </target_node>
                 </range>
@@ -704,6 +726,36 @@
                         <if>
                             <equals value="10739">@ElementId</equals>
                         </if>
+                        <relationship>crm:P46_is_composed_of</relationship>
+                        <entity>
+                            <type>crm:E24_Physical_Human-Made_Thing</type>
+                            <instance_generator name="URIwithTypeSubtypeIdAnd1Level">
+                                <arg name="type" type="constant">artwork</arg>
+                                <arg name="id" type="xpath">../../@RecordIdentifier</arg>
+                                <arg name="subtype" type="constant">part</arg>
+                                <arg name="level1" type="xpath">@ElementId</arg>
+                            </instance_generator>
+                            <additional>
+                                <relationship>crm:P2_has_type</relationship>
+                                <entity>
+                                    <type>crm:E55_Type</type>
+                                    <instance_info>
+                                        <constant/>
+                                    </instance_info>
+                                    <instance_generator name="URIwithAatId">
+                                        <arg name="id" type="constant">300189648</arg>
+                                    </instance_generator>
+                                    <label_generator name="Literal">
+                                        <arg name="text" type="constant">sheet</arg>
+                                        <arg name="language" type="constant">en</arg>
+                                    </label_generator>
+                                    <label_generator name="Literal">
+                                        <arg name="text" type="constant">Blatt</arg>
+                                        <arg name="language" type="constant">de</arg>
+                                    </label_generator>
+                                </entity>
+                            </additional>
+                        </entity>
                         <relationship>crm:P43_has_dimension</relationship>
                     </target_relation>
                 </path>
@@ -716,29 +768,12 @@
                                 <arg name="type" type="constant">artwork</arg>
                                 <arg name="id" type="xpath">../../@RecordIdentifier</arg>
                                 <arg name="subtype" type="constant">dimension</arg>
-                                <arg name="level1" type="constant">page</arg>
+                                <arg name="level1" type="constant">sheet</arg>
                             </instance_generator>
                             <label_generator name="Literal">
                                 <arg name="text" type="xpath">ElementValue/TextValue/text()</arg>
                                 <arg name="language" type="constant"/>
                             </label_generator>
-                            <additional>
-                                <relationship>crm:P2_has_type</relationship>
-                                <entity>
-                                    <type>crm:E55_Type</type>
-                                    <instance_generator name="URIorUUID">
-                                        <arg name="text" type="constant">https://resources.swissartresearch.net/type/nb/10739</arg>
-                                    </instance_generator>
-                                    <label_generator name="Literal">
-                                        <arg name="text" type="constant">page size</arg>
-                                        <arg name="language" type="constant">en</arg>
-                                    </label_generator>
-                                    <label_generator name="Literal">
-                                        <arg name="text" type="constant">Masse Blatt</arg>
-                                        <arg name="language" type="constant">de</arg>
-                                    </label_generator>
-                                </entity>
-                            </additional>
                         </entity>
                     </target_node>
                 </range>
@@ -752,6 +787,36 @@
                         <if>
                             <equals value="10738">@ElementId</equals>
                         </if>
+                        <relationship>crm:P46_is_composed_of</relationship>
+                        <entity>
+                            <type>crm:E24_Physical_Human-Made_Thing</type>
+                            <instance_generator name="URIwithTypeSubtypeIdAnd1Level">
+                                <arg name="type" type="constant">artwork</arg>
+                                <arg name="id" type="xpath">../../@RecordIdentifier</arg>
+                                <arg name="subtype" type="constant">part</arg>
+                                <arg name="level1" type="xpath">@ElementId</arg>
+                            </instance_generator>
+                            <additional>
+                                <relationship>crm:P2_has_type</relationship>
+                                <entity>
+                                    <type>crm:E55_Type</type>
+                                    <instance_info>
+                                        <constant/>
+                                    </instance_info>
+                                    <instance_generator name="URIwithAatId">
+                                        <arg name="id" type="constant">300189814</arg>
+                                    </instance_generator>
+                                    <label_generator name="Literal">
+                                        <arg name="text" type="constant">frame</arg>
+                                        <arg name="language" type="constant">en</arg>
+                                    </label_generator>
+                                    <label_generator name="Literal">
+                                        <arg name="text" type="constant">Rahmen</arg>
+                                        <arg name="language" type="constant">de</arg>
+                                    </label_generator>
+                                </entity>
+                            </additional>
+                        </entity>
                         <relationship>crm:P43_has_dimension</relationship>
                     </target_relation>
                 </path>
@@ -770,23 +835,6 @@
                                 <arg name="text" type="xpath">ElementValue/TextValue/text()</arg>
                                 <arg name="language" type="constant"/>
                             </label_generator>
-                            <additional>
-                                <relationship>crm:P2_has_type</relationship>
-                                <entity>
-                                    <type>crm:E55_Type</type>
-                                    <instance_generator name="URIorUUID">
-                                        <arg name="text" type="constant">https://resources.swissartresearch.net/type/nb/10738</arg>
-                                    </instance_generator>
-                                    <label_generator name="Literal">
-                                        <arg name="text" type="constant">image size with passepartout and/or frame</arg>
-                                        <arg name="language" type="constant">en</arg>
-                                    </label_generator>
-                                    <label_generator name="Literal">
-                                        <arg name="text" type="constant">Masse Bild mit Passepartout und/oder Rahmen</arg>
-                                        <arg name="language" type="constant">de</arg>
-                                    </label_generator>
-                                </entity>
-                            </additional>
                         </entity>
                     </target_node>
                 </range>
