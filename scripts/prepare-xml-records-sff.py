@@ -107,7 +107,6 @@ def addDimensionData(record):
     recordId = record.find('InvNrIntern').text
     dimensionsRows  = [d for d in dimensionsData if d['Werk Inv. Nr.'] == recordId]
     if len(dimensionsRows) == 0:
-        print("Could not find dimension of " + recordId)
         return record
 
     dimensionsTag = etree.SubElement(record, "dimensions")
