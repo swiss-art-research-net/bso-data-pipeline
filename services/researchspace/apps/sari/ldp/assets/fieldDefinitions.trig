@@ -24,7 +24,7 @@
             rdfs:label "Collection" ;
             rdfs:comment "The holding collection or institution of the work" ;
             rsfield:xsdDatatype xsd:anyURI ; 
-            rsfield:domain crm:E22_Man-Made_Object ; 
+            rsfield:domain crm:E22_Human-Made_Object ; 
             rsfield:range crm:E39_Actor ; 
                 rsfield:selectPattern <https://platform.swissartresearch.net/instances/knowledgePatterns/collection/query/select> ;
     
@@ -44,7 +44,7 @@
             rdfs:label "Creator" ;
             rdfs:comment "The creator of the artwork" ;
             rsfield:xsdDatatype xsd:anyURI ; 
-            rsfield:domain crm:E22_Man-Made_Object ; 
+            rsfield:domain crm:E22_Human-Made_Object ; 
             rsfield:range crm:E39_Actor ; 
                 rsfield:insertPattern <https://platform.swissartresearch.net/instances/knowledgePatterns/creator_of_object/query/insert> ;
                 rsfield:selectPattern <https://platform.swissartresearch.net/instances/knowledgePatterns/creator_of_object/query/select> ;
@@ -90,7 +90,7 @@
             rdfs:comment "Objects that were created by an actor" ;
             rsfield:xsdDatatype xsd:anyURI ; 
             rsfield:domain crm:E39_Actor ; 
-            rsfield:range crm:E22_Man-Made_Object ; 
+            rsfield:range crm:E22_Human-Made_Object ; 
                 rsfield:selectPattern <https://platform.swissartresearch.net/instances/knowledgePatterns/objects_created/query/select> ;
     
         a rsfield:Field, ldp:Resource, prov:Entity ;
@@ -108,7 +108,7 @@
         <https://platform.swissartresearch.net/instances/knowledgePatterns/object_creation_date> 
             rdfs:label "Creation date" ;
             rdfs:comment "The date an object has been created" ;
-            rsfield:domain crm:E22_Man-Made_Object ; 
+            rsfield:domain crm:E22_Human-Made_Object ; 
             rsfield:range crm:E52_Time-Span ; 
                 rsfield:selectPattern <https://platform.swissartresearch.net/instances/knowledgePatterns/object_creation_date/query/select> ;
     
@@ -128,7 +128,7 @@
             rdfs:label "Depicts" ;
             rdfs:comment "The entity that is depicted by the object" ;
             rsfield:xsdDatatype xsd:anyURI ; 
-            rsfield:domain crm:E22_Man-Made_Object ; 
+            rsfield:domain crm:E22_Human-Made_Object ; 
             rsfield:range crm:E1_CRM_Entity ; 
                 rsfield:selectPattern <https://platform.swissartresearch.net/instances/knowledgePatterns/object_depicts/query/select> ;
                 rsfield:insertPattern <https://platform.swissartresearch.net/instances/knowledgePatterns/object_depicts/query/insert> ;
@@ -156,7 +156,7 @@
         <https://platform.swissartresearch.net/instances/knowledgePatterns/object_subcreations> 
             rdfs:label "Creation Roles" ;
             rsfield:xsdDatatype xsd:anyURI ; 
-            rsfield:domain crm:E22_Man-Made_Object ; 
+            rsfield:domain crm:E22_Human-Made_Object ; 
             rsfield:range crm:E65_Creation ; 
                 rsfield:selectPattern <https://platform.swissartresearch.net/instances/knowledgePatterns/object_subcreations/query/select> ;
                 rsfield:insertPattern <https://platform.swissartresearch.net/instances/knowledgePatterns/object_subcreations/query/insert> ;
@@ -181,7 +181,7 @@
             rsfield:minOccurs "1" ; 
             rsfield:maxOccurs "1" ; 
             rsfield:xsdDatatype xsd:anyURI ; 
-            rsfield:domain crm:E22_Man-Made_Object ; 
+            rsfield:domain crm:E22_Human-Made_Object ; 
             rsfield:range crm:E36_Visual_item ; 
                 rsfield:insertPattern <https://platform.swissartresearch.net/instances/knowledgePatterns/object_carries_visual_item/query/insert> ;
                 rsfield:selectPattern <https://platform.swissartresearch.net/instances/knowledgePatterns/object_carries_visual_item/query/select> ;
@@ -203,7 +203,7 @@
         <https://platform.swissartresearch.net/instances/knowledgePatterns/object_production_date> 
             rdfs:label "Production date" ;
             rdfs:comment "The date an object has been produced" ;
-            rsfield:domain crm:E22_Man-Made_Object ; 
+            rsfield:domain crm:E22_Human-Made_Object ; 
             rsfield:range crm:E52_Time-Span ; 
                 rsfield:selectPattern <https://platform.swissartresearch.net/instances/knowledgePatterns/object_production_date/query/select> ;
     
