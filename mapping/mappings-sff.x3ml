@@ -1025,6 +1025,9 @@
                         <relation>Technik</relation>
                     </source_relation>
                     <target_relation>
+                        <if>
+                            <exists>text()</exists>
+                        </if>
                         <relationship>crm:P32_used_general_technique</relationship>
                     </target_relation>
                 </path>
