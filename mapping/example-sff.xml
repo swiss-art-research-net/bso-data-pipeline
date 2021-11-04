@@ -38,6 +38,8 @@
             </values>
         </KünsterIn>
         <Titel>Recueil de paysages suisses dessinés d'après nature, dans une course par la vallée d'Ober-Hasly et les cantons de Schweitz et d'Ury, par Lory, Lafond et Zehender. en 1797. Accompagné d'un texte pour servir d'itinéraire aux artistes et aux amateurs de voyages pittoresques</Titel>
+        <LogistikID>GABRI10680</LogistikID>
+        <WerkGruppenID>2017021318324740500</WerkGruppenID>
         <Entstvon>1797</Entstvon>
         <Entstbis>1798</Entstbis>
         <Datierung>1797/98</Datierung>
@@ -51,7 +53,21 @@
         <Material2></Material2>
         <EditionÜbers></EditionÜbers>
         <Bemerkungen></Bemerkungen>
-        <BezKünstler>Titelblatt bezeichnet mit "Recueil / de / paysages suisses / dessinés d'après nature, / dans une course / par la vallée d'Ober-Hasly / et les cantons / de Schweitz et d'Ury, / par / Lory, Lafond et Zehender. / en 1797. / Accompagné d'un texte / pour servir d'itinéraire aux artistes et aux amateurs / de voyages pittoresques.", und mit Publikationsangaben "À Berne / chez les artistes associés. / Avec privilège."; jede Abbildung nummeriert und betitelt, wie folgendermassen: , -   Key plate, nicht nummeriert (Radierung), 1) "Vue sur le Lac de Brientz et le petit Lac de Goldswyl / prés de Rinkenberg." , 2) "Chute du Giessbach / au Bord du Lac de Brientz.", 3) "Chûte du Wandelbach, / dans la Vallée d'Oberhasli.", 4) "Vue de la Vallee d'Oberhasli prise au bas de la Tour Resti.", 5) "Chutes du Dorf et Alpbach / à Meyringuen", 6) "Chute superieure du Reichenbach, / dans la Vallée d'Oberhasli.", 7) "Le Port de Fluelen. / dans le Canton d'Ury", 9) "Staeg prés de Twing Uri. / Sur la Route du St: Gotthardt.", 10) "Le Pont du Diable. / Sur le Mont St.-Gotthardt dans le Canton d'Ury.", 11) "Vue de Brounnen et d'une Partie du Lac des Quatres Cantons / prise a Wyl", 12) "Schweiz, Chef-Lieu du Canton, / ainsi nommé.", 13) "Vue de l'Isle de Schwanau, / Sur le Lac de Lowerz." , 8) "Burgle Lieu de Naissance de Guillaume Tell, / dans le Canton d'Ury." </BezKünstler>
+        <BezKünstler>Titelblatt bezeichnet mit "Recueil / de / paysages suisses / dessinés d'après nature, / dans une course / par la vallée d'Ober-Hasly / et les cantons / de Schweitz et d'Ury, / par / Lory, Lafond et Zehender. / en 1797. / Accompagné d'un texte / pour servir d'itinéraire aux artistes et aux amateurs / de voyages pittoresques.", und mit Publikationsangaben "À Berne / chez les artistes associés. / Avec privilège."; jede Abbildung nummeriert und betitelt, wie folgendermassen: 
+-   Key plate, nicht nummeriert (Radierung)
+1) "Vue sur le Lac de Brientz et le petit Lac de Goldswyl / prés de Rinkenberg." 
+2) "Chute du Giessbach / au Bord du Lac de Brientz."
+3) "Chûte du Wandelbach, / dans la Vallée d'Oberhasli."
+4) "Vue de la Vallee d'Oberhasli prise au bas de la Tour Resti."
+5) "Chutes du Dorf et Alpbach / à Meyringuen"
+6) "Chute superieure du Reichenbach, / dans la Vallée d'Oberhasli."
+7) "Le Port de Fluelen. / dans le Canton d'Ury"
+9) "Staeg prés de Twing Uri. / Sur la Route du St: Gotthardt."
+10) "Le Pont du Diable. / Sur le Mont St.-Gotthardt dans le Canton d'Ury."
+11) "Vue de Brounnen et d'une Partie du Lac des Quatres Cantons / prise a Wyl"
+12) "Schweiz, Chef-Lieu du Canton, / ainsi nommé."
+13) "Vue de l'Isle de Schwanau, / Sur le Lac de Lowerz." 
+8) "Burgle Lieu de Naissance de Guillaume Tell, / dans le Canton d'Ury." </BezKünstler>
         <Bezfremd>Auf der Innenseite des Vorderdeckels oben links mit Bleistift nummeriert "297"</Bezfremd>
         <Zertifikat></Zertifikat>
         <ZertifikatÜbers></ZertifikatÜbers>
@@ -112,51 +128,283 @@
         <RefNr></RefNr>
         <InschriftÜbers2></InschriftÜbers2>
         <ZertÜbers2></ZertÜbers2>
-        <Datumstempel>03-Jul-19</Datumstempel>
-        <Zeitstempel>ERROR,  </Zeitstempel>
+        <Datumstempel>03.07.2019</Datumstempel>
+        <Zeitstempel>08:52:57</Zeitstempel>
         <Ueberprüftam>00.00.00</Ueberprüftam>
         <Ueberprüftvon></Ueberprüftvon>
         <Sortation>0</Sortation>
         <pID>A10B01EA7708CE4786CD7DAEA1CA1373</pID>
-        <Ort-Standort></Ort-Standort>
-        <Bereich-Standort></Bereich-Standort>
-        <EinDat-Standort>00.00.00</EinDat-Standort>
-        <OZLNr-Standort></OZLNr-Standort>
-        <OZLWertCHF-Standort>0</OZLWertCHF-Standort>
-        <Bemerkungen-Standort></Bemerkungen-Standort>
-        <TranspDossier-Standort></TranspDossier-Standort>
-        <TranspHinweise-Standort></TranspHinweise-Standort>
-        <Transportstatus-Standort></Transportstatus-Standort>
-        <recID-Standort>2017050000000000000</recID-Standort>
-        <pID-Standort>958E87352CE38044BCF9AF7AFAE369CC</pID-Standort>
-        <Eigentümerin-Fibu></Eigentümerin-Fibu>
-        <Partner-Fibu></Partner-Fibu>
-        <MarktwertDatum-Fibu>00.00.00</MarktwertDatum-Fibu>
-        <Marktwert-Fibu>0</Marktwert-Fibu>
-        <MarktwertWährung-Fibu></MarktwertWährung-Fibu>
-        <Anteil-Fibu>0</Anteil-Fibu>
-        <Datumstempel-Fibu>00.00.00</Datumstempel-Fibu>
-        <Bemerkungen-Fibu></Bemerkungen-Fibu>
-        <recID-Fibu>15106</recID-Fibu>
-        <Reserve1-Fibu></Reserve1-Fibu>
-        <Reserve2-Fibu></Reserve2-Fibu>
-        <Reserve3-Fibu></Reserve3-Fibu>
-        <Reserve4-Fibu></Reserve4-Fibu>
-        <Reserve5-Fibu></Reserve5-Fibu>
-        <Reserve6-Fibu></Reserve6-Fibu>
-        <Reserve7-Fibu></Reserve7-Fibu>
-        <Reserve8-Fibu></Reserve8-Fibu>
-        <Reserve9-Fibu></Reserve9-Fibu>
-        <Reserve10-Fibu></Reserve10-Fibu>
-        <pID-Fibu>7582CFBC2B96DB45A394A7FFCDC90CE2</pID-Fibu>
-        <VPCHF></VPCHF>
-        <VPEUR></VPEUR>
-        <VPUSD></VPUSD>
-        <VersWert></VersWert>
-        <Einkauf></Einkauf>
-        <Verkauf></Verkauf>
-        <Produktionskosten>0</Produktionskosten>
         <record-identifier>SFF_B_1610</record-identifier>
         <image filename="SFF_B_1610.JPG" width="2624" height="3936">SFF_B_1610</image>
+        <dimensions>
+            <dimension>
+                <UUID>CEE33E5FD5BB644BB45EF595AFD2B3DB</UUID>
+                <WerkInvNr>GABRI10680</WerkInvNr>
+                <Typ>HBT</Typ>
+                <Einheit>cm</Einheit>
+                <Höhe>35.2</Höhe>
+                <Breite>24.9</Breite>
+                <Tiefe>0</Tiefe>
+                <Prefix>Buch</Prefix>
+                <Prefix2>size of the book</Prefix2>
+                <type>book</type>
+                <typeuri>https://d-nb.info/gnd/4008570-3</typeuri>
+                <qualifier>exact</qualifier>
+                <Position>0</Position>
+                <pID>FC714A46CB608A4891516CBF17C1D20C</pID>
+            </dimension>
+            <dimension>
+                <UUID>C0AF1E360E20FE489A81063084383360</UUID>
+                <WerkInvNr>GABRI10680</WerkInvNr>
+                <Typ>HBT</Typ>
+                <Einheit>cm</Einheit>
+                <Höhe>21.5</Höhe>
+                <Breite>16</Breite>
+                <Tiefe>0</Tiefe>
+                <Prefix>Bild (ungefähr)</Prefix>
+                <Prefix2>approx. size of image</Prefix2>
+                <type>image</type>
+                <typeuri>http://vocab.getty.edu/aat/300264387</typeuri>
+                <qualifier>circa</qualifier>
+                <Position>0</Position>
+                <pID>9B2321C0AB3C8F42B081A847F9A30F23</pID>
+            </dimension>
+        </dimensions>
+        <literatureList>
+            <literature>
+                <WerkInvNr>GABRI10680</WerkInvNr>
+                <LitNr>LIT10113</LitNr>
+                <Künstlername>Lory père / Lafond / Zehender</Künstlername>
+                <Seitenverweise>S. 12 (Preis: 66 Livres de France)</Seitenverweise>
+                <Bemerkungen>Catalogue du magazin des arts 1806</Bemerkungen>
+                <recID>2017062011443842260</recID>
+                <pID>EC2A55D74132C84F90B9C2232D03149A</pID>
+                <details>
+                    <LitNr>LIT10113</LitNr>
+                    <Titel>Catalogue du magazin des arts de Fuessli et Compagnie à Zuric</Titel>
+                    <Jahr>1806</Jahr>
+                    <recID>2017061310041618226</recID>
+                    <pID>EC3ED5723676DE4FB5CAFE8A12B2C582</pID>
+                </details>
+            </literature>
+            <literature>
+                <WerkInvNr>GABRI10680</WerkInvNr>
+                <LitNr>LIT10006</LitNr>
+                <Künstlername>Lory père / Lafond / Zehender</Künstlername>
+                <Seitenverweise>S. LXXVII-LXXVIII, Nr. 609</Seitenverweise>
+                <Bemerkungen>Lonchamp 1921</Bemerkungen>
+                <recID>2017051811075630438</recID>
+                <pID>C81C581A5DF89A4B86E4331474E91008</pID>
+                <details>
+                    <LitNr>LIT10006</LitNr>
+                    <AutorHsg>Lonchamp, Frédéric-Charles</AutorHsg>
+                    <Titel>Un siècle d’art suisse. L’estampe et le livre à gravures. Guide de l’amateur</Titel>
+                    <Verlag>Librairie des Bibliophiles</Verlag>
+                    <Jahr>1921</Jahr>
+                    <recID>2017021010060225169</recID>
+                    <Ort>Lausanne</Ort>
+                    <pID>3EC4888F64850B44954AB4B6989480DC</pID>
+                </details>
+            </literature>
+            <literature>
+                <WerkInvNr>GABRI10680</WerkInvNr>
+                <LitNr>LIT10057</LitNr>
+                <Künstlername>Lory père / Lafond / Zehender</Künstlername>
+                <Seitenverweise>Teil 1, S. 149, Nr. 11 (Folge, Preis: 40 Livres de Suisse)</Seitenverweise>
+                <Bemerkungen>Ebel 1804-1805</Bemerkungen>
+                <recID>2017061917320932561</recID>
+                <pID>A77D360C92749543B174285414049956</pID>
+                <details>
+                    <LitNr>LIT10057</LitNr>
+                    <AutorHsg>Ebel, Johann Gottfried</AutorHsg>
+                    <Titel>Anleitung, auf die nützlichste und genussvollste Art die Schweitz zu bereisen</Titel>
+                    <Verlag>Orell, Füssli &amp; Comp</Verlag>
+                    <Vol>2. Aufl.</Vol>
+                    <Jahr>0</Jahr>
+                    <Band>4 Teile</Band>
+                    <recID>2017030610425530534</recID>
+                    <Ort>Zürich</Ort>
+                    <JahrText>1804-1805</JahrText>
+                    <pID>F38DFE3F2243E842B9024AF5CF55710A</pID>
+                </details>
+            </literature>
+            <literature>
+                <WerkInvNr>GABRI10680</WerkInvNr>
+                <LitNr>LIT10115</LitNr>
+                <Künstlername>Lory père / Lafond / Zehender</Künstlername>
+                <Seitenverweise>S. 41 (Folge, Preis: 40 Franken)</Seitenverweise>
+                <Bemerkungen>Catalogue des Vues 1818</Bemerkungen>
+                <recID>2017062012080126603</recID>
+                <pID>28C604ACC6C5D24E8D0BC800AE287E05</pID>
+                <details>
+                    <LitNr>LIT10115</LitNr>
+                    <Titel>Catalogue des Vues, Costumes, Cartes et Panorama Suisses du Magazin des Arts de H. Keller, mds. d'Estampes et de Materiaux de dessin vis à vis de l'Épée à Zurich</Titel>
+                    <Jahr>1818</Jahr>
+                    <recID>2017061310091716541</recID>
+                    <Ort>Zürich</Ort>
+                    <pID>93F14D15A9BF7A449D0E70B7197A04C7</pID>
+                </details>
+            </literature>
+            <literature>
+                <WerkInvNr>GABRI10680</WerkInvNr>
+                <LitNr>LIT10112</LitNr>
+                <Künstlername>Lory père / Lafond / Zehender</Künstlername>
+                <Seitenverweise>S. 10 (Preis: 60 Livres de France)</Seitenverweise>
+                <Bemerkungen>Catalogue du magazin des arts 1798</Bemerkungen>
+                <recID>2018030716123546000</recID>
+                <pID>7FB21AFF9013D840A25DC031477AC37C</pID>
+                <details>
+                    <LitNr>LIT10112</LitNr>
+                    <Titel>Catalogue du magazin des arts de Henri et Jean Henri Fuesli à Zuric</Titel>
+                    <Jahr>1798</Jahr>
+                    <recID>2017061310013120793</recID>
+                    <pID>19B3E55B4A7FEC41B6E2B5043F108043</pID>
+                </details>
+            </literature>
+            <literature>
+                <WerkInvNr>GABRI10680</WerkInvNr>
+                <LitNr>LIT10058</LitNr>
+                <Künstlername>Lory père / Lafond / Zehender</Künstlername>
+                <Seitenverweise>Teil 1, S. 149, Nr. 11 (Preis: 40 Livres de Suisse)</Seitenverweise>
+                <Bemerkungen>Ebel 1809-1810</Bemerkungen>
+                <recID>2018030816291916842</recID>
+                <pID>E0A91CE998E05D40AA6497B4A17463C1</pID>
+                <details>
+                    <LitNr>LIT10058</LitNr>
+                    <AutorHsg>Ebel, Johann Gottfried</AutorHsg>
+                    <Titel>Anleitung, auf die nützlichste und genussvollste Art die Schweitz zu bereisen</Titel>
+                    <Verlag>Orell, Füssli &amp; Comp</Verlag>
+                    <Vol>3. Aufl.</Vol>
+                    <Jahr>0</Jahr>
+                    <Band>4 Teile</Band>
+                    <recID>2017030610444523226</recID>
+                    <Ort>Zürich</Ort>
+                    <JahrText>1809-1810</JahrText>
+                    <pID>AF2EB518C6CD0747ADDA7586C94F14F0</pID>
+                </details>
+            </literature>
+            <literature>
+                <WerkInvNr>GABRI10680</WerkInvNr>
+                <LitNr>LIT10152</LitNr>
+                <Künstlername>Lory père / Lafond / Zehender</Künstlername>
+                <Seitenverweise>Teil 1, S. 136, Nr. 14 (Preis: 40 Livres de Suisse)</Seitenverweise>
+                <Bemerkungen>Ebel 1818</Bemerkungen>
+                <recID>2018032114070070900</recID>
+                <pID>2F2371F6F22877448B6C08C4E49148BF</pID>
+                <details>
+                    <LitNr>LIT10152</LitNr>
+                    <AutorHsg>Ebel, Johann Gottfried</AutorHsg>
+                    <Titel>Manuel du Voyageur en Suisse</Titel>
+                    <Verlag>Orell, Füssli &amp; Comp.</Verlag>
+                    <Vol>3. Aufl.</Vol>
+                    <Jahr>1818</Jahr>
+                    <Band>3 Teile</Band>
+                    <recID>2017062210315929791</recID>
+                    <Ort>Zürich</Ort>
+                    <pID>9B59A8F647259C488037C18BA821D7CA</pID>
+                </details>
+            </literature>
+            <literature>
+                <WerkInvNr>GABRI10680</WerkInvNr>
+                <LitNr>LIT10059</LitNr>
+                <Künstlername>Lory père / Lafond / Zehender</Künstlername>
+                <Seitenverweise>Teil 1, S. 186, Nr. 14 (Preis: 40 Livres de Suisse)</Seitenverweise>
+                <Bemerkungen>Ebel 1810-1811</Bemerkungen>
+                <recID>2018032115291595430</recID>
+                <pID>12CDC2633443E5429944C7C3E0E9E7A7</pID>
+                <details>
+                    <LitNr>LIT10059</LitNr>
+                    <AutorHsg>Ebel, Johann Gottfried</AutorHsg>
+                    <Titel>Manuel du Voyageur en Suisse</Titel>
+                    <Verlag>Orell, Füssli &amp; Comp</Verlag>
+                    <Vol>2. Aufl.</Vol>
+                    <Jahr>0</Jahr>
+                    <Band>4 Teile</Band>
+                    <recID>2017030610470361010</recID>
+                    <Ort>Zürich</Ort>
+                    <JahrText>1810-1811</JahrText>
+                    <pID>403BAEC3064E4648B4BADA543F05BD88</pID>
+                </details>
+            </literature>
+            <literature>
+                <WerkInvNr>GABRI10680</WerkInvNr>
+                <LitNr>LIT10125</LitNr>
+                <Künstlername>Lory père / Lafond / Zehender</Künstlername>
+                <Seitenverweise>S. 574-578 (Ankündigung des Werks)</Seitenverweise>
+                <Bemerkungen>Haller 1797</Bemerkungen>
+                <recID>2018050409193176900</recID>
+                <pID>C99DACDD0A1789478F227021E64B418F</pID>
+                <details>
+                    <LitNr>LIT10125</LitNr>
+                    <AutorHsg>Haller, Berchtold Friedrich</AutorHsg>
+                    <Titel>Kunstnachrichten aus der Schweiz, vom Jahr 1794 bis 1796</Titel>
+                    <Vol>5. Stück</Vol>
+                    <Jahr>1797</Jahr>
+                    <inZeitschrift>Neue Miscellaneen artistischen Inhalts für Künstler und Kunstliebhaber</inZeitschrift>
+                    <recID>2017061409312422103</recID>
+                    <JahrText>525-622</JahrText>
+                    <pID>0F0EE8BA89B86E448117DDA168C583D2</pID>
+                </details>
+            </literature>
+            <literature>
+                <WerkInvNr>GABRI10680</WerkInvNr>
+                <LitNr>LIT10168</LitNr>
+                <Künstlername>Lory père / Lafond / Zehender</Künstlername>
+                <Seitenverweise>Heft 1, S. 68 (Preis der Folge: 68 Livres de Suisse/Schweizerfranken)</Seitenverweise>
+                <Bemerkungen>Haller 1807</Bemerkungen>
+                <recID>2018050708434261450</recID>
+                <pID>DD8508ADEDE3B84F97AC2B139622C16D</pID>
+                <details>
+                    <LitNr>LIT10168</LitNr>
+                    <AutorHsg>Haller, Berchtold Friedrich</AutorHsg>
+                    <Titel>Kunstnachrichten aus der Schweiz von 1796 bis 1805</Titel>
+                    <Jahr>1807</Jahr>
+                    <Band>Bd. 2</Band>
+                    <inZeitschrift>Archiv für Künstler und Kunstfreunde</inZeitschrift>
+                    <recID>2018050708423818958</recID>
+                    <pID>83B75BA16ABECD43832BD90EE22099C2</pID>
+                </details>
+            </literature>
+            <literature>
+                <WerkInvNr>GABRI10680</WerkInvNr>
+                <LitNr>LIT10119</LitNr>
+                <Künstlername>Lory père / Lafond / Zehender</Künstlername>
+                <Seitenverweise>S. 278, Nr. 15 (Preis: 10 Laubtaler)</Seitenverweise>
+                <Bemerkungen>Haller 1806</Bemerkungen>
+                <recID>2018050709490023640</recID>
+                <pID>0AC7C70CEBDE8B419249B76073C42D44</pID>
+                <details>
+                    <LitNr>LIT10119</LitNr>
+                    <AutorHsg>Haller, Berchtold Friedrich</AutorHsg>
+                    <Titel>Kritische Uebersicht des Zustandes der Künste in der Schweiz, und der vorzüglichsten Helvetischen Kunstprodukte</Titel>
+                    <Vol>1</Vol>
+                    <Jahr>1806</Jahr>
+                    <inZeitschrift>Bibliothek der redenden und bildenden Künste</inZeitschrift>
+                    <recID>2017061311063949070</recID>
+                    <JahrText>S. 195-318</JahrText>
+                    <pID>BF66769DC379D1449A1A4BDBD164B0A0</pID>
+                </details>
+            </literature>
+            <literature>
+                <WerkInvNr>GABRI10680</WerkInvNr>
+                <LitNr>LIT10170</LitNr>
+                <Künstlername>Lory père / Lafond / Zehender</Künstlername>
+                <Seitenverweise>S. 203-204 (Preis der Folge: 40 Livres de Suisse)</Seitenverweise>
+                <Bemerkungen>Kunstanzeigen 1798</Bemerkungen>
+                <recID>2018050809502013059</recID>
+                <pID>0E11932F9CE76845B3A2FF2D6BF8FE7F</pID>
+                <details>
+                    <LitNr>LIT10170</LitNr>
+                    <Titel>Kunstanzeigen von 1798</Titel>
+                    <Verlag>Orell, Füssli &amp; Comp.</Verlag>
+                    <Jahr>1798</Jahr>
+                    <inZeitschrift>Neu helvetischer Almanach für das Jahr 1799</inZeitschrift>
+                    <recID>2018050809470922932</recID>
+                    <Ort>Zürich</Ort>
+                    <JahrText>S. 202-208</JahrText>
+                    <pID>F3594750803B284CAE4C7ED8656B168C</pID>
+                </details>
+            </literature>
+        </literatureList>
     </record>
 </collection>

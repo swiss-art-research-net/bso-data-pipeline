@@ -7,7 +7,7 @@ from lxml import etree
 from tqdm import tqdm
 
 # Database export provided by SFF
-inputFile = '../data/source/SFF-Datenbank-Export.csv'
+inputFile = '../data/source/sff-werke.csv'
 
 # Prefix for curated fields
 curatedFilesPre = '../data/source/sff-curation-'
