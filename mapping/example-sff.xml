@@ -2,41 +2,7 @@
 <collection>
     <record>
         <InvNrIntern>GABRI10680</InvNrIntern>
-        <KünsterIn>
-            <values>
-                <value creation="true" production="true">
-                    <text>Lory père</text>
-                    <id>Lory père</id>
-                    <gnd>119240106</gnd>
-                    <wd>Q18511605</wd>
-                    <fullName>Lory Gabriel Ludwig (Lory père)</fullName>
-                    <roles>
-                        <roleValue gnd="4200345-3" creation="true">Zeichner</roleValue>
-                        <roleValue gnd="4158107-6" production="true">Stecher</roleValue>
-                    </roles>
-                </value>
-                <value production="true">
-                    <text>Lafond</text>
-                    <id>Lafond</id>
-                    <gnd>136239269</gnd>
-                    <wd>Q26279967</wd>
-                    <fullName>Lafond Simon Daniel</fullName>
-                    <roles>
-                        <roleValue gnd="4158107-6" production="true">Stecher</roleValue>
-                    </roles>
-                </value>
-                <value creation="true">
-                    <text>Zehender</text>
-                    <id>Zehender</id>
-                    <gnd>1089376081</gnd>
-                    <wd>Q30304604</wd>
-                    <fullName>Zehender Karl Ludwig</fullName>
-                    <roles>
-                        <roleValue gnd="4200345-3" creation="true">Zeichner</roleValue>
-                    </roles>
-                </value>
-            </values>
-        </KünsterIn>
+        <KünsterIn>Lory père / Lafond / Zehender</KünsterIn>
         <Titel>Recueil de paysages suisses dessinés d'après nature, dans une course par la vallée d'Ober-Hasly et les cantons de Schweitz et d'Ury, par Lory, Lafond et Zehender. en 1797. Accompagné d'un texte pour servir d'itinéraire aux artistes et aux amateurs de voyages pittoresques</Titel>
         <LogistikID>GABRI10680</LogistikID>
         <WerkGruppenID>2017021318324740500</WerkGruppenID>
@@ -135,6 +101,41 @@
         <Sortation>0</Sortation>
         <pID>A10B01EA7708CE4786CD7DAEA1CA1373</pID>
         <record-identifier>SFF_B_1610</record-identifier>
+        <artists>
+            <artist creation="true">
+                <id>Lory père</id>
+                <link>Lory père / Lafond / Zehender</link>
+                <gnd>119240106</gnd>
+                <gnd-name>Lory, Gabriel</gnd-name>
+                <fullName>Gabriel Ludwig Lory</fullName>
+                <singular>False</singular>
+                <roles>
+                    <roleValue role_uri="https://d-nb.info/gnd/4200345-3" creation="true">Zeichner</roleValue>
+                </roles>
+            </artist>
+            <artist production="true">
+                <id>Lafond</id>
+                <link>Lory père / Lafond / Zehender</link>
+                <gnd>136239269</gnd>
+                <gnd-name>Lafond, Daniel</gnd-name>
+                <fullName>Simon Daniel Lafond</fullName>
+                <singular>False</singular>
+                <roles>
+                    <roleValue role_uri="https://d-nb.info/gnd/4138343-6" production="true">Verleger</roleValue>
+                </roles>
+            </artist>
+            <artist production="true">
+                <id>Zehender</id>
+                <link>Lory père / Lafond / Zehender</link>
+                <gnd>1089376081</gnd>
+                <gnd-name>Zehender, Karl Ludwig</gnd-name>
+                <fullName>Karl Ludwig Zehender</fullName>
+                <singular>False</singular>
+                <roles>
+                    <roleValue role_uri="https://d-nb.info/gnd/4138343-6" production="true">Verleger</roleValue>
+                </roles>
+            </artist>
+        </artists>
         <image filename="SFF_B_1610.JPG" width="2624" height="3936">SFF_B_1610</image>
         <dimensions>
             <dimension>
