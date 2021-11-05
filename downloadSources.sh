@@ -2,7 +2,6 @@
 source .env
 REPO=swiss-art-research-net/bso-data
 
-
 download () {
   remotepath=$1
   localpath=$2
