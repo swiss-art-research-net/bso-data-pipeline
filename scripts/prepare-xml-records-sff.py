@@ -13,7 +13,7 @@ inputFile = '../data/source/sff-werke.csv'
 curatedFilesPre = '../data/source/sff-curation-'
 
 # Manually curated list of artists and roles
-artistsFile = '../data/source/sff-curation-artists.csv'
+artistsFile = '../data/source/sff-artists.csv'
 
 # Correspondence between record IDs and image files
 imagesFile = '../data/source/sff-images.csv'
@@ -40,45 +40,43 @@ idsToOutput=str(sys.argv[3]) if len(sys.argv) >3 else False
 # Define functions:
 def addArtistsData(record):
     artistTagName = "KünsterIn"
-    artistValues = record.findall(artistTagName + '/values/value')
+    artistKey = record.find(artistTagName).text
     
+    try:
+        curatedArtistData = [d for d in artistsData if d['link'] == artistKey]
+    except:
+        print("Could not find data for", artistKey)
+        return record
+
     # Curated data is added as is, except if the fields are specified here
-    fieldsToTreatSeparately = ['role', 'role_gnd']
+    fieldsToTreatSeparately = ['role', 'role_uri']
     
     # Context is set as 'production' per default, except for
     # roles specified here, where it is set to 'creation'
     creationContext = ['Zeichner', 'Autor', 'Maler', 'Zeichnerin', 'Kartograph']
     
-    for value in artistValues:
-        artistIdName = value.find('text').text
-        if not artistIdName:
-            return record
-        artistData = False
-        try:
-            allArtistData = [d for d in artistsData if d['id'] == artistIdName]
-        except:
-            print("Could not find artist data for", artistIdName)
-            
-        if len(allArtistData) > 0:
-            for artistData in allArtistData:
-                for key in artistData.keys():
-                    if key not in fieldsToTreatSeparately:
-                        newElement = etree.SubElement(value, key)
-                        newElement.text = artistData[key]
-                if artistData['role']:
-                    roles = artistData['role'].split(', ')
-                    roles_gnd = artistData['role_gnd'].split(', ')
-                    rolesElement = etree.SubElement(value, 'roles')
-                    for i, role in enumerate(roles):
-                        roleElement = etree.SubElement(rolesElement, 'roleValue')
-                        roleElement.set('gnd', roles_gnd[i])
-                        roleElement.text = role
-                        if role in creationContext:
-                            value.set('creation', 'true')
-                            roleElement.set('creation', 'true')
-                        else:
-                            value.set('production', 'true')
-                            roleElement.set('production', 'true')
+    newArtistsTag = etree.SubElement(record, "artists")
+    for curatedArtistRow in curatedArtistData:
+        newArtistTag = etree.SubElement(newArtistsTag, "artist")
+        for key in curatedArtistRow.keys():
+            if key and curatedArtistRow[key]:
+                if key not in fieldsToTreatSeparately:
+                    newTag = etree.SubElement(newArtistTag, cleanKeyForTags(key))
+                    newTag.text = curatedArtistRow[key]
+        if curatedArtistRow['role']:
+            roles = curatedArtistRow['role'].split(', ')
+            role_uris = curatedArtistRow['role_uri'].split(', ')
+            rolesElement = etree.SubElement(newArtistTag, 'roles')
+            for i, role in enumerate(roles):
+                roleElement = etree.SubElement(rolesElement, 'roleValue')
+                roleElement.set('role_uri', role_uris[i])
+                roleElement.text = role
+                if role in creationContext:
+                    newArtistTag.set('creation', 'true')
+                    roleElement.set('creation', 'true')
+                else:
+                    newArtistTag.set('production', 'true')
+                    roleElement.set('production', 'true')
                         
     return record
 
@@ -192,7 +190,6 @@ def convertRowToXMLRecord(row):
 
 def splitMultiValueFields(record):
     multiValueSeparators = {
-        "KünsterIn": "/",
         "Keywords": ",",
         "Ortsbezug": r"\)[,|;]"
     }
