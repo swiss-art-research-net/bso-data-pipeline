@@ -106,9 +106,11 @@
                 <id>Lory père</id>
                 <link>Lory père / Lafond / Zehender</link>
                 <gnd>119240106</gnd>
+                <wd>Q18511605</wd>
                 <gnd-name>Lory, Gabriel</gnd-name>
                 <fullName>Gabriel Ludwig Lory</fullName>
                 <singular>False</singular>
+                <raw>Gabriel Ludwig Lory, Simon Daniel Lafond, Karl Ludwig Zehender (Verleger)</raw>
                 <roles>
                     <roleValue role_uri="https://d-nb.info/gnd/4200345-3" creation="true">Zeichner</roleValue>
                 </roles>
@@ -117,20 +119,24 @@
                 <id>Lafond</id>
                 <link>Lory père / Lafond / Zehender</link>
                 <gnd>136239269</gnd>
+                <wd>Q26279967</wd>
                 <gnd-name>Lafond, Daniel</gnd-name>
                 <fullName>Simon Daniel Lafond</fullName>
                 <singular>False</singular>
+                <raw>Gabriel Ludwig Lory, Simon Daniel Lafond, Karl Ludwig Zehender (Verleger)</raw>
                 <roles>
-                    <roleValue role_uri="https://d-nb.info/gnd/4138343-6" production="true">Verleger</roleValue>
+                    <roleValue role_uri="https://d-nb.info/gnd/4158107-6" production="true">Stecher</roleValue>
                 </roles>
             </artist>
             <artist production="true">
                 <id>Zehender</id>
                 <link>Lory père / Lafond / Zehender</link>
                 <gnd>1089376081</gnd>
+                <wd>Q30304604</wd>
                 <gnd-name>Zehender, Karl Ludwig</gnd-name>
                 <fullName>Karl Ludwig Zehender</fullName>
                 <singular>False</singular>
+                <raw>Gabriel Ludwig Lory, Simon Daniel Lafond, Karl Ludwig Zehender (Verleger)</raw>
                 <roles>
                     <roleValue role_uri="https://d-nb.info/gnd/4138343-6" production="true">Verleger</roleValue>
                 </roles>
