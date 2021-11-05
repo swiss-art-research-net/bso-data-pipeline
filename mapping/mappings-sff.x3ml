@@ -1229,7 +1229,7 @@
                         <type>crm:E39_Actor</type>
                         <instance_generator name="URIwithTypeAndId_hashed">
                             <arg name="type" type="constant">actor</arg>
-                            <arg name="id_HASHED_CONTENTS" type="xpath">if (gnd/text()) then (gnd/text()) else (text/text())</arg>
+                            <arg name="id_HASHED_CONTENTS" type="xpath">if (gnd/text()) then (gnd/text()) else (id/text())</arg>
                         </instance_generator>
                     </entity>
                 </target_node>
@@ -1251,7 +1251,7 @@
                             <type>crm:E33_Linguistic_Object</type>
                             <instance_generator name="URIwithTypeSuptypeAndId_hashed">
                                 <arg name="type" type="constant">actor</arg>
-                                <arg name="id_HASHED_CONTENTS" type="xpath">if (../gnd/text()) then (../gnd/text()) else (../text/text())</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">if (../gnd/text()) then (../gnd/text()) else (../id/text())</arg>
                                 <arg name="subtype" type="constant">appellation</arg>
                             </instance_generator>
                             <label_generator name="Literal">
