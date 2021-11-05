@@ -996,7 +996,7 @@
                                         <constant/>
                                     </instance_info>
                                     <instance_generator name="URIorUUID">
-                                        <arg type="xpath" name="text">@role_uri</arg>
+                                        <arg name="text" type="xpath">@role_uri</arg>
                                     </instance_generator>
                                 </entity>
                             </additional>
@@ -1212,7 +1212,7 @@
                                         <constant/>
                                     </instance_info>
                                     <instance_generator name="URIorUUID">
-                                        <arg type="xpath" name="text">@role_uri</arg>
+                                        <arg name="text" type="xpath">@role_uri</arg>
                                     </instance_generator>
                                 </entity>
                             </additional>
@@ -1246,7 +1246,7 @@
                 <range>
                     <source_node>fullName</source_node>
                     <target_node>
-                        <entity>
+                        <entity variable="artist_name">
                             <type>crm:E41_Appellation</type>
                             <type>crm:E33_Linguistic_Object</type>
                             <instance_generator name="URIwithTypeSuptypeAndId_hashed">
