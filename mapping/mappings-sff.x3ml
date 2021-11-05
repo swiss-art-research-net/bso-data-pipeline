@@ -834,7 +834,7 @@
         </mapping>
         <mapping>
             <domain>
-                <source_node>/collection/record/KünsterIn/values/value</source_node>
+                <source_node>/collection/record/artists/artist</source_node>
                 <target_node>
                     <if>
                         <equals value="true">@creation</equals>
@@ -843,7 +843,7 @@
                         <type>crm:E65_Creation</type>
                         <instance_generator name="URIwithTypeSubtypeAndId">
                             <arg name="type" type="constant">artwork</arg>
-                            <arg name="id" type="xpath">../../../record-identifier/text()</arg>
+                            <arg name="id" type="xpath">../../record-identifier/text()</arg>
                             <arg name="subtype" type="constant">creation</arg>
                         </instance_generator>
                     </entity>
@@ -852,20 +852,20 @@
             <link>
                 <path>
                     <source_relation>
-                        <relation>text</relation>
+                        <relation>fullName</relation>
                     </source_relation>
                     <target_relation>
                         <relationship>crm:P14_carried_out_by</relationship>
                     </target_relation>
                 </path>
                 <range>
-                    <source_node>text</source_node>
+                    <source_node>fullName</source_node>
                     <target_node>
                         <entity>
                             <type>crm:E39_Actor</type>
                             <instance_generator name="URIwithTypeAndId_hashed">
                                 <arg name="type" type="constant">actor</arg>
-                                <arg name="id_HASHED_CONTENTS" type="xpath">if (../gnd/text()) then (../gnd/text()) else text()</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">if (../gnd/text()) then (../gnd/text()) else ../id/text()</arg>
                             </instance_generator>
                             <label_generator name="Literal">
                                 <arg name="text" type="xpath">text()</arg>
@@ -891,7 +891,7 @@
                             <type>crm:E65_Creation</type>
                             <instance_generator name="URIwithTypeSubtypeIdAnd1Level_hashed">
                                 <arg name="type" type="constant">artwork</arg>
-                                <arg name="id" type="xpath">../../../../record-identifier/text()</arg>
+                                <arg name="id" type="xpath">../../../record-identifier/text()</arg>
                                 <arg name="subtype" type="constant">subcreation</arg>
                                 <arg name="level1" type="xpath">text()</arg>
                             </instance_generator>
@@ -902,7 +902,7 @@
         </mapping>
         <mapping>
             <domain>
-                <source_node>/collection/record/KünsterIn/values/value/id</source_node>
+                <source_node>/collection/record/artists/artist/id</source_node>
                 <target_node>
                     <if>
                         <equals value="true">../@creation</equals>
@@ -911,7 +911,7 @@
                         <type>crm:E65_Creation</type>
                         <instance_generator name="URIwithTypeSubtypeIdAnd1Level_hashed">
                             <arg name="type" type="constant">artwork</arg>
-                            <arg name="id" type="xpath">../../../../record-identifier/text()</arg>
+                            <arg name="id" type="xpath">../../../record-identifier/text()</arg>
                             <arg name="subtype" type="constant">subcreation</arg>
                             <arg name="level1" type="xpath">text()</arg>
                         </instance_generator>
@@ -943,7 +943,7 @@
         </mapping>
         <mapping>
             <domain>
-                <source_node>/collection/record/KünsterIn/values/value/roles/roleValue</source_node>
+                <source_node>/collection/record/artists/artist/roles/roleValue</source_node>
                 <target_node>
                     <if>
                         <and>
@@ -959,7 +959,7 @@
                         <type>crm:E65_Creation</type>
                         <instance_generator name="URIwithTypeSubtypeIdAnd1Level_hashed">
                             <arg name="type" type="constant">artwork</arg>
-                            <arg name="id" type="xpath">../../../../../record-identifier/text()</arg>
+                            <arg name="id" type="xpath">../../../../record-identifier/text()</arg>
                             <arg name="subtype" type="constant">subcreation</arg>
                             <arg name="level1" type="xpath">../../id/text()</arg>
                         </instance_generator>
@@ -995,8 +995,8 @@
                                     <instance_info>
                                         <constant/>
                                     </instance_info>
-                                    <instance_generator name="URIwithGndId">
-                                        <arg name="id" type="xpath">@gnd</arg>
+                                    <instance_generator name="URIorUUID">
+                                        <arg type="xpath" name="text">@role_uri</arg>
                                     </instance_generator>
                                 </entity>
                             </additional>
@@ -1050,7 +1050,7 @@
         </mapping>
         <mapping>
             <domain>
-                <source_node>/collection/record/KünsterIn/values/value</source_node>
+                <source_node>/collection/record/artists/artist</source_node>
                 <target_node>
                     <if>
                         <equals value="true">@production</equals>
@@ -1059,7 +1059,7 @@
                         <type>crm:E12_Production</type>
                         <instance_generator name="URIwithTypeSubtypeAndId">
                             <arg name="type" type="constant">artwork</arg>
-                            <arg name="id" type="xpath">../../../record-identifier/text()</arg>
+                            <arg name="id" type="xpath">../../record-identifier/text()</arg>
                             <arg name="subtype" type="constant">production</arg>
                         </instance_generator>
                     </entity>
@@ -1068,20 +1068,20 @@
             <link>
                 <path>
                     <source_relation>
-                        <relation>text</relation>
+                        <relation>fullName</relation>
                     </source_relation>
                     <target_relation>
                         <relationship>crm:P14_carried_out_by</relationship>
                     </target_relation>
                 </path>
                 <range>
-                    <source_node>text</source_node>
+                    <source_node>fullName</source_node>
                     <target_node>
                         <entity>
                             <type>crm:E39_Actor</type>
                             <instance_generator name="URIwithTypeAndId_hashed">
                                 <arg name="type" type="constant">actor</arg>
-                                <arg name="id_HASHED_CONTENTS" type="xpath">if (../gnd/text()) then (../gnd/text()) else text()</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">if (../gnd/text()) then (../gnd/text()) else ../id/text()</arg>
                             </instance_generator>
                             <label_generator name="Literal">
                                 <arg name="text" type="xpath">text()</arg>
@@ -1107,7 +1107,7 @@
                             <type>crm:E12_Production</type>
                             <instance_generator name="URIwithTypeSubtypeIdAnd1Level_hashed">
                                 <arg name="type" type="constant">artwork</arg>
-                                <arg name="id" type="xpath">../../../../record-identifier/text()</arg>
+                                <arg name="id" type="xpath">../../../record-identifier/text()</arg>
                                 <arg name="subtype" type="constant">subproduction</arg>
                                 <arg name="level1" type="xpath">text()</arg>
                             </instance_generator>
@@ -1118,7 +1118,7 @@
         </mapping>
         <mapping>
             <domain>
-                <source_node>/collection/record/KünsterIn/values/value/id</source_node>
+                <source_node>/collection/record/artists/artist/id</source_node>
                 <target_node>
                     <if>
                         <equals value="true">../@production</equals>
@@ -1127,7 +1127,7 @@
                         <type>crm:E12_Production</type>
                         <instance_generator name="URIwithTypeSubtypeIdAnd1Level_hashed">
                             <arg name="type" type="constant">artwork</arg>
-                            <arg name="id" type="xpath">../../../../record-identifier/text()</arg>
+                            <arg name="id" type="xpath">../../../record-identifier/text()</arg>
                             <arg name="subtype" type="constant">subproduction</arg>
                             <arg name="level1" type="xpath">text()</arg>
                         </instance_generator>
@@ -1159,7 +1159,7 @@
         </mapping>
         <mapping>
             <domain>
-                <source_node>/collection/record/KünsterIn/values/value/roles/roleValue</source_node>
+                <source_node>/collection/record/artists/artist/roles/roleValue</source_node>
                 <target_node>
                     <if>
                         <and>
@@ -1175,7 +1175,7 @@
                         <type>crm:E12_Production</type>
                         <instance_generator name="URIwithTypeSubtypeIdAnd1Level_hashed">
                             <arg name="type" type="constant">artwork</arg>
-                            <arg name="id" type="xpath">../../../../../record-identifier/text()</arg>
+                            <arg name="id" type="xpath">../../../../record-identifier/text()</arg>
                             <arg name="subtype" type="constant">subproduction</arg>
                             <arg name="level1" type="xpath">../../id/text()</arg>
                         </instance_generator>
@@ -1211,8 +1211,8 @@
                                     <instance_info>
                                         <constant/>
                                     </instance_info>
-                                    <instance_generator name="URIwithGndId">
-                                        <arg name="id" type="xpath">@gnd</arg>
+                                    <instance_generator name="URIorUUID">
+                                        <arg type="xpath" name="text">@role_uri</arg>
                                     </instance_generator>
                                 </entity>
                             </additional>
@@ -1223,7 +1223,7 @@
         </mapping>
         <mapping>
             <domain>
-                <source_node>/collection/record/KünsterIn/values/value</source_node>
+                <source_node>/collection/record/artists/artist</source_node>
                 <target_node>
                     <entity>
                         <type>crm:E39_Actor</type>
@@ -1283,65 +1283,7 @@
                                     </instance_info>
                                     <instance_generator name="URIwithTypeSubtypeAndId">
                                         <arg name="type" type="constant">artwork</arg>
-                                        <arg name="id" type="xpath">../../../../record-identifier/text()</arg>
-                                        <arg name="subtype" type="constant">meta</arg>
-                                    </instance_generator>
-                                </entity>
-                            </additional>
-                        </entity>
-                    </target_node>
-                </range>
-            </link>
-            <link>
-                <path>
-                    <source_relation>
-                        <relation>text</relation>
-                    </source_relation>
-                    <target_relation>
-                        <relationship>crm:P1_is_identified_by</relationship>
-                    </target_relation>
-                </path>
-                <range>
-                    <source_node>text</source_node>
-                    <target_node>
-                        <entity variable="actor_name">
-                            <type>crm:E41_Appellation</type>
-                            <type>crm:E33_Linguistic_Object</type>
-                            <instance_generator name="URIwithTypeSuptypeAndId_hashed">
-                                <arg name="type" type="constant">actor</arg>
-                                <arg name="id_HASHED_CONTENTS" type="xpath">if (../gnd/text()) then (../gnd/text()) else (text())</arg>
-                                <arg name="subtype" type="constant">label</arg>
-                            </instance_generator>
-                            <label_generator name="Literal">
-                                <arg name="text" type="xpath">text()</arg>
-                                <arg name="language" type="constant"/>
-                            </label_generator>
-                            <additional>
-                                <relationship>crm:P2_has_type</relationship>
-                                <entity>
-                                    <type>crm:E55_Type</type>
-                                    <instance_info>
-                                        <constant/>
-                                    </instance_info>
-                                    <instance_generator name="URIwithAatId">
-                                        <arg name="id" type="constant">300266386</arg>
-                                    </instance_generator>
-                                    <label_generator name="Constant">
-                                        <arg name="text" type="constant">personal name</arg>
-                                        <arg name="language" type="constant"/>
-                                    </label_generator>
-                                </entity>
-                            </additional>
-                            <additional>
-                                <relationship>crm:P70i_is_documented_in</relationship>
-                                <entity>
-                                    <type>crm:E31_Document</type>
-                                    <instance_info>
-                                        <constant/>
-                                    </instance_info>
-                                    <instance_generator name="URIwithTypeSubtypeAndId">
-                                        <arg name="type" type="constant">artwork</arg>
-                                        <arg name="id" type="xpath">../../../../record-identifier/text()</arg>
+                                        <arg name="id" type="xpath">../../../record-identifier/text()</arg>
                                         <arg name="subtype" type="constant">meta</arg>
                                     </instance_generator>
                                 </entity>
