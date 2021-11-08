@@ -33,14 +33,9 @@ def getMetadataForObject(obj):
     }
     """)
 
-    namespaces = """
-    PREFIX aat: <http://vocab.getty.edu/aat/>
-    PREFIX crmdig: <http://www.ics.forth.gr/isl/CRMdig/>
-    PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
-    PREFIX la: <https://linked.art/ns/terms/>
-    PREFIX prov: <http://www.w3.org/ns/prov#>
-    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-    """
+    namespaces = ""
+    for key in model['namespaces'].keys():
+        namespaces += "PREFIX " + key + ": <" + model['namespaces'][key] + ">\n"
     
     subject = obj['subject']
     for field in fieldsToAdd:
