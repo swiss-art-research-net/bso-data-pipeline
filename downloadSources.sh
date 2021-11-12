@@ -50,6 +50,7 @@ download "data/sff/sff-artists.csv" "data/source/sff-artists.csv"
 
 download "data/sari/prefLabels.trig" "data/ttl/additional/prefLabels.trig"
 download "data/sari/zbzTypeLabels.trig" "data/ttl/additional/zbzTypeLabels.trig"
+download "data/sari/datasetMetadata.trig" "data/ttl/additional/datasetMetadata.trig"
 download "data/sari/smapshot-classifications.trig" "data/ttl/additional/smapshot-classifications.trig"
 
 # Image regions need only be ingested on first run. When re-ingesting them later, manually created/corrected image regions may be overwritten
