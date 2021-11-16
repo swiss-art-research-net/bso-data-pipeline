@@ -89,8 +89,25 @@ If the task is already up to date, it will not run. To force a task to run, type
 
 ## Troubleshooting
 
+### Missing BSO App
+
 If the BSO app is missing, you might have cloned the repository without submodules. To pull the submodules after cloning the repository, run
 ```
 git submodule init
 git submodule update
+```
+
+### Problems saving forms
+
+If forms do not save correctly, or regions cannot be drawn or deleted, it might be because a form container is missing. Create a new form container by executing the following SPARQL query:
+
+```
+INSERT {
+    GRAPH <http://www.metaphacts.com/ontologies/platform#formContainer/context> {
+        <http://www.metaphacts.com/ontologies/platform#rootContainer> <http://www.w3.org/ns/ldp#contains> <http://www.metaphacts.com/ontologies/platform#formContainer> .
+        <http://www.metaphacts.com/ontologies/platform#formContainer> a <http://www.w3.org/ns/ldp#Container>,
+                                                                     <http://www.w3.org/ns/ldp#Resource>,
+                                                                     <http://www.w3.org/ns/prov#Entity> .
+    }
+} WHERE {}
 ```
