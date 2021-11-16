@@ -45,22 +45,25 @@ def getMetadataForObject(obj):
             result = sparqlResultToDict(sparql.query().convert())
             if result:
                 # might be several values
-                value = result[0]['value']
-                if not 'label' in result and field['xsdDatatype'] == 'xsd:anyURI':
-                    sparql.setQuery(labelQueryTemplate.substitute(uri=value))
-                    labelResult = sparqlResultToDict(sparql.query().convert())
-                    try:
-                        label = labelResult[0]['label']
-                    except:
-                        label = False
-                else:
-                    label = result[0]['value']
+                valueLabels = []
+                for row in result:
+                    value = row['value']
+                    if not 'label' in result and field['xsdDatatype'] == 'xsd:anyURI':
+                        sparql.setQuery(labelQueryTemplate.substitute(uri=value))
+                        labelResult = sparqlResultToDict(sparql.query().convert())
+                        try:
+                            label = labelResult[0]['label']
+                        except:
+                            label = False
+                    else:
+                        label = result[0]['value']
+                    valueLabels.append(label)
                 metadata.append({
                     "label": {
                         "none": [field['label']]
                     },
                     "value": {
-                        "none": [label]
+                        "none": [', '.join(valueLabels)]
                     }
                 })
     return metadata
