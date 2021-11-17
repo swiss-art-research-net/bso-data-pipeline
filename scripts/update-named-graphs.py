@@ -76,7 +76,7 @@ def performUpdate(options):
                 if result:
                     graphsToUpdate.append(graphPair[0])
                     count += 1
-        print("%d graph%s will be overwritten" % (count, "s" if count > 1 else ""))
+        print("%d graph%s will be overwritten" % (count, "s" if count == 1 else ""))
     else:
         graphsToUpdate += [d[0] for d in graphs['changed']]
             
