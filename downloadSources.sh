@@ -53,6 +53,4 @@ download "data/sari/zbzTypeLabels.trig" "data/ttl/additional/zbzTypeLabels.trig"
 download "data/sari/datasetMetadata.trig" "data/ttl/additional/datasetMetadata.trig"
 download "data/sari/smapshot-classifications.trig" "data/ttl/additional/smapshot-classifications.trig"
 
-# Image regions need only be ingested on first run. When re-ingesting them later, manually created/corrected image regions may be overwritten
-#
-# download "data/sari/imageRegions.trig" "data/ttl/additional/imageRegions.trig"
+download "data/sari/imageRegions.trig" "data/graphs/imageRegions.trig"
