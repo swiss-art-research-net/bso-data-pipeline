@@ -1,3 +1,20 @@
+"""
+Script to ingest named graphs from a Trig file into a SPARQL endpoint.
+An update condition can be specified as an ASK query. Only graphs that match the ASK query will be updated with data from the Trig file.
+Graphs that do not match the ASK query will be left unchanged
+
+Arguments:
+--inputfile: The Trig file to ingest
+--endpoint: The SPARQL endpoint
+--updateCondition (optional): An ASK query to determine which graphs should be updated
+
+Example:
+python update-named-graphs.py \
+    --inputfile ./graphs/data.trig \
+    --endpoint http://localhost:8080/blazegraph/sparql \
+    --updateCondition "ASK { ?s <http://www.cidoc-crm.org/cidoc-crm/P33_used_specific_technique> <https://github.com/swiss-art-research-net/bso-image-segmentation> .}"
+"""
+
 import requests
 import sys
 from urllib.parse import quote_plus as urlencode
