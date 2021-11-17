@@ -273,6 +273,8 @@ tasks:
   
   update-image-regions:
     desc: Updates the image regions from the provided Trig file. Regions that have been manually updated will are left unchanged
+    sources:
+      - /data/graphs/imageRegions.trig
     vars:
       INPUTFILE: /data/graphs/imageRegions.trig
       UPDATE_CONDITION: |
