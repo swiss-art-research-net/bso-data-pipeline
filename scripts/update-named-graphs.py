@@ -82,7 +82,6 @@ def performUpdate(options):
             
     # Perform update
     for g in tqdm(graphsToUpdate):
-        # TODO: Optimise by ingesting several graphs at once
         putGraph(g, endpoint)
 
 def putGraph(context, endpoint):
