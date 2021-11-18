@@ -32,12 +32,11 @@ def performUpdate(options):
     headers = {'Accept': 'text/turtle'}
 
     # Query the endpoint and determine which graphs are new, changed, or unchanged
-    headers = {'Accept': 'text/turtle'}
-
     graphs= {
         'new': [],
         'changed': [],
-        'unchanged': []}
+        'unchanged': []
+    }
 
     queryTemplate = """
     CONSTRUCT { ?s ?p ?o } WHERE { GRAPH <%s> { ?s ?p ?o }}
@@ -60,6 +59,7 @@ def performUpdate(options):
                 print(r.text)
 
     # Output statistics:
+    print("\nGraphs to be updated:")
     print(len(graphs['new']), "new ")
     print(len(graphs['changed']), "updated")
     print(len(graphs['unchanged']), "unchanged")
@@ -82,6 +82,7 @@ def performUpdate(options):
             
     # Perform update
     for g in tqdm(graphsToUpdate):
+        # TODO: Optimise by ingesting several graphs at once
         putGraph(g, endpoint)
 
 def putGraph(context, endpoint):
