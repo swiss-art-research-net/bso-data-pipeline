@@ -6,7 +6,7 @@ Graphs that do not match the ASK query will be left unchanged
 Arguments:
 --inputfile: The Trig file to ingest
 --endpoint: The SPARQL endpoint
---updatecondition (optional): An ASK query to determine which graphs should be updated
+--updatecondition (optional): An ASK query to determine which graphs should be updated. Only graphs at the endpoint for which the query returns true will be overwritten with data from the input file
 
 Example:
 python update-named-graphs.py \
