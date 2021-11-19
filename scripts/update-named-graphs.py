@@ -62,10 +62,10 @@ def performUpdate(options):
                 print(r.text)
 
     # Output statistics:
-    print("\n\nComparison Result:")
-    print("%d graph%s %s not exist at the endpoint and will be added" % (len(graphs['new']), "s" if len(graphs['new']) > 1 else "", "do" if len(graphs['new']) > 1 else "does"))
-    print("%d graph%s already exist%s but %s different in the input file" % (len(graphs['changed']), "s" if len(graphs['changed']) > 1 else "", "" if len(graphs['changed']) > 1 else "s", "are" if len(graphs['changed']) > 1 else "is"))
-    print("%d graph%s %s identical in both the input file and endpoint" % (len(graphs['unchanged']), "s" if len(graphs['unchanged']) > 1 else "", "are" if len(graphs['unchanged']) > 1 else "is"))
+    print("\nComparison Result:")
+    print("%d graph%s %s not exist at the endpoint and will be added" % (len(graphs['new']), "" if len(graphs['new']) == 1 else "s", "does" if len(graphs['new']) == 1 else "do"))
+    print("%d graph%s already exist%s but %s different in the input file" % (len(graphs['changed']), "" if len(graphs['changed']) == 1 else "s", "s" if len(graphs['changed']) == 1 else "", "is" if len(graphs['changed']) == 1 else "are"))
+    print("%d graph%s %s identical in both the input file and endpoint" % (len(graphs['unchanged']), "" if len(graphs['unchanged']) == 1 else "s", "is" if len(graphs['unchanged']) == 1 else "are"))
 
     # All new graphs should be included in the update
     graphsToUpdate = [d[0] for d in graphs['new']]
@@ -79,7 +79,7 @@ def performUpdate(options):
                 if result:
                     graphsToUpdate.append(graphPair[0])
                     count += 1
-        print("\n%d out of %d graph%s will be overwritten based on the update condition" % (count, len(graphs['changed']), "" if count == 1 else "s"))
+        print("\n%d out of %d graph%s will be overwritten based on the update condition" % (count, len(graphs['changed']), "" if len(graphs['changed']) == 1 else "s"))
     else:
         graphsToUpdate += [d[0] for d in graphs['changed']]
             
@@ -104,7 +104,11 @@ if __name__ == "__main__":
     options = {}
     for i, arg in enumerate(sys.argv[1:]):
         if arg.startswith("--"):
-            options[arg[2:]] = sys.argv[i + 2]
+            if not sys.argv[i + 2].startswith("--"):
+                options[arg[2:]] = sys.argv[i + 2]
+            else:
+                print("Malformed arguments")
+                sys.exit(1)
     if not 'endpoint' in options:
         print("A SPARQL endpoint needs to be specified via the --endpoint argument")
         sys.exit(1)
