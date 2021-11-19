@@ -8,6 +8,9 @@ Arguments:
 --endpoint: The SPARQL endpoint
 --updatecondition (optional): An ASK query to determine which graphs should be updated.
 
+--limit (optional, for debugging): The maximum number of graphs to process
+--offset (optional, for debugging): The offset to start processing at
+
 Example:
 python update-named-graphs.py \
     --inputfile ./graphs/data.trig \
@@ -25,6 +28,8 @@ def performUpdate(options):
     endpoint = options['endpoint']
     inputFile = options['inputfile']
     updateCondition = options['updatecondition']
+    limit = int(options['limit'])
+    offset = int(options['offset'])
 
     inputData = Dataset()
 
@@ -46,20 +51,20 @@ def performUpdate(options):
     """
 
     print("Comparing with named graphs at endpoint %s" % endpoint)
-    for context in tqdm(inputData.contexts()):
-        if context.identifier.startswith("http"):
-            r = requests.get(endpoint, headers=headers, params={"query": queryTemplate % context.identifier})
-            if r.ok:
-                remoteGraph = Graph()
-                remoteGraph.parse(data=r.text, format='turtle')
-                if not len(remoteGraph):
-                    graphs['new'].append((context, False))
-                elif compare.to_isomorphic(context) == compare.to_isomorphic(remoteGraph):
-                    graphs['unchanged'].append((context, remoteGraph))
-                else:
-                    graphs['changed'].append((context, remoteGraph))
+    for context in tqdm([d for d in list(inputData.contexts()) if d.identifier.startswith("http")][offset:offset+limit]):
+        r = requests.get(endpoint, headers=headers, params={"query": queryTemplate % context.identifier})
+        if r.ok:
+            remoteGraph = Graph()
+            remoteGraph.parse(data=r.text, format='turtle')
+            if not len(remoteGraph):
+                graphs['new'].append((context, False))
+            elif compare.to_isomorphic(context) == compare.to_isomorphic(remoteGraph):
+                graphs['unchanged'].append((context, remoteGraph))
             else:
-                print(r.text)
+                graphs['changed'].append((context, remoteGraph))
+
+        else:
+            print(r.text)
 
     # Output statistics:
     print("\nComparison Result:")
@@ -89,7 +94,7 @@ def performUpdate(options):
 
 def putGraph(context, endpoint):
     # Remove old graph
-    requests.get(endpoint, params={"query": "DROP GRAPH <%s>" % context.identifier})
+    r = requests.post(endpoint, params={"update": "DROP GRAPH <%s>" % context.identifier})
     
     # Add new graph
     data = context.serialize(format='turtle')
@@ -117,4 +122,8 @@ if __name__ == "__main__":
         sys.exit(1)
     if not 'updatecondition' in options:
         options['updatecondition'] = False
+    if not 'limit' in options:
+        options['limit'] = 999999
+    if not 'offset' in options:
+        options['offset'] = 0
     performUpdate(options)
