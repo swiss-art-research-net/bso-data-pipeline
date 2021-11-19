@@ -27,7 +27,10 @@ def performUpdate(options):
     updateCondition = options['updateCondition']
 
     inputData = Dataset()
+
+    print("Parsing input data...")
     devnull = inputData.parse(inputFile, format='trig')
+    print("Found %d named graphs" % len([d for d in list(inputData.contexts()) if d.identifier.startswith("http")]))
 
     headers = {'Accept': 'text/turtle'}
 
@@ -42,7 +45,7 @@ def performUpdate(options):
     CONSTRUCT { ?s ?p ?o } WHERE { GRAPH <%s> { ?s ?p ?o }}
     """
 
-    print("Comparing graphs")
+    print("Comparing with named graphs at endpoint %s" % endpoint)
     for context in tqdm(inputData.contexts()):
         if context.identifier.startswith("http"):
             r = requests.get(endpoint, headers=headers, params={"query": queryTemplate % context.identifier})
@@ -59,10 +62,10 @@ def performUpdate(options):
                 print(r.text)
 
     # Output statistics:
-    print("\nGraphs to be updated:")
-    print(len(graphs['new']), "new ")
-    print(len(graphs['changed']), "updated")
-    print(len(graphs['unchanged']), "unchanged")
+    print("\n\nComparison Result:")
+    print("%d graph%s %s not exist at the endpoint and will be added" % (len(graphs['new']), "s" if len(graphs['new']) > 1 else "", "do" if len(graphs['new']) > 1 else "does"))
+    print("%d graph%s already exist%s but %s different in the input file" % (len(graphs['changed']), "s" if len(graphs['changed']) > 1 else "", "" if len(graphs['changed']) > 1 else "s", "are" if len(graphs['changed']) > 1 else "is"))
+    print("%d graph%s %s identical in both the input file and endpoint" % (len(graphs['unchanged']), "s" if len(graphs['unchanged']) > 1 else "", "are" if len(graphs['unchanged']) > 1 else "is"))
 
     # All new graphs should be included in the update
     graphsToUpdate = [d[0] for d in graphs['new']]
@@ -76,7 +79,7 @@ def performUpdate(options):
                 if result:
                     graphsToUpdate.append(graphPair[0])
                     count += 1
-        print("%d graph%s will be overwritten" % (count, "s" if count == 1 else ""))
+        print("\n%d out of %d graph%s will be overwritten based on the update condition" % (count, len(graphs['changed']), "" if count == 1 else "s"))
     else:
         graphsToUpdate += [d[0] for d in graphs['changed']]
             
