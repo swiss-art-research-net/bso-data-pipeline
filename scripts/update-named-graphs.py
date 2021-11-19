@@ -1,12 +1,12 @@
 """
 Script to ingest named graphs from a Trig file into a SPARQL endpoint.
-An update condition can be specified as an ASK query. Only graphs that match the ASK query will be updated with data from the Trig file.
-Graphs that do not match the ASK query will be left unchanged
+An update condition can be specified as an ASK query. Only graphs at the endpoint that match the ASK query will be updated with data from the Trig file.
+Graphs that do not match the ASK query will be left unchanged.
 
 Arguments:
 --inputfile: The Trig file to ingest
 --endpoint: The SPARQL endpoint
---updatecondition (optional): An ASK query to determine which graphs should be updated. Only graphs at the endpoint for which the query returns true will be overwritten with data from the input file
+--updatecondition (optional): An ASK query to determine which graphs should be updated.
 
 Example:
 python update-named-graphs.py \
