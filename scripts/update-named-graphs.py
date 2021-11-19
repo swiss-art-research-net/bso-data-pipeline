@@ -6,13 +6,13 @@ Graphs that do not match the ASK query will be left unchanged
 Arguments:
 --inputfile: The Trig file to ingest
 --endpoint: The SPARQL endpoint
---updateCondition (optional): An ASK query to determine which graphs should be updated
+--updatecondition (optional): An ASK query to determine which graphs should be updated
 
 Example:
 python update-named-graphs.py \
     --inputfile ./graphs/data.trig \
     --endpoint http://localhost:8080/blazegraph/sparql \
-    --updateCondition "ASK { ?s <http://www.cidoc-crm.org/cidoc-crm/P33_used_specific_technique> <https://github.com/swiss-art-research-net/bso-image-segmentation> .}"
+    --updatecondition "ASK { ?s <http://www.cidoc-crm.org/cidoc-crm/P33_used_specific_technique> <https://github.com/swiss-art-research-net/bso-image-segmentation> .}"
 """
 
 import requests
@@ -24,7 +24,7 @@ from tqdm import tqdm
 def performUpdate(options):
     endpoint = options['endpoint']
     inputFile = options['inputfile']
-    updateCondition = options['updateCondition']
+    updateCondition = options['updatecondition']
 
     inputData = Dataset()
 
@@ -105,4 +105,12 @@ if __name__ == "__main__":
     for i, arg in enumerate(sys.argv[1:]):
         if arg.startswith("--"):
             options[arg[2:]] = sys.argv[i + 2]
+    if not 'endpoint' in options:
+        print("A SPARQL endpoint needs to be specified via the --endpoint argument")
+        sys.exit(1)
+    if not 'inputfile' in options:
+        print("An input file needs to be specified via the --inputfile argument")
+        sys.exit(1)
+    if not 'updatecondition' in options:
+        options['updatecondition'] = False
     performUpdate(options)

@@ -285,4 +285,4 @@ tasks:
               crm:P33_used_specific_technique <https://github.com/swiss-art-research-net/bso-image-segmentation> .
         }
     cmds:
-      - python /scripts/update-named-graphs.py --inputfile {{.INPUTFILE}} --endpoint {{.ENDPOINT}} --updateCondition """{{.UPDATE_CONDITION}}"""
+      - python /scripts/update-named-graphs.py --inputfile {{.INPUTFILE}} --endpoint {{.ENDPOINT}} --updatecondition """{{.UPDATE_CONDITION}}"""
