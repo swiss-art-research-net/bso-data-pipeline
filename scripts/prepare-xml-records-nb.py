@@ -52,7 +52,7 @@ parentIDs = list(set(parentIDs))
 
 for record in records:
     recordID = record.get('Id')
-    image = record.find('.//DataElement[@ElementId="11040"]')
+    image = record.find('DetailData/DataElement[@ElementId="11040"]')
     # If record contains no image and is not a parent of another record, mark as orphan
     if image is None and recordID not in parentIDs:
         orphans.append(recordID)
