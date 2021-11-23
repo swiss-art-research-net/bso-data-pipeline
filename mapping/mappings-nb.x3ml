@@ -395,27 +395,28 @@
             <link>
                 <path>
                     <source_relation>
-                        <relation>DetailData/DataElement</relation>
+                        <relation>DetailData/DataElement/ElementValue</relation>
                     </source_relation>
                     <target_relation>
                         <if>
-                            <equals value="10345">@ElementId</equals>
+                            <equals value="10345">../@ElementId</equals>
                         </if>
                         <relationship>crm:P128_carries</relationship>
                     </target_relation>
                 </path>
                 <range>
-                    <source_node>DetailData/DataElement</source_node>
+                    <source_node>DetailData/DataElement/ElementValue</source_node>
                     <target_node>
                         <entity>
                             <type>crm:E34_Inscription</type>
-                            <instance_generator name="URIwithTypeSubtypeAndId">
+                            <instance_generator name="URIwithTypeSubtypeIdAnd1Level">
                                 <arg name="type" type="constant">artwork</arg>
-                                <arg name="id" type="xpath">../../@RecordIdentifier</arg>
+                                <arg name="id" type="xpath">../../../@RecordIdentifier</arg>
                                 <arg name="subtype" type="constant">caption</arg>
+                                <arg name="level1" type="xpath">@Sequence</arg>
                             </instance_generator>
                             <label_generator name="Literal">
-                                <arg name="text" type="xpath">ElementValue/TextValue/text()</arg>
+                                <arg name="text" type="xpath">TextValue/text()</arg>
                                 <arg name="language" type="constant"/>
                             </label_generator>
                             <additional>
@@ -666,7 +667,8 @@
                         <if>
                             <equals value="11042">@ElementId</equals>
                         </if>
-                        <relationship>crm:P46_is_composed_of</relationship><entity>
+                    <relationship>crm:P46_is_composed_of</relationship>
+                    <entity>
                         <type>crm:E24_Physical_Human-Made_Thing</type>
                         <instance_generator name="URIwithTypeSubtypeIdAnd1Level">
                             <arg name="type" type="constant">artwork</arg>
