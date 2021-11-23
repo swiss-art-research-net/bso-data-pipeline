@@ -48,7 +48,7 @@ def chunker(seq, size):
 
 sparql = SPARQLWrapper(wdEndpoint, agent=agent)    
 
-with open(ttlOutput, 'ab') as outputFile:
+with open(ttlOutput, 'a') as outputFile:
     for batch in tqdm(chunker(wdIdentifiers, batchSizeForRetrieval)):
         query = """
              PREFIX wdt: <http://www.wikidata.org/prop/direct/>
