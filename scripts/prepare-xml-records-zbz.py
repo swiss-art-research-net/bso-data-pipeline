@@ -25,6 +25,7 @@ inputFiles = [
 curatedFilesPre = '../data/source/zbz-curation-'
 manifestDirectory = "../data/manifests/"
 doisFile = '../data/source/zbz-dois.csv'
+correctionsFile = '../data/source/zbz-corrections.csv'
 outputDirectory = "../data/xml/zbz/"
 outputPrefix = "zbz-record-"
 
@@ -125,6 +126,28 @@ def addManifest(record):
     manifestDatafield = etree.SubElement(record, "datafield")
     manifestDatafield.set("tag", "manifest")
     manifestDatafield.text = manifestURL
+    return record
+
+def applyCorrections(record):
+    for correction in corrections:
+        # Find field to be corrected
+        xpath = "./datafield[@tag='%s']/subfield[@code='%s'][text()='%s']" % (correction['tag'], correction['subfield'], correction['value'])
+        fields = record.xpath(xpath)
+        for field in fields:
+            if correction['operation'] == 'remove':
+                # Remove field
+                field.getparent().remove(field)
+            elif correction['operation'] == 'move':
+                # Move field
+                field.getparent().remove(field)
+                # Find existing datafield or create new one of it doesn't exist
+                datafield = record.find("datafield[@tag='%s']" % correction['newTag'])
+                if datafield is None:
+                    datafield = etree.SubElement(record, "datafield")
+                    datafield.set("tag", correction['newTag'])
+                subfield = etree.SubElement(datafield, "subfield")
+                subfield.set("code", correction['newSubfield'])
+                subfield.text = correction['value']
     return record
 
 def convertEDTFdate(date):
@@ -303,6 +326,13 @@ with open(doisFile, 'r') as f:
     for row in reader:
         manifests[row['id']] = row['manifest']
 
+# Read corrections file
+corrections = []
+with open(correctionsFile, 'r') as f:
+    reader = csv.DictReader(f)
+    for row in reader:
+        corrections.append(row)
+
 # Output individual files
 collection = root
 
@@ -313,6 +343,7 @@ if idsToOutput:
 
 for record in tqdm(records[offset:offset + limit]):
     record = addRecordIdentifier(record)
+    record = applyCorrections(record)
     record = splitMultiValueFields(record)
     record = addCuratedData(record)
     record = addTagNumbering(record)
