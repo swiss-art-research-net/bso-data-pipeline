@@ -213,7 +213,7 @@ def addDescriptorIdentifier(record):
     # contains additional whitespace, which can cause same entities to produce
     # different URIs. Therefore, we add an additional tag here with a cleaned
     # version of the IdName
-    recordDescriptors = record.findall("Descriptors/Descriptor")
+    recordDescriptors = record.findall("Descriptors/Descriptor") + record.findall("DetailData/DataElement/Descriptor")
     for d in recordDescriptors:
         idName = d.find("IdName").text
         cleandIdName = idName.replace(" ","")
@@ -297,7 +297,7 @@ def matchDescriptorsWithElementValues(record, externalDescriptors, curatedNames)
             if NFD(name) in NFD(curatedName['Raw']):
                 return curatedName['normalised name']
                 
-        print("Not found ", name)
+        log.append("Not found in curated nanmes: " + name)
         return False
 
     def matchRoleWithCuratedNames(name, curatedNames):
@@ -348,7 +348,7 @@ def matchDescriptorsWithElementValues(record, externalDescriptors, curatedNames)
                     normalisedName = etree.SubElement(value, "NormalisedName")
                     normalisedName.text = matchedName
                 else:
-                    print("Unmatched name in Record", record.get('Id'))
+                    log.append("Unmatched name in Record " + record.get('Id'))
 
                 matchedRoles = matchRoleWithCuratedNames(name, curatedNames)
                 if matchedRoles:
@@ -447,6 +447,9 @@ imageSizes, imageSizesHash = loadImageSizes(imageSizesFile)
 
 externalDescriptors = NBExternalDescriptors(records, externalDescriptorsFile)
 
+# Log
+log = []
+
 # Filter ids to output if argument is set
 if idsToOutput:
     listOfIds = idsToOutput.split(',')
@@ -457,13 +460,13 @@ now = time.time()
 
 for record in tqdm(records[offset:limit]):
     record = addCuratedDataToDescriptors(record, curatedData)
-    record = addCuratedTypeData(record, curatedTypes)
-    record = cleanImageUrls(record)
     record = addImageSizes(record, imageSizes, imageSizesHash)
+    #record = addCuratedTypeData(record, curatedTypes)
     record = processFieldsWithMultipleValues(record)
     record = matchDescriptorsWithElementValues(record, externalDescriptors, curatedNames)
     record = addDescriptorIdentifier(record)
     record = processDates(record)
+    record = cleanImageUrls(record)
 
     # Output each record individually
     collection = etree.XML("<Collection/>")
@@ -478,4 +481,6 @@ for record in tqdm(records[offset:limit]):
 
 later = time.time()
 difference = int(later - now)
+log = list(set(log))
+print("\n".join(log))
 print("Processed %d records in %d seconds" % (len(records), difference))
