@@ -1,4 +1,5 @@
-<Collection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Created="2020-12-01" SchemaName="" xsi:noNamespaceSchemaLocation="scopeExportSchema.xsd">
+<?xml version='1.0' encoding='UTF-8'?>
+<Collection>
   <Record Id="789058" ParentId="545275" Level="Dokument" IdName="EAD-6580   Zürich, Rathaus, Südfassade, vue d'ensemble, 1901 (Dokument)" RecordIdentifier="nb-789058" ParentRecordIdentifier="nb-545275">
     <DetailData>
       <DataElement ElementName="Signatur" ElementId="2" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
@@ -43,6 +44,8 @@
       <DataElement ElementName="Archivalienart" ElementId="17" ElementType="Auswahlliste" ElementTypeId="14">
         <ElementValue Sequence="1">
           <TextValue>Fotografie</TextValue>
+          <aat-id>300046300</aat-id>
+          <gnd-id>4045895-7</gnd-id>
         </ElementValue>
       </DataElement>
       <DataElement ElementName="Ansichtsbild" ElementId="10" ElementType="Bild" ElementTypeId="17">
@@ -113,11 +116,13 @@
       <DataElement ElementName="Farbe" ElementId="11070" ElementType="Auswahlliste" ElementTypeId="14">
         <ElementValue Sequence="1">
           <TextValue>S/W</TextValue>
+          <aat-id>300265434</aat-id>
         </ElementValue>
       </DataElement>
       <DataElement ElementName="Orientierung und Form" ElementId="10372" ElementType="Auswahlliste" ElementTypeId="14">
         <ElementValue Sequence="1">
           <TextValue>Vertikal</TextValue>
+          <aat-id>300343370</aat-id>
         </ElementValue>
       </DataElement>
       <DataElement ElementName="URL Bild in Druckqualität" ElementId="11040" ElementType="Web-Hyperlink" ElementTypeId="11">
@@ -222,6 +227,8 @@
       <DataElement ElementName="Archivalienart" ElementId="17" ElementType="Auswahlliste" ElementTypeId="14">
         <ElementValue Sequence="1">
           <TextValue>Fotografie</TextValue>
+          <aat-id>300046300</aat-id>
+          <gnd-id>4045895-7</gnd-id>
         </ElementValue>
       </DataElement>
       <DataElement ElementName="Ansichtsbild" ElementId="10" ElementType="Bild" ElementTypeId="17">
@@ -292,11 +299,13 @@
       <DataElement ElementName="Farbe" ElementId="11070" ElementType="Auswahlliste" ElementTypeId="14">
         <ElementValue Sequence="1">
           <TextValue>S/W</TextValue>
+          <aat-id>300265434</aat-id>
         </ElementValue>
       </DataElement>
       <DataElement ElementName="Orientierung und Form" ElementId="10372" ElementType="Auswahlliste" ElementTypeId="14">
         <ElementValue Sequence="1">
           <TextValue>Horizontal</TextValue>
+          <aat-id>300311843</aat-id>
         </ElementValue>
       </DataElement>
       <DataElement ElementName="URL Bild in Druckqualität" ElementId="11040" ElementType="Web-Hyperlink" ElementTypeId="11">
@@ -401,6 +410,8 @@
       <DataElement ElementName="Archivalienart" ElementId="17" ElementType="Auswahlliste" ElementTypeId="14">
         <ElementValue Sequence="1">
           <TextValue>Fotografie</TextValue>
+          <aat-id>300046300</aat-id>
+          <gnd-id>4045895-7</gnd-id>
         </ElementValue>
       </DataElement>
       <DataElement ElementName="Ansichtsbild" ElementId="10" ElementType="Bild" ElementTypeId="17">
@@ -471,11 +482,13 @@
       <DataElement ElementName="Farbe" ElementId="11070" ElementType="Auswahlliste" ElementTypeId="14">
         <ElementValue Sequence="1">
           <TextValue>S/W</TextValue>
+          <aat-id>300265434</aat-id>
         </ElementValue>
       </DataElement>
       <DataElement ElementName="Orientierung und Form" ElementId="10372" ElementType="Auswahlliste" ElementTypeId="14">
         <ElementValue Sequence="1">
           <TextValue>Vertikal</TextValue>
+          <aat-id>300343370</aat-id>
         </ElementValue>
       </DataElement>
       <DataElement ElementName="URL Bild in Druckqualität" ElementId="11040" ElementType="Web-Hyperlink" ElementTypeId="11">
@@ -580,6 +593,8 @@
       <DataElement ElementName="Archivalienart" ElementId="17" ElementType="Auswahlliste" ElementTypeId="14">
         <ElementValue Sequence="1">
           <TextValue>Fotografie</TextValue>
+          <aat-id>300046300</aat-id>
+          <gnd-id>4045895-7</gnd-id>
         </ElementValue>
       </DataElement>
       <DataElement ElementName="Ansichtsbild" ElementId="10" ElementType="Bild" ElementTypeId="17">
@@ -650,11 +665,13 @@
       <DataElement ElementName="Farbe" ElementId="11070" ElementType="Auswahlliste" ElementTypeId="14">
         <ElementValue Sequence="1">
           <TextValue>S/W</TextValue>
+          <aat-id>300265434</aat-id>
         </ElementValue>
       </DataElement>
       <DataElement ElementName="Orientierung und Form" ElementId="10372" ElementType="Auswahlliste" ElementTypeId="14">
         <ElementValue Sequence="1">
           <TextValue>Horizontal</TextValue>
+          <aat-id>300311843</aat-id>
         </ElementValue>
       </DataElement>
       <DataElement ElementName="URL Bild in Druckqualität" ElementId="11040" ElementType="Web-Hyperlink" ElementTypeId="11">
@@ -794,6 +811,7 @@
       <DataElement ElementName="Archivalienart" ElementId="17" ElementType="Auswahlliste" ElementTypeId="14">
         <ElementValue Sequence="1">
           <TextValue>Druckgrafik</TextValue>
+          <aat-id>300041273</aat-id>
         </ElementValue>
       </DataElement>
       <DataElement ElementName="Ansichtsbild" ElementId="10" ElementType="Bild" ElementTypeId="17">
@@ -819,6 +837,7 @@
       <DataElement ElementName="Art des Erwerbs" ElementId="10752" ElementType="Auswahlliste" ElementTypeId="14">
         <ElementValue Sequence="1">
           <TextValue>Schenkung</TextValue>
+          <aat-id>300417637</aat-id>
         </ElementValue>
       </DataElement>
       <DataElement ElementName="Erwerbsdatum" ElementId="10754" ElementType="Einzeldatum" ElementTypeId="16">
@@ -849,11 +868,13 @@
       <DataElement ElementName="Farbe" ElementId="11070" ElementType="Auswahlliste" ElementTypeId="14">
         <ElementValue Sequence="1">
           <TextValue>S/W</TextValue>
+          <aat-id>300265434</aat-id>
         </ElementValue>
       </DataElement>
       <DataElement ElementName="Orientierung und Form" ElementId="10372" ElementType="Auswahlliste" ElementTypeId="14">
         <ElementValue Sequence="1">
           <TextValue>Horizontal</TextValue>
+          <aat-id>300311843</aat-id>
         </ElementValue>
       </DataElement>
       <DataElement ElementName="Masse Bild" ElementId="10217" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
@@ -879,6 +900,8 @@
       <DataElement ElementName="Verfahren" ElementId="10483" ElementType="Auswahlliste" ElementTypeId="14">
         <ElementValue Sequence="1">
           <TextValue>Druck</TextValue>
+          <aat-id>300131119</aat-id>
+          <gnd-id>4013083-6</gnd-id>
         </ElementValue>
       </DataElement>
       <DataElement ElementName="Zustand Druckplatte" ElementId="11045" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
@@ -889,16 +912,21 @@
       <DataElement ElementName="Technik Druckgrafik" ElementId="10746" ElementType="Auswahlliste" ElementTypeId="14">
         <ElementValue Sequence="1">
           <TextValue>Radierung</TextValue>
+          <aat-id>300041365</aat-id>
+          <gnd-id>4048166-9</gnd-id>
         </ElementValue>
       </DataElement>
       <DataElement ElementName="Transparenz" ElementId="10358" ElementType="Auswahlliste" ElementTypeId="14">
         <ElementValue Sequence="1">
           <TextValue>Reflektierend</TextValue>
+          <aat-id>300403951</aat-id>
         </ElementValue>
       </DataElement>
       <DataElement ElementName="Trägermaterial" ElementId="10488" ElementType="Auswahlliste" ElementTypeId="14">
         <ElementValue Sequence="1">
           <TextValue>Papier</TextValue>
+          <aat-id>300014109</aat-id>
+          <gnd-id>4044522-7</gnd-id>
         </ElementValue>
       </DataElement>
       <DataElement ElementName="Literaturangabe" ElementId="10211" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
