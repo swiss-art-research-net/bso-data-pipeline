@@ -76,7 +76,7 @@ class NBExternalDescriptors:
             idName = descriptor.find("IdName").text
             if self.removeNonWordCharacters(name) in self.removeNonWordCharacters(idName):
                 if not self.getDescriptorForRecordAndName(recordId, name):
-                    self.addExternalDescriptor(recordId, matchedName, idName)
+                    self.addExternalDescriptor(recordId, name, idName)
                 return descriptor
         
         return False
