@@ -133,7 +133,17 @@
                     </source_relation>
                     <target_relation>
                         <if>
-                            <equals value="2">@ElementId</equals>
+                            <or>
+                                <if>
+                                    <equals value="2">@ElementId</equals>
+                                </if>
+                                <if>
+                                    <equals value="3">@ElementId</equals>
+                                </if>
+                                <if>
+                                    <equals value="10165">@ElementId</equals>
+                                </if>
+                            </or>
                         </if>
                         <relationship>crm:P1_is_identified_by</relationship>
                     </target_relation>
@@ -146,12 +156,29 @@
                             <instance_generator name="URIwithTypeSubtypeAndId">
                                 <arg name="type" type="constant">artwork</arg>
                                 <arg name="id" type="xpath">../../@RecordIdentifier</arg>
-                                <arg name="subtype" type="constant">signature</arg>
+                                <arg name="subtype" type="xpath">replace(lower-case(@ElementName),' ','-')</arg>
                             </instance_generator>
                             <label_generator name="Literal">
                                 <arg name="text" type="xpath">./ElementValue/TextValue/text()</arg>
                                 <arg name="language" type="constant"/>
                             </label_generator>
+                            <additional>
+                                <relationship>crm:P2_has_type</relationship>
+                                <entity>
+                                    <type>crm:E55_Type</type>
+                                    <instance_info>
+                                        <constant/>
+                                    </instance_info>
+                                    <instance_generator name="URIwithTypeAndId">
+                                        <arg name="type" type="constant">type</arg>
+                                        <arg name="id" type="xpath">replace(lower-case(@ElementName),' ','-')</arg>
+                                    </instance_generator>
+                                    <label_generator name="Literal">
+                                        <arg name="text" type="xpath">@ElementName</arg>
+                                        <arg name="language" type="constant"/>
+                                    </label_generator>
+                                </entity>
+                            </additional>
                         </entity>
                     </target_node>
                 </range>
@@ -213,7 +240,14 @@
                     </source_relation>
                     <target_relation>
                         <if>
-                            <equals value="17">@ElementId</equals>
+                            <or>
+                                <if>
+                                    <equals value="17">@ElementId</equals>
+                                </if>
+                                <if>
+                                    <equals value="10358">@ElementId</equals>
+                                </if>
+                            </or>
                         </if>
                         <relationship>crm:P2_has_type</relationship>
                     </target_relation>
@@ -225,7 +259,7 @@
                             <type>crm:E55_Type</type>
                             <instance_generator name="URIwithTypeAndId">
                                 <arg name="type" type="constant">type</arg>
-                                <arg name="id" type="xpath">ElementValue/TextValue/text()</arg>
+                                <arg name="id" type="xpath">lower-case(ElementValue/TextValue/text())</arg>
                             </instance_generator>
                             <label_generator name="Literal">
                                 <arg name="text" type="xpath">ElementValue/TextValue/text()</arg>
@@ -333,36 +367,6 @@
                                 <arg name="id" type="xpath">../../@RecordIdentifier</arg>
                                 <arg name="subtype" type="constant">meta</arg>
                             </instance_generator>
-                        </entity>
-                    </target_node>
-                </range>
-            </link>
-            <link>
-                <path>
-                    <source_relation>
-                        <relation>DetailData/DataElement</relation>
-                    </source_relation>
-                    <target_relation>
-                        <if>
-                            <equals value="10165">@ElementId</equals>
-                        </if>
-                        <relationship>crm:P1_is_identified_by</relationship>
-                    </target_relation>
-                </path>
-                <range>
-                    <source_node>DetailData/DataElement</source_node>
-                    <target_node>
-                        <entity>
-                            <type>crm:E42_Identifier</type>
-                            <instance_generator name="URIwithTypeSubtypeAndId">
-                                <arg name="type" type="constant">artwork</arg>
-                                <arg name="id" type="xpath">../../@RecordIdentifier</arg>
-                                <arg name="subtype" type="constant">documentNumber</arg>
-                            </instance_generator>
-                            <label_generator name="Literal">
-                                <arg name="text" type="xpath">./ElementValue/TextValue/text()</arg>
-                                <arg name="language" type="constant"/>
-                            </label_generator>
                         </entity>
                     </target_node>
                 </range>
@@ -667,37 +671,37 @@
                         <if>
                             <equals value="11042">@ElementId</equals>
                         </if>
-                    <relationship>crm:P46_is_composed_of</relationship>
-                    <entity>
-                        <type>crm:E24_Physical_Human-Made_Thing</type>
-                        <instance_generator name="URIwithTypeSubtypeIdAnd1Level">
-                            <arg name="type" type="constant">artwork</arg>
-                            <arg name="id" type="xpath">../../@RecordIdentifier</arg>
-                            <arg name="subtype" type="constant">part</arg>
-                            <arg name="level1" type="xpath">@ElementId</arg>
-                        </instance_generator>
-                        <additional>
-                            <relationship>crm:P2_has_type</relationship>
-                            <entity>
-                                <type>crm:E55_Type</type>
-                                <instance_info>
-                                    <constant/>
-                                </instance_info>
-                                <instance_generator name="URIwithAatId">
-                                    <arg name="id" type="constant">300022755</arg>
-                                </instance_generator>
-                                <label_generator name="Literal">
-                                    <arg name="text" type="constant">plate</arg>
-                                    <arg name="language" type="constant">en</arg>
-                                </label_generator>
-                                <label_generator name="Literal">
-                                    <arg name="text" type="constant">Druckplatte</arg>
-                                    <arg name="language" type="constant">de</arg>
-                                </label_generator>
-                            </entity>
-                        </additional>
-                    </entity>
-                    <relationship>crm:P43_has_dimension</relationship>
+                        <relationship>crm:P46_is_composed_of</relationship>
+                        <entity>
+                            <type>crm:E24_Physical_Human-Made_Thing</type>
+                            <instance_generator name="URIwithTypeSubtypeIdAnd1Level">
+                                <arg name="type" type="constant">artwork</arg>
+                                <arg name="id" type="xpath">../../@RecordIdentifier</arg>
+                                <arg name="subtype" type="constant">part</arg>
+                                <arg name="level1" type="xpath">@ElementId</arg>
+                            </instance_generator>
+                            <additional>
+                                <relationship>crm:P2_has_type</relationship>
+                                <entity>
+                                    <type>crm:E55_Type</type>
+                                    <instance_info>
+                                        <constant/>
+                                    </instance_info>
+                                    <instance_generator name="URIwithAatId">
+                                        <arg name="id" type="constant">300022755</arg>
+                                    </instance_generator>
+                                    <label_generator name="Literal">
+                                        <arg name="text" type="constant">plate</arg>
+                                        <arg name="language" type="constant">en</arg>
+                                    </label_generator>
+                                    <label_generator name="Literal">
+                                        <arg name="text" type="constant">Druckplatte</arg>
+                                        <arg name="language" type="constant">de</arg>
+                                    </label_generator>
+                                </entity>
+                            </additional>
+                        </entity>
+                        <relationship>crm:P43_has_dimension</relationship>
                     </target_relation>
                 </path>
                 <range>
@@ -1220,7 +1224,23 @@
                     </source_relation>
                     <target_relation>
                         <if>
-                            <equals value="10483">@ElementId</equals>
+                            <or>
+                                <if>
+                                    <equals value="10483">@ElementId</equals>
+                                </if>
+                                <if>
+                                    <equals value="11059">@ElementId</equals>
+                                </if>
+                                <if>
+                                    <equals value="10745">@ElementId</equals>
+                                </if>
+                                <if>
+                                    <equals value="10746">@ElementId</equals>
+                                </if>
+                                <if>
+                                    <equals value="10114">@ElementId</equals>
+                                </if>
+                            </or>
                         </if>
                         <relationship>crm:P32_used_general_technique</relationship>
                     </target_relation>
@@ -1289,6 +1309,34 @@
                                 <arg name="type" type="constant">artwork</arg>
                                 <arg name="id" type="xpath">../../@RecordIdentifier</arg>
                             </instance_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>DetailData/DataElement</relation>
+                    </source_relation>
+                    <target_relation>
+                        <if>
+                            <equals value="11043">@ElementId</equals>
+                        </if>
+                        <relationship>crm:P33_used_specific_technique</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>DetailData/DataElement</source_node>
+                    <target_node>
+                        <entity>
+                            <type>crm:E29_Design_or_Procedure</type>
+                            <instance_generator name="URIwithTypeAndId">
+                                <arg name="type" type="constant">type</arg>
+                                <arg name="id" type="xpath">lower-case(ElementValue/TextValue/text())</arg>
+                            </instance_generator>
+                            <label_generator name="Literal">
+                                <arg name="text" type="xpath">ElementValue/TextValue/text()</arg>
+                            </label_generator>
                         </entity>
                     </target_node>
                 </range>
@@ -2102,7 +2150,7 @@
                             <type>crm:E55_Type</type>
                             <instance_generator name="URIwithTypeAndId">
                                 <arg name="type" type="constant">type</arg>
-                                <arg name="id" type="xpath">text()</arg>
+                                <arg name="id" type="xpath">lower-case(text())</arg>
                             </instance_generator>
                             <label_generator name="Literal">
                                 <arg name="text" type="xpath">text()</arg>
@@ -2154,7 +2202,7 @@
                             <type>crm:E55_Type</type>
                             <instance_generator name="URIwithTypeAndId">
                                 <arg name="type" type="constant">type</arg>
-                                <arg name="id" type="constant">FotografIn</arg>
+                                <arg name="id" type="constant">fotografin</arg>
                             </instance_generator>
                             <label_generator name="Literal">
                                 <arg name="text" type="constant">FotografIn</arg>
@@ -2172,6 +2220,99 @@
                                     </instance_generator>
                                 </entity>
                             </additional>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+        </mapping>
+        <mapping>
+            <domain>
+                <source_node>/Collection/Record/DetailData/DataElement</source_node>
+                <target_node>
+                    <if>
+                        <or>
+                            <if>
+                                <equals value="17">@ElementId</equals>
+                            </if>
+                            <if>
+                                <equals value="10483">@ElementId</equals>
+                            </if>
+                            <if>
+                                <equals value="11059">@ElementId</equals>
+                            </if>
+                            <if>
+                                <equals value="10358">@ElementId</equals>
+                            </if>
+                            <if>
+                                <equals value="10745">@ElementId</equals>
+                            </if>
+                            <if>
+                                <equals value="10746">@ElementId</equals>
+                            </if>
+                            <if>
+                                <equals value="10971">@ElementId</equals>
+                            </if>
+                            <if>
+                                <equals value="10114">@ElementId</equals>
+                            </if>
+                            <if>
+                                <equals value="10752">@ElementId</equals>
+                            </if>
+                        </or>
+                    </if>
+                    <entity>
+                        <type>crm:E55_Type</type>
+                        <instance_generator name="URIwithTypeAndId">
+                            <arg name="type" type="constant">type</arg>
+                            <arg name="id" type="xpath">lower-case(ElementValue/TextValue/text())</arg>
+                        </instance_generator>
+                    </entity>
+                </target_node>
+            </domain>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>ElementValue/aat-id</relation>
+                    </source_relation>
+                    <target_relation>
+                        <if>
+                            <exists>text()</exists>
+                        </if>
+                        <relationship>crmdig:L54_is_same-as</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>ElementValue/aat-id</source_node>
+                    <target_node>
+                        <entity>
+                            <type>crm:E55_Type</type>
+                            <instance_generator name="URIwithAatId">
+                                <arg name="id" type="xpath">text()</arg>
+                            </instance_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>ElementValue/gnd-id</relation>
+                    </source_relation>
+                    <target_relation>
+                        <if>
+                            <exists>text()</exists>
+                        </if>
+                        <relationship>crmdig:L54_is_same-as</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>ElementValue/gnd-id</source_node>
+                    <target_node>
+                        <entity>
+                            <type>crm:E55_Type</type>
+                            <instance_generator name="URIwithGndId">
+                                <arg name="id" type="xpath">text()</arg>
+                            </instance_generator>
                         </entity>
                     </target_node>
                 </range>
