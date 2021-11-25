@@ -22,6 +22,7 @@ curatedDataFiles = [
     "../data/source/nb-curation-geografika.csv"
 ]
 curatedNamesFile = "../data/source/nb-curation-names.csv"
+curatedTypesFile = "../data/source/nb-curation-extracted-types.csv"
 imageSizesFile = "../data/source/nb-image-sizes.csv"
 externalDescriptorsFile = "../data/source/nb-external-descriptors.csv"
 
@@ -67,6 +68,13 @@ for curatedDataFile in curatedDataFiles:
         for row in reader:
             curatedData.append(row)
 
+# Read curated types into separate list
+curatedTypes = []
+with open(curatedTypesFile, 'r') as f:
+    reader = csv.DictReader(f)
+    for row in reader:
+        curatedTypes.append(row)
+
 # Read curated names into a list
 curatedNames = []
 with open(curatedNamesFile, 'r') as f:
@@ -88,6 +96,18 @@ for descriptor in descriptors:
         if field in dataToAdd:
             el = etree.SubElement(descriptor, field)
             el.text = dataToAdd[field]
+
+# Add curated type data
+for record in tqdm(records):
+    xpath = "/DetailData/DataElement[@ElementId=$ElementId]/ElementValue/TextValue[text()=$Term]"
+    for row in curatedTypes:
+        fields = record.xpath(xpath, ElementId=row['ElementId'], Term=row['Term'])
+        if len(fields):
+
+            for field in fields:
+                for key in [d for d in row.keys() if d not in ["ElementId", "ElementName", "Term"]]:
+                    field.set(key, row[key])
+
 
 # Some fields that contain the URL to the image on wikimedia (Element ID 11040) contain the same link twice 
 # (often url encoded and not url encoded), separated by a newline. Here we remove the second value
