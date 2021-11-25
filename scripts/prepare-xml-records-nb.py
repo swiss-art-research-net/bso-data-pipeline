@@ -99,15 +99,15 @@ for descriptor in descriptors:
 
 # Add curated type data
 for record in tqdm(records):
-    xpath = "/DetailData/DataElement[@ElementId=$ElementId]/ElementValue/TextValue[text()=$Term]"
+    xpath = "DetailData/DataElement[@ElementId=$ElementId]/ElementValue/TextValue[text()=$Term]"
     for row in curatedTypes:
         fields = record.xpath(xpath, ElementId=row['ElementId'], Term=row['Term'])
         if len(fields):
-
             for field in fields:
+                parent = field.getparent()
                 for key in [d for d in row.keys() if d not in ["ElementId", "ElementName", "Term"]]:
-                    field.set(key, row[key])
-
+                    if row[key]:
+                        etree.SubElement(parent, key).text = row[key]
 
 # Some fields that contain the URL to the image on wikimedia (Element ID 11040) contain the same link twice 
 # (often url encoded and not url encoded), separated by a newline. Here we remove the second value
