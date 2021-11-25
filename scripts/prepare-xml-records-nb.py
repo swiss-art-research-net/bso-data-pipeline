@@ -461,7 +461,7 @@ now = time.time()
 for record in tqdm(records[offset:limit]):
     record = addCuratedDataToDescriptors(record, curatedData)
     record = addImageSizes(record, imageSizes, imageSizesHash)
-    #record = addCuratedTypeData(record, curatedTypes)
+    record = addCuratedTypeData(record, curatedTypes)
     record = processFieldsWithMultipleValues(record)
     record = matchDescriptorsWithElementValues(record, externalDescriptors, curatedNames)
     record = addDescriptorIdentifier(record)
