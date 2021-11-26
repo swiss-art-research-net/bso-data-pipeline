@@ -40,16 +40,11 @@ with open(ttlOutput, 'w') as outputFile:
 with open(ttlOutput, 'a') as outputFile:
     for identifier in tqdm(aatIdentifiers):
         url = "%s.ttl" % identifier
-        try:
-            r = requests.get(url)
-        except:
-            print("Could not retrieve", url)
-        for i in r.history:
-            print(url,i.url)
-            # with urlopen(i.url) as redirectedRequest:
-            #     content = redirectedRequest.read().decode()
-            # outputFile.write(content + "\n")
-            # outputFile.flush()
-            # break
+        print("retrieve", url)
+        r = requests.get(url, allow_redirects=True)
+        print(r.url)
+        # except:
+        #     print("Could not retrieve", url)
+        # print(r.content)
 
     outputFile.close()
