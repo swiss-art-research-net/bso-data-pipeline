@@ -94,6 +94,16 @@ fi
 
 if [[ $NOPROMPT -ne 1 ]]
 then
+  read -p "Retrieve AAT data? (y/n)" -n 1 -r
+  echo ""
+fi
+if [[ $NOPROMPT || $REPLY =~ ^[Yy]$ ]]
+then
+  docker exec $JOBSCONTAINER bash -c "task retrieve-aat"
+fi
+
+if [[ $NOPROMPT -ne 1 ]]
+then
   read -p "Retrieve GND data? (y/n)" -n 1 -r
   echo ""
 fi
