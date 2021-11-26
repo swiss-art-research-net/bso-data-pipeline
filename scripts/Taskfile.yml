@@ -254,6 +254,11 @@ tasks:
       - rm -f /data/xml/zbz/*.xml
       - python /scripts/prepare-xml-records-zbz.py {{.RECORDS_LIMIT}} {{.RECORDS_OFFSET}}
 
+  retrieve-aat:
+    desc: Extracts relevant data from AAT based on identifiers found in the mapped TTL files
+    cmds:
+      - python /scripts/extract-aat-data.py
+
   retrieve-gnd:
     desc: Extracts relevant data from GND based on identifiers found in the mapped TTL files
     cmds:
