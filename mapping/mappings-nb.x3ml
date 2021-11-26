@@ -129,19 +129,19 @@
             <link>
                 <path>
                     <source_relation>
-                        <relation>DetailData/DataElement</relation>
+                        <relation>DetailData/DataElement/ElementValue</relation>
                     </source_relation>
                     <target_relation>
                         <if>
                             <or>
                                 <if>
-                                    <equals value="2">@ElementId</equals>
+                                    <equals value="2">../@ElementId</equals>
                                 </if>
                                 <if>
-                                    <equals value="3">@ElementId</equals>
+                                    <equals value="3">../@ElementId</equals>
                                 </if>
                                 <if>
-                                    <equals value="10165">@ElementId</equals>
+                                    <equals value="10165">../@ElementId</equals>
                                 </if>
                             </or>
                         </if>
@@ -149,17 +149,18 @@
                     </target_relation>
                 </path>
                 <range>
-                    <source_node>DetailData/DataElement</source_node>
+                    <source_node>DetailData/DataElement/ElementValue</source_node>
                     <target_node>
                         <entity>
                             <type>crm:E42_Identifier</type>
-                            <instance_generator name="URIwithTypeSubtypeAndId">
+                            <instance_generator name="URIwithTypeSubtypeIdAnd1Level">
                                 <arg name="type" type="constant">artwork</arg>
-                                <arg name="id" type="xpath">../../@RecordIdentifier</arg>
-                                <arg name="subtype" type="xpath">replace(lower-case(@ElementName),' ','-')</arg>
+                                <arg name="id" type="xpath">../../../@RecordIdentifier</arg>
+                                <arg name="subtype" type="xpath">replace(lower-case(../@ElementName),' ','-')</arg>
+                                <arg name="level1" type="xpath">@Sequence</arg>
                             </instance_generator>
                             <label_generator name="Literal">
-                                <arg name="text" type="xpath">./ElementValue/TextValue/text()</arg>
+                                <arg name="text" type="xpath">TextValue/text()</arg>
                                 <arg name="language" type="constant"/>
                             </label_generator>
                             <additional>
@@ -171,10 +172,10 @@
                                     </instance_info>
                                     <instance_generator name="URIwithTypeAndId">
                                         <arg name="type" type="constant">type</arg>
-                                        <arg name="id" type="xpath">replace(lower-case(@ElementName),' ','-')</arg>
+                                        <arg name="id" type="xpath">replace(lower-case(../@ElementName),' ','-')</arg>
                                     </instance_generator>
                                     <label_generator name="Literal">
-                                        <arg name="text" type="xpath">@ElementName</arg>
+                                        <arg name="text" type="xpath">../@ElementName</arg>
                                         <arg name="language" type="constant"/>
                                     </label_generator>
                                 </entity>
@@ -186,22 +187,22 @@
             <link>
                 <path>
                     <source_relation>
-                        <relation>DetailData/DataElement</relation>
+                        <relation>DetailData/DataElement/ElementValue</relation>
                     </source_relation>
                     <target_relation>
                         <if>
-                            <equals value="1">@ElementId</equals>
+                            <equals value="1">../@ElementId</equals>
                         </if>
                         <relationship>rdfs:label</relationship>
                     </target_relation>
                 </path>
                 <range>
-                    <source_node>DetailData/DataElement</source_node>
+                    <source_node>DetailData/DataElement/ElementValue</source_node>
                     <target_node>
                         <entity>
                             <type>rdfs:Literal</type>
                             <instance_generator name="Literal">
-                                <arg name="text" type="xpath">./ElementValue/TextValue/text()</arg>
+                                <arg name="text" type="xpath">TextValue/text()</arg>
                                 <arg name="language" type="constant"/>
                             </instance_generator>
                         </entity>
@@ -227,7 +228,7 @@
                             <type>crm:E22_Human-Made_Object</type>
                             <instance_generator name="URIwithTypeAndId">
                                 <arg name="type" type="constant">artwork</arg>
-                                <arg name="id" type="xpath">./@ParentRecordIdentifier</arg>
+                                <arg name="id" type="xpath">@ParentRecordIdentifier</arg>
                             </instance_generator>
                         </entity>
                     </target_node>
@@ -236,16 +237,16 @@
             <link>
                 <path>
                     <source_relation>
-                        <relation>DetailData/DataElement</relation>
+                        <relation>DetailData/DataElement/ElementValue</relation>
                     </source_relation>
                     <target_relation>
                         <if>
                             <or>
                                 <if>
-                                    <equals value="17">@ElementId</equals>
+                                    <equals value="17">../@ElementId</equals>
                                 </if>
                                 <if>
-                                    <equals value="10358">@ElementId</equals>
+                                    <equals value="10358">../@ElementId</equals>
                                 </if>
                             </or>
                         </if>
@@ -253,16 +254,16 @@
                     </target_relation>
                 </path>
                 <range>
-                    <source_node>DetailData/DataElement</source_node>
+                    <source_node>DetailData/DataElement/ElementValue</source_node>
                     <target_node>
                         <entity>
                             <type>crm:E55_Type</type>
                             <instance_generator name="URIwithTypeAndId">
                                 <arg name="type" type="constant">type</arg>
-                                <arg name="id" type="xpath">lower-case(ElementValue/TextValue/text())</arg>
+                                <arg name="id" type="xpath">lower-case(TextValue/text())</arg>
                             </instance_generator>
                             <label_generator name="Literal">
-                                <arg name="text" type="xpath">ElementValue/TextValue/text()</arg>
+                                <arg name="text" type="xpath">TextValue/text()</arg>
                                 <arg name="language" type="constant"/>
                             </label_generator>
                         </entity>
@@ -272,26 +273,26 @@
             <link>
                 <path>
                     <source_relation>
-                        <relation>DetailData/DataElement</relation>
+                        <relation>DetailData/DataElement/ElementValue</relation>
                     </source_relation>
                     <target_relation>
                         <if>
-                            <equals value="10848">@ElementId</equals>
+                            <equals value="10848">../@ElementId</equals>
                         </if>
                         <relationship>crm:P105_right_held_by</relationship>
                     </target_relation>
                 </path>
                 <range>
-                    <source_node>DetailData/DataElement</source_node>
+                    <source_node>DetailData/DataElement/ElementValue</source_node>
                     <target_node>
                         <entity>
                             <type>crm:E39_Actor</type>
                             <instance_generator name="URIwithTypeAndId_hashed">
                                 <arg name="type" type="constant">actor</arg>
-                                <arg name="id_HASHED_CONTENTS" type="xpath">ElementValue/TextValue/text()</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">TextValue/text()</arg>
                             </instance_generator>
                             <label_generator name="Literal">
-                                <arg name="text" type="xpath">ElementValue/TextValue/text()</arg>
+                                <arg name="text" type="xpath">TextValue/text()</arg>
                                 <arg name="language" type="constant"/>
                             </label_generator>
                         </entity>
@@ -301,28 +302,29 @@
             <link>
                 <path>
                     <source_relation>
-                        <relation>DetailData/DataElement</relation>
+                        <relation>DetailData/DataElement/ElementValue</relation>
                     </source_relation>
                     <target_relation>
                         <if>
-                            <equals value="10003">@ElementId</equals>
+                            <equals value="10003">../@ElementId</equals>
                         </if>
                         <relationship>crm:P129i_is_subject_of</relationship>
                     </target_relation>
                 </path>
                 <range>
-                    <source_node>DetailData/DataElement</source_node>
+                    <source_node>DetailData/DataElement/ElementValue</source_node>
                     <target_node>
                         <entity>
                             <type>crm:E73_Information_Object</type>
-                            <instance_generator name="URIwithTypeSubtypeIdAnd1Level">
+                            <instance_generator name="URIwithTypeSubtypeIdAnd2Levels">
                                 <arg name="type" type="constant">artwork</arg>
-                                <arg name="id" type="xpath">../../@RecordIdentifier</arg>
+                                <arg name="id" type="xpath">../../../@RecordIdentifier</arg>
                                 <arg name="subtype" type="constant">work</arg>
                                 <arg name="level1" type="constant">summary</arg>
+                                <arg name="level2" type="xpath">@Sequence</arg>
                             </instance_generator>
                             <label_generator name="Literal">
-                                <arg name="text" type="xpath">ElementValue/TextValue/text()</arg>
+                                <arg name="text" type="xpath">TextValue/text()</arg>
                                 <arg name="language" type="constant"/>
                             </label_generator>
                             <additional>
@@ -348,23 +350,23 @@
             <link>
                 <path>
                     <source_relation>
-                        <relation>DetailData/DataElement</relation>
+                        <relation>DetailData/DataElement/ElementValue</relation>
                     </source_relation>
                     <target_relation>
                         <if>
-                            <equals value="16">@ElementId</equals>
+                            <equals value="16">../@ElementId</equals>
                         </if>
                         <relationship>crm:P70i_is_documented_in</relationship>
                     </target_relation>
                 </path>
                 <range>
-                    <source_node>DetailData/DataElement</source_node>
+                    <source_node>DetailData/DataElement/ElementValue</source_node>
                     <target_node>
                         <entity>
                             <type>crm:E31_Document</type>
                             <instance_generator name="URIwithTypeSubtypeAndId">
                                 <arg name="type" type="constant">artwork</arg>
-                                <arg name="id" type="xpath">../../@RecordIdentifier</arg>
+                                <arg name="id" type="xpath">../../../@RecordIdentifier</arg>
                                 <arg name="subtype" type="constant">meta</arg>
                             </instance_generator>
                         </entity>
@@ -446,19 +448,20 @@
             <link>
                 <path>
                     <source_relation>
-                        <relation>DetailData/DataElement</relation>
+                        <relation>DetailData/DataElement/ElementValue</relation>
                     </source_relation>
                     <target_relation>
                         <if>
-                            <equals value="10752">@ElementId</equals>
+                            <equals value="10752">../@ElementId</equals>
                         </if>
                         <relationship>crm:P24i_changed_ownership_through</relationship>
-                        <entity variable="acquisition">
+                        <entity>
                             <type>crm:E8_Acquisition</type>
-                            <instance_generator name="URIwithTypeSubtypeAndId">
+                            <instance_generator name="URIwithTypeSubtypeIdAnd1Level">
                                 <arg name="type" type="constant">artwork</arg>
-                                <arg name="id" type="xpath">../../@RecordIdentifier</arg>
+                                <arg name="id" type="xpath">../../../@RecordIdentifier</arg>
                                 <arg name="subtype" type="constant">acquisition</arg>
+                                <arg name="level1" type="xpath">@Sequence</arg>
                             </instance_generator>
                             <additional>
                                 <relationship>crm:P22_transferred_title_to</relationship>
@@ -481,16 +484,16 @@
                     </target_relation>
                 </path>
                 <range>
-                    <source_node>DetailData/DataElement</source_node>
+                    <source_node>DetailData/DataElement/ElementValue</source_node>
                     <target_node>
                         <entity>
                             <type>crm:E55_Type</type>
                             <instance_generator name="URIwithTypeAndId">
                                 <arg name="type" type="constant">type</arg>
-                                <arg name="id" type="xpath">lower-case(ElementValue/TextValue/text())</arg>
+                                <arg name="id" type="xpath">lower-case(TextValue/text())</arg>
                             </instance_generator>
                             <label_generator name="Literal">
-                                <arg name="text" type="xpath">ElementValue/TextValue/text()</arg>
+                                <arg name="text" type="xpath">TextValue/text()</arg>
                                 <arg name="language" type="constant"/>
                             </label_generator>
                         </entity>
@@ -500,37 +503,39 @@
             <link>
                 <path>
                     <source_relation>
-                        <relation>DetailData/DataElement</relation>
+                        <relation>DetailData/DataElement/ElementValue</relation>
                     </source_relation>
                     <target_relation>
                         <if>
-                            <equals value="10754">@ElementId</equals>
+                            <equals value="10754">../@ElementId</equals>
                         </if>
                         <relationship>crm:P24i_changed_ownership_through</relationship>
-                        <entity variable="acquisition">
+                        <entity>
                             <type>crm:E8_Acquisition</type>
-                            <instance_generator name="URIwithTypeSubtypeAndId">
+                            <instance_generator name="URIwithTypeSubtypeIdAnd1Level">
                                 <arg name="type" type="constant">artwork</arg>
-                                <arg name="id" type="xpath">../../@RecordIdentifier</arg>
+                                <arg name="id" type="xpath">../../../@RecordIdentifier</arg>
                                 <arg name="subtype" type="constant">acquisition</arg>
+                                <arg name="level1" type="xpath">@Sequence</arg>
                             </instance_generator>
                         </entity>
                         <relationship>crm:P4_has_time-span</relationship>
                     </target_relation>
                 </path>
                 <range>
-                    <source_node>DetailData/DataElement</source_node>
+                    <source_node>DetailData/DataElement/ElementValue</source_node>
                     <target_node>
                         <entity>
                             <type>crm:E52_Time-Span</type>
-                            <instance_generator name="URIwithTypeSubtypeIdAnd1Level">
+                            <instance_generator name="URIwithTypeSubtypeIdAnd2Levels">
                                 <arg name="type" type="constant">artwork</arg>
-                                <arg name="id" type="xpath">../../@RecordIdentifier</arg>
+                                <arg name="id" type="xpath">../../../@RecordIdentifier</arg>
                                 <arg name="subtype" type="constant">acquisition</arg>
-                                <arg name="level1" type="constant">date</arg>
+                                <arg name="level1" type="xpath">@Sequence</arg>
+                                <arg name="level2" type="constant">date</arg>
                             </instance_generator>
                             <label_generator name="Literal">
-                                <arg name="text" type="xpath">ElementValue/TextValue/text()</arg>
+                                <arg name="text" type="xpath">TextValue/text()</arg>
                                 <arg name="language" type="constant"/>
                             </label_generator>
                             <additional>
@@ -541,7 +546,7 @@
                                         <constant/>
                                     </instance_info>
                                     <instance_generator name="Literal">
-                                        <arg name="text" type="xpath">concat(substring(ElementValue/TextValue/text(),2), '-01-01')</arg>
+                                        <arg name="text" type="xpath">concat(substring(TextValue/text(),2), '-01-01')</arg>
                                         <arg name="language" type="constant"/>
                                     </instance_generator>
                                 </entity>
@@ -554,7 +559,7 @@
                                         <constant/>
                                     </instance_info>
                                     <instance_generator name="Literal">
-                                        <arg name="text" type="xpath">concat(substring(ElementValue/TextValue/text(),2), '-12-31')</arg>
+                                        <arg name="text" type="xpath">concat(substring(TextValue/text(),2), '-12-31')</arg>
                                         <arg name="language" type="constant"/>
                                     </instance_generator>
                                 </entity>
@@ -566,35 +571,36 @@
             <link>
                 <path>
                     <source_relation>
-                        <relation>DetailData/DataElement</relation>
+                        <relation>DetailData/DataElement/ElementValue</relation>
                     </source_relation>
                     <target_relation>
                         <if>
-                            <equals value="11006">@ElementId</equals>
+                            <equals value="11006">../@ElementId</equals>
                         </if>
                         <relationship>crm:P24i_changed_ownership_through</relationship>
-                        <entity variable="acquisition">
+                        <entity>
                             <type>crm:E8_Acquisition</type>
-                            <instance_generator name="URIwithTypeSubtypeAndId">
+                            <instance_generator name="URIwithTypeSubtypeIdAnd1Level">
                                 <arg name="type" type="constant">artwork</arg>
-                                <arg name="id" type="xpath">../../@RecordIdentifier</arg>
+                                <arg name="id" type="xpath">../../../@RecordIdentifier</arg>
                                 <arg name="subtype" type="constant">acquisition</arg>
+                                <arg name="level1" type="xpath">@Sequence</arg>
                             </instance_generator>
                         </entity>
                         <relationship>crm:P23_transferred_title_from</relationship>
                     </target_relation>
                 </path>
                 <range>
-                    <source_node>DetailData/DataElement</source_node>
+                    <source_node>DetailData/DataElement/ElementValue</source_node>
                     <target_node>
                         <entity>
                             <type>crm:E39_Actor</type>
                             <instance_generator name="URIwithTypeAndId_hashed">
                                 <arg name="type" type="constant">actor</arg>
-                                <arg name="id_HASHED_CONTENTS" type="xpath">ElementValue/TextValue/text()</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">TextValue/text()</arg>
                             </instance_generator>
                             <label_generator name="Literal">
-                                <arg name="text" type="xpath">ElementValue/TextValue/text()</arg>
+                                <arg name="text" type="xpath">TextValue/text()</arg>
                                 <arg name="language" type="constant"/>
                             </label_generator>
                         </entity>
@@ -604,20 +610,21 @@
             <link>
                 <path>
                     <source_relation>
-                        <relation>DetailData/DataElement</relation>
+                        <relation>DetailData/DataElement/ElementValue</relation>
                     </source_relation>
                     <target_relation>
                         <if>
-                            <equals value="10217">@ElementId</equals>
+                            <equals value="10217">../@ElementId</equals>
                         </if>
                         <relationship>crm:P46_is_composed_of</relationship>
                         <entity>
                             <type>crm:E24_Physical_Human-Made_Thing</type>
-                            <instance_generator name="URIwithTypeSubtypeIdAnd1Level">
+                            <instance_generator name="URIwithTypeSubtypeIdAnd2Levels">
                                 <arg name="type" type="constant">artwork</arg>
-                                <arg name="id" type="xpath">../../@RecordIdentifier</arg>
+                                <arg name="id" type="xpath">../../../@RecordIdentifier</arg>
                                 <arg name="subtype" type="constant">part</arg>
-                                <arg name="level1" type="xpath">@ElementId</arg>
+                                <arg name="level1" type="xpath">../@ElementId</arg>
+                                <arg name="level2" type="xpath">@Sequence</arg>
                             </instance_generator>
                             <additional>
                                 <relationship>crm:P2_has_type</relationship>
@@ -644,18 +651,19 @@
                     </target_relation>
                 </path>
                 <range>
-                    <source_node>DetailData/DataElement</source_node>
+                    <source_node>DetailData/DataElement/ElementValue</source_node>
                     <target_node>
                         <entity>
                             <type>crm:E54_Dimension</type>
-                            <instance_generator name="URIwithTypeSubtypeIdAnd1Level">
+                            <instance_generator name="URIwithTypeSubtypeIdAnd2Levels">
                                 <arg name="type" type="constant">artwork</arg>
-                                <arg name="id" type="xpath">../../@RecordIdentifier</arg>
+                                <arg name="id" type="xpath">../../../@RecordIdentifier</arg>
                                 <arg name="subtype" type="constant">dimension</arg>
                                 <arg name="level1" type="constant">image</arg>
+                                <arg name="level2" type="xpath">@Sequence</arg>
                             </instance_generator>
                             <label_generator name="Literal">
-                                <arg name="text" type="xpath">ElementValue/TextValue/text()</arg>
+                                <arg name="text" type="xpath">TextValue/text()</arg>
                                 <arg name="language" type="constant"/>
                             </label_generator>
                         </entity>
@@ -665,20 +673,21 @@
             <link>
                 <path>
                     <source_relation>
-                        <relation>DetailData/DataElement</relation>
+                        <relation>DetailData/DataElement/ElementValue</relation>
                     </source_relation>
                     <target_relation>
                         <if>
-                            <equals value="11042">@ElementId</equals>
+                            <equals value="11042">../@ElementId</equals>
                         </if>
                         <relationship>crm:P46_is_composed_of</relationship>
                         <entity>
                             <type>crm:E24_Physical_Human-Made_Thing</type>
-                            <instance_generator name="URIwithTypeSubtypeIdAnd1Level">
+                            <instance_generator name="URIwithTypeSubtypeIdAnd2Levels">
                                 <arg name="type" type="constant">artwork</arg>
-                                <arg name="id" type="xpath">../../@RecordIdentifier</arg>
+                                <arg name="id" type="xpath">../../../@RecordIdentifier</arg>
                                 <arg name="subtype" type="constant">part</arg>
-                                <arg name="level1" type="xpath">@ElementId</arg>
+                                <arg name="level1" type="xpath">../@ElementId</arg>
+                                <arg name="level2" type="xpath">@Sequence</arg>
                             </instance_generator>
                             <additional>
                                 <relationship>crm:P2_has_type</relationship>
@@ -705,18 +714,19 @@
                     </target_relation>
                 </path>
                 <range>
-                    <source_node>DetailData/DataElement</source_node>
+                    <source_node>DetailData/DataElement/ElementValue</source_node>
                     <target_node>
                         <entity>
                             <type>crm:E54_Dimension</type>
-                            <instance_generator name="URIwithTypeSubtypeIdAnd1Level">
+                            <instance_generator name="URIwithTypeSubtypeIdAnd2Levels">
                                 <arg name="type" type="constant">artwork</arg>
-                                <arg name="id" type="xpath">../../@RecordIdentifier</arg>
+                                <arg name="id" type="xpath">../../../@RecordIdentifier</arg>
                                 <arg name="subtype" type="constant">dimension</arg>
                                 <arg name="level1" type="constant">plate</arg>
+                                <arg name="level2" type="xpath">@Sequence</arg>
                             </instance_generator>
                             <label_generator name="Literal">
-                                <arg name="text" type="xpath">ElementValue/TextValue/text()</arg>
+                                <arg name="text" type="xpath">TextValue/text()</arg>
                                 <arg name="language" type="constant"/>
                             </label_generator>
                         </entity>
@@ -726,20 +736,21 @@
             <link>
                 <path>
                     <source_relation>
-                        <relation>DetailData/DataElement</relation>
+                        <relation>DetailData/DataElement/ElementValue</relation>
                     </source_relation>
                     <target_relation>
                         <if>
-                            <equals value="10739">@ElementId</equals>
+                            <equals value="10739">../@ElementId</equals>
                         </if>
                         <relationship>crm:P46_is_composed_of</relationship>
                         <entity>
                             <type>crm:E24_Physical_Human-Made_Thing</type>
-                            <instance_generator name="URIwithTypeSubtypeIdAnd1Level">
+                            <instance_generator name="URIwithTypeSubtypeIdAnd2Levels">
                                 <arg name="type" type="constant">artwork</arg>
-                                <arg name="id" type="xpath">../../@RecordIdentifier</arg>
+                                <arg name="id" type="xpath">../../../@RecordIdentifier</arg>
                                 <arg name="subtype" type="constant">part</arg>
-                                <arg name="level1" type="xpath">@ElementId</arg>
+                                <arg name="level1" type="xpath">../@ElementId</arg>
+                                <arg name="level2" type="xpath">@Sequence</arg>
                             </instance_generator>
                             <additional>
                                 <relationship>crm:P2_has_type</relationship>
@@ -766,18 +777,19 @@
                     </target_relation>
                 </path>
                 <range>
-                    <source_node>DetailData/DataElement</source_node>
+                    <source_node>DetailData/DataElement/ElementValue</source_node>
                     <target_node>
                         <entity>
                             <type>crm:E54_Dimension</type>
-                            <instance_generator name="URIwithTypeSubtypeIdAnd1Level">
+                            <instance_generator name="URIwithTypeSubtypeIdAnd2Levels">
                                 <arg name="type" type="constant">artwork</arg>
-                                <arg name="id" type="xpath">../../@RecordIdentifier</arg>
+                                <arg name="id" type="xpath">../../../@RecordIdentifier</arg>
                                 <arg name="subtype" type="constant">dimension</arg>
                                 <arg name="level1" type="constant">sheet</arg>
+                                <arg name="level2" type="xpath">@Sequence</arg>
                             </instance_generator>
                             <label_generator name="Literal">
-                                <arg name="text" type="xpath">ElementValue/TextValue/text()</arg>
+                                <arg name="text" type="xpath">TextValue/text()</arg>
                                 <arg name="language" type="constant"/>
                             </label_generator>
                         </entity>
@@ -787,20 +799,21 @@
             <link>
                 <path>
                     <source_relation>
-                        <relation>DetailData/DataElement</relation>
+                        <relation>DetailData/DataElement/ElementValue</relation>
                     </source_relation>
                     <target_relation>
                         <if>
-                            <equals value="10738">@ElementId</equals>
+                            <equals value="10738">../@ElementId</equals>
                         </if>
                         <relationship>crm:P46_is_composed_of</relationship>
                         <entity>
                             <type>crm:E24_Physical_Human-Made_Thing</type>
-                            <instance_generator name="URIwithTypeSubtypeIdAnd1Level">
+                            <instance_generator name="URIwithTypeSubtypeIdAnd2Levels">
                                 <arg name="type" type="constant">artwork</arg>
-                                <arg name="id" type="xpath">../../@RecordIdentifier</arg>
+                                <arg name="id" type="xpath">../../../@RecordIdentifier</arg>
                                 <arg name="subtype" type="constant">part</arg>
-                                <arg name="level1" type="xpath">@ElementId</arg>
+                                <arg name="level1" type="xpath">../@ElementId</arg>
+                                <arg name="level2" type="xpath">@Sequence</arg>
                             </instance_generator>
                             <additional>
                                 <relationship>crm:P2_has_type</relationship>
@@ -827,18 +840,19 @@
                     </target_relation>
                 </path>
                 <range>
-                    <source_node>DetailData/DataElement</source_node>
+                    <source_node>DetailData/DataElement/ElementValue</source_node>
                     <target_node>
                         <entity>
                             <type>crm:E54_Dimension</type>
-                            <instance_generator name="URIwithTypeSubtypeIdAnd1Level">
+                            <instance_generator name="URIwithTypeSubtypeIdAnd2Levels">
                                 <arg name="type" type="constant">artwork</arg>
-                                <arg name="id" type="xpath">../../@RecordIdentifier</arg>
+                                <arg name="id" type="xpath">../../../@RecordIdentifier</arg>
                                 <arg name="subtype" type="constant">dimension</arg>
                                 <arg name="level1" type="constant">frame</arg>
+                                <arg name="level2" type="xpath">@Sequence</arg>
                             </instance_generator>
                             <label_generator name="Literal">
-                                <arg name="text" type="xpath">ElementValue/TextValue/text()</arg>
+                                <arg name="text" type="xpath">TextValue/text()</arg>
                                 <arg name="language" type="constant"/>
                             </label_generator>
                         </entity>
@@ -1180,22 +1194,22 @@
             <link>
                 <path>
                     <source_relation>
-                        <relation>../DataElement</relation>
+                        <relation>../DataElement/ElementValue</relation>
                     </source_relation>
                     <target_relation>
                         <if>
-                            <equals value="10882">@ElementId</equals>
+                            <equals value="10882">../@ElementId</equals>
                         </if>
                         <relationship>crm:P3_has_note</relationship>
                     </target_relation>
                 </path>
                 <range>
-                    <source_node>../DataElement</source_node>
+                    <source_node>../DataElement/ElementValue</source_node>
                     <target_node>
                         <entity>
                             <type>rdfs:Literal</type>
                             <instance_generator name="Literal">
-                                <arg name="text" type="xpath">ElementValue/TextValue/text()</arg>
+                                <arg name="text" type="xpath">TextValue/text()</arg>
                                 <arg name="language" type="constant"/>
                             </instance_generator>
                         </entity>
@@ -1220,25 +1234,25 @@
             <link>
                 <path>
                     <source_relation>
-                        <relation>DetailData/DataElement</relation>
+                        <relation>DetailData/DataElement/ElementValue</relation>
                     </source_relation>
                     <target_relation>
                         <if>
                             <or>
                                 <if>
-                                    <equals value="10483">@ElementId</equals>
+                                    <equals value="10483">../@ElementId</equals>
                                 </if>
                                 <if>
-                                    <equals value="11059">@ElementId</equals>
+                                    <equals value="11059">../@ElementId</equals>
                                 </if>
                                 <if>
-                                    <equals value="10745">@ElementId</equals>
+                                    <equals value="10745">../@ElementId</equals>
                                 </if>
                                 <if>
-                                    <equals value="10746">@ElementId</equals>
+                                    <equals value="10746">../@ElementId</equals>
                                 </if>
                                 <if>
-                                    <equals value="10114">@ElementId</equals>
+                                    <equals value="10114">../@ElementId</equals>
                                 </if>
                             </or>
                         </if>
@@ -1246,16 +1260,16 @@
                     </target_relation>
                 </path>
                 <range>
-                    <source_node>DetailData/DataElement</source_node>
+                    <source_node>DetailData/DataElement/ElementValue</source_node>
                     <target_node>
                         <entity>
                             <type>crm:E55_Type</type>
                             <instance_generator name="URIwithTypeAndId">
                                 <arg name="type" type="constant">type</arg>
-                                <arg name="id" type="xpath">lower-case(ElementValue/TextValue/text())</arg>
+                                <arg name="id" type="xpath">lower-case(TextValue/text())</arg>
                             </instance_generator>
                             <label_generator name="Literal">
-                                <arg name="text" type="xpath">ElementValue/TextValue/text()</arg>
+                                <arg name="text" type="xpath">TextValue/text()</arg>
                             </label_generator>
                         </entity>
                     </target_node>
@@ -1264,20 +1278,20 @@
             <link>
                 <path>
                     <source_relation>
-                        <relation>DetailData/DataElement</relation>
+                        <relation>DetailData/DataElement/ElementValue</relation>
                     </source_relation>
                     <target_relation>
                         <if>
-                            <equals value="10971">@ElementId</equals>
+                            <equals value="10971">../@ElementId</equals>
                         </if>
                         <relationship>crm:P9_consists_of</relationship>
                         <entity>
                             <type>crm:E11_Modification</type>
                             <instance_generator name="URIwithTypeSubtypeIdAndCounter">
                                 <arg name="type" type="constant">artwork</arg>
-                                <arg name="id" type="xpath">../../@RecordIdentifier</arg>
+                                <arg name="id" type="xpath">../../../@RecordIdentifier</arg>
                                 <arg name="subtype" type="constant">production</arg>
-                                <arg name="position" type="position"/>
+                                <arg name="position" type="xpath">@Sequence</arg>
                             </instance_generator>
                             <additional>
                                 <relationship>crm:P2_has_type</relationship>
@@ -1288,10 +1302,10 @@
                                     </instance_info>
                                     <instance_generator name="URIwithTypeAndId">
                                         <arg name="type" type="constant">type</arg>
-                                        <arg name="id" type="xpath">lower-case(ElementValue/TextValue/text())</arg>
+                                        <arg name="id" type="xpath">lower-case(TextValue/text())</arg>
                                     </instance_generator>
                                     <label_generator name="Literal">
-                                        <arg name="text" type="xpath">lower-case(ElementValue/TextValue/text())</arg>
+                                        <arg name="text" type="xpath">lower-case(TextValue/text())</arg>
                                         <arg name="language" type="constant"/>
                                     </label_generator>
                                 </entity>
@@ -1301,13 +1315,13 @@
                     </target_relation>
                 </path>
                 <range>
-                    <source_node>DetailData/DataElement</source_node>
+                    <source_node>DetailData/DataElement/ElementValue</source_node>
                     <target_node>
                         <entity>
                             <type>crm:E22_Human-Made_Object</type>
                             <instance_generator name="URIwithTypeAndId">
                                 <arg name="type" type="constant">artwork</arg>
-                                <arg name="id" type="xpath">../../@RecordIdentifier</arg>
+                                <arg name="id" type="xpath">../../../@RecordIdentifier</arg>
                             </instance_generator>
                         </entity>
                     </target_node>
@@ -1316,26 +1330,26 @@
             <link>
                 <path>
                     <source_relation>
-                        <relation>DetailData/DataElement</relation>
+                        <relation>DetailData/DataElement/ElementValue</relation>
                     </source_relation>
                     <target_relation>
                         <if>
-                            <equals value="11043">@ElementId</equals>
+                            <equals value="11043">../@ElementId</equals>
                         </if>
                         <relationship>crm:P33_used_specific_technique</relationship>
                     </target_relation>
                 </path>
                 <range>
-                    <source_node>DetailData/DataElement</source_node>
+                    <source_node>DetailData/DataElement/ElementValue</source_node>
                     <target_node>
                         <entity>
                             <type>crm:E29_Design_or_Procedure</type>
                             <instance_generator name="URIwithTypeAndId">
                                 <arg name="type" type="constant">type</arg>
-                                <arg name="id" type="xpath">lower-case(ElementValue/TextValue/text())</arg>
+                                <arg name="id" type="xpath">lower-case(TextValue/text())</arg>
                             </instance_generator>
                             <label_generator name="Literal">
-                                <arg name="text" type="xpath">ElementValue/TextValue/text()</arg>
+                                <arg name="text" type="xpath">TextValue/text()</arg>
                             </label_generator>
                         </entity>
                     </target_node>
@@ -1355,22 +1369,22 @@
             <link>
                 <path>
                     <source_relation>
-                        <relation>DetailData/DataElement</relation>
+                        <relation>DetailData/DataElement/ElementValue</relation>
                     </source_relation>
                     <target_relation>
                         <if>
-                            <equals value="1">@ElementId</equals>
+                            <equals value="1">../@ElementId</equals>
                         </if>
                         <relationship>rdfs:label</relationship>
                     </target_relation>
                 </path>
                 <range>
-                    <source_node>DetailData/DataElement</source_node>
+                    <source_node>DetailData/DataElement/ElementValue</source_node>
                     <target_node>
                         <entity>
                             <type>rdfs:Literal</type>
                             <instance_generator name="Literal">
-                                <arg name="text" type="xpath">./ElementValue/TextValue/text()</arg>
+                                <arg name="text" type="xpath">TextValue/text()</arg>
                                 <arg name="language" type="constant"/>
                             </instance_generator>
                         </entity>
@@ -1380,18 +1394,18 @@
             <link>
                 <path>
                     <source_relation>
-                        <relation>DetailData/DataElement</relation>
+                        <relation>DetailData/DataElement/ElementValue</relation>
                     </source_relation>
                     <target_relation>
                         <if>
-                            <equals value="7">@ElementId</equals>
+                            <equals value="7">../@ElementId</equals>
                         </if>
                         <relationship>crm:P94i_was_created_by</relationship>
                         <entity variable="work_creation">
                             <type>crm:E65_Creation</type>
                             <instance_generator name="URIwithTypeSubtypeAndId">
                                 <arg name="type" type="constant">artwork</arg>
-                                <arg name="id" type="xpath">../../@RecordIdentifier</arg>
+                                <arg name="id" type="xpath">../../../@RecordIdentifier</arg>
                                 <arg name="subtype" type="constant">creation</arg>
                             </instance_generator>
                         </entity>
@@ -1399,17 +1413,17 @@
                     </target_relation>
                 </path>
                 <range>
-                    <source_node>DetailData/DataElement</source_node>
+                    <source_node>DetailData/DataElement/ElementValue</source_node>
                     <target_node>
                         <entity variable="work_creation_date">
                             <type>crm:E52_Time-Span</type>
                             <instance_generator name="URIwith2TypesAndId_hashed">
                                 <arg name="type1" type="constant">event</arg>
                                 <arg name="type2" type="constant">timespan</arg>
-                                <arg name="id" type="xpath">./ElementValue/DateRange/TextRepresentation/text()</arg>
+                                <arg name="id" type="xpath">DateRange/TextRepresentation/text()</arg>
                             </instance_generator>
                             <label_generator name="Literal">
-                                <arg name="text" type="xpath">./ElementValue/DateRange/TextRepresentation/text()</arg>
+                                <arg name="text" type="xpath">DateRange/TextRepresentation/text()</arg>
                                 <arg name="language" type="constant"/>
                             </label_generator>
                         </entity>
@@ -1673,26 +1687,26 @@
             <link>
                 <path>
                     <source_relation>
-                        <relation>DetailData/DataElement</relation>
+                        <relation>DetailData/DataElement/ElementValue</relation>
                     </source_relation>
                     <target_relation>
                         <if>
-                            <equals value="10372">@ElementId</equals>
+                            <equals value="10372">../@ElementId</equals>
                         </if>
                         <relationship>crm:P43_has_dimension</relationship>
                     </target_relation>
                 </path>
                 <range>
-                    <source_node>DetailData/DataElement</source_node>
+                    <source_node>DetailData/DataElement/ElementValue</source_node>
                     <target_node>
                         <entity>
                             <type>crm:E54_Dimension</type>
                             <instance_generator name="URIwithTypeAndId">
                                 <arg name="type" type="constant">type</arg>
-                                <arg name="id" type="xpath">lower-case(ElementValue/TextValue/text())</arg>
+                                <arg name="id" type="xpath">lower-case(TextValue/text())</arg>
                             </instance_generator>
                             <label_generator name="Literal">
-                                <arg name="text" type="xpath">ElementValue/TextValue/text()</arg>
+                                <arg name="text" type="xpath">TextValue/text()</arg>
                                 <arg name="language" type="constant"/>
                             </label_generator>
                             <additional>
@@ -2227,36 +2241,36 @@
         </mapping>
         <mapping>
             <domain>
-                <source_node>/Collection/Record/DetailData/DataElement</source_node>
+                <source_node>/Collection/Record/DetailData/DataElement/ElementValue</source_node>
                 <target_node>
                     <if>
                         <or>
                             <if>
-                                <equals value="17">@ElementId</equals>
+                                <equals value="17">../@ElementId</equals>
                             </if>
                             <if>
-                                <equals value="10483">@ElementId</equals>
+                                <equals value="10483">../@ElementId</equals>
                             </if>
                             <if>
-                                <equals value="11059">@ElementId</equals>
+                                <equals value="11059">../@ElementId</equals>
                             </if>
                             <if>
-                                <equals value="10358">@ElementId</equals>
+                                <equals value="10358">../@ElementId</equals>
                             </if>
                             <if>
-                                <equals value="10745">@ElementId</equals>
+                                <equals value="10745">../@ElementId</equals>
                             </if>
                             <if>
-                                <equals value="10746">@ElementId</equals>
+                                <equals value="10746">../@ElementId</equals>
                             </if>
                             <if>
-                                <equals value="10971">@ElementId</equals>
+                                <equals value="10971">../@ElementId</equals>
                             </if>
                             <if>
-                                <equals value="10114">@ElementId</equals>
+                                <equals value="10114">../@ElementId</equals>
                             </if>
                             <if>
-                                <equals value="10752">@ElementId</equals>
+                                <equals value="10752">../@ElementId</equals>
                             </if>
                         </or>
                     </if>
@@ -2264,7 +2278,7 @@
                         <type>crm:E55_Type</type>
                         <instance_generator name="URIwithTypeAndId">
                             <arg name="type" type="constant">type</arg>
-                            <arg name="id" type="xpath">lower-case(ElementValue/TextValue/text())</arg>
+                            <arg name="id" type="xpath">lower-case(TextValue/text())</arg>
                         </instance_generator>
                     </entity>
                 </target_node>
@@ -2272,7 +2286,7 @@
             <link>
                 <path>
                     <source_relation>
-                        <relation>ElementValue/aat-id</relation>
+                        <relation>aat-id</relation>
                     </source_relation>
                     <target_relation>
                         <if>
@@ -2282,7 +2296,7 @@
                     </target_relation>
                 </path>
                 <range>
-                    <source_node>ElementValue/aat-id</source_node>
+                    <source_node>aat-id</source_node>
                     <target_node>
                         <entity>
                             <type>crm:E55_Type</type>
@@ -2296,7 +2310,7 @@
             <link>
                 <path>
                     <source_relation>
-                        <relation>ElementValue/gnd-id</relation>
+                        <relation>gnd-id</relation>
                     </source_relation>
                     <target_relation>
                         <if>
@@ -2306,7 +2320,7 @@
                     </target_relation>
                 </path>
                 <range>
-                    <source_node>ElementValue/gnd-id</source_node>
+                    <source_node>gnd-id</source_node>
                     <target_node>
                         <entity>
                             <type>crm:E55_Type</type>
