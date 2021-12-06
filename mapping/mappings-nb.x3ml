@@ -2274,7 +2274,7 @@
                             </if>
                         </or>
                     </if>
-                    <entity>
+                    <entity variable="type_for_sameas">
                         <type>crm:E55_Type</type>
                         <instance_generator name="URIwithTypeAndId">
                             <arg name="type" type="constant">type</arg>
