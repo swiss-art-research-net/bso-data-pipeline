@@ -248,6 +248,7 @@ tasks:
       - /data/source/BIBLIOGRAPHIC_*.xml
       - /data/source/zbz-*.csv
       - /scripts/prepare-xml-records-zbz.py
+      - /scripts/helpers/dateOverrides.py
     generates:
       - /data/xml/zbz/*.xml
     cmds:
