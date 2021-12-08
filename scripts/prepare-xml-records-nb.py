@@ -240,13 +240,26 @@ def getDateForDateElement(date):
     if not date.text:
         return False
         
-    patternCeYear = r'\+\d{4}'
+    patternCeYear = r'\+\d{4}-'
     if re.match(patternCeYear, date.text):
         year = date.text[1:].zfill(4)
         if date.tag == 'FromDate':
             return "%s-01-01" % year
         else:
             return "%s-12-31" % year
+    return False
+
+def getDateForProblematicDateElement(date, text):
+    """
+        Add day and month information for date elements that are inconsistent, e.g. 
+        that interpreted textual dates with months as six digit years
+    """
+    patternMonthYear = r'\d{4}.\d{2}$'
+    if re.match(patternMonthYear, text):
+        if date.tag == 'FromDate':
+            return "%s-%s-01" % (text[:4], text[5:7])
+        else:
+            return "%s-%s-31" % (text[:4], text[5:7])
     return False
 
 def matchDescriptorsWithElementValues(record, externalDescriptors, curatedNames):
@@ -433,7 +446,25 @@ def processDates(record):
         fullDate = getDateForDateElement(date)
         if fullDate:
             date.set("fullDate", fullDate)
-    
+        else:
+            # There was something wrong with the date format.
+            # This is the case for some dates that include a month. For example:
+            #
+            #  <DateRange DateOperator="exact">      
+            #   <FromDate>+190208</FromDate>      
+            #   <FromApproxIndicator>false</FromApproxIndicator>      
+            #   <ToDate/>      
+            #   <ToApproxIndicator>false</ToApproxIndicator>      
+            #   <TextRepresentation>1902.08</TextRepresentation>      
+            #  </DateRange>  
+            # 
+            # -> The text representation indicates the month of August, but the FromDate interprets this
+            # as the year 190208
+            textRepresentation = date.getparent().find("./TextRepresentation").text
+            fullDate = getDateForProblematicDateElement(date, textRepresentation)
+            if fullDate:
+                date.set("fullDate", fullDate)
+
     return record
 
 # Load Data
