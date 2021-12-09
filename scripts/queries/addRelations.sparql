@@ -4,6 +4,7 @@ PREFIX : <http://www.metaphacts.com/resource/>
 PREFIX crmdig: <http://www.ics.forth.gr/isl/CRMdig/>
 PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
 PREFIX gndo: <https://d-nb.info/standards/elementset/gnd#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
 
 DROP GRAPH sari:relations;
 
