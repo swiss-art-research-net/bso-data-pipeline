@@ -58,15 +58,15 @@ def getMetadataForObject(obj):
                     else:
                         label = result[0]['value']
                     valueLabels.append(label)
-                    if len(valueLabels) > 0:
-                        metadata.append({
-                            "label": {
-                                "none": [field['label']]
-                            },
-                            "value": {
-                                "none": [', '.join(valueLabels)]
-                            }
-                        })
+                if len(valueLabels) > 0:
+                    metadata.append({
+                        "label": {
+                            "none": [field['label']]
+                        },
+                        "value": {
+                            "none": [list(set(valueLabels))]
+                        }
+                    })
     return metadata
 
 model = generator.loadSourceFromFile(fieldDefinitionsFile)
