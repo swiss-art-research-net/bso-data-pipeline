@@ -16,6 +16,7 @@
         <namespace prefix="rso" uri="http://www.researchspace.org/ontology/" />
         <namespace prefix="wd" uri="http://www.wikidata.org/entity/"/>
         <namespace prefix="aat" uri="http://vocab.getty.edu/aat/" />
+        <namespace prefix="frbroo" uri="http://iflastandards.info/ns/fr/frbr/frbroo/" />
     </namespaces>
     <mappings>
         <mapping>
