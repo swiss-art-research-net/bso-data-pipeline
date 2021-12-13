@@ -1385,6 +1385,41 @@
                     </target_node>
                 </range>
             </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>DetailData/DataElement</relation>
+                    </source_relation>
+                    <target_relation>
+                        <if>
+                            <equals value="10819">@ElementId</equals>
+                        </if>
+                        <relationship>crm:P9_consists_of</relationship>
+                        <entity>
+                            <type>frbroo:F30_Publication_Event</type>
+                            <instance_generator name="URIwithTypeSubtypeIdAnd1Level">
+                                <arg name="type" type="constant">artwork</arg>
+                                <arg name="id" type="xpath">../../@RecordIdentifier</arg>
+                                <arg name="subtype" type="constant">production</arg>
+                                <arg name="level1" type="constant">publication</arg>
+                            </instance_generator>
+                        </entity>
+                        <relationship>crm:P3_has_note</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>DetailData/DataElement</source_node>
+                    <target_node>
+                        <entity>
+                            <type>rdfs:Literal</type>
+                            <instance_generator name="Literal">
+                                <arg name="text" type="xpath">ElementValue/TextValue/text()</arg>
+                                <arg name="language" type="constant"/>
+                            </instance_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
         </mapping>
         <mapping>
             <domain>
@@ -2181,7 +2216,7 @@
                         <entity>
                             <type>crm:E12_Production</type>
                             <instance_generator name="URIwithTypeSubtypeIdAnd1Level_hashed">
-                                <arg name="type" type="constant">work</arg>
+                                <arg name="type" type="constant">artwork</arg>
                                 <arg name="id" type="xpath">../../../@RecordIdentifier</arg>
                                 <arg name="subtype" type="constant">production</arg>
                                 <arg name="level1" type="xpath">concat(../Name/text, text())</arg>
