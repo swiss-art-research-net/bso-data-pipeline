@@ -241,14 +241,7 @@
                     </source_relation>
                     <target_relation>
                         <if>
-                            <or>
-                                <if>
-                                    <equals value="17">../@ElementId</equals>
-                                </if>
-                                <if>
-                                    <equals value="10358">../@ElementId</equals>
-                                </if>
-                            </or>
+                            <equals value="17">../@ElementId</equals>
                         </if>
                         <relationship>crm:P2_has_type</relationship>
                     </target_relation>
@@ -2255,9 +2248,6 @@
                                 <equals value="11059">../@ElementId</equals>
                             </if>
                             <if>
-                                <equals value="10358">../@ElementId</equals>
-                            </if>
-                            <if>
                                 <equals value="10745">../@ElementId</equals>
                             </if>
                             <if>
@@ -2333,4 +2323,6 @@
             </link>
         </mapping>
     </mappings>
+
+
 </x3ml>
