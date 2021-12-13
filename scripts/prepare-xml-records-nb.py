@@ -325,7 +325,7 @@ def matchDescriptorsWithElementValues(record, externalDescriptors, curatedNames)
                 return returnRoles
         return False
     # Extract Elements containing names
-    elementIdsWithCuratedNames = ['10817', '10927']
+    elementIdsWithCuratedNames = ['10817', '10927', '10107']
     dataElementXPath = '|'.join(["DetailData/DataElement[@ElementId='%s']" % d for d in elementIdsWithCuratedNames])
 
     recordElements = record.xpath(dataElementXPath)
