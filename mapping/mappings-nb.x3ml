@@ -852,6 +852,42 @@
                     </target_node>
                 </range>
             </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>DetailData/DataElement</relation>
+                    </source_relation>
+                    <target_relation>
+                        <if>
+                            <equals value="10107">@ElementId</equals>
+                        </if>
+                        <relationship>crm:P128_carries</relationship>
+                        <entity>
+                            <type>frbroo:F22_Self-Contained_Expression</type>
+                            <instance_generator name="URIwithTypeSubtypeAndId">
+                                <arg name="type" type="constant">artwork</arg>
+                                <arg name="id" type="xpath">../../@RecordIdentifier</arg>
+                                <arg name="subtype" type="constant">text</arg>
+                            </instance_generator>
+                        </entity>
+                        <relationship>crm:P94i_was_created_by</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>DetailData/DataElement</source_node>
+                    <target_node>
+                        <entity>
+                            <type>crm:E65_Creation</type>
+                            <instance_generator name="URIwithTypeSubtypeIdAnd1Level">
+                                <arg name="type" type="constant">artwork</arg>
+                                <arg name="id" type="xpath">../../@RecordIdentifier</arg>
+                                <arg name="subtype" type="constant">text</arg>
+                                <arg name="level1" type="constant">creation</arg>
+                            </instance_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
         </mapping>
         <mapping>
             <domain>
@@ -1728,6 +1764,99 @@
                 <source_node>/Collection/Record/DetailData/DataElement</source_node>
                 <target_node>
                     <if>
+                        <equals value="10107">@ElementId</equals>
+                    </if>
+                    <entity>
+                        <type>crm:E65_Creation</type>
+                        <instance_generator name="URIwithTypeSubtypeIdAnd1Level">
+                            <arg name="type" type="constant">artwork</arg>
+                            <arg name="id" type="xpath">../../@RecordIdentifier</arg>
+                            <arg name="subtype" type="constant">text</arg>
+                            <arg name="level1" type="constant">creation</arg>
+                        </instance_generator>
+                    </entity>
+                </target_node>
+            </domain>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>ElementValue</relation>
+                    </source_relation>
+                    <target_relation>
+                        <relationship>crm:P14_carried_out_by</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>ElementValue</source_node>
+                    <target_node>
+                        <entity variable="author">
+                            <type>crm:E39_Actor</type>
+                            <instance_generator name="URIwithTypeAndId_hashed">
+                                <arg name="type" type="constant">actor</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">if (Descriptor/GND-Nummer/text()) then (Descriptor/GND-Nummer/text()) else ( NormalisedName/text() )</arg>
+                            </instance_generator>
+                            <label_generator name="Literal">
+                                <arg name="text" type="xpath">TextValue/text()</arg>
+                            </label_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>ElementValue</relation>
+                    </source_relation>
+                    <target_relation>
+                        <relationship>crm:P9_consists_of</relationship>
+                        <entity>
+                            <type>crm:E65_Creation</type>
+                            <instance_generator name="URIwithTypeSubtypeIdAnd2Levels">
+                                <arg name="type" type="constant">artwork</arg>
+                                <arg name="id" type="xpath">../../../@RecordIdentifier</arg>
+                                <arg name="subtype" type="constant">text</arg>
+                                <arg name="level1" type="constant">creation</arg>
+                                <arg name="level2" type="xpath">concat("author-", @Sequence)</arg>
+                            </instance_generator>
+                            <additional>
+                                <relationship>crm:P2_has_type</relationship>
+                                <entity>
+                                    <type>crm:E55_Type</type>
+                                    <instance_info>
+                                        <constant/>
+                                    </instance_info>
+                                    <instance_generator name="URIwithAatId">
+                                        <arg name="id" type="constant">300025492</arg>
+                                    </instance_generator>
+                                    <label_generator name="Literal">
+                                        <arg name="text" type="constant">author</arg>
+                                        <arg name="language" type="constant"/>
+                                    </label_generator>
+                                </entity>
+                            </additional>
+                        </entity>
+                        <relationship>crm:P14_carried_out_by</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>ElementValue</source_node>
+                    <target_node>
+                        <entity variable="author">
+                            <type>crm:E39_Actor</type>
+                            <instance_generator name="URIwithTypeAndId_hashed">
+                                <arg name="type" type="constant">actor</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">if (Descriptor/GND-Nummer/text()) then (Descriptor/GND-Nummer/text()) else ( NormalisedName/text() )</arg>
+                            </instance_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+        </mapping>
+        <mapping>
+            <domain>
+                <source_node>/Collection/Record/DetailData/DataElement</source_node>
+                <target_node>
+                    <if>
                         <equals value="10110">@ElementId</equals>
                     </if>
                     <entity>
@@ -2323,6 +2452,4 @@
             </link>
         </mapping>
     </mappings>
-
-
 </x3ml>
