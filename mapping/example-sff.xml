@@ -414,4 +414,329 @@
             </literature>
         </literatureList>
     </record>
+    <record>
+        <InvNrIntern>DIKEN10631</InvNrIntern>
+        <KünsterIn>Dikenmann / Siegfried / Dikenmann</KünsterIn>
+        <Titel>Vue de Thoune et de l'hotel et pension de Bellevue. Blatt 8 der Folge "Vues de Suisse. 114 feuilles gravés"</Titel>
+        <LogistikID>DIKEN10631</LogistikID>
+        <WerkGruppenID>2017021317385931978</WerkGruppenID>
+        <Entstvon>1850</Entstvon>
+        <Entstbis>1850</Entstbis>
+        <Datierung>circa 1850</Datierung>
+        <Technik>Radierung und Aquatinta, handkoloriert, stellenweise gummiert, bis zur Darstellung beschnitten, mit schwarzer Einfassungslinie</Technik>
+        <Zuständigkeit>Prov</Zuständigkeit>
+        <Werkstatus></Werkstatus>
+        <KaufmStatus></KaufmStatus>
+        <Salestatus></Salestatus>
+        <Edition></Edition>
+        <Material>Papier</Material>
+        <Material2></Material2>
+        <EditionÜbers></EditionÜbers>
+        <Bemerkungen></Bemerkungen>
+        <BezKünstler></BezKünstler>
+        <Bezfremd>Auf der ehemaligen Unterlage recto unten Mitte mit Feder in brauner Tinte betitelt "Vue de Thoune / et de l'hotel et pension de Bellevue"; verso Mitte mit Bleistift nummeriert "8"</Bezfremd>
+        <Zertifikat></Zertifikat>
+        <ZertifikatÜbers></ZertifikatÜbers>
+        <TitelÜbers></TitelÜbers>
+        <TechnikÜbers></TechnikÜbers>
+        <InvDatum>00.00.00</InvDatum>
+        <Provenienz></Provenienz>
+        <Gattung>D - Druckgrafik</Gattung>
+        <TitelÜbers2></TitelÜbers2>
+        <InvNr>SFF_D_1565</InvNr>
+        <Keywords>
+            <values>
+                <value>
+                    <text>Fluss</text>
+                    <gnd>4131972-2</gnd>
+                    <wd>Q4022</wd>
+                </value>
+                <value>
+                    <text>Schifffahrt</text>
+                    <gnd>4116383-7</gnd>
+                    <wd>Q155930</wd>
+                </value>
+                <value>
+                    <text>Gaststätte</text>
+                    <gnd>4071600-4</gnd>
+                    <wd>Q256020</wd>
+                </value>
+                <value>
+                    <text>Herberge</text>
+                    <gnd>4130904-2</gnd>
+                    <wd>Q654772</wd>
+                </value>
+                <value>
+                    <text>Hotel</text>
+                    <gnd>4025922-5</gnd>
+                    <wd>Q27686</wd>
+                </value>
+                <value>
+                    <text>Tourismus</text>
+                    <gnd>4018406-7</gnd>
+                    <wd>Q49389</wd>
+                </value>
+                <value>
+                    <text>Schloss</text>
+                    <gnd>4052753-0</gnd>
+                    <wd>Q751876</wd>
+                </value>
+                <value>
+                    <text>Burg</text>
+                    <gnd>4009104-1</gnd>
+                    <wd>Q23413</wd>
+                </value>
+                <value>
+                    <text>Ruine</text>
+                    <gnd>4050934-5</gnd>
+                    <wd>Q109607</wd>
+                </value>
+            </values>
+        </Keywords>
+        <TechnikÜbers2></TechnikÜbers2>
+        <EditionÜbers2></EditionÜbers2>
+        <Ortsbezug>
+            <values>
+                <value>
+                    <text>Thun (Kanton Bern)</text>
+                    <gnd>4059991-7</gnd>
+                    <wd>Q68978</wd>
+                </value>
+                <value>
+                    <text>Aare (Fluss)</text>
+                    <gnd>4000019-9</gnd>
+                    <wd>Q1675</wd>
+                </value>
+            </values>
+        </Ortsbezug>
+        <Masse1Suffix></Masse1Suffix>
+        <Masse1Prefix></Masse1Prefix>
+        <RefNr>A_12</RefNr>
+        <InschriftÜbers2></InschriftÜbers2>
+        <ZertÜbers2></ZertÜbers2>
+        <Datumstempel>24.07.2018</Datumstempel>
+        <Zeitstempel>08:11:19</Zeitstempel>
+        <Ueberprüftam>00.00.00</Ueberprüftam>
+        <Ueberprüftvon></Ueberprüftvon>
+        <Sortation>0</Sortation>
+        <pID>DCA2C32DF8022E48B5B8C0BCE4A10136</pID>
+        <record-identifier>SFF_D_1565</record-identifier>
+        <artists>
+            <artist creation="true">
+                <id>Dikenmann</id>
+                <link>Dikenmann / Siegfried / Dikenmann</link>
+                <gnd>1089422318</gnd>
+                <wd>Q94919373</wd>
+                <gnd-name>Dikenmann, Johann Rudolf</gnd-name>
+                <fullName>Johann Rudolf Dikenmann</fullName>
+                <singular>False</singular>
+                <raw>Johann Rudolf Dikenmann (Zeichner), Heinrich Siegfried (Druckgraphiker), Johann Rudolf Dikenmann (Verleger)</raw>
+                <roles>
+                    <roleValue role_uri="https://d-nb.info/gnd/4200345-3" creation="true">Zeichner</roleValue>
+                </roles>
+            </artist>
+            <artist production="true">
+                <id>Siegfried</id>
+                <link>Dikenmann / Siegfried / Dikenmann</link>
+                <gnd>1073721981</gnd>
+                <wd>Q30308445</wd>
+                <gnd-name>Siegfried, Heinrich</gnd-name>
+                <fullName>Heinrich Siegfried</fullName>
+                <singular>False</singular>
+                <raw>Johann Rudolf Dikenmann (Zeichner), Heinrich Siegfried (Druckgraphiker), Johann Rudolf Dikenmann (Verleger)</raw>
+                <roles>
+                    <roleValue role_uri="https://d-nb.info/gnd/4461989-3" production="true">Druckgraphiker</roleValue>
+                </roles>
+            </artist>
+            <artist production="true">
+                <id>Dikenmann</id>
+                <link>Dikenmann / Siegfried / Dikenmann</link>
+                <gnd>1089422318</gnd>
+                <wd>Q94919373</wd>
+                <gnd-name>Dikenmann, Johann Rudolf</gnd-name>
+                <fullName>Johann Rudolf Dikenmann</fullName>
+                <singular>False</singular>
+                <raw>Johann Rudolf Dikenmann (Zeichner), Heinrich Siegfried (Druckgraphiker), Johann Rudolf Dikenmann (Verleger)</raw>
+                <roles>
+                    <roleValue role_uri="https://d-nb.info/gnd/4138343-6" production="true">Verleger</roleValue>
+                </roles>
+            </artist>
+        </artists>
+        <image filename="SFF_D_1565.tif" width="5976" height="4068">SFF_D_1565</image>
+        <dimensions>
+            <dimension>
+                <UUID>DEBD3190DF7CDC48A4033F69D57BD32A</UUID>
+                <WerkInvNr>DIKEN10631</WerkInvNr>
+                <Typ>HBT</Typ>
+                <Einheit>cm</Einheit>
+                <Höhe>12.8</Höhe>
+                <Breite>17.8</Breite>
+                <Tiefe>0</Tiefe>
+                <Prefix>Blatt</Prefix>
+                <Prefix2>sheet</Prefix2>
+                <type>sheet</type>
+                <typeuri>http://vocab.getty.edu/aat/300189648</typeuri>
+                <qualifier>exact</qualifier>
+                <Position>0</Position>
+                <pID>37A1DB1C651A39448592C6D6C13D84AE</pID>
+            </dimension>
+            <dimension>
+                <UUID>7DCF74413CD26F47AD414954AB7009A7</UUID>
+                <WerkInvNr>DIKEN10631</WerkInvNr>
+                <Typ>HBT</Typ>
+                <Einheit>cm</Einheit>
+                <Höhe>20.7</Höhe>
+                <Breite>27.2</Breite>
+                <Tiefe>0</Tiefe>
+                <Prefix>Unterlage</Prefix>
+                <Prefix2>mounting</Prefix2>
+                <type>mounting</type>
+                <typeuri>http://vocab.getty.edu/aat/300389686</typeuri>
+                <qualifier>exact</qualifier>
+                <Position>0</Position>
+                <pID>7D53E993D65D61429744E895065365A3</pID>
+            </dimension>
+        </dimensions>
+        <literatureList>
+            <literature>
+                <WerkInvNr>DIKEN10631</WerkInvNr>
+                <LitNr>LIT10016</LitNr>
+                <Künstlername>Dikenmann Johann Rudolf</Künstlername>
+                <Seitenverweise>S. 934, Nr. 8</Seitenverweise>
+                <Bemerkungen>Engelmann 1858</Bemerkungen>
+                <recID>2017040609122626019</recID>
+                <pID>981A6FFDDC0C9F43B66A706FFB9D375A</pID>
+                <details>
+                    <LitNr>LIT10016</LitNr>
+                    <AutorHsg>Engelmann, Wilhelm</AutorHsg>
+                    <Titel>Bibliotheca Geographica. Verzeichniss der seit der Mitte des vorigen Jahrhunderts bis zum Ende des Jahres 1856 in Deutschland erschienenen Werke über Geographie und Reisen mit Einschluss der Landkarten, Pläne und Ansichten</Titel>
+                    <Verlag>Engelmann</Verlag>
+                    <Jahr>1858</Jahr>
+                    <recID>2017022310005530278</recID>
+                    <Ort>Leipzig</Ort>
+                    <pID>D047B2DD830A9F4E8212D4C32BCD4CAD</pID>
+                </details>
+            </literature>
+            <literature>
+                <WerkInvNr>DIKEN10631</WerkInvNr>
+                <LitNr>LIT10030</LitNr>
+                <Künstlername>Dikenmann Johann Rudolf</Künstlername>
+                <Seitenverweise>S. 204, Nr. 168 (Folge)</Seitenverweise>
+                <Bemerkungen>Weber 1984</Bemerkungen>
+                <recID>2017061414150825296</recID>
+                <pID>EFC24B2CC6C39444A1AB6B061FECE152</pID>
+                <details>
+                    <LitNr>LIT10030</LitNr>
+                    <AutorHsg>Weber, Bruno</AutorHsg>
+                    <Titel>Graubünden in alten Ansichten. Landschaftsporträts reisender Künstler vom 16. bis zum frühen 19. Jahrhundert. Mit einem Verzeichnis topographischer Ansichten in der Druckgraphik von den Anfängen bis um 1880</Titel>
+                    <Verlag>Rhätisches Museum</Verlag>
+                    <Jahr>1984</Jahr>
+                    <recID>2017030111313313995</recID>
+                    <Ort>Chur</Ort>
+                    <pID>0B3A7959FCEB7F4E821843B1F6F4F578</pID>
+                </details>
+            </literature>
+            <literature>
+                <WerkInvNr>DIKEN10631</WerkInvNr>
+                <LitNr>LIT10051</LitNr>
+                <Künstlername>Dikenmann Johann Rudolf</Künstlername>
+                <Seitenverweise>S. 415, 452, 475-476 und 557 (zu den Folgen von Dikenmann)</Seitenverweise>
+                <Bemerkungen>Ghiringhelli 2003</Bemerkungen>
+                <recID>2017061414474227177</recID>
+                <pID>C01555ACEAC4E74EA09E90200885178C</pID>
+                <details>
+                    <LitNr>LIT10051</LitNr>
+                    <AutorHsg>Ghiringhelli, Giorgio</AutorHsg>
+                    <Titel>Il Ticino nelle vecchie stampe</Titel>
+                    <Verlag>Edizioni Casagrande</Verlag>
+                    <Jahr>2003</Jahr>
+                    <recID>2017030316401516755</recID>
+                    <Ort>Bellinzona</Ort>
+                    <pID>CF50F8553CD8104AB43B1DBA1EBC80DD</pID>
+                </details>
+            </literature>
+            <literature>
+                <WerkInvNr>DIKEN10631</WerkInvNr>
+                <LitNr>LIT10017</LitNr>
+                <Künstlername>Dikenmann Johann Rudolf</Künstlername>
+                <Seitenverweise>Bd. 1, S. 187 und Bd. 2, S. 28 (zu den Folgen von Dikenmann)</Seitenverweise>
+                <Bemerkungen>Gattlen 1987-1992</Bemerkungen>
+                <recID>2017061414520821814</recID>
+                <pID>F44655D198940C4BB565827C9B798C5C</pID>
+                <details>
+                    <LitNr>LIT10017</LitNr>
+                    <AutorHsg>Gattlen, Anton</AutorHsg>
+                    <Titel>Druckgrafische Ortsansichten des Wallis, 1548-1850</Titel>
+                    <Verlag>Editions Gravures</Verlag>
+                    <Jahr>0</Jahr>
+                    <Band>2 Bde.</Band>
+                    <recID>2017022310051121100</recID>
+                    <Ort>Brig</Ort>
+                    <JahrText>1987-1992</JahrText>
+                    <pID>B037E90647010845BCBD7A6C0B58A69E</pID>
+                </details>
+            </literature>
+            <literature>
+                <WerkInvNr>DIKEN10631</WerkInvNr>
+                <LitNr>LIT10052</LitNr>
+                <Künstlername>Dikenmann Johann Rudolf</Künstlername>
+                <Seitenverweise>S. 151, 161 und 181 (zu den Folgen von Dikenmann)</Seitenverweise>
+                <Bemerkungen>Ghiringhelli 2007</Bemerkungen>
+                <recID>2017061415545866640</recID>
+                <pID>A8ECD7A31A13BE4F9387626E21FB2F37</pID>
+                <details>
+                    <LitNr>LIT10052</LitNr>
+                    <AutorHsg>Ghiringhelli, Giorgio</AutorHsg>
+                    <Titel>Il Ponte del Diavolo nelle vecchie stampe</Titel>
+                    <Verlag>Edizioni Casagrande</Verlag>
+                    <Jahr>2007</Jahr>
+                    <recID>2017030316411918627</recID>
+                    <Ort>Bellinzona</Ort>
+                    <pID>934E2613F796EA41B665711D32AD0644</pID>
+                </details>
+            </literature>
+            <literature>
+                <WerkInvNr>DIKEN10631</WerkInvNr>
+                <LitNr>LIT10028</LitNr>
+                <Künstlername>Dikenmann Johann Rudolf</Künstlername>
+                <Seitenverweise>S. 128, Nr. 122</Seitenverweise>
+                <Bemerkungen>Krebser 2004</Bemerkungen>
+                <recID>2017061516275557940</recID>
+                <pID>B6B3C04E48917343B3C6803E3F8FE7FA</pID>
+                <details>
+                    <LitNr>LIT10028</LitNr>
+                    <AutorHsg>Krebser, Markus</AutorHsg>
+                    <Titel>Thun und seine Landschaft in der Kunst der Kleinmeister: Druckgrafik von 1548 bis 1868</Titel>
+                    <Verlag>Krebser</Verlag>
+                    <Jahr>2004</Jahr>
+                    <recID>2017030111191126563</recID>
+                    <Ort>Thun</Ort>
+                    <pID>CACEEACE423EE84AA68E16FC18E94CD9</pID>
+                </details>
+            </literature>
+            <literature>
+                <WerkInvNr>DIKEN10631</WerkInvNr>
+                <LitNr>LIT10136</LitNr>
+                <Künstlername>Dikenmann / Siegfried / Dikenmann</Künstlername>
+                <Seitenverweise>Nr. 8 (Format en Folio)</Seitenverweise>
+                <Bemerkungen>Dikenmann 1882-1888</Bemerkungen>
+                <recID>2018043008300313740</recID>
+                <pID>286286A60A0ABE4AB105C465B9653491</pID>
+                <details>
+                    <LitNr>LIT10136</LitNr>
+                    <AutorHsg>Dikenmann, Johann Rudolf</AutorHsg>
+                    <Titel>Catalogue des vues, costumes et panoramas suisses, editions originales publiées par R. Dikenmann peintre-editeur Zurich RIndermarkt 14</Titel>
+                    <Jahr>0</Jahr>
+                    <recID>2017061414100217781</recID>
+                    <JahrText>1882-1888</JahrText>
+                    <pID>140D25BA6D2E9445A5E3EF5E8E0C8504</pID>
+                </details>
+            </literature>
+        </literatureList>
+        <series>
+            <id>DIKEN10631</id>
+            <series>"Vues de Suisse. 114 feuilles gravés"</series>
+            <number>8</number>
+        </series>
+    </record>
 </collection>

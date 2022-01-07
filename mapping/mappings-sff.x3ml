@@ -355,6 +355,32 @@
                     </target_node>
                 </range>
             </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>series</relation>
+                    </source_relation>
+                    <target_relation>
+                        <relationship>crm:P46i_forms_part_of</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>series</source_node>
+                    <target_node>
+                        <entity>
+                            <type>crm:E22_Human-Made_Object</type>
+                            <instance_generator name="URIwithTypeAndId_hashed">
+                                <arg name="type" type="constant">artwork</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">series/text()</arg>
+                            </instance_generator>
+                            <label_generator name="Literal">
+                                <arg name="text" type="xpath">series/text()</arg>
+                                <arg name="language" type="constant"/>
+                            </label_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
         </mapping>
         <mapping>
             <domain>

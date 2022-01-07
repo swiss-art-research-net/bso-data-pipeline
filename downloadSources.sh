@@ -49,6 +49,7 @@ download "data/sff/sff-images.csv" "data/source/sff-images.csv"
 download "data/sff/sff-curation-keywords.csv" "data/source/sff-curation-keywords.csv"
 download "data/sff/sff-curation-ortsbezug.csv" "data/source/sff-curation-ortsbezug.csv"
 download "data/sff/sff-artists.csv" "data/source/sff-artists.csv"
+download "data/sff/sff-series.csv" "data/source/sff-series.csv"
 
 download "data/sari/prefLabels.trig" "data/ttl/additional/prefLabels.trig"
 download "data/sari/zbzTypeLabels.trig" "data/ttl/additional/zbzTypeLabels.trig"
