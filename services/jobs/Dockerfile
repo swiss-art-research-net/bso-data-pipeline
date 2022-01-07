@@ -29,5 +29,5 @@ VOLUME /mapping
 VOLUME /static
 WORKDIR /scripts
 
-# Start ssh service on entry
+# Run idling
 ENTRYPOINT tail -f /dev/null

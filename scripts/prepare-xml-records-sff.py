@@ -21,6 +21,9 @@ imagesFile = '../data/source/sff-images.csv'
 # Export of dimensions table
 dimensionsFile = '../data/source/sff-werk-masse.csv'
 
+# Generated series table
+seriesFile = '../data/source/sff-series.csv'
+
 # Export of literature and literature links table
 literatureFile = '../data/source/sff-literatur.csv'
 literatureLinksFile = '../data/source/sff-literatur-links.csv'
@@ -161,6 +164,23 @@ def addLiteratureData(record):
 
     return record
 
+def addSeriesData(record):
+    recordId = record.find('InvNrIntern').text
+    seriesRows  = [d for d in seriesData if d['id'] == recordId]
+    if len(seriesRows) == 0:
+        return record
+    elif len(seriesRows) > 1:
+        print ("Found several matching entries for", recordId)
+        return record
+
+    for seriesRow in seriesRows:
+        seriesTag = etree.SubElement(record, "series")
+        for key in seriesRow.keys():
+            if key and seriesRow[key]:
+                newTag = etree.SubElement(seriesTag, cleanKeyForTags(key))
+                newTag.text = seriesRow[key]
+    return record
+
 def addRecordIdentifier(record):
     identifier = record.find("InvNr").text
     field = etree.SubElement(record, "record-identifier")
@@ -281,6 +301,12 @@ with open(literatureLinksFile, 'r') as f:
     for row in reader:
         literatureLinksData.append(row)
 
+seriesData = []
+with open(seriesFile, 'r') as f:
+    reader = csv.DictReader(f)
+    for row in reader:
+        seriesData.append(row)
+
 # Output individual XML files
 collection = etree.XML("<collection/>")
 
@@ -299,6 +325,7 @@ for row in tqdm(inputData[offset:offset + limit]):
     record = addCuratedData(record)
     record = addDimensionData(record)
     record = addLiteratureData(record)
+    record = addSeriesData(record)
     
     collection.clear()
     collection.append(record)
