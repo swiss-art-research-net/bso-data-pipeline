@@ -55,6 +55,6 @@ download "data/sari/prefLabels.trig" "data/ttl/additional/prefLabels.trig"
 download "data/sari/zbzTypeLabels.trig" "data/ttl/additional/zbzTypeLabels.trig"
 download "data/sari/datasetMetadata.trig" "data/ttl/additional/datasetMetadata.trig"
 download "data/sari/smapshot-classifications.trig" "data/ttl/additional/smapshot-classifications.trig"
-download "data/sari/titleSimilarities.trig" "data/graphs/titleSimilarities.trig"
+download "data/sari/titleSimilarities.ttl" "data/graphs/titleSimilarities.ttl"
 
 download "data/sari/imageRegions.trig" "data/graphs/imageRegions.trig"
