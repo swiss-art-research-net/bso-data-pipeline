@@ -64,7 +64,7 @@ tasks:
   ingest-data-from-file:
     cmds:
       - echo "Ingest {{.NAME}}"
-      - curl -X POST -H 'Content-Type:application/rdf+xml	' --data-binary '@{{.FILE}}' {{.ENDPOINT}}?context-uri={{.GRAPH}}
+      - curl -X POST -H 'Content-Type:{{.TYPE}}' --data-binary '@{{.FILE}}' {{.ENDPOINT}}?context-uri={{.GRAPH}}
 
   ingest-data-from-folder:
     desc: Ingests data from a specified folder. If a named graph is specified (GRAPH), TTL files will be ingested into it. Otherwise, the filename will be used as named graph. Named Graphs specified in Trig files will be used as defined
@@ -149,18 +149,34 @@ tasks:
         vars:
           NAME: CIDOC-CRM
           FILE: /mapping/schemas/CIDOC_CRM_7.1.1_RDFS_Impl_v1.1.rdfs
+          TYPE: application/rdf+xml
           GRAPH: http://www.cidoc-crm.org/cidoc-crm/
       - task: ingest-data-from-file
         vars:
           NAME: CRMdig
           FILE: /mapping/schemas/CRMdig_v3.2.1.rdfs
+          TYPE: application/rdf+xml
           GRAPH: http://www.ics.forth.gr/isl/CRMdig/
       - task: ingest-data-from-file
         vars:
           NAME: CRMinf
           FILE: /mapping/schemas/CRMinf_v0.7_.rdfs
+          TYPE: application/rdf+xml
           GRAPH: http://www.ics.forth.gr/isl/CRMinf/
 
+  ingest-title-similarities:
+    desc: Ingests the title similarities into the Blazegraph instance
+    sources:
+      - /data/graphs/titleSimilarities.ttl
+    cmds:
+      - task: ingest-data-from-file
+        vars:
+          NAME: Title Similarities
+          TYPE: text/turtle
+          FILE: /data/graphs/titleSimilarities.ttl
+          GRAPH: https://resource.swissartresearch.net/graph/titleSimilarities
+
+  
   mapping-nb:
     desc: Map SNB XML data to CIDOC/RDF
     vars:
