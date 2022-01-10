@@ -6,7 +6,7 @@ services:
     container_name: ${PROJECT_NAME}_blazegraph
     restart: unless-stopped
     environment:
-      - JAVA_OPTS=-Xmx1g
+      - JAVA_OPTS=-Xmx4g
     logging:
       driver: json-file
       options:
