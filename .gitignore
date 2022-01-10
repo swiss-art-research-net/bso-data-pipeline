@@ -9,7 +9,7 @@ data
 !data/xml/.gitkeep
 !services/researchspace/apps/sari/data
 !scripts/data
-experiments/output/*.xml
+experiments/output/*.*
 /static/iiif
 .ipynb_checkpoints
 local-scripts
