@@ -168,7 +168,10 @@ tasks:
     desc: Ingests the title similarities into the Blazegraph instance
     sources:
       - /data/graphs/titleSimilarities.ttl
+    vars:
+      GRAPH: https://resource.swissartresearch.net/graph/titleSimilarities
     cmds:
+      - curl --silent -X POST {{.ENDPOINT}} --data-urlencode "update=DROP GRAPH <{{.GRAPH}}>" > /dev/null
       - task: ingest-data-from-file
         vars:
           NAME: Title Similarities
