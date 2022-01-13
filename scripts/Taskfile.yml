@@ -164,6 +164,15 @@ tasks:
           TYPE: application/rdf+xml
           GRAPH: http://www.ics.forth.gr/isl/CRMinf/
 
+  ingest-similarities:
+    desc: Ingest the calculated similarities between entities
+    sources:
+      - /data/graphs/titleSimilarities.ttl
+      - /data/graphs/visualSimilarities.ttl
+    cmds:
+      - task: ingest-title-similarities
+      - task: ingest-visual-similarities
+
   ingest-title-similarities:
     desc: Ingests the title similarities into the Blazegraph instance
     sources:
@@ -178,6 +187,21 @@ tasks:
           TYPE: text/turtle
           FILE: /data/graphs/titleSimilarities.ttl
           GRAPH: https://resource.swissartresearch.net/graph/titleSimilarities
+
+  ingest-visual-similarities:
+    desc: Ingests the visual similarities into the Blazegraph instance
+    sources:
+      - /data/graphs/visualSimilarities.ttl
+    vars:
+      GRAPH: https://resource.swissartresearch.net/graph/visualSimilarities
+    cmds:
+      - curl --silent -X POST {{.ENDPOINT}} --data-urlencode "update=DROP GRAPH <{{.GRAPH}}>" > /dev/null
+      - task: ingest-data-from-file
+        vars:
+          NAME: Visual Similarities
+          TYPE: text/turtle
+          FILE: /data/graphs/visualSimilarities.ttl
+          GRAPH: https://resource.swissartresearch.net/graph/visualSimilarities
 
   
   mapping-nb:

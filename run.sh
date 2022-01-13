@@ -140,7 +140,7 @@ then
 fi
 if [[ $NOPROMPT || $REPLY =~ ^[Yy]$ ]]
 then
-  docker exec $JOBSCONTAINER bash -c "task ingest-title-similarities"
+  docker exec $JOBSCONTAINER bash -c "task ingest-similarities"
 fi
 
 if [[ $NOPROMPT -ne 1 ]]
