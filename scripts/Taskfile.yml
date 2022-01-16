@@ -335,3 +335,5 @@ tasks:
         }
     cmds:
       - python /scripts/update-named-graphs.py --inputfile {{.INPUTFILE}} --endpoint {{.ENDPOINT}} --updatecondition """{{.UPDATE_CONDITION}}"""
+      - task: run-query-from-file
+        vars: {FILE: "queries/deleteGeneratedImageRegionIfAManualOneExists.sparql"}

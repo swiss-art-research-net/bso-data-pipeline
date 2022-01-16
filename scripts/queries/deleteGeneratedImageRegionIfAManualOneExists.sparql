@@ -1,0 +1,23 @@
+PREFIX : <http://www.metaphacts.com/resource/>
+PREFIX crmdig: <http://www.ics.forth.gr/isl/CRMdig/>
+PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
+DELETE {
+	GRAPH ?gA {
+    	?s ?p ?o
+  }
+} WHERE {
+  GRAPH ?gA {
+    ?regionA crmdig:L49_is_primary_area_of ?image ;
+             crm:P33_used_specific_technique <https://github.com/swiss-art-research-net/bso-image-segmentation> .
+    ?s ?p ?o
+  }
+  GRAPH ?gB {
+    ?regionB crmdig:L49_is_primary_area_of ?image .
+    FILTER NOT EXISTS {
+      ?regeionB crm:P33_used_specific_technique <https://github.com/swiss-art-research-net/bso-image-segmentation> .
+    }
+  }
+  ?regionA crm:P2_has_type <https://resource.swissartresearch.net/type/imageRegion> .
+  ?regionB crm:P2_has_type <https://resource.swissartresearch.net/type/imageRegion> .
+  FILTER(?regionA != ?regionB)
+}
