@@ -333,7 +333,14 @@ tasks:
           ?s a crmdig:D35_Area ;
               crm:P33_used_specific_technique <https://github.com/swiss-art-research-net/bso-image-segmentation> .
         }
+      PREPROCESS_UPDATE: |
+        DELETE { 
+          ?container <http://www.w3.org/ns/prov#generatedAtTime> ?dateTime .
+        } WHERE { 
+            ?container a <http://www.w3.org/ns/ldp#Resource> ; 
+              <http://www.w3.org/ns/prov#generatedAtTime> ?dateTime .
+        }
     cmds:
-      - python /scripts/update-named-graphs.py --inputfile {{.INPUTFILE}} --endpoint {{.ENDPOINT}} --updatecondition """{{.UPDATE_CONDITION}}"""
+      - python /scripts/update-named-graphs.py --inputfile {{.INPUTFILE}} --endpoint {{.ENDPOINT}} --updatecondition """{{.UPDATE_CONDITION}}""" --preprocessupdate """{{.PREPROCESS_UPDATE}}"""
       - task: run-query-from-file
         vars: {FILE: "queries/deleteGeneratedImageRegionIfAManualOneExists.sparql"}

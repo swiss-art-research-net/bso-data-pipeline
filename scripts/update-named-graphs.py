@@ -7,6 +7,7 @@ Arguments:
 --inputfile: The Trig file to ingest
 --endpoint: The SPARQL endpoint
 --updatecondition (optional): An ASK query to determine which graphs should be updated.
+--preprocessupdate (optional): A SPARQL update query which will be executed before comparing the graphs.
 
 --limit (optional, for debugging): The maximum number of graphs to process
 --offset (optional, for debugging): The offset to start processing at
@@ -16,6 +17,7 @@ python update-named-graphs.py \
     --inputfile ./graphs/data.trig \
     --endpoint http://localhost:8080/blazegraph/sparql \
     --updatecondition "ASK { ?s <http://www.cidoc-crm.org/cidoc-crm/P33_used_specific_technique> <https://github.com/swiss-art-research-net/bso-image-segmentation> .}"
+    --preprocessupdate "DELETE { ?container <http://www.w3.org/ns/prov#generatedAtTime> ?dateTime } WHERE { ?container a <http://www.w3.org/ns/ldp#Resource>; <http://www.w3.org/ns/prov#generatedAtTime> ?dateTime .}
 """
 
 import requests
@@ -28,6 +30,7 @@ def performUpdate(options):
     endpoint = options['endpoint']
     inputFile = options['inputfile']
     updateCondition = options['updatecondition']
+    preprocessupdate = options['preprocessupdate']
     limit = int(options['limit'])
     offset = int(options['offset'])
 
@@ -58,7 +61,7 @@ def performUpdate(options):
             remoteGraph.parse(data=r.text, format='turtle')
             if not len(remoteGraph):
                 graphs['new'].append((context, False))
-            elif compare.to_isomorphic(context) == compare.to_isomorphic(remoteGraph):
+            elif graphsAreTheSame(context, remoteGraph, preprocessupdate):
                 graphs['unchanged'].append((context, remoteGraph))
             else:
                 graphs['changed'].append((context, remoteGraph))
@@ -92,6 +95,41 @@ def performUpdate(options):
     for g in tqdm(graphsToUpdate):
         putGraph(g, endpoint)
 
+def clone_graph(source_graph, target_graph=None, identifier=None):
+    """
+    Make a clone of the source_graph by directly copying triples from source_graph to target_graph
+    :param source_graph:
+    :type source_graph: rdflib.Graph
+    :param target_graph:
+    :type target_graph: rdflib.Graph|None
+    :param identifier:
+    :type identifier: str | None
+    :return: The cloned graph
+    :rtype: rdflib.Graph
+    """
+    import rdflib
+    if isinstance(source_graph, (rdflib.Dataset, rdflib.ConjunctiveGraph)):
+        return clone_dataset(source_graph, target_ds=target_graph)
+    if target_graph is None:
+        g = rdflib.Graph(identifier=identifier)
+        for p, n in source_graph.namespace_manager.namespaces():
+            g.namespace_manager.bind(p, n, override=True, replace=True)
+    else:
+        g = target_graph
+        for p, n in source_graph.namespace_manager.namespaces():
+            g.namespace_manager.bind(p, n, override=False, replace=False)
+    for t in iter(source_graph):
+        g.add(t)
+    return g 
+
+def graphsAreTheSame(g1, g2, preprocessupdate=None):
+    g1Copy = clone_graph(g1)
+    g2Copy = clone_graph(g2)
+    if preprocessupdate:
+        g1Copy.update(preprocessupdate)
+        g2Copy.update(preprocessupdate)
+    return compare.to_isomorphic(g1Copy) == compare.to_isomorphic(g2Copy)
+
 def putGraph(context, endpoint):
     # Remove old graph
     r = requests.post(endpoint, params={"update": "DROP GRAPH <%s>" % context.identifier})
@@ -122,6 +160,8 @@ if __name__ == "__main__":
         sys.exit(1)
     if not 'updatecondition' in options:
         options['updatecondition'] = False
+    if not 'preprocessupdate' in options:
+        options['preprocessupdate'] = False
     if not 'limit' in options:
         options['limit'] = 999999
     if not 'offset' in options:
