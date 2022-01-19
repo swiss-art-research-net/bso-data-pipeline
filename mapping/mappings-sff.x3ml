@@ -241,7 +241,7 @@
                             <instance_generator name="URIwithTypeSubtypeAndId">
                                 <arg name="type" type="constant">artwork</arg>
                                 <arg name="id" type="xpath">../record-identifier/text()</arg>
-                                <arg name="subtype" type="constant">description</arg>
+                                <arg name="subtype" type="constant">remarks</arg>
                             </instance_generator>
                             <label_generator name="Literal">
                                 <arg name="text" type="xpath">text()</arg>
@@ -255,10 +255,10 @@
                                         <constant/>
                                     </instance_info>
                                     <instance_generator name="URIwithAatId">
-                                        <arg name="id" type="constant">300435416</arg>
+                                        <arg name="id" type="constant">300435415</arg>
                                     </instance_generator>
                                     <label_generator name="Literal">
-                                        <arg name="text" type="constant">descriptive note</arg>
+                                        <arg name="text" type="constant">remarks</arg>
                                         <arg name="language" type="constant"/>
                                     </label_generator>
                                 </entity>
