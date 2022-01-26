@@ -9,6 +9,9 @@ with open('token.txt', 'r') as f:
 
 smapshot = SmapshotConnector(url = "https://smapshot-beta.heig-vd.ch/api/v1", token = token)
 
+def error(message):
+  return {"error": message}
+
 def getDataFromSparqlUpdate(payload):
   from rdflib.plugins.sparql.parser import parseUpdate
   q = parseUpdate(payload)
@@ -28,8 +31,11 @@ def getDataFromSparqlUpdate(payload):
 
 def processRequest(data):
   for row in data:
-    if row['type'] == "updateImageRegion":
-      return updateImageRegion(row)
+    if 'type' in row:
+      if row['type'] == "updateImageRegion":
+        return updateImageRegion(row)
+    else:
+      return error('no type specified')
 
 def updateImageRegion(data):
   attributes = {
@@ -49,5 +55,7 @@ def sparql():
   if request.form:
     data = getDataFromSparqlUpdate(request.form['update'])
     response = processRequest(data)
+    if 'error' in response:
+      return response
     return Response(json.dumps(response), mimetype='application/json')
   return Response("OK", mimetype='application/json')
