@@ -1,148 +1,44 @@
 import json
-from flask import Flask, Response
+from flask import Flask, Response, request
+from lib.SmapshotConnector import SmapshotConnector
+
 app = Flask(__name__)
 
-example = """
-{
-  "head" : {
-    "vars" : [ "sub", "pred", "obj" ]
-  },
-  "results" : {
-    "bindings" : [ {
-      "sub" : {
-        "type" : "uri",
-        "value" : "http://www.researchspace.org/resource/system/knowledgePatternContainer"
-      },
-      "pred" : {
-        "type" : "uri",
-        "value" : "http://www.w3.org/ns/prov#generatedAtTime"
-      },
-      "obj" : {
-        "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
-        "type" : "literal",
-        "value" : "2020-04-06T10:49:19.238Z"
-      }
-    }, {
-      "sub" : {
-        "type" : "uri",
-        "value" : "http://www.researchspace.org/resource/system/knowledgePatternContainer"
-      },
-      "pred" : {
-        "type" : "uri",
-        "value" : "http://www.w3.org/ns/prov#wasAttributedTo"
-      },
-      "obj" : {
-        "type" : "uri",
-        "value" : "http://www.researchspace.org/resource/user/admin"
-      }
-    }, {
-      "sub" : {
-        "type" : "uri",
-        "value" : "http://www.researchspace.org/resource/system/knowledgePatternContainer"
-      },
-      "pred" : {
-        "type" : "uri",
-        "value" : "http://www.w3.org/ns/ldp#contains"
-      },
-      "obj" : {
-        "type" : "uri",
-        "value" : "http://rs.swissartresearch.net/instances/knowledgePatterns/collection"
-      }
-    }, {
-      "sub" : {
-        "type" : "uri",
-        "value" : "http://www.researchspace.org/resource/system/knowledgePatternContainer"
-      },
-      "pred" : {
-        "type" : "uri",
-        "value" : "http://www.w3.org/ns/ldp#contains"
-      },
-      "obj" : {
-        "type" : "uri",
-        "value" : "http://rs.swissartresearch.net/instances/knowledgePatterns/creator_of_object"
-      }
-    }, {
-      "sub" : {
-        "type" : "uri",
-        "value" : "http://www.researchspace.org/resource/system/knowledgePatternContainer"
-      },
-      "pred" : {
-        "type" : "uri",
-        "value" : "http://www.w3.org/ns/ldp#contains"
-      },
-      "obj" : {
-        "type" : "uri",
-        "value" : "http://rs.swissartresearch.net/instances/knowledgePatterns/objects_created"
-      }
-    }, {
-      "sub" : {
-        "type" : "uri",
-        "value" : "http://www.researchspace.org/resource/system/knowledgePatternContainer"
-      },
-      "pred" : {
-        "type" : "uri",
-        "value" : "http://www.w3.org/ns/ldp#contains"
-      },
-      "obj" : {
-        "type" : "uri",
-        "value" : "http://rs.swissartresearch.net/instances/knowledgePatterns/object_depicts"
-      }
-    }, {
-      "sub" : {
-        "type" : "uri",
-        "value" : "http://www.researchspace.org/resource/system/knowledgePatternContainer"
-      },
-      "pred" : {
-        "type" : "uri",
-        "value" : "http://www.w3.org/ns/ldp#contains"
-      },
-      "obj" : {
-        "type" : "uri",
-        "value" : "http://rs.swissartresearch.net/instances/knowledgePatterns/label"
-      }
-    }, {
-      "sub" : {
-        "type" : "uri",
-        "value" : "http://www.researchspace.org/resource/system/knowledgePatternContainer"
-      },
-      "pred" : {
-        "type" : "uri",
-        "value" : "http://www.w3.org/ns/ldp#contains"
-      },
-      "obj" : {
-        "type" : "uri",
-        "value" : "http://rs.swissartresearch.net/instances/knowledgePatterns/object_carries_visual_item"
-      }
-    }, {
-      "sub" : {
-        "type" : "uri",
-        "value" : "http://www.researchspace.org/resource/system/knowledgePatternContainer"
-      },
-      "pred" : {
-        "type" : "uri",
-        "value" : "http://www.w3.org/ns/ldp#contains"
-      },
-      "obj" : {
-        "type" : "uri",
-        "value" : "http://platform.swissartresearch.net/instances/knowledgePatterns/collection"
-      }
-    }, {
-      "sub" : {
-        "type" : "uri",
-        "value" : "http://www.researchspace.org/resource/system/knowledgePatternContainer"
-      },
-      "pred" : {
-        "type" : "uri",
-        "value" : "http://www.w3.org/ns/ldp#contains"
-      },
-      "obj" : {
-        "type" : "uri",
-        "value" : "http://platform.swissartresearch.net/instances/knowledgePatterns/creator_of_object"
-      }
-    } ]
+with open('token.txt', 'r') as f:
+  token = f.read().strip()
+
+smapshot = SmapshotConnector(url = "https://smapshot-beta.heig-vd.ch/api/v1", token = token)
+
+def getDataFromSparqlUpdate(payload):
+  from rdflib.plugins.sparql.parser import parseUpdate
+  q = parseUpdate(payload)
+  keys = {}
+  for i, var in enumerate(q['request'][0]['where']['part'][0]['var']):
+      keys[i] = str(var)
+  data = []
+  for values in q['request'][0]['where']['part'][0]['value']:
+      row = {}
+      for i, value in enumerate(values):
+          if 'string' in value:
+              row[keys[i]] = str(value['string'])
+          else:
+              row[keys[i]] = str(value)
+      data.append(row)
+  return data
+
+def processRequest(data):
+  for row in data:
+    if row['type'] == "updateImageRegion":
+      return updateImageRegion(row)
+
+def updateImageRegion(data):
+  attributes = {
+    "iiif_data" : {
+      "image_service3_url": data['iiif_url'],
+      "region_px": data['region_px']
+    }
   }
-}
-"""
+  return smapshot.setImageAttributes(int(data['image_id']), attributes)
 
 @app.route('/')
 def index():
@@ -150,4 +46,8 @@ def index():
   
 @app.route('/sparql', methods=['GET', 'POST'])
 def sparql():
-  return Response(example, mimetype='application/json')
+  if request.form:
+    data = getDataFromSparqlUpdate(request.form['update'])
+    response = processRequest(data)
+    return Response(json.dumps(response), mimetype='application/json')
+  return Response("OK", mimetype='application/json')
