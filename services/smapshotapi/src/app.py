@@ -60,6 +60,6 @@ def sparql():
     data = getDataFromSparqlUpdate(request.form['update'])
     response = processRequest(data)
     if 'error' in response:
-      return response
+      return response, 500
     return Response(json.dumps(response), mimetype='application/json')
   return Response("OK", mimetype='application/json')
