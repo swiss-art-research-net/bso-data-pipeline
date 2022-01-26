@@ -33,9 +33,13 @@ def processRequest(data):
   for row in data:
     if 'type' in row:
       if row['type'] == "updateImageRegion":
+        if not 'iiif_url' in row or not 'region_px' in row or not 'image_id' in row:
+          return error("Missing parameter")
         return updateImageRegion(row)
+      else:
+        return error("Unknown request type: " + row['type'])
     else:
-      return error('no type specified')
+      return error("No type specified")
 
 def updateImageRegion(data):
   attributes = {
