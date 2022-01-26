@@ -44,6 +44,13 @@ services:
     volumes:
       - platform-data:/runtime-data
       - ./services/researchplatform/apps:/apps
+
+  smapshotapi:
+    build: ./services/smapshotapi
+    container_name: ${PROJECT_NAME}_smapshotapi
+    restart: unless-stopped
+    volumes:
+      - ./services/smapshotapi/src:/src
         
 volumes:
   3m-data:
