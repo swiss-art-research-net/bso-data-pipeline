@@ -24,8 +24,8 @@ def getDataFromSparqlUpdate(payload):
     INSERT  {
       :s :p :o .
     } WHERE {
-      VALUES(?type ?image_id ?iiif_url ?region_px) {
-        ("updateImageRegion" "210758" <https://www.e-rara.ch/zuz/i3f/v20/12581613> "[35,28,2196,1445]")
+      VALUES(?type ?image_id ?iiif_url ?regionByPx) {
+        ("updateImageRegion" "210758" <https://www.e-rara.ch/zuz/i3f/v20/12581613> "35,28,2196,1445")
       }
     }
 
@@ -35,7 +35,7 @@ def getDataFromSparqlUpdate(payload):
     "type": "updateImageRegion",
     "image_id": "210758",
     "iiif_url": "https://www.e-rara.ch/zuz/i3f/v20/12581613",
-    "region_px": "[35,28,2196,1445]"
+    "regionByPx": "35,28,2196,1445"
   }]
 
   Each row in the VALUES clause is returned as a JSON object in the list.
@@ -63,7 +63,7 @@ def processRequest(data):
   for row in data:
     if 'type' in row:
       if row['type'] == "updateImageRegion":
-        if not 'iiif_url' in row or not 'region_px' in row or not 'image_id' in row:
+        if not 'iiif_url' in row or not 'regionByPx' in row or not 'image_id' in row:
           return error("Missing parameter for request type " + row['type'])
         return updateImageRegion(row)
       else:
@@ -75,7 +75,7 @@ def updateImageRegion(data):
   """
   Updates the region of an image.
   """
-  r = smapshot.setImageRegion(int(data['image_id']), data['iiif_url'], data['region_px'])
+  r = smapshot.setImageRegion(data['image_id'], data['iiif_url'], [int(d) for d in data['regionByPx'].split(",")])
   app.logger.info(r)
   return r
 
