@@ -75,13 +75,9 @@ def updateImageRegion(data):
   """
   Updates the region of an image.
   """
-  attributes = {
-    "iiif_data" : {
-      "image_service3_url": data['iiif_url'],
-      "region_px": data['region_px']
-    }
-  }
-  return smapshot.setImageAttributes(int(data['image_id']), attributes)
+  r = smapshot.setImageRegion(int(data['image_id']), data['iiif_url'], data['region_px'])
+  app.logger.info(r)
+  return r
 
 @app.route('/')
 def index():
