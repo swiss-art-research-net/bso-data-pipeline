@@ -104,15 +104,15 @@ class SmapshotConnector:
         Set attributes for a given image id
         """
         url = self.apiPath("/images/%d/attributes" % imageId)
-        headers = {'Authorization': 'Bearer %s' % self.TOKEN}
+        headers = {'Authorization': 'Bearer %s' % self.TOKEN, 'accept': 'application/json', 'Content-Type': 'application/json'}
         r = requests.put(url=url, headers=headers, data=json.dumps(attributes))
         return r.json()
 
     def setImageRegion(self, imageId, iiifUrl, region):
         attributes = {
             "iiif_data" : {
-            "image_service3_url": iiifUrl,
-            "region_px": region
+                "image_service3_url": iiifUrl,
+                "regionByPx": region
             }
         }
-        return self.setImageAttributes(imageId, attributes)
+        return self.setImageAttributes(int(imageId), attributes)
