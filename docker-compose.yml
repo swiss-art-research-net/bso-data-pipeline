@@ -44,6 +44,16 @@ services:
     volumes:
       - platform-data:/runtime-data
       - ./services/researchplatform/apps:/apps
+
+  smapshotapi:
+    build: ./services/smapshotapi
+    container_name: ${PROJECT_NAME}_smapshotapi
+    environment:
+      - SMAPSHOT_ENDPOINT=${SMAPSHOT_ENDPOINT}
+      - SMAPSHOT_TOKEN=${SMAPSHOT_TOKEN}
+    restart: unless-stopped
+    volumes:
+      - ./services/smapshotapi/src:/src
         
 volumes:
   3m-data:
