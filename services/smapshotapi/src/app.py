@@ -1,13 +1,24 @@
 import json
+import os
+import sys
 from flask import Flask, Response, request
 from lib.SmapshotConnector import SmapshotConnector
 
+try:
+  token = os.environ['SMAPSHOT_TOKEN']
+except:
+  print("SMAPSHOT_TOKEN environment variable not set.")
+  sys.exit(1)
+
+try:
+  endpoint = os.environ['SMAPSHOT_ENDPOINT']
+except:
+  print("SMAPSHOT_ENDPOINT environment variable not set.")
+  sys.exit(1)
+
 app = Flask(__name__)
 
-with open('token.txt', 'r') as f:
-  token = f.read().strip()
-
-smapshot = SmapshotConnector(url = "https://smapshot-beta.heig-vd.ch/api/v1", token = token)
+smapshot = SmapshotConnector(url = endpoint, token = token)
 
 def error(message):
   """
