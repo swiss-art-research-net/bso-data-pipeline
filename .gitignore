@@ -19,4 +19,3 @@ __pycache__
 .task
 .vscode
 docker-compose.override.yml
-token.txt

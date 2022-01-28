@@ -49,8 +49,8 @@ services:
     build: ./services/smapshotapi
     container_name: ${PROJECT_NAME}_smapshotapi
     environment:
-      - SMAPSHOT_TOKEN=${SMAPSHOT_TOKEN}
       - SMAPSHOT_ENDPOINT=${SMAPSHOT_ENDPOINT}
+      - SMAPSHOT_TOKEN=${SMAPSHOT_TOKEN}
     restart: unless-stopped
     volumes:
       - ./services/smapshotapi/src:/src

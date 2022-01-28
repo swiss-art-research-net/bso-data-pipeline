@@ -7,7 +7,7 @@ RUN apt-get -qq update && \
 RUN locale-gen en_US.UTF-8
 
 # Install Python packages
-RUN pip install urllib3 requests tqdm rdflib sparqlwrapper PyYAML flask
+RUN pip install requests rdflib flask
 
 COPY ./src /src
 
