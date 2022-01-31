@@ -137,6 +137,15 @@ class SmapshotConnector:
         return r.json()
 
     def setImageRegion(self, imageId, iiifUrl, region):
+        """
+        Set the region and IIIF URL for a given image id
+        :param imageId: The image id
+        :type imageId: int
+        :param iiifUrl: The IIIF URL
+        :type iiifUrl: str
+        :param region: The region
+        :type region: list
+        """
         attributes = {
             "iiif_data" : {
                 "image_service3_url": iiifUrl,
