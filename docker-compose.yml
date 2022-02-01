@@ -29,11 +29,12 @@ services:
       - ./services/researchplatform/apps/bso/src:/bso-app-src
 
   platform:
-    image: swissartresearx/metaphacts-community:4.1.1
+    image: swissartresearx/metaphacts-community:4.1.2
     container_name: ${PROJECT_NAME}_platform
     restart: unless-stopped
     depends_on:
       - blazegraph
+      - smapshotapi
     environment:
       - JAVA_OPTS=-Xmx1g
     logging:
@@ -48,6 +49,7 @@ services:
   smapshotapi:
     build: ./services/smapshotapi
     container_name: ${PROJECT_NAME}_smapshotapi
+    image: swissartresearx/bso-smapshotapi:1.0.0
     environment:
       - SMAPSHOT_ENDPOINT=${SMAPSHOT_ENDPOINT}
       - SMAPSHOT_TOKEN=${SMAPSHOT_TOKEN}
