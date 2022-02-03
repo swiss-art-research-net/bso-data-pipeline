@@ -49,7 +49,7 @@ services:
   smapshotapi:
     build: ./services/smapshotapi
     container_name: ${PROJECT_NAME}_smapshotapi
-    image: swissartresearx/bso-smapshotapi:1.0.0
+    image: swissartresearx/bso-smapshotapi:1.0.1
     environment:
       - SMAPSHOT_ENDPOINT=${SMAPSHOT_ENDPOINT}
       - SMAPSHOT_TOKEN=${SMAPSHOT_TOKEN}
