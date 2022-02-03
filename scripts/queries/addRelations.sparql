@@ -20,10 +20,18 @@ INSERT {
 
 INSERT DATA {
   GRAPH sari:relations {
-    search:Object rdfs:label 'Object' .
-    search:Person rdfs:label 'Person' .
-    search:Place rdfs:label 'Place' .
-    search:Type rdfs:label 'Type' .
+    search:Object rdfs:label 'Object' ;
+      a rdfs:class ;
+      owl:sameAs crm:E22_Human-Made_Object .
+    search:Person rdfs:label 'Person' ;
+      a rdfs:class ;
+      owl:sameAs crm:E39_Actor .
+    search:Place rdfs:label 'Place'  ;
+      a rdfs:class ;
+      owl:sameAs crm:E53_Place .
+    search:Type rdfs:label 'Type' ;
+      a rdfs:class ;
+      owl:sameAs crm:E55_Type .
   }
 };
  
