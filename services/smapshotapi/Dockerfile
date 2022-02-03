@@ -7,11 +7,11 @@ RUN apt-get -qq update && \
 RUN locale-gen en_US.UTF-8
 
 # Install Python packages
-RUN pip install requests rdflib flask
+RUN pip install requests rdflib flask waitress
 
 COPY ./src /src
 
-ENV FLASK_ENV=development
+ENV FLASK_ENV=production
 ENV FLASK_APP=/src/app.py
 
 # Expose port
@@ -19,4 +19,4 @@ EXPOSE 5000
 
 # Run
 WORKDIR /src
-ENTRYPOINT flask run --host=0.0.0.0
+ENTRYPOINT python app.py
