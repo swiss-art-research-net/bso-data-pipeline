@@ -5,6 +5,7 @@ PREFIX crmdig: <http://www.ics.forth.gr/isl/CRMdig/>
 PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
 PREFIX gndo: <https://d-nb.info/standards/elementset/gnd#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 DROP GRAPH sari:relations;
 
@@ -20,18 +21,25 @@ INSERT {
 
 INSERT DATA {
   GRAPH sari:relations {
+    search:Entity a rdfs:Class ;
+      rdfs:equivalentClass crm:E1_CRM_Entity ;
+      rdfs:label 'Search Entity' .
     search:Object rdfs:label 'Object' ;
-      a rdfs:class ;
-      owl:sameAs crm:E22_Human-Made_Object .
+      a rdfs:Class ;
+      rdfs:subClassOf search:Entity ;
+      rdfs:equivalentClass crm:E22_Human-Made_Object .
     search:Person rdfs:label 'Person' ;
-      a rdfs:class ;
-      owl:sameAs crm:E39_Actor .
+      a rdfs:Class ;
+      rdfs:subClassOf search:Entity ;
+      rdfs:equivalentClass crm:E39_Actor .
     search:Place rdfs:label 'Place'  ;
-      a rdfs:class ;
-      owl:sameAs crm:E53_Place .
+      a rdfs:Class ;
+      rdfs:subClassOf search:Entity ;
+      rdfs:equivalentClass crm:E53_Place .
     search:Type rdfs:label 'Type' ;
-      a rdfs:class ;
-      owl:sameAs crm:E55_Type .
+      a rdfs:Class ;
+      rdfs:subClassOf search:Entity ;
+      rdfs:equivalentClass crm:E55_Type .
   }
 };
  
@@ -65,6 +73,11 @@ INSERT {
 } WHERE {
   ?subject a crm:E53_Place
   FILTER(REGEX(STR(?subject), 'swissartresearch.net'))
+  FILTER NOT EXISTS {
+    GRAPH <https://resource.swissartresearch.net/graph/smapshot> {
+      ?subject a crm:E53_Place .
+    }
+  }
 };
 
 INSERT {
