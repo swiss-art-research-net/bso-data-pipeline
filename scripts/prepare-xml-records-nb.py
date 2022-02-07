@@ -23,6 +23,7 @@ curatedDataFiles = [
     "../data/source/nb-curation-geografika.csv"
 ]
 curatedNamesFile = "../data/source/nb-curation-names.csv"
+curatedRolesFile = "../data/source/nb-curation-roles.csv"
 curatedTypesFile = "../data/source/nb-curation-extracted-types.csv"
 imageSizesFile = "../data/source/nb-image-sizes.csv"
 externalDescriptorsFile = "../data/source/nb-external-descriptors.csv"
@@ -164,6 +165,15 @@ def loadCuratedNames(curatedNamesFile):
         for row in reader:
             curatedNames.append(row)
     return curatedNames
+
+def loadCuratedRoles(curatedRolesFile):
+    # Read curated roles into a list
+    curatedRoles = []
+    with open(curatedRolesFile, 'r') as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            curatedRoles.append(row)
+    return curatedRoles
 
 def loadImageSizes(imageSizesFile):
     imageSizes = []
@@ -310,22 +320,21 @@ def matchDescriptorsWithElementValues(record, externalDescriptors, curatedNames)
             if NFD(name) in NFD(curatedName['Raw']):
                 return curatedName['normalised name']
                 
-        log.append("Not found in curated nanmes: " + name)
+        log.append("Not found in curated names: " + name)
         return False
 
-    def matchRoleWithCuratedNames(name, curatedNames):
-        # We use the name list to match roles as well. Eventually one could use a smaller list of only the roles as well
-        for curatedName in curatedNames:
-            if curatedName['normalised role'] and curatedName['Role'] in name:
-                roles = curatedName['normalised role'].split("/") 
-                gndRoles = curatedName['gnd role'].split(";")
+    def matchRoleWithCuratedRoles(name, curatedRoles):
+        for curatedRole in curatedRoles:
+            if curatedRole['normalised role'] and curatedRole['role'] in name:
+                roles = curatedRole['normalised role'].split("/") 
+                gndRoles = curatedRole['gnd role'].split(";")
                 returnRoles = []
                 for i in range(min(len(roles), len(gndRoles))):
                     returnRoles.append({"label": roles[i], "gnd": gndRoles[i]})
                 return returnRoles
         return False
     # Extract Elements containing names
-    elementIdsWithCuratedNames = ['10817', '10927', '10107']
+    elementIdsWithCuratedNames = ['10817', '10927', '10107', '10915']
     dataElementXPath = '|'.join(["DetailData/DataElement[@ElementId='%s']" % d for d in elementIdsWithCuratedNames])
 
     recordElements = record.xpath(dataElementXPath)
@@ -363,7 +372,14 @@ def matchDescriptorsWithElementValues(record, externalDescriptors, curatedNames)
                 else:
                     log.append("Unmatched name in Record " + record.get('Id'))
 
-                matchedRoles = matchRoleWithCuratedNames(name, curatedNames)
+                matchedRoles = matchRoleWithCuratedRoles(name, curatedRoles)
+                
+                # If we could not find a role in the name, we try different ways of matching it
+                if not matchedRoles:
+                    if value.find("Descriptor/Name") is not None:
+                        rolename = value.find("Descriptor/Name").text
+                        matchedRoles = matchRoleWithCuratedRoles(rolename, curatedRoles)
+
                 if matchedRoles:
                     for role in matchedRoles:
                         roleElement = etree.SubElement(value, "Role")
@@ -472,6 +488,7 @@ root, records = loadRecordsToProcess(inputFiles)
 
 curatedData = loadCuratedData(curatedDataFiles)
 curatedNames = loadCuratedNames(curatedNamesFile)
+curatedRoles = loadCuratedRoles(curatedRolesFile)
 curatedTypes = loadCuratedTypes(curatedTypesFile)
 
 imageSizes, imageSizesHash = loadImageSizes(imageSizesFile)
@@ -485,7 +502,6 @@ log = []
 if idsToOutput:
     listOfIds = idsToOutput.split(',')
     records = [d for d in records if d.get("Id") in listOfIds]
-
 
 now = time.time()
 
