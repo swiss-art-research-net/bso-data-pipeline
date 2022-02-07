@@ -250,7 +250,7 @@ def getDateForDateElement(date):
     if not date.text:
         return False
         
-    patternCeYear = r'\+\d{4}-'
+    patternCeYear = r'\+\d{4}-?'
     if re.match(patternCeYear, date.text):
         year = date.text[1:].zfill(4)
         if date.tag == 'FromDate':
