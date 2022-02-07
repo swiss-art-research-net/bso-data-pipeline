@@ -210,7 +210,7 @@ tasks:
       INPUT_FOLDER: /data/xml/nb
       OUTPUT_FOLDER: /data/ttl/main/nb
       MAPPING_FILE: /mapping/mappings-nb.x3ml
-      BATCHSIZE: 20
+      BATCHSIZE: 1
     sources:
       - /data/xml/nb/*.xml
       - /mapping/mappings-nb.x3ml
@@ -226,7 +226,7 @@ tasks:
       INPUT_FOLDER: /data/xml/sff
       OUTPUT_FOLDER: /data/ttl/main/sff
       MAPPING_FILE: /mapping/mappings-sff.x3ml
-      BATCHSIZE: 20
+      BATCHSIZE: 1
     sources:
       - /data/xml/sff/*.xml
       - /mapping/mappings-sff.x3ml
@@ -242,7 +242,7 @@ tasks:
       INPUT_FOLDER: /data/xml/zbz
       OUTPUT_FOLDER: /data/ttl/main/zbz
       MAPPING_FILE: /mapping/mappings-zbz.x3ml
-      BATCHSIZE: 20
+      BATCHSIZE: 1
     sources:
       - /data/xml/zbz/*.xml
       - /mapping/mappings-zbz.x3ml
