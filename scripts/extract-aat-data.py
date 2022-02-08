@@ -9,22 +9,38 @@ from urllib.request import urlopen
 ttlFolder='/data/ttl/main/'
 ttlOutput='/data/ttl/additional/aat.ttl'
 
+additionalFiles = ['/data/ttl/additional/zbzTypeLabels.trig']
+
 # Look at all Turtle files
 inputFiles = [path.join(root, name)
              for root, dirs, files in walk(ttlFolder)
              for name in files
              if name.endswith((".ttl"))]
 
+# Add additional files
+inputFiles.extend(additionalFiles)
+
 # Identify AAT identifiers by looking at triples where the object is a AAT identifier
 aatIdentifiers = []
 for file in tqdm(inputFiles):
-    g = rdflib.Graph()
-    g.parse(file, format='ttl')
-    queryResults = g.query(
-    """SELECT DISTINCT ?aat WHERE {
-        ?s ?p ?aat .
-        FILTER(REGEX(STR(?aat),"http://vocab.getty.edu/aat/"))
-    }""")
+    if file.endswith('.trig'):
+        g = rdflib.Dataset()
+        g.parse(file)
+        queryResults = g.query(
+        """SELECT DISTINCT ?aat WHERE {
+            GRAPH ?g {
+                ?s ?p ?aat .
+            }
+            FILTER(REGEX(STR(?aat),"http://vocab.getty.edu/aat/"))
+        }""")
+    else:
+        g = rdflib.Graph()
+        g.parse(file)
+        queryResults = g.query(
+        """SELECT DISTINCT ?aat WHERE {
+            ?s ?p ?aat .
+            FILTER(REGEX(STR(?aat),"http://vocab.getty.edu/aat/"))
+        }""")
     for row in queryResults:
         aatIdentifiers.append(str(row[0]))
 
