@@ -383,7 +383,7 @@ def matchDescriptorsWithElementValues(record, externalDescriptors, curatedNames)
                     normalisedName = etree.SubElement(value, "NormalisedName")
                     normalisedName.text = matchedName
                 else:
-                    log.append("Unmatched name in Record " + record.get('Id'))
+                    log.append("Unmatched name in Record " + record.get('Id') + ": " + name)
 
                 matchedRoles = matchRoleWithCuratedRoles(name, curatedRoles)
                 
@@ -423,7 +423,7 @@ def processFieldsWithMultipleValues(record):
     #              </ElementValue>
     #            </DataElement>
 
-    elementIdsWithMultipleNames = ['10817', '10927']
+    elementIdsWithMultipleNames = ['10817', '10927', '10107']
     dataElementXPath = '|'.join(["DetailData/DataElement[@ElementId='%s']" % d for d in elementIdsWithMultipleNames])
 
     dataElementsContainingNames = record.xpath(dataElementXPath)
