@@ -104,6 +104,16 @@ fi
 
 if [[ $NOPROMPT -ne 1 ]]
 then
+  read -p "Retrieve LOC data? (y/n)" -n 1 -r
+  echo ""
+fi
+if [[ $NOPROMPT || $REPLY =~ ^[Yy]$ ]]
+then
+  docker exec $JOBSCONTAINER bash -c "task retrieve-loc"
+fi
+
+if [[ $NOPROMPT -ne 1 ]]
+then
   read -p "Retrieve GND data? (y/n)" -n 1 -r
   echo ""
 fi
