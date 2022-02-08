@@ -8,22 +8,39 @@ from tqdm import tqdm
 ttlFolder='/data/ttl/main/'
 ttlOutput='/data/ttl/additional/gnd.ttl'
 
+additionalFiles = ['/data/ttl/additional/zbzTypeLabels.trig']
+
 # Look at all Turtle files
 inputFiles = [path.join(root, name)
              for root, dirs, files in walk(ttlFolder)
              for name in files
              if name.endswith((".ttl"))]
 
+# Add additional files
+inputFiles.extend(additionalFiles)
+
 # Identify GND identifiers by looking at triples where the object is  a GND identifier
 gndIdentifiers = []
+
 for file in tqdm(inputFiles):
-    g = rdflib.Graph()
-    g.parse(file, format='ttl')
-    queryResults = g.query(
-    """SELECT DISTINCT ?gnd WHERE {
-        ?s ?p ?gnd .
-        FILTER(REGEX(STR(?gnd),"https://d-nb.info/gnd/"))
-    }""")
+    if file.endswith('.trig'):
+        g = rdflib.Dataset() 
+        g.parse(file)
+        queryResults = g.query(
+        """SELECT DISTINCT ?gnd WHERE {
+            GRAPH ?g {
+                ?s ?p ?gnd .
+            }
+            FILTER(REGEX(STR(?gnd),"https://d-nb.info/gnd/"))
+        }""")
+    else:
+        g = rdflib.Graph() 
+        g.parse(file)
+        queryResults = g.query(
+        """SELECT DISTINCT ?gnd WHERE {
+            ?s ?p ?gnd .
+            FILTER(REGEX(STR(?gnd),"https://d-nb.info/gnd/"))
+        }""")
     for row in queryResults:
         gndIdentifiers.append(str(row[0]))
 
