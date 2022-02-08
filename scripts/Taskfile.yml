@@ -303,6 +303,11 @@ tasks:
     cmds:
       - python /scripts/extract-aat-data.py
 
+  retrieve-loc:
+    desc: Extracts relevant data from Library of Congress based on identifiers found in the mapped TTL files
+    cmds:
+      - python /scripts/extract-loc-data.py
+
   retrieve-gnd:
     desc: Extracts relevant data from GND based on identifiers found in the mapped TTL files
     cmds:
