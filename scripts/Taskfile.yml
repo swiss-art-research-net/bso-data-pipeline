@@ -5,6 +5,7 @@ version: '3'
 vars:
   ENDPOINT: http://blazegraph:8080/blazegraph/sparql
   GENERATOR_POLICY: /mapping/generator-policy.xml
+  MAPPING_BATCH_SIZE: 10
 
 tasks:
 
@@ -210,7 +211,6 @@ tasks:
       INPUT_FOLDER: /data/xml/nb
       OUTPUT_FOLDER: /data/ttl/main/nb
       MAPPING_FILE: /mapping/mappings-nb.x3ml
-      BATCHSIZE: 10
     sources:
       - /data/xml/nb/*.xml
       - /mapping/mappings-nb.x3ml
@@ -218,7 +218,7 @@ tasks:
       - /data/ttl/main/nb/*.ttl
     cmds:
       - rm -f {{.OUTPUT_FOLDER}}/*.ttl
-      - bash /scripts/performMapping.sh -i {{.INPUT_FOLDER}} -o {{.OUTPUT_FOLDER}} -m {{.MAPPING_FILE}} -g {{.GENERATOR_POLICY}} -b {{.BATCHSIZE}}
+      - bash /scripts/performMapping.sh -i {{.INPUT_FOLDER}} -o {{.OUTPUT_FOLDER}} -m {{.MAPPING_FILE}} -g {{.GENERATOR_POLICY}} -b {{.MAPPING_BATCH_SIZE}}
 
   mapping-sff:
     desc: Map SFF XML data to CIDOC/RDF
@@ -226,7 +226,6 @@ tasks:
       INPUT_FOLDER: /data/xml/sff
       OUTPUT_FOLDER: /data/ttl/main/sff
       MAPPING_FILE: /mapping/mappings-sff.x3ml
-      BATCHSIZE: 10
     sources:
       - /data/xml/sff/*.xml
       - /mapping/mappings-sff.x3ml
@@ -234,7 +233,7 @@ tasks:
       - /data/ttl/main/sff/*.ttl
     cmds:
       - rm -f {{.OUTPUT_FOLDER}}/*.ttl
-      - bash /scripts/performMapping.sh -i {{.INPUT_FOLDER}} -o {{.OUTPUT_FOLDER}} -m {{.MAPPING_FILE}} -g {{.GENERATOR_POLICY}} -b {{.BATCHSIZE}}
+      - bash /scripts/performMapping.sh -i {{.INPUT_FOLDER}} -o {{.OUTPUT_FOLDER}} -m {{.MAPPING_FILE}} -g {{.GENERATOR_POLICY}} -b {{.MAPPING_BATCH_SIZE}}
 
   mapping-zbz:
     desc: Map ZBZ XML data to CIDOC/RDF
@@ -242,7 +241,6 @@ tasks:
       INPUT_FOLDER: /data/xml/zbz
       OUTPUT_FOLDER: /data/ttl/main/zbz
       MAPPING_FILE: /mapping/mappings-zbz.x3ml
-      BATCHSIZE: 1
     sources:
       - /data/xml/zbz/*.xml
       - /mapping/mappings-zbz.x3ml
@@ -250,7 +248,7 @@ tasks:
       - /data/ttl/main/zbz/*.ttl
     cmds:
       - rm -f {{.OUTPUT_FOLDER}}/*.ttl
-      - bash /scripts/performMapping.sh -i {{.INPUT_FOLDER}} -o {{.OUTPUT_FOLDER}} -m {{.MAPPING_FILE}} -g {{.GENERATOR_POLICY}} -b {{.BATCHSIZE}}
+      - bash /scripts/performMapping.sh -i {{.INPUT_FOLDER}} -o {{.OUTPUT_FOLDER}} -m {{.MAPPING_FILE}} -g {{.GENERATOR_POLICY}} -b {{.MAPPING_BATCH_SIZE}}
 
   materialise-field-definitions:
     desc: Materialises the field definitions as propertes in the graph
