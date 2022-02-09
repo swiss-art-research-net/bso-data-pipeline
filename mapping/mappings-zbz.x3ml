@@ -3960,7 +3960,7 @@
                 <range>
                     <source_node>.</source_node>
                     <target_node>
-                        <entity>
+                        <entity variable="loc">
                             <type>crm:E55_Type</type>
                             <instance_generator name="URIorUUID">
                                 <arg name="text" type="xpath">@loc-uri</arg>
@@ -3976,7 +3976,11 @@
                     </source_relation>
                     <target_relation>
                         <if>
-                            <exists>@gnd</exists>
+                            <not>
+                                <if>
+                                    <equals value="">@gnd</equals>
+                                </if>
+                            </not>
                         </if>
                         <relationship>crmdig:L54_is_same-as</relationship>
                     </target_relation>
@@ -3984,7 +3988,7 @@
                 <range>
                     <source_node>.</source_node>
                     <target_node>
-                        <entity>
+                        <entity variable="gnd">
                             <type>crm:E55_Type</type>
                             <instance_generator name="URIwithGndId">
                                 <arg name="id" type="xpath">@gnd</arg>
@@ -3995,6 +3999,4 @@
             </link>
         </mapping>
     </mappings>
-
-
 </x3ml>
