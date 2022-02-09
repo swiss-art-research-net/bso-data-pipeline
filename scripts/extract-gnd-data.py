@@ -8,7 +8,7 @@ from tqdm import tqdm
 ttlFolder='/data/ttl/main/'
 ttlOutput='/data/ttl/additional/gnd.ttl'
 
-additionalFiles = ['/data/ttl/additional/zbzTypeLabels.trig']
+additionalFiles = [] # Additional files that should be scanned can be added here
 
 # Look at all Turtle files
 inputFiles = [path.join(root, name)

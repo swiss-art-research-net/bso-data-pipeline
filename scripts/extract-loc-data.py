@@ -9,7 +9,7 @@ from urllib.request import urlopen
 ttlFolder='/data/ttl/main/'
 ttlOutput='/data/ttl/additional/loc.ttl'
 
-additionalFiles = ['/data/ttl/additional/zbzTypeLabels.trig']
+additionalFiles = [] # Additional files that should be scanned can be added here
 
 # Look at all Turtle files
 inputFiles = [path.join(root, name)
