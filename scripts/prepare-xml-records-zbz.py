@@ -26,6 +26,7 @@ curatedFilesPre = '../data/source/zbz-curation-'
 manifestDirectory = "../data/manifests/"
 doisFile = '../data/source/zbz-dois.csv'
 correctionsFile = '../data/source/zbz-corrections.csv'
+relatorsFile = '../data/source/zbz-curation-relators.csv'
 outputDirectory = "../data/xml/zbz/"
 outputPrefix = "zbz-record-"
 
@@ -97,6 +98,15 @@ def addRecordIdentifier(record):
     identifier = record.find("controlfield[@tag='001']").text
     field = etree.SubElement(record, "record-identifier")
     field.text = "zbz-" + identifier
+    return record
+
+def addRelators(record):
+    relatorFields = record.findall("datafield/subfield[@code='4']")
+    for relatorField in relatorFields:
+        relator = relators[relatorField.text]
+        for key in relator.keys():
+            if key != 'code':
+                relatorField.set(key, relator[key])
     return record
 
 def addTagNumbering(record):
@@ -319,6 +329,13 @@ for tag in curatedFields.keys():
         except:
             print("Could not process", filename)
 
+# Read relators file
+relators = {}
+with open(relatorsFile, 'r') as f:
+    reader = csv.DictReader(f)
+    for row in reader:
+        relators[row['code']] = row
+
 # Read manifest data
 manifests = {}
 with open(doisFile, 'r') as f:
@@ -346,6 +363,7 @@ for record in tqdm(records[offset:offset + limit]):
     record = applyCorrections(record)
     record = splitMultiValueFields(record)
     record = addCuratedData(record)
+    record = addRelators(record)
     record = addTagNumbering(record)
     record = addManifest(record)
     record = addImages(record)

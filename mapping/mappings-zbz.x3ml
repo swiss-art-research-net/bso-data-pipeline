@@ -313,9 +313,9 @@
                     <target_node>
                         <entity>
                             <type>crm:E55_Type</type>
-                            <instance_generator name="URIwithTypeAndId">
+                            <instance_generator name="URIwithTypeAndId_hashed">
                                 <arg name="type" type="constant">type</arg>
-                                <arg name="id" type="xpath">replace(lower-case(./subfield[@code='a']/text()),' ', '-')</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">if (./subfield[@code='gnd']/text()) then (./subfield[@code='gnd']/text()) else (./subfield[@code='a']/text())</arg>
                             </instance_generator>
                             <label_generator name="Literal">
                                 <arg name="text" type="xpath">./subfield[@code='a']/text()</arg>
@@ -972,9 +972,8 @@
                     <target_node>
                         <entity>
                             <type>crm:E55_Type</type>
-                            <instance_generator name="URIwithTypeAndId">
-                                <arg name="type" type="constant">type</arg>
-                                <arg name="id" type="xpath">./subfield[@code='b']/text()</arg>
+                            <instance_generator name="URIorUUID">
+                                <arg name="text" type="xpath">concat('http://id.loc.gov/vocabulary/relators/', ./subfield[@code='b']/text())</arg>
                             </instance_generator>
                             <label_generator name="Literal">
                                 <arg name="text" type="xpath">if(./subfield[@code='a']/text()) then (./subfield[@code='a']/text()) else (./subfield[@code='b']/text())</arg>
@@ -1416,9 +1415,9 @@
                     <target_node>
                         <entity variable="creation-type">
                             <type>crm:E55_Type</type>
-                            <instance_generator name="URIwithTypeAndId">
+                            <instance_generator name="URIwithTypeAndId_hashed">
                                 <arg name="type" type="constant">type</arg>
-                                <arg name="id" type="xpath">text()</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">if (@gnd) then (@gnd) else (text())</arg>
                             </instance_generator>
                             <label_generator name="Literal">
                                 <arg name="text" type="xpath">if (../subfield[@code='e']/text()) then (../subfield[@code='e']/text()) else (text())</arg>
@@ -1603,9 +1602,9 @@
                     <target_node>
                         <entity variable="creation-type">
                             <type>crm:E55_Type</type>
-                            <instance_generator name="URIwithTypeAndId">
+                            <instance_generator name="URIwithTypeAndId_hashed">
                                 <arg name="type" type="constant">type</arg>
-                                <arg name="id" type="xpath">text()</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">if (@gnd) then (@gnd) else (text())</arg>
                             </instance_generator>
                             <label_generator name="Literal">
                                 <arg name="text" type="xpath">if (../subfield[@code='e']/text()) then (../subfield[@code='e']/text()) else (text())</arg>
@@ -2927,9 +2926,9 @@
                     <target_node>
                         <entity variable="subproduction-type">
                             <type>crm:E55_Type</type>
-                            <instance_generator name="URIwithTypeAndId">
+                            <instance_generator name="URIwithTypeAndId_hashed">
                                 <arg name="type" type="constant">type</arg>
-                                <arg name="id" type="xpath">text()</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">if (@gnd) then (@gnd) else (text())</arg>
                             </instance_generator>
                             <label_generator name="Literal">
                                 <arg name="text" type="xpath">../subfield[@code='e']/text()</arg>
@@ -3017,9 +3016,9 @@
                     <target_node>
                         <entity>
                             <type>crm:E55_Type</type>
-                            <instance_generator name="URIwithTypeAndId">
+                            <instance_generator name="URIwithTypeAndId_hashed">
                                 <arg name="type" type="constant">type</arg>
-                                <arg name="id" type="xpath">lower-case(text())</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">if (../subfield[@code='4']/@gnd) then (../subfield[@code='4']/@gnd) else (../subfield[@code='4']/text())</arg>
                             </instance_generator>
                             <label_generator name="Literal">
                                 <arg name="text" type="xpath">text()</arg>

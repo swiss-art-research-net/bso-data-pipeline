@@ -2369,9 +2369,9 @@
                     <target_node>
                         <entity>
                             <type>crm:E55_Type</type>
-                            <instance_generator name="URIwithTypeAndId">
+                            <instance_generator name="URIwithTypeAndId_hashed">
                                 <arg name="type" type="constant">type</arg>
-                                <arg name="id" type="xpath">lower-case(text())</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">if (@gnd) then (@gnd) else (text())</arg>
                             </instance_generator>
                             <label_generator name="Literal">
                                 <arg name="text" type="xpath">text()</arg>
@@ -2421,9 +2421,9 @@
                     <target_node>
                         <entity variable="constant_role_photographer">
                             <type>crm:E55_Type</type>
-                            <instance_generator name="URIwithTypeAndId">
+                            <instance_generator name="URIwithTypeAndId_hashed">
                                 <arg name="type" type="constant">type</arg>
-                                <arg name="id" type="constant">fotografin</arg>
+                                <arg name="id_HASHED_CONTENTS" type="constant">4045893-3</arg>
                             </instance_generator>
                             <label_generator name="Literal">
                                 <arg name="text" type="constant">FotografIn</arg>

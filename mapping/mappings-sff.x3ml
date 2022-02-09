@@ -1006,9 +1006,9 @@
                     <target_node>
                         <entity variable="subcreation_type">
                             <type>crm:E55_Type</type>
-                            <instance_generator name="URIwithTypeAndId">
+                            <instance_generator name="URIwithTypeAndId_hashed">
                                 <arg name="type" type="constant">type</arg>
-                                <arg name="id" type="xpath">lower-case(text())</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">if (contains(@role_uri, 'd-nb.info/gnd/')) then (substring-after(@role_uri, 'gnd/')) else (text())</arg>
                             </instance_generator>
                             <label_generator name="Literal">
                                 <arg name="text" type="xpath">text()</arg>
@@ -1222,9 +1222,9 @@
                     <target_node>
                         <entity variable="subcreation_type">
                             <type>crm:E55_Type</type>
-                            <instance_generator name="URIwithTypeAndId">
+                            <instance_generator name="URIwithTypeAndId_hashed">
                                 <arg name="type" type="constant">type</arg>
-                                <arg name="id" type="xpath">lower-case(text())</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">if (contains(@role_uri, 'd-nb.info/gnd/')) then (substring-after(@role_uri, 'gnd/')) else (text())</arg>
                             </instance_generator>
                             <label_generator name="Literal">
                                 <arg name="text" type="xpath">text()</arg>
@@ -1443,7 +1443,7 @@
                         <type>crm:E55_Type</type>
                         <instance_generator name="URIwithTypeAndId_hashed">
                             <arg name="type" type="constant">type</arg>
-                            <arg name="id_HASHED_CONTENTS" type="xpath">if(gnd/text()) then (gnd/text()) else (text/text())</arg>
+                            <arg name="id_HASHED_CONTENTS" type="xpath">if (contains(@role_uri, 'd-nb.info/gnd/')) then (substring-after(@role_uri, 'gnd/')) else (text())</arg>
                         </instance_generator>
                     </entity>
                 </target_node>

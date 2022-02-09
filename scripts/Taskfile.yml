@@ -242,7 +242,7 @@ tasks:
       INPUT_FOLDER: /data/xml/zbz
       OUTPUT_FOLDER: /data/ttl/main/zbz
       MAPPING_FILE: /mapping/mappings-zbz.x3ml
-      BATCHSIZE: 10
+      BATCHSIZE: 1
     sources:
       - /data/xml/zbz/*.xml
       - /mapping/mappings-zbz.x3ml
