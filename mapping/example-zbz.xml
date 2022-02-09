@@ -2,7 +2,6 @@
 <collection>
   <record>
     <leader>01762nam a2200457 c 4500</leader>
-    <record-identifier>zbz-990036399200205508</record-identifier>
     <controlfield tag="001">990036399200205508</controlfield>
     <controlfield tag="005">20201228124932.0</controlfield>
     <controlfield tag="007">cr |||||||||||</controlfield>
@@ -11,100 +10,123 @@
     <datafield tag="019" ind1=" " ind2=" ">
       <subfield code="a">Unikatsaufnahme</subfield>
       <subfield code="5">NEBIS/Z01/02.10.2020</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="024" ind1="7" ind2=" ">
       <subfield code="a">10.3931/e-rara-64710</subfield>
       <subfield code="2">doi</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="035" ind1=" " ind2=" ">
       <subfield code="a">(swissbib)151695431-41slsp_network</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="035" ind1=" " ind2=" ">
       <subfield code="a">151695431</subfield>
       <subfield code="9">ExL</subfield>
+      <subfield code="subfield">2</subfield>
     </datafield>
     <datafield tag="035" ind1=" " ind2=" ">
       <subfield code="a">(NEBIS)003639920EBI01</subfield>
+      <subfield code="subfield">3</subfield>
     </datafield>
     <datafield tag="035" ind1=" " ind2=" ">
       <subfield code="a">(EXLNZ-41SLSP_NETWORK)991025158449705501</subfield>
+      <subfield code="subfield">4</subfield>
     </datafield>
     <datafield tag="040" ind1=" " ind2=" ">
       <subfield code="a">SzZuIDS NEBIS ZBZ</subfield>
       <subfield code="b">ger</subfield>
       <subfield code="e">rda</subfield>
       <subfield code="d">CH-ZuSLS</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="100" ind1="1" ind2=" ">
       <subfield code="a">Egli, Jean</subfield>
       <subfield code="d" parsedDate="1828/1870" upperDate="1870-12-31" lowerDate="1828-01-01">1828-1870</subfield>
       <subfield code="0">(DE-588)1089410395</subfield>
       <subfield code="e">Künstler</subfield>
-      <subfield code="4">art</subfield>
+      <subfield code="4" label="Künstler" loc-uri="http://id.loc.gov/vocabulary/relators/art" gnd="4033423-5">art</subfield>
       <subfield code="gnd">1089410395</subfield>
       <subfield code="normalised_name">Egli, Jean</subfield>
       <subfield code="Geburtsdatum">1828</subfield>
       <subfield code="Sterbedatum">1870</subfield>
       <subfield code="wd_id">Q94919286</subfield>
-      <subfield code="notes"></subfield>
+      <subfield code="notes"/>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="245" ind1="1" ind2="0">
       <subfield code="a">Album der Stadt Zürich</subfield>
       <subfield code="c">Jean Egli lith.</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="264" ind1=" " ind2="1">
       <subfield code="a">[Zürich]</subfield>
       <subfield code="b">Ruff u. Hofer gedr.t</subfield>
       <subfield code="c" parsedDate="1860" upperDate="1860-12-31" lowerDate="1860-01-01">[1860]</subfield>
       <subfield code="264_a-gnd-id">4068038-1</subfield>
+      <subfield code="264_a-wd-id">Q72</subfield>
       <subfield code="264_a_normalised_name">Zürich</subfield>
-      <subfield code="notes"></subfield>
+      <subfield code="notes"/>
       <subfield code="264_b-gnd-id">1123535671</subfield>
       <subfield code="264_b_normalised_name">Ruff &amp; Hofer (Zürich)</subfield>
-      <subfield code="notes"></subfield>
+      <subfield code="264_b_wd-id"/>
+      <subfield code="notes"/>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="300" ind1=" " ind2=" ">
       <subfield code="a">10 Blätter</subfield>
       <subfield code="b">Lithografien</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="336" ind1=" " ind2=" ">
       <subfield code="b">sti</subfield>
       <subfield code="2">rdacontent</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="337" ind1=" " ind2=" ">
       <subfield code="b">n</subfield>
       <subfield code="2">rdamedia</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="337" ind1=" " ind2=" ">
       <subfield code="b">c</subfield>
       <subfield code="2">rdamedia</subfield>
+      <subfield code="subfield">2</subfield>
     </datafield>
     <datafield tag="338" ind1=" " ind2=" ">
       <subfield code="b">nb</subfield>
       <subfield code="2">rdacarrier</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="338" ind1=" " ind2=" ">
       <subfield code="b">nc</subfield>
       <subfield code="2">rdacarrier</subfield>
+      <subfield code="subfield">2</subfield>
     </datafield>
     <datafield tag="338" ind1=" " ind2=" ">
       <subfield code="b">cr</subfield>
       <subfield code="2">rdacarrier</subfield>
+      <subfield code="subfield">3</subfield>
     </datafield>
     <datafield tag="500" ind1=" " ind2=" ">
       <subfield code="a">Keine Titelseite vorhanden; Umschlagtitel verwendet</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="590" ind1=" " ind2=" ">
       <subfield code="a">Datierung und Angaben zum Inhalt gemäss Bleistiftnotizen auf der Rückseite des Umschlags</subfield>
       <subfield code="5">NEBIS/Exemplar der Zentralbibliothek Zürich, Graphische Sammlung und Fotoarchiv</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="650" ind1=" " ind2="7">
       <subfield code="a">Vedute</subfield>
       <subfield code="0">(DE-588)4001393-5</subfield>
       <subfield code="2">gnd</subfield>
       <subfield code="gnd">4001393-5</subfield>
+      <subfield code="wd_id">Q166030</subfield>
       <subfield code="normalised_name">Vedute</subfield>
-      <subfield code="notes"></subfield>
+      <subfield code="notes"/>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="651" ind1=" " ind2="7">
       <subfield code="a">Zürich</subfield>
@@ -113,89 +135,111 @@
       <subfield code="gnd">4068038-1</subfield>
       <subfield code="normalised_name">Zürich</subfield>
       <subfield code="wd_id">Q72</subfield>
-      <subfield code="notes"></subfield>
+      <subfield code="notes"/>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="655" ind1=" " ind2="7">
       <subfield code="a">Bildband</subfield>
       <subfield code="2">gnd-content</subfield>
       <subfield code="gnd">4145395-5</subfield>
-      <subfield code="notes"></subfield>
+      <subfield code="wd_id"/>
+      <subfield code="notes"/>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="751" ind1=" " ind2=" ">
       <subfield code="a">Zürich</subfield>
       <subfield code="0">(DE-588)4068038-1</subfield>
       <subfield code="e">Erscheinungsort</subfield>
-      <subfield code="4">pup</subfield>
+      <subfield code="4" label="Erscheinungsort" loc-uri="http://id.loc.gov/vocabulary/relators/pup" gnd="4269034-1">pup</subfield>
       <subfield code="gnd">4068038-1</subfield>
+      <subfield code="wd_id">Q72</subfield>
       <subfield code="normalised_name">Zürich</subfield>
-      <subfield code="notes"></subfield>
+      <subfield code="notes"/>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="751" ind1=" " ind2=" ">
       <subfield code="a">Zurich</subfield>
       <subfield code="0">(DE-588)4068038-1</subfield>
-      <subfield code="gnd"></subfield>
-      <subfield code="normalised_name"></subfield>
-      <subfield code="notes"></subfield>
+      <subfield code="gnd">4068038-1</subfield>
+      <subfield code="wd_id">Q72</subfield>
+      <subfield code="normalised_name">Zürich</subfield>
+      <subfield code="notes"/>
+      <subfield code="subfield">2</subfield>
     </datafield>
     <datafield tag="751" ind1=" " ind2=" ">
       <subfield code="a">Zurich</subfield>
       <subfield code="0">(DE-588)4068038-1</subfield>
-      <subfield code="gnd"></subfield>
-      <subfield code="normalised_name"></subfield>
-      <subfield code="notes"></subfield>
+      <subfield code="gnd">4068038-1</subfield>
+      <subfield code="wd_id">Q72</subfield>
+      <subfield code="normalised_name">Zürich</subfield>
+      <subfield code="notes"/>
+      <subfield code="subfield">3</subfield>
     </datafield>
     <datafield tag="856" ind1="4" ind2=" ">
       <subfield code="u">http://dx.doi.org/10.3931/e-rara-64710</subfield>
       <subfield code="z">Online via e-rara.ch</subfield>
       <subfield code="x">Z01</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="852" ind1="4" ind2=" ">
       <subfield code="8">22386969030005508</subfield>
       <subfield code="a">ZAD50</subfield>
       <subfield code="b">Z02</subfield>
       <subfield code="c">GSM</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="866" ind1=" " ind2=" ">
       <subfield code="8">22386969030005508.1</subfield>
       <subfield code="a">Einzelne Blätter</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="900" ind1=" " ind2=" ">
       <subfield code="a">IDSZRMedeaZBZ</subfield>
       <subfield code="b">IDSZRSWK</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="900" ind1=" " ind2=" ">
       <subfield code="a">IDSZ2zbzmix201711l</subfield>
       <subfield code="c">IDSZ2alth</subfield>
       <subfield code="d">IDSZ2zbzswk201711p</subfield>
       <subfield code="e">IDSZ2alth</subfield>
+      <subfield code="subfield">2</subfield>
     </datafield>
     <datafield tag="900" ind1=" " ind2=" ">
       <subfield code="a">IDSZ5Bildmaterial</subfield>
+      <subfield code="subfield">3</subfield>
     </datafield>
     <datafield tag="900" ind1=" " ind2=" ">
       <subfield code="a">IDSZ1Z01erara</subfield>
+      <subfield code="subfield">4</subfield>
     </datafield>
     <datafield tag="900" ind1=" " ind2=" ">
       <subfield code="a">IDSZ5BSO</subfield>
+      <subfield code="subfield">5</subfield>
     </datafield>
     <datafield tag="900" ind1=" " ind2=" ">
       <subfield code="a">IDSIxunikat</subfield>
+      <subfield code="subfield">6</subfield>
     </datafield>
     <datafield tag="965" ind1=" " ind2=" ">
       <subfield code="a">Ansicht [Formschlagwort Sondersammlungen]</subfield>
       <subfield code="2">uzb-ZG</subfield>
       <subfield code="9">LOCAL</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="965" ind1=" " ind2=" ">
       <subfield code="a">Lithographie [Formschlagwort Sondersammlungen]</subfield>
       <subfield code="2">uzb-ZG</subfield>
       <subfield code="9">LOCAL</subfield>
+      <subfield code="subfield">2</subfield>
     </datafield>
     <datafield tag="965" ind1=" " ind2=" ">
       <subfield code="a">Vedute [Formschlagwort Sondersammlungen]</subfield>
       <subfield code="2">uzb-ZG</subfield>
       <subfield code="9">LOCAL</subfield>
+      <subfield code="subfield">3</subfield>
     </datafield>
+    <record-identifier>zbz-990036399200205508</record-identifier>
     <datafield tag="manifest">https://www.e-rara.ch/i3f/v20/17611827/manifest</datafield>
     <images>
       <image>
@@ -252,7 +296,6 @@
   </record>
   <record>
     <leader>02611nkm a2200529 c 4500</leader>
-    <record-identifier>zbz-990051346890205508</record-identifier>
     <controlfield tag="001">990051346890205508</controlfield>
     <controlfield tag="005">20201228190634.0</controlfield>
     <controlfield tag="007">cr |||||||||||</controlfield>
@@ -261,84 +304,106 @@
     <datafield tag="019" ind1=" " ind2=" ">
       <subfield code="a">Unikatsaufnahme</subfield>
       <subfield code="5">NEBIS/Z01/02.10.2020</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="024" ind1="7" ind2=" ">
       <subfield code="a">10.3931/e-rara-58644</subfield>
       <subfield code="2">doi</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="035" ind1=" " ind2=" ">
       <subfield code="a">(swissbib)162843178-41slsp_network</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="035" ind1=" " ind2=" ">
       <subfield code="a">162843178</subfield>
       <subfield code="9">ExL</subfield>
+      <subfield code="subfield">2</subfield>
     </datafield>
     <datafield tag="035" ind1=" " ind2=" ">
       <subfield code="a">(NEBIS)005134689EBI01</subfield>
+      <subfield code="subfield">3</subfield>
     </datafield>
     <datafield tag="035" ind1=" " ind2=" ">
       <subfield code="a">(EXLNZ-41SLSP_NETWORK)991136768499705501</subfield>
+      <subfield code="subfield">4</subfield>
     </datafield>
     <datafield tag="040" ind1=" " ind2=" ">
       <subfield code="a">SzZuIDS NEBIS ZBZ</subfield>
       <subfield code="b">ger</subfield>
       <subfield code="e">rda</subfield>
       <subfield code="d">CH-ZuSLS</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="245" ind1="0" ind2="0">
       <subfield code="a">Zürich. Vue générale prise depuis la Weid</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="264" ind1=" " ind2="1">
       <subfield code="a">Zurich</subfield>
       <subfield code="b">chez R. Dikenmann Peintre</subfield>
       <subfield code="c" parsedDate="1877/1899" upperDate="1899-12-31" lowerDate="1877-01-01">[zwischen 1877 und 1899]</subfield>
       <subfield code="264_a-gnd-id">4068038-1</subfield>
+      <subfield code="264_a-wd-id">Q72</subfield>
       <subfield code="264_a_normalised_name">Zürich</subfield>
-      <subfield code="notes"></subfield>
+      <subfield code="notes"/>
       <subfield code="264_b-gnd-id">1159174490</subfield>
       <subfield code="264_b_normalised_name">Dikenmann, R.</subfield>
-      <subfield code="notes"></subfield>
+      <subfield code="264_b_wd-id"/>
+      <subfield code="notes"/>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="300" ind1=" " ind2=" ">
       <subfield code="a">1 Druckgrafik</subfield>
       <subfield code="b">Aquatinta koloriert</subfield>
       <subfield code="c">Bild 7,4 x 11,2 cm, Blatt 15 x 21 cm</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="336" ind1=" " ind2=" ">
       <subfield code="b">sti</subfield>
       <subfield code="2">rdacontent</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="337" ind1=" " ind2=" ">
       <subfield code="b">n</subfield>
       <subfield code="2">rdamedia</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="337" ind1=" " ind2=" ">
       <subfield code="b">c</subfield>
       <subfield code="2">rdamedia</subfield>
+      <subfield code="subfield">2</subfield>
     </datafield>
     <datafield tag="338" ind1=" " ind2=" ">
       <subfield code="b">nb</subfield>
       <subfield code="2">rdacarrier</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="338" ind1=" " ind2=" ">
       <subfield code="b">cr</subfield>
       <subfield code="2">rdacarrier</subfield>
+      <subfield code="subfield">2</subfield>
     </datafield>
     <datafield tag="500" ind1=" " ind2=" ">
       <subfield code="a">Anonyme/r Künstler/in</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="500" ind1=" " ind2=" ">
       <subfield code="a">Datierung anhand Bildinhalt: Paul Wunderli kaufte das Waidgut 1877, fügte in den darauffolgenden Jahren einen Turm hinzu und verband beide Bauten mit einem Durchgang; der Bahndamm existierte von 1855-1889</subfield>
+      <subfield code="subfield">2</subfield>
     </datafield>
     <datafield tag="500" ind1=" " ind2=" ">
       <subfield code="a">Weitere, unkolorierte Variante der Druckgrafik vorhanden, Signatur der Zentralbibliothek Zürich, Graphische Sammlung und Fotoarchiv: Zürich 4a, mit Weid I, 22</subfield>
+      <subfield code="subfield">3</subfield>
     </datafield>
     <datafield tag="520" ind1=" " ind2=" ">
       <subfield code="a">Ansicht von der Waid, im Vordergrund das Waidgut mit Menschen, im Mittelgrund der ehemalige Bahndamm des heutigen Wipkinger Viadukts und die Stadt Zürich, im Hintergrund die Alpen, am oberen Bildrand die Bezeichnungen einzelner Gipfel</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="590" ind1=" " ind2=" ">
       <subfield code="a">Mit dem Vermerk "Edition originale 1", stockfleckig</subfield>
       <subfield code="5">NEBIS/Exemplar der Zentralbibliothek Zürich, Graphische Sammlung und Fotoarchiv</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="651" ind1=" " ind2="7">
       <subfield code="a">Glarner Alpen</subfield>
@@ -346,8 +411,9 @@
       <subfield code="2">gnd</subfield>
       <subfield code="gnd">4093562-0</subfield>
       <subfield code="normalised_name">Glarner Alpen</subfield>
-      <subfield code="wd_id"></subfield>
-      <subfield code="notes"></subfield>
+      <subfield code="wd_id"/>
+      <subfield code="notes"/>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="651" ind1=" " ind2="7">
       <subfield code="a">Schwyzer Alpen</subfield>
@@ -355,8 +421,9 @@
       <subfield code="2">gnd</subfield>
       <subfield code="gnd">4118545-6</subfield>
       <subfield code="normalised_name">Schwyzer Alpen</subfield>
-      <subfield code="wd_id"></subfield>
-      <subfield code="notes"></subfield>
+      <subfield code="wd_id"/>
+      <subfield code="notes"/>
+      <subfield code="subfield">2</subfield>
     </datafield>
     <datafield tag="651" ind1=" " ind2="7">
       <subfield code="a">Waid</subfield>
@@ -365,8 +432,9 @@
       <subfield code="2">gnd</subfield>
       <subfield code="gnd">1137974680</subfield>
       <subfield code="normalised_name">Waid (Zürich)</subfield>
-      <subfield code="wd_id"></subfield>
-      <subfield code="notes"></subfield>
+      <subfield code="wd_id"/>
+      <subfield code="notes"/>
+      <subfield code="subfield">3</subfield>
     </datafield>
     <datafield tag="651" ind1=" " ind2="7">
       <subfield code="a">Waidgut</subfield>
@@ -375,8 +443,9 @@
       <subfield code="2">gnd</subfield>
       <subfield code="gnd">1140245791</subfield>
       <subfield code="normalised_name">Waidgut (Zürich)</subfield>
-      <subfield code="wd_id"></subfield>
-      <subfield code="notes"></subfield>
+      <subfield code="wd_id"/>
+      <subfield code="notes"/>
+      <subfield code="subfield">4</subfield>
     </datafield>
     <datafield tag="651" ind1=" " ind2="7">
       <subfield code="a">Zürich</subfield>
@@ -385,97 +454,121 @@
       <subfield code="gnd">4068038-1</subfield>
       <subfield code="normalised_name">Zürich</subfield>
       <subfield code="wd_id">Q72</subfield>
-      <subfield code="notes"></subfield>
+      <subfield code="notes"/>
+      <subfield code="subfield">5</subfield>
     </datafield>
     <datafield tag="655" ind1=" " ind2="7">
       <subfield code="a">Bild</subfield>
       <subfield code="2">gnd-content</subfield>
       <subfield code="gnd">4006568-6</subfield>
-      <subfield code="notes"></subfield>
+      <subfield code="wd_id"/>
+      <subfield code="notes"/>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="710" ind1="2" ind2=" ">
       <subfield code="a">Kunstverlag Rudolf Dikenmann</subfield>
       <subfield code="g">Zürich</subfield>
       <subfield code="0">(DE-588)4101514-9</subfield>
       <subfield code="e">Drucker</subfield>
-      <subfield code="4">prt</subfield>
+      <subfield code="4" label="Drucker" loc-uri="http://id.loc.gov/vocabulary/relators/prt" gnd="4013091-5">prt</subfield>
       <subfield code="gnd">4101514-9</subfield>
+      <subfield code="wd_id"/>
       <subfield code="normalised_name">Kunstverlag Rudolf Dikenmann (Zürich)</subfield>
-      <subfield code="notes"></subfield>
+      <subfield code="notes"/>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="751" ind1=" " ind2=" ">
       <subfield code="a">Zürich</subfield>
       <subfield code="0">(DE-588)4068038-1</subfield>
       <subfield code="e">Erscheinungsort</subfield>
-      <subfield code="4">pup</subfield>
+      <subfield code="4" label="Erscheinungsort" loc-uri="http://id.loc.gov/vocabulary/relators/pup" gnd="4269034-1">pup</subfield>
       <subfield code="gnd">4068038-1</subfield>
+      <subfield code="wd_id">Q72</subfield>
       <subfield code="normalised_name">Zürich</subfield>
-      <subfield code="notes"></subfield>
+      <subfield code="notes"/>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="751" ind1=" " ind2=" ">
       <subfield code="a">Zurich</subfield>
       <subfield code="0">(DE-588)4068038-1</subfield>
-      <subfield code="gnd"></subfield>
-      <subfield code="normalised_name"></subfield>
-      <subfield code="notes"></subfield>
+      <subfield code="gnd">4068038-1</subfield>
+      <subfield code="wd_id">Q72</subfield>
+      <subfield code="normalised_name">Zürich</subfield>
+      <subfield code="notes"/>
+      <subfield code="subfield">2</subfield>
     </datafield>
     <datafield tag="751" ind1=" " ind2=" ">
       <subfield code="a">Zurich</subfield>
       <subfield code="0">(DE-588)4068038-1</subfield>
-      <subfield code="gnd"></subfield>
-      <subfield code="normalised_name"></subfield>
-      <subfield code="notes"></subfield>
+      <subfield code="gnd">4068038-1</subfield>
+      <subfield code="wd_id">Q72</subfield>
+      <subfield code="normalised_name">Zürich</subfield>
+      <subfield code="notes"/>
+      <subfield code="subfield">3</subfield>
     </datafield>
     <datafield tag="856" ind1="4" ind2=" ">
       <subfield code="u">http://dx.doi.org/10.3931/e-rara-58644</subfield>
       <subfield code="z">Online via e-rara.ch</subfield>
       <subfield code="x">Z01</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="852" ind1="4" ind2=" ">
       <subfield code="8">22405865240005508</subfield>
       <subfield code="b">Z02</subfield>
       <subfield code="c">GSB</subfield>
       <subfield code="j">GRA  1.6 : 1</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="900" ind1=" " ind2=" ">
       <subfield code="a">IDSZ1ZH</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="900" ind1=" " ind2=" ">
       <subfield code="a">IDSZ2zbzmix200603e</subfield>
       <subfield code="c">IDSZ2lang</subfield>
       <subfield code="d">IDSZ2zbzswk201705p</subfield>
       <subfield code="e">IDSZ2lang</subfield>
+      <subfield code="subfield">2</subfield>
     </datafield>
     <datafield tag="900" ind1=" " ind2=" ">
       <subfield code="a">IDSZ5Bildmaterial</subfield>
+      <subfield code="subfield">3</subfield>
     </datafield>
     <datafield tag="900" ind1=" " ind2=" ">
       <subfield code="a">IDSZ1Z01erara</subfield>
+      <subfield code="subfield">4</subfield>
     </datafield>
     <datafield tag="900" ind1=" " ind2=" ">
       <subfield code="a">IDSZ5GPM</subfield>
+      <subfield code="subfield">5</subfield>
     </datafield>
     <datafield tag="900" ind1=" " ind2=" ">
       <subfield code="a">IDSZ5BSO</subfield>
+      <subfield code="subfield">6</subfield>
     </datafield>
     <datafield tag="900" ind1=" " ind2=" ">
       <subfield code="a">IDSIxunikat</subfield>
+      <subfield code="subfield">7</subfield>
     </datafield>
     <datafield tag="965" ind1=" " ind2=" ">
       <subfield code="a">Ansicht [Formschlagwort Sondersammlungen]</subfield>
       <subfield code="2">uzb-ZG</subfield>
       <subfield code="9">LOCAL</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="965" ind1=" " ind2=" ">
       <subfield code="a">Aquatinta [Formschlagwort Sondersammlungen]</subfield>
       <subfield code="2">uzb-ZG</subfield>
       <subfield code="9">LOCAL</subfield>
+      <subfield code="subfield">2</subfield>
     </datafield>
     <datafield tag="993" ind1=" " ind2=" ">
       <subfield code="a">000004538_1</subfield>
       <subfield code="x">uzb-ZG</subfield>
       <subfield code="9">LOCAL</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
+    <record-identifier>zbz-990051346890205508</record-identifier>
     <datafield tag="manifest">https://www.e-rara.ch/i3f/v20/15819735/manifest</datafield>
     <images>
       <image>
@@ -487,7 +580,6 @@
   </record>
   <record>
     <leader>01586nkm a2200397 c 4500</leader>
-    <record-identifier>zbz-990052192590205508</record-identifier>
     <controlfield tag="001">990052192590205508</controlfield>
     <controlfield tag="005">20201228180925.0</controlfield>
     <controlfield tag="007">cr |||||||||||</controlfield>
@@ -496,73 +588,92 @@
     <datafield tag="019" ind1=" " ind2=" ">
       <subfield code="a">Unikatsaufnahme</subfield>
       <subfield code="5">NEBIS/Z01/02.10.2020</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="024" ind1="7" ind2=" ">
       <subfield code="a">10.3931/e-rara-55941</subfield>
       <subfield code="2">doi</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="035" ind1=" " ind2=" ">
       <subfield code="a">(swissbib)163706182-41slsp_network</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="035" ind1=" " ind2=" ">
       <subfield code="a">163706182</subfield>
       <subfield code="9">ExL</subfield>
+      <subfield code="subfield">2</subfield>
     </datafield>
     <datafield tag="035" ind1=" " ind2=" ">
       <subfield code="a">(NEBIS)005219259EBI01</subfield>
+      <subfield code="subfield">3</subfield>
     </datafield>
     <datafield tag="035" ind1=" " ind2=" ">
       <subfield code="a">(EXLNZ-41SLSP_NETWORK)991009011839705501</subfield>
+      <subfield code="subfield">4</subfield>
     </datafield>
     <datafield tag="040" ind1=" " ind2=" ">
       <subfield code="a">SzZuIDS NEBIS ZBZ</subfield>
       <subfield code="d">CH-ZuSLS</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="245" ind1="0" ind2="0">
       <subfield code="a">Malerischer Plan &amp; Ansicht der Stadt Zürich &amp; ihrer Umgebung</subfield>
       <subfield code="c">Siegfried del. u. sc.</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="264" ind1=" " ind2="1">
       <subfield code="a">Zürich</subfield>
       <subfield code="b">bei Hch. Fuessli &amp; Cie.</subfield>
       <subfield code="c" parsedDate="1848?" upperDate="1848-12-31" lowerDate="1848-01-01">[ca. 1848]</subfield>
       <subfield code="264_a-gnd-id">4068038-1</subfield>
+      <subfield code="264_a-wd-id">Q72</subfield>
       <subfield code="264_a_normalised_name">Zürich</subfield>
-      <subfield code="notes"></subfield>
-      <subfield code="264_b-gnd-id"></subfield>
-      <subfield code="264_b_normalised_name"></subfield>
-      <subfield code="notes"></subfield>
+      <subfield code="notes"/>
+      <subfield code="264_b-gnd-id"/>
+      <subfield code="264_b_normalised_name">bei Hch. Fuessli &amp; Cie.</subfield>
+      <subfield code="264_b_wd-id"/>
+      <subfield code="notes"/>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="300" ind1=" " ind2=" ">
       <subfield code="a">1 Druckgraphik</subfield>
       <subfield code="b">Aquatinta, Blaudruck, koloriert</subfield>
       <subfield code="c">Bild 30,3 x 46,4 cm, Blatt 39,2 x 56,3 cm</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="336" ind1=" " ind2=" ">
       <subfield code="b">sti</subfield>
       <subfield code="2">rdacontent</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="337" ind1=" " ind2=" ">
       <subfield code="b">c</subfield>
       <subfield code="2">rdamedia</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="337" ind1=" " ind2=" ">
       <subfield code="b">n</subfield>
       <subfield code="2">rdamedia</subfield>
+      <subfield code="subfield">2</subfield>
     </datafield>
     <datafield tag="338" ind1=" " ind2=" ">
       <subfield code="b">nb</subfield>
       <subfield code="2">rdacarrier</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="338" ind1=" " ind2=" ">
       <subfield code="b">cr</subfield>
       <subfield code="2">rdacarrier</subfield>
+      <subfield code="subfield">2</subfield>
     </datafield>
     <datafield tag="500" ind1=" " ind2=" ">
       <subfield code="a">3. Zustand, mit aller Schrift (Sihlbrücke mit 15 Fensteröffnungen, mit dem 1848 errichteten Zaun vor dem neuen Zeughaus, Menschenstaffage sowie Nummerierung 1-126, Bildtitel, Künstlerbezeichnung und Verlagsadresse)</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="500" ind1=" " ind2=" ">
       <subfield code="a">Von Hand datiert ca. 1850</subfield>
+      <subfield code="subfield">2</subfield>
     </datafield>
     <datafield tag="651" ind1=" " ind2="7">
       <subfield code="a">Zürich</subfield>
@@ -571,13 +682,16 @@
       <subfield code="gnd">4068038-1</subfield>
       <subfield code="normalised_name">Zürich</subfield>
       <subfield code="wd_id">Q72</subfield>
-      <subfield code="notes"></subfield>
+      <subfield code="notes"/>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="655" ind1=" " ind2="7">
       <subfield code="a">Bildliche Darstellung</subfield>
       <subfield code="2">gnd</subfield>
       <subfield code="gnd">4145419-4</subfield>
-      <subfield code="notes"></subfield>
+      <subfield code="wd_id">Q4502142</subfield>
+      <subfield code="notes"/>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="700" ind1="1" ind2=" ">
       <subfield code="a">Siegfried, Hermann</subfield>
@@ -588,53 +702,66 @@
       <subfield code="Geburtsdatum">1819-02-14</subfield>
       <subfield code="Sterbedatum">1879-12-05</subfield>
       <subfield code="wd_id">Q1612762</subfield>
-      <subfield code="notes"></subfield>
+      <subfield code="notes"/>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="856" ind1="4" ind2=" ">
       <subfield code="u">http://dx.doi.org/10.3931/e-rara-55941</subfield>
       <subfield code="z">Online via e-rara.ch</subfield>
       <subfield code="x">Z01</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="852" ind1="4" ind2=" ">
       <subfield code="8">22381595960005508</subfield>
       <subfield code="b">Z02</subfield>
       <subfield code="c">GSB</subfield>
       <subfield code="j">Zürich II A 242</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="900" ind1=" " ind2=" ">
       <subfield code="a">IDSZ1ZH</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="900" ind1=" " ind2=" ">
       <subfield code="a">IDSZ2zbzmix200607e</subfield>
       <subfield code="c">IDSZ2schn</subfield>
+      <subfield code="subfield">2</subfield>
     </datafield>
     <datafield tag="900" ind1=" " ind2=" ">
       <subfield code="a">IDSZ1Z01erara</subfield>
+      <subfield code="subfield">3</subfield>
     </datafield>
     <datafield tag="900" ind1=" " ind2=" ">
       <subfield code="a">IDSZ5GPM</subfield>
+      <subfield code="subfield">4</subfield>
     </datafield>
     <datafield tag="900" ind1=" " ind2=" ">
       <subfield code="a">IDSZ5BSO</subfield>
+      <subfield code="subfield">5</subfield>
     </datafield>
     <datafield tag="900" ind1=" " ind2=" ">
       <subfield code="a">IDSIxunikat</subfield>
+      <subfield code="subfield">6</subfield>
     </datafield>
     <datafield tag="965" ind1=" " ind2=" ">
       <subfield code="a">Ansicht [Formschlagwort Sondersammlungen]</subfield>
       <subfield code="2">uzb-ZG</subfield>
       <subfield code="9">LOCAL</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="965" ind1=" " ind2=" ">
       <subfield code="a">Aquatinta [Formschlagwort Sondersammlungen]</subfield>
       <subfield code="2">uzb-ZG</subfield>
       <subfield code="9">LOCAL</subfield>
+      <subfield code="subfield">2</subfield>
     </datafield>
     <datafield tag="993" ind1=" " ind2=" ">
       <subfield code="a">000005153</subfield>
       <subfield code="x">uzb-ZG</subfield>
       <subfield code="9">LOCAL</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
+    <record-identifier>zbz-990052192590205508</record-identifier>
     <datafield tag="manifest">https://www.e-rara.ch/i3f/v20/15073350/manifest</datafield>
     <images>
       <image>
@@ -646,7 +773,6 @@
   </record>
   <record>
     <leader>02018nkm a2200445 c 4500</leader>
-    <record-identifier>zbz-990053006550205508</record-identifier>
     <controlfield tag="001">990053006550205508</controlfield>
     <controlfield tag="005">20201228181706.0</controlfield>
     <controlfield tag="007">cr |||||||||||</controlfield>
@@ -655,85 +781,107 @@
     <datafield tag="019" ind1=" " ind2=" ">
       <subfield code="a">Unikatsaufnahme</subfield>
       <subfield code="5">NEBIS/Z01/02.10.2020</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="024" ind1="7" ind2=" ">
       <subfield code="a">10.3931/e-rara-60518</subfield>
       <subfield code="2">doi</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="035" ind1=" " ind2=" ">
       <subfield code="a">(swissbib)16437714X-41slsp_network</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="035" ind1=" " ind2=" ">
       <subfield code="a">16437714X</subfield>
       <subfield code="9">ExL</subfield>
+      <subfield code="subfield">2</subfield>
     </datafield>
     <datafield tag="035" ind1=" " ind2=" ">
       <subfield code="a">(NEBIS)005300655EBI01</subfield>
+      <subfield code="subfield">3</subfield>
     </datafield>
     <datafield tag="035" ind1=" " ind2=" ">
       <subfield code="a">(EXLNZ-41SLSP_NETWORK)991089274639705501</subfield>
+      <subfield code="subfield">4</subfield>
     </datafield>
     <datafield tag="040" ind1=" " ind2=" ">
       <subfield code="a">SzZuIDS NEBIS ZBZ</subfield>
       <subfield code="b">ger</subfield>
       <subfield code="e">rda</subfield>
       <subfield code="d">CH-ZuSLS</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="245" ind1="0" ind2="0">
       <subfield code="a">Gross Münster</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="264" ind1=" " ind2="1">
       <subfield code="a">[Zürich]</subfield>
       <subfield code="b">[bey Heidegger und Compagnie]</subfield>
       <subfield code="c" parsedDate="1742" upperDate="1742-12-31" lowerDate="1742-01-01">[1742]</subfield>
       <subfield code="264_a-gnd-id">4068038-1</subfield>
+      <subfield code="264_a-wd-id">Q72</subfield>
       <subfield code="264_a_normalised_name">Zürich</subfield>
-      <subfield code="notes"></subfield>
+      <subfield code="notes"/>
       <subfield code="264_b-gnd-id">6146082-5</subfield>
       <subfield code="264_b_normalised_name">Heidegger und Co.</subfield>
-      <subfield code="notes"></subfield>
+      <subfield code="264_b_wd-id"/>
+      <subfield code="notes"/>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="300" ind1=" " ind2=" ">
       <subfield code="a">1 Druckgraphik</subfield>
       <subfield code="b">Radierung und Kupferstich</subfield>
       <subfield code="c">Bild und Blatt 7,7 x 13,5 cm</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="336" ind1=" " ind2=" ">
       <subfield code="b">sti</subfield>
       <subfield code="2">rdacontent</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="337" ind1=" " ind2=" ">
       <subfield code="b">n</subfield>
       <subfield code="2">rdamedia</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="337" ind1=" " ind2=" ">
       <subfield code="b">c</subfield>
       <subfield code="2">rdamedia</subfield>
+      <subfield code="subfield">2</subfield>
     </datafield>
     <datafield tag="338" ind1=" " ind2=" ">
       <subfield code="b">nb</subfield>
       <subfield code="2">rdacarrier</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="338" ind1=" " ind2=" ">
       <subfield code="b">cr</subfield>
       <subfield code="2">rdacarrier</subfield>
+      <subfield code="subfield">2</subfield>
     </datafield>
     <datafield tag="500" ind1=" " ind2=" ">
       <subfield code="a">Anonyme/r Künstler/in</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="500" ind1=" " ind2=" ">
       <subfield code="a">Weitere, kolorierte Variante der Druckgrafik unter derselben Signatur vorhanden</subfield>
+      <subfield code="subfield">2</subfield>
     </datafield>
     <datafield tag="500" ind1=" " ind2=" ">
       <subfield code="a">Erschienen in: Hans Heinrich Bluntschli: Memorabilia Tigurina, oder, Merkwürdigkeiten der Stadt und Landschaft Zürich, 3. Auflage, Zürich 1742, S. 193</subfield>
+      <subfield code="subfield">3</subfield>
     </datafield>
     <datafield tag="562" ind1=" " ind2=" ">
       <subfield code="a">Handschriftliche Nummerierung oben rechts (Feder schwarz): "No 19b[?]"</subfield>
       <subfield code="5">Exemplar der Zentralbibliothek Zürich, Graphische Sammlung und Fotoarchiv</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="590" ind1=" " ind2=" ">
       <subfield code="a">Blatt an allen vier Seiten beschnitten</subfield>
       <subfield code="5">NEBIS/Exemplar der Zentralbibliothek Zürich, Graphische Sammlung und Fotoarchiv</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="651" ind1=" " ind2="7">
       <subfield code="a">Großmünster</subfield>
@@ -743,88 +891,107 @@
       <subfield code="gnd">4458464-7</subfield>
       <subfield code="normalised_name">Großmünster (Zürich)</subfield>
       <subfield code="wd_id">Q684948</subfield>
-      <subfield code="notes"></subfield>
+      <subfield code="notes"/>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="655" ind1=" " ind2="7">
       <subfield code="a">Bild</subfield>
       <subfield code="2">gnd-content</subfield>
       <subfield code="gnd">4006568-6</subfield>
-      <subfield code="notes"></subfield>
+      <subfield code="wd_id"/>
+      <subfield code="notes"/>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="700" ind1="1" ind2=" ">
       <subfield code="a">Bluntschli, Johann Heinrich</subfield>
       <subfield code="d" parsedDate="1656/1722" upperDate="1722-12-31" lowerDate="1656-01-01">1656-1722</subfield>
       <subfield code="0">(DE-588)1069347353</subfield>
       <subfield code="e">Herausgeber</subfield>
-      <subfield code="4">edt</subfield>
+      <subfield code="4" label="Herausgeber" loc-uri="http://id.loc.gov/vocabulary/relators/edt" gnd="4159575-0">edt</subfield>
       <subfield code="gnd">1069347353</subfield>
       <subfield code="normalised_name">Bluntschli, Johann Heinrich</subfield>
       <subfield code="Geburtsdatum">1656</subfield>
       <subfield code="Sterbedatum">1722</subfield>
       <subfield code="wd_id">Q94916652</subfield>
-      <subfield code="notes"></subfield>
+      <subfield code="notes"/>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="710" ind1="2" ind2=" ">
       <subfield code="a">Heidegger und Co.</subfield>
       <subfield code="0">(DE-588)6146082-5</subfield>
       <subfield code="e">Verlag</subfield>
-      <subfield code="4">pbl</subfield>
+      <subfield code="4" label="Verlag" loc-uri="http://id.loc.gov/vocabulary/relators/pbl" gnd="4063004-3">pbl</subfield>
       <subfield code="gnd">6146082-5</subfield>
+      <subfield code="wd_id"/>
       <subfield code="normalised_name">Heidegger und Co.</subfield>
-      <subfield code="notes"></subfield>
+      <subfield code="notes"/>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="856" ind1="4" ind2=" ">
       <subfield code="u">http://dx.doi.org/10.3931/e-rara-60518</subfield>
       <subfield code="z">Online via e-rara.ch</subfield>
       <subfield code="x">Z01</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="852" ind1="4" ind2=" ">
       <subfield code="8">22398058160005508</subfield>
       <subfield code="b">Z02</subfield>
       <subfield code="c">GSM</subfield>
       <subfield code="j">Zch. D 1 Grossmünster-Qu. Grossmünster I, 2</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="900" ind1=" " ind2=" ">
       <subfield code="a">IDSZ1ZH</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="900" ind1=" " ind2=" ">
       <subfield code="a">IDSZ2zbzmix200701e</subfield>
       <subfield code="c">IDSZ2schn</subfield>
       <subfield code="d">IDSZ2zbzswk201705p</subfield>
       <subfield code="e">IDSZ2lang</subfield>
+      <subfield code="subfield">2</subfield>
     </datafield>
     <datafield tag="900" ind1=" " ind2=" ">
       <subfield code="a">IDSZ5Bildmaterial</subfield>
+      <subfield code="subfield">3</subfield>
     </datafield>
     <datafield tag="900" ind1=" " ind2=" ">
       <subfield code="a">IDSZ1Z01erara</subfield>
+      <subfield code="subfield">4</subfield>
     </datafield>
     <datafield tag="900" ind1=" " ind2=" ">
       <subfield code="a">IDSZ5BSO</subfield>
+      <subfield code="subfield">5</subfield>
     </datafield>
     <datafield tag="900" ind1=" " ind2=" ">
       <subfield code="a">IDSIxunikat</subfield>
+      <subfield code="subfield">6</subfield>
     </datafield>
     <datafield tag="965" ind1=" " ind2=" ">
       <subfield code="a">Ansicht [Formschlagwort Sondersammlungen]</subfield>
       <subfield code="2">uzb-ZG</subfield>
       <subfield code="9">LOCAL</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="965" ind1=" " ind2=" ">
       <subfield code="a">Kupferstich [Formschlagwort Sondersammlungen]</subfield>
       <subfield code="2">uzb-ZG</subfield>
       <subfield code="9">LOCAL</subfield>
+      <subfield code="subfield">2</subfield>
     </datafield>
     <datafield tag="965" ind1=" " ind2=" ">
       <subfield code="a">Radierung [Formschlagwort Sondersammlungen]</subfield>
       <subfield code="2">uzb-ZG</subfield>
       <subfield code="9">LOCAL</subfield>
+      <subfield code="subfield">3</subfield>
     </datafield>
     <datafield tag="993" ind1=" " ind2=" ">
       <subfield code="a">000004560_3</subfield>
       <subfield code="x">uzb-ZG</subfield>
       <subfield code="9">LOCAL</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
+    <record-identifier>zbz-990053006550205508</record-identifier>
     <datafield tag="manifest">https://www.e-rara.ch/i3f/v20/16392337/manifest</datafield>
     <images>
       <image>
@@ -836,7 +1003,6 @@
   </record>
   <record>
     <leader>01916nkm a2200469 c 4500</leader>
-    <record-identifier>zbz-990052037310205508</record-identifier>
     <controlfield tag="001">990052037310205508</controlfield>
     <controlfield tag="005">20201228191823.0</controlfield>
     <controlfield tag="007">cr |||||||||||</controlfield>
@@ -845,72 +1011,91 @@
     <datafield tag="019" ind1=" " ind2=" ">
       <subfield code="a">Unikatsaufnahme</subfield>
       <subfield code="5">NEBIS/Z01/02.10.2020</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="024" ind1="7" ind2=" ">
       <subfield code="a">10.7891/e-manuscripta-51326</subfield>
       <subfield code="2">doi</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="035" ind1=" " ind2=" ">
       <subfield code="a">(swissbib)163512736-41slsp_network</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="035" ind1=" " ind2=" ">
       <subfield code="a">163512736</subfield>
       <subfield code="9">ExL</subfield>
+      <subfield code="subfield">2</subfield>
     </datafield>
     <datafield tag="035" ind1=" " ind2=" ">
       <subfield code="a">(NEBIS)005203731EBI01</subfield>
+      <subfield code="subfield">3</subfield>
     </datafield>
     <datafield tag="035" ind1=" " ind2=" ">
       <subfield code="a">(EXLNZ-41SLSP_NETWORK)991121818809705501</subfield>
+      <subfield code="subfield">4</subfield>
     </datafield>
     <datafield tag="040" ind1=" " ind2=" ">
       <subfield code="a">SzZuIDS NEBIS ZBZ</subfield>
       <subfield code="d">CH-ZuSLS</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="245" ind1="0" ind2="0">
       <subfield code="a">[Kirchhof von] Richterswil</subfield>
       <subfield code="c">[Gottfried Keller]</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="264" ind1=" " ind2="1">
       <subfield code="a">[Schweiz]</subfield>
       <subfield code="c" parsedDate="1838" upperDate="1838-12-31" lowerDate="1838-01-01">1838</subfield>
       <subfield code="264_a-gnd-id">4053881-3</subfield>
+      <subfield code="264_a-wd-id">Q39</subfield>
       <subfield code="264_a_normalised_name">Schweiz</subfield>
-      <subfield code="notes"></subfield>
+      <subfield code="notes"/>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="300" ind1=" " ind2=" ">
       <subfield code="a">1 Zeichnung</subfield>
       <subfield code="b">Aquarell und Gouache über Bleistift</subfield>
       <subfield code="c">Bild und Blatt 16,4 x 24,5 cm</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="336" ind1=" " ind2=" ">
       <subfield code="b">sti</subfield>
       <subfield code="2">rdacontent</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="337" ind1=" " ind2=" ">
       <subfield code="b">c</subfield>
       <subfield code="2">rdamedia</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="337" ind1=" " ind2=" ">
       <subfield code="b">n</subfield>
       <subfield code="2">rdamedia</subfield>
+      <subfield code="subfield">2</subfield>
     </datafield>
     <datafield tag="338" ind1=" " ind2=" ">
       <subfield code="b">nb</subfield>
       <subfield code="2">rdacarrier</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="338" ind1=" " ind2=" ">
       <subfield code="b">cr</subfield>
       <subfield code="2">rdacarrier</subfield>
+      <subfield code="subfield">2</subfield>
     </datafield>
     <datafield tag="500" ind1=" " ind2=" ">
       <subfield code="a">Aus dem Nachlass von Gottfried Keller</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="510" ind1="0" ind2=" ">
       <subfield code="a">Bruno Weber: Gottfried Keller. Landschaftsmaler, Zürich 1990, S. 38, Nr. 24</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="520" ind1=" " ind2=" ">
       <subfield code="a">Kirche und Kirchhof von Richterswil mit Blick auf den Zürichsee und die Berge im Winter. Der mit weissen Rosen bekränzte Anker im Schnee soll auf das Grab von Henriette Keller (1818-1838) hinweisen</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="600" ind1="1" ind2="7">
       <subfield code="a">Keller, Henriette</subfield>
@@ -920,8 +1105,11 @@
       <subfield code="Geburtsdatum">1818</subfield>
       <subfield code="Sterbedatum">1838</subfield>
       <subfield code="gnd">1089448139</subfield>
+      <subfield code="Bevorzugter Name"/>
+      <subfield code="wd_id"/>
       <subfield code="normalised_name">Keller, Henriette</subfield>
-      <subfield code="notes"></subfield>
+      <subfield code="notes"/>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="651" ind1=" " ind2="7">
       <subfield code="a">Reformierte Pfarrkirche Richterswil</subfield>
@@ -930,20 +1118,25 @@
       <subfield code="2">gnd</subfield>
       <subfield code="gnd">1058355384</subfield>
       <subfield code="normalised_name">Reformierte Pfarrkirche Richterswil (Richterswil)</subfield>
-      <subfield code="wd_id"></subfield>
-      <subfield code="notes"></subfield>
+      <subfield code="wd_id"/>
+      <subfield code="notes"/>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="655" ind1=" " ind2="7">
       <subfield code="a">Bildliche Darstellung</subfield>
       <subfield code="2">gnd</subfield>
       <subfield code="gnd">4145419-4</subfield>
-      <subfield code="notes"></subfield>
+      <subfield code="wd_id">Q4502142</subfield>
+      <subfield code="notes"/>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="655" ind1=" " ind2="7">
       <subfield code="a">Zeichnung</subfield>
       <subfield code="2">gnd-content</subfield>
       <subfield code="gnd">4127900-1</subfield>
-      <subfield code="notes"></subfield>
+      <subfield code="wd_id">Q93184</subfield>
+      <subfield code="notes"/>
+      <subfield code="subfield">2</subfield>
     </datafield>
     <datafield tag="700" ind1="1" ind2=" ">
       <subfield code="a">Keller, Gottfried</subfield>
@@ -954,66 +1147,81 @@
       <subfield code="Geburtsdatum">1819-07-19</subfield>
       <subfield code="Sterbedatum">1890-07-16</subfield>
       <subfield code="wd_id">Q122370</subfield>
-      <subfield code="notes"></subfield>
+      <subfield code="notes"/>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="700" ind1="1" ind2=" ">
       <subfield code="a">Keller, Gottfried</subfield>
       <subfield code="d" parsedDate="1819/1890" upperDate="1890-12-31" lowerDate="1819-01-01">1819-1890</subfield>
       <subfield code="0">(DE-588)11856109X</subfield>
       <subfield code="e">früherer Eigentümer</subfield>
-      <subfield code="4">fmo</subfield>
+      <subfield code="4" label="Früherer Eigentümer" loc-uri="http://id.loc.gov/vocabulary/relators/fmo" gnd="">fmo</subfield>
       <subfield code="gnd">11856109X</subfield>
       <subfield code="normalised_name">Keller, Gottfried</subfield>
       <subfield code="Geburtsdatum">1819-07-19</subfield>
       <subfield code="Sterbedatum">1890-07-16</subfield>
       <subfield code="wd_id">Q122370</subfield>
-      <subfield code="notes"></subfield>
+      <subfield code="notes"/>
+      <subfield code="subfield">2</subfield>
     </datafield>
     <datafield tag="856" ind1="4" ind2=" ">
       <subfield code="u">http://dx.doi.org/10.7891/e-manuscripta-51326</subfield>
       <subfield code="z">Digitalisat in e-manuscripta</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="852" ind1="4" ind2=" ">
       <subfield code="8">22340917050005508</subfield>
       <subfield code="b">Z02</subfield>
       <subfield code="c">GSM</subfield>
       <subfield code="j">GKN 32</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="900" ind1=" " ind2=" ">
       <subfield code="a">IDSZ1ZH</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="900" ind1=" " ind2=" ">
       <subfield code="a">IDSZ2zbzmix200607e</subfield>
       <subfield code="c">IDSZ2aliv</subfield>
+      <subfield code="subfield">2</subfield>
     </datafield>
     <datafield tag="900" ind1=" " ind2=" ">
       <subfield code="a">IDSZ5gkn</subfield>
+      <subfield code="subfield">3</subfield>
     </datafield>
     <datafield tag="900" ind1=" " ind2=" ">
       <subfield code="a">IDSZ1GK</subfield>
+      <subfield code="subfield">4</subfield>
     </datafield>
     <datafield tag="900" ind1=" " ind2=" ">
       <subfield code="f">IDSZ1Z01emanuscripta</subfield>
+      <subfield code="subfield">5</subfield>
     </datafield>
     <datafield tag="900" ind1=" " ind2=" ">
       <subfield code="a">IDSZ5GPM</subfield>
+      <subfield code="subfield">6</subfield>
     </datafield>
     <datafield tag="900" ind1=" " ind2=" ">
       <subfield code="a">IDSZ5BSO</subfield>
+      <subfield code="subfield">7</subfield>
     </datafield>
     <datafield tag="900" ind1=" " ind2=" ">
       <subfield code="a">IDSIxunikat</subfield>
+      <subfield code="subfield">8</subfield>
     </datafield>
     <datafield tag="965" ind1=" " ind2=" ">
       <subfield code="a">Ansicht [Formschlagwort Sondersammlungen]</subfield>
       <subfield code="2">uzb-ZG</subfield>
       <subfield code="9">LOCAL</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="993" ind1=" " ind2=" ">
       <subfield code="a">000005187</subfield>
       <subfield code="x">uzb-ZG</subfield>
       <subfield code="9">LOCAL</subfield>
+      <subfield code="subfield">1</subfield>
     </datafield>
+    <record-identifier>zbz-990052037310205508</record-identifier>
     <datafield tag="manifest">https://www.e-manuscripta.ch/i3f/v20/1617708/manifest</datafield>
     <images>
       <image>
