@@ -3,6 +3,7 @@ import os
 import sys
 from flask import Flask, Response, request
 from lib.SmapshotConnector import SmapshotConnector
+from sariSparqlParser import parser
 
 try:
   token = os.environ['SMAPSHOT_TOKEN']
@@ -25,47 +26,6 @@ def error(message):
   Generate a JSON error object
   """
   return {"error": message}
-
-def getDataFromSparqlUpdate(payload):
-  """
-  Extracts the data from the VALUES clause of  a SPARQL update request. All other parts of the query are ignored.
-  Consider the following query:
-  
-    PREFIX : <http://www.example.org/>
-    INSERT  {
-      :s :p :o .
-    } WHERE {
-      VALUES(?type ?image_id ?iiif_url ?regionByPx) {
-        ("updateImageRegion" "210758" <https://www.e-rara.ch/zuz/i3f/v20/12581613> "35,28,2196,1445")
-      }
-    }
-
-  Given this query the function will return the following data:   
-
-  [{
-    "type": "updateImageRegion",
-    "image_id": "210758",
-    "iiif_url": "https://www.e-rara.ch/zuz/i3f/v20/12581613",
-    "regionByPx": "35,28,2196,1445"
-  }]
-
-  Each row in the VALUES clause is returned as a JSON object in the list.
-  """
-  from rdflib.plugins.sparql.parser import parseUpdate
-  q = parseUpdate(payload)
-  keys = {}
-  for i, var in enumerate(q['request'][0]['where']['part'][0]['var']):
-      keys[i] = str(var)
-  data = []
-  for values in q['request'][0]['where']['part'][0]['value']:
-      row = {}
-      for i, value in enumerate(values):
-          if 'string' in value:
-              row[keys[i]] = str(value['string'])
-          else:
-              row[keys[i]] = str(value)
-      data.append(row)
-  return data
 
 def processRequest(data):
   """
@@ -93,15 +53,22 @@ def updateImageRegion(data):
 @app.route('/')
 def index():
   return 'Server Works!'
-  
+
 @app.route('/sparql', methods=['GET', 'POST'])
 def sparql():
   """
   Listens for SPARQL Update requests and processes them.
   """
   if request.form:
-    data = getDataFromSparqlUpdate(request.form['update'])
-    response = processRequest(data)
+    p = parser()
+    data = p.parseUpdate(request.form['update'])
+    values = []
+    for d in data['values']:
+      row = {}
+      for key in d.keys():
+        row[key] = d[key]['value']
+      values.append(row)
+    response = processRequest(values)
     if 'error' in response:
       return response, 500
     return Response(json.dumps(response), mimetype='application/json')

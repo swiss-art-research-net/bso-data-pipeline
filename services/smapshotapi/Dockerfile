@@ -7,7 +7,7 @@ RUN apt-get -qq update && \
 RUN locale-gen en_US.UTF-8
 
 # Install Python packages
-RUN pip install requests rdflib flask waitress
+RUN pip install requests rdflib flask waitress sari-sparql-parser==0.0.3
 
 COPY ./src /src
 
