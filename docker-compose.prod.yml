@@ -21,6 +21,10 @@ services:
   researchspace:
     networks:
     - internal
+  
+  smapshotapi:
+    networks:
+    - internal
 
 networks:
   internal:
