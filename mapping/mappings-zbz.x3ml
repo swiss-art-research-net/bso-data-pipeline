@@ -1364,7 +1364,7 @@
                             <arg name="type" type="constant">artwork</arg>
                             <arg name="id" type="xpath">../record-identifier/text()</arg>
                             <arg name="subtype" type="constant">subcreation</arg>
-                            <arg name="position" type="xpath">concat(../@tag, '-', ./subfield[@code='subfield']/text())</arg>
+                            <arg name="position" type="xpath">concat(./@tag, '-', ./subfield[@code='subfield']/text())</arg>
                         </instance_generator>
                     </entity>
                 </target_node>
@@ -1398,6 +1398,32 @@
                     </target_node>
                 </range>
             </link>
+        </mapping>
+        <mapping>
+            <domain>
+                <source_node>/collection/record/datafield</source_node>
+                <target_node>
+                    <if>
+                        <or>
+                            <if>
+                                <equals value="100">@tag</equals>
+                            </if>
+                            <if>
+                                <equals value="110">@tag</equals>
+                            </if>
+                        </or>
+                    </if>
+                    <entity variable="subcreation-for-type">
+                        <type>crm:E65_Creation</type>
+                        <instance_generator name="URIwithTypeSubtypeIdAndCounter">
+                            <arg name="type" type="constant">artwork</arg>
+                            <arg name="id" type="xpath">../record-identifier/text()</arg>
+                            <arg name="subtype" type="constant">subcreation</arg>
+                            <arg name="position" type="xpath">concat(./@tag, '-', ./subfield[@code='subfield']/text())</arg>
+                        </instance_generator>
+                    </entity>
+                </target_node>
+            </domain>
             <link>
                 <path>
                     <source_relation>
@@ -1413,14 +1439,14 @@
                 <range>
                     <source_node>subfield</source_node>
                     <target_node>
-                        <entity variable="creation-type">
+                        <entity>
                             <type>crm:E55_Type</type>
                             <instance_generator name="URIwithTypeAndId_hashed">
                                 <arg name="type" type="constant">type</arg>
-                                <arg name="id_HASHED_CONTENTS" type="xpath">if (@gnd) then (@gnd) else (text())</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">if (string-length(@gnd)) then (@gnd) else (text())</arg>
                             </instance_generator>
                             <label_generator name="Literal">
-                                <arg name="text" type="xpath">if (../subfield[@code='e']/text()) then (../subfield[@code='e']/text()) else (text())</arg>
+                                <arg name="text" type="xpath">if (@label) then (@label) else (text())</arg>
                                 <arg name="language" type="constant"/>
                             </label_generator>
                         </entity>
@@ -1604,10 +1630,10 @@
                             <type>crm:E55_Type</type>
                             <instance_generator name="URIwithTypeAndId_hashed">
                                 <arg name="type" type="constant">type</arg>
-                                <arg name="id_HASHED_CONTENTS" type="xpath">if (@gnd) then (@gnd) else (text())</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">if (string-length(@gnd)) then (@gnd) else (text())</arg>
                             </instance_generator>
                             <label_generator name="Literal">
-                                <arg name="text" type="xpath">if (../subfield[@code='e']/text()) then (../subfield[@code='e']/text()) else (text())</arg>
+                                <arg name="text" type="xpath">if (@label) then (@label) else (text())</arg>
                                 <arg name="language" type="constant"/>
                             </label_generator>
                         </entity>
@@ -2928,10 +2954,10 @@
                             <type>crm:E55_Type</type>
                             <instance_generator name="URIwithTypeAndId_hashed">
                                 <arg name="type" type="constant">type</arg>
-                                <arg name="id_HASHED_CONTENTS" type="xpath">if (@gnd) then (@gnd) else (text())</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">if (string-length(@gnd)) then (@gnd) else (text())</arg>
                             </instance_generator>
                             <label_generator name="Literal">
-                                <arg name="text" type="xpath">../subfield[@code='e']/text()</arg>
+                                <arg name="text" type="xpath">if (@label) then (@label) else (text())</arg>
                                 <arg name="language" type="constant"/>
                             </label_generator>
                         </entity>
