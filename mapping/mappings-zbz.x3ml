@@ -1842,7 +1842,7 @@
                                         <constant/>
                                     </instance_info>
                                     <instance_generator name="typedLiteralGen">
-                                        <arg name="text" type="xpath">concat(text(), "T00:00:00")</arg>
+                                        <arg name="text" type="xpath">if (string-length(text()) > 4 ) then (text()) else (concat(text(), "-01-01"))</arg>
                                     </instance_generator>
                                 </entity>
                             </additional>
@@ -1854,7 +1854,7 @@
                                         <constant/>
                                     </instance_info>
                                     <instance_generator name="typedLiteralGen">
-                                        <arg name="text" type="xpath">concat(text(), "T23:59:59")</arg>
+                                        <arg name="text" type="xpath">if (string-length(text()) > 4 ) then (text()) else (concat(text(), "-12-31"))</arg>
                                     </instance_generator>
                                 </entity>
                             </additional>
@@ -1901,7 +1901,7 @@
                                         <constant/>
                                     </instance_info>
                                     <instance_generator name="typedLiteralGen">
-                                        <arg name="text" type="xpath">concat(text(), "-01-01")</arg>
+                                        <arg name="text" type="xpath">if (string-length(text()) > 4 ) then (text()) else (concat(text(), "-01-01"))</arg>
                                     </instance_generator>
                                 </entity>
                             </additional>
@@ -1913,7 +1913,7 @@
                                         <constant/>
                                     </instance_info>
                                     <instance_generator name="typedLiteralGen">
-                                        <arg name="text" type="xpath">concat(text(), "12-31")</arg>
+                                        <arg name="text" type="xpath">if (string-length(text()) > 4) then (text()) else (concat(text(), "-12-31"))</arg>
                                     </instance_generator>
                                 </entity>
                             </additional>
@@ -3216,7 +3216,7 @@
                                         <constant/>
                                     </instance_info>
                                     <instance_generator name="typedLiteralGen">
-                                        <arg name="text" type="xpath">concat(text(), "-01-01")</arg>
+                                        <arg name="text" type="xpath">if (string-length(text()) > 4 ) then (text()) else (concat(text(), "-01-01"))</arg>
                                     </instance_generator>
                                 </entity>
                             </additional>
@@ -3228,7 +3228,7 @@
                                         <constant/>
                                     </instance_info>
                                     <instance_generator name="typedLiteralGen">
-                                        <arg name="text" type="xpath">concat(text(), "-12-31")</arg>
+                                        <arg name="text" type="xpath">if (string-length(text()) > 4 ) then (text()) else (concat(text(), "-12-31"))</arg>
                                     </instance_generator>
                                 </entity>
                             </additional>
@@ -3275,7 +3275,7 @@
                                         <constant/>
                                     </instance_info>
                                     <instance_generator name="typedLiteralGen">
-                                        <arg name="text" type="xpath">concat("01-01-", text())</arg>
+                                        <arg name="text" type="xpath">if (string-length(text()) > 4 ) then (text()) else (concat(text(), "-01-01"))</arg>
                                     </instance_generator>
                                 </entity>
                             </additional>
@@ -3287,7 +3287,7 @@
                                         <constant/>
                                     </instance_info>
                                     <instance_generator name="typedLiteralGen">
-                                        <arg name="text" type="xpath">concat("31-11-", text())</arg>
+                                        <arg name="text" type="xpath">if (string-length(text()) > 4 ) then (text()) else (concat(text(), "-12-31"))</arg>
                                     </instance_generator>
                                 </entity>
                             </additional>
@@ -3387,7 +3387,7 @@
                                         <constant/>
                                     </instance_info>
                                     <instance_generator name="typedLiteralGen">
-                                        <arg name="text" type="xpath">concat(text(),"-01-01")</arg>
+                                        <arg name="text" type="xpath">if (string-length(text()) > 4 ) then (text()) else (concat(text(), "-01-01"))</arg>
                                     </instance_generator>
                                 </entity>
                             </additional>
@@ -3399,7 +3399,7 @@
                                         <constant/>
                                     </instance_info>
                                     <instance_generator name="typedLiteralGen">
-                                        <arg name="text" type="xpath">concat(text(),"-12-31")</arg>
+                                        <arg name="text" type="xpath">if (string-length(text()) > 4 ) then (text()) else (concat(text(), "-12-31"))</arg>
                                     </instance_generator>
                                 </entity>
                             </additional>
