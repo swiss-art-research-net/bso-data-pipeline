@@ -2879,19 +2879,19 @@
                         <if>
                             <and>
                                 <if>
-                                    <equals value="4">@code</equals>
+                                    <equals value="a">@code</equals>
                                 </if>
                                 <if>
                                     <not>
                                         <if>
-                                            <equals value="fmo">text()</equals>
+                                            <equals value="fmo">../subfield[@code='4']/text()</equals>
                                         </if>
                                     </not>
                                 </if>
                                 <if>
                                     <not>
                                         <if>
-                                            <equals value="art">text()</equals>
+                                            <equals value="art">../subfield[@code='4']/text()</equals>
                                         </if>
                                     </not>
                                 </if>
@@ -2917,6 +2917,32 @@
                     </target_node>
                 </range>
             </link>
+        </mapping>
+        <mapping>
+            <domain>
+                <source_node>/collection/record/datafield</source_node>
+                <target_node>
+                    <if>
+                        <or>
+                            <if>
+                                <equals value="700">@tag</equals>
+                            </if>
+                            <if>
+                                <equals value="710">@tag</equals>
+                            </if>
+                        </or>
+                    </if>
+                    <entity variable="subproduction">
+                        <type>crm:E12_Production</type>
+                        <instance_generator name="URIwithOneLevelIdHashed">
+                            <arg name="type" type="constant">artwork</arg>
+                            <arg name="id" type="xpath">../record-identifier/text()</arg>
+                            <arg name="subtype" type="constant">subproduction</arg>
+                            <arg name="subId_HASHED_CONTENTS" type="xpath">./subfield[@code='a']/text()</arg>
+                        </instance_generator>
+                    </entity>
+                </target_node>
+            </domain>
             <link>
                 <path>
                     <source_relation>
@@ -2931,14 +2957,14 @@
                                 <if>
                                     <not>
                                         <if>
-                                            <equals value="fmo">../subfield[@code='4']/text()</equals>
+                                            <equals value="fmo">text()</equals>
                                         </if>
                                     </not>
                                 </if>
                                 <if>
                                     <not>
                                         <if>
-                                            <equals value="art">../subfield[@code='4']/text()</equals>
+                                            <equals value="art">text()</equals>
                                         </if>
                                     </not>
                                 </if>
@@ -2950,7 +2976,7 @@
                 <range>
                     <source_node>subfield</source_node>
                     <target_node>
-                        <entity variable="subproduction-type">
+                        <entity>
                             <type>crm:E55_Type</type>
                             <instance_generator name="URIwithTypeAndId_hashed">
                                 <arg name="type" type="constant">type</arg>
