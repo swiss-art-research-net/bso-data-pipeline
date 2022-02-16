@@ -124,6 +124,15 @@ tasks:
           FOLDER: /data/ttl/main/sff
           GRAPH: https://resource.swissartresearch.net/graph/sff
 
+  ingest-data-sff-as-individual-graphs:
+    desc: Ingest the TTL files located in the data/ttl/main/sff folder to the Blazegraph instance, placing each file into an individual named graph
+    sources:
+      - /data/ttl/main/sff/*.ttl
+    cmds:
+      - task: ingest-data-from-folder
+        vars: 
+          FOLDER: /data/ttl/main/sff
+
   ingest-data-zbz:
     desc: Ingest the TTL files located in the data/ttl/main/zbz folder to the Blazegraph instance
     sources:
