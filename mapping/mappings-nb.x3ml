@@ -1907,8 +1907,8 @@
                                     <instance_info>
                                         <constant/>
                                     </instance_info>
-                                    <instance_generator name="URIwithAatId">
-                                        <arg name="id" type="constant">300025492</arg>
+                                    <instance_generator name="URIorUUID">
+                                        <arg name="id" type="constant">https://resource.swissartresearch.net/type/5C623D50-F5A9-36A6-B7B6-5BED95E6C908</arg>
                                     </instance_generator>
                                     <label_generator name="Literal">
                                         <arg name="text" type="constant">author</arg>
