@@ -1364,7 +1364,7 @@
                             <arg name="type" type="constant">artwork</arg>
                             <arg name="id" type="xpath">../record-identifier/text()</arg>
                             <arg name="subtype" type="constant">subcreation</arg>
-                            <arg name="position" type="xpath">concat(../@tag, '-', ./subfield[@code='subfield']/text())</arg>
+                            <arg name="position" type="xpath">concat(./@tag, '-', ./subfield[@code='subfield']/text())</arg>
                         </instance_generator>
                     </entity>
                 </target_node>
@@ -1398,6 +1398,32 @@
                     </target_node>
                 </range>
             </link>
+        </mapping>
+        <mapping>
+            <domain>
+                <source_node>/collection/record/datafield</source_node>
+                <target_node>
+                    <if>
+                        <or>
+                            <if>
+                                <equals value="100">@tag</equals>
+                            </if>
+                            <if>
+                                <equals value="110">@tag</equals>
+                            </if>
+                        </or>
+                    </if>
+                    <entity variable="subcreation-for-type">
+                        <type>crm:E65_Creation</type>
+                        <instance_generator name="URIwithTypeSubtypeIdAndCounter">
+                            <arg name="type" type="constant">artwork</arg>
+                            <arg name="id" type="xpath">../record-identifier/text()</arg>
+                            <arg name="subtype" type="constant">subcreation</arg>
+                            <arg name="position" type="xpath">concat(./@tag, '-', ./subfield[@code='subfield']/text())</arg>
+                        </instance_generator>
+                    </entity>
+                </target_node>
+            </domain>
             <link>
                 <path>
                     <source_relation>
@@ -1413,14 +1439,14 @@
                 <range>
                     <source_node>subfield</source_node>
                     <target_node>
-                        <entity variable="creation-type">
+                        <entity>
                             <type>crm:E55_Type</type>
                             <instance_generator name="URIwithTypeAndId_hashed">
                                 <arg name="type" type="constant">type</arg>
-                                <arg name="id_HASHED_CONTENTS" type="xpath">if (@gnd) then (@gnd) else (text())</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">if (string-length(@gnd)) then (@gnd) else (text())</arg>
                             </instance_generator>
                             <label_generator name="Literal">
-                                <arg name="text" type="xpath">if (../subfield[@code='e']/text()) then (../subfield[@code='e']/text()) else (text())</arg>
+                                <arg name="text" type="xpath">if (@label) then (@label) else (text())</arg>
                                 <arg name="language" type="constant"/>
                             </label_generator>
                         </entity>
@@ -1604,10 +1630,10 @@
                             <type>crm:E55_Type</type>
                             <instance_generator name="URIwithTypeAndId_hashed">
                                 <arg name="type" type="constant">type</arg>
-                                <arg name="id_HASHED_CONTENTS" type="xpath">if (@gnd) then (@gnd) else (text())</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">if (string-length(@gnd)) then (@gnd) else (text())</arg>
                             </instance_generator>
                             <label_generator name="Literal">
-                                <arg name="text" type="xpath">if (../subfield[@code='e']/text()) then (../subfield[@code='e']/text()) else (text())</arg>
+                                <arg name="text" type="xpath">if (@label) then (@label) else (text())</arg>
                                 <arg name="language" type="constant"/>
                             </label_generator>
                         </entity>
@@ -1842,7 +1868,7 @@
                                         <constant/>
                                     </instance_info>
                                     <instance_generator name="typedLiteralGen">
-                                        <arg name="text" type="xpath">concat(text(), "T00:00:00")</arg>
+                                        <arg name="text" type="xpath">if (string-length(text()) > 4 ) then (text()) else (concat(text(), "-01-01"))</arg>
                                     </instance_generator>
                                 </entity>
                             </additional>
@@ -1854,7 +1880,7 @@
                                         <constant/>
                                     </instance_info>
                                     <instance_generator name="typedLiteralGen">
-                                        <arg name="text" type="xpath">concat(text(), "T23:59:59")</arg>
+                                        <arg name="text" type="xpath">if (string-length(text()) > 4 ) then (text()) else (concat(text(), "-12-31"))</arg>
                                     </instance_generator>
                                 </entity>
                             </additional>
@@ -1901,7 +1927,7 @@
                                         <constant/>
                                     </instance_info>
                                     <instance_generator name="typedLiteralGen">
-                                        <arg name="text" type="xpath">concat(text(), "-01-01")</arg>
+                                        <arg name="text" type="xpath">if (string-length(text()) > 4 ) then (text()) else (concat(text(), "-01-01"))</arg>
                                     </instance_generator>
                                 </entity>
                             </additional>
@@ -1913,7 +1939,7 @@
                                         <constant/>
                                     </instance_info>
                                     <instance_generator name="typedLiteralGen">
-                                        <arg name="text" type="xpath">concat(text(), "12-31")</arg>
+                                        <arg name="text" type="xpath">if (string-length(text()) > 4) then (text()) else (concat(text(), "-12-31"))</arg>
                                     </instance_generator>
                                 </entity>
                             </additional>
@@ -2853,19 +2879,19 @@
                         <if>
                             <and>
                                 <if>
-                                    <equals value="4">@code</equals>
+                                    <equals value="a">@code</equals>
                                 </if>
                                 <if>
                                     <not>
                                         <if>
-                                            <equals value="fmo">text()</equals>
+                                            <equals value="fmo">../subfield[@code='4']/text()</equals>
                                         </if>
                                     </not>
                                 </if>
                                 <if>
                                     <not>
                                         <if>
-                                            <equals value="art">text()</equals>
+                                            <equals value="art">../subfield[@code='4']/text()</equals>
                                         </if>
                                     </not>
                                 </if>
@@ -2891,6 +2917,32 @@
                     </target_node>
                 </range>
             </link>
+        </mapping>
+        <mapping>
+            <domain>
+                <source_node>/collection/record/datafield</source_node>
+                <target_node>
+                    <if>
+                        <or>
+                            <if>
+                                <equals value="700">@tag</equals>
+                            </if>
+                            <if>
+                                <equals value="710">@tag</equals>
+                            </if>
+                        </or>
+                    </if>
+                    <entity variable="subproduction">
+                        <type>crm:E12_Production</type>
+                        <instance_generator name="URIwithOneLevelIdHashed">
+                            <arg name="type" type="constant">artwork</arg>
+                            <arg name="id" type="xpath">../record-identifier/text()</arg>
+                            <arg name="subtype" type="constant">subproduction</arg>
+                            <arg name="subId_HASHED_CONTENTS" type="xpath">./subfield[@code='a']/text()</arg>
+                        </instance_generator>
+                    </entity>
+                </target_node>
+            </domain>
             <link>
                 <path>
                     <source_relation>
@@ -2905,14 +2957,14 @@
                                 <if>
                                     <not>
                                         <if>
-                                            <equals value="fmo">../subfield[@code='4']/text()</equals>
+                                            <equals value="fmo">text()</equals>
                                         </if>
                                     </not>
                                 </if>
                                 <if>
                                     <not>
                                         <if>
-                                            <equals value="art">../subfield[@code='4']/text()</equals>
+                                            <equals value="art">text()</equals>
                                         </if>
                                     </not>
                                 </if>
@@ -2924,14 +2976,14 @@
                 <range>
                     <source_node>subfield</source_node>
                     <target_node>
-                        <entity variable="subproduction-type">
+                        <entity>
                             <type>crm:E55_Type</type>
                             <instance_generator name="URIwithTypeAndId_hashed">
                                 <arg name="type" type="constant">type</arg>
-                                <arg name="id_HASHED_CONTENTS" type="xpath">if (@gnd) then (@gnd) else (text())</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">if (string-length(@gnd)) then (@gnd) else (text())</arg>
                             </instance_generator>
                             <label_generator name="Literal">
-                                <arg name="text" type="xpath">../subfield[@code='e']/text()</arg>
+                                <arg name="text" type="xpath">if (@label) then (@label) else (text())</arg>
                                 <arg name="language" type="constant"/>
                             </label_generator>
                         </entity>
@@ -3216,7 +3268,7 @@
                                         <constant/>
                                     </instance_info>
                                     <instance_generator name="typedLiteralGen">
-                                        <arg name="text" type="xpath">concat(text(), "-01-01")</arg>
+                                        <arg name="text" type="xpath">if (string-length(text()) > 4 ) then (text()) else (concat(text(), "-01-01"))</arg>
                                     </instance_generator>
                                 </entity>
                             </additional>
@@ -3228,7 +3280,7 @@
                                         <constant/>
                                     </instance_info>
                                     <instance_generator name="typedLiteralGen">
-                                        <arg name="text" type="xpath">concat(text(), "-12-31")</arg>
+                                        <arg name="text" type="xpath">if (string-length(text()) > 4 ) then (text()) else (concat(text(), "-12-31"))</arg>
                                     </instance_generator>
                                 </entity>
                             </additional>
@@ -3275,7 +3327,7 @@
                                         <constant/>
                                     </instance_info>
                                     <instance_generator name="typedLiteralGen">
-                                        <arg name="text" type="xpath">concat("01-01-", text())</arg>
+                                        <arg name="text" type="xpath">if (string-length(text()) > 4 ) then (text()) else (concat(text(), "-01-01"))</arg>
                                     </instance_generator>
                                 </entity>
                             </additional>
@@ -3287,7 +3339,7 @@
                                         <constant/>
                                     </instance_info>
                                     <instance_generator name="typedLiteralGen">
-                                        <arg name="text" type="xpath">concat("31-11-", text())</arg>
+                                        <arg name="text" type="xpath">if (string-length(text()) > 4 ) then (text()) else (concat(text(), "-12-31"))</arg>
                                     </instance_generator>
                                 </entity>
                             </additional>
@@ -3387,7 +3439,7 @@
                                         <constant/>
                                     </instance_info>
                                     <instance_generator name="typedLiteralGen">
-                                        <arg name="text" type="xpath">concat(text(),"-01-01")</arg>
+                                        <arg name="text" type="xpath">if (string-length(text()) > 4 ) then (text()) else (concat(text(), "-01-01"))</arg>
                                     </instance_generator>
                                 </entity>
                             </additional>
@@ -3399,7 +3451,7 @@
                                         <constant/>
                                     </instance_info>
                                     <instance_generator name="typedLiteralGen">
-                                        <arg name="text" type="xpath">concat(text(),"-12-31")</arg>
+                                        <arg name="text" type="xpath">if (string-length(text()) > 4 ) then (text()) else (concat(text(), "-12-31"))</arg>
                                     </instance_generator>
                                 </entity>
                             </additional>
