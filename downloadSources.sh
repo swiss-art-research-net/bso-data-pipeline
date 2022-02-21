@@ -61,3 +61,5 @@ download "data/sari/smapshot-identifiers.trig" "data/ttl/additional/smapshot-ide
 download "data/sari/imageRegions.trig" "data/graphs/imageRegions.trig"
 download "data/sari/titleSimilarities.ttl" "data/graphs/titleSimilarities.ttl"
 download "data/sari/visualSimilarities.ttl" "data/graphs/visualSimilarities.ttl"
+
+download "data/bso-thesaurus/bso-thesaurus.trig" "data/ttl/additional/bso-thesaurus.trig"
