@@ -56,6 +56,40 @@ class SmapshotConnector:
         except:
             return False
         return r.json()
+
+    def _listPhotographers(self, limit, offset=0, additionalParams={}):
+        url = self._apiPath("/photographers")
+        params = {}
+        headers = {'Authorization': 'Bearer %s' % self.TOKEN, 'accept': 'application/json', 'Content-Type': 'application/json'}
+        for key in additionalParams:
+            params[key] = additionalParams[key]
+        try:
+            r = requests.get(url=url, params=params, headers=headers)
+        except:
+            return False
+        return r.json()
+        
+    def addPhotographer(self, *, firstname='', lastname, company='', link):
+        """
+        Adds a new photographer to the sMapshot collection
+        :param firstname: The firstname of the photographer
+        :type firstname: str
+        :param lastname: The lastname of the photographer
+        :type lastname: str
+        :param company: The company the entry belongs to
+        :type company: str
+        :param link: The URI of the photographer
+        """
+        attributes = {
+            "first_name": firstname,
+            "last_name": lastname,
+            "link": link,
+            "company": company
+        }
+        url = self._apiPath("/photographers")
+        headers = {'Authorization': 'Bearer %s' % self.TOKEN, 'accept': 'application/json', 'Content-Type': 'application/json'}
+        r = requests.post(url=url, headers=headers, data=json.dumps(attributes))
+        return r.json()
         
     def getImageAttributes(self, imageId):
         """
@@ -84,7 +118,7 @@ class SmapshotConnector:
         while offset < numberOfImages:
             images += self._listImages(self.LIMIT, offset, additionalParams)['rows']
             offset += self.LIMIT
-            
+        
         return images
 
     def listObservations(self,additionalParams = {}):
@@ -97,6 +131,17 @@ class SmapshotConnector:
         offset = 0
 
         return self._listObservations(999999, 0, additionalParams)
+
+    def listPhotographers(self, additionalParams= {}):
+        """
+        Retrieves the photographers for a given collection owner. 
+        Additional parameters for the API call can be passed as a dictionary.
+        :param additionalParams: Additional parameters for the API call
+        :type additionalParams: dict
+        """
+        offset = 0
+
+        return self._listPhotographers(999999, 0, additionalParams)
 
     def listValidatedObservations(self, validatedAfterDate=False):
         """
@@ -122,7 +167,6 @@ class SmapshotConnector:
             additionalParams['date_validated_min'] = str(validatedAfterDate)
         return self.listImages(additionalParams)
 
-
     def setImageAttributes(self, imageId, attributes):
         """
         Set attributes for a given image id
@@ -135,6 +179,19 @@ class SmapshotConnector:
         headers = {'Authorization': 'Bearer %s' % self.TOKEN, 'accept': 'application/json', 'Content-Type': 'application/json'}
         r = requests.put(url=url, headers=headers, data=json.dumps(attributes))
         return r.json()
+
+    def setImagePhotographerIDs(self, imageId, photographerIDs):
+        """
+        Set photographer ids for a given image id
+        :param imageId: The image id
+        :type imageId: int
+        :param photographerIDs: The photographer ids to set
+        :type photographerIDs: list
+        """
+        attributes = {
+            "photographer_ids": photographerIDs
+        }
+        return self.setImageAttributes(int(imageId), attributes)
 
     def setImageRegion(self, imageId, iiifUrl, region):
         """
