@@ -41,8 +41,12 @@ def createSparqlResponse(parsedQuery, processedRequests):
   }
   bindings = []
   for request in processedRequests:
-    offset = parsedQuery['limitOffset']['offset'] if 'limitOffset' in parsedQuery and 'offset' in parsedQuery['limitOffset'] else 0
-    limit = parsedQuery['limitOffset']['limit'] if 'limitOffset' in parsedQuery and 'limit' in parsedQuery['limitOffset'] else len(request)
+    if parsedQuery['limitOffset']:
+      offset = parsedQuery['limitOffset']['offset'] if 'offset' in parsedQuery['limitOffset'] else 0
+      limit = parsedQuery['limitOffset']['limit'] if  'limit' in parsedQuery['limitOffset'] else len(request)
+    else:
+      offset = 0
+      limit = len(request)
     for entry in request[offset:offset+limit]:
       row = {}
       for variable in parsedQuery['select']:
