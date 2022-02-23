@@ -4,6 +4,7 @@ import sys
 from flask import Flask, Response, request
 from lib.SmapshotConnector import SmapshotConnector
 from sariSparqlParser import parser
+from rdflib.term import Variable, URIRef, Literal
 
 try:
   token = os.environ['SMAPSHOT_TOKEN']
@@ -27,6 +28,60 @@ def error(message):
   """
   return {"error": message}
 
+def createSparqlResponse(parsedQuery, processedRequests):
+
+  def getDataTypeForValue(value):
+      if isinstance(value, int):
+          return "http://www.w3.org/2001/XMLSchema#integer"
+      return "http://www.w3.org/2001/XMLSchema#string"
+
+  response = {}
+  response['head'] = {
+      "vars": parsedQuery['select']
+  }
+  bindings = []
+  for request in processedRequests:
+      for entry in request:
+          row = {}
+          for variable in parsedQuery['select']:
+              row[variable] = {
+                  "value": entry[variable],
+                  "type": "literal",
+                  "datatype": getDataTypeForValue(entry[variable])
+              }
+          bindings.append(row)
+  response['results'] = {'bindings': bindings}
+  return response
+
+def extractRequestFromQueryData(data):
+  smapshotPrefix = 'https://smapshot.heig-vd.ch/api/v1/'
+  def getAttribute(value):
+      v = getValueWithoutPrefix(value, smapshotPrefix)
+      return v[len("attribute_"):]
+  
+  def getValueWithoutPrefix(value, prefix):
+      return value[len(prefix):]
+  
+  requests = []
+  # Find variables with type:
+  for triple in data['where']:
+      if triple['s']['type'] == Variable and triple['p']['value'] == "http://www.w3.org/1999/02/22-rdf-syntax-ns#type":
+          requests.append({
+              "variable": triple['s']['value'],
+              "retrieve": {},
+              "send": {},
+              "requestType": getValueWithoutPrefix(triple['o']['value'], smapshotPrefix)})
+  for request in requests:
+      for triple in data['where']:
+          if triple['s']['type'] == Variable and triple['s']['value'] == request['variable']:
+              if getValueWithoutPrefix(triple['p']['value'], smapshotPrefix).startswith('attribute_'):
+                  if triple['o']['type'] == Variable:
+                      request['retrieve'][getAttribute(triple['p']['value'])] = triple['o']['value']
+                  if triple['o']['type'] == Literal:
+                      request['send'][getAttribute(triple['p']['value'])] = triple['o']['value']
+
+  return requests
+
 def processRequest(data):
   """
   Routes a request based on its type and calls the appropriate function.
@@ -41,6 +96,33 @@ def processRequest(data):
         return error("Unknown request type: " + row['type'])
     else:
       return error("No type specified")
+
+def processSmapshotApiRequests(requests):
+    ret = []
+    for request in requests:
+        if request['requestType'] == 'Photographer':
+            ret.append(requestPhotographer(request))
+    return ret
+
+def processQuery(data):
+  requests = extractRequestFromQueryData(data)
+  processedRequests = processSmapshotApiRequests(requests)
+  response = createSparqlResponse(data, processedRequests)
+  return response
+
+def requestPhotographer(request):
+    params = {}
+    data = []
+    for name, value in request['send'].items():
+        params[name] = value
+    photographers = smapshot.listPhotographers(params)
+    for photographer in photographers:
+        row = {}
+        for key, variable in request['retrieve'].items():
+            row[variable] = photographer[key]
+        data.append(row)
+
+    return data
 
 def updateImageRegion(data):
   """
@@ -72,6 +154,12 @@ def sparql():
     if 'error' in response:
       return response, 500
     return Response(json.dumps(response), mimetype='application/json')
+  if request.values:
+    if 'query' in request.values:
+      p = parser()
+      data = p.parseQuery(request.values['query'])
+      response = processQuery(data)
+      return Response(json.dumps(response), mimetype='application/json')
   return Response("OK", mimetype='application/json')
 
 if __name__ == "__main__":
