@@ -41,15 +41,18 @@ def createSparqlResponse(parsedQuery, processedRequests):
   }
   bindings = []
   for request in processedRequests:
-      for entry in request:
-          row = {}
-          for variable in parsedQuery['select']:
-              row[variable] = {
-                  "value": entry[variable],
-                  "type": "literal",
-                  "datatype": getDataTypeForValue(entry[variable])
-              }
-          bindings.append(row)
+    offset = parsedQuery['limitOffset']['offset'] if 'limitOffset' in parsedQuery and 'offset' in parsedQuery['limitOffset'] else 0
+    limit = parsedQuery['limitOffset']['limit'] if 'limitOffset' in parsedQuery and 'limit' in parsedQuery['limitOffset'] else len(request)
+    for entry in request[offset:offset+limit]:
+      row = {}
+      for variable in parsedQuery['select']:
+        if variable in entry:
+          row[variable] = {
+            "value": entry[variable],
+            "type": "literal",
+            "datatype": getDataTypeForValue(entry[variable])
+          }
+      bindings.append(row)
   response['results'] = {'bindings': bindings}
   return response
 
@@ -141,24 +144,23 @@ def sparql():
   """
   Listens for SPARQL Update requests and processes them.
   """
-  if request.form:
-    p = parser()
-    data = p.parseUpdate(request.form['update'])
-    values = []
-    for d in data['values']:
-      row = {}
-      for key in d.keys():
-        row[key] = d[key]['value']
-      values.append(row)
-    response = processRequest(values)
-    if 'error' in response:
-      return response, 500
-    return Response(json.dumps(response), mimetype='application/json')
   if request.values:
-    if 'query' in request.values:
-      p = parser()
+    p = parser()
+    if 'query' in request.values: 
       data = p.parseQuery(request.values['query'])
       response = processQuery(data)
+      return Response(json.dumps(response), mimetype='application/json')
+    if 'update' in request.values:
+      data = p.parseUpdate(request.values['update'])
+      values = []
+      for d in data['values']:
+        row = {}
+        for key in d.keys():
+          row[key] = d[key]['value']
+        values.append(row)
+      response = processRequest(values)
+      if 'error' in response:
+        return response, 500
       return Response(json.dumps(response), mimetype='application/json')
   return Response("OK", mimetype='application/json')
 
