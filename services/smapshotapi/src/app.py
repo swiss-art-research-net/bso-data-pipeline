@@ -28,6 +28,40 @@ def error(message):
   """
   return {"error": message}
 
+def addImage(data):
+  """
+  Adds a new image
+  """
+  r = smapshot.addImage(
+    regionByPx=[int(d) for d in data['regionByPx'].split(",")], 
+    iiif_url=data['iiif_url'], 
+    is_published=True if data['is_published'] else False, 
+    original_id=data['original_id'], 
+    title=data['title'], 
+    collection_id=int(data['collection_id']), 
+    view_type=data['view_type'], 
+    license=data['license'], 
+    observation_enabled=True if data['observation_enabled'] else False, 
+    correction_enabled=True if data['correction_enabled'] else False,
+    height=int(data['height']),
+    width=int(data['width']),
+    name=data['name'],
+    date_orig=data['date_shot'],
+    date_shot_min=data['date_min'][:10],
+    date_shot_max=data['date_max'][:10],
+    longitude=float(data['longitude']),
+    latitude=float(data['latitude']),
+    photographer_ids=[int(d) for d in data['photographer_ids'].split(",")]
+  )
+  return r
+
+def addPhotographer(data):
+  """
+  Adds a new photograoher
+  """
+  r = smapshot.addPhotographer(firstname=data['firstname'] if 'firstname' in data else '', lastname=data['lastname'], company='SARI', link=data['link'])
+  return r
+
 def createSparqlResponse(parsedQuery, processedRequests):
 
   def getDataTypeForValue(value):
@@ -99,6 +133,14 @@ def processRequest(data):
         if not 'iiif_url' in row or not 'regionByPx' in row or not 'image_id' in row:
           return error("Missing parameter for request type " + row['type'])
         return updateImageRegion(row)
+      elif row['type'] == "submitImage":
+        if not 'iiif_url' in row or not 'photographer_ids' in row or not 'is_published' in row or not 'original_id' in row or not 'title' in row or not 'collection_id' in row or not 'view_type' in row or not 'license' in row or not 'observation_enabled' in row or not 'correction_enabled' in row or not 'height' in row or not 'width' in row or not 'name' in row or not 'date_shot' in row or not 'date_min' in row or not 'date_max' in row or not 'longitude' in row or not 'latitude' in row or not 'regionByPx' in row:
+          return error("Missing parameter for request type " + row['type'])
+        return addImage(row)
+      elif row['type'] == "addPhotographer":
+        if not 'link' in row or not 'lastname' in row:
+          return error("Missing parameter for request type " + row['type'])
+        return addPhotographer(row)
       else:
         return error("Unknown request type: " + row['type'])
     else:
@@ -136,7 +178,6 @@ def updateImageRegion(data):
   Updates the region of an image.
   """
   r = smapshot.setImageRegion(data['image_id'], data['iiif_url'], [int(d) for d in data['regionByPx'].split(",")])
-  app.logger.info(r)
   return r
 
 @app.route('/')
@@ -165,6 +206,7 @@ def sparql():
       response = processRequest(values)
       if 'error' in response:
         return response, 500
+      app.logger.info(response)
       return Response(json.dumps(response), mimetype='application/json')
   return Response("OK", mimetype='application/json')
 
