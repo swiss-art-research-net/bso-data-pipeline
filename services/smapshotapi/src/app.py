@@ -194,7 +194,7 @@ def sparql():
     if 'query' in request.values: 
       data = p.parseQuery(request.values['query'])
       response = processQuery(data)
-      return Response(json.dumps(response), mimetype='application/json')
+      return Response(json.dumps(response), mimetype='application/json', status=response['status'])
     if 'update' in request.values:
       data = p.parseUpdate(request.values['update'])
       values = []
@@ -207,7 +207,7 @@ def sparql():
       if 'error' in response:
         return response, 500
       app.logger.info(response)
-      return Response(json.dumps(response), mimetype='application/json')
+      return Response(json.dumps(response), mimetype='application/json', status=response['status'])
   return Response("OK", mimetype='application/json')
 
 if __name__ == "__main__":
