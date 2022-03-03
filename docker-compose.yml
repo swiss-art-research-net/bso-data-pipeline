@@ -53,6 +53,8 @@ services:
     environment:
       - SMAPSHOT_ENDPOINT=${SMAPSHOT_ENDPOINT}
       - SMAPSHOT_TOKEN=${SMAPSHOT_TOKEN}
+      - SPARQL_ENDPOINT=http://blazegraph:8080/blazegraph/sparql
+      - SMAPSHOT_NAMEDGRAPH=${SMAPSHOT_IMAGE_GRAPH}
     restart: unless-stopped
     volumes:
       - ./services/smapshotapi/src:/src
