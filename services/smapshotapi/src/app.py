@@ -202,6 +202,8 @@ def requestPhotographer(request):
     for name, value in request['send'].items():
         params[name] = value
     photographers = smapshot.listPhotographers(params)
+    if 'status' in photographers and photographers['status'] != 200:
+      return photographers
     for photographer in photographers:
         row = {}
         for key, variable in request['retrieve'].items():
