@@ -1,9 +1,11 @@
 import json
 import os
+import requests
 import sys
 from flask import Flask, Response, request
 from lib.SmapshotConnector import SmapshotConnector
 from sariSparqlParser import parser
+from string import Template
 from rdflib.term import Variable, URIRef, Literal
 
 try:
@@ -13,14 +15,26 @@ except:
   sys.exit(1)
 
 try:
-  endpoint = os.environ['SMAPSHOT_ENDPOINT']
+  smapshotEndpoint = os.environ['SMAPSHOT_ENDPOINT']
 except:
   print("SMAPSHOT_ENDPOINT environment variable not set.")
   sys.exit(1)
 
+try:
+  sparqlEndpoint = os.environ['SPARQL_ENDPOINT']
+except:
+  print("SPARQL_ENDPOINT environment variable not set.")
+  sys.exit(1)
+
+try:
+  namedGraph = os.environ['SMAPSHOT_NAMEDGRAPH']
+except:
+  print("SMAPSHOT_NAMEDGRAPH environment variable not set.")
+  sys.exit(1)
+
 app = Flask(__name__)
 
-smapshot = SmapshotConnector(url = endpoint, token = token)
+smapshot = SmapshotConnector(url = smapshotEndpoint, token = token)
 
 def error(message):
   """
@@ -53,6 +67,12 @@ def addImage(data):
     latitude=float(data['latitude']),
     photographer_ids=[int(d) for d in data['photographer_ids'].split(",")]
   )
+  if 'id' in r:
+    # Add smapshot ID to Platform
+    response = addSmapshotIdentifierForObject(r['id'], data['original_id'])
+    r['backendResponse'] = json.dumps(response)
+    if response['status_code'] != 200:
+      r['status'] = response['status_code']
   return r
 
 def addPhotographer(data):
@@ -61,6 +81,23 @@ def addPhotographer(data):
   """
   r = smapshot.addPhotographer(firstname=data['firstname'] if 'firstname' in data else '', lastname=data['lastname'], company='SARI', link=data['link'])
   return r
+
+def addSmapshotIdentifierForObject(smapshotId, originalId):
+  uri = "https://resource.swissartresearch.net/artwork/" + originalId
+  graphTemplate = Template("""
+  @prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+  <$objectIri> crm:P1_is_identified_by <$objectIri/id/smapshot> .
+  <$objectIri/id/smapshot> a crm:E42_Identifier ;
+    crm:P2_has_type <https://smapshot.heig-vd.ch> ;
+    rdfs:label "$smapshotId" .
+  """)
+  data = graphTemplate.substitute(objectIri=uri, smapshotId=smapshotId)
+  response = requests.post(data=data, url=sparqlEndpoint, params={'context-uri': namedGraph}, headers={'Content-Type': 'application/x-turtle'})
+  return { 
+    'url': response.request.url,
+    'status_code': response.status_code,
+    'data': data
+    }
 
 def createSparqlResponse(parsedQuery, processedRequests):
 
@@ -206,7 +243,6 @@ def sparql():
       response = processRequest(values)
       if 'error' in response:
         return response, 500
-      app.logger.info(response)
       return Response(json.dumps(response), mimetype='application/json', status=response['status'] if 'status' in response else 200)
   return Response("OK", mimetype='application/json')
 
