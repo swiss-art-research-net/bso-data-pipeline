@@ -59,10 +59,9 @@ def addImage(data):
     correction_enabled=True if data['correction_enabled'] else False,
     height=int(data['height']),
     width=int(data['width']),
-    name=data['name'],
     date_orig=data['date_shot'],
-    date_shot_min=data['date_min'][:10],
-    date_shot_max=data['date_max'][:10],
+    date_shot_min=data['date_min'][:10] if 'date_min' in data else None,
+    date_shot_max=data['date_max'][:10] if 'date_max' in data else None,
     longitude=float(data['longitude']),
     latitude=float(data['latitude']),
     photographer_ids=[int(d) for d in data['photographer_ids'].split(",")]
@@ -171,7 +170,7 @@ def processRequest(data):
           return error("Missing parameter for request type " + row['type'])
         return updateImageRegion(row)
       elif row['type'] == "submitImage":
-        if not 'iiif_url' in row or not 'photographer_ids' in row or not 'is_published' in row or not 'original_id' in row or not 'title' in row or not 'collection_id' in row or not 'view_type' in row or not 'license' in row or not 'observation_enabled' in row or not 'correction_enabled' in row or not 'height' in row or not 'width' in row or not 'name' in row or not 'date_shot' in row or not 'date_min' in row or not 'date_max' in row or not 'longitude' in row or not 'latitude' in row or not 'regionByPx' in row:
+        if not 'iiif_url' in row or not 'photographer_ids' in row or not 'is_published' in row or not 'original_id' in row or not 'title' in row or not 'collection_id' in row or not 'view_type' in row or not 'license' in row or not 'observation_enabled' in row or not 'correction_enabled' in row or not 'height' in row or not 'width' in row or not 'name' in row or not 'date_shot' in row or not 'longitude' in row or not 'latitude' in row or not 'regionByPx' in row:
           return error("Missing parameter for request type " + row['type'])
         return addImage(row)
       elif row['type'] == "addPhotographer":
