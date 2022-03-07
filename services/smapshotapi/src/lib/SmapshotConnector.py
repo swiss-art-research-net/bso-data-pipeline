@@ -69,7 +69,7 @@ class SmapshotConnector:
             return False
         return r.json()
 
-    def addImage(self, *, title, collection_id=36, photographer_ids=[0], iiif_url, width, height, original_id, latitude, longitude, license, name, regionByPx, date_orig, date_shot_min, date_shot_max, is_published=True, view_type="terrestrial", correction_enabled=False, observation_enabled=True):
+    def addImage(self, *, title, collection_id=36, photographer_ids=[0], iiif_url, width, height, original_id, latitude, longitude, license, name=None, regionByPx, date_orig, date_shot_min, date_shot_max, is_published=True, view_type="terrestrial", correction_enabled=False, observation_enabled=True):
         """
         Adds a new image to the sMapshot colection
         """
@@ -88,16 +88,22 @@ class SmapshotConnector:
             "view_type": view_type,
             "height": height,
             "width": width,
-            "name": name,
             "date_orig": date_orig,
-            "date_shot_min": date_shot_min,
-            "date_shot_max": date_shot_max,
             "apriori_location": {
                 "longitude": longitude,
                 "latitude": latitude
             },
             "photographer_ids": photographer_ids
         }
+        if name:
+            attributes["name"] = name
+        if date_shot_min and date_shot_max:
+            attributes["date_shot_min"] = date_shot_min
+            attributes["date_shot_max"] = date_shot_max
+        elif date_shot_min:
+            attributes["date_shot"] = date_shot_min
+        elif date_shot_max:
+            attributes["date_shot"] = date_shot_max
         url = self._apiPath("/images")
         headers = {'Authorization': 'Bearer %s' % self.TOKEN, 'accept': 'application/json', 'Content-Type': 'application/json'}
         r = requests.post(url=url, headers=headers, data=json.dumps(attributes))
