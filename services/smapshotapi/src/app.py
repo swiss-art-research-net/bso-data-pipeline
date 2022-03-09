@@ -131,6 +131,44 @@ def createSparqlResponse(parsedQuery, processedRequests):
   return response
 
 def extractRequestFromQueryData(data):
+  """
+  Given an interpreted SPARQL query this function extracts the request.
+  It does so by looking at the triples contained in the WHERE clause.
+  
+  Consider the following SPARQL query:
+
+    PREFIX  smapshotapi: <https://smapshot.heig-vd.ch/api/v1/>
+    SELECT  ?smapshot_id ?name ?uri WHERE { 
+      ?smapshotArtist a smapshotapi:Photographer ;
+        smapshotapi:attribute_id ?smapshot_id ;
+        smapshotapi:attribute_link ?uri ;
+        smapshotapi:attribute_last_name "Tanner" , ?name .
+    }
+    
+  The type of a subject determines the type of the request. In this case,
+  the request is for a Photographer. The predicates that begin with attribute_
+  refer to the attributes available through the sMapshot API. Objects that 
+  are variables will be returned. Objects that are Literals will be passed to 
+  the sMapshot API.
+
+  The example request is interpreted into a request object. In this case:
+
+    {
+      "variable": "smapshotArtist",
+      "retrieve": {
+        "id": "smapshot_id",
+        "link": "uri",
+        "last_name": "name"
+      },
+      "send" : {
+        "last_name": "Tanner"
+      },
+      "requestType": "Photographer"
+    }
+
+  A single SPARQL query can contain several requests. All request objects are returned
+  as a list.
+  """
   smapshotPrefix = 'https://smapshot.heig-vd.ch/api/v1/'
   def getAttribute(value):
       v = getValueWithoutPrefix(value, smapshotPrefix)
@@ -190,6 +228,9 @@ def processSmapshotApiRequests(requests):
     return ret
 
 def processQuery(data):
+  """
+  Accepts a parsed SPARQL query, extracts and processes the requests and returns a SPARQL response.
+  """
   requests = extractRequestFromQueryData(data)
   processedRequests = processSmapshotApiRequests(requests)
   response = createSparqlResponse(data, processedRequests)
@@ -235,6 +276,7 @@ def sparql():
       return Response(json.dumps(response), mimetype='application/json', status=response['status'] if 'status' in response else 200)
     if 'update' in request.values:
       data = p.parseUpdate(request.values['update'])
+      # Update queries are interpreted based on the data passed through the VALUES keyword
       values = []
       for d in data['values']:
         row = {}
