@@ -44,7 +44,7 @@ def error(message):
 
 def addImage(data):
   """
-  Adds a new image
+  Adds a new image to sMapshot and sends the returned sMapshot ID to the backend
   """
   r = smapshot.addImage(
     regionByPx=[int(d) for d in data['regionByPx'].split(",")], 
@@ -82,6 +82,12 @@ def addPhotographer(data):
   return r
 
 def addSmapshotIdentifierForObject(smapshotId, originalId):
+  """
+  Adds a given sMapshot Identifier to an image based on its original ID.
+  The update is performed as a POST request to the SPARQL endpoint specified
+  in the SPARQL_ENDPOINT env variable.
+  """
+  
   uri = "https://resource.swissartresearch.net/artwork/" + originalId
   graphTemplate = Template("""
   @prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
