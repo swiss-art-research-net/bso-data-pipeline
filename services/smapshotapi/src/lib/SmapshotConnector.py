@@ -71,7 +71,45 @@ class SmapshotConnector:
 
     def addImage(self, *, title, collection_id=36, photographer_ids=[0], iiif_url, width, height, original_id, latitude, longitude, license, name=None, regionByPx, date_orig, date_shot_min, date_shot_max, is_published=True, view_type="terrestrial", correction_enabled=False, observation_enabled=True):
         """
-        Adds a new image to the sMapshot colection
+        Adds a new IIIF image to sMapshot
+        :param title: The title of the image
+        :type title: str
+        :param collection_id: The id of the collection the image should be added to (default: 36)
+        :type collection_id: int
+        :param photographer_ids: The ids of the photographers of the image (default: [0])
+        :type photographer_ids: list
+        :param iiif_url: The IIIF Image API URL of the image
+        :type iiif_url: str
+        :param width: The width of the image
+        :type width: int
+        :param height: The height of the image
+        :type height: int
+        :param original_id: The original id of the image
+        :type original_id: str
+        :param latitude: The latitude of the initial location for the image
+        :type latitude: float
+        :param longitude: The longitude of the initial location for the image
+        :type longitude: float
+        :param license: The license or owner of the image
+        :type license: str
+        :param name: The name of the image (deprecated)
+        :type name: str
+        :param regionByPx: The region of the image in pixels (x,y,width,height)
+        :type regionByPx: list
+        :param date_orig: The date of the image as recorded
+        :type date_orig: str
+        :param date_shot_min: The earliest date for the image
+        :type date_shot_min: str
+        :param date_shot_max: The latest date for the image
+        :type date_shot_max: str
+        :param is_published: Whether the image should be published (default: True)
+        :type is_published: bool
+        :param view_type: The type of view the image is (default: "terrestrial")
+        :type view_type: str
+        :param correction_enabled: Whether the image metadata can be corrected on sMapshot (default: False)
+        :type correction_enabled: bool
+        :param observation_enabled: Whether observations (annotations) should be enabled for the image (default: True)
+        :type observation_enabled: bool
         """
         attributes = {
             "iiif_data" : {
