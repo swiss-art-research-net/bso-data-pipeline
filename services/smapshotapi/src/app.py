@@ -221,6 +221,10 @@ def processRequest(data):
       return error("No type specified")
 
 def processSmapshotApiRequests(requests):
+    """
+    Accepts a list of request objects, passes each request to the relevant function
+    for processing and returns a list of results for each request.
+    """
     ret = []
     for request in requests:
         if request['requestType'] == 'Photographer':
@@ -237,6 +241,43 @@ def processQuery(data):
   return response
 
 def requestPhotographer(request):
+    """
+    Accepts a request oject for a photographer and queries the sMapshot API using the given parameters.
+    Consider the following request object:
+      {
+        "variable": "smapshotArtist",
+        "retrieve": {
+          "id": "smapshot_id",
+          "link": "uri",
+          "last_name": "name"
+        },
+        "send" : {
+          "last_name": "Tanner"
+        },
+        "requestType": "Photographer"
+      }
+
+    The attributes and values to be sent are extracted from the "send" dictionary and used
+    to query the sMapshot API. If the returned status is not 200, the response from the
+    sMapshot API is returned. If the response is successful the queried attributes are
+    determined based on the "retrieve" dictionary. The function returns, for each row in the
+    response, an object with the queried variables as keys and the returned values as values.
+    For the above request object, for example:
+    [
+      {
+        "smapshot_id": "1839",
+        "uri": "https://resource.swissartresearch.net/actor/DEF6590A-1AAF-39C6-9581-91C315E78BCB",
+        "name": "Tanner, Johann Jakob [MalerIn/ZeichnerIn]"
+      },
+      {
+        "smapshot_id": "1615",
+        "uri": "https://resource.swissartresearch.net/actor/0E131DCC-CA73-3A11-9700-E7E40EB9D256/and/DEF6590A-1AAF-39C6-9581-91C315E78BCB",
+        "name": "Winterlin, Anton [MalerIn/ZeichnerIn] and Tanner, Johann Jakob [MalerIn/ZeichnerIn]"
+      },
+      ...
+    ]
+
+    """
     params = {}
     data = []
     for name, value in request['send'].items():
