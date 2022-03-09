@@ -99,7 +99,43 @@ def addSmapshotIdentifierForObject(smapshotId, originalId):
     }
 
 def createSparqlResponse(parsedQuery, processedRequests):
+  """
+  Accepts a parsed SPARQL select query and the results of processing the requests. 
+  Returns a SPARQL response.
 
+  Processed requests can look like this:
+
+    [
+      {
+        "smapshot_id": "1839",
+        "uri": "https://resource.swissartresearch.net/actor/DEF6590A-1AAF-39C6-9581-91C315E78BCB",
+        "name": "Tanner, Johann Jakob [MalerIn/ZeichnerIn]"
+      },
+      {
+        "smapshot_id": "1615",
+        "uri": "https://resource.swissartresearch.net/actor/0E131DCC-CA73-3A11-9700-E7E40EB9D256/and/DEF6590A-1AAF-39C6-9581-91C315E78BCB",
+        "name": "Winterlin, Anton [MalerIn/ZeichnerIn] and Tanner, Johann Jakob [MalerIn/ZeichnerIn]"
+      },
+      ...
+    ]
+
+  In response to a SPARQL query that looked like this:
+  PREFIX  smapshotapi: <https://smapshot.heig-vd.ch/api/v1/>
+    SELECT  ?smapshot_id ?name ?uri WHERE { 
+      ?smapshotArtist a smapshotapi:Photographer ;
+        smapshotapi:attribute_id ?smapshot_id ;
+        smapshotapi:attribute_link ?uri ;
+        smapshotapi:attribute_last_name "Tanner" , ?name .
+    }
+    
+  The function creates a list (bindings) with an entry for each row in the request object.
+  If a limit and offset is provided, the list is truncated as appropriate.
+
+  The function looks in the select part of the parsed query and returns from the processed
+  request the variables that are asked for.
+
+  In addition, information on the type of the returned data is added.
+  """
   def getDataTypeForValue(value):
       if isinstance(value, int):
           return "http://www.w3.org/2001/XMLSchema#integer"
@@ -197,9 +233,9 @@ def extractRequestFromQueryData(data):
 
   return requests
 
-def processRequest(data):
+def processUpdate(data):
   """
-  Routes a request based on its type and calls the appropriate function.
+  Routes a update request based on its type and calls the appropriate function.
   """
   for row in data:
     if 'type' in row:
@@ -324,7 +360,7 @@ def sparql():
         for key in d.keys():
           row[key] = d[key]['value']
         values.append(row)
-      response = processRequest(values)
+      response = processUpdate(values)
       if 'error' in response:
         return response, 500
       return Response(json.dumps(response), mimetype='application/json', status=response['status'] if 'status' in response else 200)
