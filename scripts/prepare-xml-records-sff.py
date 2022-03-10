@@ -11,6 +11,7 @@ inputFile = '../data/source/sff-werke.csv'
 
 # Prefix for curated fields
 curatedFilesPre = '../data/source/sff-curation-'
+curatedFilesLiteraturePre = '../data/source/sff-curation-literature-'
 
 # Manually curated list of artists and roles
 artistsFile = '../data/source/sff-artists.csv'
@@ -34,6 +35,7 @@ outputPrefix = 'sff-record-'
 
 # Fields that have been curated
 curatedFields = ['Keywords', 'Ortsbezug']
+curatedFieldsInLiterature = ['in Zeitschrift', 'Ort', 'Autor, Hsg.', 'Verlag']
 
 # Read arguments from command line input
 limit = int(sys.argv[1]) if len(sys.argv) >1 else 999999
@@ -104,6 +106,27 @@ def addCuratedData(record):
                     print("Could not find matching data for", valueTag.find('text').text)
     return record
 
+def addCuratedDataForLiterature(record):
+    for curatedField in curatedFieldsInLiterature:
+        tag = cleanKeyForTags(curatedField)
+        valueTags = record.findall('literatureList/literature/details/' + tag + '/values/value')
+        for valueTag in valueTags:
+            text = valueTag.find('text').text
+            lookupHash = customHash(text)
+            
+            if text:
+                try:
+                    index = curatedFiles[curatedField]['lookup'][lookupHash]
+                    match = curatedFiles[curatedField]['content'][index]
+
+                    for column in match: 
+                        if column != 'id':
+                            newSubfield = etree.SubElement(valueTag, column)
+                            newSubfield.text = match[column]
+                except:
+                    print("Could not find matching data for", tag.text)
+    return record
+
 def addDimensionData(record):
     recordId = record.find('InvNrIntern').text
     dimensionsRows  = [d for d in dimensionsData if d['Werk Inv. Nr.'] == recordId]
@@ -155,11 +178,13 @@ def addLiteratureData(record):
             print(literatureDetails)
             raise Exception("Found several matching entries for " + literatureLink['Lit. Nr.'])
         else:
-            detailsTag = etree.SubElement(literatureTag, "details")
+            detailsTag = etree.Element("details")
             for key in literatureDetails[0].keys():
                 if key and literatureDetails[0][key]:
                     newTag = etree.SubElement(detailsTag, cleanKeyForTags(key))
                     newTag.text = literatureDetails[0][key]
+            detailsTag = splitMultiValueFields(detailsTag)
+            literatureTag.append(detailsTag)
 
 
     return record
@@ -211,7 +236,9 @@ def convertRowToXMLRecord(row):
 def splitMultiValueFields(record):
     multiValueSeparators = {
         "Keywords": ",",
-        "Ortsbezug": r"\)[,|;]"
+        "Ortsbezug": r"\)[,|;]",
+        "Ort": "/",
+        "Autor, Hsg.": r";|/"
     }
     # Add suffix that may be cut off through regex separator
     multiValueSuffixes = {
@@ -219,17 +246,18 @@ def splitMultiValueFields(record):
     }
     for key in multiValueSeparators.keys():
         tag = record.find(cleanKeyForTags(key))
-        values = re.split(multiValueSeparators[key], tag.text)
-        values = [d.strip() for d in values]
-        if key in multiValueSuffixes.keys():
-            values = [d + multiValueSuffixes[key] for d in values[:-1]] + values[-1:]
-        
-        valuesTag = etree.SubElement(tag, 'values')
-        for value in values:
-            valueTag = etree.SubElement(valuesTag, 'value')
-            etree.SubElement(valueTag, 'text').text = value
+        if tag is not None:
+            values = re.split(multiValueSeparators[key], tag.text)
+            values = [d.strip() for d in values]
+            if key in multiValueSuffixes.keys():
+                values = [d + multiValueSuffixes[key] for d in values[:-1]] + values[-1:]
 
-        tag.text = ''
+            valuesTag = etree.SubElement(tag, 'values')
+            for value in values:
+                valueTag = etree.SubElement(valuesTag, 'value')
+                etree.SubElement(valueTag, 'text').text = value
+
+            tag.text = ''
         
     return record 
 
@@ -242,8 +270,9 @@ with open(inputFile, 'r') as f:
 
 # Read fields from external files
 curatedFiles = {}
-for key in curatedFields:
-    filename = curatedFilesPre + key.lower() + '.csv'
+for key in curatedFields + curatedFieldsInLiterature:
+    filePre = curatedFilesPre if key not in curatedFieldsInLiterature else curatedFilesLiteraturePre
+    filename = filePre + key.lower().replace(' ', '-').replace(',','').replace('.','') + '.csv'
     try:
         content = []
         with open(filename, 'r') as f:
@@ -325,6 +354,7 @@ for row in tqdm(inputData[offset:offset + limit]):
     record = addCuratedData(record)
     record = addDimensionData(record)
     record = addLiteratureData(record)
+    record = addCuratedDataForLiterature(record)
     record = addSeriesData(record)
     
     collection.clear()
