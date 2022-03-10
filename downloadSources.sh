@@ -50,6 +50,8 @@ download "data/sff/source/Literatur_index_Verknupfung.csv" "data/source/sff-lite
 download "data/sff/sff-images.csv" "data/source/sff-images.csv"
 download "data/sff/sff-curation-keywords.csv" "data/source/sff-curation-keywords.csv"
 download "data/sff/sff-curation-ortsbezug.csv" "data/source/sff-curation-ortsbezug.csv"
+download "data/sff/sff-curation-literature-in-zeitschrift.csv" "data/source/sff-curation-literature-in-zeitschrift.csv"
+download "data/sff/sff-curation-literature-ort.csv" "data/source/sff-curation-literature-ort.csv"
 download "data/sff/sff-artists.csv" "data/source/sff-artists.csv"
 download "data/sff/sff-series.csv" "data/source/sff-series.csv"
 
