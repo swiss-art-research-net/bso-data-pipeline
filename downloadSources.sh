@@ -52,6 +52,8 @@ download "data/sff/sff-curation-keywords.csv" "data/source/sff-curation-keywords
 download "data/sff/sff-curation-ortsbezug.csv" "data/source/sff-curation-ortsbezug.csv"
 download "data/sff/sff-curation-literature-in-zeitschrift.csv" "data/source/sff-curation-literature-in-zeitschrift.csv"
 download "data/sff/sff-curation-literature-ort.csv" "data/source/sff-curation-literature-ort.csv"
+download "data/sff/sff-curation-literature-verlag.csv" "data/source/sff-curation-literature-verlag.csv"
+download "data/sff/sff-curation-literature-autor-hsg.csv" "data/source/sff-curation-literature-autor-hsg.csv"
 download "data/sff/sff-artists.csv" "data/source/sff-artists.csv"
 download "data/sff/sff-series.csv" "data/source/sff-series.csv"
 
