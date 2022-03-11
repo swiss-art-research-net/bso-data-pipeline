@@ -173,6 +173,12 @@ tasks:
           FILE: /mapping/schemas/CRMinf_v0.7_.rdfs
           TYPE: application/rdf+xml
           GRAPH: http://www.ics.forth.gr/isl/CRMinf/
+      - task: ingest-data-from-file
+        vars:
+          NAME: FRBRoo
+          FILE: /mapping/schemas/FRBR2.4.rdfs
+          TYPE: application/rdf+xml
+          GRAPH: http://iflastandards.info/ns/fr/frbr/frbroo/
 
   ingest-similarities:
     desc: Ingest the calculated similarities between entities
