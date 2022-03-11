@@ -17,6 +17,7 @@
         <namespace prefix="aat" uri="http://vocab.getty.edu/aat/" />
         <namespace prefix="wd" uri="http://www.wikidata.org/entity/"/>
         <namespace prefix="frbroo" uri="http://iflastandards.info/ns/fr/frbr/frbroo/" />
+        <namespace prefix="oa" uri="http://www.w3.org/ns/oa#" />
     </namespaces>
     <mappings>
         <mapping>
@@ -2539,6 +2540,7 @@
                 <target_node>
                     <entity>
                         <type>crm:E13_Attribute_Assignment</type>
+                        <type>oa:Annotation</type>
                         <instance_generator name="URIwithTypeAndId">
                             <arg name="type" type="constant">annotation</arg>
                             <arg name="id" type="xpath">pID/text()</arg>
