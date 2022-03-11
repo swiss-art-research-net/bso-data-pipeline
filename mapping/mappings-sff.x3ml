@@ -1995,6 +1995,22 @@
                                 <arg name="subtype" type="constant">creation</arg>
                                 <arg name="level1" type="xpath">if (gnd/text()) then (gnd/text()) else (normalised_name/text())</arg>
                             </instance_generator>
+                            <additional>
+                                <relationship>crm:P2_has_type</relationship>
+                                <entity>
+                                    <type>crm:E55_Type</type>
+                                    <instance_info>
+                                        <constant/>
+                                    </instance_info>
+                                    <instance_generator name="URIorUUID">
+                                        <arg name="text" type="constant">http://vocab.getty.edu/aat/300025492</arg>
+                                    </instance_generator>
+                                    <label_generator name="Literal">
+                                        <arg name="text" type="constant">author</arg>
+                                        <arg name="language" type="constant"/>
+                                    </label_generator>
+                                </entity>
+                            </additional>
                         </entity>
                         <relationship>crm:P14_carried_out_by</relationship>
                     </target_relation>
@@ -2027,6 +2043,22 @@
                                 <arg name="subtype" type="constant">production</arg>
                                 <arg name="level1" type="xpath">if (gnd/text()) then (gnd/text()) else (normalised_name/text())</arg>
                             </instance_generator>
+                            <additional>
+                                <relationship>crm:P2_has_type</relationship>
+                                <entity>
+                                    <type>crm:E55_Type</type>
+                                    <instance_info>
+                                        <constant/>
+                                    </instance_info>
+                                    <instance_generator name="URIorUUID">
+                                        <arg name="text" type="constant">https://resource.swissartresearch.net/type/EEE10BF1-27C9-3DA1-8FF4-943F177B7BD4</arg>
+                                    </instance_generator>
+                                    <label_generator name="Literal">
+                                        <arg name="text" type="constant">Verleger</arg>
+                                        <arg name="language" type="constant"/>
+                                    </label_generator>
+                                </entity>
+                            </additional>
                         </entity>
                         <relationship>crm:P14_carried_out_by</relationship>
                     </target_relation>
