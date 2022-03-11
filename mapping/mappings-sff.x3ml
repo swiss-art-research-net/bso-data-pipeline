@@ -1864,50 +1864,6 @@
             <link>
                 <path>
                     <source_relation>
-                        <relation>Titel</relation>
-                    </source_relation>
-                    <target_relation>
-                        <relationship>crm:P1_is_identified_by</relationship>
-                    </target_relation>
-                </path>
-                <range>
-                    <source_node>Titel</source_node>
-                    <target_node>
-                        <entity>
-                            <type>crm:E41_Appellation</type>
-                            <type>crm:E33_Linguistic_Object</type>
-                            <instance_generator name="URIwithTypeSubtypeAndId">
-                                <arg name="type" type="constant">bibliographicitem</arg>
-                                <arg name="id" type="xpath">../pID/text()</arg>
-                                <arg name="subtype" type="constant">title</arg>
-                            </instance_generator>
-                            <label_generator name="Literal">
-                                <arg name="text" type="xpath">text()</arg>
-                                <arg name="language" type="constant"/>
-                            </label_generator>
-                            <additional>
-                                <relationship>crm:P2_has_type</relationship>
-                                <entity>
-                                    <type>crm:E55_Type</type>
-                                    <instance_info>
-                                        <constant/>
-                                    </instance_info>
-                                    <instance_generator name="URIwithAatId">
-                                        <arg name="id" type="constant">300417209</arg>
-                                    </instance_generator>
-                                    <label_generator name="Literal">
-                                        <arg name="text" type="constant">full titles</arg>
-                                        <arg name="language" type="constant">en</arg>
-                                    </label_generator>
-                                </entity>
-                            </additional>
-                        </entity>
-                    </target_node>
-                </range>
-            </link>
-            <link>
-                <path>
-                    <source_relation>
                         <relation>Vol</relation>
                     </source_relation>
                     <target_relation>
@@ -2184,6 +2140,10 @@
                             <arg name="type" type="constant">actor</arg>
                             <arg name="id_HASHED_CONTENTS" type="xpath">if (gnd/text()) then (gnd/text()) else (normalised_name/text())</arg>
                         </instance_generator>
+                        <label_generator name="Literal">
+                            <arg name="text" type="xpath">text/text()</arg>
+                            <arg name="language" type="constant"/>
+                        </label_generator>
                     </entity>
                 </target_node>
             </domain>
@@ -2304,6 +2264,10 @@
                             <arg name="type" type="constant">place</arg>
                             <arg name="id_HASHED_CONTENTS" type="xpath">if (gnd/text()) then (gnd/text()) else (normalised_name/text())</arg>
                         </instance_generator>
+                        <label_generator name="Literal">
+                            <arg name="text" type="xpath">text/text()</arg>
+                            <arg name="language" type="constant"/>
+                        </label_generator>
                     </entity>
                 </target_node>
             </domain>
@@ -2424,6 +2388,10 @@
                             <arg name="type" type="constant">actor</arg>
                             <arg name="id_HASHED_CONTENTS" type="xpath">if (gnd/text()) then (gnd/text()) else (normalised_name/text())</arg>
                         </instance_generator>
+                        <label_generator name="Literal">
+                            <arg name="text" type="xpath">text/text()</arg>
+                            <arg name="language" type="constant"/>
+                        </label_generator>
                     </entity>
                 </target_node>
             </domain>
