@@ -238,7 +238,8 @@ def splitMultiValueFields(record):
         "Keywords": ",",
         "Ortsbezug": r"\)[,|;]",
         "Ort": "/",
-        "Autor, Hsg.": r";|/"
+        "Autor, Hsg.": r";|/",
+        "Verlag": "\|"
     }
     # Add suffix that may be cut off through regex separator
     multiValueSuffixes = {

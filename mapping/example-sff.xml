@@ -215,7 +215,16 @@
                         </values>
                     </AutorHsg>
                     <Titel>Un siècle d’art suisse. L’estampe et le livre à gravures. Guide de l’amateur</Titel>
-                    <Verlag>Librairie des Bibliophiles</Verlag>
+                    <Verlag>
+                        <values>
+                            <value>
+                                <text>Librairie des Bibliophiles</text>
+                                <normalised_name>Librairie des Bibliophiles</normalised_name>
+                                <gnd>10090310-1</gnd>
+                                <wd>Q23138409</wd>
+                            </value>
+                        </values>
+                    </Verlag>
                     <Jahr>1921</Jahr>
                     <recID>2017021010060225169</recID>
                     <Ort>
@@ -251,7 +260,16 @@
                         </values>
                     </AutorHsg>
                     <Titel>Anleitung, auf die nützlichste und genussvollste Art die Schweitz zu bereisen</Titel>
-                    <Verlag>Orell, Füssli &amp; Comp</Verlag>
+                    <Verlag>
+                        <values>
+                            <value>
+                                <text>Orell, Füssli &amp; Comp</text>
+                                <normalised_name>Orell, Füssli &amp; Comp</normalised_name>
+                                <gnd>1073001172</gnd>
+                                <wd/>
+                            </value>
+                        </values>
+                    </Verlag>
                     <Vol>2. Aufl.</Vol>
                     <Jahr>0</Jahr>
                     <Band>4 Teile</Band>
@@ -331,7 +349,16 @@
                         </values>
                     </AutorHsg>
                     <Titel>Anleitung, auf die nützlichste und genussvollste Art die Schweitz zu bereisen</Titel>
-                    <Verlag>Orell, Füssli &amp; Comp</Verlag>
+                    <Verlag>
+                        <values>
+                            <value>
+                                <text>Orell, Füssli &amp; Comp</text>
+                                <normalised_name>Orell, Füssli &amp; Comp</normalised_name>
+                                <gnd>1073001172</gnd>
+                                <wd/>
+                            </value>
+                        </values>
+                    </Verlag>
                     <Vol>3. Aufl.</Vol>
                     <Jahr>0</Jahr>
                     <Band>4 Teile</Band>
@@ -370,7 +397,16 @@
                         </values>
                     </AutorHsg>
                     <Titel>Manuel du Voyageur en Suisse</Titel>
-                    <Verlag>Orell, Füssli &amp; Comp.</Verlag>
+                    <Verlag>
+                        <values>
+                            <value>
+                                <text>Orell, Füssli &amp; Comp.</text>
+                                <normalised_name>Orell, Füssli &amp; Comp</normalised_name>
+                                <gnd>1073001172</gnd>
+                                <wd/>
+                            </value>
+                        </values>
+                    </Verlag>
                     <Vol>3. Aufl.</Vol>
                     <Jahr>1818</Jahr>
                     <Band>3 Teile</Band>
@@ -408,7 +444,16 @@
                         </values>
                     </AutorHsg>
                     <Titel>Manuel du Voyageur en Suisse</Titel>
-                    <Verlag>Orell, Füssli &amp; Comp</Verlag>
+                    <Verlag>
+                        <values>
+                            <value>
+                                <text>Orell, Füssli &amp; Comp</text>
+                                <normalised_name>Orell, Füssli &amp; Comp</normalised_name>
+                                <gnd>1073001172</gnd>
+                                <wd/>
+                            </value>
+                        </values>
+                    </Verlag>
                     <Vol>2. Aufl.</Vol>
                     <Jahr>0</Jahr>
                     <Band>4 Teile</Band>
@@ -523,7 +568,16 @@
                 <details>
                     <LitNr>LIT10170</LitNr>
                     <Titel>Kunstanzeigen von 1798</Titel>
-                    <Verlag>Orell, Füssli &amp; Comp.</Verlag>
+                    <Verlag>
+                        <values>
+                            <value>
+                                <text>Orell, Füssli &amp; Comp.</text>
+                                <normalised_name>Orell, Füssli &amp; Comp</normalised_name>
+                                <gnd>1073001172</gnd>
+                                <wd/>
+                            </value>
+                        </values>
+                    </Verlag>
                     <Jahr>1798</Jahr>
                     <inZeitschrift>Neu helvetischer Almanach für das Jahr 1799</inZeitschrift>
                     <recID>2018050809470922932</recID>
@@ -747,7 +801,16 @@
                         </values>
                     </AutorHsg>
                     <Titel>Bibliotheca Geographica. Verzeichniss der seit der Mitte des vorigen Jahrhunderts bis zum Ende des Jahres 1856 in Deutschland erschienenen Werke über Geographie und Reisen mit Einschluss der Landkarten, Pläne und Ansichten</Titel>
-                    <Verlag>Engelmann</Verlag>
+                    <Verlag>
+                        <values>
+                            <value>
+                                <text>Engelmann</text>
+                                <normalised_name>Engelmann</normalised_name>
+                                <gnd/>
+                                <wd/>
+                            </value>
+                        </values>
+                    </Verlag>
                     <Jahr>1858</Jahr>
                     <recID>2017022310005530278</recID>
                     <Ort>
@@ -783,7 +846,16 @@
                         </values>
                     </AutorHsg>
                     <Titel>Graubünden in alten Ansichten. Landschaftsporträts reisender Künstler vom 16. bis zum frühen 19. Jahrhundert. Mit einem Verzeichnis topographischer Ansichten in der Druckgraphik von den Anfängen bis um 1880</Titel>
-                    <Verlag>Rhätisches Museum</Verlag>
+                    <Verlag>
+                        <values>
+                            <value>
+                                <text>Rhätisches Museum</text>
+                                <normalised_name>Rhätisches Museum</normalised_name>
+                                <gnd/>
+                                <wd/>
+                            </value>
+                        </values>
+                    </Verlag>
                     <Jahr>1984</Jahr>
                     <recID>2017030111313313995</recID>
                     <Ort>
@@ -819,7 +891,16 @@
                         </values>
                     </AutorHsg>
                     <Titel>Il Ticino nelle vecchie stampe</Titel>
-                    <Verlag>Edizioni Casagrande</Verlag>
+                    <Verlag>
+                        <values>
+                            <value>
+                                <text>Edizioni Casagrande</text>
+                                <normalised_name>Edizioni Casagrande</normalised_name>
+                                <gnd>5513616-3</gnd>
+                                <wd/>
+                            </value>
+                        </values>
+                    </Verlag>
                     <Jahr>2003</Jahr>
                     <recID>2017030316401516755</recID>
                     <Ort>
@@ -855,7 +936,16 @@
                         </values>
                     </AutorHsg>
                     <Titel>Druckgrafische Ortsansichten des Wallis, 1548-1850</Titel>
-                    <Verlag>Editions Gravures</Verlag>
+                    <Verlag>
+                        <values>
+                            <value>
+                                <text>Editions Gravures</text>
+                                <normalised_name>Editions Gravures</normalised_name>
+                                <gnd/>
+                                <wd/>
+                            </value>
+                        </values>
+                    </Verlag>
                     <Jahr>0</Jahr>
                     <Band>2 Bde.</Band>
                     <recID>2017022310051121100</recID>
@@ -893,7 +983,16 @@
                         </values>
                     </AutorHsg>
                     <Titel>Il Ponte del Diavolo nelle vecchie stampe</Titel>
-                    <Verlag>Edizioni Casagrande</Verlag>
+                    <Verlag>
+                        <values>
+                            <value>
+                                <text>Edizioni Casagrande</text>
+                                <normalised_name>Edizioni Casagrande</normalised_name>
+                                <gnd>5513616-3</gnd>
+                                <wd/>
+                            </value>
+                        </values>
+                    </Verlag>
                     <Jahr>2007</Jahr>
                     <recID>2017030316411918627</recID>
                     <Ort>
@@ -929,7 +1028,16 @@
                         </values>
                     </AutorHsg>
                     <Titel>Thun und seine Landschaft in der Kunst der Kleinmeister: Druckgrafik von 1548 bis 1868</Titel>
-                    <Verlag>Krebser</Verlag>
+                    <Verlag>
+                        <values>
+                            <value>
+                                <text>Krebser</text>
+                                <normalised_name>Krebser</normalised_name>
+                                <gnd/>
+                                <wd/>
+                            </value>
+                        </values>
+                    </Verlag>
                     <Jahr>2004</Jahr>
                     <recID>2017030111191126563</recID>
                     <Ort>
