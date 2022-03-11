@@ -2072,6 +2072,13 @@
                         <relation>Jahr</relation>
                     </source_relation>
                     <target_relation>
+                        <if>
+                            <not>
+                                <if>
+                                    <equals value="0">text()</equals>
+                                </if>
+                            </not>
+                        </if>
                         <relationship>crm:P4_has_time-span</relationship>
                         <entity>
                             <type>crm:E52_Time-Span</type>
