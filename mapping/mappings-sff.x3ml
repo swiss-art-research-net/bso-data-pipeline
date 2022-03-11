@@ -1819,5 +1819,718 @@
                 </range>
             </link>
         </mapping>
+        <mapping>
+            <domain>
+                <source_node>/collection/record/literatureList/literature/details</source_node>
+                <target_node>
+                    <entity variable="">
+                        <type>frbroo:F24_Publication_Expression</type>
+                        <instance_generator name="URIwithTypeAndId">
+                            <arg name="type" type="constant">bibliographicitem</arg>
+                            <arg name="id" type="xpath">pID/text()</arg>
+                        </instance_generator>
+                        <label_generator name="Literal">
+                            <arg name="text" type="xpath">Titel/text()</arg>
+                            <arg name="language" type="constant"/>
+                        </label_generator>
+                    </entity>
+                </target_node>
+            </domain>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>pID</relation>
+                    </source_relation>
+                    <target_relation>
+                        <relationship>frbroo:R24i_was_created_through</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>pID</source_node>
+                    <target_node>
+                        <entity>
+                            <type>frbroo:F30_Publication_Event</type>
+                            <instance_generator name="URIwithTypeSubtypeAndId">
+                                <arg name="type" type="constant">bibliographicitem</arg>
+                                <arg name="id" type="xpath">text()</arg>
+                                <arg name="subtype" type="constant">creation</arg>
+                            </instance_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>Titel</relation>
+                    </source_relation>
+                    <target_relation>
+                        <relationship>crm:P1_is_identified_by</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>Titel</source_node>
+                    <target_node>
+                        <entity>
+                            <type>crm:E41_Appellation</type>
+                            <type>crm:E33_Linguistic_Object</type>
+                            <instance_generator name="URIwithTypeSubtypeAndId">
+                                <arg name="type" type="constant">bibliographicitem</arg>
+                                <arg name="id" type="xpath">../pID/text()</arg>
+                                <arg name="subtype" type="constant">title</arg>
+                            </instance_generator>
+                            <label_generator name="Literal">
+                                <arg name="text" type="xpath">text()</arg>
+                                <arg name="language" type="constant"/>
+                            </label_generator>
+                            <additional>
+                                <relationship>crm:P2_has_type</relationship>
+                                <entity>
+                                    <type>crm:E55_Type</type>
+                                    <instance_info>
+                                        <constant/>
+                                    </instance_info>
+                                    <instance_generator name="URIwithAatId">
+                                        <arg name="id" type="constant">300417209</arg>
+                                    </instance_generator>
+                                    <label_generator name="Literal">
+                                        <arg name="text" type="constant">full titles</arg>
+                                        <arg name="language" type="constant">en</arg>
+                                    </label_generator>
+                                </entity>
+                            </additional>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>Vol</relation>
+                    </source_relation>
+                    <target_relation>
+                        <relationship>crm:P1_is_identified_by</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>Vol</source_node>
+                    <target_node>
+                        <entity>
+                            <type>crm:E42_Identifier</type>
+                            <instance_generator name="URIwithTypeSubtypeAndId">
+                                <arg name="type" type="constant">bibliographicitem</arg>
+                                <arg name="id" type="xpath">../pID/text()</arg>
+                                <arg name="subtype" type="constant">issue</arg>
+                            </instance_generator>
+                            <label_generator name="Literal">
+                                <arg name="text" type="xpath">text()</arg>
+                                <arg name="language" type="constant"/>
+                            </label_generator>
+                            <label_generator name="Literal">
+                                <arg name="text" type="xpath">text()</arg>
+                                <arg name="language" type="constant"/>
+                            </label_generator>
+                            <additional>
+                                <relationship>crm:P2_has_type</relationship>
+                                <entity>
+                                    <type>crm:E55_Type</type>
+                                    <instance_info>
+                                        <constant/>
+                                    </instance_info>
+                                    <instance_generator name="URIwithAatId">
+                                        <arg name="id" type="constant">300312349</arg>
+                                    </instance_generator>
+                                    <label_generator name="Literal">
+                                        <arg name="text" type="constant">issue</arg>
+                                        <arg name="language" type="constant"/>
+                                    </label_generator>
+                                </entity>
+                            </additional>
+                        </entity>
+                    </target_node>
+                    <comments>
+                        <comment type="">
+                            <rationale>Looking at the data, it seems that Volume and Issue have been confused (Issue entered in "Vol", volume entered in "Band"). Therefore, the mapping here is reversed</rationale>
+                            <alternatives/>
+                            <typical_mistakes/>
+                            <local_habits/>
+                            <link_to_cook_book/>
+                            <example>
+                                <example_source/>
+                                <example_target/>
+                            </example>
+                            <comments_last_update date="" person=""/>
+                        </comment>
+                    </comments>
+                </range>
+            </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>Band</relation>
+                    </source_relation>
+                    <target_relation>
+                        <relationship>crm:P1_is_identified_by</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>Band</source_node>
+                    <target_node>
+                        <entity>
+                            <type>crm:E42_Identifier</type>
+                            <instance_generator name="URIwithTypeSubtypeAndId">
+                                <arg name="type" type="constant">bibliographicitem</arg>
+                                <arg name="id" type="xpath">../pID/text()</arg>
+                                <arg name="subtype" type="constant">volume</arg>
+                            </instance_generator>
+                            <label_generator name="Literal">
+                                <arg name="text" type="xpath">text()</arg>
+                                <arg name="language" type="constant"/>
+                            </label_generator>
+                            <additional>
+                                <relationship>crm:P2_has_type</relationship>
+                                <entity>
+                                    <type>crm:E55_Type</type>
+                                    <instance_info>
+                                        <constant/>
+                                    </instance_info>
+                                    <instance_generator name="URIwithAatId">
+                                        <arg name="id" type="constant">300265632</arg>
+                                    </instance_generator>
+                                    <label_generator name="Constant">
+                                        <arg name="text" type="constant">volume</arg>
+                                        <arg name="language" type="constant"/>
+                                    </label_generator>
+                                </entity>
+                            </additional>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+        </mapping>
+        <mapping>
+            <domain>
+                <source_node>/collection/record/literatureList/literature/details</source_node>
+                <target_node>
+                    <entity variable="bibliographicitem_creation">
+                        <type>frbroo:F30_Publication_Event</type>
+                        <instance_generator name="URIwithTypeSubtypeAndId">
+                            <arg name="type" type="constant">bibliographicitem</arg>
+                            <arg name="id" type="xpath">pID/text()</arg>
+                            <arg name="subtype" type="constant">creation</arg>
+                        </instance_generator>
+                    </entity>
+                </target_node>
+            </domain>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>AutorHsg/values/value</relation>
+                    </source_relation>
+                    <target_relation>
+                        <relationship>crm:P9_consists_of</relationship>
+                        <entity>
+                            <type>frbroo:F28_Expression_Creation</type>
+                            <instance_generator name="URIwithTypeSubtypeIdAnd1Level_hashed">
+                                <arg name="type" type="constant">bibliographicitem</arg>
+                                <arg name="id" type="xpath">../../../pID/text()</arg>
+                                <arg name="subtype" type="constant">creation</arg>
+                                <arg name="level1" type="xpath">if (gnd/text()) then (gnd/text()) else (normalised_name/text())</arg>
+                            </instance_generator>
+                        </entity>
+                        <relationship>crm:P14_carried_out_by</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>AutorHsg/values/value</source_node>
+                    <target_node>
+                        <entity>
+                            <type>crm:E39_Actor</type>
+                            <instance_generator name="URIwithTypeAndId_hashed">
+                                <arg name="type" type="constant">actor</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">if (gnd/text()) then (gnd/text()) else (normalised_name/text())</arg>
+                            </instance_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>Verlag/values/value</relation>
+                    </source_relation>
+                    <target_relation>
+                        <relationship>crm:P9_consists_of</relationship>
+                        <entity>
+                            <type>frbroo:F32_Carrier_Production_Event</type>
+                            <instance_generator name="URIwithTypeSubtypeIdAnd1Level_hashed">
+                                <arg name="type" type="constant">bibliographicitem</arg>
+                                <arg name="id" type="xpath">../../../pID/text()</arg>
+                                <arg name="subtype" type="constant">production</arg>
+                                <arg name="level1" type="xpath">if (gnd/text()) then (gnd/text()) else (normalised_name/text())</arg>
+                            </instance_generator>
+                        </entity>
+                        <relationship>crm:P14_carried_out_by</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>Verlag/values/value</source_node>
+                    <target_node>
+                        <entity>
+                            <type>crm:E39_Actor</type>
+                            <instance_generator name="URIwithTypeAndId_hashed">
+                                <arg name="type" type="constant">actor</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">if (gnd/text()) then (gnd/text()) else (normalised_name/text())</arg>
+                            </instance_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>Ort/values/value</relation>
+                    </source_relation>
+                    <target_relation>
+                        <relationship>crm:P7_took_place_at</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>Ort/values/value</source_node>
+                    <target_node>
+                        <entity>
+                            <type>crm:E53_Place</type>
+                            <instance_generator name="URIwithTypeAndId_hashed">
+                                <arg name="type" type="constant">place</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">if (gnd/text()) then (gnd/text()) else (text/text())</arg>
+                            </instance_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>Jahr</relation>
+                    </source_relation>
+                    <target_relation>
+                        <relationship>crm:P4_has_time-span</relationship>
+                        <entity>
+                            <type>crm:E52_Time-Span</type>
+                            <instance_generator name="URIwithTypeSubtypeIdAnd1Level">
+                                <arg name="type" type="constant">bibliographicitem</arg>
+                                <arg name="id" type="xpath">../pID/text()</arg>
+                                <arg name="subtype" type="constant">creation</arg>
+                                <arg name="level1" type="constant">date</arg>
+                            </instance_generator>
+                            <label_generator name="Literal">
+                                <arg name="text" type="xpath">text()</arg>
+                                <arg name="language" type="constant"/>
+                            </label_generator>
+                        </entity>
+                        <relationship>crm:P82_at_some_time_within</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>Jahr</source_node>
+                    <target_node>
+                        <entity>
+                            <type>xsd:gYear</type>
+                            <instance_generator name="typedLiteralGen">
+                                <arg name="text" type="xpath">text()</arg>
+                            </instance_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>JahrText</relation>
+                    </source_relation>
+                    <target_relation>
+                        <relationship>crm:P4_has_time-span</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>JahrText</source_node>
+                    <target_node>
+                        <entity>
+                            <type>crm:E52_Time-Span</type>
+                            <instance_generator name="URIwithTypeSubtypeIdAnd1Level">
+                                <arg name="type" type="constant">bibliographicitem</arg>
+                                <arg name="id" type="xpath">../pID/text()</arg>
+                                <arg name="subtype" type="constant">creation</arg>
+                                <arg name="level1" type="constant">date</arg>
+                            </instance_generator>
+                            <label_generator name="Literal">
+                                <arg name="text" type="xpath">text()</arg>
+                                <arg name="language" type="constant"/>
+                            </label_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+        </mapping>
+        <mapping>
+            <domain>
+                <source_node>/collection/record/literatureList/literature/details/AutorHsg/values/value</source_node>
+                <target_node>
+                    <entity>
+                        <type>crm:E39_Actor</type>
+                        <instance_generator name="URIwithTypeAndId_hashed">
+                            <arg name="type" type="constant">actor</arg>
+                            <arg name="id_HASHED_CONTENTS" type="xpath">if (gnd/text()) then (gnd/text()) else (normalised_name/text())</arg>
+                        </instance_generator>
+                    </entity>
+                </target_node>
+            </domain>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>text</relation>
+                    </source_relation>
+                    <target_relation>
+                        <relationship>crm:P1_is_identified_by</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>text</source_node>
+                    <target_node>
+                        <entity>
+                            <type>crm:E41_Appellation</type>
+                            <type>crm:E33_Linguistic_Object</type>
+                            <instance_generator name="URIwithTypeSuptypeAndId_hashed">
+                                <arg name="type" type="constant">actor</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">if (../gnd/text()) then (../gnd/text()) else (../normalised_name/text())</arg>
+                                <arg name="subtype" type="constant">appellation</arg>
+                            </instance_generator>
+                            <label_generator name="Literal">
+                                <arg name="text" type="xpath">text()</arg>
+                                <arg name="language" type="constant"/>
+                            </label_generator>
+                            <additional>
+                                <relationship>crm:P2_has_type</relationship>
+                                <entity>
+                                    <type>crm:E55_Type</type>
+                                    <instance_info>
+                                        <constant/>
+                                    </instance_info>
+                                    <instance_generator name="URIwithAatId">
+                                        <arg name="id" type="constant">300404688</arg>
+                                    </instance_generator>
+                                    <label_generator name="Constant">
+                                        <arg name="text" type="constant">full name</arg>
+                                        <arg name="language" type="constant"/>
+                                    </label_generator>
+                                </entity>
+                            </additional>
+                            <additional>
+                                <relationship>crm:P70i_is_documented_in</relationship>
+                                <entity>
+                                    <type>crm:E31_Document</type>
+                                    <instance_info>
+                                        <constant/>
+                                    </instance_info>
+                                    <instance_generator name="URIwithTypeSubtypeAndId">
+                                        <arg name="type" type="constant">artwork</arg>
+                                        <arg name="id" type="xpath">../../../../../../../record-identifier/text()</arg>
+                                        <arg name="subtype" type="constant">meta</arg>
+                                    </instance_generator>
+                                </entity>
+                            </additional>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>gnd</relation>
+                    </source_relation>
+                    <target_relation>
+                        <if>
+                            <exists>text()</exists>
+                        </if>
+                        <relationship>crmdig:L54_is_same-as</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>gnd</source_node>
+                    <target_node>
+                        <entity>
+                            <type>crm:E39_Actor</type>
+                            <instance_generator name="URIwithGndId">
+                                <arg name="id" type="xpath">text()</arg>
+                            </instance_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>wd</relation>
+                    </source_relation>
+                    <target_relation>
+                        <if>
+                            <exists>text()</exists>
+                        </if>
+                        <relationship>crmdig:L54_is_same-as</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>wd</source_node>
+                    <target_node>
+                        <entity>
+                            <type>crm:E39_Actor</type>
+                            <instance_generator name="URIwithWikidataId">
+                                <arg name="id" type="xpath">text()</arg>
+                            </instance_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+        </mapping>
+        <mapping>
+            <domain>
+                <source_node>/collection/record/literatureList/literature/details/Ort/values/value</source_node>
+                <target_node>
+                    <entity>
+                        <type>crm:E53_Place</type>
+                        <instance_generator name="URIwithTypeAndId_hashed">
+                            <arg name="type" type="constant">place</arg>
+                            <arg name="id_HASHED_CONTENTS" type="xpath">if (gnd/text()) then (gnd/text()) else (normalised_name/text())</arg>
+                        </instance_generator>
+                    </entity>
+                </target_node>
+            </domain>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>text</relation>
+                    </source_relation>
+                    <target_relation>
+                        <relationship>crm:P1_is_identified_by</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>text</source_node>
+                    <target_node>
+                        <entity>
+                            <type>crm:E41_Appellation</type>
+                            <type>crm:E33_Linguistic_Object</type>
+                            <instance_generator name="URIwithTypeSuptypeAndId_hashed">
+                                <arg name="type" type="constant">actor</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">if (../gnd/text()) then (../gnd/text()) else (../normalised_name/text())</arg>
+                                <arg name="subtype" type="constant">appellation</arg>
+                            </instance_generator>
+                            <label_generator name="Literal">
+                                <arg name="text" type="xpath">text()</arg>
+                                <arg name="language" type="constant"/>
+                            </label_generator>
+                            <additional>
+                                <relationship>crm:P2_has_type</relationship>
+                                <entity>
+                                    <type>crm:E55_Type</type>
+                                    <instance_info>
+                                        <constant/>
+                                    </instance_info>
+                                    <instance_generator name="URIwithAatId">
+                                        <arg name="id" type="constant">300404688</arg>
+                                    </instance_generator>
+                                    <label_generator name="Constant">
+                                        <arg name="text" type="constant">full name</arg>
+                                        <arg name="language" type="constant"/>
+                                    </label_generator>
+                                </entity>
+                            </additional>
+                            <additional>
+                                <relationship>crm:P70i_is_documented_in</relationship>
+                                <entity>
+                                    <type>crm:E31_Document</type>
+                                    <instance_info>
+                                        <constant/>
+                                    </instance_info>
+                                    <instance_generator name="URIwithTypeSubtypeAndId">
+                                        <arg name="type" type="constant">artwork</arg>
+                                        <arg name="id" type="xpath">../../../../../../../record-identifier/text()</arg>
+                                        <arg name="subtype" type="constant">meta</arg>
+                                    </instance_generator>
+                                </entity>
+                            </additional>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>gnd</relation>
+                    </source_relation>
+                    <target_relation>
+                        <if>
+                            <exists>text()</exists>
+                        </if>
+                        <relationship>crmdig:L54_is_same-as</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>gnd</source_node>
+                    <target_node>
+                        <entity>
+                            <type>crm:E53_Place</type>
+                            <instance_generator name="URIwithGndId">
+                                <arg name="id" type="xpath">text()</arg>
+                            </instance_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>wd</relation>
+                    </source_relation>
+                    <target_relation>
+                        <if>
+                            <exists>text()</exists>
+                        </if>
+                        <relationship>crmdig:L54_is_same-as</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>wd</source_node>
+                    <target_node>
+                        <entity>
+                            <type>crm:E53_Place</type>
+                            <instance_generator name="URIwithWikidataId">
+                                <arg name="id" type="xpath">text()</arg>
+                            </instance_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+        </mapping>
+        <mapping>
+            <domain>
+                <source_node>/collection/record/literatureList/literature/details/Verlag/values/value</source_node>
+                <target_node>
+                    <entity>
+                        <type>crm:E39_Actor</type>
+                        <instance_generator name="URIwithTypeAndId_hashed">
+                            <arg name="type" type="constant">actor</arg>
+                            <arg name="id_HASHED_CONTENTS" type="xpath">if (gnd/text()) then (gnd/text()) else (normalised_name/text())</arg>
+                        </instance_generator>
+                    </entity>
+                </target_node>
+            </domain>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>text</relation>
+                    </source_relation>
+                    <target_relation>
+                        <relationship>crm:P1_is_identified_by</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>text</source_node>
+                    <target_node>
+                        <entity>
+                            <type>crm:E41_Appellation</type>
+                            <type>crm:E33_Linguistic_Object</type>
+                            <instance_generator name="URIwithTypeSuptypeAndId_hashed">
+                                <arg name="type" type="constant">actor</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">if (../gnd/text()) then (../gnd/text()) else (../normalised_name/text())</arg>
+                                <arg name="subtype" type="constant">appellation</arg>
+                            </instance_generator>
+                            <label_generator name="Literal">
+                                <arg name="text" type="xpath">text()</arg>
+                                <arg name="language" type="constant"/>
+                            </label_generator>
+                            <additional>
+                                <relationship>crm:P2_has_type</relationship>
+                                <entity>
+                                    <type>crm:E55_Type</type>
+                                    <instance_info>
+                                        <constant/>
+                                    </instance_info>
+                                    <instance_generator name="URIwithAatId">
+                                        <arg name="id" type="constant">300404688</arg>
+                                    </instance_generator>
+                                    <label_generator name="Constant">
+                                        <arg name="text" type="constant">full name</arg>
+                                        <arg name="language" type="constant"/>
+                                    </label_generator>
+                                </entity>
+                            </additional>
+                            <additional>
+                                <relationship>crm:P70i_is_documented_in</relationship>
+                                <entity>
+                                    <type>crm:E31_Document</type>
+                                    <instance_info>
+                                        <constant/>
+                                    </instance_info>
+                                    <instance_generator name="URIwithTypeSubtypeAndId">
+                                        <arg name="type" type="constant">artwork</arg>
+                                        <arg name="id" type="xpath">../../../../../../../record-identifier/text()</arg>
+                                        <arg name="subtype" type="constant">meta</arg>
+                                    </instance_generator>
+                                </entity>
+                            </additional>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>gnd</relation>
+                    </source_relation>
+                    <target_relation>
+                        <if>
+                            <exists>text()</exists>
+                        </if>
+                        <relationship>crmdig:L54_is_same-as</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>gnd</source_node>
+                    <target_node>
+                        <entity>
+                            <type>crm:E39_Actor</type>
+                            <instance_generator name="URIwithGndId">
+                                <arg name="id" type="xpath">text()</arg>
+                            </instance_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>wd</relation>
+                    </source_relation>
+                    <target_relation>
+                        <if>
+                            <exists>text()</exists>
+                        </if>
+                        <relationship>crmdig:L54_is_same-as</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>wd</source_node>
+                    <target_node>
+                        <entity>
+                            <type>crm:E39_Actor</type>
+                            <instance_generator name="URIwithWikidataId">
+                                <arg name="id" type="xpath">text()</arg>
+                            </instance_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+        </mapping>
     </mappings>
 </x3ml>
