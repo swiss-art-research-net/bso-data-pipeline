@@ -20,3 +20,4 @@ __pycache__
 .vscode
 docker-compose.override.yml
 logs/
+services/researchplatform/apps/static/assets/no_auth/*.jpg
