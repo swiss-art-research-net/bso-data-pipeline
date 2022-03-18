@@ -1,3 +1,13 @@
+"""
+This script can be used for caching the thumbnails of entities managed in a ResearchSpace/Metaphacts instance.
+It reads the preferred thumbnail queries from the configuration file and queries the SPARQL endpoint for them.
+It then downloads the thumbnails and rescales them to a given width (default 400px) and stores them under the given path.
+
+python /scripts/cache-thumbnails.py --endpoint {{.ENDPOINT}} {{if .FILTER_CONDITION}}--filterCondition {{.FILTER_CONDITION}}{{end}} --propsFile {{.PROPS_FILE}} --outputDir {{.OUTPUT_DIR}} --namedGraph {{.NAMED_GRAPH}} --thumbnailLocation $HOST_LOCATION{{.HOST_PATH}}
+
+"""
+
+
 import re
 import requests
 import sys
@@ -27,9 +37,13 @@ def performCaching(options):
     downloadAll(data=thumbnails,
                 prefix=thumbnailPrefix,
                 directory=outputDir)
+    verifiedThumbnails = verifyThumbnails(data=thumbnails, directory=outputDir, prefix=thumbnailPrefix)
+
+    print("Downloaded %d out of %d thumbnails" % (len(verifiedThumbnails), len(thumbnails)))
+
     r = ingestToTriplestore(endpoint=endpoint,
                         prefix=thumbnailPrefix,
-                        data=thumbnails, 
+                        data=verifiedThumbnails, 
                         graph=namedGraph,
                         location=thumbnailLocation, 
                         predicate=thumbnailPredicate
@@ -49,15 +63,22 @@ def downloadAsThumbnail(*, url, directory, prefix, targetWidth=400):
     filepath = path.join(directory, generateFilename(url, prefix))
     if not path.exists(filepath):
         time.sleep(1) # 1 second delay to avoid rate limiting
-        request.urlretrieve(url, filepath)
-        img = Image.open(filepath, 'r')
-        (width, height) = (img.width, img.height)
-        if width > targetWidth:
-            img = img.resize((targetWidth, int(height/width*targetWidth)))
-        if img.mode != 'RGB':
-            img = img.convert('RGB')
-        img.save(filepath, 'jpeg', quality=75, optimize=True)
-        
+        try:
+            request.urlretrieve(url, filepath)
+        except Exception as e:
+            print("Error downloading image from url", url , e)
+            return
+        try:
+            img = Image.open(filepath, 'r')
+            (width, height) = (img.width, img.height)
+            if width > targetWidth:
+                img = img.resize((targetWidth, int(height/width*targetWidth)))
+            if img.mode != 'RGB':
+                img = img.convert('RGB')
+            img.save(filepath, 'jpeg', quality=75, optimize=True)
+        except Exception as e:
+            print("Error processing image", filepath, e)
+            return       
             
     return filepath
 
@@ -215,6 +236,19 @@ def sparqlResultToDict(results):
         rows.append(row)
     return rows
 
+def verifyThumbnails(*, data, directory, prefix):
+    """
+    Verifies that all the thumbnails are present in the given directory
+    :param data: The list of dictionaries with keys 'subject' and 'thumbnail'
+    :param directory: The directory where the files are stored
+    :param prefix: The prefix to use for the filenames
+    """
+    verifiedData = []
+    for row in data:
+        filename = generateFilename(row['thumbnail'], prefix)
+        if path.isfile(path.join(directory, filename)):
+            verifiedData.append(row)
+    return verifiedData
 
 if __name__ == "__main__":
     options = {}
@@ -248,4 +282,4 @@ if __name__ == "__main__":
     if not 'thumbnailPredicate' in options:
         options['thumbnailPredicate'] = "http://schema.org/thumbnail"
 
-    performCaching(options)
+    performCaching(options) 
