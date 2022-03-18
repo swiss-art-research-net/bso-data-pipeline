@@ -56,7 +56,8 @@ def downloadAsThumbnail(*, url, directory, prefix, targetWidth=400):
         (width, height) = (img.width, img.height)
         if width > targetWidth:
             img = img.resize((targetWidth, int(height/width*targetWidth)))
-        img.convert('RGB')
+        if img.mode != 'RGB':
+            img = img.convert('RGB')
         img.save(filepath, 'jpeg', quality=75, optimize=True)
         
             
