@@ -11,8 +11,6 @@ from string import Template
 from SPARQLWrapper import SPARQLWrapper, JSON
 from tqdm import tqdm
 
-USER_AGENT="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36"
-
 def performCaching(options):
     propsFile = options['propsFile']
     outputDir = options['outputDir']
@@ -127,7 +125,12 @@ def getThumbnailQueries(propsFile,*, filterCondition=None):
     config = ConfigParser()
     config.read_string(configString)
     queries = re.split(r'(?<!\\),', config['ui']['preferredThumbnails'])
-    queries = [re.sub(r'\\n|\\\\,', '', d) for d in queries]
+    # Remove newline characters
+    queries = [re.sub(r'\\n', '', d) for d in queries] 
+    # Unescape commas
+    queries = [re.sub(r'\\\\,', ',', d) for d in queries]
+    # Only keep queries that are subqueries (i.e. do not consist of a single predicate)
+    queries = [d for d in queries if "{" in d]
     if filterCondition:
         filteredQueries = [d for d in queries if filterCondition in d]
         return filteredQueries
@@ -163,10 +166,14 @@ def queryThumbnails(*,endpoint, queries, limit=None):
     """
     sparql = SPARQLWrapper(endpoint)
     sparql.setReturnFormat(JSON)
+    # TODO: Read Prefixes from namespaces.prop file
     queryTemplate = Template("""
-        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+        PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
         PREFIX crmdig: <http://www.ics.forth.gr/isl/CRMdig/>
+        PREFIX la: <https://linked.art/ns/terms/>
         PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+        PREFIX rso: <http://www.researchspace.org/ontology/>
         PREFIX search: <https://platform.swissartresearch.net/search/>
         SELECT $select WHERE {
             $queryParts
