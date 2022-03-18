@@ -22,7 +22,7 @@ services:
     image: swissartresearx/bso-jobs:1.0.1
     restart: unless-stopped
     environment:
-      - HOST_LOCATION=${HOST_LOCATION}
+      - HOST_LOCATION=${HOST_NAME}
     volumes:
       - ./services/researchplatform/apps:/apps
       - ./data:/data
