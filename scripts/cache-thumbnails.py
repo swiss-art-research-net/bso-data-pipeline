@@ -49,8 +49,8 @@ def downloadAsThumbnail(*, url, directory, prefix, targetWidth=400):
     :param targetWidth: The width to resize the thumbnail to
     """
     filepath = path.join(directory, generateFilename(url, prefix))
-    urllib.URLOpener.version = USER_AGENT
     if not path.exists(filepath):
+        time.sleep(1) # 1 second delay to avoid rate limiting
         request.urlretrieve(url, filepath)
         img = Image.open(filepath, 'r')
         (width, height) = (img.width, img.height)
@@ -71,7 +71,6 @@ def downloadAll(*,data,directory,prefix):
     """
     for row in tqdm(data):
         downloadAsThumbnail(url=row['thumbnail'], directory=directory, prefix=prefix)
-        time.sleep(1) # 1 second delay to avoid rate limiting
 
 def generateFilename(url, prefix):   
     def filenameHash(name, extension='.jpg'):
