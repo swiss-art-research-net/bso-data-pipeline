@@ -1,6 +1,7 @@
 import re
 import requests
 import sys
+import time
 from PIL import Image
 from urllib import request
 from os import path
@@ -9,6 +10,8 @@ from hashlib import blake2b
 from string import Template
 from SPARQLWrapper import SPARQLWrapper, JSON
 from tqdm import tqdm
+
+USER_AGENT="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36"
 
 def performCaching(options):
     propsFile = options['propsFile']
@@ -46,6 +49,7 @@ def downloadAsThumbnail(*, url, directory, prefix, targetWidth=400):
     :param targetWidth: The width to resize the thumbnail to
     """
     filepath = path.join(directory, generateFilename(url, prefix))
+    urllib.URLOpener.version = USER_AGENT
     if not path.exists(filepath):
         request.urlretrieve(url, filepath)
         img = Image.open(filepath, 'r')
@@ -67,6 +71,7 @@ def downloadAll(*,data,directory,prefix):
     """
     for row in tqdm(data):
         downloadAsThumbnail(url=row['thumbnail'], directory=directory, prefix=prefix)
+        time.sleep(1) # 1 second delay to avoid rate limiting
 
 def generateFilename(url, prefix):   
     def filenameHash(name, extension='.jpg'):
