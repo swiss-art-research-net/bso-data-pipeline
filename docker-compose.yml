@@ -19,9 +19,12 @@ services:
   jobs:
     build: ./services/jobs
     container_name: ${PROJECT_NAME}_jobs
-    image: swissartresearx/bso-jobs:1.0.0
+    image: swissartresearx/bso-jobs:1.0.1
     restart: unless-stopped
+    environment:
+      - HOST_LOCATION=${HOST_LOCATION}
     volumes:
+      - ./services/researchplatform/apps:/apps
       - ./data:/data
       - ./mapping:/mapping
       - ./scripts:/scripts
