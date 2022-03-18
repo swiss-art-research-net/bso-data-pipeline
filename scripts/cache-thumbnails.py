@@ -27,9 +27,9 @@ import re
 import requests
 import sys
 import time
+import os
 from PIL import Image
 from urllib import request
-from os import path
 from configparser import ConfigParser
 from hashlib import blake2b
 from string import Template
@@ -75,8 +75,8 @@ def downloadAsThumbnail(*, url, directory, prefix, targetWidth=400):
     :param prefix: The prefix to use for the filename
     :param targetWidth: The width to resize the thumbnail to
     """
-    filepath = path.join(directory, generateFilename(url, prefix))
-    if not path.exists(filepath):
+    filepath = os.path.join(directory, generateFilename(url, prefix))
+    if not os.path.exists(filepath):
         time.sleep(1) # 1 second delay to avoid rate limiting
         try:
             request.urlretrieve(url, filepath)
@@ -92,7 +92,8 @@ def downloadAsThumbnail(*, url, directory, prefix, targetWidth=400):
                 img = img.convert('RGB')
             img.save(filepath, 'jpeg', quality=75, optimize=True)
         except Exception as e:
-            print("Error processing image", filepath, e)
+            print("Error processing image", e)
+            os.remove(filepath)
             return       
             
     return filepath
@@ -263,7 +264,7 @@ def verifyThumbnails(*, data, directory, prefix):
     verifiedData = []
     for row in data:
         filename = generateFilename(row['thumbnail'], prefix)
-        if path.isfile(path.join(directory, filename)):
+        if os.path.isfile(os.path.join(directory, filename)):
             verifiedData.append(row)
     return verifiedData
 
