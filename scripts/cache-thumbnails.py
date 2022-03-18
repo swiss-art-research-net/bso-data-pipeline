@@ -74,7 +74,13 @@ def downloadAll(*,data,directory,prefix):
     for row in tqdm(data):
         downloadAsThumbnail(url=row['thumbnail'], directory=directory, prefix=prefix)
 
-def generateFilename(url, prefix):   
+def generateFilename(url, prefix):
+    """
+    Generate a filename from a URL and a prefix.
+    The filename is generated from the URL (hashed) and prefixed with the given prefix.
+    :param url: The URL (of the thumbnail)
+    :param prefix: The prefix to use for the filename
+    """
     def filenameHash(name, extension='.jpg'):
         h = blake2b(digest_size=20)
         h.update(name.encode())
@@ -83,6 +89,17 @@ def generateFilename(url, prefix):
     return prefix + filenameHash(url)
 
 def generateTTLdata(data, filenamePrefix, location, predicate):
+    """
+    Generate the TTL data for a given row of data.
+    Data is a dictionary with keys 'subject' and 'thumbnail'.
+    The function outputs a statements that links the subject to a file in the given location.
+    The filename is generated from the URL (hashed) and prefixed with the given prefix.
+    The location is the web location where the file is stored.
+    :param data: The dictionary consisting of 'subject' and 'thumbnail' (the URL)
+    :param filenamePrefix: The prefix to use for the filename
+    :param location: The web location where the file is stored
+    :param predicate: The predicate to use for the statement
+    """
     ttlTemplate = Template("""
         <$subject> <$predicate> <$location/$filename> .
     """)
@@ -94,6 +111,16 @@ def generateTTLdata(data, filenamePrefix, location, predicate):
     )
 
 def getThumbnailQueries(propsFile,*, filterCondition=None):
+    """
+    Reads the thumbnail queries from a given properties file.
+    The filterCondition is an (optional) string. If an argument is passed
+    only queries that contain the string are being returned.
+    Useful for limiting the queries to those that refer to external resources.
+    For example, "wdt:P18" filters for queries that refer to images
+    stored on Wikimedia Commons.
+    :param propsFile: Path to the ui.props properties file
+    :param filterCondition: (optional) A string to filter the queries by
+    """
     with open(propsFile, 'r') as f:
         rawConfig = f.read()
     configString = "[ui]\n" + rawConfig
@@ -108,6 +135,15 @@ def getThumbnailQueries(propsFile,*, filterCondition=None):
         
 
 def ingestToTriplestore(*, endpoint, data, graph, prefix, location, predicate):
+    """
+    Generates TTL data for all the given image thumbnails and ingests it to the triple store
+    :param endpoint: The SPARQL endpoint to use
+    :param data: The list of dictionaries with keys 'subject' and 'thumbnail'
+    :param graph: The named graph to ingest the data to
+    :param prefix: The prefix to use for the filenames
+    :param location: The web location where the files are stored
+    :param predicate: The predicate to use for the statements
+    """
     output = ''
     for row in data:
         output += generateTTLdata(row, prefix, location, predicate)
@@ -119,6 +155,12 @@ def ingestToTriplestore(*, endpoint, data, graph, prefix, location, predicate):
     return r
     
 def queryThumbnails(*,endpoint, queries, limit=None):
+    """
+    Query the endpoint for the thumbnails based on the given thumbnail queries
+    :param endpoint: The SPARQL endpoint to use
+    :param queries: The list of thumbnail queries
+    :param limit: The maximum number of results to return (optional)
+    """
     sparql = SPARQLWrapper(endpoint)
     sparql.setReturnFormat(JSON)
     queryTemplate = Template("""
@@ -154,6 +196,10 @@ def queryThumbnails(*,endpoint, queries, limit=None):
     return thumbnails
 
 def sparqlResultToDict(results):
+    """
+    Convert a SPARQL query result to a list of dictionaries
+    :param results: The SPARQL query result returned from SPARQLWrapper
+    """
     rows = []
     for result in results["results"]["bindings"]:
         row = {}
