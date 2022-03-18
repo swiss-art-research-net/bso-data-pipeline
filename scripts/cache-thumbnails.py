@@ -2,8 +2,23 @@
 This script can be used for caching the thumbnails of entities managed in a ResearchSpace/Metaphacts instance.
 It reads the preferred thumbnail queries from the configuration file and queries the SPARQL endpoint for them.
 It then downloads the thumbnails and rescales them to a given width (default 400px) and stores them under the given path.
+An additional verification steps discards the thumbnails that could not be cached.
+Finally, the location of the thumbnails are ingested into the triple store for the given subjects using the specified predicate (default <http://schema.org/thumbnail>).
 
-python /scripts/cache-thumbnails.py --endpoint {{.ENDPOINT}} {{if .FILTER_CONDITION}}--filterCondition {{.FILTER_CONDITION}}{{end}} --propsFile {{.PROPS_FILE}} --outputDir {{.OUTPUT_DIR}} --namedGraph {{.NAMED_GRAPH}} --thumbnailLocation $HOST_LOCATION{{.HOST_PATH}}
+Usage:
+
+python /scripts/cache-thumbnails.py 
+
+Parameters
+    --endpoint              The SPARQL endpoint to query
+    --propsFile             Path to the file containing the thumbnail queries (ui.prop)
+    --outputDir             Path to the directory where the thumbnails should be stored
+    --namedGraph            The named graph the statements about the thumbnails should be ingested to
+    --thumbnailLocation     The web location where the thumbnails are stored
+    --thumbnailPrefix       The prefix to use for the filenames of the thumbnails (optional, default: thumbnail-)
+    --thumbnailPredicate    The predicate to use for the statements about the thumbnails (optional, default: http://schema.org.thumbnail)
+    --filterCondition       A string that can be used to filter the thumbnail queries. Only queries containing the string are executed (optional)
+    
 
 """
 
@@ -122,6 +137,8 @@ def generateTTLdata(data, filenamePrefix, location, predicate):
     ttlTemplate = Template("""
         <$subject> <$predicate> <$location/$filename> .
     """)
+    if not location.startswith("http"):
+        location = "https://" + location
     return ttlTemplate.substitute(
         subject=data['subject'],
         filename=generateFilename(data['thumbnail'], filenamePrefix),
