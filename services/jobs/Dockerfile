@@ -6,6 +6,7 @@ RUN apt-get -qq update && \
     rm -rf /var/lib/apt/lists/*
 RUN locale-gen en_US.UTF-8
 
+RUN apt clean
 RUN apt update
 RUN apt install -y default-jre
 # Install Python packages
