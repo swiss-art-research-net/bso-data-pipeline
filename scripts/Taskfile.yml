@@ -15,6 +15,24 @@ tasks:
       - task: run-query-from-file
         vars: {FILE: "queries/addRelations.sparql"}
 
+  cache-thumbnails:
+    desc: Cache images 
+    cmds:
+      - python /scripts/cache-thumbnails.py --endpoint {{.ENDPOINT}} --filterCondition {{.FILTER_CONDITION}} --propsFile {{.PROPS_FILE}} --outputDir {{.OUTPUT_DIR}} --namedGraph {{.NAMED_GRAPH}} --thumbnailLocation $HOST_LOCATION{{.HOST_PATH}}
+        
+  cache-wikidata-thumbnails:
+    desc: Cache thumbnails of Wikidata entities
+    cmds:
+      - task: cache-thumbnails
+        vars:
+          ENDPOINT: http://blazegraph:8080/blazegraph/sparql
+          FILTER_CONDITION: wdt:P18
+          HOST_PATH: /assets/no_auth
+          OUTPUT_DIR: /apps/static/assets/no_auth
+          NAMED_GRAPH: https://resource.swissartresearch.net/graph/thumbnails
+          PROPS_FILE: /apps/bso/config/ui.prop
+
+
   cleanup:
     desc: Run Cleanup query (located in queries/cleanup.sparql)
     cmds:
