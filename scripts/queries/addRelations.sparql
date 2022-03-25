@@ -7,6 +7,7 @@ PREFIX gndo: <https://d-nb.info/standards/elementset/gnd#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX frbroo: <http://iflastandards.info/ns/fr/frbr/frbroo/>
+PREFIX rds: <http://schema.swissartresearch.net/ontology/rds#>
 
 DROP GRAPH sari:relations;
 
@@ -32,21 +33,22 @@ INSERT DATA {
     search:Person rdfs:label 'Person' ;
       a rdfs:Class ;
       rdfs:subClassOf search:Entity ;
-      rdfs:equivalentClass crm:E39_Actor .
+      rdfs:equivalentClass crm:E39_Actor, rds:Person .
     search:Place rdfs:label 'Place'  ;
       a rdfs:Class ;
       rdfs:subClassOf search:Entity ;
-      rdfs:equivalentClass crm:E53_Place .
+      rdfs:equivalentClass crm:E53_Place, rds:Place  .
     search:Type rdfs:label 'Type' ;
       a rdfs:Class ;
       rdfs:subClassOf search:Entity ;
-      rdfs:equivalentClass crm:E55_Type .
+      rdfs:equivalentClass crm:E55_Type, rds:Type .
   }
 };
  
 INSERT {
   GRAPH sari:relations {
       ?subject a search:Person .
+      ?subject a rds:Person .
   }
 } WHERE {
   VALUES(?actor_or_person) {
@@ -61,6 +63,7 @@ INSERT {
 INSERT {
   GRAPH sari:relations {
     ?subject a search:Type .
+    ?subject a rds:Type .
   }
 } WHERE {
   ?subject a crm:E55_Type
@@ -70,6 +73,7 @@ INSERT {
 INSERT {
   GRAPH sari:relations {
     ?subject a search:Place .
+    ?subject a rds:Place .
   }
 } WHERE {
   ?subject a crm:E53_Place
