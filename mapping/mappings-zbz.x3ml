@@ -1899,7 +1899,7 @@
                         </if>
                         <relationship>crm:P100i_died_in</relationship>
                         <entity>
-                            <type>crm:E67_Birth</type>
+                            <type>crm:E69_Death</type>
                             <instance_generator name="URIwithTypeSuptypeAndId_hashed">
                                 <arg name="type" type="constant">actor</arg>
                                 <arg name="id_HASHED_CONTENTS" type="xpath">if (../subfield[@code='gnd']/text()) then ../subfield[@code='gnd']/text() else ../subfield[@code='a']/text()</arg>
@@ -3299,7 +3299,7 @@
                         </if>
                         <relationship>crm:P100i_died_in</relationship>
                         <entity>
-                            <type>crm:E67_Birth</type>
+                            <type>crm:E69_Death</type>
                             <instance_generator name="URIwithTypeSuptypeAndId_hashed">
                                 <arg name="type" type="constant">actor</arg>
                                 <arg name="id_HASHED_CONTENTS" type="xpath">if (../subfield[@code='gnd']/text()) then ../subfield[@code='gnd']/text() else ../subfield[@code='a']/text()</arg>
