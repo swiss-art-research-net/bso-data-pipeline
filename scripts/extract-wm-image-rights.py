@@ -35,7 +35,10 @@ for image in tqdm(images):
         title = image.replace("http://commons.wikimedia.org/wiki/Special:FilePath/", "File:")
         url = "https://en.wikipedia.org/w/api.php?action=query&prop=imageinfo&iiprop=extmetadata&&format=json&titles=" + title
         r = requests.get(url)
-        imageData[image] = r.json()['query']['pages']['-1']['imageinfo'][0]['extmetadata']
+        try:
+            imageData[image] = r.json()['query']['pages']['-1']['imageinfo'][0]['extmetadata']
+        except Exception as e:
+            print("Could not retrieve", image)
         time.sleep(0.5)
 
 # Convert image metadata to CIDOC/RDF
