@@ -360,6 +360,15 @@ tasks:
     cmds:
       - python /scripts/extract-wd-data.py
 
+  retrieve-wikimedia-image-rights:
+    desc: Retrieve the image rights metadata for the extracted images from Wikimedia Commons
+    sources:
+      - /data/ttl/additional/wd.ttl
+    generates:
+      - /data/ttl/additional/wdRights.ttl
+    cmds:
+      - python /scripts/extract-wm-image-rights.py
+
   run-query-from-file:
     vars:
       QUERY:
