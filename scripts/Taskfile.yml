@@ -16,7 +16,6 @@ tasks:
         vars: {FILE: "queries/addRelations.sparql"}
 
   cache-thumbnails:
-    desc: Cache images 
     cmds:
       - python /scripts/cache-thumbnails.py --endpoint {{.ENDPOINT}} {{if .FILTER_CONDITION}}--filterCondition {{.FILTER_CONDITION}}{{end}} --propsFile {{.PROPS_FILE}} --outputDir {{.OUTPUT_DIR}} --namedGraph {{.NAMED_GRAPH}} --thumbnailLocation $HOST_LOCATION{{.HOST_PATH}}
        
