@@ -1,14 +1,32 @@
 import json
 import re
 import requests
+import os
 import time
 
+from hashlib import blake2b
 from rdflib import Graph
 from string import Template
 from tqdm import tqdm
 
 inputFile = '../data/ttl/additional/wd.ttl'
 outputFile = '../data/ttl/additional/wdRights.ttl'
+
+cacheDirectory = '../data/tmp/imageRights/'
+
+def generateFilename(url, prefix='wm-license-'):
+    """
+    Generate a filename from a URL and a prefix.
+    The filename is generated from the URL (hashed) and prefixed with the given prefix.
+    :param url: The URL
+    :param prefix: The prefix to use for the filename
+    """
+    def filenameHash(name, extension='.json'):
+        h = blake2b(digest_size=20)
+        h.update(name.encode())
+        return h.hexdigest() + extension
+    
+    return prefix + filenameHash(url)
 
 # Read input graph
 g = Graph()
@@ -28,18 +46,34 @@ for row in results:
 
 print('Found ' + str(len(images)) + ' images')
 
+# TODO:
+
+# Create cache directory if it does not exist yet
+if not os.path.exists(cacheDirectory):
+    os.makedirs(cacheDirectory)
+
 # Retrieve image metadata from Wikimedia Commons
 imageData = {}
 for image in tqdm(images):
     if image not in imageData:
-        title = image.replace("http://commons.wikimedia.org/wiki/Special:FilePath/", "File:")
-        url = "https://en.wikipedia.org/w/api.php?action=query&prop=imageinfo&iiprop=extmetadata&&format=json&titles=" + title
-        r = requests.get(url)
-        try:
-            imageData[image] = r.json()['query']['pages']['-1']['imageinfo'][0]['extmetadata']
-        except Exception as e:
-            print("Could not retrieve", image)
-        time.sleep(0.5)
+        # Check if image is already cached
+        filename = generateFilename(image)
+        if os.path.isfile(cacheDirectory + filename):
+            with open(cacheDirectory + filename, 'r') as f:
+                imageData[image] = json.load(f)
+        else:
+            # Retrieve image metadata
+            title = image.replace("http://commons.wikimedia.org/wiki/Special:FilePath/", "File:")
+            url = "https://en.wikipedia.org/w/api.php?action=query&prop=imageinfo&iiprop=extmetadata&&format=json&titles=" + title
+            r = requests.get(url)
+            try:
+                imageData[image] = r.json()['query']['pages']['-1']['imageinfo'][0]['extmetadata']
+                # Cache image data
+                with open(cacheDirectory + filename, 'w') as f:
+                    json.dump(imageData[image], f)
+            except Exception as e:
+                print("Could not retrieve", image)
+            time.sleep(0.5)
 
 # Convert image metadata to CIDOC/RDF
 imageTtlNamespaces = """
