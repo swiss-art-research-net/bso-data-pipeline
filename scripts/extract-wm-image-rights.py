@@ -15,7 +15,9 @@ outputFile = '../data/ttl/additional/wdRights.ttl'
 cacheDirectory = '../data/tmp/imageRights/'
 
 def cleanString(inputString):
-    inputString = re.sub(r'(<.*?>)|(\n)', '', inputString).replace(u'\xa0', u' ').replace('"','\\"')
+    inputString = re.sub(r'(<.*?>)|(\n)', '', inputString)
+    inputString = re.sub(r'"', '\\"', inputString)
+    inputString = inputString.replace(u'\xa0', u' ')
     return inputString
 
 def generateFilename(url, prefix='wm-license-'):
