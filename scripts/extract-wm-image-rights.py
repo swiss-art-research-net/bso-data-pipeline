@@ -73,6 +73,7 @@ for image in tqdm(images):
                     json.dump(imageData[image], f)
             except Exception as e:
                 print("Could not retrieve", image, url)
+                print(e)
             time.sleep(0.5)
 
 # Convert image metadata to CIDOC/RDF
