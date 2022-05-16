@@ -18,8 +18,6 @@ Parameters
     --thumbnailPrefix       The prefix to use for the filenames of the thumbnails (optional, default: thumbnail-)
     --thumbnailPredicate    The predicate to use for the statements about the thumbnails (optional, default: http://schema.org.thumbnail)
     --filterCondition       A string that can be used to filter the thumbnail queries. Only queries containing the string are executed (optional)
-    
-
 """
 
 
@@ -137,12 +135,15 @@ def generateTTLdata(data, filenamePrefix, location, predicate):
     """
     ttlTemplate = Template("""
         <$subject> <$predicate> <$location/$filename> .
+        <$location/$filename> a <http://www.cidoc-crm.org/cidoc-crm/E36_Visual_Item> .
+        <$location/$filename> <http://www.ics.forth.gr/isl/CRMdig/L54_is_same-as> <$wdImage> .
     """)
     if not location.startswith("http"):
         location = "https://" + location
     return ttlTemplate.substitute(
         subject=data['subject'],
         filename=generateFilename(data['thumbnail'], filenamePrefix),
+        wdImage=data['thumbnail'],
         predicate=predicate,
         location=location
     )
