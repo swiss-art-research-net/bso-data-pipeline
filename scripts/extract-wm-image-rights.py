@@ -15,9 +15,11 @@ outputFile = '../data/ttl/additional/wdRights.ttl'
 cacheDirectory = '../data/tmp/imageRights/'
 
 def cleanString(inputString):
-    inputString = re.sub(r'(<.*?>)|(\n)', '', inputString)
-    inputString = re.sub(r'"', '\\"', inputString)
-    inputString = inputString.replace(u'\xa0', u' ')
+    if 'unbekannt' in inputString:
+        print(inputString)
+    inputString = re.sub(r'(<.*?>)|(\n)', '', inputString).replace('"', '\\"').replace(u'\xa0', u' ')
+    if 'unbekannt' in inputString:
+        print(inputString)
     return inputString
 
 def generateFilename(url, prefix='wm-license-'):
@@ -51,8 +53,6 @@ for row in results:
     images.append(str(row['image']))
 
 print('Found ' + str(len(images)) + ' images')
-
-# TODO:
 
 # Create cache directory if it does not exist yet
 if not os.path.exists(cacheDirectory):
