@@ -362,6 +362,7 @@ tasks:
   retrieve-wikimedia-image-rights:
     desc: Retrieve the image rights metadata for the extracted images from Wikimedia Commons
     sources:
+      - /scripts/extract-wm-image-rights.py
       - /data/ttl/additional/wd.ttl
     generates:
       - /data/ttl/additional/wdRights.ttl

@@ -14,6 +14,10 @@ outputFile = '../data/ttl/additional/wdRights.ttl'
 
 cacheDirectory = '../data/tmp/imageRights/'
 
+def cleanString(inputString):
+    inputString = re.sub(r'(<.*?>)|(\n)', '', inputString).replace('"', '\\"').replace(u'\xa0', u' ')
+    return inputString
+
 def generateFilename(url, prefix='wm-license-'):
     """
     Generate a filename from a URL and a prefix.
@@ -46,8 +50,6 @@ for row in results:
 
 print('Found ' + str(len(images)) + ' images')
 
-# TODO:
-
 # Create cache directory if it does not exist yet
 if not os.path.exists(cacheDirectory):
     os.makedirs(cacheDirectory)
@@ -67,12 +69,14 @@ for image in tqdm(images):
             url = "https://en.wikipedia.org/w/api.php?action=query&prop=imageinfo&iiprop=extmetadata&&format=json&titles=" + title
             r = requests.get(url)
             try:
-                imageData[image] = r.json()['query']['pages']['-1']['imageinfo'][0]['extmetadata']
+                imageDataRaw = r.json()
+                page = list(imageDataRaw['query']['pages'].keys())[0]
+                imageData[image] = r.json()['query']['pages'][page]['imageinfo'][0]['extmetadata']
                 # Cache image data
                 with open(cacheDirectory + filename, 'w') as f:
                     json.dump(imageData[image], f)
             except Exception as e:
-                print("Could not retrieve", image)
+                print("Could not read metadata", image, url)
             time.sleep(0.5)
 
 # Convert image metadata to CIDOC/RDF
@@ -118,9 +122,9 @@ for imageUri, data in imageData.items():
     if artist.startswith('//'):
         artist = "https:" + artist
 
-    artistLabel = re.sub(r'(<.*?>)|(\n)', '', artistLabel)
+    artistLabel = cleanString(artistLabel)
         
-    imageLabel = re.sub(r'(<.*?>)|(\n)', '', data['ImageDescription']['value']) if 'ImageDescription' in data else '',
+    imageLabel = cleanString(data['ImageDescription']['value']) if 'ImageDescription' in data else '',
 
     
     if 'LicenseUrl' in data:
@@ -139,5 +143,5 @@ for imageUri, data in imageData.items():
     )
 
 # Write output
-with open(outputFile, 'w') as f:
+with open(outputFile, 'w', encoding='utf-8') as f:
     f.write(imageTtlOutput)

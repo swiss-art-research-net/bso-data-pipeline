@@ -17,10 +17,6 @@ services:
     networks:
     - internal
     - proxy
-
-  researchspace:
-    networks:
-    - internal
   
   smapshotapi:
     networks:
