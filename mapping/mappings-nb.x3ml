@@ -252,9 +252,9 @@
                     <target_node>
                         <entity>
                             <type>crm:E55_Type</type>
-                            <instance_generator name="URIwithTypeAndId">
+                            <instance_generator name="URIwithTypeAndId_hashed">
                                 <arg name="type" type="constant">type</arg>
-                                <arg name="id" type="xpath">lower-case(TextValue/text())</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">if (gnd-id/text()) then (gnd-id/text()) else (lower-case(TextValue/text()))</arg>
                             </instance_generator>
                             <label_generator name="Literal">
                                 <arg name="text" type="xpath">TextValue/text()</arg>
@@ -482,9 +482,9 @@
                     <target_node>
                         <entity>
                             <type>crm:E55_Type</type>
-                            <instance_generator name="URIwithTypeAndId">
+                            <instance_generator name="URIwithTypeAndId_hashed">
                                 <arg name="type" type="constant">type</arg>
-                                <arg name="id" type="xpath">lower-case(TextValue/text())</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">if (gnd-id/text()) then (gnd-id/text()) else (lower-case(TextValue/text()))</arg>
                             </instance_generator>
                             <label_generator name="Literal">
                                 <arg name="text" type="xpath">TextValue/text()</arg>
@@ -1294,9 +1294,9 @@
                     <target_node>
                         <entity>
                             <type>crm:E55_Type</type>
-                            <instance_generator name="URIwithTypeAndId">
+                            <instance_generator name="URIwithTypeAndId_hashed">
                                 <arg name="type" type="constant">type</arg>
-                                <arg name="id" type="xpath">lower-case(TextValue/text())</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">if (gnd-id/text()) then (gnd-id/text()) else (lower-case(TextValue/text()))</arg>
                             </instance_generator>
                             <label_generator name="Literal">
                                 <arg name="text" type="xpath">TextValue/text()</arg>
@@ -1374,9 +1374,9 @@
                     <target_node>
                         <entity>
                             <type>crm:E29_Design_or_Procedure</type>
-                            <instance_generator name="URIwithTypeAndId">
+                            <instance_generator name="URIwithTypeAndId_hashed">
                                 <arg name="type" type="constant">type</arg>
-                                <arg name="id" type="xpath">lower-case(TextValue/text())</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">if (gnd-id/text()) then (gnd-id/text()) else (lower-case(TextValue/text()))</arg>
                             </instance_generator>
                             <label_generator name="Literal">
                                 <arg name="text" type="xpath">TextValue/text()</arg>
@@ -1812,9 +1812,9 @@
                     <target_node>
                         <entity>
                             <type>crm:E54_Dimension</type>
-                            <instance_generator name="URIwithTypeAndId">
+                            <instance_generator name="URIwithTypeAndId_hashed">
                                 <arg name="type" type="constant">type</arg>
-                                <arg name="id" type="xpath">lower-case(TextValue/text())</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">if (gnd-id/text()) then (gnd-id/text()) else (lower-case(TextValue/text()))</arg>
                             </instance_generator>
                             <label_generator name="Literal">
                                 <arg name="text" type="xpath">TextValue/text()</arg>
@@ -2484,9 +2484,9 @@
                     </if>
                     <entity variable="type_for_sameas">
                         <type>crm:E55_Type</type>
-                        <instance_generator name="URIwithTypeAndId">
+                        <instance_generator name="URIwithTypeAndId_hashed">
                             <arg name="type" type="constant">type</arg>
-                            <arg name="id" type="xpath">lower-case(TextValue/text())</arg>
+                            <arg name="id_HASHED_CONTENTS" type="xpath">if (gnd-id/text()) then (gnd-id/text()) else (lower-case(TextValue/text()))</arg>
                         </instance_generator>
                     </entity>
                 </target_node>
