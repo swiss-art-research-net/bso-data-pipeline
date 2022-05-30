@@ -3650,6 +3650,120 @@
                 <source_node>/collection/record/datafield</source_node>
                 <target_node>
                     <if>
+                        <equals value="655">@tag</equals>
+                    </if>
+                    <entity>
+                        <type>crm:E55_Type</type>
+                        <instance_generator name="URIwithTypeAndId_hashed">
+                            <arg name="type" type="constant">type</arg>
+                            <arg name="id_HASHED_CONTENTS" type="xpath">if (subfield[@code='gnd']/text()) then subfield[@code='gnd']/text() else ( if (subfield[@code='normalised_name']/text()) then (subfield[@code='normalised_name']/text()) else (subfield[@code='a']/text()) )</arg>
+                        </instance_generator>
+                        <label_generator name="Literal">
+                            <arg name="text" type="xpath">./subfield[@code='a']/text()</arg>
+                            <arg name="language" type="constant"/>
+                        </label_generator>
+                    </entity>
+                </target_node>
+            </domain>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>subfield</relation>
+                    </source_relation>
+                    <target_relation>
+                        <if>
+                            <and>
+                                <if>
+                                    <equals value="gnd">@code</equals>
+                                </if>
+                                <if>
+                                    <exists>text()</exists>
+                                </if>
+                            </and>
+                        </if>
+                        <relationship>crmdig:L54_is_same-as</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>subfield</source_node>
+                    <target_node>
+                        <entity>
+                            <type>crm:E55_Type</type>
+                            <instance_generator name="URIwithGndId">
+                                <arg name="id" type="xpath">text()</arg>
+                            </instance_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>subfield</relation>
+                    </source_relation>
+                    <target_relation>
+                        <if>
+                            <and>
+                                <if>
+                                    <equals value="wd_id">@code</equals>
+                                </if>
+                                <if>
+                                    <exists>text()</exists>
+                                </if>
+                            </and>
+                        </if>
+                        <relationship>crmdig:L54_is_same-as</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>subfield</source_node>
+                    <target_node>
+                        <entity>
+                            <type>crm:E55_Type</type>
+                            <instance_generator name="URIwithWikidataId">
+                                <arg name="id" type="xpath">text()</arg>
+                            </instance_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>subfield</relation>
+                    </source_relation>
+                    <target_relation>
+                        <if>
+                            <and>
+                                <if>
+                                    <equals value="aat_id">@code</equals>
+                                </if>
+                                <if>
+                                    <exists>text()</exists>
+                                </if>
+                            </and>
+                        </if>
+                        <relationship>crmdig:L54_is_same-as</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>subfield</source_node>
+                    <target_node>
+                        <entity>
+                            <type>crm:E55_Type</type>
+                            <instance_generator name="URIwithAatId">
+                                <arg name="id" type="xpath">text()</arg>
+                            </instance_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+        </mapping>
+        <mapping>
+            <domain>
+                <source_node>/collection/record/datafield</source_node>
+                <target_node>
+                    <if>
                         <equals value="651">@tag</equals>
                     </if>
                     <entity>
