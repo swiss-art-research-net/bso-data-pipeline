@@ -52,10 +52,9 @@
                                 <instance_info>
                                     <constant/>
                                 </instance_info>
-                                <instance_generator name="URIwith2TypesAndId">
-                                    <arg name="type1" type="constant">type</arg>
-                                    <arg name="type2" type="constant">level</arg>
-                                    <arg name="id" type="xpath">lower-case(@Level)</arg>
+                                <instance_generator name="URIwithTypeAndId_hashed">
+                                    <arg name="type" type="constant">type</arg>
+                                    <arg name="id_HASHED_CONTENTS" type="xpath">if (@Level-gnd-id) then (@Level-gnd-id) else (lower-case(@Level))</arg>
                                 </instance_generator>
                                 <label_generator name="Literal">
                                     <arg name="text" type="xpath">@Level</arg>
@@ -897,10 +896,9 @@
                     <entity variable="object-level">
                         <type>crm:E55_Type</type>
                         <instance_info/>
-                        <instance_generator name="URIwith2TypesAndId">
-                            <arg name="type1" type="constant">type</arg>
-                            <arg name="type2" type="constant">level</arg>
-                            <arg name="id" type="xpath">lower-case(@Level)</arg>
+                        <instance_generator name="URIwithTypeAndId_hashed">
+                            <arg name="type" type="constant">type</arg>
+                            <arg name="id_HASHED_CONTENTS" type="xpath">if (@Level-gnd-id) then (@Level-gnd-id) else (lower-case(@Level))</arg>
                         </instance_generator>
                         <label_generator name="Literal">
                             <arg name="text" type="xpath">@Level</arg>
@@ -930,6 +928,48 @@
                                 <arg name="text" type="constant">subgroups (archival divisions)</arg>
                                 <arg name="language" type="constant"/>
                             </label_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>@Level-aat-id</relation>
+                    </source_relation>
+                    <target_relation>
+                        <relationship>crmdig:L54_is_same-as</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>@Level-aat-id</source_node>
+                    <target_node>
+                        <entity>
+                            <type>crm:E55_Type</type>
+                            <instance_generator name="URIwithAatId">
+                                <arg name="id" type="xpath">../@Level-aat-id</arg>
+                            </instance_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>@Level-gnd-id</relation>
+                    </source_relation>
+                    <target_relation>
+                        <relationship>crmdig:L54_is_same-as</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>@Level-gnd-id</source_node>
+                    <target_node>
+                        <entity>
+                            <type>crm:E55_Type</type>
+                            <instance_generator name="URIwithGndId">
+                                <arg name="id" type="xpath">../@Level-gnd-id</arg>
+                            </instance_generator>
                         </entity>
                     </target_node>
                 </range>
