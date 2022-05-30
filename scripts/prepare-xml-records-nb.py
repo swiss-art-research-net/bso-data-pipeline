@@ -201,7 +201,7 @@ def addCuratedLevelsData(record, curatedLevels):
     for row in curatedLevels:
         if row[key] == recordLevel:
             for attribute in row.keys():
-                if attribute != key:
+                if attribute != key and row[attribute] is not None:
                     record.set(key + '-' + attribute, row[attribute])
     return record
 
