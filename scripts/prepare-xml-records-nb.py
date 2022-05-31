@@ -214,7 +214,11 @@ def addCuratedTypeData(record, curatedTypes):
                 parent = field.getparent()
                 for key in [d for d in row.keys() if d not in ["ElementId", "ElementName", "Term"]]:
                     if row[key]:
-                        etree.SubElement(parent, key).text = row[key]
+                        if ';' in row[key]:
+                            for value in row[key].split(';'):
+                                etree.SubElement(parent, key).text = value
+                        else:
+                            etree.SubElement(parent, key).text = row[key]
     return record
 
 def addCuratedDataToDescriptors(record, curatedData):
