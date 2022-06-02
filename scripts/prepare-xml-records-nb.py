@@ -25,6 +25,7 @@ curatedDataFiles = [
 curatedNamesFile = "../data/source/nb-curation-names.csv"
 curatedRolesFile = "../data/source/nb-curation-roles.csv"
 curatedTypesFile = "../data/source/nb-curation-extracted-types.csv"
+curatedLevelsFile = "../data/source/nb-curation-extracted-levels.csv"
 imageSizesFile = "../data/source/nb-image-sizes.csv"
 externalDescriptorsFile = "../data/source/nb-external-descriptors.csv"
 
@@ -148,6 +149,15 @@ def loadCuratedData(curatedDataFiles):
                 curatedData.append(row)
     return curatedData
 
+def loadCuratedLevels(curatedLevelsFile):
+    # Read curated levels into separate list
+    curatedLevels = []
+    with open(curatedLevelsFile, 'r') as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            curatedLevels.append(row)
+    return curatedLevels
+
 def loadCuratedTypes(curatedTypesFile):
     # Read curated types into separate list
     curatedTypes = []
@@ -184,6 +194,16 @@ def loadImageSizes(imageSizesFile):
             imageSizes.append(row)
             imageSizesHash[row['id']] = i
     return imageSizes, imageSizesHash
+
+def addCuratedLevelsData(record, curatedLevels):
+    key = 'Level'
+    recordLevel = record.get(key)
+    for row in curatedLevels:
+        if row[key] == recordLevel:
+            for attribute in row.keys():
+                if attribute != key and row[attribute] is not None:
+                    record.set(key + '-' + attribute, row[attribute])
+    return record
 
 def addCuratedTypeData(record, curatedTypes):
     xpath = "DetailData/DataElement[@ElementId=$ElementId]/ElementValue/TextValue[text()=$Term]"
@@ -482,6 +502,7 @@ def processDates(record):
 root, records = loadRecordsToProcess(inputFiles)
 
 curatedData = loadCuratedData(curatedDataFiles)
+curatedLevels = loadCuratedLevels(curatedLevelsFile)
 curatedNames = loadCuratedNames(curatedNamesFile)
 curatedRoles = loadCuratedRoles(curatedRolesFile)
 curatedTypes = loadCuratedTypes(curatedTypesFile)
@@ -504,6 +525,7 @@ for record in tqdm(records[offset:limit]):
     record = addCuratedDataToDescriptors(record, curatedData)
     record = addImageSizes(record, imageSizes, imageSizesHash)
     record = addCuratedTypeData(record, curatedTypes)
+    record = addCuratedLevelsData(record, curatedLevels)
     record = processFieldsWithMultipleValues(record)
     record = matchDescriptorsWithElementValues(record, externalDescriptors, curatedNames)
     record = addDescriptorIdentifier(record)
