@@ -1370,9 +1370,9 @@
                                     <instance_info>
                                         <constant/>
                                     </instance_info>
-                                    <instance_generator name="URIwithTypeAndId">
+                                    <instance_generator name="URIwithTypeAndId_hashed">
                                         <arg name="type" type="constant">type</arg>
-                                        <arg name="id" type="xpath">lower-case(TextValue/text())</arg>
+                                        <arg name="id_HASHED_CONTENTS" type="xpath">if (gnd-id/text()) then (gnd-id/text()) else (lower-case(TextValue/text()))</arg>
                                     </instance_generator>
                                     <label_generator name="Literal">
                                         <arg name="text" type="xpath">lower-case(TextValue/text())</arg>
@@ -2321,9 +2321,9 @@
                                     <instance_info>
                                         <constant/>
                                     </instance_info>
-                                    <instance_generator name="URIwithTypeAndId">
+                                    <instance_generator name="URIwithTypeAndId_hashed">
                                         <arg name="type" type="constant">type</arg>
-                                        <arg name="id" type="xpath">../Name/text()</arg>
+                                        <arg name="id_HASHED_CONTENTS" type="constant">4063004-3</arg>
                                     </instance_generator>
                                     <label_generator name="Literal">
                                         <arg name="text" type="xpath">../Name/text()</arg>
