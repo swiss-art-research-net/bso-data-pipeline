@@ -6,7 +6,7 @@ download () {
   remotepath=$1
   localpath=$2
 
-  echo "Downloading $remotepath"
+  echo -n "Downloading $remotepath: "
   python3 scripts/getFileContentsFromGit.py $GITHUB_USERNAME $GITHUB_PERSONAL_ACCESS_TOKEN $REPO $remotepath $localpath
 }
 
