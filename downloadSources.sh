@@ -68,3 +68,4 @@ download "data/sari/titleSimilarities.ttl" "data/graphs/titleSimilarities.ttl"
 download "data/sari/visualSimilarities.ttl" "data/graphs/visualSimilarities.ttl"
 
 download "data/bso-thesaurus/bso-thesaurus.trig" "data/ttl/additional/bso-thesaurus.trig"
+download "data/additional/aat-events.ttl" "data/ttl/additional/aat-events.ttl"
