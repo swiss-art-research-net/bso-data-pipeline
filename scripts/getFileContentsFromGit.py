@@ -34,10 +34,16 @@ except:
     sys.stderr.write("could not find file %s in path %s\n" % (file, folderURL))
     exit()
 
+# Check if file already exists locally and if size matches
+if os.path.exists(localfile):
+    with open(localfile, 'rb') as f:
+        localSize = os.path.getsize(localfile)
+    if requestedFile['size'] == localSize:
+        sys.stderr.write("File already exists locally and file size matches\n")
+        exit()
+
 fileURL = 'https://api.github.com/repos/' + repo + '/git/blobs/' + requestedFile['sha']
 fileRequest = requests.get(fileURL, auth=(username, token))
-
-# Output to console
 
 result = base64.b64decode( fileRequest.json()['content'] ).decode('UTF-8', 'ignore')
 if not "https://git-lfs.github.com/spec/v1" in result:
@@ -57,7 +63,6 @@ else:
             sys.stderr.write("File already exists locally and is up to date\n")
             exit()
 
-
     url =  "https://github.com/" + repo + ".git/info/lfs/objects/batch"
     data = {
         'operation': 'download', 
@@ -70,19 +75,7 @@ else:
     r = requests.post(url, data=json.dumps(data), headers=headers, auth=(username, token))
     downloadurl = r.json()['objects'][0]['actions']['download']['href']
 
-    response = requests.get(downloadurl, stream=True)
-    totalLength = response.headers.get('content-length')
+    response = requests.get(downloadurl)
 
-    f = open(localfile, 'w', encoding='utf-8')
-
-    if totalLength is None: # no content length header
+    with open(localfile, 'w', encoding='utf-8') as f:
         f.write(response.content.decode('UTF-8', 'ignore'))
-    else:
-        dl = 0
-        totalLength = int(totalLength)
-        for data in response.iter_content(chunk_size=4096):
-            dl += len(data)
-            f.write(data.decode('UTF-8', 'ignore'))
-            done = int(50 * dl / totalLength)
-            sys.stderr.write("\r[%s%s]" % ('=' * done, ' ' * (50-done)) )    
-            sys.stderr.flush()
