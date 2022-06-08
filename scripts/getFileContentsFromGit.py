@@ -79,3 +79,5 @@ else:
 
     with open(localfile, 'w', encoding='utf-8') as f:
         f.write(response.content.decode('UTF-8', 'ignore'))
+
+sys.stderr.write("Done!\n")
