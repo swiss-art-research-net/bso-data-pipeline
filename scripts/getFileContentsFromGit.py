@@ -1,7 +1,9 @@
 import base64
 import requests
+import hashlib
 import json
 import re
+import os
 import sys
 from urllib.request import urlopen
 
@@ -45,6 +47,16 @@ else:
     # Download from GIT LFS
     sha = re.findall(r'sha256:([a-z0-9]*)', result)[0]
     size = int(re.findall(r'size ([0-9]*)', result)[0])
+
+    # Check if file already exists locally and if SHA and Size match
+    if os.path.exists(localfile):
+        with open(localfile, 'rb') as f:
+            localSHA = hashlib.sha256(f.read()).hexdigest()
+            localSize = os.path.getsize(localfile)
+        if sha == localSHA and size == localSize:
+            sys.stderr.write("File already exists locally and is up to date\n")
+            exit()
+
 
     url =  "https://github.com/" + repo + ".git/info/lfs/objects/batch"
     data = {
