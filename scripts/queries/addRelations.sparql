@@ -131,3 +131,14 @@ INSERT {
     ?entity frbroo:R24i_was_created_through ?creation .
   }
 };
+
+INSERT {
+  GRAPH sari:relations {
+    ?subject crm:P2_has_type ?dossierType .
+  }
+} WHERE {
+  BIND(<https://resource.swissartresearch.net/type/1525E0B2-4816-3D3F-AEC8-94BDE16CF0EC> as ?dossierType)
+  BIND(<https://d-nb.info/gnd/1196831858> as ?sff)
+  ?child crm:P109_has_current_or_former_curator ?sff ;
+    crm:P46i_forms_part_of ?subject .
+}
