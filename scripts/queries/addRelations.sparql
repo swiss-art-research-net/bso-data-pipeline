@@ -46,6 +46,10 @@ INSERT DATA {
       a rdfs:Class ;
       rdfs:subClassOf search:Entity ;
       rdfs:equivalentClass crm:E5_Event, rds:Event .
+    search:BibliographicItem rdfs:label 'Bibliographic Item' ;
+      a rdfs:Class ;
+      rdfs:subClassOf search:Entity ;
+      rdfs:equivalentClass frbroo:F24_Publication_Expression, rds:BibliographicItem .
   }
 };
  
@@ -96,6 +100,15 @@ INSERT {
 } WHERE {
   ?subject a crm:E22_Human-Made_Object
   FILTER(REGEX(STR(?subject), 'swissartresearch.net/artwork'))
+};
+
+INSERT {
+  GRAPH sari:relations {
+    ?subject a search:BibliographicItem .
+  }
+} WHERE {
+  ?subject a frbroo:F24_Publication_Expression
+  FILTER(REGEX(STR(?subject), 'swissartresearch.net/bibliographicitem'))
 };
 
 INSERT {
