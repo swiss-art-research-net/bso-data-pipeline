@@ -42,6 +42,10 @@ INSERT DATA {
       a rdfs:Class ;
       rdfs:subClassOf search:Entity ;
       rdfs:equivalentClass crm:E55_Type, rds:Type .
+    search:Event rdfs:label 'Event' ;
+      a rdfs:Class ;
+      rdfs:subClassOf search:Entity ;
+      rdfs:equivalentClass crm:E5_Event, rds:Event .
   }
 };
  
