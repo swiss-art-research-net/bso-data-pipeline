@@ -74,6 +74,7 @@ tasks:
       - python /scripts/cache-iiif-manifests.py {{.IIIF_MANIFESTS_FROM}} {{.IIIF_MANIFESTS_TO}}
 
   generate-dossier-thumbnails:
+    desc: Generate thumbnails for the dossiers that contain (several) images
     vars:
       ENDPOINT: http://blazegraph:8080/blazegraph/sparql
       HOST_PATH: /assets/no_auth
