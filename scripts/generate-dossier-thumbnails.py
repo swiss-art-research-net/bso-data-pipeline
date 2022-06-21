@@ -1,6 +1,9 @@
 import math
 import requests
+import os
+import sys
 from PIL import Image, ImageOps
+from hashlib import blake2b
 from io import BytesIO
 from string import Template
 from SPARQLWrapper import SPARQLWrapper, JSON
@@ -34,7 +37,7 @@ queries = {
         """)
 }
 
-def performThumbnailGeneration(options)
+def performThumbnailGeneration(options):
     """
     Generate thumbnails for all dossiers in the collection.
     """
@@ -53,7 +56,7 @@ def performThumbnailGeneration(options)
     data = retrieveImagesInDossier(dossiers=dossiers, endpoint=endpoint)
 
     # Generate contact sheets
-    data = generateContactSheets(data)
+    data = [d for d in generateContactSheets(data) if 'sheet' in d] # Only keep dossiers with a sheet
     
     # Save contact sheets
     data = saveContactSheets(data, directory=outputDir, prefix=thumbnailPrefix)
@@ -71,9 +74,10 @@ def performThumbnailGeneration(options)
 def generateContactSheets(data):
     for row in tqdm(data):
         urls = row['images']
-        numRows = math.floor(math.sqrt(len(row['images'])))
-        numCols = math.ceil(math.sqrt(len(row['images'])))
-        row['sheet'] = makeContactSheet(urls, cols=numCols, rows=numRows, margin=2)
+        if len(urls) > 0:
+            numRows = math.floor(math.sqrt(len(row['images'])))
+            numCols = math.ceil(math.sqrt(len(row['images'])))
+            row['sheet'] = makeContactSheet(urls, cols=numCols, rows=numRows, margin=2)
     return data
 
 def generateFilename(url, prefix):
@@ -89,8 +93,6 @@ def generateFilename(url, prefix):
         return h.hexdigest() + extension
     
     return prefix + filenameHash(url)
-
-
 
 def generateTTLdata(data, filenamePrefix, location, predicate):
     """
@@ -140,6 +142,8 @@ def ingestToTriplestore(*, endpoint, data, graph, prefix, location, predicate):
     return r
 
 def retrieveDossiers(endpoint):
+    sparql = SPARQLWrapper(endpoint)
+    sparql.setReturnFormat(JSON)
     sparql.setQuery(queries["dossiers"].substitute(dossierType=dossierType))
     dossiers = sparqlResultToDict(sparql.queryAndConvert())
     return dossiers
@@ -147,6 +151,7 @@ def retrieveDossiers(endpoint):
 def retrieveImagesInDossier(*, dossiers, endpoint):
     sparql = SPARQLWrapper(endpoint)
     sparql.setReturnFormat(JSON)
+    data = []
     for dossier in dossiers:
         row = {
             'dossier': dossier['subject'],
@@ -163,7 +168,7 @@ def saveContactSheets(data, *, directory, prefix):
     for row in data:
         filename = os.path.join(directory, generateFilename(row['dossier'], prefix))
         sheet = row['sheet']
-        sheet.save(filepath, 'jpeg', quality=75, optimize=True)
+        sheet.save(filename, 'jpeg', quality=75, optimize=True)
         row['sheetFilepath'] = filename
     return data
 
