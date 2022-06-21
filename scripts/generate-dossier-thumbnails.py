@@ -252,7 +252,7 @@ if __name__ == "__main__":
     if not 'maxImagesPerThumbnail' in options:
         options['maxImagesPerThumbnail'] = 9
     if not 'thumbnailPrefix' in options:
-        options['thumbnailPrefix'] = "thumbnail-"
+        options['thumbnailPrefix'] = "dossier-"
     if not 'thumbnailPredicate' in options:
         options['thumbnailPredicate'] = "http://schema.org/thumbnail"
 
