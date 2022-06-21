@@ -78,7 +78,7 @@ tasks:
       ENDPOINT: http://blazegraph:8080/blazegraph/sparql
       HOST_PATH: /assets/no_auth
       OUTPUT_DIR: /apps/static/assets/no_auth
-      NAMED_GRAPH: https://resource.swissartresearch.net/graph/thumbnails
+      NAMED_GRAPH: https://resource.swissartresearch.net/graph/thumbnails/dossiers
     cmds:
       - python /scripts/generate-dossier-thumbnails.py --endpoint {{.ENDPOINT}} --outputDir {{.OUTPUT_DIR}} --namedGraph {{.NAMED_GRAPH}} --thumbnailLocation $HOST_LOCATION{{.HOST_PATH}}
 
