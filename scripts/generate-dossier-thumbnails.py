@@ -101,7 +101,7 @@ def generateTTLdata(data, filenamePrefix, location, predicate):
     The function outputs a statements that links the subject to a file in the given location.
     The filename is generated from the URL (hashed) and prefixed with the given prefix.
     The location is the web location where the file is stored.
-    :param data: The dictionary consisting of 'dossier' and 'sheetFilepath'
+    :param data: The dictionary containing the dossier URI in 'dossier'
     :param filenamePrefix: The prefix to use for the filename
     :param location: The web location where the file is stored
     :param predicate: The predicate to use for the statement
@@ -114,8 +114,7 @@ def generateTTLdata(data, filenamePrefix, location, predicate):
         location = "https://" + location
     return ttlTemplate.substitute(
         subject=data['dossier'],
-        filename=generateFilename(data['sheetFilepath'], filenamePrefix),
-        wdImage=data['sheetFilepath'],
+        filename=generateFilename(data['dossier'], filenamePrefix),
         predicate=predicate,
         location=location
     )
