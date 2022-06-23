@@ -158,6 +158,8 @@ def applyCorrections(record):
                 subfield = etree.SubElement(datafield, "subfield")
                 subfield.set("code", correction['newSubfield'])
                 subfield.text = correction['value']
+            elif correction['operation'] == 'changeSubfield':
+                field.set("code", correction['newSubfield'])
     return record
 
 def convertEDTFdate(date):
