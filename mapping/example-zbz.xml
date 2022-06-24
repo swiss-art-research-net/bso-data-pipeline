@@ -143,6 +143,7 @@
       <subfield code="2">gnd-content</subfield>
       <subfield code="gnd">4145395-5</subfield>
       <subfield code="wd_id"/>
+      <subfield code="aat_id">300311820</subfield>
       <subfield code="notes"/>
       <subfield code="subfield">1</subfield>
     </datafield>
@@ -462,6 +463,7 @@
       <subfield code="2">gnd-content</subfield>
       <subfield code="gnd">4006568-6</subfield>
       <subfield code="wd_id"/>
+      <subfield code="aat_id">300264387</subfield>
       <subfield code="notes"/>
       <subfield code="subfield">1</subfield>
     </datafield>
@@ -690,6 +692,7 @@
       <subfield code="2">gnd</subfield>
       <subfield code="gnd">4145419-4</subfield>
       <subfield code="wd_id">Q4502142</subfield>
+      <subfield code="aat_id">300248231</subfield>
       <subfield code="notes"/>
       <subfield code="subfield">1</subfield>
     </datafield>
@@ -899,6 +902,7 @@
       <subfield code="2">gnd-content</subfield>
       <subfield code="gnd">4006568-6</subfield>
       <subfield code="wd_id"/>
+      <subfield code="aat_id">300264387</subfield>
       <subfield code="notes"/>
       <subfield code="subfield">1</subfield>
     </datafield>
@@ -1127,6 +1131,7 @@
       <subfield code="2">gnd</subfield>
       <subfield code="gnd">4145419-4</subfield>
       <subfield code="wd_id">Q4502142</subfield>
+      <subfield code="aat_id">300248231</subfield>
       <subfield code="notes"/>
       <subfield code="subfield">1</subfield>
     </datafield>
@@ -1135,6 +1140,7 @@
       <subfield code="2">gnd-content</subfield>
       <subfield code="gnd">4127900-1</subfield>
       <subfield code="wd_id">Q93184</subfield>
+      <subfield code="aat_id">300033973</subfield>
       <subfield code="notes"/>
       <subfield code="subfield">2</subfield>
     </datafield>
