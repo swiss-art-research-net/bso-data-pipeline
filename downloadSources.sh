@@ -63,6 +63,7 @@ download "data/sari/prefLabels.trig" "data/ttl/additional/prefLabels.trig"
 download "data/sari/datasetMetadata.trig" "data/ttl/additional/datasetMetadata.trig"
 download "data/sari/smapshot-classifications.trig" "data/ttl/additional/smapshot-classifications.trig"
 download "data/sari/smapshot-identifiers.trig" "data/ttl/additional/smapshot-identifiers.trig"
+download "data/sari/bso-roles-alignment.trig" "data/ttl/additional/bso-roles-alignment.trig"
 
 download "data/sari/imageRegions.trig" "data/graphs/imageRegions.trig"
 download "data/sari/titleSimilarities.ttl" "data/graphs/titleSimilarities.ttl"
