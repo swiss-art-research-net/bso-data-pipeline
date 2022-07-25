@@ -1237,4 +1237,210 @@
       </image>
     </images>
   </record>
+  <record>
+    <leader>01654nkm a2200421 c 4500</leader>
+    <controlfield tag="001">990109042950205508</controlfield>
+    <controlfield tag="005">20201126055552.0</controlfield>
+    <controlfield tag="007">cr |||||||||||</controlfield>
+    <controlfield tag="007">kv b||</controlfield>
+    <controlfield tag="008">071222s1920    sz ||| |          i|zxx  </controlfield>
+    <datafield tag="019" ind1=" " ind2=" ">
+      <subfield code="a">Unikatsaufnahme</subfield>
+      <subfield code="5">NEBIS/Z01/02.10.2020</subfield>
+      <subfield code="subfield">1</subfield>
+    </datafield>
+    <datafield tag="024" ind1="7" ind2=" ">
+      <subfield code="a">10.7891/e-manuscripta-56746</subfield>
+      <subfield code="2">doi</subfield>
+      <subfield code="subfield">1</subfield>
+    </datafield>
+    <datafield tag="035" ind1=" " ind2=" ">
+      <subfield code="a">(swissbib)204425190-41slsp_network</subfield>
+      <subfield code="subfield">1</subfield>
+    </datafield>
+    <datafield tag="035" ind1=" " ind2=" ">
+      <subfield code="a">204425190</subfield>
+      <subfield code="9">ExL</subfield>
+      <subfield code="subfield">2</subfield>
+    </datafield>
+    <datafield tag="035" ind1=" " ind2=" ">
+      <subfield code="a">(NEBIS)010904295EBI01</subfield>
+      <subfield code="subfield">3</subfield>
+    </datafield>
+    <datafield tag="035" ind1=" " ind2=" ">
+      <subfield code="a">(EXLNZ-41SLSP_NETWORK)991139708789705501</subfield>
+      <subfield code="subfield">4</subfield>
+    </datafield>
+    <datafield tag="040" ind1=" " ind2=" ">
+      <subfield code="a">SzZuIDS NEBIS ZBZ</subfield>
+      <subfield code="b">ger</subfield>
+      <subfield code="e">rda</subfield>
+      <subfield code="d">CH-ZuSLS</subfield>
+      <subfield code="subfield">1</subfield>
+    </datafield>
+    <datafield tag="100" ind1="1" ind2=" ">
+      <subfield code="a">Schmelhaus, Franz</subfield>
+      <subfield code="d" parsedDate="18XX" upperDate="1899-12-31" lowerDate="1800-01-01">ca. 19. Jh.-20. Jh.</subfield>
+      <subfield code="0">(DE-588)1100391932</subfield>
+      <subfield code="e">Fotograf</subfield>
+      <subfield code="4" label="Fotograf" loc-uri="http://id.loc.gov/vocabulary/relators/pht" gnd="4045893-3">pht</subfield>
+      <subfield code="gnd">1100391932</subfield>
+      <subfield code="normalised_name">Schmelhaus, Franz</subfield>
+      <subfield code="Geburtsdatum"/>
+      <subfield code="Sterbedatum"/>
+      <subfield code="wd_id">Q52235956</subfield>
+      <subfield code="notes"/>
+      <subfield code="subfield">1</subfield>
+    </datafield>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">[Gebäude der Rückversicherungsgesellschaft Zürich]</subfield>
+      <subfield code="c">Fr. Schmelhaus</subfield>
+      <subfield code="subfield">1</subfield>
+    </datafield>
+    <datafield tag="264" ind1=" " ind2="0">
+      <subfield code="a">Zürich</subfield>
+      <subfield code="c" parsedDate="1920?" upperDate="1920-12-31" lowerDate="1920-01-01">[circa 1920]</subfield>
+      <subfield code="264_a-gnd-id">4068038-1</subfield>
+      <subfield code="264_a-wd-id">Q72</subfield>
+      <subfield code="264_a_normalised_name">Zürich</subfield>
+      <subfield code="notes"/>
+      <subfield code="subfield">1</subfield>
+    </datafield>
+    <datafield tag="300" ind1=" " ind2=" ">
+      <subfield code="a">1 Fotografie</subfield>
+      <subfield code="b">Albuminabzug</subfield>
+      <subfield code="c">17,2 x 23 cm</subfield>
+      <subfield code="subfield">1</subfield>
+    </datafield>
+    <datafield tag="336" ind1=" " ind2=" ">
+      <subfield code="b">sti</subfield>
+      <subfield code="2">rdacontent</subfield>
+      <subfield code="subfield">1</subfield>
+    </datafield>
+    <datafield tag="337" ind1=" " ind2=" ">
+      <subfield code="b">n</subfield>
+      <subfield code="2">rdamedia</subfield>
+      <subfield code="subfield">1</subfield>
+    </datafield>
+    <datafield tag="337" ind1=" " ind2=" ">
+      <subfield code="b">c</subfield>
+      <subfield code="2">rdamedia</subfield>
+      <subfield code="subfield">2</subfield>
+    </datafield>
+    <datafield tag="338" ind1=" " ind2=" ">
+      <subfield code="b">nb</subfield>
+      <subfield code="2">rdacarrier</subfield>
+      <subfield code="subfield">1</subfield>
+    </datafield>
+    <datafield tag="338" ind1=" " ind2=" ">
+      <subfield code="b">cr</subfield>
+      <subfield code="2">rdacarrier</subfield>
+      <subfield code="subfield">2</subfield>
+    </datafield>
+    <datafield tag="340" ind1=" " ind2=" ">
+      <subfield code="a">Fotopapier</subfield>
+      <subfield code="b">17,2 x 23 cm</subfield>
+      <subfield code="colour"/>
+      <subfield code="colour_gnd"/>
+      <subfield code="material">Fotopapier</subfield>
+      <subfield code="material_gnd">4123949-0</subfield>
+      <subfield code="subfield">1</subfield>
+    </datafield>
+    <datafield tag="340" ind1=" " ind2=" ">
+      <subfield code="a">Karton</subfield>
+      <subfield code="b">22,8 x 26,8 cm</subfield>
+      <subfield code="colour"/>
+      <subfield code="colour_gnd"/>
+      <subfield code="material">Karton</subfield>
+      <subfield code="material_gnd">4131382-3</subfield>
+      <subfield code="subfield">2</subfield>
+    </datafield>
+    <datafield tag="520" ind1=" " ind2=" ">
+      <subfield code="a">Gebäude "Schweizerische Rückversicherungsgesellschaft" am Mythenquai Nr. 60; erbaut 1911-1913 von Emil Faesch und Alexander von Senger</subfield>
+      <subfield code="subfield">1</subfield>
+    </datafield>
+    <datafield tag="651" ind1=" " ind2="7">
+      <subfield code="a">Gebäude der Schweizerischen Rückversicherungsgesellschaft</subfield>
+      <subfield code="g">Zürich</subfield>
+      <subfield code="0">(DE-588)106632333X</subfield>
+      <subfield code="2">gnd</subfield>
+      <subfield code="gnd">106632333X</subfield>
+      <subfield code="normalised_name">Gebäude der Schweizerischen Rückversicherungsgesellschaft (Zürich)</subfield>
+      <subfield code="wd_id"/>
+      <subfield code="notes"/>
+      <subfield code="subfield">1</subfield>
+    </datafield>
+    <datafield tag="655" ind1=" " ind2="7">
+      <subfield code="a">Bild</subfield>
+      <subfield code="2">gnd-content</subfield>
+      <subfield code="gnd">4006568-6</subfield>
+      <subfield code="wd_id"/>
+      <subfield code="aat_id">300264387</subfield>
+      <subfield code="notes"/>
+      <subfield code="subfield">1</subfield>
+    </datafield>
+    <datafield tag="655" ind1=" " ind2="7">
+      <subfield code="a">Fotografie</subfield>
+      <subfield code="2">gnd-content</subfield>
+      <subfield code="gnd">4045895-7</subfield>
+      <subfield code="wd_id">Q11633</subfield>
+      <subfield code="aat_id">300046300</subfield>
+      <subfield code="notes"/>
+      <subfield code="subfield">2</subfield>
+    </datafield>
+    <datafield tag="856" ind1="4" ind2=" ">
+      <subfield code="u">http://dx.doi.org/10.7891/e-manuscripta-56746</subfield>
+      <subfield code="z">Digitalisat in e-manuscripta</subfield>
+      <subfield code="subfield">1</subfield>
+    </datafield>
+    <datafield tag="852" ind1="4" ind2=" ">
+      <subfield code="8">22387374850005508</subfield>
+      <subfield code="b">Z02</subfield>
+      <subfield code="c">GSM</subfield>
+      <subfield code="j">Zürich 2.1, Mythenquai I, 8</subfield>
+      <subfield code="subfield">1</subfield>
+    </datafield>
+    <datafield tag="900" ind1=" " ind2=" ">
+      <subfield code="a">IDSZ1ZH</subfield>
+      <subfield code="subfield">1</subfield>
+    </datafield>
+    <datafield tag="900" ind1=" " ind2=" ">
+      <subfield code="a">IDSZ2zbzmix201705e</subfield>
+      <subfield code="c">IDSZ2alth</subfield>
+      <subfield code="d">IDSZ2zbzswk201705p</subfield>
+      <subfield code="e">IDSZ2alth</subfield>
+      <subfield code="subfield">2</subfield>
+    </datafield>
+    <datafield tag="900" ind1=" " ind2=" ">
+      <subfield code="a">IDSZ5Bildmaterial</subfield>
+      <subfield code="subfield">3</subfield>
+    </datafield>
+    <datafield tag="900" ind1=" " ind2=" ">
+      <subfield code="f">IDSZ1Z01emanuscripta</subfield>
+      <subfield code="subfield">4</subfield>
+    </datafield>
+    <datafield tag="900" ind1=" " ind2=" ">
+      <subfield code="a">IDSZ5BSO</subfield>
+      <subfield code="subfield">5</subfield>
+    </datafield>
+    <datafield tag="900" ind1=" " ind2=" ">
+      <subfield code="a">IDSIxunikat</subfield>
+      <subfield code="subfield">6</subfield>
+    </datafield>
+    <datafield tag="965" ind1=" " ind2=" ">
+      <subfield code="a">Ansicht [Formschlagwort Sondersammlungen]</subfield>
+      <subfield code="2">uzb-ZG</subfield>
+      <subfield code="9">LOCAL</subfield>
+      <subfield code="subfield">1</subfield>
+    </datafield>
+    <record-identifier>zbz-990109042950205508</record-identifier>
+    <datafield tag="manifest">https://www.e-manuscripta.ch/i3f/v20/1720856/manifest</datafield>
+    <images>
+      <image>
+        <height>4695</height>
+        <width>4470</width>
+        <url type="iiif">https://www.e-manuscripta.ch/zuzneb/i3f/v20/1720857</url>
+      </image>
+    </images>
+  </record>
 </collection>
