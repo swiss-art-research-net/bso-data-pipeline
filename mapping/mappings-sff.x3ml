@@ -130,7 +130,7 @@
                     </source_relation>
                     <target_relation>
                         <if>
-                            <exists>text()</exists>
+                            <exists>@material</exists>
                         </if>
                         <relationship>crm:P45_consists_of</relationship>
                     </target_relation>
@@ -142,12 +142,48 @@
                             <type>crm:E57_Material</type>
                             <instance_generator name="URIwithTypeAndId">
                                 <arg name="type" type="constant">type</arg>
-                                <arg name="id" type="xpath">lower-case(text())</arg>
+                                <arg name="id" type="xpath">lower-case(@material)</arg>
                             </instance_generator>
                             <label_generator name="Literal">
-                                <arg name="text" type="xpath">text()</arg>
+                                <arg name="text" type="xpath">@material</arg>
                                 <arg name="language" type="constant"/>
                             </label_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>Material</relation>
+                    </source_relation>
+                    <target_relation>
+                        <if>
+                            <exists>@material_gnd</exists>
+                        </if>
+                        <relationship>crm:P45_consists_of</relationship>
+                        <entity variable="object_material">
+                            <type>crm:E57_Material</type>
+                            <instance_generator name="URIwithTypeAndId">
+                                <arg name="type" type="constant">type</arg>
+                                <arg name="id" type="xpath">lower-case(@material)</arg>
+                            </instance_generator>
+                            <label_generator name="Literal">
+                                <arg name="text" type="xpath">@material</arg>
+                                <arg name="language" type="constant"/>
+                            </label_generator>
+                        </entity>
+                        <relationship>crmdig:L54_is_same-as</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>Material</source_node>
+                    <target_node>
+                        <entity variable="object_material_gnd">
+                            <type>crm:E57_Material</type>
+                            <instance_generator name="URIwithGndId">
+                                <arg name="id" type="xpath">@material_gnd</arg>
+                            </instance_generator>
                         </entity>
                     </target_node>
                 </range>
@@ -2659,5 +2695,109 @@
                 </range>
             </link>
         </mapping>
+        <mapping>
+            <domain>
+                <source_node>/collection/record/Material</source_node>
+                <target_node>
+                    <if>
+                        <not>
+                            <if>
+                                <equals value="@material">text()</equals>
+                            </if>
+                        </not>
+                    </if>
+                    <entity variable="material_comment">
+                        <type>crm:E13_Attribute_Assignment</type>
+                        <instance_generator name="URIwithTypeSubtypeAndId">
+                            <arg name="type" type="constant">artwork</arg>
+                            <arg name="id" type="xpath">../record-identifier/text()</arg>
+                            <arg name="subtype" type="constant">material</arg>
+                        </instance_generator>
+                    </entity>
+                </target_node>
+                <comments>
+                    <comment type="">
+                        <rationale>If the material text does not match the normalised material, we treat the text as a comment about the material</rationale>
+                        <alternatives/>
+                        <typical_mistakes/>
+                        <local_habits/>
+                        <link_to_cook_book/>
+                        <example>
+                            <example_source/>
+                            <example_target/>
+                        </example>
+                        <comments_last_update date="" person=""/>
+                    </comment>
+                </comments>
+            </domain>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>.</relation>
+                    </source_relation>
+                    <target_relation>
+                        <relationship>crm:P140_assigned_attribute_to</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>.</source_node>
+                    <target_node>
+                        <entity variable="object">
+                            <type>crm:E22_Human-Made_Object</type>
+                            <instance_generator name="URIwithTypeAndId">
+                                <arg name="type" type="constant">artwork</arg>
+                                <arg name="id" type="xpath">../record-identifier/text()</arg>
+                            </instance_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>.</relation>
+                    </source_relation>
+                    <target_relation>
+                        <relationship>crm:P141_assigned</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>.</source_node>
+                    <target_node>
+                        <entity variable="object_material">
+                            <type>crm:E57_Material</type>
+                            <instance_generator name="URIwithTypeAndId">
+                                <arg name="type" type="constant">type</arg>
+                                <arg name="id" type="xpath">lower-case(@material)</arg>
+                            </instance_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>.</relation>
+                    </source_relation>
+                    <target_relation>
+                        <relationship>crm:P3_has_note</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>.</source_node>
+                    <target_node>
+                        <entity variable="comment">
+                            <type>rdfs:Literal</type>
+                            <instance_generator name="Literal">
+                                <arg name="text" type="xpath">text()</arg>
+                                <arg name="language" type="constant"/>
+                            </instance_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+        </mapping>
     </mappings>
+
+
 </x3ml>
