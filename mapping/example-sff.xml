@@ -1,25 +1,25 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <collection>
-    <record>
-        <InvNrIntern>GABRI10680</InvNrIntern>
-        <KünsterIn>Lory père / Lafond / Zehender</KünsterIn>
-        <Titel>Recueil de paysages suisses dessinés d'après nature, dans une course par la vallée d'Ober-Hasly et les cantons de Schweitz et d'Ury, par Lory, Lafond et Zehender. en 1797. Accompagné d'un texte pour servir d'itinéraire aux artistes et aux amateurs de voyages pittoresques</Titel>
-        <LogistikID>GABRI10680</LogistikID>
-        <WerkGruppenID>2017021318324740500</WerkGruppenID>
-        <Entstvon>1797</Entstvon>
-        <Entstbis>1798</Entstbis>
-        <Datierung>1797/98</Datierung>
-        <Technik>13 nummerierte handkolorierte Umrissradierungen, mit einem Titelblatt, einer Widmung an Jakob Samuel Wyttenbach, 4 Textseiten enthaltend Erläuterungen zu den Abbildungen, und einem Reisebericht über 34 Seiten; gebunden in marmoriertem Einband, mit einer mit "Voyage en Suisse" beschrifteten Etikette auf dem Vorderdeckel</Technik>
-        <Zuständigkeit>Prov</Zuständigkeit>
-        <Werkstatus/>
-        <KaufmStatus/>
-        <Salestatus/>
-        <Edition/>
-        <Material>Papier</Material>
-        <Material2/>
-        <EditionÜbers/>
-        <Bemerkungen/>
-        <BezKünstler>Titelblatt bezeichnet mit "Recueil / de / paysages suisses / dessinés d'après nature, / dans une course / par la vallée d'Ober-Hasly / et les cantons / de Schweitz et d'Ury, / par / Lory, Lafond et Zehender. / en 1797. / Accompagné d'un texte / pour servir d'itinéraire aux artistes et aux amateurs / de voyages pittoresques.", und mit Publikationsangaben "À Berne / chez les artistes associés. / Avec privilège."; jede Abbildung nummeriert und betitelt, wie folgendermassen: 
+  <record>
+    <InvNrIntern>GABRI10680</InvNrIntern>
+    <KünsterIn>Lory père / Lafond / Zehender</KünsterIn>
+    <Titel>Recueil de paysages suisses dessinés d'après nature, dans une course par la vallée d'Ober-Hasly et les cantons de Schweitz et d'Ury, par Lory, Lafond et Zehender. en 1797. Accompagné d'un texte pour servir d'itinéraire aux artistes et aux amateurs de voyages pittoresques</Titel>
+    <LogistikID>GABRI10680</LogistikID>
+    <WerkGruppenID>2017021318324740500</WerkGruppenID>
+    <Entstvon>1797</Entstvon>
+    <Entstbis>1798</Entstbis>
+    <Datierung>1797/98</Datierung>
+    <Technik>13 nummerierte handkolorierte Umrissradierungen, mit einem Titelblatt, einer Widmung an Jakob Samuel Wyttenbach, 4 Textseiten enthaltend Erläuterungen zu den Abbildungen, und einem Reisebericht über 34 Seiten; gebunden in marmoriertem Einband, mit einer mit "Voyage en Suisse" beschrifteten Etikette auf dem Vorderdeckel</Technik>
+    <Zuständigkeit>Prov</Zuständigkeit>
+    <Werkstatus/>
+    <KaufmStatus/>
+    <Salestatus/>
+    <Edition/>
+    <Material material="Papier" material_gnd="4044522-7" dateRange="1450-1925">Papier</Material>
+    <Material2/>
+    <EditionÜbers/>
+    <Bemerkungen/>
+    <BezKünstler>Titelblatt bezeichnet mit "Recueil / de / paysages suisses / dessinés d'après nature, / dans une course / par la vallée d'Ober-Hasly / et les cantons / de Schweitz et d'Ury, / par / Lory, Lafond et Zehender. / en 1797. / Accompagné d'un texte / pour servir d'itinéraire aux artistes et aux amateurs / de voyages pittoresques.", und mit Publikationsangaben "À Berne / chez les artistes associés. / Avec privilège."; jede Abbildung nummeriert und betitelt, wie folgendermassen: 
 -   Key plate, nicht nummeriert (Radierung)
 1) "Vue sur le Lac de Brientz et le petit Lac de Goldswyl / prés de Rinkenberg." 
 2) "Chute du Giessbach / au Bord du Lac de Brientz."
@@ -34,1056 +34,1056 @@
 12) "Schweiz, Chef-Lieu du Canton, / ainsi nommé."
 13) "Vue de l'Isle de Schwanau, / Sur le Lac de Lowerz." 
 8) "Burgle Lieu de Naissance de Guillaume Tell, / dans le Canton d'Ury." </BezKünstler>
-        <Bezfremd>Auf der Innenseite des Vorderdeckels oben links mit Bleistift nummeriert "297"</Bezfremd>
-        <Zertifikat/>
-        <ZertifikatÜbers/>
-        <TitelÜbers/>
-        <TechnikÜbers/>
-        <InvDatum>00.00.00</InvDatum>
-        <Provenienz>Das Exlibris von Heinrich Fehlmann klebt auf der Innenseite des Vorderdeckels</Provenienz>
-        <Gattung>B - Bücher</Gattung>
-        <TitelÜbers2/>
-        <InvNr>SFF_B_1610</InvNr>
-        <Keywords>
+    <Bezfremd>Auf der Innenseite des Vorderdeckels oben links mit Bleistift nummeriert "297"</Bezfremd>
+    <Zertifikat/>
+    <ZertifikatÜbers/>
+    <TitelÜbers/>
+    <TechnikÜbers/>
+    <InvDatum>00.00.00</InvDatum>
+    <Provenienz>Das Exlibris von Heinrich Fehlmann klebt auf der Innenseite des Vorderdeckels</Provenienz>
+    <Gattung>B - Bücher</Gattung>
+    <TitelÜbers2/>
+    <InvNr>SFF_B_1610</InvNr>
+    <Keywords>
+      <values>
+        <value>
+          <text>See</text>
+          <gnd>4054084-4</gnd>
+          <wd>Q23397</wd>
+        </value>
+        <value>
+          <text>Berge</text>
+          <gnd>4144619-7</gnd>
+          <wd>Q8502</wd>
+        </value>
+        <value>
+          <text>Dorf</text>
+          <gnd>4012775-8</gnd>
+          <wd>Q532</wd>
+        </value>
+        <value>
+          <text>Spaziergänger</text>
+          <gnd>4381129-2</gnd>
+          <wd/>
+        </value>
+      </values>
+    </Keywords>
+    <TechnikÜbers2/>
+    <EditionÜbers2/>
+    <Ortsbezug>
+      <values>
+        <value>
+          <text>Brunnen (Schwyz)</text>
+          <gnd>4284930-5</gnd>
+          <wd>Q675405</wd>
+        </value>
+        <value>
+          <text>Vierwaldstättersee (Kanton Luzern, Schwyz, Uri, Obwalden, Nidwalden)</text>
+          <gnd>4063511-9</gnd>
+          <wd>Q14381</wd>
+        </value>
+        <value>
+          <text>für weitere Ortsbezüge, vgl. die Einzelblätter in der Sammlung der SFF</text>
+          <gnd/>
+          <wd/>
+        </value>
+      </values>
+    </Ortsbezug>
+    <Masse1Suffix/>
+    <Masse1Prefix/>
+    <RefNr/>
+    <InschriftÜbers2/>
+    <ZertÜbers2/>
+    <Datumstempel>03.07.2019</Datumstempel>
+    <Zeitstempel>08:52:57</Zeitstempel>
+    <Ueberprüftam>00.00.00</Ueberprüftam>
+    <Ueberprüftvon/>
+    <Sortation>0</Sortation>
+    <pID>A10B01EA7708CE4786CD7DAEA1CA1373</pID>
+    <record-identifier>SFF_B_1610</record-identifier>
+    <artists>
+      <artist creation="true">
+        <id>Lory père</id>
+        <link>Lory père / Lafond / Zehender</link>
+        <gnd>119240106</gnd>
+        <wd>Q18511605</wd>
+        <gnd-name>Lory, Gabriel</gnd-name>
+        <fullName>Gabriel Ludwig Lory</fullName>
+        <singular>False</singular>
+        <raw>Gabriel Ludwig Lory, Simon Daniel Lafond, Karl Ludwig Zehender (Verleger)</raw>
+        <roles>
+          <roleValue role_uri="https://d-nb.info/gnd/4200345-3" creation="true">Zeichner</roleValue>
+        </roles>
+      </artist>
+      <artist production="true">
+        <id>Lafond</id>
+        <link>Lory père / Lafond / Zehender</link>
+        <gnd>136239269</gnd>
+        <wd>Q26279967</wd>
+        <gnd-name>Lafond, Daniel</gnd-name>
+        <fullName>Simon Daniel Lafond</fullName>
+        <singular>False</singular>
+        <raw>Gabriel Ludwig Lory, Simon Daniel Lafond, Karl Ludwig Zehender (Verleger)</raw>
+        <roles>
+          <roleValue role_uri="https://d-nb.info/gnd/4158107-6" production="true">Stecher</roleValue>
+        </roles>
+      </artist>
+      <artist production="true">
+        <id>Zehender</id>
+        <link>Lory père / Lafond / Zehender</link>
+        <gnd>1089376081</gnd>
+        <wd>Q30304604</wd>
+        <gnd-name>Zehender, Karl Ludwig</gnd-name>
+        <fullName>Karl Ludwig Zehender</fullName>
+        <singular>False</singular>
+        <raw>Gabriel Ludwig Lory, Simon Daniel Lafond, Karl Ludwig Zehender (Verleger)</raw>
+        <roles>
+          <roleValue role_uri="https://d-nb.info/gnd/4138343-6" production="true">Verleger</roleValue>
+        </roles>
+      </artist>
+    </artists>
+    <image filename="SFF_B_1610.JPG" width="2624" height="3936">SFF_B_1610</image>
+    <dimensions>
+      <dimension>
+        <UUID>CEE33E5FD5BB644BB45EF595AFD2B3DB</UUID>
+        <WerkInvNr>GABRI10680</WerkInvNr>
+        <Typ>HBT</Typ>
+        <Einheit>cm</Einheit>
+        <Höhe>35.2</Höhe>
+        <Breite>24.9</Breite>
+        <Tiefe>0</Tiefe>
+        <Prefix>Buch</Prefix>
+        <Prefix2>size of the book</Prefix2>
+        <type>book</type>
+        <typeuri>https://d-nb.info/gnd/4008570-3</typeuri>
+        <qualifier>exact</qualifier>
+        <Position>0</Position>
+        <pID>FC714A46CB608A4891516CBF17C1D20C</pID>
+      </dimension>
+      <dimension>
+        <UUID>C0AF1E360E20FE489A81063084383360</UUID>
+        <WerkInvNr>GABRI10680</WerkInvNr>
+        <Typ>HBT</Typ>
+        <Einheit>cm</Einheit>
+        <Höhe>21.5</Höhe>
+        <Breite>16</Breite>
+        <Tiefe>0</Tiefe>
+        <Prefix>Bild (ungefähr)</Prefix>
+        <Prefix2>approx. size of image</Prefix2>
+        <type>image</type>
+        <typeuri>http://vocab.getty.edu/aat/300264387</typeuri>
+        <qualifier>circa</qualifier>
+        <Position>0</Position>
+        <pID>9B2321C0AB3C8F42B081A847F9A30F23</pID>
+      </dimension>
+    </dimensions>
+    <literatureList>
+      <literature>
+        <WerkInvNr>GABRI10680</WerkInvNr>
+        <LitNr>LIT10113</LitNr>
+        <Künstlername>Lory père / Lafond / Zehender</Künstlername>
+        <Seitenverweise>S. 12 (Preis: 66 Livres de France)</Seitenverweise>
+        <Bemerkungen>Catalogue du magazin des arts 1806</Bemerkungen>
+        <recID>2017062011443842260</recID>
+        <pID>EC2A55D74132C84F90B9C2232D03149A</pID>
+        <details>
+          <LitNr>LIT10113</LitNr>
+          <Titel>Catalogue du magazin des arts de Fuessli et Compagnie à Zuric</Titel>
+          <Jahr>1806</Jahr>
+          <recID>2017061310041618226</recID>
+          <pID>EC3ED5723676DE4FB5CAFE8A12B2C582</pID>
+        </details>
+      </literature>
+      <literature>
+        <WerkInvNr>GABRI10680</WerkInvNr>
+        <LitNr>LIT10006</LitNr>
+        <Künstlername>Lory père / Lafond / Zehender</Künstlername>
+        <Seitenverweise>S. LXXVII-LXXVIII, Nr. 609</Seitenverweise>
+        <Bemerkungen>Lonchamp 1921</Bemerkungen>
+        <recID>2017051811075630438</recID>
+        <pID>C81C581A5DF89A4B86E4331474E91008</pID>
+        <details>
+          <LitNr>LIT10006</LitNr>
+          <AutorHsg>
             <values>
-                <value>
-                    <text>See</text>
-                    <gnd>4054084-4</gnd>
-                    <wd>Q23397</wd>
-                </value>
-                <value>
-                    <text>Berge</text>
-                    <gnd>4144619-7</gnd>
-                    <wd>Q8502</wd>
-                </value>
-                <value>
-                    <text>Dorf</text>
-                    <gnd>4012775-8</gnd>
-                    <wd>Q532</wd>
-                </value>
-                <value>
-                    <text>Spaziergänger</text>
-                    <gnd>4381129-2</gnd>
-                    <wd/>
-                </value>
+              <value>
+                <text>Lonchamp, Frédéric-Charles</text>
+                <normalised_name>Lonchamp, Frédéric-Charles</normalised_name>
+                <gnd>117211370</gnd>
+                <wd>Q95255649</wd>
+              </value>
             </values>
-        </Keywords>
-        <TechnikÜbers2/>
-        <EditionÜbers2/>
-        <Ortsbezug>
+          </AutorHsg>
+          <Titel>Un siècle d’art suisse. L’estampe et le livre à gravures. Guide de l’amateur</Titel>
+          <Verlag>
             <values>
-                <value>
-                    <text>Brunnen (Schwyz)</text>
-                    <gnd>4284930-5</gnd>
-                    <wd>Q675405</wd>
-                </value>
-                <value>
-                    <text>Vierwaldstättersee (Kanton Luzern, Schwyz, Uri, Obwalden, Nidwalden)</text>
-                    <gnd>4063511-9</gnd>
-                    <wd>Q14381</wd>
-                </value>
-                <value>
-                    <text>für weitere Ortsbezüge, vgl. die Einzelblätter in der Sammlung der SFF</text>
-                    <gnd/>
-                    <wd/>
-                </value>
+              <value>
+                <text>Librairie des Bibliophiles</text>
+                <normalised_name>Librairie des Bibliophiles</normalised_name>
+                <gnd>10090310-1</gnd>
+                <wd>Q23138409</wd>
+              </value>
             </values>
-        </Ortsbezug>
-        <Masse1Suffix/>
-        <Masse1Prefix/>
-        <RefNr/>
-        <InschriftÜbers2/>
-        <ZertÜbers2/>
-        <Datumstempel>03.07.2019</Datumstempel>
-        <Zeitstempel>08:52:57</Zeitstempel>
-        <Ueberprüftam>00.00.00</Ueberprüftam>
-        <Ueberprüftvon/>
-        <Sortation>0</Sortation>
-        <pID>A10B01EA7708CE4786CD7DAEA1CA1373</pID>
-        <record-identifier>SFF_B_1610</record-identifier>
-        <artists>
-            <artist creation="true">
-                <id>Lory père</id>
-                <link>Lory père / Lafond / Zehender</link>
-                <gnd>119240106</gnd>
-                <wd>Q18511605</wd>
-                <gnd-name>Lory, Gabriel</gnd-name>
-                <fullName>Gabriel Ludwig Lory</fullName>
-                <singular>False</singular>
-                <raw>Gabriel Ludwig Lory, Simon Daniel Lafond, Karl Ludwig Zehender (Verleger)</raw>
-                <roles>
-                    <roleValue role_uri="https://d-nb.info/gnd/4200345-3" creation="true">Zeichner</roleValue>
-                </roles>
-            </artist>
-            <artist production="true">
-                <id>Lafond</id>
-                <link>Lory père / Lafond / Zehender</link>
-                <gnd>136239269</gnd>
-                <wd>Q26279967</wd>
-                <gnd-name>Lafond, Daniel</gnd-name>
-                <fullName>Simon Daniel Lafond</fullName>
-                <singular>False</singular>
-                <raw>Gabriel Ludwig Lory, Simon Daniel Lafond, Karl Ludwig Zehender (Verleger)</raw>
-                <roles>
-                    <roleValue role_uri="https://d-nb.info/gnd/4158107-6" production="true">Stecher</roleValue>
-                </roles>
-            </artist>
-            <artist production="true">
-                <id>Zehender</id>
-                <link>Lory père / Lafond / Zehender</link>
-                <gnd>1089376081</gnd>
-                <wd>Q30304604</wd>
-                <gnd-name>Zehender, Karl Ludwig</gnd-name>
-                <fullName>Karl Ludwig Zehender</fullName>
-                <singular>False</singular>
-                <raw>Gabriel Ludwig Lory, Simon Daniel Lafond, Karl Ludwig Zehender (Verleger)</raw>
-                <roles>
-                    <roleValue role_uri="https://d-nb.info/gnd/4138343-6" production="true">Verleger</roleValue>
-                </roles>
-            </artist>
-        </artists>
-        <image filename="SFF_B_1610.JPG" width="2624" height="3936">SFF_B_1610</image>
-        <dimensions>
-            <dimension>
-                <UUID>CEE33E5FD5BB644BB45EF595AFD2B3DB</UUID>
-                <WerkInvNr>GABRI10680</WerkInvNr>
-                <Typ>HBT</Typ>
-                <Einheit>cm</Einheit>
-                <Höhe>35.2</Höhe>
-                <Breite>24.9</Breite>
-                <Tiefe>0</Tiefe>
-                <Prefix>Buch</Prefix>
-                <Prefix2>size of the book</Prefix2>
-                <type>book</type>
-                <typeuri>https://d-nb.info/gnd/4008570-3</typeuri>
-                <qualifier>exact</qualifier>
-                <Position>0</Position>
-                <pID>FC714A46CB608A4891516CBF17C1D20C</pID>
-            </dimension>
-            <dimension>
-                <UUID>C0AF1E360E20FE489A81063084383360</UUID>
-                <WerkInvNr>GABRI10680</WerkInvNr>
-                <Typ>HBT</Typ>
-                <Einheit>cm</Einheit>
-                <Höhe>21.5</Höhe>
-                <Breite>16</Breite>
-                <Tiefe>0</Tiefe>
-                <Prefix>Bild (ungefähr)</Prefix>
-                <Prefix2>approx. size of image</Prefix2>
-                <type>image</type>
-                <typeuri>http://vocab.getty.edu/aat/300264387</typeuri>
-                <qualifier>circa</qualifier>
-                <Position>0</Position>
-                <pID>9B2321C0AB3C8F42B081A847F9A30F23</pID>
-            </dimension>
-        </dimensions>
-        <literatureList>
-            <literature>
-                <WerkInvNr>GABRI10680</WerkInvNr>
-                <LitNr>LIT10113</LitNr>
-                <Künstlername>Lory père / Lafond / Zehender</Künstlername>
-                <Seitenverweise>S. 12 (Preis: 66 Livres de France)</Seitenverweise>
-                <Bemerkungen>Catalogue du magazin des arts 1806</Bemerkungen>
-                <recID>2017062011443842260</recID>
-                <pID>EC2A55D74132C84F90B9C2232D03149A</pID>
-                <details>
-                    <LitNr>LIT10113</LitNr>
-                    <Titel>Catalogue du magazin des arts de Fuessli et Compagnie à Zuric</Titel>
-                    <Jahr>1806</Jahr>
-                    <recID>2017061310041618226</recID>
-                    <pID>EC3ED5723676DE4FB5CAFE8A12B2C582</pID>
-                </details>
-            </literature>
-            <literature>
-                <WerkInvNr>GABRI10680</WerkInvNr>
-                <LitNr>LIT10006</LitNr>
-                <Künstlername>Lory père / Lafond / Zehender</Künstlername>
-                <Seitenverweise>S. LXXVII-LXXVIII, Nr. 609</Seitenverweise>
-                <Bemerkungen>Lonchamp 1921</Bemerkungen>
-                <recID>2017051811075630438</recID>
-                <pID>C81C581A5DF89A4B86E4331474E91008</pID>
-                <details>
-                    <LitNr>LIT10006</LitNr>
-                    <AutorHsg>
-                        <values>
-                            <value>
-                                <text>Lonchamp, Frédéric-Charles</text>
-                                <normalised_name>Lonchamp, Frédéric-Charles</normalised_name>
-                                <gnd>117211370</gnd>
-                                <wd>Q95255649</wd>
-                            </value>
-                        </values>
-                    </AutorHsg>
-                    <Titel>Un siècle d’art suisse. L’estampe et le livre à gravures. Guide de l’amateur</Titel>
-                    <Verlag>
-                        <values>
-                            <value>
-                                <text>Librairie des Bibliophiles</text>
-                                <normalised_name>Librairie des Bibliophiles</normalised_name>
-                                <gnd>10090310-1</gnd>
-                                <wd>Q23138409</wd>
-                            </value>
-                        </values>
-                    </Verlag>
-                    <Jahr>1921</Jahr>
-                    <recID>2017021010060225169</recID>
-                    <Ort>
-                        <values>
-                            <value>
-                                <text>Lausanne</text>
-                                <gnd>4034750-3</gnd>
-                                <wd>Q807</wd>
-                            </value>
-                        </values>
-                    </Ort>
-                    <pID>3EC4888F64850B44954AB4B6989480DC</pID>
-                </details>
-            </literature>
-            <literature>
-                <WerkInvNr>GABRI10680</WerkInvNr>
-                <LitNr>LIT10057</LitNr>
-                <Künstlername>Lory père / Lafond / Zehender</Künstlername>
-                <Seitenverweise>Teil 1, S. 149, Nr. 11 (Folge, Preis: 40 Livres de Suisse)</Seitenverweise>
-                <Bemerkungen>Ebel 1804-1805</Bemerkungen>
-                <recID>2017061917320932561</recID>
-                <pID>A77D360C92749543B174285414049956</pID>
-                <details>
-                    <LitNr>LIT10057</LitNr>
-                    <AutorHsg>
-                        <values>
-                            <value>
-                                <text>Ebel, Johann Gottfried</text>
-                                <normalised_name>Ebel, Johann Gottfried</normalised_name>
-                                <gnd>116319577</gnd>
-                                <wd>Q89013</wd>
-                            </value>
-                        </values>
-                    </AutorHsg>
-                    <Titel>Anleitung, auf die nützlichste und genussvollste Art die Schweitz zu bereisen</Titel>
-                    <Verlag>
-                        <values>
-                            <value>
-                                <text>Orell, Füssli &amp; Comp</text>
-                                <normalised_name>Orell, Füssli &amp; Comp</normalised_name>
-                                <gnd>1073001172</gnd>
-                                <wd/>
-                            </value>
-                        </values>
-                    </Verlag>
-                    <Vol>2. Aufl.</Vol>
-                    <Jahr>0</Jahr>
-                    <Band>4 Teile</Band>
-                    <recID>2017030610425530534</recID>
-                    <Ort>
-                        <values>
-                            <value>
-                                <text>Zürich</text>
-                                <gnd>4068038-1</gnd>
-                                <wd>Q72</wd>
-                            </value>
-                        </values>
-                    </Ort>
-                    <JahrText>1804-1805</JahrText>
-                    <pID>F38DFE3F2243E842B9024AF5CF55710A</pID>
-                </details>
-            </literature>
-            <literature>
-                <WerkInvNr>GABRI10680</WerkInvNr>
-                <LitNr>LIT10115</LitNr>
-                <Künstlername>Lory père / Lafond / Zehender</Künstlername>
-                <Seitenverweise>S. 41 (Folge, Preis: 40 Franken)</Seitenverweise>
-                <Bemerkungen>Catalogue des Vues 1818</Bemerkungen>
-                <recID>2017062012080126603</recID>
-                <pID>28C604ACC6C5D24E8D0BC800AE287E05</pID>
-                <details>
-                    <LitNr>LIT10115</LitNr>
-                    <Titel>Catalogue des Vues, Costumes, Cartes et Panorama Suisses du Magazin des Arts de H. Keller, mds. d'Estampes et de Materiaux de dessin vis à vis de l'Épée à Zurich</Titel>
-                    <Jahr>1818</Jahr>
-                    <recID>2017061310091716541</recID>
-                    <Ort>
-                        <values>
-                            <value>
-                                <text>Zürich</text>
-                                <gnd>4068038-1</gnd>
-                                <wd>Q72</wd>
-                            </value>
-                        </values>
-                    </Ort>
-                    <pID>93F14D15A9BF7A449D0E70B7197A04C7</pID>
-                </details>
-            </literature>
-            <literature>
-                <WerkInvNr>GABRI10680</WerkInvNr>
-                <LitNr>LIT10112</LitNr>
-                <Künstlername>Lory père / Lafond / Zehender</Künstlername>
-                <Seitenverweise>S. 10 (Preis: 60 Livres de France)</Seitenverweise>
-                <Bemerkungen>Catalogue du magazin des arts 1798</Bemerkungen>
-                <recID>2018030716123546000</recID>
-                <pID>7FB21AFF9013D840A25DC031477AC37C</pID>
-                <details>
-                    <LitNr>LIT10112</LitNr>
-                    <Titel>Catalogue du magazin des arts de Henri et Jean Henri Fuesli à Zuric</Titel>
-                    <Jahr>1798</Jahr>
-                    <recID>2017061310013120793</recID>
-                    <pID>19B3E55B4A7FEC41B6E2B5043F108043</pID>
-                </details>
-            </literature>
-            <literature>
-                <WerkInvNr>GABRI10680</WerkInvNr>
-                <LitNr>LIT10058</LitNr>
-                <Künstlername>Lory père / Lafond / Zehender</Künstlername>
-                <Seitenverweise>Teil 1, S. 149, Nr. 11 (Preis: 40 Livres de Suisse)</Seitenverweise>
-                <Bemerkungen>Ebel 1809-1810</Bemerkungen>
-                <recID>2018030816291916842</recID>
-                <pID>E0A91CE998E05D40AA6497B4A17463C1</pID>
-                <details>
-                    <LitNr>LIT10058</LitNr>
-                    <AutorHsg>
-                        <values>
-                            <value>
-                                <text>Ebel, Johann Gottfried</text>
-                                <normalised_name>Ebel, Johann Gottfried</normalised_name>
-                                <gnd>116319577</gnd>
-                                <wd>Q89013</wd>
-                            </value>
-                        </values>
-                    </AutorHsg>
-                    <Titel>Anleitung, auf die nützlichste und genussvollste Art die Schweitz zu bereisen</Titel>
-                    <Verlag>
-                        <values>
-                            <value>
-                                <text>Orell, Füssli &amp; Comp</text>
-                                <normalised_name>Orell, Füssli &amp; Comp</normalised_name>
-                                <gnd>1073001172</gnd>
-                                <wd/>
-                            </value>
-                        </values>
-                    </Verlag>
-                    <Vol>3. Aufl.</Vol>
-                    <Jahr>0</Jahr>
-                    <Band>4 Teile</Band>
-                    <recID>2017030610444523226</recID>
-                    <Ort>
-                        <values>
-                            <value>
-                                <text>Zürich</text>
-                                <gnd>4068038-1</gnd>
-                                <wd>Q72</wd>
-                            </value>
-                        </values>
-                    </Ort>
-                    <JahrText>1809-1810</JahrText>
-                    <pID>AF2EB518C6CD0747ADDA7586C94F14F0</pID>
-                </details>
-            </literature>
-            <literature>
-                <WerkInvNr>GABRI10680</WerkInvNr>
-                <LitNr>LIT10152</LitNr>
-                <Künstlername>Lory père / Lafond / Zehender</Künstlername>
-                <Seitenverweise>Teil 1, S. 136, Nr. 14 (Preis: 40 Livres de Suisse)</Seitenverweise>
-                <Bemerkungen>Ebel 1818</Bemerkungen>
-                <recID>2018032114070070900</recID>
-                <pID>2F2371F6F22877448B6C08C4E49148BF</pID>
-                <details>
-                    <LitNr>LIT10152</LitNr>
-                    <AutorHsg>
-                        <values>
-                            <value>
-                                <text>Ebel, Johann Gottfried</text>
-                                <normalised_name>Ebel, Johann Gottfried</normalised_name>
-                                <gnd>116319577</gnd>
-                                <wd>Q89013</wd>
-                            </value>
-                        </values>
-                    </AutorHsg>
-                    <Titel>Manuel du Voyageur en Suisse</Titel>
-                    <Verlag>
-                        <values>
-                            <value>
-                                <text>Orell, Füssli &amp; Comp.</text>
-                                <normalised_name>Orell, Füssli &amp; Comp</normalised_name>
-                                <gnd>1073001172</gnd>
-                                <wd/>
-                            </value>
-                        </values>
-                    </Verlag>
-                    <Vol>3. Aufl.</Vol>
-                    <Jahr>1818</Jahr>
-                    <Band>3 Teile</Band>
-                    <recID>2017062210315929791</recID>
-                    <Ort>
-                        <values>
-                            <value>
-                                <text>Zürich</text>
-                                <gnd>4068038-1</gnd>
-                                <wd>Q72</wd>
-                            </value>
-                        </values>
-                    </Ort>
-                    <pID>9B59A8F647259C488037C18BA821D7CA</pID>
-                </details>
-            </literature>
-            <literature>
-                <WerkInvNr>GABRI10680</WerkInvNr>
-                <LitNr>LIT10059</LitNr>
-                <Künstlername>Lory père / Lafond / Zehender</Künstlername>
-                <Seitenverweise>Teil 1, S. 186, Nr. 14 (Preis: 40 Livres de Suisse)</Seitenverweise>
-                <Bemerkungen>Ebel 1810-1811</Bemerkungen>
-                <recID>2018032115291595430</recID>
-                <pID>12CDC2633443E5429944C7C3E0E9E7A7</pID>
-                <details>
-                    <LitNr>LIT10059</LitNr>
-                    <AutorHsg>
-                        <values>
-                            <value>
-                                <text>Ebel, Johann Gottfried</text>
-                                <normalised_name>Ebel, Johann Gottfried</normalised_name>
-                                <gnd>116319577</gnd>
-                                <wd>Q89013</wd>
-                            </value>
-                        </values>
-                    </AutorHsg>
-                    <Titel>Manuel du Voyageur en Suisse</Titel>
-                    <Verlag>
-                        <values>
-                            <value>
-                                <text>Orell, Füssli &amp; Comp</text>
-                                <normalised_name>Orell, Füssli &amp; Comp</normalised_name>
-                                <gnd>1073001172</gnd>
-                                <wd/>
-                            </value>
-                        </values>
-                    </Verlag>
-                    <Vol>2. Aufl.</Vol>
-                    <Jahr>0</Jahr>
-                    <Band>4 Teile</Band>
-                    <recID>2017030610470361010</recID>
-                    <Ort>
-                        <values>
-                            <value>
-                                <text>Zürich</text>
-                                <gnd>4068038-1</gnd>
-                                <wd>Q72</wd>
-                            </value>
-                        </values>
-                    </Ort>
-                    <JahrText>1810-1811</JahrText>
-                    <pID>403BAEC3064E4648B4BADA543F05BD88</pID>
-                </details>
-            </literature>
-            <literature>
-                <WerkInvNr>GABRI10680</WerkInvNr>
-                <LitNr>LIT10125</LitNr>
-                <Künstlername>Lory père / Lafond / Zehender</Künstlername>
-                <Seitenverweise>S. 574-578 (Ankündigung des Werks)</Seitenverweise>
-                <Bemerkungen>Haller 1797</Bemerkungen>
-                <recID>2018050409193176900</recID>
-                <pID>C99DACDD0A1789478F227021E64B418F</pID>
-                <details>
-                    <LitNr>LIT10125</LitNr>
-                    <AutorHsg>
-                        <values>
-                            <value>
-                                <text>Haller, Berchtold Friedrich</text>
-                                <normalised_name>Haller, Berchtold Friedrich</normalised_name>
-                                <gnd/>
-                                <wd/>
-                            </value>
-                        </values>
-                    </AutorHsg>
-                    <Titel>Kunstnachrichten aus der Schweiz, vom Jahr 1794 bis 1796</Titel>
-                    <Vol>5. Stück</Vol>
-                    <Jahr>1797</Jahr>
-                    <inZeitschrift>Neue Miscellaneen artistischen Inhalts für Künstler und Kunstliebhaber</inZeitschrift>
-                    <recID>2017061409312422103</recID>
-                    <JahrText>525-622</JahrText>
-                    <pID>0F0EE8BA89B86E448117DDA168C583D2</pID>
-                </details>
-            </literature>
-            <literature>
-                <WerkInvNr>GABRI10680</WerkInvNr>
-                <LitNr>LIT10168</LitNr>
-                <Künstlername>Lory père / Lafond / Zehender</Künstlername>
-                <Seitenverweise>Heft 1, S. 68 (Preis der Folge: 68 Livres de Suisse/Schweizerfranken)</Seitenverweise>
-                <Bemerkungen>Haller 1807</Bemerkungen>
-                <recID>2018050708434261450</recID>
-                <pID>DD8508ADEDE3B84F97AC2B139622C16D</pID>
-                <details>
-                    <LitNr>LIT10168</LitNr>
-                    <AutorHsg>
-                        <values>
-                            <value>
-                                <text>Haller, Berchtold Friedrich</text>
-                                <normalised_name>Haller, Berchtold Friedrich</normalised_name>
-                                <gnd/>
-                                <wd/>
-                            </value>
-                        </values>
-                    </AutorHsg>
-                    <Titel>Kunstnachrichten aus der Schweiz von 1796 bis 1805</Titel>
-                    <Jahr>1807</Jahr>
-                    <Band>Bd. 2</Band>
-                    <inZeitschrift>Archiv für Künstler und Kunstfreunde</inZeitschrift>
-                    <recID>2018050708423818958</recID>
-                    <pID>83B75BA16ABECD43832BD90EE22099C2</pID>
-                </details>
-            </literature>
-            <literature>
-                <WerkInvNr>GABRI10680</WerkInvNr>
-                <LitNr>LIT10119</LitNr>
-                <Künstlername>Lory père / Lafond / Zehender</Künstlername>
-                <Seitenverweise>S. 278, Nr. 15 (Preis: 10 Laubtaler)</Seitenverweise>
-                <Bemerkungen>Haller 1806</Bemerkungen>
-                <recID>2018050709490023640</recID>
-                <pID>0AC7C70CEBDE8B419249B76073C42D44</pID>
-                <details>
-                    <LitNr>LIT10119</LitNr>
-                    <AutorHsg>
-                        <values>
-                            <value>
-                                <text>Haller, Berchtold Friedrich</text>
-                                <normalised_name>Haller, Berchtold Friedrich</normalised_name>
-                                <gnd/>
-                                <wd/>
-                            </value>
-                        </values>
-                    </AutorHsg>
-                    <Titel>Kritische Uebersicht des Zustandes der Künste in der Schweiz, und der vorzüglichsten Helvetischen Kunstprodukte</Titel>
-                    <Vol>1</Vol>
-                    <Jahr>1806</Jahr>
-                    <inZeitschrift>Bibliothek der redenden und bildenden Künste</inZeitschrift>
-                    <recID>2017061311063949070</recID>
-                    <JahrText>S. 195-318</JahrText>
-                    <pID>BF66769DC379D1449A1A4BDBD164B0A0</pID>
-                </details>
-            </literature>
-            <literature>
-                <WerkInvNr>GABRI10680</WerkInvNr>
-                <LitNr>LIT10170</LitNr>
-                <Künstlername>Lory père / Lafond / Zehender</Künstlername>
-                <Seitenverweise>S. 203-204 (Preis der Folge: 40 Livres de Suisse)</Seitenverweise>
-                <Bemerkungen>Kunstanzeigen 1798</Bemerkungen>
-                <recID>2018050809502013059</recID>
-                <pID>0E11932F9CE76845B3A2FF2D6BF8FE7F</pID>
-                <details>
-                    <LitNr>LIT10170</LitNr>
-                    <Titel>Kunstanzeigen von 1798</Titel>
-                    <Verlag>
-                        <values>
-                            <value>
-                                <text>Orell, Füssli &amp; Comp.</text>
-                                <normalised_name>Orell, Füssli &amp; Comp</normalised_name>
-                                <gnd>1073001172</gnd>
-                                <wd/>
-                            </value>
-                        </values>
-                    </Verlag>
-                    <Jahr>1798</Jahr>
-                    <inZeitschrift>Neu helvetischer Almanach für das Jahr 1799</inZeitschrift>
-                    <recID>2018050809470922932</recID>
-                    <Ort>
-                        <values>
-                            <value>
-                                <text>Zürich</text>
-                                <gnd>4068038-1</gnd>
-                                <wd>Q72</wd>
-                            </value>
-                        </values>
-                    </Ort>
-                    <JahrText>S. 202-208</JahrText>
-                    <pID>F3594750803B284CAE4C7ED8656B168C</pID>
-                </details>
-            </literature>
-        </literatureList>
-    </record>
-    <record>
-        <InvNrIntern>DIKEN10631</InvNrIntern>
-        <KünsterIn>Dikenmann / Siegfried / Dikenmann</KünsterIn>
-        <Titel>Vue de Thoune et de l'hotel et pension de Bellevue. Blatt 8 der Folge "Vues de Suisse. 114 feuilles gravés"</Titel>
-        <LogistikID>DIKEN10631</LogistikID>
-        <WerkGruppenID>2017021317385931978</WerkGruppenID>
-        <Entstvon>1850</Entstvon>
-        <Entstbis>1850</Entstbis>
-        <Datierung>circa 1850</Datierung>
-        <Technik>Radierung und Aquatinta, handkoloriert, stellenweise gummiert, bis zur Darstellung beschnitten, mit schwarzer Einfassungslinie</Technik>
-        <Zuständigkeit>Prov</Zuständigkeit>
-        <Werkstatus/>
-        <KaufmStatus/>
-        <Salestatus/>
-        <Edition/>
-        <Material>Papier</Material>
-        <Material2/>
-        <EditionÜbers/>
-        <Bemerkungen/>
-        <BezKünstler/>
-        <Bezfremd>Auf der ehemaligen Unterlage recto unten Mitte mit Feder in brauner Tinte betitelt "Vue de Thoune / et de l'hotel et pension de Bellevue"; verso Mitte mit Bleistift nummeriert "8"</Bezfremd>
-        <Zertifikat/>
-        <ZertifikatÜbers/>
-        <TitelÜbers/>
-        <TechnikÜbers/>
-        <InvDatum>00.00.00</InvDatum>
-        <Provenienz/>
-        <Gattung>D - Druckgrafik</Gattung>
-        <TitelÜbers2/>
-        <InvNr>SFF_D_1565</InvNr>
-        <Keywords>
+          </Verlag>
+          <Jahr>1921</Jahr>
+          <recID>2017021010060225169</recID>
+          <Ort>
             <values>
-                <value>
-                    <text>Fluss</text>
-                    <gnd>4131972-2</gnd>
-                    <wd>Q4022</wd>
-                </value>
-                <value>
-                    <text>Schifffahrt</text>
-                    <gnd>4116383-7</gnd>
-                    <wd>Q155930</wd>
-                </value>
-                <value>
-                    <text>Gaststätte</text>
-                    <gnd>4071600-4</gnd>
-                    <wd>Q256020</wd>
-                </value>
-                <value>
-                    <text>Herberge</text>
-                    <gnd>4130904-2</gnd>
-                    <wd>Q654772</wd>
-                </value>
-                <value>
-                    <text>Hotel</text>
-                    <gnd>4025922-5</gnd>
-                    <wd>Q27686</wd>
-                </value>
-                <value>
-                    <text>Tourismus</text>
-                    <gnd>4018406-7</gnd>
-                    <wd>Q49389</wd>
-                </value>
-                <value>
-                    <text>Schloss</text>
-                    <gnd>4052753-0</gnd>
-                    <wd>Q751876</wd>
-                </value>
-                <value>
-                    <text>Burg</text>
-                    <gnd>4009104-1</gnd>
-                    <wd>Q23413</wd>
-                </value>
-                <value>
-                    <text>Ruine</text>
-                    <gnd>4050934-5</gnd>
-                    <wd>Q109607</wd>
-                </value>
+              <value>
+                <text>Lausanne</text>
+                <gnd>4034750-3</gnd>
+                <wd>Q807</wd>
+              </value>
             </values>
-        </Keywords>
-        <TechnikÜbers2/>
-        <EditionÜbers2/>
-        <Ortsbezug>
+          </Ort>
+          <pID>3EC4888F64850B44954AB4B6989480DC</pID>
+        </details>
+      </literature>
+      <literature>
+        <WerkInvNr>GABRI10680</WerkInvNr>
+        <LitNr>LIT10057</LitNr>
+        <Künstlername>Lory père / Lafond / Zehender</Künstlername>
+        <Seitenverweise>Teil 1, S. 149, Nr. 11 (Folge, Preis: 40 Livres de Suisse)</Seitenverweise>
+        <Bemerkungen>Ebel 1804-1805</Bemerkungen>
+        <recID>2017061917320932561</recID>
+        <pID>A77D360C92749543B174285414049956</pID>
+        <details>
+          <LitNr>LIT10057</LitNr>
+          <AutorHsg>
             <values>
-                <value>
-                    <text>Thun (Kanton Bern)</text>
-                    <gnd>4059991-7</gnd>
-                    <wd>Q68978</wd>
-                </value>
-                <value>
-                    <text>Aare (Fluss)</text>
-                    <gnd>4000019-9</gnd>
-                    <wd>Q1675</wd>
-                </value>
+              <value>
+                <text>Ebel, Johann Gottfried</text>
+                <normalised_name>Ebel, Johann Gottfried</normalised_name>
+                <gnd>116319577</gnd>
+                <wd>Q89013</wd>
+              </value>
             </values>
-        </Ortsbezug>
-        <Masse1Suffix/>
-        <Masse1Prefix/>
-        <RefNr>A_12</RefNr>
-        <InschriftÜbers2/>
-        <ZertÜbers2/>
-        <Datumstempel>24.07.2018</Datumstempel>
-        <Zeitstempel>08:11:19</Zeitstempel>
-        <Ueberprüftam>00.00.00</Ueberprüftam>
-        <Ueberprüftvon/>
-        <Sortation>0</Sortation>
-        <pID>DCA2C32DF8022E48B5B8C0BCE4A10136</pID>
-        <record-identifier>SFF_D_1565</record-identifier>
-        <artists>
-            <artist creation="true">
-                <id>Dikenmann</id>
-                <link>Dikenmann / Siegfried / Dikenmann</link>
-                <gnd>1089422318</gnd>
-                <wd>Q94919373</wd>
-                <gnd-name>Dikenmann, Johann Rudolf</gnd-name>
-                <fullName>Johann Rudolf Dikenmann</fullName>
-                <singular>False</singular>
-                <raw>Johann Rudolf Dikenmann (Zeichner), Heinrich Siegfried (Druckgraphiker), Johann Rudolf Dikenmann (Verleger)</raw>
-                <roles>
-                    <roleValue role_uri="https://d-nb.info/gnd/4200345-3" creation="true">Zeichner</roleValue>
-                </roles>
-            </artist>
-            <artist production="true">
-                <id>Siegfried</id>
-                <link>Dikenmann / Siegfried / Dikenmann</link>
-                <gnd>1073721981</gnd>
-                <wd>Q30308445</wd>
-                <gnd-name>Siegfried, Heinrich</gnd-name>
-                <fullName>Heinrich Siegfried</fullName>
-                <singular>False</singular>
-                <raw>Johann Rudolf Dikenmann (Zeichner), Heinrich Siegfried (Druckgraphiker), Johann Rudolf Dikenmann (Verleger)</raw>
-                <roles>
-                    <roleValue role_uri="https://d-nb.info/gnd/4461989-3" production="true">Druckgraphiker</roleValue>
-                </roles>
-            </artist>
-            <artist production="true">
-                <id>Dikenmann</id>
-                <link>Dikenmann / Siegfried / Dikenmann</link>
-                <gnd>1089422318</gnd>
-                <wd>Q94919373</wd>
-                <gnd-name>Dikenmann, Johann Rudolf</gnd-name>
-                <fullName>Johann Rudolf Dikenmann</fullName>
-                <singular>False</singular>
-                <raw>Johann Rudolf Dikenmann (Zeichner), Heinrich Siegfried (Druckgraphiker), Johann Rudolf Dikenmann (Verleger)</raw>
-                <roles>
-                    <roleValue role_uri="https://d-nb.info/gnd/4138343-6" production="true">Verleger</roleValue>
-                </roles>
-            </artist>
-        </artists>
-        <image filename="SFF_D_1565.tif" width="5976" height="4068">SFF_D_1565</image>
-        <dimensions>
-            <dimension>
-                <UUID>DEBD3190DF7CDC48A4033F69D57BD32A</UUID>
-                <WerkInvNr>DIKEN10631</WerkInvNr>
-                <Typ>HBT</Typ>
-                <Einheit>cm</Einheit>
-                <Höhe>12.8</Höhe>
-                <Breite>17.8</Breite>
-                <Tiefe>0</Tiefe>
-                <Prefix>Blatt</Prefix>
-                <Prefix2>sheet</Prefix2>
-                <type>sheet</type>
-                <typeuri>http://vocab.getty.edu/aat/300189648</typeuri>
-                <qualifier>exact</qualifier>
-                <Position>0</Position>
-                <pID>37A1DB1C651A39448592C6D6C13D84AE</pID>
-            </dimension>
-            <dimension>
-                <UUID>7DCF74413CD26F47AD414954AB7009A7</UUID>
-                <WerkInvNr>DIKEN10631</WerkInvNr>
-                <Typ>HBT</Typ>
-                <Einheit>cm</Einheit>
-                <Höhe>20.7</Höhe>
-                <Breite>27.2</Breite>
-                <Tiefe>0</Tiefe>
-                <Prefix>Unterlage</Prefix>
-                <Prefix2>mounting</Prefix2>
-                <type>mounting</type>
-                <typeuri>http://vocab.getty.edu/aat/300389686</typeuri>
-                <qualifier>exact</qualifier>
-                <Position>0</Position>
-                <pID>7D53E993D65D61429744E895065365A3</pID>
-            </dimension>
-        </dimensions>
-        <literatureList>
-            <literature>
-                <WerkInvNr>DIKEN10631</WerkInvNr>
-                <LitNr>LIT10016</LitNr>
-                <Künstlername>Dikenmann Johann Rudolf</Künstlername>
-                <Seitenverweise>S. 934, Nr. 8</Seitenverweise>
-                <Bemerkungen>Engelmann 1858</Bemerkungen>
-                <recID>2017040609122626019</recID>
-                <pID>981A6FFDDC0C9F43B66A706FFB9D375A</pID>
-                <details>
-                    <LitNr>LIT10016</LitNr>
-                    <AutorHsg>
-                        <values>
-                            <value>
-                                <text>Engelmann, Wilhelm</text>
-                                <normalised_name>Engelmann, Wilhelm</normalised_name>
-                                <gnd/>
-                                <wd/>
-                            </value>
-                        </values>
-                    </AutorHsg>
-                    <Titel>Bibliotheca Geographica. Verzeichniss der seit der Mitte des vorigen Jahrhunderts bis zum Ende des Jahres 1856 in Deutschland erschienenen Werke über Geographie und Reisen mit Einschluss der Landkarten, Pläne und Ansichten</Titel>
-                    <Verlag>
-                        <values>
-                            <value>
-                                <text>Engelmann</text>
-                                <normalised_name>Engelmann</normalised_name>
-                                <gnd/>
-                                <wd/>
-                            </value>
-                        </values>
-                    </Verlag>
-                    <Jahr>1858</Jahr>
-                    <recID>2017022310005530278</recID>
-                    <Ort>
-                        <values>
-                            <value>
-                                <text>Leipzig</text>
-                                <gnd>4035206-7</gnd>
-                                <wd>Q2079</wd>
-                            </value>
-                        </values>
-                    </Ort>
-                    <pID>D047B2DD830A9F4E8212D4C32BCD4CAD</pID>
-                </details>
-            </literature>
-            <literature>
-                <WerkInvNr>DIKEN10631</WerkInvNr>
-                <LitNr>LIT10030</LitNr>
-                <Künstlername>Dikenmann Johann Rudolf</Künstlername>
-                <Seitenverweise>S. 204, Nr. 168 (Folge)</Seitenverweise>
-                <Bemerkungen>Weber 1984</Bemerkungen>
-                <recID>2017061414150825296</recID>
-                <pID>EFC24B2CC6C39444A1AB6B061FECE152</pID>
-                <details>
-                    <LitNr>LIT10030</LitNr>
-                    <AutorHsg>
-                        <values>
-                            <value>
-                                <text>Weber, Bruno</text>
-                                <normalised_name>Weber, Bruno</normalised_name>
-                                <gnd/>
-                                <wd/>
-                            </value>
-                        </values>
-                    </AutorHsg>
-                    <Titel>Graubünden in alten Ansichten. Landschaftsporträts reisender Künstler vom 16. bis zum frühen 19. Jahrhundert. Mit einem Verzeichnis topographischer Ansichten in der Druckgraphik von den Anfängen bis um 1880</Titel>
-                    <Verlag>
-                        <values>
-                            <value>
-                                <text>Rhätisches Museum</text>
-                                <normalised_name>Rhätisches Museum</normalised_name>
-                                <gnd/>
-                                <wd/>
-                            </value>
-                        </values>
-                    </Verlag>
-                    <Jahr>1984</Jahr>
-                    <recID>2017030111313313995</recID>
-                    <Ort>
-                        <values>
-                            <value>
-                                <text>Chur</text>
-                                <gnd>4010189-7</gnd>
-                                <wd>Q69007</wd>
-                            </value>
-                        </values>
-                    </Ort>
-                    <pID>0B3A7959FCEB7F4E821843B1F6F4F578</pID>
-                </details>
-            </literature>
-            <literature>
-                <WerkInvNr>DIKEN10631</WerkInvNr>
-                <LitNr>LIT10051</LitNr>
-                <Künstlername>Dikenmann Johann Rudolf</Künstlername>
-                <Seitenverweise>S. 415, 452, 475-476 und 557 (zu den Folgen von Dikenmann)</Seitenverweise>
-                <Bemerkungen>Ghiringhelli 2003</Bemerkungen>
-                <recID>2017061414474227177</recID>
-                <pID>C01555ACEAC4E74EA09E90200885178C</pID>
-                <details>
-                    <LitNr>LIT10051</LitNr>
-                    <AutorHsg>
-                        <values>
-                            <value>
-                                <text>Ghiringhelli, Giorgio</text>
-                                <normalised_name>Ghiringhelli, Giorgio</normalised_name>
-                                <gnd>140426353</gnd>
-                                <wd/>
-                            </value>
-                        </values>
-                    </AutorHsg>
-                    <Titel>Il Ticino nelle vecchie stampe</Titel>
-                    <Verlag>
-                        <values>
-                            <value>
-                                <text>Edizioni Casagrande</text>
-                                <normalised_name>Edizioni Casagrande</normalised_name>
-                                <gnd>5513616-3</gnd>
-                                <wd/>
-                            </value>
-                        </values>
-                    </Verlag>
-                    <Jahr>2003</Jahr>
-                    <recID>2017030316401516755</recID>
-                    <Ort>
-                        <values>
-                            <value>
-                                <text>Bellinzona</text>
-                                <gnd>4005432-9</gnd>
-                                <wd>Q64044</wd>
-                            </value>
-                        </values>
-                    </Ort>
-                    <pID>CF50F8553CD8104AB43B1DBA1EBC80DD</pID>
-                </details>
-            </literature>
-            <literature>
-                <WerkInvNr>DIKEN10631</WerkInvNr>
-                <LitNr>LIT10017</LitNr>
-                <Künstlername>Dikenmann Johann Rudolf</Künstlername>
-                <Seitenverweise>Bd. 1, S. 187 und Bd. 2, S. 28 (zu den Folgen von Dikenmann)</Seitenverweise>
-                <Bemerkungen>Gattlen 1987-1992</Bemerkungen>
-                <recID>2017061414520821814</recID>
-                <pID>F44655D198940C4BB565827C9B798C5C</pID>
-                <details>
-                    <LitNr>LIT10017</LitNr>
-                    <AutorHsg>
-                        <values>
-                            <value>
-                                <text>Gattlen, Anton</text>
-                                <normalised_name>Gattlen, Anton</normalised_name>
-                                <gnd>130218383</gnd>
-                                <wd>Q59531839</wd>
-                            </value>
-                        </values>
-                    </AutorHsg>
-                    <Titel>Druckgrafische Ortsansichten des Wallis, 1548-1850</Titel>
-                    <Verlag>
-                        <values>
-                            <value>
-                                <text>Editions Gravures</text>
-                                <normalised_name>Editions Gravures</normalised_name>
-                                <gnd/>
-                                <wd/>
-                            </value>
-                        </values>
-                    </Verlag>
-                    <Jahr>0</Jahr>
-                    <Band>2 Bde.</Band>
-                    <recID>2017022310051121100</recID>
-                    <Ort>
-                        <values>
-                            <value>
-                                <text>Brig</text>
-                                <gnd>4008259-3</gnd>
-                                <wd>Q15582</wd>
-                            </value>
-                        </values>
-                    </Ort>
-                    <JahrText>1987-1992</JahrText>
-                    <pID>B037E90647010845BCBD7A6C0B58A69E</pID>
-                </details>
-            </literature>
-            <literature>
-                <WerkInvNr>DIKEN10631</WerkInvNr>
-                <LitNr>LIT10052</LitNr>
-                <Künstlername>Dikenmann Johann Rudolf</Künstlername>
-                <Seitenverweise>S. 151, 161 und 181 (zu den Folgen von Dikenmann)</Seitenverweise>
-                <Bemerkungen>Ghiringhelli 2007</Bemerkungen>
-                <recID>2017061415545866640</recID>
-                <pID>A8ECD7A31A13BE4F9387626E21FB2F37</pID>
-                <details>
-                    <LitNr>LIT10052</LitNr>
-                    <AutorHsg>
-                        <values>
-                            <value>
-                                <text>Ghiringhelli, Giorgio</text>
-                                <normalised_name>Ghiringhelli, Giorgio</normalised_name>
-                                <gnd>140426353</gnd>
-                                <wd/>
-                            </value>
-                        </values>
-                    </AutorHsg>
-                    <Titel>Il Ponte del Diavolo nelle vecchie stampe</Titel>
-                    <Verlag>
-                        <values>
-                            <value>
-                                <text>Edizioni Casagrande</text>
-                                <normalised_name>Edizioni Casagrande</normalised_name>
-                                <gnd>5513616-3</gnd>
-                                <wd/>
-                            </value>
-                        </values>
-                    </Verlag>
-                    <Jahr>2007</Jahr>
-                    <recID>2017030316411918627</recID>
-                    <Ort>
-                        <values>
-                            <value>
-                                <text>Bellinzona</text>
-                                <gnd>4005432-9</gnd>
-                                <wd>Q64044</wd>
-                            </value>
-                        </values>
-                    </Ort>
-                    <pID>934E2613F796EA41B665711D32AD0644</pID>
-                </details>
-            </literature>
-            <literature>
-                <WerkInvNr>DIKEN10631</WerkInvNr>
-                <LitNr>LIT10028</LitNr>
-                <Künstlername>Dikenmann Johann Rudolf</Künstlername>
-                <Seitenverweise>S. 128, Nr. 122</Seitenverweise>
-                <Bemerkungen>Krebser 2004</Bemerkungen>
-                <recID>2017061516275557940</recID>
-                <pID>B6B3C04E48917343B3C6803E3F8FE7FA</pID>
-                <details>
-                    <LitNr>LIT10028</LitNr>
-                    <AutorHsg>
-                        <values>
-                            <value>
-                                <text>Krebser, Markus</text>
-                                <normalised_name>Krebser, Markus</normalised_name>
-                                <gnd>106167324</gnd>
-                                <wd/>
-                            </value>
-                        </values>
-                    </AutorHsg>
-                    <Titel>Thun und seine Landschaft in der Kunst der Kleinmeister: Druckgrafik von 1548 bis 1868</Titel>
-                    <Verlag>
-                        <values>
-                            <value>
-                                <text>Krebser</text>
-                                <normalised_name>Krebser</normalised_name>
-                                <gnd/>
-                                <wd/>
-                            </value>
-                        </values>
-                    </Verlag>
-                    <Jahr>2004</Jahr>
-                    <recID>2017030111191126563</recID>
-                    <Ort>
-                        <values>
-                            <value>
-                                <text>Thun</text>
-                                <gnd>4059991-7</gnd>
-                                <wd>Q68978</wd>
-                            </value>
-                        </values>
-                    </Ort>
-                    <pID>CACEEACE423EE84AA68E16FC18E94CD9</pID>
-                </details>
-            </literature>
-            <literature>
-                <WerkInvNr>DIKEN10631</WerkInvNr>
-                <LitNr>LIT10136</LitNr>
-                <Künstlername>Dikenmann / Siegfried / Dikenmann</Künstlername>
-                <Seitenverweise>Nr. 8 (Format en Folio)</Seitenverweise>
-                <Bemerkungen>Dikenmann 1882-1888</Bemerkungen>
-                <recID>2018043008300313740</recID>
-                <pID>286286A60A0ABE4AB105C465B9653491</pID>
-                <details>
-                    <LitNr>LIT10136</LitNr>
-                    <AutorHsg>
-                        <values>
-                            <value>
-                                <text>Dikenmann, Johann Rudolf</text>
-                                <normalised_name>Dikenmann, Johann Rudolf</normalised_name>
-                                <gnd>1089330405</gnd>
-                                <wd>Q94919210</wd>
-                            </value>
-                        </values>
-                    </AutorHsg>
-                    <Titel>Catalogue des vues, costumes et panoramas suisses, editions originales publiées par R. Dikenmann peintre-editeur Zurich RIndermarkt 14</Titel>
-                    <Jahr>0</Jahr>
-                    <recID>2017061414100217781</recID>
-                    <JahrText>1882-1888</JahrText>
-                    <pID>140D25BA6D2E9445A5E3EF5E8E0C8504</pID>
-                </details>
-            </literature>
-        </literatureList>
-        <series>
-            <id>DIKEN10631</id>
-            <series>"Vues de Suisse. 114 feuilles gravés"</series>
-            <number>8</number>
-        </series>
-    </record>
+          </AutorHsg>
+          <Titel>Anleitung, auf die nützlichste und genussvollste Art die Schweitz zu bereisen</Titel>
+          <Verlag>
+            <values>
+              <value>
+                <text>Orell, Füssli &amp; Comp</text>
+                <normalised_name>Orell, Füssli &amp; Comp</normalised_name>
+                <gnd>1073001172</gnd>
+                <wd/>
+              </value>
+            </values>
+          </Verlag>
+          <Vol>2. Aufl.</Vol>
+          <Jahr>0</Jahr>
+          <Band>4 Teile</Band>
+          <recID>2017030610425530534</recID>
+          <Ort>
+            <values>
+              <value>
+                <text>Zürich</text>
+                <gnd>4068038-1</gnd>
+                <wd>Q72</wd>
+              </value>
+            </values>
+          </Ort>
+          <JahrText>1804-1805</JahrText>
+          <pID>F38DFE3F2243E842B9024AF5CF55710A</pID>
+        </details>
+      </literature>
+      <literature>
+        <WerkInvNr>GABRI10680</WerkInvNr>
+        <LitNr>LIT10115</LitNr>
+        <Künstlername>Lory père / Lafond / Zehender</Künstlername>
+        <Seitenverweise>S. 41 (Folge, Preis: 40 Franken)</Seitenverweise>
+        <Bemerkungen>Catalogue des Vues 1818</Bemerkungen>
+        <recID>2017062012080126603</recID>
+        <pID>28C604ACC6C5D24E8D0BC800AE287E05</pID>
+        <details>
+          <LitNr>LIT10115</LitNr>
+          <Titel>Catalogue des Vues, Costumes, Cartes et Panorama Suisses du Magazin des Arts de H. Keller, mds. d'Estampes et de Materiaux de dessin vis à vis de l'Épée à Zurich</Titel>
+          <Jahr>1818</Jahr>
+          <recID>2017061310091716541</recID>
+          <Ort>
+            <values>
+              <value>
+                <text>Zürich</text>
+                <gnd>4068038-1</gnd>
+                <wd>Q72</wd>
+              </value>
+            </values>
+          </Ort>
+          <pID>93F14D15A9BF7A449D0E70B7197A04C7</pID>
+        </details>
+      </literature>
+      <literature>
+        <WerkInvNr>GABRI10680</WerkInvNr>
+        <LitNr>LIT10112</LitNr>
+        <Künstlername>Lory père / Lafond / Zehender</Künstlername>
+        <Seitenverweise>S. 10 (Preis: 60 Livres de France)</Seitenverweise>
+        <Bemerkungen>Catalogue du magazin des arts 1798</Bemerkungen>
+        <recID>2018030716123546000</recID>
+        <pID>7FB21AFF9013D840A25DC031477AC37C</pID>
+        <details>
+          <LitNr>LIT10112</LitNr>
+          <Titel>Catalogue du magazin des arts de Henri et Jean Henri Fuesli à Zuric</Titel>
+          <Jahr>1798</Jahr>
+          <recID>2017061310013120793</recID>
+          <pID>19B3E55B4A7FEC41B6E2B5043F108043</pID>
+        </details>
+      </literature>
+      <literature>
+        <WerkInvNr>GABRI10680</WerkInvNr>
+        <LitNr>LIT10058</LitNr>
+        <Künstlername>Lory père / Lafond / Zehender</Künstlername>
+        <Seitenverweise>Teil 1, S. 149, Nr. 11 (Preis: 40 Livres de Suisse)</Seitenverweise>
+        <Bemerkungen>Ebel 1809-1810</Bemerkungen>
+        <recID>2018030816291916842</recID>
+        <pID>E0A91CE998E05D40AA6497B4A17463C1</pID>
+        <details>
+          <LitNr>LIT10058</LitNr>
+          <AutorHsg>
+            <values>
+              <value>
+                <text>Ebel, Johann Gottfried</text>
+                <normalised_name>Ebel, Johann Gottfried</normalised_name>
+                <gnd>116319577</gnd>
+                <wd>Q89013</wd>
+              </value>
+            </values>
+          </AutorHsg>
+          <Titel>Anleitung, auf die nützlichste und genussvollste Art die Schweitz zu bereisen</Titel>
+          <Verlag>
+            <values>
+              <value>
+                <text>Orell, Füssli &amp; Comp</text>
+                <normalised_name>Orell, Füssli &amp; Comp</normalised_name>
+                <gnd>1073001172</gnd>
+                <wd/>
+              </value>
+            </values>
+          </Verlag>
+          <Vol>3. Aufl.</Vol>
+          <Jahr>0</Jahr>
+          <Band>4 Teile</Band>
+          <recID>2017030610444523226</recID>
+          <Ort>
+            <values>
+              <value>
+                <text>Zürich</text>
+                <gnd>4068038-1</gnd>
+                <wd>Q72</wd>
+              </value>
+            </values>
+          </Ort>
+          <JahrText>1809-1810</JahrText>
+          <pID>AF2EB518C6CD0747ADDA7586C94F14F0</pID>
+        </details>
+      </literature>
+      <literature>
+        <WerkInvNr>GABRI10680</WerkInvNr>
+        <LitNr>LIT10152</LitNr>
+        <Künstlername>Lory père / Lafond / Zehender</Künstlername>
+        <Seitenverweise>Teil 1, S. 136, Nr. 14 (Preis: 40 Livres de Suisse)</Seitenverweise>
+        <Bemerkungen>Ebel 1818</Bemerkungen>
+        <recID>2018032114070070900</recID>
+        <pID>2F2371F6F22877448B6C08C4E49148BF</pID>
+        <details>
+          <LitNr>LIT10152</LitNr>
+          <AutorHsg>
+            <values>
+              <value>
+                <text>Ebel, Johann Gottfried</text>
+                <normalised_name>Ebel, Johann Gottfried</normalised_name>
+                <gnd>116319577</gnd>
+                <wd>Q89013</wd>
+              </value>
+            </values>
+          </AutorHsg>
+          <Titel>Manuel du Voyageur en Suisse</Titel>
+          <Verlag>
+            <values>
+              <value>
+                <text>Orell, Füssli &amp; Comp.</text>
+                <normalised_name>Orell, Füssli &amp; Comp</normalised_name>
+                <gnd>1073001172</gnd>
+                <wd/>
+              </value>
+            </values>
+          </Verlag>
+          <Vol>3. Aufl.</Vol>
+          <Jahr>1818</Jahr>
+          <Band>3 Teile</Band>
+          <recID>2017062210315929791</recID>
+          <Ort>
+            <values>
+              <value>
+                <text>Zürich</text>
+                <gnd>4068038-1</gnd>
+                <wd>Q72</wd>
+              </value>
+            </values>
+          </Ort>
+          <pID>9B59A8F647259C488037C18BA821D7CA</pID>
+        </details>
+      </literature>
+      <literature>
+        <WerkInvNr>GABRI10680</WerkInvNr>
+        <LitNr>LIT10059</LitNr>
+        <Künstlername>Lory père / Lafond / Zehender</Künstlername>
+        <Seitenverweise>Teil 1, S. 186, Nr. 14 (Preis: 40 Livres de Suisse)</Seitenverweise>
+        <Bemerkungen>Ebel 1810-1811</Bemerkungen>
+        <recID>2018032115291595430</recID>
+        <pID>12CDC2633443E5429944C7C3E0E9E7A7</pID>
+        <details>
+          <LitNr>LIT10059</LitNr>
+          <AutorHsg>
+            <values>
+              <value>
+                <text>Ebel, Johann Gottfried</text>
+                <normalised_name>Ebel, Johann Gottfried</normalised_name>
+                <gnd>116319577</gnd>
+                <wd>Q89013</wd>
+              </value>
+            </values>
+          </AutorHsg>
+          <Titel>Manuel du Voyageur en Suisse</Titel>
+          <Verlag>
+            <values>
+              <value>
+                <text>Orell, Füssli &amp; Comp</text>
+                <normalised_name>Orell, Füssli &amp; Comp</normalised_name>
+                <gnd>1073001172</gnd>
+                <wd/>
+              </value>
+            </values>
+          </Verlag>
+          <Vol>2. Aufl.</Vol>
+          <Jahr>0</Jahr>
+          <Band>4 Teile</Band>
+          <recID>2017030610470361010</recID>
+          <Ort>
+            <values>
+              <value>
+                <text>Zürich</text>
+                <gnd>4068038-1</gnd>
+                <wd>Q72</wd>
+              </value>
+            </values>
+          </Ort>
+          <JahrText>1810-1811</JahrText>
+          <pID>403BAEC3064E4648B4BADA543F05BD88</pID>
+        </details>
+      </literature>
+      <literature>
+        <WerkInvNr>GABRI10680</WerkInvNr>
+        <LitNr>LIT10125</LitNr>
+        <Künstlername>Lory père / Lafond / Zehender</Künstlername>
+        <Seitenverweise>S. 574-578 (Ankündigung des Werks)</Seitenverweise>
+        <Bemerkungen>Haller 1797</Bemerkungen>
+        <recID>2018050409193176900</recID>
+        <pID>C99DACDD0A1789478F227021E64B418F</pID>
+        <details>
+          <LitNr>LIT10125</LitNr>
+          <AutorHsg>
+            <values>
+              <value>
+                <text>Haller, Berchtold Friedrich</text>
+                <normalised_name>Haller, Berchtold Friedrich</normalised_name>
+                <gnd/>
+                <wd/>
+              </value>
+            </values>
+          </AutorHsg>
+          <Titel>Kunstnachrichten aus der Schweiz, vom Jahr 1794 bis 1796</Titel>
+          <Vol>5. Stück</Vol>
+          <Jahr>1797</Jahr>
+          <inZeitschrift>Neue Miscellaneen artistischen Inhalts für Künstler und Kunstliebhaber</inZeitschrift>
+          <recID>2017061409312422103</recID>
+          <JahrText>525-622</JahrText>
+          <pID>0F0EE8BA89B86E448117DDA168C583D2</pID>
+        </details>
+      </literature>
+      <literature>
+        <WerkInvNr>GABRI10680</WerkInvNr>
+        <LitNr>LIT10168</LitNr>
+        <Künstlername>Lory père / Lafond / Zehender</Künstlername>
+        <Seitenverweise>Heft 1, S. 68 (Preis der Folge: 68 Livres de Suisse/Schweizerfranken)</Seitenverweise>
+        <Bemerkungen>Haller 1807</Bemerkungen>
+        <recID>2018050708434261450</recID>
+        <pID>DD8508ADEDE3B84F97AC2B139622C16D</pID>
+        <details>
+          <LitNr>LIT10168</LitNr>
+          <AutorHsg>
+            <values>
+              <value>
+                <text>Haller, Berchtold Friedrich</text>
+                <normalised_name>Haller, Berchtold Friedrich</normalised_name>
+                <gnd/>
+                <wd/>
+              </value>
+            </values>
+          </AutorHsg>
+          <Titel>Kunstnachrichten aus der Schweiz von 1796 bis 1805</Titel>
+          <Jahr>1807</Jahr>
+          <Band>Bd. 2</Band>
+          <inZeitschrift>Archiv für Künstler und Kunstfreunde</inZeitschrift>
+          <recID>2018050708423818958</recID>
+          <pID>83B75BA16ABECD43832BD90EE22099C2</pID>
+        </details>
+      </literature>
+      <literature>
+        <WerkInvNr>GABRI10680</WerkInvNr>
+        <LitNr>LIT10119</LitNr>
+        <Künstlername>Lory père / Lafond / Zehender</Künstlername>
+        <Seitenverweise>S. 278, Nr. 15 (Preis: 10 Laubtaler)</Seitenverweise>
+        <Bemerkungen>Haller 1806</Bemerkungen>
+        <recID>2018050709490023640</recID>
+        <pID>0AC7C70CEBDE8B419249B76073C42D44</pID>
+        <details>
+          <LitNr>LIT10119</LitNr>
+          <AutorHsg>
+            <values>
+              <value>
+                <text>Haller, Berchtold Friedrich</text>
+                <normalised_name>Haller, Berchtold Friedrich</normalised_name>
+                <gnd/>
+                <wd/>
+              </value>
+            </values>
+          </AutorHsg>
+          <Titel>Kritische Uebersicht des Zustandes der Künste in der Schweiz, und der vorzüglichsten Helvetischen Kunstprodukte</Titel>
+          <Vol>1</Vol>
+          <Jahr>1806</Jahr>
+          <inZeitschrift>Bibliothek der redenden und bildenden Künste</inZeitschrift>
+          <recID>2017061311063949070</recID>
+          <JahrText>S. 195-318</JahrText>
+          <pID>BF66769DC379D1449A1A4BDBD164B0A0</pID>
+        </details>
+      </literature>
+      <literature>
+        <WerkInvNr>GABRI10680</WerkInvNr>
+        <LitNr>LIT10170</LitNr>
+        <Künstlername>Lory père / Lafond / Zehender</Künstlername>
+        <Seitenverweise>S. 203-204 (Preis der Folge: 40 Livres de Suisse)</Seitenverweise>
+        <Bemerkungen>Kunstanzeigen 1798</Bemerkungen>
+        <recID>2018050809502013059</recID>
+        <pID>0E11932F9CE76845B3A2FF2D6BF8FE7F</pID>
+        <details>
+          <LitNr>LIT10170</LitNr>
+          <Titel>Kunstanzeigen von 1798</Titel>
+          <Verlag>
+            <values>
+              <value>
+                <text>Orell, Füssli &amp; Comp.</text>
+                <normalised_name>Orell, Füssli &amp; Comp</normalised_name>
+                <gnd>1073001172</gnd>
+                <wd/>
+              </value>
+            </values>
+          </Verlag>
+          <Jahr>1798</Jahr>
+          <inZeitschrift>Neu helvetischer Almanach für das Jahr 1799</inZeitschrift>
+          <recID>2018050809470922932</recID>
+          <Ort>
+            <values>
+              <value>
+                <text>Zürich</text>
+                <gnd>4068038-1</gnd>
+                <wd>Q72</wd>
+              </value>
+            </values>
+          </Ort>
+          <JahrText>S. 202-208</JahrText>
+          <pID>F3594750803B284CAE4C7ED8656B168C</pID>
+        </details>
+      </literature>
+    </literatureList>
+  </record>
+  <record>
+    <InvNrIntern>DIKEN10631</InvNrIntern>
+    <KünsterIn>Dikenmann / Siegfried / Dikenmann</KünsterIn>
+    <Titel>Vue de Thoune et de l'hotel et pension de Bellevue. Blatt 8 der Folge "Vues de Suisse. 114 feuilles gravés"</Titel>
+    <LogistikID>DIKEN10631</LogistikID>
+    <WerkGruppenID>2017021317385931978</WerkGruppenID>
+    <Entstvon>1850</Entstvon>
+    <Entstbis>1850</Entstbis>
+    <Datierung>circa 1850</Datierung>
+    <Technik>Radierung und Aquatinta, handkoloriert, stellenweise gummiert, bis zur Darstellung beschnitten, mit schwarzer Einfassungslinie</Technik>
+    <Zuständigkeit>Prov</Zuständigkeit>
+    <Werkstatus/>
+    <KaufmStatus/>
+    <Salestatus/>
+    <Edition/>
+    <Material material="Papier" material_gnd="4044522-7" dateRange="1450-1925">Papier</Material>
+    <Material2/>
+    <EditionÜbers/>
+    <Bemerkungen/>
+    <BezKünstler/>
+    <Bezfremd>Auf der ehemaligen Unterlage recto unten Mitte mit Feder in brauner Tinte betitelt "Vue de Thoune / et de l'hotel et pension de Bellevue"; verso Mitte mit Bleistift nummeriert "8"</Bezfremd>
+    <Zertifikat/>
+    <ZertifikatÜbers/>
+    <TitelÜbers/>
+    <TechnikÜbers/>
+    <InvDatum>00.00.00</InvDatum>
+    <Provenienz/>
+    <Gattung>D - Druckgrafik</Gattung>
+    <TitelÜbers2/>
+    <InvNr>SFF_D_1565</InvNr>
+    <Keywords>
+      <values>
+        <value>
+          <text>Fluss</text>
+          <gnd>4131972-2</gnd>
+          <wd>Q4022</wd>
+        </value>
+        <value>
+          <text>Schifffahrt</text>
+          <gnd>4116383-7</gnd>
+          <wd>Q155930</wd>
+        </value>
+        <value>
+          <text>Gaststätte</text>
+          <gnd>4071600-4</gnd>
+          <wd>Q256020</wd>
+        </value>
+        <value>
+          <text>Herberge</text>
+          <gnd>4130904-2</gnd>
+          <wd>Q654772</wd>
+        </value>
+        <value>
+          <text>Hotel</text>
+          <gnd>4025922-5</gnd>
+          <wd>Q27686</wd>
+        </value>
+        <value>
+          <text>Tourismus</text>
+          <gnd>4018406-7</gnd>
+          <wd>Q49389</wd>
+        </value>
+        <value>
+          <text>Schloss</text>
+          <gnd>4052753-0</gnd>
+          <wd>Q751876</wd>
+        </value>
+        <value>
+          <text>Burg</text>
+          <gnd>4009104-1</gnd>
+          <wd>Q23413</wd>
+        </value>
+        <value>
+          <text>Ruine</text>
+          <gnd>4050934-5</gnd>
+          <wd>Q109607</wd>
+        </value>
+      </values>
+    </Keywords>
+    <TechnikÜbers2/>
+    <EditionÜbers2/>
+    <Ortsbezug>
+      <values>
+        <value>
+          <text>Thun (Kanton Bern)</text>
+          <gnd>4059991-7</gnd>
+          <wd>Q68978</wd>
+        </value>
+        <value>
+          <text>Aare (Fluss)</text>
+          <gnd>4000019-9</gnd>
+          <wd>Q1675</wd>
+        </value>
+      </values>
+    </Ortsbezug>
+    <Masse1Suffix/>
+    <Masse1Prefix/>
+    <RefNr>A_12</RefNr>
+    <InschriftÜbers2/>
+    <ZertÜbers2/>
+    <Datumstempel>24.07.2018</Datumstempel>
+    <Zeitstempel>08:11:19</Zeitstempel>
+    <Ueberprüftam>00.00.00</Ueberprüftam>
+    <Ueberprüftvon/>
+    <Sortation>0</Sortation>
+    <pID>DCA2C32DF8022E48B5B8C0BCE4A10136</pID>
+    <record-identifier>SFF_D_1565</record-identifier>
+    <artists>
+      <artist creation="true">
+        <id>Dikenmann</id>
+        <link>Dikenmann / Siegfried / Dikenmann</link>
+        <gnd>1089422318</gnd>
+        <wd>Q94919373</wd>
+        <gnd-name>Dikenmann, Johann Rudolf</gnd-name>
+        <fullName>Johann Rudolf Dikenmann</fullName>
+        <singular>False</singular>
+        <raw>Johann Rudolf Dikenmann (Zeichner), Heinrich Siegfried (Druckgraphiker), Johann Rudolf Dikenmann (Verleger)</raw>
+        <roles>
+          <roleValue role_uri="https://d-nb.info/gnd/4200345-3" creation="true">Zeichner</roleValue>
+        </roles>
+      </artist>
+      <artist production="true">
+        <id>Siegfried</id>
+        <link>Dikenmann / Siegfried / Dikenmann</link>
+        <gnd>1073721981</gnd>
+        <wd>Q30308445</wd>
+        <gnd-name>Siegfried, Heinrich</gnd-name>
+        <fullName>Heinrich Siegfried</fullName>
+        <singular>False</singular>
+        <raw>Johann Rudolf Dikenmann (Zeichner), Heinrich Siegfried (Druckgraphiker), Johann Rudolf Dikenmann (Verleger)</raw>
+        <roles>
+          <roleValue role_uri="https://d-nb.info/gnd/4461989-3" production="true">Druckgraphiker</roleValue>
+        </roles>
+      </artist>
+      <artist production="true">
+        <id>Dikenmann</id>
+        <link>Dikenmann / Siegfried / Dikenmann</link>
+        <gnd>1089422318</gnd>
+        <wd>Q94919373</wd>
+        <gnd-name>Dikenmann, Johann Rudolf</gnd-name>
+        <fullName>Johann Rudolf Dikenmann</fullName>
+        <singular>False</singular>
+        <raw>Johann Rudolf Dikenmann (Zeichner), Heinrich Siegfried (Druckgraphiker), Johann Rudolf Dikenmann (Verleger)</raw>
+        <roles>
+          <roleValue role_uri="https://d-nb.info/gnd/4138343-6" production="true">Verleger</roleValue>
+        </roles>
+      </artist>
+    </artists>
+    <image filename="SFF_D_1565.tif" width="5976" height="4068">SFF_D_1565</image>
+    <dimensions>
+      <dimension>
+        <UUID>DEBD3190DF7CDC48A4033F69D57BD32A</UUID>
+        <WerkInvNr>DIKEN10631</WerkInvNr>
+        <Typ>HBT</Typ>
+        <Einheit>cm</Einheit>
+        <Höhe>12.8</Höhe>
+        <Breite>17.8</Breite>
+        <Tiefe>0</Tiefe>
+        <Prefix>Blatt</Prefix>
+        <Prefix2>sheet</Prefix2>
+        <type>sheet</type>
+        <typeuri>http://vocab.getty.edu/aat/300189648</typeuri>
+        <qualifier>exact</qualifier>
+        <Position>0</Position>
+        <pID>37A1DB1C651A39448592C6D6C13D84AE</pID>
+      </dimension>
+      <dimension>
+        <UUID>7DCF74413CD26F47AD414954AB7009A7</UUID>
+        <WerkInvNr>DIKEN10631</WerkInvNr>
+        <Typ>HBT</Typ>
+        <Einheit>cm</Einheit>
+        <Höhe>20.7</Höhe>
+        <Breite>27.2</Breite>
+        <Tiefe>0</Tiefe>
+        <Prefix>Unterlage</Prefix>
+        <Prefix2>mounting</Prefix2>
+        <type>mounting</type>
+        <typeuri>http://vocab.getty.edu/aat/300389686</typeuri>
+        <qualifier>exact</qualifier>
+        <Position>0</Position>
+        <pID>7D53E993D65D61429744E895065365A3</pID>
+      </dimension>
+    </dimensions>
+    <literatureList>
+      <literature>
+        <WerkInvNr>DIKEN10631</WerkInvNr>
+        <LitNr>LIT10016</LitNr>
+        <Künstlername>Dikenmann Johann Rudolf</Künstlername>
+        <Seitenverweise>S. 934, Nr. 8</Seitenverweise>
+        <Bemerkungen>Engelmann 1858</Bemerkungen>
+        <recID>2017040609122626019</recID>
+        <pID>981A6FFDDC0C9F43B66A706FFB9D375A</pID>
+        <details>
+          <LitNr>LIT10016</LitNr>
+          <AutorHsg>
+            <values>
+              <value>
+                <text>Engelmann, Wilhelm</text>
+                <normalised_name>Engelmann, Wilhelm</normalised_name>
+                <gnd/>
+                <wd/>
+              </value>
+            </values>
+          </AutorHsg>
+          <Titel>Bibliotheca Geographica. Verzeichniss der seit der Mitte des vorigen Jahrhunderts bis zum Ende des Jahres 1856 in Deutschland erschienenen Werke über Geographie und Reisen mit Einschluss der Landkarten, Pläne und Ansichten</Titel>
+          <Verlag>
+            <values>
+              <value>
+                <text>Engelmann</text>
+                <normalised_name>Engelmann</normalised_name>
+                <gnd/>
+                <wd/>
+              </value>
+            </values>
+          </Verlag>
+          <Jahr>1858</Jahr>
+          <recID>2017022310005530278</recID>
+          <Ort>
+            <values>
+              <value>
+                <text>Leipzig</text>
+                <gnd>4035206-7</gnd>
+                <wd>Q2079</wd>
+              </value>
+            </values>
+          </Ort>
+          <pID>D047B2DD830A9F4E8212D4C32BCD4CAD</pID>
+        </details>
+      </literature>
+      <literature>
+        <WerkInvNr>DIKEN10631</WerkInvNr>
+        <LitNr>LIT10030</LitNr>
+        <Künstlername>Dikenmann Johann Rudolf</Künstlername>
+        <Seitenverweise>S. 204, Nr. 168 (Folge)</Seitenverweise>
+        <Bemerkungen>Weber 1984</Bemerkungen>
+        <recID>2017061414150825296</recID>
+        <pID>EFC24B2CC6C39444A1AB6B061FECE152</pID>
+        <details>
+          <LitNr>LIT10030</LitNr>
+          <AutorHsg>
+            <values>
+              <value>
+                <text>Weber, Bruno</text>
+                <normalised_name>Weber, Bruno</normalised_name>
+                <gnd/>
+                <wd/>
+              </value>
+            </values>
+          </AutorHsg>
+          <Titel>Graubünden in alten Ansichten. Landschaftsporträts reisender Künstler vom 16. bis zum frühen 19. Jahrhundert. Mit einem Verzeichnis topographischer Ansichten in der Druckgraphik von den Anfängen bis um 1880</Titel>
+          <Verlag>
+            <values>
+              <value>
+                <text>Rhätisches Museum</text>
+                <normalised_name>Rhätisches Museum</normalised_name>
+                <gnd/>
+                <wd/>
+              </value>
+            </values>
+          </Verlag>
+          <Jahr>1984</Jahr>
+          <recID>2017030111313313995</recID>
+          <Ort>
+            <values>
+              <value>
+                <text>Chur</text>
+                <gnd>4010189-7</gnd>
+                <wd>Q69007</wd>
+              </value>
+            </values>
+          </Ort>
+          <pID>0B3A7959FCEB7F4E821843B1F6F4F578</pID>
+        </details>
+      </literature>
+      <literature>
+        <WerkInvNr>DIKEN10631</WerkInvNr>
+        <LitNr>LIT10051</LitNr>
+        <Künstlername>Dikenmann Johann Rudolf</Künstlername>
+        <Seitenverweise>S. 415, 452, 475-476 und 557 (zu den Folgen von Dikenmann)</Seitenverweise>
+        <Bemerkungen>Ghiringhelli 2003</Bemerkungen>
+        <recID>2017061414474227177</recID>
+        <pID>C01555ACEAC4E74EA09E90200885178C</pID>
+        <details>
+          <LitNr>LIT10051</LitNr>
+          <AutorHsg>
+            <values>
+              <value>
+                <text>Ghiringhelli, Giorgio</text>
+                <normalised_name>Ghiringhelli, Giorgio</normalised_name>
+                <gnd>140426353</gnd>
+                <wd/>
+              </value>
+            </values>
+          </AutorHsg>
+          <Titel>Il Ticino nelle vecchie stampe</Titel>
+          <Verlag>
+            <values>
+              <value>
+                <text>Edizioni Casagrande</text>
+                <normalised_name>Edizioni Casagrande</normalised_name>
+                <gnd>5513616-3</gnd>
+                <wd/>
+              </value>
+            </values>
+          </Verlag>
+          <Jahr>2003</Jahr>
+          <recID>2017030316401516755</recID>
+          <Ort>
+            <values>
+              <value>
+                <text>Bellinzona</text>
+                <gnd>4005432-9</gnd>
+                <wd>Q64044</wd>
+              </value>
+            </values>
+          </Ort>
+          <pID>CF50F8553CD8104AB43B1DBA1EBC80DD</pID>
+        </details>
+      </literature>
+      <literature>
+        <WerkInvNr>DIKEN10631</WerkInvNr>
+        <LitNr>LIT10017</LitNr>
+        <Künstlername>Dikenmann Johann Rudolf</Künstlername>
+        <Seitenverweise>Bd. 1, S. 187 und Bd. 2, S. 28 (zu den Folgen von Dikenmann)</Seitenverweise>
+        <Bemerkungen>Gattlen 1987-1992</Bemerkungen>
+        <recID>2017061414520821814</recID>
+        <pID>F44655D198940C4BB565827C9B798C5C</pID>
+        <details>
+          <LitNr>LIT10017</LitNr>
+          <AutorHsg>
+            <values>
+              <value>
+                <text>Gattlen, Anton</text>
+                <normalised_name>Gattlen, Anton</normalised_name>
+                <gnd>130218383</gnd>
+                <wd>Q59531839</wd>
+              </value>
+            </values>
+          </AutorHsg>
+          <Titel>Druckgrafische Ortsansichten des Wallis, 1548-1850</Titel>
+          <Verlag>
+            <values>
+              <value>
+                <text>Editions Gravures</text>
+                <normalised_name>Editions Gravures</normalised_name>
+                <gnd/>
+                <wd/>
+              </value>
+            </values>
+          </Verlag>
+          <Jahr>0</Jahr>
+          <Band>2 Bde.</Band>
+          <recID>2017022310051121100</recID>
+          <Ort>
+            <values>
+              <value>
+                <text>Brig</text>
+                <gnd>4008259-3</gnd>
+                <wd>Q15582</wd>
+              </value>
+            </values>
+          </Ort>
+          <JahrText>1987-1992</JahrText>
+          <pID>B037E90647010845BCBD7A6C0B58A69E</pID>
+        </details>
+      </literature>
+      <literature>
+        <WerkInvNr>DIKEN10631</WerkInvNr>
+        <LitNr>LIT10052</LitNr>
+        <Künstlername>Dikenmann Johann Rudolf</Künstlername>
+        <Seitenverweise>S. 151, 161 und 181 (zu den Folgen von Dikenmann)</Seitenverweise>
+        <Bemerkungen>Ghiringhelli 2007</Bemerkungen>
+        <recID>2017061415545866640</recID>
+        <pID>A8ECD7A31A13BE4F9387626E21FB2F37</pID>
+        <details>
+          <LitNr>LIT10052</LitNr>
+          <AutorHsg>
+            <values>
+              <value>
+                <text>Ghiringhelli, Giorgio</text>
+                <normalised_name>Ghiringhelli, Giorgio</normalised_name>
+                <gnd>140426353</gnd>
+                <wd/>
+              </value>
+            </values>
+          </AutorHsg>
+          <Titel>Il Ponte del Diavolo nelle vecchie stampe</Titel>
+          <Verlag>
+            <values>
+              <value>
+                <text>Edizioni Casagrande</text>
+                <normalised_name>Edizioni Casagrande</normalised_name>
+                <gnd>5513616-3</gnd>
+                <wd/>
+              </value>
+            </values>
+          </Verlag>
+          <Jahr>2007</Jahr>
+          <recID>2017030316411918627</recID>
+          <Ort>
+            <values>
+              <value>
+                <text>Bellinzona</text>
+                <gnd>4005432-9</gnd>
+                <wd>Q64044</wd>
+              </value>
+            </values>
+          </Ort>
+          <pID>934E2613F796EA41B665711D32AD0644</pID>
+        </details>
+      </literature>
+      <literature>
+        <WerkInvNr>DIKEN10631</WerkInvNr>
+        <LitNr>LIT10028</LitNr>
+        <Künstlername>Dikenmann Johann Rudolf</Künstlername>
+        <Seitenverweise>S. 128, Nr. 122</Seitenverweise>
+        <Bemerkungen>Krebser 2004</Bemerkungen>
+        <recID>2017061516275557940</recID>
+        <pID>B6B3C04E48917343B3C6803E3F8FE7FA</pID>
+        <details>
+          <LitNr>LIT10028</LitNr>
+          <AutorHsg>
+            <values>
+              <value>
+                <text>Krebser, Markus</text>
+                <normalised_name>Krebser, Markus</normalised_name>
+                <gnd>106167324</gnd>
+                <wd/>
+              </value>
+            </values>
+          </AutorHsg>
+          <Titel>Thun und seine Landschaft in der Kunst der Kleinmeister: Druckgrafik von 1548 bis 1868</Titel>
+          <Verlag>
+            <values>
+              <value>
+                <text>Krebser</text>
+                <normalised_name>Krebser</normalised_name>
+                <gnd/>
+                <wd/>
+              </value>
+            </values>
+          </Verlag>
+          <Jahr>2004</Jahr>
+          <recID>2017030111191126563</recID>
+          <Ort>
+            <values>
+              <value>
+                <text>Thun</text>
+                <gnd>4059991-7</gnd>
+                <wd>Q68978</wd>
+              </value>
+            </values>
+          </Ort>
+          <pID>CACEEACE423EE84AA68E16FC18E94CD9</pID>
+        </details>
+      </literature>
+      <literature>
+        <WerkInvNr>DIKEN10631</WerkInvNr>
+        <LitNr>LIT10136</LitNr>
+        <Künstlername>Dikenmann / Siegfried / Dikenmann</Künstlername>
+        <Seitenverweise>Nr. 8 (Format en Folio)</Seitenverweise>
+        <Bemerkungen>Dikenmann 1882-1888</Bemerkungen>
+        <recID>2018043008300313740</recID>
+        <pID>286286A60A0ABE4AB105C465B9653491</pID>
+        <details>
+          <LitNr>LIT10136</LitNr>
+          <AutorHsg>
+            <values>
+              <value>
+                <text>Dikenmann, Johann Rudolf</text>
+                <normalised_name>Dikenmann, Johann Rudolf</normalised_name>
+                <gnd>1089330405</gnd>
+                <wd>Q94919210</wd>
+              </value>
+            </values>
+          </AutorHsg>
+          <Titel>Catalogue des vues, costumes et panoramas suisses, editions originales publiées par R. Dikenmann peintre-editeur Zurich RIndermarkt 14</Titel>
+          <Jahr>0</Jahr>
+          <recID>2017061414100217781</recID>
+          <JahrText>1882-1888</JahrText>
+          <pID>140D25BA6D2E9445A5E3EF5E8E0C8504</pID>
+        </details>
+      </literature>
+    </literatureList>
+    <series>
+      <id>DIKEN10631</id>
+      <series>"Vues de Suisse. 114 feuilles gravés"</series>
+      <number>8</number>
+    </series>
+  </record>
 </collection>

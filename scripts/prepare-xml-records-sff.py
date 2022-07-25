@@ -34,7 +34,7 @@ outputDirectory = '../data/xml/sff/'
 outputPrefix = 'sff-record-'
 
 # Fields that have been curated
-curatedFields = ['Keywords', 'Ortsbezug']
+curatedFields = ['Keywords', 'Ortsbezug', 'Material']
 curatedFieldsInLiterature = ['in Zeitschrift', 'Ort', 'Autor, Hsg.', 'Verlag']
 
 # Read arguments from command line input
@@ -89,21 +89,39 @@ def addCuratedData(record):
     for curatedField in curatedFields:
         tag = cleanKeyForTags(curatedField)
         valueTags = record.findall(tag + '/values/value')
-        for valueTag in valueTags:
-            text = valueTag.find('text').text
-            lookupHash = customHash(text)
-            
-            if text:
-                try:
-                    index = curatedFiles[curatedField]['lookup'][lookupHash]
-                    match = curatedFiles[curatedField]['content'][index]
+        if len(valueTags):
+            for valueTag in valueTags:
+                text = valueTag.find('text').text
+                lookupHash = customHash(text)
+                
+                if text:
+                    try:
+                        index = curatedFiles[curatedField]['lookup'][lookupHash]
+                        match = curatedFiles[curatedField]['content'][index]
 
-                    for column in match: 
-                        if column != 'id':
-                            newSubfield = etree.SubElement(valueTag, column)
-                            newSubfield.text = match[column]
-                except:
-                    print("Could not find matching data for", valueTag.find('text').text)
+                        for column in match: 
+                            if column != 'id':
+                                newSubfield = etree.SubElement(valueTag, column)
+                                newSubfield.text = match[column]
+                    except:
+                        print("Could not find matching data for", valueTag.find('text').text)
+        else:
+            # Single value field
+            singleValueTags = record.findall(tag)
+            for singleValueTag in singleValueTags:
+                text = singleValueTag.text
+                lookupHash = customHash(text)
+                
+                if text:
+                    try:
+                        index = curatedFiles[curatedField]['lookup'][lookupHash]
+                        match = curatedFiles[curatedField]['content'][index]
+
+                        for column in match: 
+                            if column != 'id':
+                                singleValueTag.set(column, match[column])
+                    except:
+                        print("Could not find matching data for", singleValueTag.text)
     return record
 
 def addCuratedDataForLiterature(record):
