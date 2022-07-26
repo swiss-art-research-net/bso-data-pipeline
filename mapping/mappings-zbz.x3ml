@@ -703,7 +703,7 @@
                         <if>
                             <and>
                                 <if>
-                                    <equals value="a">@code</equals>
+                                    <equals value="material">@code</equals>
                                 </if>
                                 <if>
                                     <exists>text()</exists>
@@ -764,6 +764,97 @@
                             <type>crm:E57_Material</type>
                             <instance_generator name="URIwithGndId">
                                 <arg name="id" type="xpath">text()</arg>
+                            </instance_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+        </mapping>
+        <mapping>
+            <domain>
+                <source_node>/collection/record/datafield</source_node>
+                <target_node>
+                    <if>
+                        <equals value="340">@tag</equals>
+                    </if>
+                    <entity variable="object_material_assignment">
+                        <type>crm:E13_Attribute_Assignment</type>
+                        <instance_generator name="URIwithTypeSubtypeIdAndCounter">
+                            <arg name="type" type="constant">artwork</arg>
+                            <arg name="id" type="xpath">../record-identifier/text()</arg>
+                            <arg name="subtype" type="constant">material</arg>
+                            <arg name="position" type="xpath">./subfield[@code="subfield"]/text()</arg>
+                        </instance_generator>
+                    </entity>
+                </target_node>
+            </domain>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>.</relation>
+                    </source_relation>
+                    <target_relation>
+                        <relationship>crm:P140_assigned_attribute_to</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>.</source_node>
+                    <target_node>
+                        <entity variable="object">
+                            <type>crm:E22_Human-Made_Object</type>
+                            <instance_generator name="URIwithTypeAndId">
+                                <arg name="type" type="constant">artwork</arg>
+                                <arg name="id" type="xpath">../record-identifier/text()</arg>
+                            </instance_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>subfield</relation>
+                    </source_relation>
+                    <target_relation>
+                        <if>
+                            <equals value="material">@code</equals>
+                        </if>
+                        <relationship>crm:P141_assigned</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>subfield</source_node>
+                    <target_node>
+                        <entity variable="object_material">
+                            <type>crm:E57_Material</type>
+                            <instance_generator name="URIwithTypeAndId">
+                                <arg name="type" type="constant">type</arg>
+                                <arg name="id" type="xpath">lower-case(text())</arg>
+                            </instance_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>subfield</relation>
+                    </source_relation>
+                    <target_relation>
+                        <if>
+                            <equals value="a">@code</equals>
+                        </if>
+                        <relationship>crm:P3_has_note</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>subfield</source_node>
+                    <target_node>
+                        <entity variable="description">
+                            <type>rdfs:Literal</type>
+                            <instance_generator name="Literal">
+                                <arg name="text" type="xpath">text()</arg>
+                                <arg name="language" type="constant"/>
                             </instance_generator>
                         </entity>
                     </target_node>
@@ -4211,4 +4302,6 @@
             </link>
         </mapping>
     </mappings>
+
+
 </x3ml>
