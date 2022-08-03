@@ -2700,11 +2700,18 @@
                 <source_node>/collection/record/Material</source_node>
                 <target_node>
                     <if>
-                        <not>
+                        <and>
                             <if>
-                                <equals value="@material">text()</equals>
+                                <not>
+                                    <if>
+                                        <equals value="@material">text()</equals>
+                                    </if>
+                                </not>
                             </if>
-                        </not>
+                            <if>
+                                <exists>@material</exists>
+                            </if>
+                        </and>
                     </if>
                     <entity variable="material_comment">
                         <type>crm:E13_Attribute_Assignment</type>
