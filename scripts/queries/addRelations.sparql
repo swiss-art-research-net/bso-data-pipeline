@@ -9,6 +9,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX frbroo: <http://iflastandards.info/ns/fr/frbr/frbroo/>
 PREFIX rds: <http://schema.swissartresearch.net/ontology/rds#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX gn: <http://www.geonames.org/ontology#>
 
 DROP GRAPH sari:relations;
 
@@ -20,6 +21,20 @@ INSERT {
   ?gndPlace gndo:geographicAreaCode ?gndParentPlace .
   ?place crmdig:L54_is_same-as ?gndPlace .
   ?parentPlace crmdig:L54_is_same-as ?gndParentPlace .
+};
+
+INSERT {
+  GRAPH sari:relations {
+    ?place crm:P89_falls_within ?parentPlace .
+  }
+}WHERE {
+  {
+    ?place gn:featureCode gn:A.ADM2 ;
+      gn:parentADM1 ?parentPlace .
+  } UNION {
+    ?place gn:featureCode gn:A.ADM3 ;
+      gn:parentADM2 ?parentPlace .
+  }
 };
 
 INSERT DATA {
