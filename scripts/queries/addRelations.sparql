@@ -10,6 +10,7 @@ PREFIX frbroo: <http://iflastandards.info/ns/fr/frbr/frbroo/>
 PREFIX rds: <http://schema.swissartresearch.net/ontology/rds#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX gn: <http://www.geonames.org/ontology#>
+PREFIX schema: <http://schema.org/>
 
 DROP GRAPH sari:relations;
 
@@ -35,6 +36,17 @@ INSERT {
     ?place gn:featureCode gn:A.ADM3 ;
       gn:parentADM2 ?parentPlace .
   }
+};
+
+INSERT {
+  GRAPH sari:relations {
+    ?place crmdig:L54_is_same-as ?swisstopoPlace .
+  }
+} WHERE {
+  ?swisstopoPlace a schema:AdministrativeArea ;
+    crmdig:L54_is_same-as ?linkPlace .
+  ?place a crm:E53_Place ;
+    crmdig:L54_is_same-as ?linkPlace .
 };
 
 INSERT DATA {
