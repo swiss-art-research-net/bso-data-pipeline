@@ -72,3 +72,6 @@ download "data/sari/visualSimilarities.ttl" "data/graphs/visualSimilarities.ttl"
 
 download "data/bso-thesaurus/bso-thesaurus.trig" "data/ttl/additional/bso-thesaurus.trig"
 download "data/additional/aat-events.ttl" "data/ttl/additional/aat-events.ttl"
+download "data/additional/swisstopo-cantons.trig" "data/ttl/additional/swisstopo-cantons.trig"
+download "data/additional/swisstopo-municipalities.trig" "data/ttl/additional/swisstopo-municipalities.trig"
+download "data/additional/swisstopo-districts.trig" "data/ttl/additional/swisstopo-districts.trig"
