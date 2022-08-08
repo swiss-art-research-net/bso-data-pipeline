@@ -19,16 +19,6 @@ INSERT {
     ?place crm:P89_falls_within ?parentPlace .
   }
 }WHERE {
-  ?gndPlace gndo:geographicAreaCode ?gndParentPlace .
-  ?place crmdig:L54_is_same-as ?gndPlace .
-  ?parentPlace crmdig:L54_is_same-as ?gndParentPlace .
-};
-
-INSERT {
-  GRAPH sari:relations {
-    ?place crm:P89_falls_within ?parentPlace .
-  }
-}WHERE {
   {
     ?place gn:featureCode gn:A.ADM2 ;
       gn:parentADM1 ?parentPlace .
@@ -48,6 +38,7 @@ INSERT {
   ?place a crm:E53_Place ;
     crmdig:L54_is_same-as ?linkPlace .
 };
+
 
 INSERT DATA {
   GRAPH sari:relations {
@@ -119,6 +110,19 @@ INSERT {
       ?subject a crm:E53_Place .
     }
   }
+};
+
+INSERT {
+  GRAPH sari:relations {
+    ?place crm:P89_falls_within ?parentPlace .
+  }
+}WHERE {
+  ?place a search:Place ;
+    crmdig:L54_is_same-as ?swissTopoPlace .
+  ?swissTopoPlace a schema:AdministrativeArea ;
+    crm:P89_falls_within* ?parentSwissTopoPlace .
+  ?parentPlace crmdig:L54_is_same-as ?parentSwissTopoPlace .
+  FILTER(?place != ?parentPlace)
 };
 
 INSERT {
