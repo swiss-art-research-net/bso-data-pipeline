@@ -751,7 +751,7 @@
                             <type>crm:E57_Material</type>
                             <instance_generator name="URIwithTypeAndId">
                                 <arg name="type" type="constant">type</arg>
-                                <arg name="id" type="xpath">lower-case(../subfield[@code='a']/text())</arg>
+                                <arg name="id" type="xpath">lower-case(../subfield[@code='material']/text())</arg>
                             </instance_generator>
                         </entity>
                         <relationship>crmdig:L54_is_same-as</relationship>
