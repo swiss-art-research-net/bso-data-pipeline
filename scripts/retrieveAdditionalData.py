@@ -2,7 +2,9 @@
 Script to retrieve additional data based on identifiers found in the Turtle files in the given folder.
 The sources that are queried and retrieved are specified in the sources parameter.
 Currently, the following sources are supported:
+- aat: Getty AAT
 - gnd: GND identifiers
+- loc: LOC identifiers
 - wd: Wikidata identifiers
 
 Usage:
