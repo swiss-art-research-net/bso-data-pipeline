@@ -352,12 +352,12 @@ tasks:
   retrieve-aat:
     desc: Extracts relevant data from AAT based on identifiers found in the mapped TTL files
     sources:
-      - /scripts/extract-aat-data.py
       - /data/ttl/main/*.ttl
+      - /scripts/retrieveAdditionalData.py
     generates:
       - /data/ttl/additional/aat.ttl
     cmds:
-      - python /scripts/extract-aat-data.py
+      - python retrieveAdditionalData.py --sourceFolder /data/ttl/main --targetFolder /data/ttl/additional --sources aat
 
   retrieve-additional-data:
     desc: Retrieve additional reference data for the mapped data
@@ -365,9 +365,12 @@ tasks:
       - /data/ttl/main/*.ttl
       - /scripts/retrieveAdditionalData.py
     generates:
+      - /data/ttl/additional/aat.ttl
       - /data/ttl/additional/gnd.ttl
+      - /data/ttl/additional/loc.ttl
+      - /data/ttl/additional/wd.ttl
     cmds:
-      - python retrieveAdditionalData.py --sourceFolder /data/ttl/main --targetFolder /data/ttl/additional --sources gnd,wd
+      - python retrieveAdditionalData.py --sourceFolder /data/ttl/main --targetFolder /data/ttl/additional --sources gnd,wd,aat,loc
       
   retrieve-loc:
     desc: Extracts relevant data from Library of Congress based on identifiers found in the mapped TTL files
@@ -377,17 +380,22 @@ tasks:
   retrieve-gnd:
     desc: Extracts relevant data from GND based on identifiers found in the mapped TTL files
     sources:
-      - /scripts/extract-gnd-data.py
       - /data/ttl/main/*.ttl
+      - /scripts/retrieveAdditionalData.py
     generates:
       - /data/ttl/additional/gnd.ttl
     cmds:
-      - python /scripts/extract-gnd-data.py
+      - python retrieveAdditionalData.py --sourceFolder /data/ttl/main --targetFolder /data/ttl/additional --sources gnd
 
   retrieve-wikidata:
     desc: Extracts relevant data from Wikidata based on identifiers found in the mapped TTL files
+    sources:
+      - /data/ttl/main/*.ttl
+      - /scripts/retrieveAdditionalData.py
+    generates:
+      - /data/ttl/additional/wd.ttl
     cmds:
-      - python /scripts/extract-wd-data.py
+      - python retrieveAdditionalData.py --sourceFolder /data/ttl/main --targetFolder /data/ttl/additional --sources wd
 
   retrieve-wikimedia-image-rights:
     desc: Retrieve the image rights metadata for the extracted images from Wikimedia Commons
