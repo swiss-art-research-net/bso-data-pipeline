@@ -359,6 +359,16 @@ tasks:
     cmds:
       - python /scripts/extract-aat-data.py
 
+  retrieve-additional-data:
+    desc: Retrieve additional reference data for the mapped data
+    sources:
+      - /data/ttl/main/*.ttl
+      - /scripts/retrieveAdditionalData.py
+    generates:
+      - /data/ttl/additional/gnd.ttl
+    cmds:
+      - python retrieveAdditionalData.py --sourceFolder /data/ttl/main --targetFolder /data/ttl/additional --sources gnd,wd
+      
   retrieve-loc:
     desc: Extracts relevant data from Library of Congress based on identifiers found in the mapped TTL files
     cmds:
