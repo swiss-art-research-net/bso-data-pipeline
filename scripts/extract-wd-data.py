@@ -13,6 +13,20 @@ batchSizeForRetrieval = 100
 wdEndpoint = "https://query.wikidata.org/sparql"
 agent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36"
 
+# Read the output file and query for existing URIs
+existingIdentifiers = []
+if path.exists(ttlOutput):
+    wdData = rdflib.Graph()
+    wdData.load(ttlOutput, format='turtle')
+    queryResults = wdData.query("""
+    SELECT DISTINCT ?s WHERE {
+        ?s ?p ?o .
+        FILTER(REGEX(STR(?s),"http://www.wikidata.org/entity/"))
+    }
+    """)
+    for row in queryResults:
+        existingIdentifiers.append(str(row[0]))
+
 # Look at all Turtle files
 inputFiles = [path.join(root, name)
              for root, dirs, files in walk(ttlFolder)
@@ -35,10 +49,13 @@ for file in tqdm(inputFiles):
 # Filter non-unique valeus
 wdIdentifiers = list(set(wdIdentifiers))
 
-# Clear output file
-with open(ttlOutput, 'w') as outputFile:
-    outputFile.write('')
-    outputFile.close()
+# Filter out existing identifiers
+wdIdentifiersToRetrieve = [x for x in wdIdentifiers if x not in existingIdentifiers]
+
+# Report on the number of identifiers in the data, already retrieved and yet to retrieve
+print("Total number of Wikidata identifiers: {}".format(len(wdIdentifiers)))
+print("Total number of Wikidata identifiers already retrieved: {}".format(len(existingIdentifiers)))
+print("Total number of Wikidata identifiers to retrieve: {}".format(len(wdIdentifiersToRetrieve)))
 
 # Add function to loop through list in chunks
 def chunker(seq, size):
@@ -49,7 +66,7 @@ def chunker(seq, size):
 sparql = SPARQLWrapper(wdEndpoint, agent=agent)    
 
 with open(ttlOutput, 'a') as outputFile:
-    for batch in tqdm(chunker(wdIdentifiers, batchSizeForRetrieval)):
+    for batch in tqdm(chunker(wdIdentifiersToRetrieve, batchSizeForRetrieval)):
         query = """
              PREFIX wdt: <http://www.wikidata.org/prop/direct/>
              CONSTRUCT {
