@@ -167,7 +167,7 @@ def retrieveLocData(identifiers, targetFolder):
     """
     # Read the output file and query for existing URIs
     targetFile = path.join(targetFolder, 'loc.ttl')
-    existingIdentifiers = queryIdentifiersInFile(targetFile, '?identifier a ?type . FILTER(REGEX(STR(?loc),"http://id.loc.gov/"))')
+    existingIdentifiers = queryIdentifiersInFile(targetFile, "?identifier a <http://www.loc.gov/mads/rdf/v1#Authority> .")
     # Filter out existing identifiers
     identifiersToRetrieve = [d for d in identifiers if d not in existingIdentifiers]
     # Retrieve ttl data from GND and append to ttl file
