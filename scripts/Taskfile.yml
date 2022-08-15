@@ -351,6 +351,11 @@ tasks:
 
   retrieve-aat:
     desc: Extracts relevant data from AAT based on identifiers found in the mapped TTL files
+    sources:
+      - /scripts/extract-aat-data.py
+      - /data/ttl/main/*.ttl
+    generates:
+      - /data/ttl/additional/aat.ttl
     cmds:
       - python /scripts/extract-aat-data.py
 
@@ -362,6 +367,7 @@ tasks:
   retrieve-gnd:
     desc: Extracts relevant data from GND based on identifiers found in the mapped TTL files
     sources:
+      - /scripts/extract-gnd-data.py
       - /data/ttl/main/*.ttl
     generates:
       - /data/ttl/additional/gnd.ttl
