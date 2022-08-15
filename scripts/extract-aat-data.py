@@ -18,7 +18,7 @@ if path.exists(ttlOutput):
     aatData = rdflib.Graph()
     aatData.load(ttlOutput, format='turtle')
     queryResults = aatData.query("""
-    PREFIX gbp:  <http://vocab.getty.edu/ontology#>
+    PREFIX gvp:  <http://vocab.getty.edu/ontology#>
     SELECT DISTINCT ?aat WHERE {
         ?aat a gvp:Concept .
     }
