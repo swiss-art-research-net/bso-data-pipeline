@@ -15,7 +15,6 @@ targetFolder: The folder where the retrieved data will be stored.
 sources: The sources to retrieve.
 """
 
-
 import json
 import requests
 import sys
@@ -162,7 +161,6 @@ def retrieveAatData(identifiers, targetFolder):
         "message": "Retrieved %d additional AAT identifiers (%d present in total)" % (len(identifiersToRetrieve), len(identifiers))
     }
 
-
 def retrieveGndData(identifiers, targetFolder):
     """
     Retrieves the data for the given identifiers and writes it to a file named gnd.ttl in the target folder.
@@ -252,7 +250,6 @@ def retrieveWdData(identifiers, targetFolder):
     targetFile = path.join(targetFolder, 'wd.ttl')
     existingIdentifiers = queryIdentifiersInFile(targetFile, "?identifier wdt:P31 ?type .")
 
-    
     # Filter out existing identifiers
     identifiersToRetrieve = [d for d in identifiers if d not in existingIdentifiers]
 
