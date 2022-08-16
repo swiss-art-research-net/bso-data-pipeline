@@ -96,14 +96,15 @@ def extractIdentifiers(folder, sources):
              for name in files
              if name.endswith((".ttl"))]
     
+    g = Graph() 
     for file in tqdm(files):
-        g = Graph() 
         g.parse(file)
-        for source in sources:
-            query = PREFIXES + "SELECT DISTINCT ?identifier WHERE { { ?s ?p ?identifier . } UNION { ?identifier ?p ?o .} FILTER(REGEX(STR(?identifier), '" + identifierNamespaces[source] + "')) }"
-            queryResults = g.query(query)
-            for row in queryResults:
-                identifiers[source].append(str(row[0]))
+        
+    for source in sources:
+        query = PREFIXES + "SELECT DISTINCT ?identifier WHERE { { ?s ?p ?identifier . } UNION { ?identifier ?p ?o .} FILTER(STRSTARTS(STR(?identifier), '" + identifierNamespaces[source] + "')) }"
+        queryResults = g.query(query)
+        for row in queryResults:
+            identifiers[source].append(str(row[0]))
     
     return identifiers
     
