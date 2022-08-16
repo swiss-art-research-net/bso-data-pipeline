@@ -159,7 +159,7 @@ def retrieveAatData(identifiers, targetFolder):
         outputFile.close()
     return {
         "status": "success",
-        "message": "Retrieved %d additional LOC identifiers (%d present in total)" % (len(identifiersToRetrieve), len(identifiers))
+        "message": "Retrieved %d additional AAT identifiers (%d present in total)" % (len(identifiersToRetrieve), len(identifiers))
     }
 
 
