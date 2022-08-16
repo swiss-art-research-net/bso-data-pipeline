@@ -47,8 +47,10 @@ def retrieveData(options):
     targetFolder = options['targetFolder']
     sources = options['sources']
 
+    # Extract identifiers for the specified sources from Turtle files
     sourceIdentifiers = extractIdentifiers(sourceFolder, sources)
 
+    # Check if the requested identifiers are present and if yes, retrieve them
     if 'aat' in sourceIdentifiers and len(sourceIdentifiers['aat']) > 0:
         print("Retrieving AAT data")
         status = retrieveAatData(sourceIdentifiers['aat'], targetFolder)
@@ -79,23 +81,11 @@ def extractIdentifiers(folder, sources):
     :return: A dictionary with the sources as keys and the list of distinct identifiers as value.
     """
 
-    identifierQueries = {
-        "aat": """
-            ?s ?p ?identifier .
-            FILTER(REGEX(STR(?identifier),"http://vocab.getty.edu/"))
-        """,
-        "gnd": """
-            ?s ?p ?identifier .
-            FILTER(REGEX(STR(?identifier),"https://d-nb.info/gnd/"))
-        """,
-        "loc": """
-            ?s ?p ?identifier .
-            FILTER(REGEX(STR(?identifier),"http://id.loc.gov/"))
-        """,
-        "wd": """
-            ?identifier ?p ?o .
-            FILTER(REGEX(STR(?identifier),"http://www.wikidata.org/entity/"))
-        """
+    identifierNamespaces = {
+        "aat": "http://vocab.getty.edu/",
+        "gnd": "https://d-nb.info/gnd/",
+        "loc": "http://id.loc.gov/",
+        "wd": "http://www.wikidata.org/entity/"
     }
 
     identifiers = {}
@@ -111,7 +101,7 @@ def extractIdentifiers(folder, sources):
         g = Graph() 
         g.parse(file)
         for source in sources:
-            query = PREFIXES + "SELECT DISTINCT ?identifier WHERE { " + identifierQueries[source] + " }"
+            query = PREFIXES + "SELECT DISTINCT ?identifier WHERE { { ?s ?p ?identifier . } UNION { ?identifier ?p ?o .} FILTER(REGEX(STR(?identifier), '" + identifierNamespaces[source] + "')) }"
             queryResults = g.query(query)
             for row in queryResults:
                 identifiers[source].append(str(row[0]))
