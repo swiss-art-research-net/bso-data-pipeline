@@ -25,6 +25,12 @@ INSERT {
   } UNION {
     ?place gn:featureCode gn:A.ADM3 ;
       gn:parentADM2 ?parentPlace .
+  } UNION {
+    ?place gn:featureCode gn:A.ADM3 ;
+      gn:parentADM1 ?parentPlace .
+    FILTER NOT EXISTS {
+      ?place gn:parentADM2 ?parentDistrict .
+    }
   }
 };
 
