@@ -2000,7 +2000,7 @@
                             <additional>
                                 <relationship>crm:P82a_begin_of_the_begin</relationship>
                                 <entity>
-                                    <type>xsd:dateTime</type>
+                                    <type>xsd:date</type>
                                     <instance_info>
                                         <constant/>
                                     </instance_info>
@@ -2012,7 +2012,7 @@
                             <additional>
                                 <relationship>crm:P82b_end_of_the_end</relationship>
                                 <entity>
-                                    <type>xsd:dateTime</type>
+                                    <type>xsd:date</type>
                                     <instance_info>
                                         <constant/>
                                     </instance_info>
@@ -2059,7 +2059,7 @@
                             <additional>
                                 <relationship>crm:P82a_begin_of_the_begin</relationship>
                                 <entity>
-                                    <type>xsd:dateTime</type>
+                                    <type>xsd:date</type>
                                     <instance_info>
                                         <constant/>
                                     </instance_info>
@@ -2071,7 +2071,7 @@
                             <additional>
                                 <relationship>crm:P82b_end_of_the_end</relationship>
                                 <entity>
-                                    <type>xsd:dateTime</type>
+                                    <type>xsd:date</type>
                                     <instance_info>
                                         <constant/>
                                     </instance_info>
@@ -2204,7 +2204,7 @@
                             <additional>
                                 <relationship>crm:P82a_begin_of_the_begin</relationship>
                                 <entity variable="event_from">
-                                    <type>xsd:dateTime</type>
+                                    <type>xsd:date</type>
                                     <instance_generator name="typedLiteralGen">
                                         <arg name="text" type="xpath">@lowerDate</arg>
                                     </instance_generator>
@@ -2213,7 +2213,7 @@
                             <additional>
                                 <relationship>crm:P82b_end_of_the_end</relationship>
                                 <entity variable="event_to">
-                                    <type>xsd:dateTime</type>
+                                    <type>xsd:date</type>
                                     <instance_generator name="typedLiteralGen">
                                         <arg name="text" type="xpath">@upperDate</arg>
                                     </instance_generator>
@@ -2407,7 +2407,7 @@
                             <additional>
                                 <relationship>crm:P82a_begin_of_the_begin</relationship>
                                 <entity variable="event_from">
-                                    <type>xsd:dateTime</type>
+                                    <type>xsd:date</type>
                                     <instance_generator name="typedLiteralGen">
                                         <arg name="text" type="xpath">@lowerDate</arg>
                                     </instance_generator>
@@ -2416,7 +2416,7 @@
                             <additional>
                                 <relationship>crm:P82b_end_of_the_end</relationship>
                                 <entity variable="event_to">
-                                    <type>xsd:dateTime</type>
+                                    <type>xsd:date</type>
                                     <instance_generator name="typedLiteralGen">
                                         <arg name="text" type="xpath">@upperDate</arg>
                                     </instance_generator>
@@ -2713,7 +2713,7 @@
                             <additional>
                                 <relationship>crm:P82a_begin_of_the_begin</relationship>
                                 <entity variable="event_from">
-                                    <type>xsd:dateTime</type>
+                                    <type>xsd:date</type>
                                     <instance_generator name="typedLiteralGen">
                                         <arg name="text" type="xpath">@lowerDate</arg>
                                     </instance_generator>
@@ -2722,7 +2722,7 @@
                             <additional>
                                 <relationship>crm:P82b_end_of_the_end</relationship>
                                 <entity variable="event_to">
-                                    <type>xsd:dateTime</type>
+                                    <type>xsd:date</type>
                                     <instance_generator name="typedLiteralGen">
                                         <arg name="text" type="xpath">@upperDate</arg>
                                     </instance_generator>
@@ -3400,7 +3400,7 @@
                             <additional>
                                 <relationship>crm:P82a_begin_of_the_begin</relationship>
                                 <entity>
-                                    <type>xsd:dateTime</type>
+                                    <type>xsd:date</type>
                                     <instance_info>
                                         <constant/>
                                     </instance_info>
@@ -3412,7 +3412,7 @@
                             <additional>
                                 <relationship>crm:P82b_end_of_the_end</relationship>
                                 <entity>
-                                    <type>xsd:dateTime</type>
+                                    <type>xsd:date</type>
                                     <instance_info>
                                         <constant/>
                                     </instance_info>
@@ -3459,7 +3459,7 @@
                             <additional>
                                 <relationship>crm:P82a_begin_of_the_begin</relationship>
                                 <entity>
-                                    <type>xsd:dateTime</type>
+                                    <type>xsd:date</type>
                                     <instance_info>
                                         <constant/>
                                     </instance_info>
@@ -3471,7 +3471,7 @@
                             <additional>
                                 <relationship>crm:P82b_end_of_the_end</relationship>
                                 <entity>
-                                    <type>xsd:dateTime</type>
+                                    <type>xsd:date</type>
                                     <instance_info>
                                         <constant/>
                                     </instance_info>
@@ -3571,7 +3571,7 @@
                             <additional>
                                 <relationship>crm:P82a_begin_of_the_begin</relationship>
                                 <entity>
-                                    <type>xsd:dateTime</type>
+                                    <type>xsd:date</type>
                                     <instance_info>
                                         <constant/>
                                     </instance_info>
@@ -3583,7 +3583,7 @@
                             <additional>
                                 <relationship>crm:P82b_end_of_the_end</relationship>
                                 <entity>
-                                    <type>xsd:dateTime</type>
+                                    <type>xsd:date</type>
                                     <instance_info>
                                         <constant/>
                                     </instance_info>
@@ -3673,7 +3673,7 @@
                             <additional>
                                 <relationship>crm:P82a_begin_of_the_begin</relationship>
                                 <entity>
-                                    <type>xsd:dateTime</type>
+                                    <type>xsd:date</type>
                                     <instance_info>
                                         <constant/>
                                     </instance_info>
@@ -3685,7 +3685,7 @@
                             <additional>
                                 <relationship>crm:P82b_end_of_the_end</relationship>
                                 <entity>
-                                    <type>xsd:dateTime</type>
+                                    <type>xsd:date</type>
                                     <instance_info>
                                         <constant/>
                                     </instance_info>
