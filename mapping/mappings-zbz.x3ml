@@ -1973,7 +1973,14 @@
                     </source_relation>
                     <target_relation>
                         <if>
-                            <equals value="Geburtsdatum">@code</equals>
+                            <and>
+                                <if>
+                                    <equals value="Geburtsdatum">@code</equals>
+                                </if>
+                                <if>
+                                    <exists>text()</exists>
+                                </if>
+                            </and>
                         </if>
                         <relationship>crm:P98i_was_born</relationship>
                         <entity>
@@ -2032,7 +2039,14 @@
                     </source_relation>
                     <target_relation>
                         <if>
-                            <equals value="Sterbedatum">@code</equals>
+                            <and>
+                                <if>
+                                    <equals value="Sterbedatum">@code</equals>
+                                </if>
+                                <if>
+                                    <exists>text()</exists>
+                                </if>
+                            </and>
                         </if>
                         <relationship>crm:P100i_died_in</relationship>
                         <entity>
@@ -3373,7 +3387,14 @@
                     </source_relation>
                     <target_relation>
                         <if>
-                            <equals value="Geburtsdatum">@code</equals>
+                            <and>
+                                <if>
+                                    <equals value="Geburtsdatum">@code</equals>
+                                </if>
+                                <if>
+                                    <exists>text()</exists>
+                                </if>
+                            </and>
                         </if>
                         <relationship>crm:P98i_was_born</relationship>
                         <entity>
@@ -3432,7 +3453,14 @@
                     </source_relation>
                     <target_relation>
                         <if>
-                            <equals value="Sterbedatum">@code</equals>
+                            <and>
+                                <if>
+                                    <equals value="Sterbedatum">@code</equals>
+                                </if>
+                                <if>
+                                    <exists>text()</exists>
+                                </if>
+                            </and>
                         </if>
                         <relationship>crm:P100i_died_in</relationship>
                         <entity>
@@ -3452,7 +3480,7 @@
                         <entity>
                             <type>crm:E52_Time-Span</type>
                             <instance_generator name="URIwithTypeSuptypeAndId_hashed">
-                                <arg name="type" type="constant">actor</arg>
+                                <arg name="type" type="constant">acdtor</arg>
                                 <arg name="id_HASHED_CONTENTS" type="xpath">if (../subfield[@code='gnd']/text()) then ../subfield[@code='gnd']/text() else ../subfield[@code='a']/text()</arg>
                                 <arg name="subtype" type="constant">deathDate</arg>
                             </instance_generator>

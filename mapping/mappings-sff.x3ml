@@ -870,7 +870,7 @@
                             <additional>
                                 <relationship>crm:P82a_begin_of_the_begin</relationship>
                                 <entity>
-                                    <type>xsd:dateTime</type>
+                                    <type>xsd:date</type>
                                     <instance_info>
                                         <constant/>
                                     </instance_info>
@@ -882,7 +882,7 @@
                             <additional>
                                 <relationship>crm:P82b_end_of_the_end</relationship>
                                 <entity>
-                                    <type>xsd:dateTime</type>
+                                    <type>xsd:date</type>
                                     <instance_info>
                                         <constant/>
                                     </instance_info>

@@ -534,7 +534,7 @@
                             <additional>
                                 <relationship>crm:P82a_begin_of_the_begin</relationship>
                                 <entity>
-                                    <type>xsd:dateTime</type>
+                                    <type>xsd:date</type>
                                     <instance_info>
                                         <constant/>
                                     </instance_info>
@@ -1626,7 +1626,7 @@
                     <source_node>DetailData/DataElement/ElementValue/DateRange/FromDate</source_node>
                     <target_node>
                         <entity>
-                            <type>xsd:dateTime</type>
+                            <type>xsd:date</type>
                             <instance_generator name="typedLiteralGen">
                                 <arg name="text" type="xpath">@fullDate</arg>
                             </instance_generator>
@@ -1679,7 +1679,7 @@
                     <source_node>DetailData/DataElement/ElementValue/DateRange/ToDate</source_node>
                     <target_node>
                         <entity>
-                            <type>xsd:dateTime</type>
+                            <type>xsd:date</type>
                             <instance_generator name="typedLiteralGen">
                                 <arg name="text" type="xpath">@fullDate</arg>
                             </instance_generator>
