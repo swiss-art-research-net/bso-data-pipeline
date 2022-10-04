@@ -215,10 +215,14 @@ def addCuratedTypeData(record, curatedTypes):
                 for key in [d for d in row.keys() if d not in ["ElementId", "ElementName", "Term"]]:
                     if row[key]:
                         if ';' in row[key]:
-                            for value in row[key].split(';'):
-                                etree.SubElement(parent, key).text = value
+                            for i, value in enumerate(row[key].split(';')):
+                                el = etree.SubElement(parent, key)
+                                el.set('index', str(i))
+                                el.text = value
                         else:
-                            etree.SubElement(parent, key).text = row[key]
+                            el = etree.SubElement(parent, key)
+                            el.text = row[key]
+                            el.set('index', '0')
     return record
 
 def addCuratedDataToDescriptors(record, curatedData):
