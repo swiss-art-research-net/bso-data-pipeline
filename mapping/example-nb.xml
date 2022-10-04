@@ -1,1073 +1,976 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<Collection>
-  <Record Id="789058" ParentId="545275" Level="Dokument" IdName="EAD-6580   Zürich, Rathaus, Südfassade, vue d'ensemble, 1901 (Dokument)" Level-gnd-id="4139988-2" Level-aat-id="300026685" RecordIdentifier="nb-789058" ParentRecordIdentifier="nb-545275">
-    <DetailData>
-      <DataElement ElementName="Signatur" ElementId="2" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>EAD-6580</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Signatur Archivplan" ElementId="3" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>EAD-6580</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="FotografIn" ElementId="10817" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>Berchem, Max van</TextValue>
-          <Descriptor>
-            <Name>FotografIn</Name>
-            <Thesaurus>Personen</Thesaurus>
-            <IdName>FotografIn  (Personen\B\Berchem, Max van (1863 - 1921))</IdName>
-            <SeeAlso>Berchem, Max van (1863 - 1921)</SeeAlso>
-            <GND-Nummer>119369893</GND-Nummer>
-          </Descriptor>
-          <NormalisedName>Berchem, Max van</NormalisedName>
-          <Role gnd="4045893-3">Fotograf</Role>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Titel" ElementId="1" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>Zürich, Rathaus, Südfassade, vue d'ensemble</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Entstehungszeitraum" ElementId="7" ElementType="Datumsbereich (von/bis)" ElementTypeId="2">
-        <ElementValue Sequence="1">
-          <DateRange DateOperator="exact">
-            <FromDate fullDate="1901-01-01">+1901</FromDate>
-            <FromApproxIndicator>false</FromApproxIndicator>
-            <ToDate/>
-            <ToApproxIndicator>false</ToApproxIndicator>
-            <TextRepresentation>1901</TextRepresentation>
-          </DateRange>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Archivalienart" ElementId="17" ElementType="Auswahlliste" ElementTypeId="14">
-        <ElementValue Sequence="1">
-          <TextValue>Fotografie</TextValue>
-          <aat-id>300046300</aat-id>
-          <gnd-id>4045895-7</gnd-id>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Ansichtsbild" ElementId="10" ElementType="Bild" ElementTypeId="17">
-        <ElementValue Sequence="1">
-          <FileValue FileName="EAD-6580.JPG"/>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Vorschaubild" ElementId="9" ElementType="Bild" ElementTypeId="17">
-        <ElementValue Sequence="1">
-          <FileValue FileName="EAD-6580.JPG"/>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Urheberrechts-InhaberIn" ElementId="10848" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>Eidgenössisches Archiv für Denkmalpflege</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Inhalt / Kurzbeschreibung" ElementId="10003" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>Vue d'ensemble de la façade sud de l'hôtel de ville.</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Erschliessungsgrad" ElementId="16" ElementType="Auswahlliste" ElementTypeId="14">
-        <ElementValue Sequence="1">
-          <TextValue>teilweise</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Land" ElementId="11066" ElementType="Auswahlliste" ElementTypeId="14">
-        <ElementValue Sequence="1">
-          <TextValue>Switzerland</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Kanton" ElementId="11068" ElementType="Auswahlliste" ElementTypeId="14">
-        <ElementValue Sequence="1">
-          <TextValue>Zürich</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Gemeinde" ElementId="10156" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>Zürich</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Postleitzahl" ElementId="10157" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>8001</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Ort" ElementId="10122" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>Zürich</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Lokalname" ElementId="10160" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>Zürich</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Koordinaten X" ElementId="10161" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>683195.10000</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Koordinaten Y" ElementId="10162" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>248031.20000</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Farbe" ElementId="11070" ElementType="Auswahlliste" ElementTypeId="14">
-        <ElementValue Sequence="1">
-          <TextValue>S/W</TextValue>
-          <aat-id>300265434</aat-id>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Orientierung und Form" ElementId="10372" ElementType="Auswahlliste" ElementTypeId="14">
-        <ElementValue Sequence="1">
-          <TextValue>Vertikal</TextValue>
-          <aat-id>300343370</aat-id>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="URL Bild in Druckqualität" ElementId="11040" ElementType="Web-Hyperlink" ElementTypeId="11">
-        <ElementValue Sequence="1">
-          <TextValue>https://commons.wikimedia.org/wiki/File%3ACH-NB_-_Z%C3%BCrich%2C_Rathaus%2C_fa%C3%A7ade%2C_vue_d%27ensemble_-_Collection_Max_van_Berchem_-_EAD-6580.tif</TextValue>
-          <Width>3700</Width>
-          <Height>5110</Height>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Projekte" ElementId="10884" ElementType="Auswahlliste" ElementTypeId="14">
-        <ElementValue Sequence="1">
-          <TextValue>Wikimedia Commons</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Dateiname Digitalisat" ElementId="10435" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>EAD-6580</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Personen" ElementId="11053" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>FotografIn  / Personen / B / Berchem, Max van / 1863 - 1921</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Geopolitische Daten" ElementId="11057" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>Zürich  / Geopolitische Daten / Schweiz / ZH</TextValue>
-        </ElementValue>
-      </DataElement>
-    </DetailData>
-    <Descriptors>
-      <Descriptor>
-        <Name>FotografIn</Name>
-        <Thesaurus>Personen</Thesaurus>
-        <IdName>FotografIn  (Personen\B\Berchem, Max van (1863 - 1921))</IdName>
-        <SeeAlso>Berchem, Max van (1863 - 1921)</SeeAlso>
-        <GND-Nummer>119369893</GND-Nummer>
-        <IdNameForMapping>FotografIn(Personen\B\Berchem,Maxvan(1863-1921))</IdNameForMapping>
-      </Descriptor>
-      <Descriptor>
-        <Name>Fotografie</Name>
-        <Thesaurus>Gemeinfrei</Thesaurus>
-        <IdName>Fotografie  (Gemeinfrei\)</IdName>
-        <IdNameForMapping>Fotografie(Gemeinfrei\)</IdNameForMapping>
-      </Descriptor>
-      <Descriptor>
-        <Name>Zürich (Stadt)</Name>
-        <Thesaurus>Geografika</Thesaurus>
-        <IdName>Zürich (Stadt)  (Geografika\Europa\Schweiz\Zürich)</IdName>
-        <SeeAlso>Zürich</SeeAlso>
-        <GND-Kennung>4068038-1</GND-Kennung>
-        <WD>Q72</WD>
-        <IdNameForMapping>Zürich(Stadt)(Geografika\Europa\Schweiz\Zürich)</IdNameForMapping>
-      </Descriptor>
-    </Descriptors>
-    <AdministrativeData>
-      <LastEditedOn>2020-11-13</LastEditedOn>
-      <CreatedOn>2015-01-06</CreatedOn>
-    </AdministrativeData>
-  </Record>
-  <Record Id="863687" ParentId="545275" Level="Dokument" IdName="EAD-6581   Zürich, Grossmünster, Portail, vue d'ensemble, 1901 (Dokument)" Level-gnd-id="4139988-2" Level-aat-id="300026685" RecordIdentifier="nb-863687" ParentRecordIdentifier="nb-545275">
-    <DetailData>
-      <DataElement ElementName="Signatur" ElementId="2" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>EAD-6581</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Signatur Archivplan" ElementId="3" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>EAD-6581</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="FotografIn" ElementId="10817" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>Berchem, Max van</TextValue>
-          <Descriptor>
-            <Name>FotografIn</Name>
-            <Thesaurus>Personen</Thesaurus>
-            <IdName>FotografIn  (Personen\B\Berchem, Max van (1863 - 1921))</IdName>
-            <SeeAlso>Berchem, Max van (1863 - 1921)</SeeAlso>
-            <GND-Nummer>119369893</GND-Nummer>
-          </Descriptor>
-          <NormalisedName>Berchem, Max van</NormalisedName>
-          <Role gnd="4045893-3">Fotograf</Role>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Titel" ElementId="1" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>Zürich, Grossmünster, Portail, vue d'ensemble</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Entstehungszeitraum" ElementId="7" ElementType="Datumsbereich (von/bis)" ElementTypeId="2">
-        <ElementValue Sequence="1">
-          <DateRange DateOperator="exact">
-            <FromDate fullDate="1901-01-01">+1901</FromDate>
-            <FromApproxIndicator>false</FromApproxIndicator>
-            <ToDate/>
-            <ToApproxIndicator>false</ToApproxIndicator>
-            <TextRepresentation>1901</TextRepresentation>
-          </DateRange>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Archivalienart" ElementId="17" ElementType="Auswahlliste" ElementTypeId="14">
-        <ElementValue Sequence="1">
-          <TextValue>Fotografie</TextValue>
-          <aat-id>300046300</aat-id>
-          <gnd-id>4045895-7</gnd-id>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Ansichtsbild" ElementId="10" ElementType="Bild" ElementTypeId="17">
-        <ElementValue Sequence="1">
-          <FileValue FileName="EAD-6581.JPG"/>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Vorschaubild" ElementId="9" ElementType="Bild" ElementTypeId="17">
-        <ElementValue Sequence="1">
-          <FileValue FileName="EAD-6581.JPG"/>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Urheberrechts-InhaberIn" ElementId="10848" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>Eidgenössisches Archiv für Denkmalpflege</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Inhalt / Kurzbeschreibung" ElementId="10003" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>Vue d'ensemble du portail nord du Grossmünster</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Erschliessungsgrad" ElementId="16" ElementType="Auswahlliste" ElementTypeId="14">
-        <ElementValue Sequence="1">
-          <TextValue>teilweise</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Land" ElementId="11066" ElementType="Auswahlliste" ElementTypeId="14">
-        <ElementValue Sequence="1">
-          <TextValue>Switzerland</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Kanton" ElementId="11068" ElementType="Auswahlliste" ElementTypeId="14">
-        <ElementValue Sequence="1">
-          <TextValue>Zürich</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Gemeinde" ElementId="10156" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>Zürich</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Postleitzahl" ElementId="10157" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>8001</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Ort" ElementId="10122" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>Zürich</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Lokalname" ElementId="10160" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>Zürich</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Koordinaten X" ElementId="10161" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>683195.10000</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Koordinaten Y" ElementId="10162" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>248031.20000</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Farbe" ElementId="11070" ElementType="Auswahlliste" ElementTypeId="14">
-        <ElementValue Sequence="1">
-          <TextValue>S/W</TextValue>
-          <aat-id>300265434</aat-id>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Orientierung und Form" ElementId="10372" ElementType="Auswahlliste" ElementTypeId="14">
-        <ElementValue Sequence="1">
-          <TextValue>Horizontal</TextValue>
-          <aat-id>300311843</aat-id>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="URL Bild in Druckqualität" ElementId="11040" ElementType="Web-Hyperlink" ElementTypeId="11">
-        <ElementValue Sequence="1">
-          <TextValue>https://commons.wikimedia.org/wiki/File%3ACH-NB_-_Z%C3%BCrich%2C_Grossm%C3%BCnster%2C_Portail%2C_vue_d%27ensemble_-_Collection_Max_van_Berchem_-_EAD-6581.tif</TextValue>
-          <Width>5205</Width>
-          <Height>3715</Height>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Projekte" ElementId="10884" ElementType="Auswahlliste" ElementTypeId="14">
-        <ElementValue Sequence="1">
-          <TextValue>Wikimedia Commons</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Dateiname Digitalisat" ElementId="10435" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>EAD-6581</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Personen" ElementId="11053" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>FotografIn  / Personen / B / Berchem, Max van / 1863 - 1921</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Geopolitische Daten" ElementId="11057" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>Zürich  / Geopolitische Daten / Schweiz / ZH</TextValue>
-        </ElementValue>
-      </DataElement>
-    </DetailData>
-    <Descriptors>
-      <Descriptor>
-        <Name>FotografIn</Name>
-        <Thesaurus>Personen</Thesaurus>
-        <IdName>FotografIn  (Personen\B\Berchem, Max van (1863 - 1921))</IdName>
-        <SeeAlso>Berchem, Max van (1863 - 1921)</SeeAlso>
-        <GND-Nummer>119369893</GND-Nummer>
-        <IdNameForMapping>FotografIn(Personen\B\Berchem,Maxvan(1863-1921))</IdNameForMapping>
-      </Descriptor>
-      <Descriptor>
-        <Name>Fotografie</Name>
-        <Thesaurus>Gemeinfrei</Thesaurus>
-        <IdName>Fotografie  (Gemeinfrei\)</IdName>
-        <IdNameForMapping>Fotografie(Gemeinfrei\)</IdNameForMapping>
-      </Descriptor>
-      <Descriptor>
-        <Name>Zürich (Stadt)</Name>
-        <Thesaurus>Geografika</Thesaurus>
-        <IdName>Zürich (Stadt)  (Geografika\Europa\Schweiz\Zürich)</IdName>
-        <SeeAlso>Zürich</SeeAlso>
-        <GND-Kennung>4068038-1</GND-Kennung>
-        <WD>Q72</WD>
-        <IdNameForMapping>Zürich(Stadt)(Geografika\Europa\Schweiz\Zürich)</IdNameForMapping>
-      </Descriptor>
-    </Descriptors>
-    <AdministrativeData>
-      <LastEditedOn>2020-11-13</LastEditedOn>
-      <CreatedOn>2015-06-24</CreatedOn>
-    </AdministrativeData>
-  </Record>
-  <Record Id="863691" ParentId="545275" Level="Dokument" IdName="EAD-6582   Zürich, Grossmünster, vue partielle intérieure, 1901 (Dokument)" Level-gnd-id="4139988-2" Level-aat-id="300026685" RecordIdentifier="nb-863691" ParentRecordIdentifier="nb-545275">
-    <DetailData>
-      <DataElement ElementName="Signatur" ElementId="2" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>EAD-6582</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Signatur Archivplan" ElementId="3" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>EAD-6582</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="FotografIn" ElementId="10817" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>Berchem, Max van</TextValue>
-          <Descriptor>
-            <Name>FotografIn</Name>
-            <Thesaurus>Personen</Thesaurus>
-            <IdName>FotografIn  (Personen\B\Berchem, Max van (1863 - 1921))</IdName>
-            <SeeAlso>Berchem, Max van (1863 - 1921)</SeeAlso>
-            <GND-Nummer>119369893</GND-Nummer>
-          </Descriptor>
-          <NormalisedName>Berchem, Max van</NormalisedName>
-          <Role gnd="4045893-3">Fotograf</Role>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Titel" ElementId="1" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>Zürich, Grossmünster, vue partielle intérieure</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Entstehungszeitraum" ElementId="7" ElementType="Datumsbereich (von/bis)" ElementTypeId="2">
-        <ElementValue Sequence="1">
-          <DateRange DateOperator="exact">
-            <FromDate fullDate="1901-01-01">+1901</FromDate>
-            <FromApproxIndicator>false</FromApproxIndicator>
-            <ToDate/>
-            <ToApproxIndicator>false</ToApproxIndicator>
-            <TextRepresentation>1901</TextRepresentation>
-          </DateRange>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Archivalienart" ElementId="17" ElementType="Auswahlliste" ElementTypeId="14">
-        <ElementValue Sequence="1">
-          <TextValue>Fotografie</TextValue>
-          <aat-id>300046300</aat-id>
-          <gnd-id>4045895-7</gnd-id>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Ansichtsbild" ElementId="10" ElementType="Bild" ElementTypeId="17">
-        <ElementValue Sequence="1">
-          <FileValue FileName="EAD-6582.JPG"/>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Vorschaubild" ElementId="9" ElementType="Bild" ElementTypeId="17">
-        <ElementValue Sequence="1">
-          <FileValue FileName="EAD-6582.JPG"/>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Urheberrechts-InhaberIn" ElementId="10848" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>Eidgenössisches Archiv für Denkmalpflege</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Inhalt / Kurzbeschreibung" ElementId="10003" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>Vue partielle intérieure de la nef du Grossmünster</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Erschliessungsgrad" ElementId="16" ElementType="Auswahlliste" ElementTypeId="14">
-        <ElementValue Sequence="1">
-          <TextValue>teilweise</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Land" ElementId="11066" ElementType="Auswahlliste" ElementTypeId="14">
-        <ElementValue Sequence="1">
-          <TextValue>Switzerland</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Kanton" ElementId="11068" ElementType="Auswahlliste" ElementTypeId="14">
-        <ElementValue Sequence="1">
-          <TextValue>Zürich</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Gemeinde" ElementId="10156" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>Zürich</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Postleitzahl" ElementId="10157" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>8001</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Ort" ElementId="10122" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>Zürich</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Lokalname" ElementId="10160" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>Zürich</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Koordinaten X" ElementId="10161" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>683195.10000</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Koordinaten Y" ElementId="10162" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>248031.20000</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Farbe" ElementId="11070" ElementType="Auswahlliste" ElementTypeId="14">
-        <ElementValue Sequence="1">
-          <TextValue>S/W</TextValue>
-          <aat-id>300265434</aat-id>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Orientierung und Form" ElementId="10372" ElementType="Auswahlliste" ElementTypeId="14">
-        <ElementValue Sequence="1">
-          <TextValue>Vertikal</TextValue>
-          <aat-id>300343370</aat-id>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="URL Bild in Druckqualität" ElementId="11040" ElementType="Web-Hyperlink" ElementTypeId="11">
-        <ElementValue Sequence="1">
-          <TextValue>https://commons.wikimedia.org/wiki/File%3ACH-NB_-_Z%C3%BCrich%2C_Grossm%C3%BCnster%2C_vue_partielle_int%C3%A9rieure_-_Collection_Max_van_Berchem_-_EAD-6582.tif</TextValue>
-          <Width>3697</Width>
-          <Height>5199</Height>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Projekte" ElementId="10884" ElementType="Auswahlliste" ElementTypeId="14">
-        <ElementValue Sequence="1">
-          <TextValue>Wikimedia Commons</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Dateiname Digitalisat" ElementId="10435" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>EAD-6582</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Personen" ElementId="11053" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>FotografIn  / Personen / B / Berchem, Max van / 1863 - 1921</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Geopolitische Daten" ElementId="11057" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>Zürich  / Geopolitische Daten / Schweiz / ZH</TextValue>
-        </ElementValue>
-      </DataElement>
-    </DetailData>
-    <Descriptors>
-      <Descriptor>
-        <Name>FotografIn</Name>
-        <Thesaurus>Personen</Thesaurus>
-        <IdName>FotografIn  (Personen\B\Berchem, Max van (1863 - 1921))</IdName>
-        <SeeAlso>Berchem, Max van (1863 - 1921)</SeeAlso>
-        <GND-Nummer>119369893</GND-Nummer>
-        <IdNameForMapping>FotografIn(Personen\B\Berchem,Maxvan(1863-1921))</IdNameForMapping>
-      </Descriptor>
-      <Descriptor>
-        <Name>Fotografie</Name>
-        <Thesaurus>Gemeinfrei</Thesaurus>
-        <IdName>Fotografie  (Gemeinfrei\)</IdName>
-        <IdNameForMapping>Fotografie(Gemeinfrei\)</IdNameForMapping>
-      </Descriptor>
-      <Descriptor>
-        <Name>Zürich (Stadt)</Name>
-        <Thesaurus>Geografika</Thesaurus>
-        <IdName>Zürich (Stadt)  (Geografika\Europa\Schweiz\Zürich)</IdName>
-        <SeeAlso>Zürich</SeeAlso>
-        <GND-Kennung>4068038-1</GND-Kennung>
-        <WD>Q72</WD>
-        <IdNameForMapping>Zürich(Stadt)(Geografika\Europa\Schweiz\Zürich)</IdNameForMapping>
-      </Descriptor>
-    </Descriptors>
-    <AdministrativeData>
-      <LastEditedOn>2020-11-13</LastEditedOn>
-      <CreatedOn>2015-06-24</CreatedOn>
-    </AdministrativeData>
-  </Record>
-  <Record Id="863720" ParentId="545275" Level="Dokument" IdName="EAD-6583   Zürich, Grossmünster, vue partielle intérieure, 1901 (Dokument)" Level-gnd-id="4139988-2" Level-aat-id="300026685" RecordIdentifier="nb-863720" ParentRecordIdentifier="nb-545275">
-    <DetailData>
-      <DataElement ElementName="Signatur" ElementId="2" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>EAD-6583</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Signatur Archivplan" ElementId="3" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>EAD-6583</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="FotografIn" ElementId="10817" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>Berchem, Max van</TextValue>
-          <Descriptor>
-            <Name>FotografIn</Name>
-            <Thesaurus>Personen</Thesaurus>
-            <IdName>FotografIn  (Personen\B\Berchem, Max van (1863 - 1921))</IdName>
-            <SeeAlso>Berchem, Max van (1863 - 1921)</SeeAlso>
-            <GND-Nummer>119369893</GND-Nummer>
-          </Descriptor>
-          <NormalisedName>Berchem, Max van</NormalisedName>
-          <Role gnd="4045893-3">Fotograf</Role>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Titel" ElementId="1" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>Zürich, Grossmünster, vue partielle intérieure</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Entstehungszeitraum" ElementId="7" ElementType="Datumsbereich (von/bis)" ElementTypeId="2">
-        <ElementValue Sequence="1">
-          <DateRange DateOperator="exact">
-            <FromDate fullDate="1901-01-01">+1901</FromDate>
-            <FromApproxIndicator>false</FromApproxIndicator>
-            <ToDate/>
-            <ToApproxIndicator>false</ToApproxIndicator>
-            <TextRepresentation>1901</TextRepresentation>
-          </DateRange>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Archivalienart" ElementId="17" ElementType="Auswahlliste" ElementTypeId="14">
-        <ElementValue Sequence="1">
-          <TextValue>Fotografie</TextValue>
-          <aat-id>300046300</aat-id>
-          <gnd-id>4045895-7</gnd-id>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Ansichtsbild" ElementId="10" ElementType="Bild" ElementTypeId="17">
-        <ElementValue Sequence="1">
-          <FileValue FileName="EAD-6583.JPG"/>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Vorschaubild" ElementId="9" ElementType="Bild" ElementTypeId="17">
-        <ElementValue Sequence="1">
-          <FileValue FileName="EAD-6583.JPG"/>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Urheberrechts-InhaberIn" ElementId="10848" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>Eidgenössisches Archiv für Denkmalpflege</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Inhalt / Kurzbeschreibung" ElementId="10003" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>Vue partielle intérieure d'une nef latérale du Grossmünster</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Erschliessungsgrad" ElementId="16" ElementType="Auswahlliste" ElementTypeId="14">
-        <ElementValue Sequence="1">
-          <TextValue>teilweise</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Land" ElementId="11066" ElementType="Auswahlliste" ElementTypeId="14">
-        <ElementValue Sequence="1">
-          <TextValue>Switzerland</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Kanton" ElementId="11068" ElementType="Auswahlliste" ElementTypeId="14">
-        <ElementValue Sequence="1">
-          <TextValue>Zürich</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Gemeinde" ElementId="10156" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>Zürich</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Postleitzahl" ElementId="10157" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>8001</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Ort" ElementId="10122" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>Zürich</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Lokalname" ElementId="10160" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>Zürich</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Koordinaten X" ElementId="10161" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>683195.10000</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Koordinaten Y" ElementId="10162" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>248031.20000</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Farbe" ElementId="11070" ElementType="Auswahlliste" ElementTypeId="14">
-        <ElementValue Sequence="1">
-          <TextValue>S/W</TextValue>
-          <aat-id>300265434</aat-id>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Orientierung und Form" ElementId="10372" ElementType="Auswahlliste" ElementTypeId="14">
-        <ElementValue Sequence="1">
-          <TextValue>Horizontal</TextValue>
-          <aat-id>300311843</aat-id>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="URL Bild in Druckqualität" ElementId="11040" ElementType="Web-Hyperlink" ElementTypeId="11">
-        <ElementValue Sequence="1">
-          <TextValue>https://commons.wikimedia.org/wiki/File%3ACH-NB_-_Z%C3%BCrich%2C_Grossm%C3%BCnster%2C_vue_partielle_int%C3%A9rieure_-_Collection_Max_van_Berchem_-_EAD-6583.tif</TextValue>
-          <Width>5179</Width>
-          <Height>3735</Height>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Projekte" ElementId="10884" ElementType="Auswahlliste" ElementTypeId="14">
-        <ElementValue Sequence="1">
-          <TextValue>Wikimedia Commons</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Dateiname Digitalisat" ElementId="10435" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>EAD-6583</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Personen" ElementId="11053" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>FotografIn  / Personen / B / Berchem, Max van / 1863 - 1921</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Geopolitische Daten" ElementId="11057" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>Zürich  / Geopolitische Daten / Schweiz / ZH</TextValue>
-        </ElementValue>
-      </DataElement>
-    </DetailData>
-    <Descriptors>
-      <Descriptor>
-        <Name>FotografIn</Name>
-        <Thesaurus>Personen</Thesaurus>
-        <IdName>FotografIn  (Personen\B\Berchem, Max van (1863 - 1921))</IdName>
-        <SeeAlso>Berchem, Max van (1863 - 1921)</SeeAlso>
-        <GND-Nummer>119369893</GND-Nummer>
-        <IdNameForMapping>FotografIn(Personen\B\Berchem,Maxvan(1863-1921))</IdNameForMapping>
-      </Descriptor>
-      <Descriptor>
-        <Name>Fotografie</Name>
-        <Thesaurus>Gemeinfrei</Thesaurus>
-        <IdName>Fotografie  (Gemeinfrei\)</IdName>
-        <IdNameForMapping>Fotografie(Gemeinfrei\)</IdNameForMapping>
-      </Descriptor>
-      <Descriptor>
-        <Name>Zürich (Stadt)</Name>
-        <Thesaurus>Geografika</Thesaurus>
-        <IdName>Zürich (Stadt)  (Geografika\Europa\Schweiz\Zürich)</IdName>
-        <SeeAlso>Zürich</SeeAlso>
-        <GND-Kennung>4068038-1</GND-Kennung>
-        <WD>Q72</WD>
-        <IdNameForMapping>Zürich(Stadt)(Geografika\Europa\Schweiz\Zürich)</IdNameForMapping>
-      </Descriptor>
-    </Descriptors>
-    <AdministrativeData>
-      <LastEditedOn>2020-11-13</LastEditedOn>
-      <CreatedOn>2015-06-24</CreatedOn>
-    </AdministrativeData>
-  </Record>
-  <Record xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Id="476941" ParentId="546442" Level="Dokument" IdName="GS-GUGE-ABERLI-B-1   Prospect der Stadt Bern von der Morgen Seite = Vue de la ville de Berne du Côté du Levant, 1764- (Dokument)" Level-gnd-id="4139988-2" Level-aat-id="300026685" RecordIdentifier="nb-476941" ParentRecordIdentifier="nb-546442">
-    <DetailData>
-      <DataElement ElementName="Signatur" ElementId="2" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>GS-GUGE-ABERLI-B-1</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Signatur Archivplan" ElementId="3" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>ABERLI-B-1</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Andere Dokumentnummer" ElementId="10165" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>Inv.: 1978 SG 52; Aberli B 1; 52</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="KünstlerIn" ElementId="10927" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1-0">
-          <TextValue>Aberli, Johann Ludwig [MalerIn/ZeichnerIn]</TextValue>
-          <Descriptor>
-            <Name>BildendeR KünstlerIn</Name>
-            <Thesaurus>Personen</Thesaurus>
-            <IdName>BildendeR KünstlerIn  (Personen\A\Aberli, Johann Ludwig (1723-1786))</IdName>
-            <SeeAlso>Aberli, Johann Ludwig (1723-1786)</SeeAlso>
-            <GND-Nummer>118896644</GND-Nummer>
-          </Descriptor>
-          <NormalisedName>Aberli, Johann Ludwig</NormalisedName>
-          <Role gnd="4037215-7">MalerIn</Role>
-        </ElementValue>
-        <ElementValue Sequence="1-1">
-          <TextValue>Zingg, Adrian [StecherIn]</TextValue>
-          <Descriptor>
-            <Name>BildendeR KünstlerIn</Name>
-            <Thesaurus>Personen</Thesaurus>
-            <IdName>BildendeR KünstlerIn  (Personen\Z\Zingg, Adrian (1734-1816))</IdName>
-            <SeeAlso>Zingg, Adrian (1734-1816)</SeeAlso>
-            <GND-Nummer>117004669</GND-Nummer>
-          </Descriptor>
-          <NormalisedName>Zingg, Adrian</NormalisedName>
-          <Role gnd="4158107-6">Stecher</Role>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="HerausgeberIn/VerlegerIn" ElementId="10915" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>Mechel, Christian von (Basel)</TextValue>
-          <NormalisedName>Mechel, Christian von (Basel)</NormalisedName>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Titel" ElementId="1" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>Prospect der Stadt Bern von der Morgen Seite = Vue de la ville de Berne du Côté du Levant</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Entstehungszeitraum" ElementId="7" ElementType="Datumsbereich (von/bis)" ElementTypeId="2">
-        <ElementValue Sequence="1">
-          <DateRange DateOperator="startingWith">
-            <FromDate fullDate="1764-01-01">+1764</FromDate>
-            <FromApproxIndicator>false</FromApproxIndicator>
-            <ToDate/>
-            <ToApproxIndicator>false</ToApproxIndicator>
-            <TextRepresentation>1764-</TextRepresentation>
-          </DateRange>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Bemerkung zum Entstehungszeitraum" ElementId="10110" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>Geiser (1929, Nr. 91), Schaller (1990, Abb. 3) und Wüthrich (1959, Nr. 133) datieren dieses Blatt auf die Zeit nach 1764, da die Platte dann in den Besitz von Christian von Mechel gelangte und erst ab diesem Zeitpunkt den Zusatz "a Basle chez Chr: de Mechel Graveur" trug. Lonchamp (1927, Nr. B-47) datiert die Grafik auf 1758.</TextValue>
-        </ElementValue>
-        <ElementValue Sequence="2">
-          <TextValue>Pendant zu dem Blatt "Prospect der Stadt Bern von der Mittag Seite = Vue de la ville de Berne du Côté du Midi" von Johann Ludwig Aberli (GS-GUGE-ABERLI-B-2)</TextValue>
-        </ElementValue>
-        <ElementValue Sequence="3">
-          <TextValue>Auf dem Blatt sind der 1758 vollendete Aargauerstalden sowie die 1760 abgebrochenen Oberbauten der Untertorbrücke zu sehen (Schaller 1990, Abb.3).</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Archivalienart" ElementId="17" ElementType="Auswahlliste" ElementTypeId="14">
-        <ElementValue Sequence="1">
-          <TextValue>Druckgrafik</TextValue>
-          <aat-id>300041273</aat-id>
-          <gnd-id>4113357-2</gnd-id>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Ansichtsbild" ElementId="10" ElementType="Bild" ElementTypeId="17">
-        <ElementValue Sequence="1">
-          <FileValue FileName="GS-GUGE-ABERLI-B-1.JPG"/>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Vorschaubild" ElementId="9" ElementType="Bild" ElementTypeId="17">
-        <ElementValue Sequence="1">
-          <FileValue FileName="GS-GUGE-ABERLI-B-1.JPG"/>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Beschriftung - Legende" ElementId="10345" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>[recto unten links]: I.L. Aberli ad Nat. delin. et Excudit
+<Collection><Record Id="789058" ParentId="545275" Level="Dokument" IdName="EAD-6580   Zürich, Rathaus, Südfassade, vue d'ensemble, 1901 (Dokument)" Level-gnd-id="4139988-2" Level-aat-id="300026685" RecordIdentifier="nb-789058" ParentRecordIdentifier="nb-545275">  
+  <DetailData>   
+   <DataElement ElementName="Signatur" ElementId="2" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">    
+    <ElementValue Sequence="1">     
+     <TextValue>EAD-6580</TextValue>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Signatur Archivplan" ElementId="3" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">    
+    <ElementValue Sequence="1">     
+     <TextValue>EAD-6580</TextValue>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="FotografIn" ElementId="10817" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">    
+    <ElementValue Sequence="1">     
+     <TextValue>Berchem, Max van</TextValue>     
+    <Descriptor>    
+    <Name>FotografIn</Name>    
+    <Thesaurus>Personen</Thesaurus>    
+    <IdName>FotografIn  (Personen\B\Berchem, Max van (1863 - 1921))</IdName>    
+    <SeeAlso>Berchem, Max van (1863 - 1921)</SeeAlso>    
+   <GND-Nummer>119369893</GND-Nummer></Descriptor>   
+   <NormalisedName>Berchem, Max van</NormalisedName><Role gnd="4045893-3">Fotograf</Role></ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Titel" ElementId="1" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">    
+    <ElementValue Sequence="1">     
+     <TextValue>Zürich, Rathaus, Südfassade, vue d'ensemble</TextValue>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Entstehungszeitraum" ElementId="7" ElementType="Datumsbereich (von/bis)" ElementTypeId="2">    
+    <ElementValue Sequence="1">     
+     <DateRange DateOperator="exact">      
+      <FromDate fullDate="1901-01-01">+1901</FromDate>      
+      <FromApproxIndicator>false</FromApproxIndicator>      
+      <ToDate/>      
+      <ToApproxIndicator>false</ToApproxIndicator>      
+      <TextRepresentation>1901</TextRepresentation>      
+     </DateRange>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Archivalienart" ElementId="17" ElementType="Auswahlliste" ElementTypeId="14">    
+    <ElementValue Sequence="1">     
+     <TextValue>Fotografie</TextValue>     
+    <aat-id index="0">300046300</aat-id><gnd-id index="0">4045895-7</gnd-id><normalised index="0">fotografie</normalised></ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Ansichtsbild" ElementId="10" ElementType="Bild" ElementTypeId="17">    
+    <ElementValue Sequence="1">     
+     <FileValue FileName="EAD-6580.JPG"/>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Vorschaubild" ElementId="9" ElementType="Bild" ElementTypeId="17">    
+    <ElementValue Sequence="1">     
+     <FileValue FileName="EAD-6580.JPG"/>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Urheberrechts-InhaberIn" ElementId="10848" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">    
+    <ElementValue Sequence="1">     
+     <TextValue>Eidgenössisches Archiv für Denkmalpflege</TextValue>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Inhalt / Kurzbeschreibung" ElementId="10003" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">    
+    <ElementValue Sequence="1">     
+     <TextValue>Vue d'ensemble de la façade sud de l'hôtel de ville.</TextValue>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Erschliessungsgrad" ElementId="16" ElementType="Auswahlliste" ElementTypeId="14">    
+    <ElementValue Sequence="1">     
+     <TextValue>teilweise</TextValue>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Land" ElementId="11066" ElementType="Auswahlliste" ElementTypeId="14">    
+    <ElementValue Sequence="1">     
+     <TextValue>Switzerland</TextValue>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Kanton" ElementId="11068" ElementType="Auswahlliste" ElementTypeId="14">    
+    <ElementValue Sequence="1">     
+     <TextValue>Zürich</TextValue>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Gemeinde" ElementId="10156" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">    
+    <ElementValue Sequence="1">     
+     <TextValue>Zürich</TextValue>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Postleitzahl" ElementId="10157" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">    
+    <ElementValue Sequence="1">     
+     <TextValue>8001</TextValue>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Ort" ElementId="10122" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">    
+    <ElementValue Sequence="1">     
+     <TextValue>Zürich</TextValue>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Lokalname" ElementId="10160" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">    
+    <ElementValue Sequence="1">     
+     <TextValue>Zürich</TextValue>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Koordinaten X" ElementId="10161" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">    
+    <ElementValue Sequence="1">     
+     <TextValue>683195.10000</TextValue>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Koordinaten Y" ElementId="10162" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">    
+    <ElementValue Sequence="1">     
+     <TextValue>248031.20000</TextValue>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Farbe" ElementId="11070" ElementType="Auswahlliste" ElementTypeId="14">    
+    <ElementValue Sequence="1">     
+     <TextValue>S/W</TextValue>     
+    <aat-id index="0">300265434</aat-id></ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Orientierung und Form" ElementId="10372" ElementType="Auswahlliste" ElementTypeId="14">    
+    <ElementValue Sequence="1">     
+     <TextValue>Vertikal</TextValue>     
+    <aat-id index="0">300343370</aat-id></ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="URL Bild in Druckqualität" ElementId="11040" ElementType="Web-Hyperlink" ElementTypeId="11">    
+    <ElementValue Sequence="1">     
+     <TextValue>https://commons.wikimedia.org/wiki/File%3ACH-NB_-_Z%C3%BCrich%2C_Rathaus%2C_fa%C3%A7ade%2C_vue_d%27ensemble_-_Collection_Max_van_Berchem_-_EAD-6580.tif</TextValue>     
+    <Width>3700</Width><Height>5110</Height></ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Projekte" ElementId="10884" ElementType="Auswahlliste" ElementTypeId="14">    
+    <ElementValue Sequence="1">     
+     <TextValue>Wikimedia Commons</TextValue>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Dateiname Digitalisat" ElementId="10435" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">    
+    <ElementValue Sequence="1">     
+     <TextValue>EAD-6580</TextValue>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Personen" ElementId="11053" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">    
+    <ElementValue Sequence="1">     
+     <TextValue>FotografIn  / Personen / B / Berchem, Max van / 1863 - 1921</TextValue>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Geopolitische Daten" ElementId="11057" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">    
+    <ElementValue Sequence="1">     
+     <TextValue>Zürich  / Geopolitische Daten / Schweiz / ZH</TextValue>     
+    </ElementValue>    
+   </DataElement>   
+  </DetailData>  
+  <Descriptors>   
+   <Descriptor>    
+    <Name>FotografIn</Name>    
+    <Thesaurus>Personen</Thesaurus>    
+    <IdName>FotografIn  (Personen\B\Berchem, Max van (1863 - 1921))</IdName>    
+    <SeeAlso>Berchem, Max van (1863 - 1921)</SeeAlso>    
+   <GND-Nummer>119369893</GND-Nummer><IdNameForMapping>FotografIn(Personen\B\Berchem,Maxvan(1863-1921))</IdNameForMapping></Descriptor>   
+   <Descriptor>    
+    <Name>Fotografie</Name>    
+    <Thesaurus>Gemeinfrei</Thesaurus>    
+    <IdName>Fotografie  (Gemeinfrei\)</IdName>    
+   <IdNameForMapping>Fotografie(Gemeinfrei\)</IdNameForMapping></Descriptor>   
+   <Descriptor>    
+    <Name>Zürich (Stadt)</Name>    
+    <Thesaurus>Geografika</Thesaurus>    
+    <IdName>Zürich (Stadt)  (Geografika\Europa\Schweiz\Zürich)</IdName>    
+    <SeeAlso>Zürich</SeeAlso>    
+   <GND-Kennung>4068038-1</GND-Kennung><WD>Q72</WD><IdNameForMapping>Zürich(Stadt)(Geografika\Europa\Schweiz\Zürich)</IdNameForMapping></Descriptor>   
+  </Descriptors>  
+  <AdministrativeData>   
+   <LastEditedOn>2020-11-13</LastEditedOn>   
+   <CreatedOn>2015-01-06</CreatedOn>   
+  </AdministrativeData>  
+ </Record> 
+ <Record Id="863687" ParentId="545275" Level="Dokument" IdName="EAD-6581   Zürich, Grossmünster, Portail, vue d'ensemble, 1901 (Dokument)" Level-gnd-id="4139988-2" Level-aat-id="300026685" RecordIdentifier="nb-863687" ParentRecordIdentifier="nb-545275">  
+  <DetailData>   
+   <DataElement ElementName="Signatur" ElementId="2" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">    
+    <ElementValue Sequence="1">     
+     <TextValue>EAD-6581</TextValue>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Signatur Archivplan" ElementId="3" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">    
+    <ElementValue Sequence="1">     
+     <TextValue>EAD-6581</TextValue>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="FotografIn" ElementId="10817" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">    
+    <ElementValue Sequence="1">     
+     <TextValue>Berchem, Max van</TextValue>     
+    <Descriptor>    
+    <Name>FotografIn</Name>    
+    <Thesaurus>Personen</Thesaurus>    
+    <IdName>FotografIn  (Personen\B\Berchem, Max van (1863 - 1921))</IdName>    
+    <SeeAlso>Berchem, Max van (1863 - 1921)</SeeAlso>    
+   <GND-Nummer>119369893</GND-Nummer></Descriptor>   
+   <NormalisedName>Berchem, Max van</NormalisedName><Role gnd="4045893-3">Fotograf</Role></ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Titel" ElementId="1" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">    
+    <ElementValue Sequence="1">     
+     <TextValue>Zürich, Grossmünster, Portail, vue d'ensemble</TextValue>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Entstehungszeitraum" ElementId="7" ElementType="Datumsbereich (von/bis)" ElementTypeId="2">    
+    <ElementValue Sequence="1">     
+     <DateRange DateOperator="exact">      
+      <FromDate fullDate="1901-01-01">+1901</FromDate>      
+      <FromApproxIndicator>false</FromApproxIndicator>      
+      <ToDate/>      
+      <ToApproxIndicator>false</ToApproxIndicator>      
+      <TextRepresentation>1901</TextRepresentation>      
+     </DateRange>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Archivalienart" ElementId="17" ElementType="Auswahlliste" ElementTypeId="14">    
+    <ElementValue Sequence="1">     
+     <TextValue>Fotografie</TextValue>     
+    <aat-id index="0">300046300</aat-id><gnd-id index="0">4045895-7</gnd-id><normalised index="0">fotografie</normalised></ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Ansichtsbild" ElementId="10" ElementType="Bild" ElementTypeId="17">    
+    <ElementValue Sequence="1">     
+     <FileValue FileName="EAD-6581.JPG"/>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Vorschaubild" ElementId="9" ElementType="Bild" ElementTypeId="17">    
+    <ElementValue Sequence="1">     
+     <FileValue FileName="EAD-6581.JPG"/>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Urheberrechts-InhaberIn" ElementId="10848" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">    
+    <ElementValue Sequence="1">     
+     <TextValue>Eidgenössisches Archiv für Denkmalpflege</TextValue>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Inhalt / Kurzbeschreibung" ElementId="10003" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">    
+    <ElementValue Sequence="1">     
+     <TextValue>Vue d'ensemble du portail nord du Grossmünster</TextValue>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Erschliessungsgrad" ElementId="16" ElementType="Auswahlliste" ElementTypeId="14">    
+    <ElementValue Sequence="1">     
+     <TextValue>teilweise</TextValue>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Land" ElementId="11066" ElementType="Auswahlliste" ElementTypeId="14">    
+    <ElementValue Sequence="1">     
+     <TextValue>Switzerland</TextValue>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Kanton" ElementId="11068" ElementType="Auswahlliste" ElementTypeId="14">    
+    <ElementValue Sequence="1">     
+     <TextValue>Zürich</TextValue>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Gemeinde" ElementId="10156" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">    
+    <ElementValue Sequence="1">     
+     <TextValue>Zürich</TextValue>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Postleitzahl" ElementId="10157" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">    
+    <ElementValue Sequence="1">     
+     <TextValue>8001</TextValue>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Ort" ElementId="10122" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">    
+    <ElementValue Sequence="1">     
+     <TextValue>Zürich</TextValue>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Lokalname" ElementId="10160" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">    
+    <ElementValue Sequence="1">     
+     <TextValue>Zürich</TextValue>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Koordinaten X" ElementId="10161" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">    
+    <ElementValue Sequence="1">     
+     <TextValue>683195.10000</TextValue>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Koordinaten Y" ElementId="10162" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">    
+    <ElementValue Sequence="1">     
+     <TextValue>248031.20000</TextValue>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Farbe" ElementId="11070" ElementType="Auswahlliste" ElementTypeId="14">    
+    <ElementValue Sequence="1">     
+     <TextValue>S/W</TextValue>     
+    <aat-id index="0">300265434</aat-id></ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Orientierung und Form" ElementId="10372" ElementType="Auswahlliste" ElementTypeId="14">    
+    <ElementValue Sequence="1">     
+     <TextValue>Horizontal</TextValue>     
+    <aat-id index="0">300311843</aat-id></ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="URL Bild in Druckqualität" ElementId="11040" ElementType="Web-Hyperlink" ElementTypeId="11">    
+    <ElementValue Sequence="1">     
+     <TextValue>https://commons.wikimedia.org/wiki/File%3ACH-NB_-_Z%C3%BCrich%2C_Grossm%C3%BCnster%2C_Portail%2C_vue_d%27ensemble_-_Collection_Max_van_Berchem_-_EAD-6581.tif</TextValue>     
+    <Width>5205</Width><Height>3715</Height></ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Projekte" ElementId="10884" ElementType="Auswahlliste" ElementTypeId="14">    
+    <ElementValue Sequence="1">     
+     <TextValue>Wikimedia Commons</TextValue>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Dateiname Digitalisat" ElementId="10435" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">    
+    <ElementValue Sequence="1">     
+     <TextValue>EAD-6581</TextValue>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Personen" ElementId="11053" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">    
+    <ElementValue Sequence="1">     
+     <TextValue>FotografIn  / Personen / B / Berchem, Max van / 1863 - 1921</TextValue>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Geopolitische Daten" ElementId="11057" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">    
+    <ElementValue Sequence="1">     
+     <TextValue>Zürich  / Geopolitische Daten / Schweiz / ZH</TextValue>     
+    </ElementValue>    
+   </DataElement>   
+  </DetailData>  
+  <Descriptors>   
+   <Descriptor>    
+    <Name>FotografIn</Name>    
+    <Thesaurus>Personen</Thesaurus>    
+    <IdName>FotografIn  (Personen\B\Berchem, Max van (1863 - 1921))</IdName>    
+    <SeeAlso>Berchem, Max van (1863 - 1921)</SeeAlso>    
+   <GND-Nummer>119369893</GND-Nummer><IdNameForMapping>FotografIn(Personen\B\Berchem,Maxvan(1863-1921))</IdNameForMapping></Descriptor>   
+   <Descriptor>    
+    <Name>Fotografie</Name>    
+    <Thesaurus>Gemeinfrei</Thesaurus>    
+    <IdName>Fotografie  (Gemeinfrei\)</IdName>    
+   <IdNameForMapping>Fotografie(Gemeinfrei\)</IdNameForMapping></Descriptor>   
+   <Descriptor>    
+    <Name>Zürich (Stadt)</Name>    
+    <Thesaurus>Geografika</Thesaurus>    
+    <IdName>Zürich (Stadt)  (Geografika\Europa\Schweiz\Zürich)</IdName>    
+    <SeeAlso>Zürich</SeeAlso>    
+   <GND-Kennung>4068038-1</GND-Kennung><WD>Q72</WD><IdNameForMapping>Zürich(Stadt)(Geografika\Europa\Schweiz\Zürich)</IdNameForMapping></Descriptor>   
+  </Descriptors>  
+  <AdministrativeData>   
+   <LastEditedOn>2020-11-13</LastEditedOn>   
+   <CreatedOn>2015-06-24</CreatedOn>   
+  </AdministrativeData>  
+ </Record> 
+ <Record Id="863691" ParentId="545275" Level="Dokument" IdName="EAD-6582   Zürich, Grossmünster, vue partielle intérieure, 1901 (Dokument)" Level-gnd-id="4139988-2" Level-aat-id="300026685" RecordIdentifier="nb-863691" ParentRecordIdentifier="nb-545275">  
+  <DetailData>   
+   <DataElement ElementName="Signatur" ElementId="2" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">    
+    <ElementValue Sequence="1">     
+     <TextValue>EAD-6582</TextValue>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Signatur Archivplan" ElementId="3" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">    
+    <ElementValue Sequence="1">     
+     <TextValue>EAD-6582</TextValue>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="FotografIn" ElementId="10817" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">    
+    <ElementValue Sequence="1">     
+     <TextValue>Berchem, Max van</TextValue>     
+    <Descriptor>    
+    <Name>FotografIn</Name>    
+    <Thesaurus>Personen</Thesaurus>    
+    <IdName>FotografIn  (Personen\B\Berchem, Max van (1863 - 1921))</IdName>    
+    <SeeAlso>Berchem, Max van (1863 - 1921)</SeeAlso>    
+   <GND-Nummer>119369893</GND-Nummer></Descriptor>   
+   <NormalisedName>Berchem, Max van</NormalisedName><Role gnd="4045893-3">Fotograf</Role></ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Titel" ElementId="1" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">    
+    <ElementValue Sequence="1">     
+     <TextValue>Zürich, Grossmünster, vue partielle intérieure</TextValue>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Entstehungszeitraum" ElementId="7" ElementType="Datumsbereich (von/bis)" ElementTypeId="2">    
+    <ElementValue Sequence="1">     
+     <DateRange DateOperator="exact">      
+      <FromDate fullDate="1901-01-01">+1901</FromDate>      
+      <FromApproxIndicator>false</FromApproxIndicator>      
+      <ToDate/>      
+      <ToApproxIndicator>false</ToApproxIndicator>      
+      <TextRepresentation>1901</TextRepresentation>      
+     </DateRange>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Archivalienart" ElementId="17" ElementType="Auswahlliste" ElementTypeId="14">    
+    <ElementValue Sequence="1">     
+     <TextValue>Fotografie</TextValue>     
+    <aat-id index="0">300046300</aat-id><gnd-id index="0">4045895-7</gnd-id><normalised index="0">fotografie</normalised></ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Ansichtsbild" ElementId="10" ElementType="Bild" ElementTypeId="17">    
+    <ElementValue Sequence="1">     
+     <FileValue FileName="EAD-6582.JPG"/>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Vorschaubild" ElementId="9" ElementType="Bild" ElementTypeId="17">    
+    <ElementValue Sequence="1">     
+     <FileValue FileName="EAD-6582.JPG"/>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Urheberrechts-InhaberIn" ElementId="10848" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">    
+    <ElementValue Sequence="1">     
+     <TextValue>Eidgenössisches Archiv für Denkmalpflege</TextValue>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Inhalt / Kurzbeschreibung" ElementId="10003" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">    
+    <ElementValue Sequence="1">     
+     <TextValue>Vue partielle intérieure de la nef du Grossmünster</TextValue>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Erschliessungsgrad" ElementId="16" ElementType="Auswahlliste" ElementTypeId="14">    
+    <ElementValue Sequence="1">     
+     <TextValue>teilweise</TextValue>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Land" ElementId="11066" ElementType="Auswahlliste" ElementTypeId="14">    
+    <ElementValue Sequence="1">     
+     <TextValue>Switzerland</TextValue>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Kanton" ElementId="11068" ElementType="Auswahlliste" ElementTypeId="14">    
+    <ElementValue Sequence="1">     
+     <TextValue>Zürich</TextValue>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Gemeinde" ElementId="10156" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">    
+    <ElementValue Sequence="1">     
+     <TextValue>Zürich</TextValue>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Postleitzahl" ElementId="10157" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">    
+    <ElementValue Sequence="1">     
+     <TextValue>8001</TextValue>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Ort" ElementId="10122" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">    
+    <ElementValue Sequence="1">     
+     <TextValue>Zürich</TextValue>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Lokalname" ElementId="10160" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">    
+    <ElementValue Sequence="1">     
+     <TextValue>Zürich</TextValue>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Koordinaten X" ElementId="10161" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">    
+    <ElementValue Sequence="1">     
+     <TextValue>683195.10000</TextValue>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Koordinaten Y" ElementId="10162" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">    
+    <ElementValue Sequence="1">     
+     <TextValue>248031.20000</TextValue>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Farbe" ElementId="11070" ElementType="Auswahlliste" ElementTypeId="14">    
+    <ElementValue Sequence="1">     
+     <TextValue>S/W</TextValue>     
+    <aat-id index="0">300265434</aat-id></ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Orientierung und Form" ElementId="10372" ElementType="Auswahlliste" ElementTypeId="14">    
+    <ElementValue Sequence="1">     
+     <TextValue>Vertikal</TextValue>     
+    <aat-id index="0">300343370</aat-id></ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="URL Bild in Druckqualität" ElementId="11040" ElementType="Web-Hyperlink" ElementTypeId="11">    
+    <ElementValue Sequence="1">     
+     <TextValue>https://commons.wikimedia.org/wiki/File%3ACH-NB_-_Z%C3%BCrich%2C_Grossm%C3%BCnster%2C_vue_partielle_int%C3%A9rieure_-_Collection_Max_van_Berchem_-_EAD-6582.tif</TextValue>     
+    <Width>3697</Width><Height>5199</Height></ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Projekte" ElementId="10884" ElementType="Auswahlliste" ElementTypeId="14">    
+    <ElementValue Sequence="1">     
+     <TextValue>Wikimedia Commons</TextValue>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Dateiname Digitalisat" ElementId="10435" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">    
+    <ElementValue Sequence="1">     
+     <TextValue>EAD-6582</TextValue>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Personen" ElementId="11053" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">    
+    <ElementValue Sequence="1">     
+     <TextValue>FotografIn  / Personen / B / Berchem, Max van / 1863 - 1921</TextValue>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Geopolitische Daten" ElementId="11057" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">    
+    <ElementValue Sequence="1">     
+     <TextValue>Zürich  / Geopolitische Daten / Schweiz / ZH</TextValue>     
+    </ElementValue>    
+   </DataElement>   
+  </DetailData>  
+  <Descriptors>   
+   <Descriptor>    
+    <Name>FotografIn</Name>    
+    <Thesaurus>Personen</Thesaurus>    
+    <IdName>FotografIn  (Personen\B\Berchem, Max van (1863 - 1921))</IdName>    
+    <SeeAlso>Berchem, Max van (1863 - 1921)</SeeAlso>    
+   <GND-Nummer>119369893</GND-Nummer><IdNameForMapping>FotografIn(Personen\B\Berchem,Maxvan(1863-1921))</IdNameForMapping></Descriptor>   
+   <Descriptor>    
+    <Name>Fotografie</Name>    
+    <Thesaurus>Gemeinfrei</Thesaurus>    
+    <IdName>Fotografie  (Gemeinfrei\)</IdName>    
+   <IdNameForMapping>Fotografie(Gemeinfrei\)</IdNameForMapping></Descriptor>   
+   <Descriptor>    
+    <Name>Zürich (Stadt)</Name>    
+    <Thesaurus>Geografika</Thesaurus>    
+    <IdName>Zürich (Stadt)  (Geografika\Europa\Schweiz\Zürich)</IdName>    
+    <SeeAlso>Zürich</SeeAlso>    
+   <GND-Kennung>4068038-1</GND-Kennung><WD>Q72</WD><IdNameForMapping>Zürich(Stadt)(Geografika\Europa\Schweiz\Zürich)</IdNameForMapping></Descriptor>   
+  </Descriptors>  
+  <AdministrativeData>   
+   <LastEditedOn>2020-11-13</LastEditedOn>   
+   <CreatedOn>2015-06-24</CreatedOn>   
+  </AdministrativeData>  
+ </Record> 
+ <Record Id="863720" ParentId="545275" Level="Dokument" IdName="EAD-6583   Zürich, Grossmünster, vue partielle intérieure, 1901 (Dokument)" Level-gnd-id="4139988-2" Level-aat-id="300026685" RecordIdentifier="nb-863720" ParentRecordIdentifier="nb-545275">  
+  <DetailData>   
+   <DataElement ElementName="Signatur" ElementId="2" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">    
+    <ElementValue Sequence="1">     
+     <TextValue>EAD-6583</TextValue>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Signatur Archivplan" ElementId="3" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">    
+    <ElementValue Sequence="1">     
+     <TextValue>EAD-6583</TextValue>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="FotografIn" ElementId="10817" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">    
+    <ElementValue Sequence="1">     
+     <TextValue>Berchem, Max van</TextValue>     
+    <Descriptor>    
+    <Name>FotografIn</Name>    
+    <Thesaurus>Personen</Thesaurus>    
+    <IdName>FotografIn  (Personen\B\Berchem, Max van (1863 - 1921))</IdName>    
+    <SeeAlso>Berchem, Max van (1863 - 1921)</SeeAlso>    
+   <GND-Nummer>119369893</GND-Nummer></Descriptor>   
+   <NormalisedName>Berchem, Max van</NormalisedName><Role gnd="4045893-3">Fotograf</Role></ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Titel" ElementId="1" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">    
+    <ElementValue Sequence="1">     
+     <TextValue>Zürich, Grossmünster, vue partielle intérieure</TextValue>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Entstehungszeitraum" ElementId="7" ElementType="Datumsbereich (von/bis)" ElementTypeId="2">    
+    <ElementValue Sequence="1">     
+     <DateRange DateOperator="exact">      
+      <FromDate fullDate="1901-01-01">+1901</FromDate>      
+      <FromApproxIndicator>false</FromApproxIndicator>      
+      <ToDate/>      
+      <ToApproxIndicator>false</ToApproxIndicator>      
+      <TextRepresentation>1901</TextRepresentation>      
+     </DateRange>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Archivalienart" ElementId="17" ElementType="Auswahlliste" ElementTypeId="14">    
+    <ElementValue Sequence="1">     
+     <TextValue>Fotografie</TextValue>     
+    <aat-id index="0">300046300</aat-id><gnd-id index="0">4045895-7</gnd-id><normalised index="0">fotografie</normalised></ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Ansichtsbild" ElementId="10" ElementType="Bild" ElementTypeId="17">    
+    <ElementValue Sequence="1">     
+     <FileValue FileName="EAD-6583.JPG"/>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Vorschaubild" ElementId="9" ElementType="Bild" ElementTypeId="17">    
+    <ElementValue Sequence="1">     
+     <FileValue FileName="EAD-6583.JPG"/>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Urheberrechts-InhaberIn" ElementId="10848" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">    
+    <ElementValue Sequence="1">     
+     <TextValue>Eidgenössisches Archiv für Denkmalpflege</TextValue>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Inhalt / Kurzbeschreibung" ElementId="10003" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">    
+    <ElementValue Sequence="1">     
+     <TextValue>Vue partielle intérieure d'une nef latérale du Grossmünster</TextValue>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Erschliessungsgrad" ElementId="16" ElementType="Auswahlliste" ElementTypeId="14">    
+    <ElementValue Sequence="1">     
+     <TextValue>teilweise</TextValue>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Land" ElementId="11066" ElementType="Auswahlliste" ElementTypeId="14">    
+    <ElementValue Sequence="1">     
+     <TextValue>Switzerland</TextValue>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Kanton" ElementId="11068" ElementType="Auswahlliste" ElementTypeId="14">    
+    <ElementValue Sequence="1">     
+     <TextValue>Zürich</TextValue>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Gemeinde" ElementId="10156" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">    
+    <ElementValue Sequence="1">     
+     <TextValue>Zürich</TextValue>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Postleitzahl" ElementId="10157" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">    
+    <ElementValue Sequence="1">     
+     <TextValue>8001</TextValue>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Ort" ElementId="10122" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">    
+    <ElementValue Sequence="1">     
+     <TextValue>Zürich</TextValue>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Lokalname" ElementId="10160" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">    
+    <ElementValue Sequence="1">     
+     <TextValue>Zürich</TextValue>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Koordinaten X" ElementId="10161" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">    
+    <ElementValue Sequence="1">     
+     <TextValue>683195.10000</TextValue>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Koordinaten Y" ElementId="10162" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">    
+    <ElementValue Sequence="1">     
+     <TextValue>248031.20000</TextValue>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Farbe" ElementId="11070" ElementType="Auswahlliste" ElementTypeId="14">    
+    <ElementValue Sequence="1">     
+     <TextValue>S/W</TextValue>     
+    <aat-id index="0">300265434</aat-id></ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Orientierung und Form" ElementId="10372" ElementType="Auswahlliste" ElementTypeId="14">    
+    <ElementValue Sequence="1">     
+     <TextValue>Horizontal</TextValue>     
+    <aat-id index="0">300311843</aat-id></ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="URL Bild in Druckqualität" ElementId="11040" ElementType="Web-Hyperlink" ElementTypeId="11">    
+    <ElementValue Sequence="1">     
+     <TextValue>https://commons.wikimedia.org/wiki/File%3ACH-NB_-_Z%C3%BCrich%2C_Grossm%C3%BCnster%2C_vue_partielle_int%C3%A9rieure_-_Collection_Max_van_Berchem_-_EAD-6583.tif</TextValue>     
+    <Width>5179</Width><Height>3735</Height></ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Projekte" ElementId="10884" ElementType="Auswahlliste" ElementTypeId="14">    
+    <ElementValue Sequence="1">     
+     <TextValue>Wikimedia Commons</TextValue>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Dateiname Digitalisat" ElementId="10435" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">    
+    <ElementValue Sequence="1">     
+     <TextValue>EAD-6583</TextValue>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Personen" ElementId="11053" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">    
+    <ElementValue Sequence="1">     
+     <TextValue>FotografIn  / Personen / B / Berchem, Max van / 1863 - 1921</TextValue>     
+    </ElementValue>    
+   </DataElement>   
+   <DataElement ElementName="Geopolitische Daten" ElementId="11057" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">    
+    <ElementValue Sequence="1">     
+     <TextValue>Zürich  / Geopolitische Daten / Schweiz / ZH</TextValue>     
+    </ElementValue>    
+   </DataElement>   
+  </DetailData>  
+  <Descriptors>   
+   <Descriptor>    
+    <Name>FotografIn</Name>    
+    <Thesaurus>Personen</Thesaurus>    
+    <IdName>FotografIn  (Personen\B\Berchem, Max van (1863 - 1921))</IdName>    
+    <SeeAlso>Berchem, Max van (1863 - 1921)</SeeAlso>    
+   <GND-Nummer>119369893</GND-Nummer><IdNameForMapping>FotografIn(Personen\B\Berchem,Maxvan(1863-1921))</IdNameForMapping></Descriptor>   
+   <Descriptor>    
+    <Name>Fotografie</Name>    
+    <Thesaurus>Gemeinfrei</Thesaurus>    
+    <IdName>Fotografie  (Gemeinfrei\)</IdName>    
+   <IdNameForMapping>Fotografie(Gemeinfrei\)</IdNameForMapping></Descriptor>   
+   <Descriptor>    
+    <Name>Zürich (Stadt)</Name>    
+    <Thesaurus>Geografika</Thesaurus>    
+    <IdName>Zürich (Stadt)  (Geografika\Europa\Schweiz\Zürich)</IdName>    
+    <SeeAlso>Zürich</SeeAlso>    
+   <GND-Kennung>4068038-1</GND-Kennung><WD>Q72</WD><IdNameForMapping>Zürich(Stadt)(Geografika\Europa\Schweiz\Zürich)</IdNameForMapping></Descriptor>   
+  </Descriptors>  
+  <AdministrativeData>   
+   <LastEditedOn>2020-11-13</LastEditedOn>   
+   <CreatedOn>2015-06-24</CreatedOn>   
+  </AdministrativeData>  
+ </Record> 
+ <Record xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Id="476941" ParentId="546442" Level="Dokument" IdName="GS-GUGE-ABERLI-B-1   Prospect der Stadt Bern von der Morgen Seite = Vue de la ville de Berne du Côté du Levant, 1764- (Dokument)" Level-gnd-id="4139988-2" Level-aat-id="300026685" RecordIdentifier="nb-476941" ParentRecordIdentifier="nb-546442">
+          <DetailData>
+            <DataElement ElementName="Signatur" ElementId="2" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
+              <ElementValue Sequence="1">
+                <TextValue>GS-GUGE-ABERLI-B-1</TextValue>
+              </ElementValue>
+            </DataElement>
+            <DataElement ElementName="Signatur Archivplan" ElementId="3" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
+              <ElementValue Sequence="1">
+                <TextValue>ABERLI-B-1</TextValue>
+              </ElementValue>
+            </DataElement>
+            <DataElement ElementName="Andere Dokumentnummer" ElementId="10165" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
+              <ElementValue Sequence="1">
+                <TextValue>Inv.: 1978 SG 52; Aberli B 1; 52</TextValue>
+              </ElementValue>
+            </DataElement>
+            <DataElement ElementName="KünstlerIn" ElementId="10927" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
+              <ElementValue Sequence="1-0"><TextValue>Aberli, Johann Ludwig [MalerIn/ZeichnerIn]</TextValue><Descriptor>
+              <Name>BildendeR KünstlerIn</Name>
+              <Thesaurus>Personen</Thesaurus>
+              <IdName>BildendeR KünstlerIn  (Personen\A\Aberli, Johann Ludwig (1723-1786))</IdName>
+              <SeeAlso>Aberli, Johann Ludwig (1723-1786)</SeeAlso>
+            <GND-Nummer>118896644</GND-Nummer></Descriptor>
+            <NormalisedName>Aberli, Johann Ludwig</NormalisedName><Role gnd="4037215-7">MalerIn</Role></ElementValue><ElementValue Sequence="1-1"><TextValue>Zingg, Adrian [StecherIn]</TextValue><Descriptor>
+              <Name>BildendeR KünstlerIn</Name>
+              <Thesaurus>Personen</Thesaurus>
+              <IdName>BildendeR KünstlerIn  (Personen\Z\Zingg, Adrian (1734-1816))</IdName>
+              <SeeAlso>Zingg, Adrian (1734-1816)</SeeAlso>
+            <GND-Nummer>117004669</GND-Nummer></Descriptor>
+            <NormalisedName>Zingg, Adrian</NormalisedName><Role gnd="4158107-6">Stecher</Role></ElementValue></DataElement>
+            <DataElement ElementName="HerausgeberIn/VerlegerIn" ElementId="10915" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
+              <ElementValue Sequence="1">
+                <TextValue>Mechel, Christian von (Basel)</TextValue>
+              <NormalisedName>Mechel, Christian von (Basel)</NormalisedName></ElementValue>
+            </DataElement>
+            <DataElement ElementName="Titel" ElementId="1" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
+              <ElementValue Sequence="1">
+                <TextValue>Prospect der Stadt Bern von der Morgen Seite = Vue de la ville de Berne du Côté du Levant</TextValue>
+              </ElementValue>
+            </DataElement>
+            <DataElement ElementName="Entstehungszeitraum" ElementId="7" ElementType="Datumsbereich (von/bis)" ElementTypeId="2">
+              <ElementValue Sequence="1">
+                <DateRange DateOperator="startingWith">
+                  <FromDate fullDate="1764-01-01">+1764</FromDate>
+                  <FromApproxIndicator>false</FromApproxIndicator>
+                  <ToDate/>
+                  <ToApproxIndicator>false</ToApproxIndicator>
+                  <TextRepresentation>1764-</TextRepresentation>
+                </DateRange>
+              </ElementValue>
+            </DataElement>
+            <DataElement ElementName="Bemerkung zum Entstehungszeitraum" ElementId="10110" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
+              <ElementValue Sequence="1">
+                <TextValue>Geiser (1929, Nr. 91), Schaller (1990, Abb. 3) und Wüthrich (1959, Nr. 133) datieren dieses Blatt auf die Zeit nach 1764, da die Platte dann in den Besitz von Christian von Mechel gelangte und erst ab diesem Zeitpunkt den Zusatz "a Basle chez Chr: de Mechel Graveur" trug. Lonchamp (1927, Nr. B-47) datiert die Grafik auf 1758.</TextValue>
+              </ElementValue>
+              <ElementValue Sequence="2">
+                <TextValue>Pendant zu dem Blatt "Prospect der Stadt Bern von der Mittag Seite = Vue de la ville de Berne du Côté du Midi" von Johann Ludwig Aberli (GS-GUGE-ABERLI-B-2)</TextValue>
+              </ElementValue>
+              <ElementValue Sequence="3">
+                <TextValue>Auf dem Blatt sind der 1758 vollendete Aargauerstalden sowie die 1760 abgebrochenen Oberbauten der Untertorbrücke zu sehen (Schaller 1990, Abb.3).</TextValue>
+              </ElementValue>
+            </DataElement>
+            <DataElement ElementName="Archivalienart" ElementId="17" ElementType="Auswahlliste" ElementTypeId="14">
+              <ElementValue Sequence="1">
+                <TextValue>Druckgrafik</TextValue>
+              <aat-id index="0">300041273</aat-id></ElementValue>
+            </DataElement>
+            <DataElement ElementName="Ansichtsbild" ElementId="10" ElementType="Bild" ElementTypeId="17">
+              <ElementValue Sequence="1">
+                <FileValue FileName="GS-GUGE-ABERLI-B-1.JPG"/>
+              </ElementValue>
+            </DataElement>
+            <DataElement ElementName="Vorschaubild" ElementId="9" ElementType="Bild" ElementTypeId="17">
+              <ElementValue Sequence="1">
+                <FileValue FileName="GS-GUGE-ABERLI-B-1.JPG"/>
+              </ElementValue>
+            </DataElement>
+            <DataElement ElementName="Beschriftung - Legende" ElementId="10345" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
+              <ElementValue Sequence="1">
+                <TextValue>[recto unten links]: I.L. Aberli ad Nat. delin. et Excudit
 [unten rechts]: Adrian Zingg Sculp. 1758.
 [unten links]: Prospect der Stadt Bern / von der Morgen Seite. 
 [unten Mitte]: [Wappen] 
 [unten rechts]: Vue de la ville de Berne / du Côté du Levant.
 [unten rechts]: a Basle chez Chr: de Mechel Graveur.</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Art des Erwerbs" ElementId="10752" ElementType="Auswahlliste" ElementTypeId="14">
-        <ElementValue Sequence="1">
-          <TextValue>Schenkung</TextValue>
-          <aat-id>300417637</aat-id>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Erwerbsdatum" ElementId="10754" ElementType="Einzeldatum" ElementTypeId="16">
-        <ElementValue Sequence="1">
-          <TextValue>+1978</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="SammlerIn" ElementId="11006" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>Gugelmann, Rudolf und Annemarie</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="VE-Ablieferung (Link)" ElementId="505" ElementType="Verknüpfung" ElementTypeId="19">
-        <ElementValue Sequence="1">
-          <TextValue>1978/00009 Gugelmann, Annemarie (Muri b. Bern) (1750 (ca.)-1978 (ca.))</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Inhalt / Kurzbeschreibung" ElementId="10003" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>Bern, Gesamtansicht von Südosten. Aare; Aargauerstalden; Garten; Kathedrale; Stromschnelle</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Erschliessungsgrad" ElementId="16" ElementType="Auswahlliste" ElementTypeId="14">
-        <ElementValue Sequence="1">
-          <TextValue>detailliert</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Farbe" ElementId="11070" ElementType="Auswahlliste" ElementTypeId="14">
-        <ElementValue Sequence="1">
-          <TextValue>S/W</TextValue>
-          <aat-id>300265434</aat-id>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Orientierung und Form" ElementId="10372" ElementType="Auswahlliste" ElementTypeId="14">
-        <ElementValue Sequence="1">
-          <TextValue>Horizontal</TextValue>
-          <aat-id>300311843</aat-id>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Masse Bild" ElementId="10217" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>27.0 x 57.3 cm</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Masse Plattenrand" ElementId="11042" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>34.0 x 59.5 cm</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Masse Blatt" ElementId="10739" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>46.7 x 67.6 cm</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Masse Bild mit Passepartout und/oder Rahmen" ElementId="10738" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>49.0 x 69.0 cm</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Verfahren" ElementId="10483" ElementType="Auswahlliste" ElementTypeId="14">
-        <ElementValue Sequence="1">
-          <TextValue>Druck</TextValue>
-          <aat-id>300131119</aat-id>
-          <gnd-id>4013083-6</gnd-id>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Zustand Druckplatte" ElementId="11045" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>1. Platte, 2. Zustand</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Technik Druckgrafik" ElementId="10746" ElementType="Auswahlliste" ElementTypeId="14">
-        <ElementValue Sequence="1">
-          <TextValue>Radierung</TextValue>
-          <aat-id>300041365</aat-id>
-          <gnd-id>4048166-9</gnd-id>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Transparenz" ElementId="10358" ElementType="Auswahlliste" ElementTypeId="14">
-        <ElementValue Sequence="1">
-          <TextValue>Reflektierend</TextValue>
-          <aat-id>300403951</aat-id>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Trägermaterial" ElementId="10488" ElementType="Auswahlliste" ElementTypeId="14">
-        <ElementValue Sequence="1">
-          <TextValue>Papier</TextValue>
-          <aat-id>300014109</aat-id>
-          <gnd-id>4044522-7</gnd-id>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Literaturangabe" ElementId="10211" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>Geiser 1929, Nr. 91</TextValue>
-        </ElementValue>
-        <ElementValue Sequence="2">
-          <TextValue>Lonchamp 1927, Nr. B-47</TextValue>
-        </ElementValue>
-        <ElementValue Sequence="3">
-          <TextValue>Schaller 1990, Abb. 3</TextValue>
-        </ElementValue>
-        <ElementValue Sequence="4">
-          <TextValue>Wüthrich 1959, Nr. 133</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="URL Bild in Druckqualität" ElementId="11040" ElementType="Web-Hyperlink" ElementTypeId="11">
-        <ElementValue Sequence="1">
-          <TextValue>https://commons.wikimedia.org/wiki/File%3ACH-NB_-_Bern%2C_Gesamtansicht_von_S%C3%BCdosten_-_Collection_Gugelmann_-_GS-GUGE-ABERLI-B-1.tif</TextValue>
-          <Width>6142</Width>
-          <Height>4335</Height>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Land" ElementId="11066" ElementType="Auswahlliste" ElementTypeId="14">
-        <ElementValue Sequence="1">
-          <TextValue>Switzerland</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Kanton" ElementId="11068" ElementType="Auswahlliste" ElementTypeId="14">
-        <ElementValue Sequence="1">
-          <TextValue>Bern</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Ort" ElementId="10122" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>Bern</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Interne Bemerkung" ElementId="10882" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>Provenienz gemäss altem Findmittel "Blaue Bände" Bd. 2: Aus Auktion Klipstein, Bern, Kat. Nr. 17, Versteigerung in der Schulwarte in Bern am 5. - 7. Dezember 1940, Nr. 1.</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Projekte" ElementId="10884" ElementType="Auswahlliste" ElementTypeId="14">
-        <ElementValue Sequence="1">
-          <TextValue>Wikimedia Commons</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Dateiname Digitalisat" ElementId="10435" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>GS-GUGE-ABERLI-B-1</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Personen" ElementId="11053" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="2">
-          <TextValue>BildendeR KünstlerIn  / Personen / Z / Zingg, Adrian / 1734-1816</TextValue>
-        </ElementValue>
-        <ElementValue Sequence="3">
-          <TextValue>BildendeR KünstlerIn  / Personen / A / Aberli, Johann Ludwig / 1723-1786</TextValue>
-        </ElementValue>
-        <ElementValue Sequence="1">
-          <TextValue>Vertrieb/Verlag  / Personen / M / Mechel, Christian von / 1737-1817</TextValue>
-        </ElementValue>
-      </DataElement>
-      <DataElement ElementName="Geopolitische Daten" ElementId="11057" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
-        <ElementValue Sequence="1">
-          <TextValue>Bern / Stadt  / Geografika / Europa / Schweiz / Bern</TextValue>
-        </ElementValue>
-      </DataElement>
-    </DetailData>
-    <UsageData>
-      <TermOfProtection>Öffentlich</TermOfProtection>
-      <ProtectionBaseDate>Unbekannt</ProtectionBaseDate>
-      <ProtectionDuration>0</ProtectionDuration>
-      <ProtectionEndDate xsi:nil="true"/>
-      <ProtectionNote/>
-      <ProtectionMinIndicator>false</ProtectionMinIndicator>
-      <ProtectionManualEditIndicator>false</ProtectionManualEditIndicator>
-      <AlwaysVisibleOnline>true</AlwaysVisibleOnline>
-      <Permission>Gemeinfrei</Permission>
-      <PhysicalUsability>Uneingeschränkt</PhysicalUsability>
-      <Accessability>Archivmitarbeiter/-innen</Accessability>
-      <UsageNote/>
-    </UsageData>
-    <AdministrativeData>
-      <EditForm>NB Gemälde/Plan/Zeichnung/Grafik</EditForm>
-      <ViewingForm>NB Gemälde/Plan/Zeichnung/Grafik</ViewingForm>
-      <LastEditedOn>2021-02-27</LastEditedOn>
-      <LastEditedBy>DWINKELHAUSEN</LastEditedBy>
-      <CreatedOn>2011-11-28</CreatedOn>
-      <CreatedBy>RPROBST</CreatedBy>
-    </AdministrativeData>
-    <Descriptors>
-      <Descriptor>
-        <Name>Vertrieb/Verlag</Name>
-        <Thesaurus>Personen</Thesaurus>
-        <IdName>Vertrieb/Verlag  (Personen\M\Mechel, Christian von (1737-1817))</IdName>
-        <SeeAlso>Mechel, Christian von (1737-1817)</SeeAlso>
-        <GND-Nummer>1150971002</GND-Nummer>
-        <IdNameForMapping>Vertrieb/Verlag(Personen\M\Mechel,Christianvon(1737-1817))</IdNameForMapping>
-      </Descriptor>
-      <Descriptor>
-        <Name>BildendeR KünstlerIn</Name>
-        <Thesaurus>Personen</Thesaurus>
-        <IdName>BildendeR KünstlerIn  (Personen\Z\Zingg, Adrian (1734-1816))</IdName>
-        <SeeAlso>Zingg, Adrian (1734-1816)</SeeAlso>
-        <GND-Nummer>117004669</GND-Nummer>
-        <IdNameForMapping>BildendeRKünstlerIn(Personen\Z\Zingg,Adrian(1734-1816))</IdNameForMapping>
-      </Descriptor>
-      <Descriptor>
-        <Name>BildendeR KünstlerIn</Name>
-        <Thesaurus>Personen</Thesaurus>
-        <IdName>BildendeR KünstlerIn  (Personen\A\Aberli, Johann Ludwig (1723-1786))</IdName>
-        <SeeAlso>Aberli, Johann Ludwig (1723-1786)</SeeAlso>
-        <GND-Nummer>118896644</GND-Nummer>
-        <IdNameForMapping>BildendeRKünstlerIn(Personen\A\Aberli,JohannLudwig(1723-1786))</IdNameForMapping>
-      </Descriptor>
-      <Descriptor>
-        <Name>Bern (Stadt)</Name>
-        <Thesaurus>Geografika</Thesaurus>
-        <IdName>Bern (Stadt)  (Geografika\Europa\Schweiz\Bern)</IdName>
-        <Description>Ansetzung Geografika</Description>
-        <SeeAlso>AbsenderIn; AdressatIn; Bern; Veranstaltungsort; Verlag</SeeAlso>
-        <DetailData/>
-        <GND-Kennung>4005762-8</GND-Kennung>
-        <WD>Q70</WD>
-        <IdNameForMapping>Bern(Stadt)(Geografika\Europa\Schweiz\Bern)</IdNameForMapping>
-      </Descriptor>
-    </Descriptors>
-    <References>
-      <Reference Role="siehe auch">
-        <ReferenceName>GS-GUGE-ABERLI-B-2   Prospect der Stadt Bern von der Mittag Seite = Vue de la ville de Berne du Côté du Midi, 1764- (Dokument)</ReferenceName>
-      </Reference>
-      <Reference Role="siehe auch">
-        <ReferenceName>GS-GUGE-MECHEL-C-10   Vue de la ville de Berne du côté du Levant, 1760- (Dokument)</ReferenceName>
-      </Reference>
-    </References>
-  </Record>
-</Collection>
+              </ElementValue>
+            </DataElement>
+            <DataElement ElementName="Art des Erwerbs" ElementId="10752" ElementType="Auswahlliste" ElementTypeId="14">
+              <ElementValue Sequence="1">
+                <TextValue>Schenkung</TextValue>
+              <aat-id index="0">300417637</aat-id></ElementValue>
+            </DataElement>
+            <DataElement ElementName="Erwerbsdatum" ElementId="10754" ElementType="Einzeldatum" ElementTypeId="16">
+              <ElementValue Sequence="1">
+                <TextValue>+1978</TextValue>
+              </ElementValue>
+            </DataElement>
+            <DataElement ElementName="SammlerIn" ElementId="11006" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
+              <ElementValue Sequence="1">
+                <TextValue>Gugelmann, Rudolf und Annemarie</TextValue>
+              </ElementValue>
+            </DataElement>
+            <DataElement ElementName="VE-Ablieferung (Link)" ElementId="505" ElementType="Verknüpfung" ElementTypeId="19">
+              <ElementValue Sequence="1">
+                <TextValue>1978/00009 Gugelmann, Annemarie (Muri b. Bern) (1750 (ca.)-1978 (ca.))</TextValue>
+              </ElementValue>
+            </DataElement>
+            <DataElement ElementName="Inhalt / Kurzbeschreibung" ElementId="10003" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
+              <ElementValue Sequence="1">
+                <TextValue>Bern, Gesamtansicht von Südosten. Aare; Aargauerstalden; Garten; Kathedrale; Stromschnelle</TextValue>
+              </ElementValue>
+            </DataElement>
+            <DataElement ElementName="Erschliessungsgrad" ElementId="16" ElementType="Auswahlliste" ElementTypeId="14">
+              <ElementValue Sequence="1">
+                <TextValue>detailliert</TextValue>
+              </ElementValue>
+            </DataElement>
+            <DataElement ElementName="Farbe" ElementId="11070" ElementType="Auswahlliste" ElementTypeId="14">
+              <ElementValue Sequence="1">
+                <TextValue>S/W</TextValue>
+              <aat-id index="0">300265434</aat-id></ElementValue>
+            </DataElement>
+            <DataElement ElementName="Orientierung und Form" ElementId="10372" ElementType="Auswahlliste" ElementTypeId="14">
+              <ElementValue Sequence="1">
+                <TextValue>Horizontal</TextValue>
+              <aat-id index="0">300311843</aat-id></ElementValue>
+            </DataElement>
+            <DataElement ElementName="Masse Bild" ElementId="10217" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
+              <ElementValue Sequence="1">
+                <TextValue>27.0 x 57.3 cm</TextValue>
+              </ElementValue>
+            </DataElement>
+            <DataElement ElementName="Masse Plattenrand" ElementId="11042" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
+              <ElementValue Sequence="1">
+                <TextValue>34.0 x 59.5 cm</TextValue>
+              </ElementValue>
+            </DataElement>
+            <DataElement ElementName="Masse Blatt" ElementId="10739" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
+              <ElementValue Sequence="1">
+                <TextValue>46.7 x 67.6 cm</TextValue>
+              </ElementValue>
+            </DataElement>
+            <DataElement ElementName="Masse Bild mit Passepartout und/oder Rahmen" ElementId="10738" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
+              <ElementValue Sequence="1">
+                <TextValue>49.0 x 69.0 cm</TextValue>
+              </ElementValue>
+            </DataElement>
+            <DataElement ElementName="Verfahren" ElementId="10483" ElementType="Auswahlliste" ElementTypeId="14">
+              <ElementValue Sequence="1">
+                <TextValue>Druck</TextValue>
+              <aat-id index="0">300131119</aat-id></ElementValue>
+            </DataElement>
+            <DataElement ElementName="Zustand Druckplatte" ElementId="11045" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
+              <ElementValue Sequence="1">
+                <TextValue>1. Platte, 2. Zustand</TextValue>
+              </ElementValue>
+            </DataElement>
+            <DataElement ElementName="Technik Druckgrafik" ElementId="10746" ElementType="Auswahlliste" ElementTypeId="14">
+              <ElementValue Sequence="1">
+                <TextValue>Radierung</TextValue>
+              <aat-id index="0">300041365</aat-id><gnd-id index="0">4048166-9</gnd-id><normalised index="0">radierung</normalised></ElementValue>
+            </DataElement>
+            <DataElement ElementName="Transparenz" ElementId="10358" ElementType="Auswahlliste" ElementTypeId="14">
+              <ElementValue Sequence="1">
+                <TextValue>Reflektierend</TextValue>
+              <aat-id index="0">300403951</aat-id></ElementValue>
+            </DataElement>
+            <DataElement ElementName="Trägermaterial" ElementId="10488" ElementType="Auswahlliste" ElementTypeId="14">
+              <ElementValue Sequence="1">
+                <TextValue>Papier</TextValue>
+              <aat-id index="0">300014109</aat-id></ElementValue>
+            </DataElement>
+            <DataElement ElementName="Literaturangabe" ElementId="10211" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
+              <ElementValue Sequence="1">
+                <TextValue>Geiser 1929, Nr. 91</TextValue>
+              </ElementValue>
+              <ElementValue Sequence="2">
+                <TextValue>Lonchamp 1927, Nr. B-47</TextValue>
+              </ElementValue>
+              <ElementValue Sequence="3">
+                <TextValue>Schaller 1990, Abb. 3</TextValue>
+              </ElementValue>
+              <ElementValue Sequence="4">
+                <TextValue>Wüthrich 1959, Nr. 133</TextValue>
+              </ElementValue>
+            </DataElement>
+            <DataElement ElementName="URL Bild in Druckqualität" ElementId="11040" ElementType="Web-Hyperlink" ElementTypeId="11">
+              <ElementValue Sequence="1">
+                <TextValue>https://commons.wikimedia.org/wiki/File%3ACH-NB_-_Bern%2C_Gesamtansicht_von_S%C3%BCdosten_-_Collection_Gugelmann_-_GS-GUGE-ABERLI-B-1.tif</TextValue>
+              <Width>6142</Width><Height>4335</Height></ElementValue>
+            </DataElement>
+            <DataElement ElementName="Land" ElementId="11066" ElementType="Auswahlliste" ElementTypeId="14">
+              <ElementValue Sequence="1">
+                <TextValue>Switzerland</TextValue>
+              </ElementValue>
+            </DataElement>
+            <DataElement ElementName="Kanton" ElementId="11068" ElementType="Auswahlliste" ElementTypeId="14">
+              <ElementValue Sequence="1">
+                <TextValue>Bern</TextValue>
+              </ElementValue>
+            </DataElement>
+            <DataElement ElementName="Ort" ElementId="10122" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
+              <ElementValue Sequence="1">
+                <TextValue>Bern</TextValue>
+              </ElementValue>
+            </DataElement>
+            <DataElement ElementName="Interne Bemerkung" ElementId="10882" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
+              <ElementValue Sequence="1">
+                <TextValue>Provenienz gemäss altem Findmittel "Blaue Bände" Bd. 2: Aus Auktion Klipstein, Bern, Kat. Nr. 17, Versteigerung in der Schulwarte in Bern am 5. - 7. Dezember 1940, Nr. 1.</TextValue>
+              </ElementValue>
+            </DataElement>
+            <DataElement ElementName="Projekte" ElementId="10884" ElementType="Auswahlliste" ElementTypeId="14">
+              <ElementValue Sequence="1">
+                <TextValue>Wikimedia Commons</TextValue>
+              </ElementValue>
+            </DataElement>
+            <DataElement ElementName="Dateiname Digitalisat" ElementId="10435" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
+              <ElementValue Sequence="1">
+                <TextValue>GS-GUGE-ABERLI-B-1</TextValue>
+              </ElementValue>
+            </DataElement>
+            <DataElement ElementName="Personen" ElementId="11053" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
+              <ElementValue Sequence="2">
+                <TextValue>BildendeR KünstlerIn  / Personen / Z / Zingg, Adrian / 1734-1816</TextValue>
+              </ElementValue>
+              <ElementValue Sequence="3">
+                <TextValue>BildendeR KünstlerIn  / Personen / A / Aberli, Johann Ludwig / 1723-1786</TextValue>
+              </ElementValue>
+              <ElementValue Sequence="1">
+                <TextValue>Vertrieb/Verlag  / Personen / M / Mechel, Christian von / 1737-1817</TextValue>
+              </ElementValue>
+            </DataElement>
+            <DataElement ElementName="Geopolitische Daten" ElementId="11057" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
+              <ElementValue Sequence="1">
+                <TextValue>Bern / Stadt  / Geografika / Europa / Schweiz / Bern</TextValue>
+              </ElementValue>
+            </DataElement>
+          </DetailData>
+          <UsageData>
+            <TermOfProtection>Öffentlich</TermOfProtection>
+            <ProtectionBaseDate>Unbekannt</ProtectionBaseDate>
+            <ProtectionDuration>0</ProtectionDuration>
+            <ProtectionEndDate xsi:nil="true"/>
+            <ProtectionNote/>
+            <ProtectionMinIndicator>false</ProtectionMinIndicator>
+            <ProtectionManualEditIndicator>false</ProtectionManualEditIndicator>
+            <AlwaysVisibleOnline>true</AlwaysVisibleOnline>
+            <Permission>Gemeinfrei</Permission>
+            <PhysicalUsability>Uneingeschränkt</PhysicalUsability>
+            <Accessability>Archivmitarbeiter/-innen</Accessability>
+            <UsageNote/>
+          </UsageData>
+          <AdministrativeData>
+            <EditForm>NB Gemälde/Plan/Zeichnung/Grafik</EditForm>
+            <ViewingForm>NB Gemälde/Plan/Zeichnung/Grafik</ViewingForm>
+            <LastEditedOn>2021-02-27</LastEditedOn>
+            <LastEditedBy>DWINKELHAUSEN</LastEditedBy>
+            <CreatedOn>2011-11-28</CreatedOn>
+            <CreatedBy>RPROBST</CreatedBy>
+          </AdministrativeData>
+          <Descriptors>
+            <Descriptor>
+              <Name>Vertrieb/Verlag</Name>
+              <Thesaurus>Personen</Thesaurus>
+              <IdName>Vertrieb/Verlag  (Personen\M\Mechel, Christian von (1737-1817))</IdName>
+              <SeeAlso>Mechel, Christian von (1737-1817)</SeeAlso>
+            <GND-Nummer>1150971002</GND-Nummer><IdNameForMapping>Vertrieb/Verlag(Personen\M\Mechel,Christianvon(1737-1817))</IdNameForMapping></Descriptor>
+            <Descriptor>
+              <Name>BildendeR KünstlerIn</Name>
+              <Thesaurus>Personen</Thesaurus>
+              <IdName>BildendeR KünstlerIn  (Personen\Z\Zingg, Adrian (1734-1816))</IdName>
+              <SeeAlso>Zingg, Adrian (1734-1816)</SeeAlso>
+            <GND-Nummer>117004669</GND-Nummer><IdNameForMapping>BildendeRKünstlerIn(Personen\Z\Zingg,Adrian(1734-1816))</IdNameForMapping></Descriptor>
+            <Descriptor>
+              <Name>BildendeR KünstlerIn</Name>
+              <Thesaurus>Personen</Thesaurus>
+              <IdName>BildendeR KünstlerIn  (Personen\A\Aberli, Johann Ludwig (1723-1786))</IdName>
+              <SeeAlso>Aberli, Johann Ludwig (1723-1786)</SeeAlso>
+            <GND-Nummer>118896644</GND-Nummer><IdNameForMapping>BildendeRKünstlerIn(Personen\A\Aberli,JohannLudwig(1723-1786))</IdNameForMapping></Descriptor>
+            <Descriptor>
+              <Name>Bern (Stadt)</Name>
+              <Thesaurus>Geografika</Thesaurus>
+              <IdName>Bern (Stadt)  (Geografika\Europa\Schweiz\Bern)</IdName>
+              <Description>Ansetzung Geografika</Description>
+              <SeeAlso>AbsenderIn; AdressatIn; Bern; Veranstaltungsort; Verlag</SeeAlso>
+              <DetailData/>
+            <GND-Kennung>4005762-8</GND-Kennung><WD>Q70</WD><IdNameForMapping>Bern(Stadt)(Geografika\Europa\Schweiz\Bern)</IdNameForMapping></Descriptor>
+          </Descriptors>
+          <References>
+            <Reference Role="siehe auch">
+              <ReferenceName>GS-GUGE-ABERLI-B-2   Prospect der Stadt Bern von der Mittag Seite = Vue de la ville de Berne du Côté du Midi, 1764- (Dokument)</ReferenceName>
+            </Reference>
+            <Reference Role="siehe auch">
+              <ReferenceName>GS-GUGE-MECHEL-C-10   Vue de la ville de Berne du côté du Levant, 1760- (Dokument)</ReferenceName>
+            </Reference>
+          </References>
+        </Record>
+        </Collection>
