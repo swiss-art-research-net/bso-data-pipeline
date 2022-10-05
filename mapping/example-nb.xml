@@ -41,7 +41,7 @@
    <DataElement ElementName="Archivalienart" ElementId="17" ElementType="Auswahlliste" ElementTypeId="14">    
     <ElementValue Sequence="1">     
      <TextValue>Fotografie</TextValue>     
-    <aat-id index="0">300046300</aat-id><gnd-id index="0">4045895-7</gnd-id><normalised index="0">fotografie</normalised></ElementValue>    
+    <aat-id>300046300</aat-id><gnd-id>4045895-7</gnd-id><normalised>fotografie</normalised></ElementValue>    
    </DataElement>   
    <DataElement ElementName="Ansichtsbild" ElementId="10" ElementType="Bild" ElementTypeId="17">    
     <ElementValue Sequence="1">     
@@ -111,12 +111,12 @@
    <DataElement ElementName="Farbe" ElementId="11070" ElementType="Auswahlliste" ElementTypeId="14">    
     <ElementValue Sequence="1">     
      <TextValue>S/W</TextValue>     
-    <aat-id index="0">300265434</aat-id></ElementValue>    
+    <aat-id>300265434</aat-id></ElementValue>    
    </DataElement>   
    <DataElement ElementName="Orientierung und Form" ElementId="10372" ElementType="Auswahlliste" ElementTypeId="14">    
     <ElementValue Sequence="1">     
      <TextValue>Vertikal</TextValue>     
-    <aat-id index="0">300343370</aat-id></ElementValue>    
+    <aat-id>300343370</aat-id></ElementValue>    
    </DataElement>   
    <DataElement ElementName="URL Bild in Druckqualität" ElementId="11040" ElementType="Web-Hyperlink" ElementTypeId="11">    
     <ElementValue Sequence="1">     
@@ -210,7 +210,7 @@
    <DataElement ElementName="Archivalienart" ElementId="17" ElementType="Auswahlliste" ElementTypeId="14">    
     <ElementValue Sequence="1">     
      <TextValue>Fotografie</TextValue>     
-    <aat-id index="0">300046300</aat-id><gnd-id index="0">4045895-7</gnd-id><normalised index="0">fotografie</normalised></ElementValue>    
+    <aat-id>300046300</aat-id><gnd-id>4045895-7</gnd-id><normalised>fotografie</normalised></ElementValue>    
    </DataElement>   
    <DataElement ElementName="Ansichtsbild" ElementId="10" ElementType="Bild" ElementTypeId="17">    
     <ElementValue Sequence="1">     
@@ -280,12 +280,12 @@
    <DataElement ElementName="Farbe" ElementId="11070" ElementType="Auswahlliste" ElementTypeId="14">    
     <ElementValue Sequence="1">     
      <TextValue>S/W</TextValue>     
-    <aat-id index="0">300265434</aat-id></ElementValue>    
+    <aat-id>300265434</aat-id></ElementValue>    
    </DataElement>   
    <DataElement ElementName="Orientierung und Form" ElementId="10372" ElementType="Auswahlliste" ElementTypeId="14">    
     <ElementValue Sequence="1">     
      <TextValue>Horizontal</TextValue>     
-    <aat-id index="0">300311843</aat-id></ElementValue>    
+    <aat-id>300311843</aat-id></ElementValue>    
    </DataElement>   
    <DataElement ElementName="URL Bild in Druckqualität" ElementId="11040" ElementType="Web-Hyperlink" ElementTypeId="11">    
     <ElementValue Sequence="1">     
@@ -379,7 +379,7 @@
    <DataElement ElementName="Archivalienart" ElementId="17" ElementType="Auswahlliste" ElementTypeId="14">    
     <ElementValue Sequence="1">     
      <TextValue>Fotografie</TextValue>     
-    <aat-id index="0">300046300</aat-id><gnd-id index="0">4045895-7</gnd-id><normalised index="0">fotografie</normalised></ElementValue>    
+    <aat-id>300046300</aat-id><gnd-id>4045895-7</gnd-id><normalised>fotografie</normalised></ElementValue>    
    </DataElement>   
    <DataElement ElementName="Ansichtsbild" ElementId="10" ElementType="Bild" ElementTypeId="17">    
     <ElementValue Sequence="1">     
@@ -449,12 +449,12 @@
    <DataElement ElementName="Farbe" ElementId="11070" ElementType="Auswahlliste" ElementTypeId="14">    
     <ElementValue Sequence="1">     
      <TextValue>S/W</TextValue>     
-    <aat-id index="0">300265434</aat-id></ElementValue>    
+    <aat-id>300265434</aat-id></ElementValue>    
    </DataElement>   
    <DataElement ElementName="Orientierung und Form" ElementId="10372" ElementType="Auswahlliste" ElementTypeId="14">    
     <ElementValue Sequence="1">     
      <TextValue>Vertikal</TextValue>     
-    <aat-id index="0">300343370</aat-id></ElementValue>    
+    <aat-id>300343370</aat-id></ElementValue>    
    </DataElement>   
    <DataElement ElementName="URL Bild in Druckqualität" ElementId="11040" ElementType="Web-Hyperlink" ElementTypeId="11">    
     <ElementValue Sequence="1">     
@@ -548,7 +548,7 @@
    <DataElement ElementName="Archivalienart" ElementId="17" ElementType="Auswahlliste" ElementTypeId="14">    
     <ElementValue Sequence="1">     
      <TextValue>Fotografie</TextValue>     
-    <aat-id index="0">300046300</aat-id><gnd-id index="0">4045895-7</gnd-id><normalised index="0">fotografie</normalised></ElementValue>    
+    <aat-id>300046300</aat-id><gnd-id>4045895-7</gnd-id><normalised>fotografie</normalised></ElementValue>    
    </DataElement>   
    <DataElement ElementName="Ansichtsbild" ElementId="10" ElementType="Bild" ElementTypeId="17">    
     <ElementValue Sequence="1">     
@@ -618,12 +618,12 @@
    <DataElement ElementName="Farbe" ElementId="11070" ElementType="Auswahlliste" ElementTypeId="14">    
     <ElementValue Sequence="1">     
      <TextValue>S/W</TextValue>     
-    <aat-id index="0">300265434</aat-id></ElementValue>    
+    <aat-id>300265434</aat-id></ElementValue>    
    </DataElement>   
    <DataElement ElementName="Orientierung und Form" ElementId="10372" ElementType="Auswahlliste" ElementTypeId="14">    
     <ElementValue Sequence="1">     
      <TextValue>Horizontal</TextValue>     
-    <aat-id index="0">300311843</aat-id></ElementValue>    
+    <aat-id>300311843</aat-id></ElementValue>    
    </DataElement>   
    <DataElement ElementName="URL Bild in Druckqualität" ElementId="11040" ElementType="Web-Hyperlink" ElementTypeId="11">    
     <ElementValue Sequence="1">     
@@ -741,7 +741,7 @@
             <DataElement ElementName="Archivalienart" ElementId="17" ElementType="Auswahlliste" ElementTypeId="14">
               <ElementValue Sequence="1">
                 <TextValue>Druckgrafik</TextValue>
-              <aat-id index="0">300041273</aat-id></ElementValue>
+              <aat-id>300041273</aat-id></ElementValue>
             </DataElement>
             <DataElement ElementName="Ansichtsbild" ElementId="10" ElementType="Bild" ElementTypeId="17">
               <ElementValue Sequence="1">
@@ -766,7 +766,7 @@
             <DataElement ElementName="Art des Erwerbs" ElementId="10752" ElementType="Auswahlliste" ElementTypeId="14">
               <ElementValue Sequence="1">
                 <TextValue>Schenkung</TextValue>
-              <aat-id index="0">300417637</aat-id></ElementValue>
+              <aat-id>300417637</aat-id></ElementValue>
             </DataElement>
             <DataElement ElementName="Erwerbsdatum" ElementId="10754" ElementType="Einzeldatum" ElementTypeId="16">
               <ElementValue Sequence="1">
@@ -796,12 +796,12 @@
             <DataElement ElementName="Farbe" ElementId="11070" ElementType="Auswahlliste" ElementTypeId="14">
               <ElementValue Sequence="1">
                 <TextValue>S/W</TextValue>
-              <aat-id index="0">300265434</aat-id></ElementValue>
+              <aat-id>300265434</aat-id></ElementValue>
             </DataElement>
             <DataElement ElementName="Orientierung und Form" ElementId="10372" ElementType="Auswahlliste" ElementTypeId="14">
               <ElementValue Sequence="1">
                 <TextValue>Horizontal</TextValue>
-              <aat-id index="0">300311843</aat-id></ElementValue>
+              <aat-id>300311843</aat-id></ElementValue>
             </DataElement>
             <DataElement ElementName="Masse Bild" ElementId="10217" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
               <ElementValue Sequence="1">
@@ -826,7 +826,7 @@
             <DataElement ElementName="Verfahren" ElementId="10483" ElementType="Auswahlliste" ElementTypeId="14">
               <ElementValue Sequence="1">
                 <TextValue>Druck</TextValue>
-              <aat-id index="0">300131119</aat-id></ElementValue>
+              <aat-id>300131119</aat-id></ElementValue>
             </DataElement>
             <DataElement ElementName="Zustand Druckplatte" ElementId="11045" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
               <ElementValue Sequence="1">
@@ -836,17 +836,17 @@
             <DataElement ElementName="Technik Druckgrafik" ElementId="10746" ElementType="Auswahlliste" ElementTypeId="14">
               <ElementValue Sequence="1">
                 <TextValue>Radierung</TextValue>
-              <aat-id index="0">300041365</aat-id><gnd-id index="0">4048166-9</gnd-id><normalised index="0">radierung</normalised></ElementValue>
+              <aat-id>300041365</aat-id><gnd-id>4048166-9</gnd-id><normalised>radierung</normalised></ElementValue>
             </DataElement>
             <DataElement ElementName="Transparenz" ElementId="10358" ElementType="Auswahlliste" ElementTypeId="14">
               <ElementValue Sequence="1">
                 <TextValue>Reflektierend</TextValue>
-              <aat-id index="0">300403951</aat-id></ElementValue>
+              <aat-id>300403951</aat-id></ElementValue>
             </DataElement>
             <DataElement ElementName="Trägermaterial" ElementId="10488" ElementType="Auswahlliste" ElementTypeId="14">
               <ElementValue Sequence="1">
                 <TextValue>Papier</TextValue>
-              <aat-id index="0">300014109</aat-id></ElementValue>
+              <aat-id>300014109</aat-id></ElementValue>
             </DataElement>
             <DataElement ElementName="Literaturangabe" ElementId="10211" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
               <ElementValue Sequence="1">
@@ -970,6 +970,273 @@
             </Reference>
             <Reference Role="siehe auch">
               <ReferenceName>GS-GUGE-MECHEL-C-10   Vue de la ville de Berne du côté du Levant, 1760- (Dokument)</ReferenceName>
+            </Reference>
+          </References>
+        </Record>
+        <Record xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Id="477436" ParentId="477409" Level="Dokument" IdName="GS-GUGE-15-27   Vue des montagnes de Raticon, prise au dessous du château de Sargans, 1829-1836 (ca.) (Dokument)" Level-gnd-id="4139988-2" Level-aat-id="300026685" RecordIdentifier="nb-477436" ParentRecordIdentifier="nb-477409">
+          <DetailData>
+            <DataElement ElementName="Signatur" ElementId="2" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
+              <ElementValue Sequence="1">
+                <TextValue>GS-GUGE-15-27</TextValue>
+              </ElementValue>
+            </DataElement>
+            <DataElement ElementName="Signatur Archivplan" ElementId="3" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
+              <ElementValue Sequence="1">
+                <TextValue>GS-GUGE-15-27</TextValue>
+              </ElementValue>
+            </DataElement>
+            <DataElement ElementName="Andere Dokumentnummer" ElementId="10165" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
+              <ElementValue Sequence="1">
+                <TextValue>Inv. 1983 SG 48; Bleuler 2b/25; GS-GUGE-BLEULER-2b-25</TextValue>
+              </ElementValue>
+            </DataElement>
+            <DataElement ElementName="KünstlerIn" ElementId="10927" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
+              <ElementValue Sequence="1-0"><TextValue>Schmid, Johann Jakob [MalerIn/ZeichnerIn]</TextValue><Descriptor>
+              <Name>BildendeR KünstlerIn</Name>
+              <Thesaurus>Personen</Thesaurus>
+              <IdName>BildendeR KünstlerIn  (Personen\S\Schmid, Johann Jakob (1808-1844))</IdName>
+              <SeeAlso>Schmid, Johann Jakob (1808-1844)</SeeAlso>
+            <GND-Nummer/></Descriptor>
+            <NormalisedName>Schmid, Johann Jakob</NormalisedName><Role gnd="4037215-7">MalerIn</Role></ElementValue><ElementValue Sequence="1-1"><TextValue>Salathé, Friedrich [StecherIn]</TextValue><Descriptor>
+              <Name>BildendeR KünstlerIn</Name>
+              <Thesaurus>Personen</Thesaurus>
+              <IdName>BildendeR KünstlerIn  (Personen\S\Salathé, Friedrich (1793-1860))</IdName>
+              <SeeAlso>Salathé, Friedrich (1793-1860)</SeeAlso>
+            <GND-Nummer>119328364</GND-Nummer></Descriptor>
+            <NormalisedName>Salathé, Friedrich</NormalisedName><Role gnd="4158107-6">Stecher</Role></ElementValue></DataElement>
+            <DataElement ElementName="HerausgeberIn/VerlegerIn" ElementId="10915" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
+              <ElementValue Sequence="1">
+                <TextValue>Bleuler, Johann Ludwig (Schaffhausen)</TextValue>
+              <NormalisedName>Bleuler, Johann Ludwig (Schaffhausen)</NormalisedName></ElementValue>
+            </DataElement>
+            <DataElement ElementName="Titel" ElementId="1" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
+              <ElementValue Sequence="1">
+                <TextValue>Vue des montagnes de Raticon, prise au dessous du château de Sargans</TextValue>
+              </ElementValue>
+            </DataElement>
+            <DataElement ElementName="Titel der Serie" ElementId="10900" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
+              <ElementValue Sequence="1">
+                <TextValue>Ouvrage représentant en 70 à 80 feuilles les vues les plus pittoresques des bords du Rhin (Blatt 25)</TextValue>
+              </ElementValue>
+            </DataElement>
+            <DataElement ElementName="Entstehungszeitraum" ElementId="7" ElementType="Datumsbereich (von/bis)" ElementTypeId="2">
+              <ElementValue Sequence="1">
+                <DateRange DateOperator="fromTo">
+                  <FromDate fullDate="1829-01-01">+1829</FromDate>
+                  <FromApproxIndicator>false</FromApproxIndicator>
+                  <ToDate fullDate="1836-12-31">+1836</ToDate>
+                  <ToApproxIndicator>true</ToApproxIndicator>
+                  <TextRepresentation>1829-1836 (ca.)</TextRepresentation>
+                </DateRange>
+              </ElementValue>
+            </DataElement>
+            <DataElement ElementName="Archivalienart" ElementId="17" ElementType="Auswahlliste" ElementTypeId="14">
+              <ElementValue Sequence="1">
+                <TextValue>Druckgrafik</TextValue>
+              <aat-id>300041273</aat-id></ElementValue>
+            </DataElement>
+            <DataElement ElementName="Ansichtsbild" ElementId="10" ElementType="Bild" ElementTypeId="17">
+              <ElementValue Sequence="1">
+                <FileValue FileName="GS-GUGE-BLEULER-2b-25.JPG"/>
+              </ElementValue>
+            </DataElement>
+            <DataElement ElementName="Vorschaubild" ElementId="9" ElementType="Bild" ElementTypeId="17">
+              <ElementValue Sequence="1">
+                <FileValue FileName="GS-GUGE-BLEULER-2b-25.JPG"/>
+              </ElementValue>
+            </DataElement>
+            <DataElement ElementName="Beschriftung - Legende" ElementId="10345" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
+              <ElementValue Sequence="1">
+                <TextValue>[recto oben rechts]: N°. 25.
+[unten links]: Dessiné par Schmidt
+[unten rechts]: Gravé par Salathé
+[unten Mitte]: Vue des montagnes de Raticon, prise au dessous du château de Sargans.
+[unten rechts]: Publié par Ls. Bleuler à Schaffhouse en Suisse.</TextValue>
+              </ElementValue>
+            </DataElement>
+            <DataElement ElementName="Art des Erwerbs" ElementId="10752" ElementType="Auswahlliste" ElementTypeId="14">
+              <ElementValue Sequence="1">
+                <TextValue>Schenkung</TextValue>
+              <aat-id>300417637</aat-id></ElementValue>
+            </DataElement>
+            <DataElement ElementName="Erwerbsdatum" ElementId="10754" ElementType="Einzeldatum" ElementTypeId="16">
+              <ElementValue Sequence="1">
+                <TextValue>+1983</TextValue>
+              </ElementValue>
+            </DataElement>
+            <DataElement ElementName="SammlerIn" ElementId="11006" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
+              <ElementValue Sequence="1">
+                <TextValue>Gugelmann, Rudolf und Annemarie</TextValue>
+              </ElementValue>
+            </DataElement>
+            <DataElement ElementName="Inhalt / Kurzbeschreibung" ElementId="10003" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
+              <ElementValue Sequence="1">
+                <TextValue>Sargans, Teilansicht. Rhein</TextValue>
+              </ElementValue>
+            </DataElement>
+            <DataElement ElementName="Erschliessungsgrad" ElementId="16" ElementType="Auswahlliste" ElementTypeId="14">
+              <ElementValue Sequence="1">
+                <TextValue>detailliert</TextValue>
+              </ElementValue>
+            </DataElement>
+            <DataElement ElementName="Farbe" ElementId="11070" ElementType="Auswahlliste" ElementTypeId="14">
+              <ElementValue Sequence="1">
+                <TextValue>Farbig</TextValue>
+              <aat-id>300080438</aat-id></ElementValue>
+            </DataElement>
+            <DataElement ElementName="Orientierung und Form" ElementId="10372" ElementType="Auswahlliste" ElementTypeId="14">
+              <ElementValue Sequence="1">
+                <TextValue>Horizontal</TextValue>
+              <aat-id>300311843</aat-id></ElementValue>
+            </DataElement>
+            <DataElement ElementName="Masse Bild" ElementId="10217" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
+              <ElementValue Sequence="1">
+                <TextValue>18.9 x 28.2 cm [mit Tuscherand]</TextValue>
+              </ElementValue>
+            </DataElement>
+            <DataElement ElementName="Masse Plattenrand" ElementId="11042" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
+              <ElementValue Sequence="1">
+                <TextValue>28.9 x 40.0 cm</TextValue>
+              </ElementValue>
+            </DataElement>
+            <DataElement ElementName="Masse Blatt" ElementId="10739" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
+              <ElementValue Sequence="1">
+                <TextValue>31.2 x 44.3 cm</TextValue>
+              </ElementValue>
+            </DataElement>
+            <DataElement ElementName="Technik" ElementId="10114" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
+              <ElementValue Sequence="1">
+                <TextValue>Aquatinta, koloriert</TextValue>
+              <alignments index="0"><aat-id>300053242</aat-id><gnd-id>4132364-6</gnd-id><normalised>aquatinta</normalised><parent/><parent-gnd/></alignments><alignments index="1"><aat-id>300053043</aat-id><gnd-id>4246493-6</gnd-id><normalised>koloriert</normalised><parent/><parent-gnd/></alignments></ElementValue>
+            </DataElement>
+            <DataElement ElementName="Verfahren" ElementId="10483" ElementType="Auswahlliste" ElementTypeId="14">
+              <ElementValue Sequence="1">
+                <TextValue>Druck</TextValue>
+              <aat-id>300131119</aat-id></ElementValue>
+            </DataElement>
+            <DataElement ElementName="Technik Druckgrafik" ElementId="10746" ElementType="Auswahlliste" ElementTypeId="14">
+              <ElementValue Sequence="1">
+                <TextValue>Aquatinta</TextValue>
+              <aat-id>300041366</aat-id><gnd-id>4132364-6</gnd-id><normalised>aquatinta</normalised></ElementValue>
+            </DataElement>
+            <DataElement ElementName="Bearbeitung" ElementId="10971" ElementType="Auswahlliste" ElementTypeId="14">
+              <ElementValue Sequence="1">
+                <TextValue>aquarelliert</TextValue>
+              <aat-id>300389895</aat-id><gnd-id>4002511-1</gnd-id><normalised>aquarell</normalised></ElementValue>
+            </DataElement>
+            <DataElement ElementName="Transparenz" ElementId="10358" ElementType="Auswahlliste" ElementTypeId="14">
+              <ElementValue Sequence="1">
+                <TextValue>Reflektierend</TextValue>
+              <aat-id>300403951</aat-id></ElementValue>
+            </DataElement>
+            <DataElement ElementName="Trägermaterial" ElementId="10488" ElementType="Auswahlliste" ElementTypeId="14">
+              <ElementValue Sequence="1">
+                <TextValue>Papier</TextValue>
+              <aat-id>300014109</aat-id></ElementValue>
+            </DataElement>
+            <DataElement ElementName="Literaturangabe" ElementId="10211" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
+              <ElementValue Sequence="1">
+                <TextValue>Rutishauser 1997, Nr. 25</TextValue>
+              </ElementValue>
+            </DataElement>
+            <DataElement ElementName="URL Bild in Druckqualität" ElementId="11040" ElementType="Web-Hyperlink" ElementTypeId="11">
+              <ElementValue Sequence="1">
+                <TextValue>https://commons.wikimedia.org/wiki/File%3ACH-NB_-_Sargans%2C_Umgebung%2C_von_S%C3%BCdwesten%2C_mit_Blick_gegen_Liechtenstein_-_Collection_Gugelmann_-_GS-GUGE-BLEULER-2b-25.tif</TextValue>
+              <Width>5700</Width><Height>4613</Height></ElementValue>
+            </DataElement>
+            <DataElement ElementName="Land" ElementId="11066" ElementType="Auswahlliste" ElementTypeId="14">
+              <ElementValue Sequence="1">
+                <TextValue>Switzerland</TextValue>
+              </ElementValue>
+            </DataElement>
+            <DataElement ElementName="Kanton" ElementId="11068" ElementType="Auswahlliste" ElementTypeId="14">
+              <ElementValue Sequence="1">
+                <TextValue>St. Gallen</TextValue>
+              </ElementValue>
+            </DataElement>
+            <DataElement ElementName="Ort" ElementId="10122" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
+              <ElementValue Sequence="1">
+                <TextValue>Sargans</TextValue>
+              </ElementValue>
+            </DataElement>
+            <DataElement ElementName="Projekte" ElementId="10884" ElementType="Auswahlliste" ElementTypeId="14">
+              <ElementValue Sequence="1">
+                <TextValue>Wikimedia Commons</TextValue>
+              </ElementValue>
+            </DataElement>
+            <DataElement ElementName="Dateiname Digitalisat" ElementId="10435" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
+              <ElementValue Sequence="1">
+                <TextValue>GS-GUGE-BLEULER-2b-25</TextValue>
+              </ElementValue>
+            </DataElement>
+            <DataElement ElementName="Personen" ElementId="11053" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
+              <ElementValue Sequence="2">
+                <TextValue>BildendeR KünstlerIn  / Personen / S / Salathé, Friedrich / 1793-1860</TextValue>
+              </ElementValue>
+              <ElementValue Sequence="3">
+                <TextValue>BildendeR KünstlerIn  / Personen / S / Schmid, Johann Jakob / 1808-1844</TextValue>
+              </ElementValue>
+              <ElementValue Sequence="1">
+                <TextValue>Vertrieb/Verlag  / Personen / B / Bleuler, Johann Ludwig / 1792-1850</TextValue>
+              </ElementValue>
+            </DataElement>
+            <DataElement ElementName="Geopolitische Daten" ElementId="11057" ElementType="Memo (max. 4000 Z.)" ElementTypeId="7">
+              <ElementValue Sequence="1">
+                <TextValue>Sargans  / Geografika / Europa / Schweiz / Sankt Gallen</TextValue>
+              </ElementValue>
+            </DataElement>
+          </DetailData>
+          <UsageData>
+            <TermOfProtection>Öffentlich</TermOfProtection>
+            <ProtectionBaseDate>Unbekannt</ProtectionBaseDate>
+            <ProtectionDuration>0</ProtectionDuration>
+            <ProtectionEndDate xsi:nil="true"/>
+            <ProtectionNote/>
+            <ProtectionMinIndicator>false</ProtectionMinIndicator>
+            <ProtectionManualEditIndicator>false</ProtectionManualEditIndicator>
+            <AlwaysVisibleOnline>true</AlwaysVisibleOnline>
+            <Permission>Gemeinfrei</Permission>
+            <PhysicalUsability>Uneingeschränkt</PhysicalUsability>
+            <Accessability>Archivmitarbeiter/-innen</Accessability>
+            <UsageNote/>
+          </UsageData>
+          <AdministrativeData>
+            <EditForm>NB Gemälde/Plan/Zeichnung/Grafik</EditForm>
+            <ViewingForm>NB Gemälde/Plan/Zeichnung/Grafik</ViewingForm>
+            <LastEditedOn>2021-02-26</LastEditedOn>
+            <LastEditedBy>DWINKELHAUSEN</LastEditedBy>
+            <CreatedOn>2011-11-28</CreatedOn>
+            <CreatedBy>RPROBST</CreatedBy>
+          </AdministrativeData>
+          <Descriptors>
+            <Descriptor>
+              <Name>BildendeR KünstlerIn</Name>
+              <Thesaurus>Personen</Thesaurus>
+              <IdName>BildendeR KünstlerIn  (Personen\S\Salathé, Friedrich (1793-1860))</IdName>
+              <SeeAlso>Salathé, Friedrich (1793-1860)</SeeAlso>
+            <GND-Nummer>119328364</GND-Nummer><IdNameForMapping>BildendeRKünstlerIn(Personen\S\Salathé,Friedrich(1793-1860))</IdNameForMapping></Descriptor>
+            <Descriptor>
+              <Name>BildendeR KünstlerIn</Name>
+              <Thesaurus>Personen</Thesaurus>
+              <IdName>BildendeR KünstlerIn  (Personen\S\Schmid, Johann Jakob (1808-1844))</IdName>
+              <SeeAlso>Schmid, Johann Jakob (1808-1844)</SeeAlso>
+            <GND-Nummer/><IdNameForMapping>BildendeRKünstlerIn(Personen\S\Schmid,JohannJakob(1808-1844))</IdNameForMapping></Descriptor>
+            <Descriptor>
+              <Name>Vertrieb/Verlag</Name>
+              <Thesaurus>Personen</Thesaurus>
+              <IdName>Vertrieb/Verlag  (Personen\B\Bleuler, Johann Ludwig (1792-1850))</IdName>
+              <SeeAlso>Bleuler, Johann Ludwig (1792-1850)</SeeAlso>
+            <GND-Nummer>11851170X</GND-Nummer><IdNameForMapping>Vertrieb/Verlag(Personen\B\Bleuler,JohannLudwig(1792-1850))</IdNameForMapping></Descriptor>
+            <Descriptor>
+              <Name>Sargans</Name>
+              <Thesaurus>Geografika</Thesaurus>
+              <IdName>Sargans  (Geografika\Europa\Schweiz\Sankt Gallen)</IdName>
+              <SeeAlso>Sankt Gallen</SeeAlso>
+            <GND-Kennung/><WD/><IdNameForMapping>Sargans(Geografika\Europa\Schweiz\SanktGallen)</IdNameForMapping></Descriptor>
+          </Descriptors>
+          <References>
+            <Reference Role="siehe auch">
+              <ReferenceName>GS-GRAF-ANSI-SG-441   Vue des montagnes de Raticon, prise au dessous du château de Sargans, 1829-1836 (ca.) (Dokument)</ReferenceName>
             </Reference>
           </References>
         </Record>
