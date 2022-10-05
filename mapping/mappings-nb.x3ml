@@ -1336,7 +1336,7 @@
                             <type>crm:E55_Type</type>
                             <instance_generator name="URIwithTypeAndId_hashed">
                                 <arg name="type" type="constant">type</arg>
-                                <arg name="id_HASHED_CONTENTS" type="xpath">if (gnd-id/text()) then (gnd-id/text()) else (lower-case(TextValue/text()))</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">if (normalised[@index='1']) then (lower-case(TextValue/text())) else (if (gnd-id/text()) then (gnd-id/text()) else (lower-case(TextValue/text())))</arg>
                             </instance_generator>
                             <label_generator name="Literal">
                                 <arg name="text" type="xpath">TextValue/text()</arg>
@@ -2526,7 +2526,7 @@
                         <type>crm:E55_Type</type>
                         <instance_generator name="URIwithTypeAndId_hashed">
                             <arg name="type" type="constant">type</arg>
-                            <arg name="id_HASHED_CONTENTS" type="xpath">if (gnd-id/text()) then (gnd-id/text()) else (lower-case(TextValue/text()))</arg>
+                            <arg name="id_HASHED_CONTENTS" type="xpath">if (normalised[@index='1']) then (lower-case(TextValue/text())) else (if (gnd-id/text()) then (gnd-id/text()) else (lower-case(TextValue/text())))</arg>
                         </instance_generator>
                     </entity>
                 </target_node>
