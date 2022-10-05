@@ -83,7 +83,7 @@ def addCuratedData(record):
                     
                     if match:
                         for column in match: 
-                            if column not in conditions:
+                            if column not in conditions and column is not None:
                                 if match[column] and ';' in match[column]:
                                     for i, value in enumerate(match[column].split(';')):
                                         newSubfield = etree.SubElement(datafield, "subfield")
