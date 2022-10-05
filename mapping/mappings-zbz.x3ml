@@ -2884,7 +2884,14 @@
                 <source_node>/collection/record/datafield</source_node>
                 <target_node>
                     <if>
-                        <equals value="300">@tag</equals>
+                        <and>
+                            <if>
+                                <equals value="300">@tag</equals>
+                            </if>
+                            <if>
+                                <exists>subfield[@code='b']/text()</exists>
+                            </if>
+                        </and>
                     </if>
                     <entity>
                         <type>crm:E55_Type</type>
