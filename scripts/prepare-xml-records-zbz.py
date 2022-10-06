@@ -109,7 +109,8 @@ def addCuratedData(record):
                             if index > maxIndex:
                                 maxIndex = index
                         # Keep only first field if there is only one
-                        if maxIndex == 0:
+                        # (except for tag 300b where we treat alignments as sub-aligments)
+                        if maxIndex == 0 and curatedFileId != '300-b':
                             for element in datafield.findall('./alignments/*'):
                                 datafield.append(element)
                             for toRemove in datafield.xpath('./alignments'):
