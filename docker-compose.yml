@@ -19,7 +19,7 @@ services:
   jobs:
     build: ./services/jobs
     container_name: ${PROJECT_NAME}_jobs
-    image: swissartresearx/bso-jobs:1.0.1
+    image: swissartresearx/bso-jobs:1.0.2
     restart: unless-stopped
     environment:
       - HOST_LOCATION=${HOST_NAME}
