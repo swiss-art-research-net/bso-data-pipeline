@@ -121,7 +121,7 @@ def queryIdentifiersInFile(sourceFile, queryPart):
     if path.isfile(sourceFile):
         data = Graph()
         data.parse(sourceFile, format='turtle')
-        queryResults = data.query("SELECT DISTINCT ?identifier WHERE {" + queryPart + "}")
+        queryResults = data.query(PREFIXES + "\nSELECT DISTINCT ?identifier WHERE {" + queryPart + "}")
         for row in queryResults:
             identifiers.append(str(row[0]))
     return identifiers
@@ -262,14 +262,18 @@ def retrieveWdData(identifiers, targetFolder):
     with open(targetFile, 'a') as outputFile:
         for batch in tqdm(chunker(identifiersToRetrieve, batchSizeForRetrieval)):
             query = """
+                PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
                 PREFIX wdt: <http://www.wikidata.org/prop/direct/>
                 CONSTRUCT {
                     ?entity wdt:P31 ?type ;
+                        rdfs:label ?label ;
                         wdt:P625 ?coordinates ;
                         wdt:P18 ?image .
                 } WHERE {
                     {
-                        ?entity wdt:P31 ?type .
+                        ?entity wdt:P31 ?type ;
+                            rdfs:label ?label .
+                        FILTER(lang(?label) = 'de' || lang(?label) = 'fr' || lang(?label) = 'it' || lang(?label) = 'en')
                     } UNION {
                         ?entity wdt:P625 ?coordinates .
                     } UNION {
