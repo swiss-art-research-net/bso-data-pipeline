@@ -2908,6 +2908,9 @@
                         <relation>alignments</relation>
                     </source_relation>
                     <target_relation>
+                        <if>
+                            <exists>subfield[@code='normalised']/text()</exists>
+                        </if>
                         <relationship>crm:P127i_has_narrower_term</relationship>
                     </target_relation>
                 </path>
@@ -4384,7 +4387,14 @@
                 <source_node>/collection/record/datafield/alignments</source_node>
                 <target_node>
                     <if>
-                        <equals value="300">../@tag</equals>
+                        <and>
+                            <if>
+                                <equals value="300">../@tag</equals>
+                            </if>
+                            <if>
+                                <exists>subfield[@code='normalised']/text()</exists>
+                            </if>
+                        </and>
                     </if>
                     <entity variable="300b_hierarchy_same_as">
                         <type>crm:E55_Type</type>
