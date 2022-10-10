@@ -2911,7 +2911,7 @@
                         <if>
                             <exists>subfield[@code='normalised']/text()</exists>
                         </if>
-                        <relationship>crm:P127i_has_narrower_term</relationship>
+                        <relationship>crm:P127_has_broader_term</relationship>
                     </target_relation>
                 </path>
                 <range>

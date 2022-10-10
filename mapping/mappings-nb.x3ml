@@ -2627,7 +2627,7 @@
                         <relation>alignments</relation>
                     </source_relation>
                     <target_relation>
-                        <relationship>crm:P127i_has_narrower_term</relationship>
+                        <relationship>crm:P127_has_broader_term</relationship>
                     </target_relation>
                 </path>
                 <range>
