@@ -215,7 +215,6 @@ INSERT {
 	crmdig:L54_is_same-as/rdfs:label ?langLabel .
   FILTER(lang(?langLabel) = 'en' || lang(?langLabel) = 'fr' || lang(?langLabel) = 'it' || lang(?langLabel) = 'de')
   VALUES (?type) {
-    (search:Type)
     (search:Place)
     (schema:AdministrativeArea)
   }
