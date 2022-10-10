@@ -9,7 +9,7 @@
     <Entstvon>1797</Entstvon>
     <Entstbis>1798</Entstbis>
     <Datierung>1797/98</Datierung>
-    <Technik>13 nummerierte handkolorierte Umrissradierungen, mit einem Titelblatt, einer Widmung an Jakob Samuel Wyttenbach, 4 Textseiten enthaltend Erläuterungen zu den Abbildungen, und einem Reisebericht über 34 Seiten; gebunden in marmoriertem Einband, mit einer mit "Voyage en Suisse" beschrifteten Etikette auf dem Vorderdeckel</Technik>
+    <Technik dateRange="1797-1798">13 nummerierte handkolorierte Umrissradierungen, mit einem Titelblatt, einer Widmung an Jakob Samuel Wyttenbach, 4 Textseiten enthaltend Erläuterungen zu den Abbildungen, und einem Reisebericht über 34 Seiten; gebunden in marmoriertem Einband, mit einer mit "Voyage en Suisse" beschrifteten Etikette auf dem Vorderdeckel<alignments index="0"><gnd>4699769-6</gnd><normalised>handkoloriert</normalised><parent>koloriert</parent><parent-gnd>4246493-6</parent-gnd></alignments><alignments index="1"><gnd/><normalised>umrissradierung</normalised><parent>radierung</parent><parent-gnd>4048166-9</parent-gnd></alignments><alignments index="2"><gnd/><normalised>gebunden</normalised><parent/><parent-gnd/></alignments></Technik>
     <Zuständigkeit>Prov</Zuständigkeit>
     <Werkstatus/>
     <KaufmStatus/>
@@ -44,51 +44,10 @@
     <Gattung>B - Bücher</Gattung>
     <TitelÜbers2/>
     <InvNr>SFF_B_1610</InvNr>
-    <Keywords>
-      <values>
-        <value>
-          <text>See</text>
-          <gnd>4054084-4</gnd>
-          <wd>Q23397</wd>
-        </value>
-        <value>
-          <text>Berge</text>
-          <gnd>4144619-7</gnd>
-          <wd>Q8502</wd>
-        </value>
-        <value>
-          <text>Dorf</text>
-          <gnd>4012775-8</gnd>
-          <wd>Q532</wd>
-        </value>
-        <value>
-          <text>Spaziergänger</text>
-          <gnd>4381129-2</gnd>
-          <wd/>
-        </value>
-      </values>
-    </Keywords>
+    <Keywords><values><value><text>See</text><gnd>4054084-4</gnd><wd>Q23397</wd></value><value><text>Berge</text><gnd>4144619-7</gnd><wd>Q8502</wd></value><value><text>Dorf</text><gnd>4012775-8</gnd><wd>Q532</wd></value><value><text>Spaziergänger</text><gnd>4381129-2</gnd><wd/></value></values></Keywords>
     <TechnikÜbers2/>
     <EditionÜbers2/>
-    <Ortsbezug>
-      <values>
-        <value>
-          <text>Brunnen (Schwyz)</text>
-          <gnd>4284930-5</gnd>
-          <wd>Q675405</wd>
-        </value>
-        <value>
-          <text>Vierwaldstättersee (Kanton Luzern, Schwyz, Uri, Obwalden, Nidwalden)</text>
-          <gnd>4063511-9</gnd>
-          <wd>Q14381</wd>
-        </value>
-        <value>
-          <text>für weitere Ortsbezüge, vgl. die Einzelblätter in der Sammlung der SFF</text>
-          <gnd/>
-          <wd/>
-        </value>
-      </values>
-    </Ortsbezug>
+    <Ortsbezug><values><value><text>Brunnen (Schwyz)</text><gnd>4284930-5</gnd><wd>Q675405</wd></value><value><text>Vierwaldstättersee (Kanton Luzern, Schwyz, Uri, Obwalden, Nidwalden)</text><gnd>4063511-9</gnd><wd>Q14381</wd></value><value><text>für weitere Ortsbezüge, vgl. die Einzelblätter in der Sammlung der SFF</text><gnd/><wd/></value></values></Ortsbezug>
     <Masse1Suffix/>
     <Masse1Prefix/>
     <RefNr/>
@@ -204,38 +163,12 @@
         <pID>C81C581A5DF89A4B86E4331474E91008</pID>
         <details>
           <LitNr>LIT10006</LitNr>
-          <AutorHsg>
-            <values>
-              <value>
-                <text>Lonchamp, Frédéric-Charles</text>
-                <normalised_name>Lonchamp, Frédéric-Charles</normalised_name>
-                <gnd>117211370</gnd>
-                <wd>Q95255649</wd>
-              </value>
-            </values>
-          </AutorHsg>
+          <AutorHsg><values><value><text>Lonchamp, Frédéric-Charles</text><normalised_name>Lonchamp, Frédéric-Charles</normalised_name><gnd>117211370</gnd><wd>Q95255649</wd></value></values></AutorHsg>
           <Titel>Un siècle d’art suisse. L’estampe et le livre à gravures. Guide de l’amateur</Titel>
-          <Verlag>
-            <values>
-              <value>
-                <text>Librairie des Bibliophiles</text>
-                <normalised_name>Librairie des Bibliophiles</normalised_name>
-                <gnd>10090310-1</gnd>
-                <wd>Q23138409</wd>
-              </value>
-            </values>
-          </Verlag>
+          <Verlag><values><value><text>Librairie des Bibliophiles</text><normalised_name>Librairie des Bibliophiles</normalised_name><gnd>10090310-1</gnd><wd>Q23138409</wd></value></values></Verlag>
           <Jahr>1921</Jahr>
           <recID>2017021010060225169</recID>
-          <Ort>
-            <values>
-              <value>
-                <text>Lausanne</text>
-                <gnd>4034750-3</gnd>
-                <wd>Q807</wd>
-              </value>
-            </values>
-          </Ort>
+          <Ort><values><value><text>Lausanne</text><gnd>4034750-3</gnd><wd>Q807</wd></value></values></Ort>
           <pID>3EC4888F64850B44954AB4B6989480DC</pID>
         </details>
       </literature>
@@ -249,40 +182,14 @@
         <pID>A77D360C92749543B174285414049956</pID>
         <details>
           <LitNr>LIT10057</LitNr>
-          <AutorHsg>
-            <values>
-              <value>
-                <text>Ebel, Johann Gottfried</text>
-                <normalised_name>Ebel, Johann Gottfried</normalised_name>
-                <gnd>116319577</gnd>
-                <wd>Q89013</wd>
-              </value>
-            </values>
-          </AutorHsg>
+          <AutorHsg><values><value><text>Ebel, Johann Gottfried</text><normalised_name>Ebel, Johann Gottfried</normalised_name><gnd>116319577</gnd><wd>Q89013</wd></value></values></AutorHsg>
           <Titel>Anleitung, auf die nützlichste und genussvollste Art die Schweitz zu bereisen</Titel>
-          <Verlag>
-            <values>
-              <value>
-                <text>Orell, Füssli &amp; Comp</text>
-                <normalised_name>Orell, Füssli &amp; Comp</normalised_name>
-                <gnd>1073001172</gnd>
-                <wd/>
-              </value>
-            </values>
-          </Verlag>
+          <Verlag><values><value><text>Orell, Füssli &amp; Comp</text><normalised_name>Orell, Füssli &amp; Comp</normalised_name><gnd>1073001172</gnd><wd/></value></values></Verlag>
           <Vol>2. Aufl.</Vol>
           <Jahr>0</Jahr>
           <Band>4 Teile</Band>
           <recID>2017030610425530534</recID>
-          <Ort>
-            <values>
-              <value>
-                <text>Zürich</text>
-                <gnd>4068038-1</gnd>
-                <wd>Q72</wd>
-              </value>
-            </values>
-          </Ort>
+          <Ort><values><value><text>Zürich</text><gnd>4068038-1</gnd><wd>Q72</wd></value></values></Ort>
           <JahrText>1804-1805</JahrText>
           <pID>F38DFE3F2243E842B9024AF5CF55710A</pID>
         </details>
@@ -300,15 +207,7 @@
           <Titel>Catalogue des Vues, Costumes, Cartes et Panorama Suisses du Magazin des Arts de H. Keller, mds. d'Estampes et de Materiaux de dessin vis à vis de l'Épée à Zurich</Titel>
           <Jahr>1818</Jahr>
           <recID>2017061310091716541</recID>
-          <Ort>
-            <values>
-              <value>
-                <text>Zürich</text>
-                <gnd>4068038-1</gnd>
-                <wd>Q72</wd>
-              </value>
-            </values>
-          </Ort>
+          <Ort><values><value><text>Zürich</text><gnd>4068038-1</gnd><wd>Q72</wd></value></values></Ort>
           <pID>93F14D15A9BF7A449D0E70B7197A04C7</pID>
         </details>
       </literature>
@@ -338,40 +237,14 @@
         <pID>E0A91CE998E05D40AA6497B4A17463C1</pID>
         <details>
           <LitNr>LIT10058</LitNr>
-          <AutorHsg>
-            <values>
-              <value>
-                <text>Ebel, Johann Gottfried</text>
-                <normalised_name>Ebel, Johann Gottfried</normalised_name>
-                <gnd>116319577</gnd>
-                <wd>Q89013</wd>
-              </value>
-            </values>
-          </AutorHsg>
+          <AutorHsg><values><value><text>Ebel, Johann Gottfried</text><normalised_name>Ebel, Johann Gottfried</normalised_name><gnd>116319577</gnd><wd>Q89013</wd></value></values></AutorHsg>
           <Titel>Anleitung, auf die nützlichste und genussvollste Art die Schweitz zu bereisen</Titel>
-          <Verlag>
-            <values>
-              <value>
-                <text>Orell, Füssli &amp; Comp</text>
-                <normalised_name>Orell, Füssli &amp; Comp</normalised_name>
-                <gnd>1073001172</gnd>
-                <wd/>
-              </value>
-            </values>
-          </Verlag>
+          <Verlag><values><value><text>Orell, Füssli &amp; Comp</text><normalised_name>Orell, Füssli &amp; Comp</normalised_name><gnd>1073001172</gnd><wd/></value></values></Verlag>
           <Vol>3. Aufl.</Vol>
           <Jahr>0</Jahr>
           <Band>4 Teile</Band>
           <recID>2017030610444523226</recID>
-          <Ort>
-            <values>
-              <value>
-                <text>Zürich</text>
-                <gnd>4068038-1</gnd>
-                <wd>Q72</wd>
-              </value>
-            </values>
-          </Ort>
+          <Ort><values><value><text>Zürich</text><gnd>4068038-1</gnd><wd>Q72</wd></value></values></Ort>
           <JahrText>1809-1810</JahrText>
           <pID>AF2EB518C6CD0747ADDA7586C94F14F0</pID>
         </details>
@@ -386,40 +259,14 @@
         <pID>2F2371F6F22877448B6C08C4E49148BF</pID>
         <details>
           <LitNr>LIT10152</LitNr>
-          <AutorHsg>
-            <values>
-              <value>
-                <text>Ebel, Johann Gottfried</text>
-                <normalised_name>Ebel, Johann Gottfried</normalised_name>
-                <gnd>116319577</gnd>
-                <wd>Q89013</wd>
-              </value>
-            </values>
-          </AutorHsg>
+          <AutorHsg><values><value><text>Ebel, Johann Gottfried</text><normalised_name>Ebel, Johann Gottfried</normalised_name><gnd>116319577</gnd><wd>Q89013</wd></value></values></AutorHsg>
           <Titel>Manuel du Voyageur en Suisse</Titel>
-          <Verlag>
-            <values>
-              <value>
-                <text>Orell, Füssli &amp; Comp.</text>
-                <normalised_name>Orell, Füssli &amp; Comp</normalised_name>
-                <gnd>1073001172</gnd>
-                <wd/>
-              </value>
-            </values>
-          </Verlag>
+          <Verlag><values><value><text>Orell, Füssli &amp; Comp.</text><normalised_name>Orell, Füssli &amp; Comp</normalised_name><gnd>1073001172</gnd><wd/></value></values></Verlag>
           <Vol>3. Aufl.</Vol>
           <Jahr>1818</Jahr>
           <Band>3 Teile</Band>
           <recID>2017062210315929791</recID>
-          <Ort>
-            <values>
-              <value>
-                <text>Zürich</text>
-                <gnd>4068038-1</gnd>
-                <wd>Q72</wd>
-              </value>
-            </values>
-          </Ort>
+          <Ort><values><value><text>Zürich</text><gnd>4068038-1</gnd><wd>Q72</wd></value></values></Ort>
           <pID>9B59A8F647259C488037C18BA821D7CA</pID>
         </details>
       </literature>
@@ -433,40 +280,14 @@
         <pID>12CDC2633443E5429944C7C3E0E9E7A7</pID>
         <details>
           <LitNr>LIT10059</LitNr>
-          <AutorHsg>
-            <values>
-              <value>
-                <text>Ebel, Johann Gottfried</text>
-                <normalised_name>Ebel, Johann Gottfried</normalised_name>
-                <gnd>116319577</gnd>
-                <wd>Q89013</wd>
-              </value>
-            </values>
-          </AutorHsg>
+          <AutorHsg><values><value><text>Ebel, Johann Gottfried</text><normalised_name>Ebel, Johann Gottfried</normalised_name><gnd>116319577</gnd><wd>Q89013</wd></value></values></AutorHsg>
           <Titel>Manuel du Voyageur en Suisse</Titel>
-          <Verlag>
-            <values>
-              <value>
-                <text>Orell, Füssli &amp; Comp</text>
-                <normalised_name>Orell, Füssli &amp; Comp</normalised_name>
-                <gnd>1073001172</gnd>
-                <wd/>
-              </value>
-            </values>
-          </Verlag>
+          <Verlag><values><value><text>Orell, Füssli &amp; Comp</text><normalised_name>Orell, Füssli &amp; Comp</normalised_name><gnd>1073001172</gnd><wd/></value></values></Verlag>
           <Vol>2. Aufl.</Vol>
           <Jahr>0</Jahr>
           <Band>4 Teile</Band>
           <recID>2017030610470361010</recID>
-          <Ort>
-            <values>
-              <value>
-                <text>Zürich</text>
-                <gnd>4068038-1</gnd>
-                <wd>Q72</wd>
-              </value>
-            </values>
-          </Ort>
+          <Ort><values><value><text>Zürich</text><gnd>4068038-1</gnd><wd>Q72</wd></value></values></Ort>
           <JahrText>1810-1811</JahrText>
           <pID>403BAEC3064E4648B4BADA543F05BD88</pID>
         </details>
@@ -481,16 +302,7 @@
         <pID>C99DACDD0A1789478F227021E64B418F</pID>
         <details>
           <LitNr>LIT10125</LitNr>
-          <AutorHsg>
-            <values>
-              <value>
-                <text>Haller, Berchtold Friedrich</text>
-                <normalised_name>Haller, Berchtold Friedrich</normalised_name>
-                <gnd/>
-                <wd/>
-              </value>
-            </values>
-          </AutorHsg>
+          <AutorHsg><values><value><text>Haller, Berchtold Friedrich</text><normalised_name>Haller, Berchtold Friedrich</normalised_name><gnd/><wd/></value></values></AutorHsg>
           <Titel>Kunstnachrichten aus der Schweiz, vom Jahr 1794 bis 1796</Titel>
           <Vol>5. Stück</Vol>
           <Jahr>1797</Jahr>
@@ -510,16 +322,7 @@
         <pID>DD8508ADEDE3B84F97AC2B139622C16D</pID>
         <details>
           <LitNr>LIT10168</LitNr>
-          <AutorHsg>
-            <values>
-              <value>
-                <text>Haller, Berchtold Friedrich</text>
-                <normalised_name>Haller, Berchtold Friedrich</normalised_name>
-                <gnd/>
-                <wd/>
-              </value>
-            </values>
-          </AutorHsg>
+          <AutorHsg><values><value><text>Haller, Berchtold Friedrich</text><normalised_name>Haller, Berchtold Friedrich</normalised_name><gnd/><wd/></value></values></AutorHsg>
           <Titel>Kunstnachrichten aus der Schweiz von 1796 bis 1805</Titel>
           <Jahr>1807</Jahr>
           <Band>Bd. 2</Band>
@@ -538,16 +341,7 @@
         <pID>0AC7C70CEBDE8B419249B76073C42D44</pID>
         <details>
           <LitNr>LIT10119</LitNr>
-          <AutorHsg>
-            <values>
-              <value>
-                <text>Haller, Berchtold Friedrich</text>
-                <normalised_name>Haller, Berchtold Friedrich</normalised_name>
-                <gnd/>
-                <wd/>
-              </value>
-            </values>
-          </AutorHsg>
+          <AutorHsg><values><value><text>Haller, Berchtold Friedrich</text><normalised_name>Haller, Berchtold Friedrich</normalised_name><gnd/><wd/></value></values></AutorHsg>
           <Titel>Kritische Uebersicht des Zustandes der Künste in der Schweiz, und der vorzüglichsten Helvetischen Kunstprodukte</Titel>
           <Vol>1</Vol>
           <Jahr>1806</Jahr>
@@ -568,35 +362,18 @@
         <details>
           <LitNr>LIT10170</LitNr>
           <Titel>Kunstanzeigen von 1798</Titel>
-          <Verlag>
-            <values>
-              <value>
-                <text>Orell, Füssli &amp; Comp.</text>
-                <normalised_name>Orell, Füssli &amp; Comp</normalised_name>
-                <gnd>1073001172</gnd>
-                <wd/>
-              </value>
-            </values>
-          </Verlag>
+          <Verlag><values><value><text>Orell, Füssli &amp; Comp.</text><normalised_name>Orell, Füssli &amp; Comp</normalised_name><gnd>1073001172</gnd><wd/></value></values></Verlag>
           <Jahr>1798</Jahr>
           <inZeitschrift>Neu helvetischer Almanach für das Jahr 1799</inZeitschrift>
           <recID>2018050809470922932</recID>
-          <Ort>
-            <values>
-              <value>
-                <text>Zürich</text>
-                <gnd>4068038-1</gnd>
-                <wd>Q72</wd>
-              </value>
-            </values>
-          </Ort>
+          <Ort><values><value><text>Zürich</text><gnd>4068038-1</gnd><wd>Q72</wd></value></values></Ort>
           <JahrText>S. 202-208</JahrText>
           <pID>F3594750803B284CAE4C7ED8656B168C</pID>
         </details>
       </literature>
     </literatureList>
   </record>
-  <record>
+<record>
     <InvNrIntern>DIKEN10631</InvNrIntern>
     <KünsterIn>Dikenmann / Siegfried / Dikenmann</KünsterIn>
     <Titel>Vue de Thoune et de l'hotel et pension de Bellevue. Blatt 8 der Folge "Vues de Suisse. 114 feuilles gravés"</Titel>
@@ -605,7 +382,7 @@
     <Entstvon>1850</Entstvon>
     <Entstbis>1850</Entstbis>
     <Datierung>circa 1850</Datierung>
-    <Technik>Radierung und Aquatinta, handkoloriert, stellenweise gummiert, bis zur Darstellung beschnitten, mit schwarzer Einfassungslinie</Technik>
+    <Technik dateRange="1850-1850">Radierung und Aquatinta, handkoloriert, stellenweise gummiert, bis zur Darstellung beschnitten, mit schwarzer Einfassungslinie<alignments index="0"><gnd>4048166-9</gnd><normalised>radierung</normalised><parent/><parent-gnd/></alignments><alignments index="1"><gnd>4132364-6</gnd><normalised>aquatinta</normalised><parent/><parent-gnd/></alignments><alignments index="2"><gnd>4699769-6</gnd><normalised>handkoloriert</normalised><parent>koloriert</parent><parent-gnd>4246493-6</parent-gnd></alignments><alignments index="3"><gnd/><normalised>gummiert</normalised><parent/><parent-gnd/></alignments><alignments index="4"><gnd/><normalised>beschnitten</normalised><parent/><parent-gnd/></alignments></Technik>
     <Zuständigkeit>Prov</Zuständigkeit>
     <Werkstatus/>
     <KaufmStatus/>
@@ -626,71 +403,10 @@
     <Gattung>D - Druckgrafik</Gattung>
     <TitelÜbers2/>
     <InvNr>SFF_D_1565</InvNr>
-    <Keywords>
-      <values>
-        <value>
-          <text>Fluss</text>
-          <gnd>4131972-2</gnd>
-          <wd>Q4022</wd>
-        </value>
-        <value>
-          <text>Schifffahrt</text>
-          <gnd>4116383-7</gnd>
-          <wd>Q155930</wd>
-        </value>
-        <value>
-          <text>Gaststätte</text>
-          <gnd>4071600-4</gnd>
-          <wd>Q256020</wd>
-        </value>
-        <value>
-          <text>Herberge</text>
-          <gnd>4130904-2</gnd>
-          <wd>Q654772</wd>
-        </value>
-        <value>
-          <text>Hotel</text>
-          <gnd>4025922-5</gnd>
-          <wd>Q27686</wd>
-        </value>
-        <value>
-          <text>Tourismus</text>
-          <gnd>4018406-7</gnd>
-          <wd>Q49389</wd>
-        </value>
-        <value>
-          <text>Schloss</text>
-          <gnd>4052753-0</gnd>
-          <wd>Q751876</wd>
-        </value>
-        <value>
-          <text>Burg</text>
-          <gnd>4009104-1</gnd>
-          <wd>Q23413</wd>
-        </value>
-        <value>
-          <text>Ruine</text>
-          <gnd>4050934-5</gnd>
-          <wd>Q109607</wd>
-        </value>
-      </values>
-    </Keywords>
+    <Keywords><values><value><text>Fluss</text><gnd>4131972-2</gnd><wd>Q4022</wd></value><value><text>Schifffahrt</text><gnd>4116383-7</gnd><wd>Q155930</wd></value><value><text>Gaststätte</text><gnd>4071600-4</gnd><wd>Q256020</wd></value><value><text>Herberge</text><gnd>4130904-2</gnd><wd>Q654772</wd></value><value><text>Hotel</text><gnd>4025922-5</gnd><wd>Q27686</wd></value><value><text>Tourismus</text><gnd>4018406-7</gnd><wd>Q49389</wd></value><value><text>Schloss</text><gnd>4052753-0</gnd><wd>Q751876</wd></value><value><text>Burg</text><gnd>4009104-1</gnd><wd>Q23413</wd></value><value><text>Ruine</text><gnd>4050934-5</gnd><wd>Q109607</wd></value></values></Keywords>
     <TechnikÜbers2/>
     <EditionÜbers2/>
-    <Ortsbezug>
-      <values>
-        <value>
-          <text>Thun (Kanton Bern)</text>
-          <gnd>4059991-7</gnd>
-          <wd>Q68978</wd>
-        </value>
-        <value>
-          <text>Aare (Fluss)</text>
-          <gnd>4000019-9</gnd>
-          <wd>Q1675</wd>
-        </value>
-      </values>
-    </Ortsbezug>
+    <Ortsbezug><values><value><text>Thun (Kanton Bern)</text><gnd>4059991-7</gnd><wd>Q68978</wd></value><value><text>Aare (Fluss)</text><gnd>4000019-9</gnd><wd>Q1675</wd></value></values></Ortsbezug>
     <Masse1Suffix/>
     <Masse1Prefix/>
     <RefNr>A_12</RefNr>
@@ -790,38 +506,12 @@
         <pID>981A6FFDDC0C9F43B66A706FFB9D375A</pID>
         <details>
           <LitNr>LIT10016</LitNr>
-          <AutorHsg>
-            <values>
-              <value>
-                <text>Engelmann, Wilhelm</text>
-                <normalised_name>Engelmann, Wilhelm</normalised_name>
-                <gnd/>
-                <wd/>
-              </value>
-            </values>
-          </AutorHsg>
+          <AutorHsg><values><value><text>Engelmann, Wilhelm</text><normalised_name>Engelmann, Wilhelm</normalised_name><gnd/><wd/></value></values></AutorHsg>
           <Titel>Bibliotheca Geographica. Verzeichniss der seit der Mitte des vorigen Jahrhunderts bis zum Ende des Jahres 1856 in Deutschland erschienenen Werke über Geographie und Reisen mit Einschluss der Landkarten, Pläne und Ansichten</Titel>
-          <Verlag>
-            <values>
-              <value>
-                <text>Engelmann</text>
-                <normalised_name>Engelmann</normalised_name>
-                <gnd/>
-                <wd/>
-              </value>
-            </values>
-          </Verlag>
+          <Verlag><values><value><text>Engelmann</text><normalised_name>Engelmann</normalised_name><gnd/><wd/></value></values></Verlag>
           <Jahr>1858</Jahr>
           <recID>2017022310005530278</recID>
-          <Ort>
-            <values>
-              <value>
-                <text>Leipzig</text>
-                <gnd>4035206-7</gnd>
-                <wd>Q2079</wd>
-              </value>
-            </values>
-          </Ort>
+          <Ort><values><value><text>Leipzig</text><gnd>4035206-7</gnd><wd>Q2079</wd></value></values></Ort>
           <pID>D047B2DD830A9F4E8212D4C32BCD4CAD</pID>
         </details>
       </literature>
@@ -835,38 +525,12 @@
         <pID>EFC24B2CC6C39444A1AB6B061FECE152</pID>
         <details>
           <LitNr>LIT10030</LitNr>
-          <AutorHsg>
-            <values>
-              <value>
-                <text>Weber, Bruno</text>
-                <normalised_name>Weber, Bruno</normalised_name>
-                <gnd/>
-                <wd/>
-              </value>
-            </values>
-          </AutorHsg>
+          <AutorHsg><values><value><text>Weber, Bruno</text><normalised_name>Weber, Bruno</normalised_name><gnd/><wd/></value></values></AutorHsg>
           <Titel>Graubünden in alten Ansichten. Landschaftsporträts reisender Künstler vom 16. bis zum frühen 19. Jahrhundert. Mit einem Verzeichnis topographischer Ansichten in der Druckgraphik von den Anfängen bis um 1880</Titel>
-          <Verlag>
-            <values>
-              <value>
-                <text>Rhätisches Museum</text>
-                <normalised_name>Rhätisches Museum</normalised_name>
-                <gnd/>
-                <wd/>
-              </value>
-            </values>
-          </Verlag>
+          <Verlag><values><value><text>Rhätisches Museum</text><normalised_name>Rhätisches Museum</normalised_name><gnd/><wd/></value></values></Verlag>
           <Jahr>1984</Jahr>
           <recID>2017030111313313995</recID>
-          <Ort>
-            <values>
-              <value>
-                <text>Chur</text>
-                <gnd>4010189-7</gnd>
-                <wd>Q69007</wd>
-              </value>
-            </values>
-          </Ort>
+          <Ort><values><value><text>Chur</text><gnd>4010189-7</gnd><wd>Q69007</wd></value></values></Ort>
           <pID>0B3A7959FCEB7F4E821843B1F6F4F578</pID>
         </details>
       </literature>
@@ -880,38 +544,12 @@
         <pID>C01555ACEAC4E74EA09E90200885178C</pID>
         <details>
           <LitNr>LIT10051</LitNr>
-          <AutorHsg>
-            <values>
-              <value>
-                <text>Ghiringhelli, Giorgio</text>
-                <normalised_name>Ghiringhelli, Giorgio</normalised_name>
-                <gnd>140426353</gnd>
-                <wd/>
-              </value>
-            </values>
-          </AutorHsg>
+          <AutorHsg><values><value><text>Ghiringhelli, Giorgio</text><normalised_name>Ghiringhelli, Giorgio</normalised_name><gnd>140426353</gnd><wd/></value></values></AutorHsg>
           <Titel>Il Ticino nelle vecchie stampe</Titel>
-          <Verlag>
-            <values>
-              <value>
-                <text>Edizioni Casagrande</text>
-                <normalised_name>Edizioni Casagrande</normalised_name>
-                <gnd>5513616-3</gnd>
-                <wd/>
-              </value>
-            </values>
-          </Verlag>
+          <Verlag><values><value><text>Edizioni Casagrande</text><normalised_name>Edizioni Casagrande</normalised_name><gnd>5513616-3</gnd><wd/></value></values></Verlag>
           <Jahr>2003</Jahr>
           <recID>2017030316401516755</recID>
-          <Ort>
-            <values>
-              <value>
-                <text>Bellinzona</text>
-                <gnd>4005432-9</gnd>
-                <wd>Q64044</wd>
-              </value>
-            </values>
-          </Ort>
+          <Ort><values><value><text>Bellinzona</text><gnd>4005432-9</gnd><wd>Q64044</wd></value></values></Ort>
           <pID>CF50F8553CD8104AB43B1DBA1EBC80DD</pID>
         </details>
       </literature>
@@ -925,39 +563,13 @@
         <pID>F44655D198940C4BB565827C9B798C5C</pID>
         <details>
           <LitNr>LIT10017</LitNr>
-          <AutorHsg>
-            <values>
-              <value>
-                <text>Gattlen, Anton</text>
-                <normalised_name>Gattlen, Anton</normalised_name>
-                <gnd>130218383</gnd>
-                <wd>Q59531839</wd>
-              </value>
-            </values>
-          </AutorHsg>
+          <AutorHsg><values><value><text>Gattlen, Anton</text><normalised_name>Gattlen, Anton</normalised_name><gnd>130218383</gnd><wd>Q59531839</wd></value></values></AutorHsg>
           <Titel>Druckgrafische Ortsansichten des Wallis, 1548-1850</Titel>
-          <Verlag>
-            <values>
-              <value>
-                <text>Editions Gravures</text>
-                <normalised_name>Editions Gravures</normalised_name>
-                <gnd/>
-                <wd/>
-              </value>
-            </values>
-          </Verlag>
+          <Verlag><values><value><text>Editions Gravures</text><normalised_name>Editions Gravures</normalised_name><gnd/><wd/></value></values></Verlag>
           <Jahr>0</Jahr>
           <Band>2 Bde.</Band>
           <recID>2017022310051121100</recID>
-          <Ort>
-            <values>
-              <value>
-                <text>Brig</text>
-                <gnd>4008259-3</gnd>
-                <wd>Q15582</wd>
-              </value>
-            </values>
-          </Ort>
+          <Ort><values><value><text>Brig</text><gnd>4008259-3</gnd><wd>Q15582</wd></value></values></Ort>
           <JahrText>1987-1992</JahrText>
           <pID>B037E90647010845BCBD7A6C0B58A69E</pID>
         </details>
@@ -972,38 +584,12 @@
         <pID>A8ECD7A31A13BE4F9387626E21FB2F37</pID>
         <details>
           <LitNr>LIT10052</LitNr>
-          <AutorHsg>
-            <values>
-              <value>
-                <text>Ghiringhelli, Giorgio</text>
-                <normalised_name>Ghiringhelli, Giorgio</normalised_name>
-                <gnd>140426353</gnd>
-                <wd/>
-              </value>
-            </values>
-          </AutorHsg>
+          <AutorHsg><values><value><text>Ghiringhelli, Giorgio</text><normalised_name>Ghiringhelli, Giorgio</normalised_name><gnd>140426353</gnd><wd/></value></values></AutorHsg>
           <Titel>Il Ponte del Diavolo nelle vecchie stampe</Titel>
-          <Verlag>
-            <values>
-              <value>
-                <text>Edizioni Casagrande</text>
-                <normalised_name>Edizioni Casagrande</normalised_name>
-                <gnd>5513616-3</gnd>
-                <wd/>
-              </value>
-            </values>
-          </Verlag>
+          <Verlag><values><value><text>Edizioni Casagrande</text><normalised_name>Edizioni Casagrande</normalised_name><gnd>5513616-3</gnd><wd/></value></values></Verlag>
           <Jahr>2007</Jahr>
           <recID>2017030316411918627</recID>
-          <Ort>
-            <values>
-              <value>
-                <text>Bellinzona</text>
-                <gnd>4005432-9</gnd>
-                <wd>Q64044</wd>
-              </value>
-            </values>
-          </Ort>
+          <Ort><values><value><text>Bellinzona</text><gnd>4005432-9</gnd><wd>Q64044</wd></value></values></Ort>
           <pID>934E2613F796EA41B665711D32AD0644</pID>
         </details>
       </literature>
@@ -1017,38 +603,12 @@
         <pID>B6B3C04E48917343B3C6803E3F8FE7FA</pID>
         <details>
           <LitNr>LIT10028</LitNr>
-          <AutorHsg>
-            <values>
-              <value>
-                <text>Krebser, Markus</text>
-                <normalised_name>Krebser, Markus</normalised_name>
-                <gnd>106167324</gnd>
-                <wd/>
-              </value>
-            </values>
-          </AutorHsg>
+          <AutorHsg><values><value><text>Krebser, Markus</text><normalised_name>Krebser, Markus</normalised_name><gnd>106167324</gnd><wd/></value></values></AutorHsg>
           <Titel>Thun und seine Landschaft in der Kunst der Kleinmeister: Druckgrafik von 1548 bis 1868</Titel>
-          <Verlag>
-            <values>
-              <value>
-                <text>Krebser</text>
-                <normalised_name>Krebser</normalised_name>
-                <gnd/>
-                <wd/>
-              </value>
-            </values>
-          </Verlag>
+          <Verlag><values><value><text>Krebser</text><normalised_name>Krebser</normalised_name><gnd/><wd/></value></values></Verlag>
           <Jahr>2004</Jahr>
           <recID>2017030111191126563</recID>
-          <Ort>
-            <values>
-              <value>
-                <text>Thun</text>
-                <gnd>4059991-7</gnd>
-                <wd>Q68978</wd>
-              </value>
-            </values>
-          </Ort>
+          <Ort><values><value><text>Thun</text><gnd>4059991-7</gnd><wd>Q68978</wd></value></values></Ort>
           <pID>CACEEACE423EE84AA68E16FC18E94CD9</pID>
         </details>
       </literature>
@@ -1062,16 +622,7 @@
         <pID>286286A60A0ABE4AB105C465B9653491</pID>
         <details>
           <LitNr>LIT10136</LitNr>
-          <AutorHsg>
-            <values>
-              <value>
-                <text>Dikenmann, Johann Rudolf</text>
-                <normalised_name>Dikenmann, Johann Rudolf</normalised_name>
-                <gnd>1089330405</gnd>
-                <wd>Q94919210</wd>
-              </value>
-            </values>
-          </AutorHsg>
+          <AutorHsg><values><value><text>Dikenmann, Johann Rudolf</text><normalised_name>Dikenmann, Johann Rudolf</normalised_name><gnd>1089330405</gnd><wd>Q94919210</wd></value></values></AutorHsg>
           <Titel>Catalogue des vues, costumes et panoramas suisses, editions originales publiées par R. Dikenmann peintre-editeur Zurich RIndermarkt 14</Titel>
           <Jahr>0</Jahr>
           <recID>2017061414100217781</recID>
