@@ -34,7 +34,7 @@ outputDirectory = '../data/xml/sff/'
 outputPrefix = 'sff-record-'
 
 # Fields that have been curated
-curatedFields = ['Keywords', 'Ortsbezug', 'Material']
+curatedFields = ['Keywords', 'Ortsbezug', 'Material', 'Technik']
 curatedFieldsInLiterature = ['in Zeitschrift', 'Ort', 'Autor, Hsg.', 'Verlag']
 
 # Read arguments from command line input
@@ -98,13 +98,14 @@ def addCuratedData(record):
                     try:
                         index = curatedFiles[curatedField]['lookup'][lookupHash]
                         match = curatedFiles[curatedField]['content'][index]
+                    except:
+                        print("Could not find matching data for", valueTag.find('text').text)
 
+                    if match:
                         for column in match: 
                             if column != 'id':
                                 newSubfield = etree.SubElement(valueTag, column)
                                 newSubfield.text = match[column]
-                    except:
-                        print("Could not find matching data for", valueTag.find('text').text)
         else:
             # Single value field
             singleValueTags = record.findall(tag)
@@ -119,9 +120,34 @@ def addCuratedData(record):
 
                         for column in match: 
                             if column != 'id':
-                                singleValueTag.set(column, match[column])
+                                if column in match and ';' in match[column]:
+                                    for i, value in enumerate(match[column].split(';')):
+                                        el = etree.SubElement(singleValueTag, column)
+                                        el.set('index', str(i))
+                                        el.text = value
+                                else:
+                                    singleValueTag.set(column, match[column])
                     except:
                         print("Could not find matching data for", singleValueTag.text)
+            # Consolidate indexed fields
+            maxIndex = 0
+            for indexedField in singleValueTag.findall('./*[@index]'):
+                index = int(indexedField.get('index'))
+                if singleValueTag.find('alignments[@index="%d"]' % index) is not None:
+                    alignments = singleValueTag.find('alignments[@index="%d"]' % index)
+                else:
+                    alignments = etree.SubElement(singleValueTag, 'alignments')
+                    alignments.set('index', str(index))
+                alignments.append(indexedField)
+                del indexedField.attrib['index']
+                if index > maxIndex:
+                    maxIndex = index
+            # Keep only first field if there is only one
+            if maxIndex == 0:
+                for element in singleValueTag.findall('./alignments/*'):
+                    singleValueTag.append(element)
+                for toRemove in singleValueTag.xpath('./alignments'):
+                    singleValueTag.remove(toRemove)
     return record
 
 def addCuratedDataForLiterature(record):
