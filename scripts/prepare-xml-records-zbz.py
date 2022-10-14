@@ -217,8 +217,8 @@ def convertEDTFdate(date):
             lower = d.lower_strict()
             upper = d.upper_strict()
     return {
-        'lower': time.strftime("%Y-%m-%d", lower),
-        'upper': time.strftime("%Y-%m-%d", upper)
+        'lower': time.strftime("%Y", lower).zfill(4) + time.strftime("-%m-%d", lower),
+        'upper': time.strftime("%Y", upper).zfill(4) + time.strftime("-%m-%d", upper)
     }
     
 def customHash(l):
