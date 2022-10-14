@@ -21,6 +21,7 @@ import sys
 
 from rdflib import Graph
 from urllib import request
+from urllib.error import HTTPError
 from os import path, walk
 from SPARQLWrapper import SPARQLWrapper, N3
 from time import sleep
@@ -284,7 +285,7 @@ def retrieveWdData(identifiers, targetFolder):
             sparql.setQuery(query)
             try:
                 results = sparql.query().convert()
-            except urllib.error.HTTPError as exception:
+            except HTTPError as exception:
                 print(exception)
             sleep(3)
             outputFile.write(results.serialize(format='turtle'))
