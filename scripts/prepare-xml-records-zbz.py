@@ -38,6 +38,7 @@ curatedFields = {
     '100': [['a', 'd']],
     '110': [['a']],
     '264': [['a'], ['b']],
+    '300': [['b']],
     '340': [['a']],
     '600': [['a', 'b']],
     '610': [['a', 'g']],
@@ -77,14 +78,44 @@ def addCuratedData(record):
                     try:
                         index = curatedFiles[curatedFileId]['lookup'][lookupHash]
                         match = curatedFiles[curatedFileId]['content'][index]
-
-                        for column in match: 
-                            if column not in conditions:
-                                newSubfield = etree.SubElement(datafield, "subfield")
-                                newSubfield.set("code", column)
-                                newSubfield.text = match[column]
                     except:
                         print("Key error for", conditions, lookupHash)
+                    
+                    if match:
+                        for column in match: 
+                            if column not in conditions and column is not None:
+                                if match[column] and ';' in match[column]:
+                                    for i, value in enumerate(match[column].split(';')):
+                                        newSubfield = etree.SubElement(datafield, "subfield")
+                                        newSubfield.set("code", column)
+                                        newSubfield.set("index", str(i))
+                                        newSubfield.text = value
+                                else:
+                                    newSubfield = etree.SubElement(datafield, "subfield")
+                                    newSubfield.set("code", column)
+                                    newSubfield.set("index", "0")
+                                    newSubfield.text = match[column]
+                        # Consolidate indexed fields
+                        maxIndex = 0
+                        for indexedField in datafield.findall('./*[@index]'):
+                            index = int(indexedField.get('index'))
+                            if datafield.find('alignments[@index="%d"]' % index) is not None:
+                                alignments = datafield.find('alignments[@index="%d"]' % index)
+                            else:
+                                alignments = etree.SubElement(datafield, 'alignments')
+                                alignments.set('index', str(index))
+                            alignments.append(indexedField)
+                            del indexedField.attrib['index']
+                            if index > maxIndex:
+                                maxIndex = index
+                        # Keep only first field if there is only one
+                        # (except for tag 300b where we treat alignments as sub-aligments)
+                        if maxIndex == 0 and curatedFileId != '300-b':
+                            for element in datafield.findall('./alignments/*'):
+                                datafield.append(element)
+                            for toRemove in datafield.xpath('./alignments'):
+                                datafield.remove(toRemove)
+                        
     
     return record
 

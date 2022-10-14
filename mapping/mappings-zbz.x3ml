@@ -1973,7 +1973,14 @@
                     </source_relation>
                     <target_relation>
                         <if>
-                            <equals value="Geburtsdatum">@code</equals>
+                            <and>
+                                <if>
+                                    <equals value="Geburtsdatum">@code</equals>
+                                </if>
+                                <if>
+                                    <exists>text()</exists>
+                                </if>
+                            </and>
                         </if>
                         <relationship>crm:P98i_was_born</relationship>
                         <entity>
@@ -2000,7 +2007,7 @@
                             <additional>
                                 <relationship>crm:P82a_begin_of_the_begin</relationship>
                                 <entity>
-                                    <type>xsd:dateTime</type>
+                                    <type>xsd:date</type>
                                     <instance_info>
                                         <constant/>
                                     </instance_info>
@@ -2012,7 +2019,7 @@
                             <additional>
                                 <relationship>crm:P82b_end_of_the_end</relationship>
                                 <entity>
-                                    <type>xsd:dateTime</type>
+                                    <type>xsd:date</type>
                                     <instance_info>
                                         <constant/>
                                     </instance_info>
@@ -2032,7 +2039,14 @@
                     </source_relation>
                     <target_relation>
                         <if>
-                            <equals value="Sterbedatum">@code</equals>
+                            <and>
+                                <if>
+                                    <equals value="Sterbedatum">@code</equals>
+                                </if>
+                                <if>
+                                    <exists>text()</exists>
+                                </if>
+                            </and>
                         </if>
                         <relationship>crm:P100i_died_in</relationship>
                         <entity>
@@ -2059,7 +2073,7 @@
                             <additional>
                                 <relationship>crm:P82a_begin_of_the_begin</relationship>
                                 <entity>
-                                    <type>xsd:dateTime</type>
+                                    <type>xsd:date</type>
                                     <instance_info>
                                         <constant/>
                                     </instance_info>
@@ -2071,7 +2085,7 @@
                             <additional>
                                 <relationship>crm:P82b_end_of_the_end</relationship>
                                 <entity>
-                                    <type>xsd:dateTime</type>
+                                    <type>xsd:date</type>
                                     <instance_info>
                                         <constant/>
                                     </instance_info>
@@ -2204,7 +2218,7 @@
                             <additional>
                                 <relationship>crm:P82a_begin_of_the_begin</relationship>
                                 <entity variable="event_from">
-                                    <type>xsd:dateTime</type>
+                                    <type>xsd:date</type>
                                     <instance_generator name="typedLiteralGen">
                                         <arg name="text" type="xpath">@lowerDate</arg>
                                     </instance_generator>
@@ -2213,7 +2227,7 @@
                             <additional>
                                 <relationship>crm:P82b_end_of_the_end</relationship>
                                 <entity variable="event_to">
-                                    <type>xsd:dateTime</type>
+                                    <type>xsd:date</type>
                                     <instance_generator name="typedLiteralGen">
                                         <arg name="text" type="xpath">@upperDate</arg>
                                     </instance_generator>
@@ -2407,7 +2421,7 @@
                             <additional>
                                 <relationship>crm:P82a_begin_of_the_begin</relationship>
                                 <entity variable="event_from">
-                                    <type>xsd:dateTime</type>
+                                    <type>xsd:date</type>
                                     <instance_generator name="typedLiteralGen">
                                         <arg name="text" type="xpath">@lowerDate</arg>
                                     </instance_generator>
@@ -2416,7 +2430,7 @@
                             <additional>
                                 <relationship>crm:P82b_end_of_the_end</relationship>
                                 <entity variable="event_to">
-                                    <type>xsd:dateTime</type>
+                                    <type>xsd:date</type>
                                     <instance_generator name="typedLiteralGen">
                                         <arg name="text" type="xpath">@upperDate</arg>
                                     </instance_generator>
@@ -2713,7 +2727,7 @@
                             <additional>
                                 <relationship>crm:P82a_begin_of_the_begin</relationship>
                                 <entity variable="event_from">
-                                    <type>xsd:dateTime</type>
+                                    <type>xsd:date</type>
                                     <instance_generator name="typedLiteralGen">
                                         <arg name="text" type="xpath">@lowerDate</arg>
                                     </instance_generator>
@@ -2722,7 +2736,7 @@
                             <additional>
                                 <relationship>crm:P82b_end_of_the_end</relationship>
                                 <entity variable="event_to">
-                                    <type>xsd:dateTime</type>
+                                    <type>xsd:date</type>
                                     <instance_generator name="typedLiteralGen">
                                         <arg name="text" type="xpath">@upperDate</arg>
                                     </instance_generator>
@@ -2854,10 +2868,63 @@
                             <type>crm:E55_Type</type>
                             <instance_generator name="URIwithTypeAndId_hashed">
                                 <arg name="type" type="constant">type</arg>
-                                <arg name="id_HASHED_CONTENTS" type="xpath">text()</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">if (../subfield[@code='gnd']/text()) then (../subfield[@code='gnd']/text()) else (if (../subfield[@code='normalised']/text()) then (../subfield[@code='normalised']/text()) else (../subfield[@code='b']/text()))</arg>
                             </instance_generator>
                             <label_generator name="Literal">
                                 <arg name="text" type="xpath">text()</arg>
+                                <arg name="language" type="constant"/>
+                            </label_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+        </mapping>
+        <mapping>
+            <domain>
+                <source_node>/collection/record/datafield</source_node>
+                <target_node>
+                    <if>
+                        <and>
+                            <if>
+                                <equals value="300">@tag</equals>
+                            </if>
+                            <if>
+                                <exists>subfield[@code='b']/text()</exists>
+                            </if>
+                        </and>
+                    </if>
+                    <entity>
+                        <type>crm:E55_Type</type>
+                        <instance_generator name="URIwithTypeAndId_hashed">
+                            <arg name="type" type="constant">type</arg>
+                            <arg name="id_HASHED_CONTENTS" type="xpath">if (./subfield[@code='gnd']/text()) then (./subfield[@code='gnd']/text()) else ( if (../subfield[@code='normalised']/text()) then (../subfield[@code='normalised']/text()) else (./subfield[@code='b']/text()) )</arg>
+                        </instance_generator>
+                    </entity>
+                </target_node>
+            </domain>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>alignments</relation>
+                    </source_relation>
+                    <target_relation>
+                        <if>
+                            <exists>subfield[@code='normalised']/text()</exists>
+                        </if>
+                        <relationship>crm:P127_has_broader_term</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>alignments</source_node>
+                    <target_node>
+                        <entity>
+                            <type>crm:E55_Type</type>
+                            <instance_generator name="URIwithTypeAndId_hashed">
+                                <arg name="type" type="constant">type</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">if (./subfield[@code='gnd']/text()) then(./subfield[@code='gnd']/text()) else (./subfield[@code='normalised']/text())</arg>
+                            </instance_generator>
+                            <label_generator name="Literal">
+                                <arg name="text" type="xpath">subfield[@code='normalised']/text()</arg>
                                 <arg name="language" type="constant"/>
                             </label_generator>
                         </entity>
@@ -3373,7 +3440,14 @@
                     </source_relation>
                     <target_relation>
                         <if>
-                            <equals value="Geburtsdatum">@code</equals>
+                            <and>
+                                <if>
+                                    <equals value="Geburtsdatum">@code</equals>
+                                </if>
+                                <if>
+                                    <exists>text()</exists>
+                                </if>
+                            </and>
                         </if>
                         <relationship>crm:P98i_was_born</relationship>
                         <entity>
@@ -3400,7 +3474,7 @@
                             <additional>
                                 <relationship>crm:P82a_begin_of_the_begin</relationship>
                                 <entity>
-                                    <type>xsd:dateTime</type>
+                                    <type>xsd:date</type>
                                     <instance_info>
                                         <constant/>
                                     </instance_info>
@@ -3412,7 +3486,7 @@
                             <additional>
                                 <relationship>crm:P82b_end_of_the_end</relationship>
                                 <entity>
-                                    <type>xsd:dateTime</type>
+                                    <type>xsd:date</type>
                                     <instance_info>
                                         <constant/>
                                     </instance_info>
@@ -3432,7 +3506,14 @@
                     </source_relation>
                     <target_relation>
                         <if>
-                            <equals value="Sterbedatum">@code</equals>
+                            <and>
+                                <if>
+                                    <equals value="Sterbedatum">@code</equals>
+                                </if>
+                                <if>
+                                    <exists>text()</exists>
+                                </if>
+                            </and>
                         </if>
                         <relationship>crm:P100i_died_in</relationship>
                         <entity>
@@ -3452,14 +3533,14 @@
                         <entity>
                             <type>crm:E52_Time-Span</type>
                             <instance_generator name="URIwithTypeSuptypeAndId_hashed">
-                                <arg name="type" type="constant">actor</arg>
+                                <arg name="type" type="constant">acdtor</arg>
                                 <arg name="id_HASHED_CONTENTS" type="xpath">if (../subfield[@code='gnd']/text()) then ../subfield[@code='gnd']/text() else ../subfield[@code='a']/text()</arg>
                                 <arg name="subtype" type="constant">deathDate</arg>
                             </instance_generator>
                             <additional>
                                 <relationship>crm:P82a_begin_of_the_begin</relationship>
                                 <entity>
-                                    <type>xsd:dateTime</type>
+                                    <type>xsd:date</type>
                                     <instance_info>
                                         <constant/>
                                     </instance_info>
@@ -3471,7 +3552,7 @@
                             <additional>
                                 <relationship>crm:P82b_end_of_the_end</relationship>
                                 <entity>
-                                    <type>xsd:dateTime</type>
+                                    <type>xsd:date</type>
                                     <instance_info>
                                         <constant/>
                                     </instance_info>
@@ -3571,7 +3652,7 @@
                             <additional>
                                 <relationship>crm:P82a_begin_of_the_begin</relationship>
                                 <entity>
-                                    <type>xsd:dateTime</type>
+                                    <type>xsd:date</type>
                                     <instance_info>
                                         <constant/>
                                     </instance_info>
@@ -3583,7 +3664,7 @@
                             <additional>
                                 <relationship>crm:P82b_end_of_the_end</relationship>
                                 <entity>
-                                    <type>xsd:dateTime</type>
+                                    <type>xsd:date</type>
                                     <instance_info>
                                         <constant/>
                                     </instance_info>
@@ -3673,7 +3754,7 @@
                             <additional>
                                 <relationship>crm:P82a_begin_of_the_begin</relationship>
                                 <entity>
-                                    <type>xsd:dateTime</type>
+                                    <type>xsd:date</type>
                                     <instance_info>
                                         <constant/>
                                     </instance_info>
@@ -3685,7 +3766,7 @@
                             <additional>
                                 <relationship>crm:P82b_end_of_the_end</relationship>
                                 <entity>
-                                    <type>xsd:dateTime</type>
+                                    <type>xsd:date</type>
                                     <instance_info>
                                         <constant/>
                                     </instance_info>
@@ -4301,7 +4382,60 @@
                 </range>
             </link>
         </mapping>
+        <mapping>
+            <domain>
+                <source_node>/collection/record/datafield/alignments</source_node>
+                <target_node>
+                    <if>
+                        <and>
+                            <if>
+                                <equals value="300">../@tag</equals>
+                            </if>
+                            <if>
+                                <exists>subfield[@code='normalised']/text()</exists>
+                            </if>
+                        </and>
+                    </if>
+                    <entity variable="300b_hierarchy_same_as">
+                        <type>crm:E55_Type</type>
+                        <instance_generator name="URIwithTypeAndId_hashed">
+                            <arg name="type" type="constant">type</arg>
+                            <arg name="id_HASHED_CONTENTS" type="xpath">if (subfield[@code='gnd']/text()) then (subfield[@code='gnd']/text()) else (lower-case(subfield[@code='normalised']/text()))</arg>
+                        </instance_generator>
+                    </entity>
+                </target_node>
+            </domain>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>subfield</relation>
+                    </source_relation>
+                    <target_relation>
+                        <if>
+                            <and>
+                                <if>
+                                    <exists>text()</exists>
+                                </if>
+                                <if>
+                                    <equals value="gnd">@code</equals>
+                                </if>
+                            </and>
+                        </if>
+                        <relationship>crmdig:L54_is_same-as</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>subfield</source_node>
+                    <target_node>
+                        <entity>
+                            <type>crm:E55_Type</type>
+                            <instance_generator name="URIwithGndId">
+                                <arg name="id" type="xpath">text()</arg>
+                            </instance_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+        </mapping>
     </mappings>
-
-
 </x3ml>

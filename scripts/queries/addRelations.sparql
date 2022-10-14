@@ -25,6 +25,12 @@ INSERT {
   } UNION {
     ?place gn:featureCode gn:A.ADM3 ;
       gn:parentADM2 ?parentPlace .
+  } UNION {
+    ?place gn:featureCode gn:A.ADM3 ;
+      gn:parentADM1 ?parentPlace .
+    FILTER NOT EXISTS {
+      ?place gn:parentADM2 ?parentDistrict .
+    }
   }
 };
 
@@ -198,4 +204,18 @@ INSERT {
   BIND(<https://d-nb.info/gnd/1196831858> as ?sff)
   ?child crm:P109_has_current_or_former_curator ?sff ;
     crm:P46i_forms_part_of ?subject .
+};
+
+INSERT {
+  GRAPH sari:relations {
+    ?subject rdfs:label ?langLabel .
+  }
+} WHERE {
+  ?subject a ?type ;
+	crmdig:L54_is_same-as/rdfs:label ?langLabel .
+  FILTER(lang(?langLabel) = 'en' || lang(?langLabel) = 'fr' || lang(?langLabel) = 'it' || lang(?langLabel) = 'de')
+  VALUES (?type) {
+    (search:Place)
+    (schema:AdministrativeArea)
+  }
 }

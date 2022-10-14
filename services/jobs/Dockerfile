@@ -1,4 +1,4 @@
-FROM python:3.8
+FROM python:3.8.14
 
 RUN apt-get -qq update && \
     apt-get -q -y upgrade && \
