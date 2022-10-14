@@ -2,7 +2,7 @@ version: "3.4"
 services:
 
   blazegraph:
-    image: metaphacts/blazegraph-basic
+    image: robcast/researchspace-blazegraph:2.2.0-20160908
     container_name: ${PROJECT_NAME}_blazegraph
     restart: unless-stopped
     environment:
@@ -19,7 +19,7 @@ services:
   jobs:
     build: ./services/jobs
     container_name: ${PROJECT_NAME}_jobs
-    image: swissartresearx/bso-jobs:1.0.1
+    image: swissartresearx/bso-jobs:1.0.2
     restart: unless-stopped
     environment:
       - HOST_LOCATION=${HOST_NAME}
@@ -32,7 +32,7 @@ services:
       - ./services/researchplatform/apps/bso/src:/bso-app-src
 
   platform:
-    image: swissartresearx/metaphacts-community:4.2.1
+    image: swissartresearx/metaphacts-community:4.2.2
     container_name: ${PROJECT_NAME}_platform
     restart: unless-stopped
     depends_on:

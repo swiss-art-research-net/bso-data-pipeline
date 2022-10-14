@@ -77,6 +77,10 @@
     <datafield tag="300" ind1=" " ind2=" ">
       <subfield code="a">10 Blätter</subfield>
       <subfield code="b">Lithografien</subfield>
+      <subfield code="gnd">4036042-8</subfield>
+      <subfield code="normalised">lithographie</subfield>
+      <subfield code="parent"/>
+      <subfield code="parent-gnd"/>
       <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="336" ind1=" " ind2=" ">
@@ -358,6 +362,18 @@
       <subfield code="a">1 Druckgrafik</subfield>
       <subfield code="b">Aquatinta koloriert</subfield>
       <subfield code="c">Bild 7,4 x 11,2 cm, Blatt 15 x 21 cm</subfield>
+      <alignments index="0">
+        <subfield code="gnd">4132364-6</subfield>
+        <subfield code="normalised">aquatinta</subfield>
+        <subfield code="parent"/>
+        <subfield code="parent-gnd"/>
+      </alignments>
+      <alignments index="1">
+        <subfield code="gnd">4246493-6</subfield>
+        <subfield code="normalised">koloriert</subfield>
+        <subfield code="parent"/>
+        <subfield code="parent-gnd"/>
+      </alignments>
       <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="336" ind1=" " ind2=" ">
@@ -642,6 +658,24 @@
       <subfield code="a">1 Druckgraphik</subfield>
       <subfield code="b">Aquatinta, Blaudruck, koloriert</subfield>
       <subfield code="c">Bild 30,3 x 46,4 cm, Blatt 39,2 x 56,3 cm</subfield>
+      <alignments index="0">
+        <subfield code="gnd">4132364-6</subfield>
+        <subfield code="normalised">aquatinta</subfield>
+        <subfield code="parent"/>
+        <subfield code="parent-gnd"/>
+      </alignments>
+      <alignments index="1">
+        <subfield code="gnd">4145861-8</subfield>
+        <subfield code="normalised">blaudruck</subfield>
+        <subfield code="parent"/>
+        <subfield code="parent-gnd"/>
+      </alignments>
+      <alignments index="2">
+        <subfield code="gnd">4246493-6</subfield>
+        <subfield code="normalised">koloriert</subfield>
+        <subfield code="parent"/>
+        <subfield code="parent-gnd"/>
+      </alignments>
       <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="336" ind1=" " ind2=" ">
@@ -837,6 +871,18 @@
       <subfield code="a">1 Druckgraphik</subfield>
       <subfield code="b">Radierung und Kupferstich</subfield>
       <subfield code="c">Bild und Blatt 7,7 x 13,5 cm</subfield>
+      <alignments index="0">
+        <subfield code="gnd">4048166-9</subfield>
+        <subfield code="normalised">radierung</subfield>
+        <subfield code="parent"/>
+        <subfield code="parent-gnd"/>
+      </alignments>
+      <alignments index="1">
+        <subfield code="gnd">4033760-1</subfield>
+        <subfield code="normalised">kupferstich</subfield>
+        <subfield code="parent"/>
+        <subfield code="parent-gnd"/>
+      </alignments>
       <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="336" ind1=" " ind2=" ">
@@ -1062,6 +1108,24 @@
       <subfield code="a">1 Zeichnung</subfield>
       <subfield code="b">Aquarell und Gouache über Bleistift</subfield>
       <subfield code="c">Bild und Blatt 16,4 x 24,5 cm</subfield>
+      <alignments index="0">
+        <subfield code="gnd">4002511-1</subfield>
+        <subfield code="normalised">aquarell</subfield>
+        <subfield code="parent"/>
+        <subfield code="parent-gnd"/>
+      </alignments>
+      <alignments index="1">
+        <subfield code="gnd">4071972-8</subfield>
+        <subfield code="normalised">gouache</subfield>
+        <subfield code="parent"/>
+        <subfield code="parent-gnd"/>
+      </alignments>
+      <alignments index="2">
+        <subfield code="gnd">4121035-9</subfield>
+        <subfield code="normalised">bleistift</subfield>
+        <subfield code="parent"/>
+        <subfield code="parent-gnd"/>
+      </alignments>
       <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="336" ind1=" " ind2=" ">
@@ -1310,6 +1374,10 @@
       <subfield code="a">1 Fotografie</subfield>
       <subfield code="b">Albuminabzug</subfield>
       <subfield code="c">17,2 x 23 cm</subfield>
+      <subfield code="gnd"/>
+      <subfield code="normalised">albuminabzug</subfield>
+      <subfield code="parent"/>
+      <subfield code="parent-gnd"/>
       <subfield code="subfield">1</subfield>
     </datafield>
     <datafield tag="336" ind1=" " ind2=" ">
