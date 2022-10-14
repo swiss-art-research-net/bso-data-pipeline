@@ -120,7 +120,11 @@ def queryIdentifiersInFile(sourceFile, queryPart):
     identifiers = []
     if path.isfile(sourceFile):
         data = Graph()
-        data.parse(sourceFile, format='turtle')
+        try:
+            data.parse(sourceFile, format='turtle')
+        except Exception as e:
+            print("Error parsing file", sourceFile, e)
+            sys.exit(1)
         queryResults = data.query(PREFIXES + "\nSELECT DISTINCT ?identifier WHERE {" + queryPart + "}")
         for row in queryResults:
             identifiers.append(str(row[0]))
