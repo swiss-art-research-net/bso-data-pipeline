@@ -1,0 +1,43 @@
+PREFIX sari: <https://platform.swissartresearch.net/>
+PREFIX search: <https://platform.swissartresearch.net/search/>
+PREFIX : <http://www.metaphacts.com/resource/>
+PREFIX crmdig: <http://www.ics.forth.gr/isl/CRMdig/>
+PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
+PREFIX gndo: <https://d-nb.info/standards/elementset/gnd#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX frbroo: <http://iflastandards.info/ns/fr/frbr/frbroo/>
+PREFIX rds: <http://schema.swissartresearch.net/ontology/rds#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX gn: <http://www.geonames.org/ontology#>
+PREFIX schema: <http://schema.org/>
+
+DROP GRAPH sari:summaries;
+
+INSERT {
+  GRAPH sari:summaries {
+    ?subject dcterms:abstract ?summary .
+  }
+}
+ WHERE {
+    ?subject a search:Object .
+    {
+      SELECT ?subject ?label (GROUP_CONCAT(DISTINCT ?event_date; SEPARATOR='/') as ?event_dates) (GROUP_CONCAT(DISTINCT ?actor_label; SEPARATOR=', ') as ?actor_labels) WHERE {
+    
+        ?subject a search:Object ;
+          rdfs:label ?label ;
+          crm:P70i_is_documented_in ?meta .
+        ?subject crm:P108i_was_produced_by|(crm:P128_carries/crm:P94i_was_created_by) ?event .
+        OPTIONAL {
+          ?event crm:P14_carried_out_by/crm:P1_is_identified_by ?actor_identifier .
+          ?actor_identifier rdfs:label ?actor_label ;
+              crm:P70i_is_documented_in ?meta .
+      }
+        OPTIONAL {
+          ?event crm:P4_has_time-span/rdfs:label ?event_date .
+        }
+      } GROUP BY ?subject ?label
+    }
+    BIND(' / ' as ?_separator)
+    BIND(CONCAT(?label, ?_separator, ?event_dates, ?_separator, ?actor_labels) as ?summary)
+}
