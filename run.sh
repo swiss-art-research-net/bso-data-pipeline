@@ -143,6 +143,16 @@ then
   docker exec $JOBSCONTAINER bash -c "task add-relations"
 fi
 
+if [[ $NOPROMPT -ne 1 ]]
+then
+  read -p "Add summaries? (y/n)" -n 1 -r
+  echo ""
+fi
+if [[ $NOPROMPT || $REPLY =~ ^[Yy]$ ]]
+then
+  docker exec $JOBSCONTAINER bash -c "task add-summaries"
+fi
+
 # if [[ $NOPROMPT -ne 1 ]]
 # then
 #   read -p "Materialise fields? (y/n)" -n 1 -r
