@@ -2464,20 +2464,6 @@
                                     </label_generator>
                                 </entity>
                             </additional>
-                            <additional>
-                                <relationship>crm:P70i_is_documented_in</relationship>
-                                <entity>
-                                    <type>crm:E31_Document</type>
-                                    <instance_info>
-                                        <constant/>
-                                    </instance_info>
-                                    <instance_generator name="URIwithTypeSubtypeAndId">
-                                        <arg name="type" type="constant">artwork</arg>
-                                        <arg name="id" type="xpath">../../../../../../../record-identifier/text()</arg>
-                                        <arg name="subtype" type="constant">meta</arg>
-                                    </instance_generator>
-                                </entity>
-                            </additional>
                         </entity>
                     </target_node>
                 </range>
@@ -2587,20 +2573,6 @@
                                         <arg name="text" type="constant">full name</arg>
                                         <arg name="language" type="constant"/>
                                     </label_generator>
-                                </entity>
-                            </additional>
-                            <additional>
-                                <relationship>crm:P70i_is_documented_in</relationship>
-                                <entity>
-                                    <type>crm:E31_Document</type>
-                                    <instance_info>
-                                        <constant/>
-                                    </instance_info>
-                                    <instance_generator name="URIwithTypeSubtypeAndId">
-                                        <arg name="type" type="constant">artwork</arg>
-                                        <arg name="id" type="xpath">../../../../../../../record-identifier/text()</arg>
-                                        <arg name="subtype" type="constant">meta</arg>
-                                    </instance_generator>
                                 </entity>
                             </additional>
                         </entity>
