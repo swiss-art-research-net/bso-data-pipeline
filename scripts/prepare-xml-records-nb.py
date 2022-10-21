@@ -549,7 +549,7 @@ if idsToOutput:
 
 now = time.time()
 
-for record in tqdm(records[offset:limit]):
+for record in tqdm(records[offset:offset+limit]):
     record = addCuratedDataToDescriptors(record, curatedData)
     record = addImageSizes(record, imageSizes, imageSizesHash)
     record = addCuratedTypeData(record, curatedTypes)
