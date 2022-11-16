@@ -69,7 +69,7 @@ class SmapshotConnector:
             return False
         return r.json()
 
-    def addImage(self, *, title, collection_id=36, photographer_ids=[0], iiif_url, width, height, original_id, latitude, longitude, license, name=None, regionByPx, date_orig, date_shot_min, date_shot_max, is_published=True, view_type="terrestrial", correction_enabled=False, observation_enabled=True):
+    def addImage(self, *, title, collection_id=36, photographer_ids=[0], iiif_url, width, height, original_id, latitude, longitude, license, name=None, regionByPx, date_orig, date_shot_min, date_shot_max, is_published=True, view_type="terrestrial", correction_enabled=False, observation_enabled=True, framing_mode="single_image"):
         """
         Adds a new IIIF image to sMapshot
         :param title: The title of the image
@@ -110,6 +110,9 @@ class SmapshotConnector:
         :type correction_enabled: bool
         :param observation_enabled: Whether observations (annotations) should be enabled for the image (default: True)
         :type observation_enabled: bool
+        :param framing_mode: The framing mode of the image. "single_image" or "composite_image" (default: "single_image")
+        :type framing_mode: str
+
         """
         attributes = {
             "iiif_data" : {
@@ -131,7 +134,8 @@ class SmapshotConnector:
                 "longitude": longitude,
                 "latitude": latitude
             },
-            "photographer_ids": photographer_ids
+            "photographer_ids": photographer_ids,
+            "framing_mode": framing_mode
         }
         if name:
             attributes["name"] = name
