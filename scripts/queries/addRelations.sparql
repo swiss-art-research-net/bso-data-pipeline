@@ -182,6 +182,7 @@ INSERT {
 INSERT {
   GRAPH ?g {
     ?work crm:P94i_was_created_by ?creation .
+    ?creation a crm:E65_Creation .
   }
 } WHERE {
   ?subject a search:Object .
@@ -193,6 +194,23 @@ INSERT {
     }
   }
   BIND(URI(CONCAT(STR(?subject), '/creation')) AS ?creation)
+};
+
+# Add author role of creater of text where no role has been specified
+INSERT {
+  GRAPH ?g {
+    ?subcreation crm:P2_has_type <https://iqvoc.swissartresearch.net/_8ab5f6e4> .
+  }
+} WHERE {
+  ?subject a search:Object .
+  GRAPH ?g {
+      ?subject crm:P128_carries ?text .
+      ?text a frbroo:F22_Self-Contained_Expression ;
+        crm:P94i_was_created_by/crm:P9_consists_of ?subcreation .
+    FILTER NOT EXISTS {
+      ?subcreation crm:P2_has_type ?creation_type 
+    }
+  }
 };
 
 INSERT {
