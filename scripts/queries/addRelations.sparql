@@ -177,6 +177,24 @@ INSERT {
   }
 };
 
+# Add creation node for works that miss a creation
+# (this node is expected by some forms)
+INSERT {
+  GRAPH ?g {
+    ?work crm:P94i_was_created_by ?creation .
+  }
+} WHERE {
+  ?subject a search:Object .
+  GRAPH ?g {
+      ?subject crm:P128_carries ?work .
+      ?work a crm:E36_Visual_Item .
+    FILTER NOT EXISTS {
+      ?work crm:P94i_was_created_by ?creation .
+    }
+  }
+  BIND(URI(CONCAT(STR(?subject), '/creation')) AS ?creation)
+};
+
 INSERT {
   GRAPH ?g {
     ?entity crm:P94i_was_created_by ?creation .
