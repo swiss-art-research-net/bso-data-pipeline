@@ -64,7 +64,8 @@ def addImage(data):
     date_shot_max=data['date_max'][:10] if 'date_max' in data else None,
     longitude=float(data['longitude']),
     latitude=float(data['latitude']),
-    photographer_ids=[int(d) for d in data['photographer_ids'].split(",")]
+    photographer_ids=[int(d) for d in data['photographer_ids'].split(",")],
+    framing_mode=data['framing_mode']
   )
   if 'id' in r:
     # Add smapshot ID to Platform
