@@ -888,6 +888,56 @@
                     </target_node>
                 </range>
             </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>DetailData/DataElement/ElementValue</relation>
+                    </source_relation>
+                    <target_relation>
+                        <if>
+                            <equals value="10900">../@ElementId</equals>
+                        </if>
+                        <relationship>crm:P102_has_title</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>DetailData/DataElement/ElementValue</source_node>
+                    <target_node>
+                        <entity>
+                            <type>crm:E35_Title</type>
+                            <instance_generator name="URIwithTypeSubtypeAndId">
+                                <arg name="type" type="constant">artwork</arg>
+                                <arg name="id" type="xpath">../../../@RecordIdentifier</arg>
+                                <arg name="subtype" type="constant">seriesTitle</arg>
+                            </instance_generator>
+                            <label_generator name="Literal">
+                                <arg name="text" type="xpath">TextValue/text()</arg>
+                                <arg name="language" type="constant"/>
+                            </label_generator>
+                            <additional>
+                                <relationship>crm:P2_has_type</relationship>
+                                <entity>
+                                    <type>crm:E55_Type</type>
+                                    <instance_info>
+                                        <constant/>
+                                    </instance_info>
+                                    <instance_generator name="URIwithAatId">
+                                        <arg name="id" type="constant">300417214</arg>
+                                    </instance_generator>
+                                    <label_generator name="Constant">
+                                        <arg name="text" type="constant">series title</arg>
+                                        <arg name="language" type="constant">en</arg>
+                                    </label_generator>
+                                    <label_generator name="Constant">
+                                        <arg name="text" type="constant">Titel der Serie</arg>
+                                        <arg name="language" type="constant">de</arg>
+                                    </label_generator>
+                                </entity>
+                            </additional>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
         </mapping>
         <mapping>
             <domain>
