@@ -212,7 +212,7 @@ def addCuratedTypeData(record, curatedTypes):
         if len(fields):
             for field in fields:
                 parent = field.getparent()
-                for key in [d for d in row.keys() if d not in ["ElementId", "ElementName", "Term"]]:
+                for key in [d for d in row.keys() if d not in ["ElementId", "ElementName", "Term", None]]:
                     if row[key]:
                         if ';' in row[key]:
                             for i, value in enumerate(row[key].split(';')):
