@@ -17,6 +17,7 @@
         <namespace prefix="wd" uri="http://www.wikidata.org/entity/"/>
         <namespace prefix="aat" uri="http://vocab.getty.edu/aat/" />
         <namespace prefix="frbroo" uri="http://iflastandards.info/ns/fr/frbr/frbroo/" />
+        <namespace prefix="oa" uri="http://www.w3.org/ns/oa#"/>
     </namespaces>
     <mappings>
         <mapping>
@@ -2754,6 +2755,88 @@
                             <type>crm:E55_Type</type>
                             <instance_generator name="URIwithGndId">
                                 <arg name="id" type="xpath">text()</arg>
+                            </instance_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+        </mapping>
+        <mapping>
+            <domain>
+                <source_node>/Collection/Record/DetailData/DataElement/ElementValue</source_node>
+                <target_node>
+                    <if>
+                        <equals value="10211">../@ElementId</equals>
+                    </if>
+                    <entity variable="literature_annotation">
+                        <type>crm:E13_Attribute_Assignment</type>
+                        <type>oa:Annotation</type>
+                        <instance_generator name="URIwithTypeAndId_hashed">
+                            <arg name="type" type="constant">annotation</arg>
+                            <arg type="xpath" name="id_HASHED_CONTENTS">TextValue/text()</arg>
+                        </instance_generator>
+                        <label_generator name="Literal">
+                            <arg name="text" type="xpath">TextValue/text()</arg>
+                            <arg name="language" type="constant"/>
+                        </label_generator>
+                        <additional>
+                            <relationship>crm:P177_assigned_property_of_type</relationship>
+                            <entity>
+                                <type>crm:E55_Type</type>
+                                <instance_info>
+                                    <constant/>
+                                </instance_info>
+                                <instance_generator name="URIorUUID">
+                                    <arg name="text" type="constant">http://www.cidoc-crm.org/cidoc-crm/P67_refers_to</arg>
+                                </instance_generator>
+                            </entity>
+                        </additional>
+                    </entity>
+                </target_node>
+            </domain>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>.</relation>
+                    </source_relation>
+                    <target_relation>
+                        <relationship>crm:P141_assigned</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>.</source_node>
+                    <target_node>
+                        <entity variable="literature_entity">
+                            <type>frbroo:F24_Publication_Expression</type>
+                            <instance_generator name="URIwithTypeAndId_hashed">
+                                <arg name="type" type="constant">bibliographicitem</arg>
+                                <arg type="xpath" name="id_HASHED_CONTENTS">TextValue/text()</arg>
+                            </instance_generator>
+                            <label_generator name="Literal">
+                                <arg name="text" type="xpath">TextValue/text()</arg>
+                                <arg name="language" type="constant"/>
+                            </label_generator>
+                        </entity>
+                    </target_node>
+                </range>
+            </link>
+            <link>
+                <path>
+                    <source_relation>
+                        <relation>../../../../Record</relation>
+                    </source_relation>
+                    <target_relation>
+                        <relationship>crm:P140_assigned_attribute_to</relationship>
+                    </target_relation>
+                </path>
+                <range>
+                    <source_node>../../../../Record</source_node>
+                    <target_node>
+                        <entity variable="object">
+                            <type>crm:E22_Human-Made_Object</type>
+                            <instance_generator name="URIwithTypeAndId">
+                                <arg name="type" type="constant">artwork</arg>
+                                <arg name="id" type="xpath">@RecordIdentifier</arg>
                             </instance_generator>
                         </entity>
                     </target_node>
