@@ -74,7 +74,6 @@ DELETE {
   VALUES(?primary ?secondary ?label) {
     (<https://resource.swissartresearch.net/actor/E31E74B9-5038-3884-B046-F63C8DD473E3> <https://resource.swissartresearch.net/actor/36187FE6-BE8A-3204-A03F-8621E693A3B1> 'Burri, Johann Ulrich')
     (<https://resource.swissartresearch.net/actor/B3494F86-ACF1-3D28-956A-184F8319DE34> <https://resource.swissartresearch.net/actor/5F5DFE27-F3C1-3624-9FE1-CC61F08F0D8C> 'Fischer, Heinrich')
-    (<https://resource.swissartresearch.net/actor/1629E9CA-1554-3EAC-A27B-70FB7F4AAB40> <https://resource.swissartresearch.net/actor/FA2B7FBB-082E-362B-96E5-C122148787BB> 'Füssli, Heinrich')
     (<https://resource.swissartresearch.net/actor/583ECC0C-D4D6-3993-8595-62EB22A370D5> <https://resource.swissartresearch.net/actor/DFBD5E5E-0BA2-31C0-8DDA-73A569B983BE> 'Füssli, Johann Heinrich')
     (<https://resource.swissartresearch.net/actor/EA2053E4-51E1-3D31-993F-3DC52936F9A2> <https://resource.swissartresearch.net/actor/65042257-F9BE-301E-825C-C55A0B7F746B> 'Füssli, Johann Melchior')
     (<https://resource.swissartresearch.net/actor/BCC4B25E-D416-3F4D-B76A-0E9A08BA45B5> <https://resource.swissartresearch.net/actor/D3913635-B17B-30C5-B10C-FA17A0FD2316> 'Gmelin, Wilhelm Friiedrich')
