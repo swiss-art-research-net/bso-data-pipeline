@@ -2046,7 +2046,7 @@
                                         <constant/>
                                     </instance_info>
                                     <instance_generator name="URIorUUID">
-                                        <arg name="id" type="constant">https://resource.swissartresearch.net/type/5C623D50-F5A9-36A6-B7B6-5BED95E6C908</arg>
+                                        <arg name="text" type="constant">https://resource.swissartresearch.net/type/5C623D50-F5A9-36A6-B7B6-5BED95E6C908</arg>
                                     </instance_generator>
                                     <label_generator name="Literal">
                                         <arg name="text" type="constant">author</arg>
@@ -2820,7 +2820,7 @@
                         <type>oa:Annotation</type>
                         <instance_generator name="URIwithTypeAndId_hashed">
                             <arg name="type" type="constant">annotation</arg>
-                            <arg type="xpath" name="id_HASHED_CONTENTS">TextValue/text()</arg>
+                            <arg name="id_HASHED_CONTENTS" type="xpath">TextValue/text()</arg>
                         </instance_generator>
                         <label_generator name="Literal">
                             <arg name="text" type="xpath">TextValue/text()</arg>
@@ -2857,7 +2857,7 @@
                             <type>frbroo:F24_Publication_Expression</type>
                             <instance_generator name="URIwithTypeAndId_hashed">
                                 <arg name="type" type="constant">bibliographicitem</arg>
-                                <arg type="xpath" name="id_HASHED_CONTENTS">TextValue/text()</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">TextValue/text()</arg>
                             </instance_generator>
                             <label_generator name="Literal">
                                 <arg name="text" type="xpath">TextValue/text()</arg>
