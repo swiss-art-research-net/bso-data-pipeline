@@ -4,7 +4,6 @@ import re
 import unicodedata
 import sys
 import time
-import Levenshtein
 from lxml import etree
 from tqdm import tqdm
 
