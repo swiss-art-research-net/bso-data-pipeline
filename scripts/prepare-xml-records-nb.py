@@ -86,6 +86,14 @@ class NBExternalDescriptors:
         return False
 
     def getPersonDescriptorByRelaxedName(self, recordId, name):
+        knownFalseMatches = {
+            "Ziegler, Johann Kaspar": [
+                "Huber, Johann Kaspar (1752 - 1827)", 
+                "Huber, Johann Kaspar (1752-1827)",
+                "Kuster, Johann Kaspar (1747 - 1818)",
+                "Kuster, Johann Kaspar (1747-1818)"
+            ]
+        }        
         tokens = re.sub('[^A-Za-z\s]+', '', name.lower()).split()
         tokens = [token for token in tokens if len(token) > 1]
         descriptorCandidates = []
@@ -94,10 +102,12 @@ class NBExternalDescriptors:
             # Count how many tokens match between the name and the seeAlso
             matches = len([token for token in tokens if token in seeAlso])
             if matches > 1:
-                descriptorCandidates.append({
-                    "descriptor": externalDescriptor,
-                    "numMatches": matches
-                })
+                # Check if name does not appear as key in knownFalseMatches and SeeAlso of the descriptor does not appear as value
+                if name not in knownFalseMatches or externalDescriptor.find("SeeAlso").text not in knownFalseMatches[name]:
+                    descriptorCandidates.append({
+                        "descriptor": externalDescriptor,
+                        "numMatches": matches
+                    })
         descriptorCandidates = sorted(descriptorCandidates, key=lambda k: k['numMatches'], reverse=True)
         if len(descriptorCandidates) > 0:
             return descriptorCandidates[0]['descriptor']
