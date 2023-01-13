@@ -4,6 +4,7 @@ import re
 import unicodedata
 import sys
 import time
+import Levenshtein
 from lxml import etree
 from tqdm import tqdm
 
@@ -417,16 +418,38 @@ def matchDescriptorsWithElementValues(record, externalDescriptors, curatedNames)
                             value.append(copy.deepcopy(descriptor))
                             break
                     else:
+                        descriptorFound = False
+
+                        # Sometimes the name is written differently in the descriptor
+                        # and a match cannot directly be found by looking for the name
+                        # in the IdName. Here we look for a suitable descriptors among
+                        # all of them by checking if any of the words found in the matchedName
+                        # occur in the SeeAlso field of the descriptor.
+
+                        # Split the name into tokens and remove tokens that are less than 3 characters long
+                        tokens = re.sub('[^A-Za-z\s]+', '', matchedName.lower()).split()
+                        tokens = [token for token in tokens if len(token) > 2]
+
+                        # Check if any of the tokens occur in the SeeAlso field of any of the descriptors
+                        for descriptor in recordDescriptors:
+                            seeAlso = descriptor.find("SeeAlso").text
+                            if seeAlso and any(token in seeAlso.lower() for token in tokens):
+                                value.append(copy.deepcopy(descriptor))
+                                descriptorFound = True
+                                print("Found", matchedName, "in", seeAlso)
+                                break
+                        
                         # Sometimes no descriptor is present together with the record
                         # but there are matching descriptors elswehere in the dataset.
                         # Here we look for a suitable descriptors among all of them
-                        descriptor = externalDescriptors.getDescriptorForRecordAndName(record.get('Id'), matchedName)
-                        if descriptor == False:
-                            descriptor = externalDescriptors.getPersonDescriptorByName(record.get('Id'), matchedName)
-                        if descriptor != False:
-                            value.append(copy.deepcopy(descriptor))
-                        else:
-                            log.append("Unmatched name in Record " + record.get('Id') + ": " + name)
+                        if not descriptorFound:
+                            descriptor = externalDescriptors.getDescriptorForRecordAndName(record.get('Id'), matchedName)
+                            if descriptor == False:
+                                descriptor = externalDescriptors.getPersonDescriptorByName(record.get('Id'), matchedName)
+                            if descriptor != False:
+                                value.append(copy.deepcopy(descriptor))
+                            else:
+                                log.append("Unmatched name in Record " + record.get('Id') + ": " + name)
 
                     # Add a normalised name so we can create a single entity for
                     # persons that lack a GND identifier
