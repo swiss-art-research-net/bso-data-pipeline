@@ -425,6 +425,8 @@ def matchDescriptorsWithElementValues(record, externalDescriptors, curatedNames)
                             descriptor = externalDescriptors.getPersonDescriptorByName(record.get('Id'), matchedName)
                         if descriptor != False:
                             value.append(copy.deepcopy(descriptor))
+                        else:
+                            log.append("Unmatched name in Record " + record.get('Id') + ": " + name)
 
                     # Add a normalised name so we can create a single entity for
                     # persons that lack a GND identifier
