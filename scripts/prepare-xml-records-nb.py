@@ -436,7 +436,6 @@ def matchDescriptorsWithElementValues(record, externalDescriptors, curatedNames)
                             if seeAlso and any(token in seeAlso.lower() for token in tokens):
                                 value.append(copy.deepcopy(descriptor))
                                 descriptorFound = True
-                                print("Found", matchedName, "in", seeAlso)
                                 break
                         
                         # Sometimes no descriptor is present together with the record
