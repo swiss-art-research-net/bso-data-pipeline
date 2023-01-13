@@ -399,7 +399,9 @@ def matchDescriptorsWithElementValues(record, externalDescriptors, curatedNames)
     dataElementXPath = '|'.join(["DetailData/DataElement[@ElementId='%s']" % d for d in elementIdsWithCuratedNames])
 
     recordElements = record.xpath(dataElementXPath)
-    recordDescriptors = record.xpath("Descriptors/Descriptor[Thesaurus/text()='Personen']")
+    recordDescriptorsPersons = record.xpath("Descriptors/Descriptor[Thesaurus/text()='Personen']")
+    recordDescriptorsLegalBodies = record.xpath("Descriptors/Descriptor[Thesaurus/text()='Körperschaften']")
+    recordDescriptors = recordDescriptorsPersons + recordDescriptorsLegalBodies
     
     if len(recordElements):
         for recordElement in recordElements:
