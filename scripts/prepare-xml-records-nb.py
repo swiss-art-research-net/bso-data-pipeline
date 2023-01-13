@@ -86,14 +86,14 @@ class NBExternalDescriptors:
         return False
 
     def getPersonDescriptorByRelaxedName(self, recordId, name):
-        knownFalseMatches = {
-            "Ziegler, Johann Kaspar": [
-                "Huber, Johann Kaspar (1752 - 1827)", 
-                "Huber, Johann Kaspar (1752-1827)",
-                "Kuster, Johann Kaspar (1747 - 1818)",
-                "Kuster, Johann Kaspar (1747-1818)"
-            ]
-        }        
+        # Some names are known to have no Descriptors, therefore the matching algorithm will
+        # identify wrong descriptors. This is often the case when the firstnames match but the
+        # lastnames do not. These names are therefore excluded from the matching process.
+        # However, as the data updates, descriptors might become available.
+        knownFalseMatches = [
+            "Kuhn, Johann Jakob",
+            "Ziegler, Johann Kaspar"
+        ]
         tokens = re.sub('[^A-Za-z\s]+', '', name.lower()).split()
         tokens = [token for token in tokens if len(token) > 1]
         descriptorCandidates = []
@@ -103,7 +103,7 @@ class NBExternalDescriptors:
             matches = len([token for token in tokens if token in seeAlso])
             if matches > 1:
                 # Check if name does not appear as key in knownFalseMatches and SeeAlso of the descriptor does not appear as value
-                if name not in knownFalseMatches or externalDescriptor.find("SeeAlso").text not in knownFalseMatches[name]:
+                if name not in knownFalseMatches:
                     descriptorCandidates.append({
                         "descriptor": externalDescriptor,
                         "numMatches": matches
