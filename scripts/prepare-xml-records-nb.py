@@ -49,7 +49,9 @@ class NBExternalDescriptors:
         # Read all Person descriptors
         print("Loading descriptors")
         for record in tqdm(records):
-            recordDescriptors = record.xpath("Descriptors/Descriptor[Thesaurus/text()='Personen']")
+            recordDescriptorsPersons = record.xpath("Descriptors/Descriptor[Thesaurus/text()='Personen']")
+            recordDescriptorsLegalBodies = record.xpath("Descriptors/Descriptor[Thesaurus/text()='Körperschaften']")
+            recordDescriptors = recordDescriptorsPersons + recordDescriptorsLegalBodies
             for descriptor in recordDescriptors:
                 idName = descriptor.find("IdName").text
                 if idName not in self.personDescriptorIdNameHash:
@@ -82,6 +84,24 @@ class NBExternalDescriptors:
                 return descriptor
         
         return False
+
+    def getPersonDescriptorByRelaxedName(self, recordId, name):
+        tokens = re.sub('[^A-Za-z\s]+', '', name.lower()).split()
+        tokens = [token for token in tokens if len(token) > 1]
+        descriptorCandidates = []
+        for externalDescriptor in self.allPersonDescriptors:
+            seeAlso = re.sub('[^A-Za-z\s]+', '', externalDescriptor.find("SeeAlso").text.lower()).split()
+            # Count how many tokens match between the name and the seeAlso
+            matches = len([token for token in tokens if token in seeAlso])
+            if matches > 1:
+                descriptorCandidates.append({
+                    "descriptor": externalDescriptor,
+                    "numMatches": matches
+                })
+        descriptorCandidates = sorted(descriptorCandidates, key=lambda k: k['numMatches'], reverse=True)
+        if len(descriptorCandidates) > 0:
+            return descriptorCandidates[0]['descriptor']
+        return False            
     
     def addExternalDescriptor(self, recordId, matchedName, idName):
         self.externalDescriptors.append({
@@ -446,10 +466,14 @@ def matchDescriptorsWithElementValues(record, externalDescriptors, curatedNames)
                             descriptor = externalDescriptors.getDescriptorForRecordAndName(record.get('Id'), matchedName)
                             if descriptor == False:
                                 descriptor = externalDescriptors.getPersonDescriptorByName(record.get('Id'), matchedName)
+                            if descriptor == False:
+                                descriptor = externalDescriptors.getPersonDescriptorByRelaxedName(record.get('Id'), matchedName)
+                                if descriptor != False:
+                                    log.append("Used relaxed match for " + matchedName + ": " + descriptor.find("SeeAlso").text)
                             if descriptor != False:
                                 value.append(copy.deepcopy(descriptor))
                             else:
-                                log.append("Unmatched name in Record " + record.get('Id') + ": " + name)
+                                log.append("Unmatched name: " + name)
 
                     # Add a normalised name so we can create a single entity for
                     # persons that lack a GND identifier
@@ -599,5 +623,6 @@ for record in tqdm(records[offset:offset+limit]):
 later = time.time()
 difference = int(later - now)
 log = list(set(log))
+log.sort()
 print("\n".join(log))
 print("Processed %d records in %d seconds" % (len(records[offset:limit]), difference))
