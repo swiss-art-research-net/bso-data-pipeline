@@ -301,7 +301,7 @@ def addDescriptorIdentifier(record):
     # contains additional whitespace, which can cause same entities to produce
     # different URIs. Therefore, we add an additional tag here with a cleaned
     # version of the IdName
-    recordDescriptors = record.findall("Descriptors/Descriptor") + record.findall("DetailData/DataElement/Descriptor")
+    recordDescriptors = record.findall(".//Descriptor")
     for d in recordDescriptors:
         idName = d.find("IdName").text
         cleandIdName = idName.replace(" ","")
