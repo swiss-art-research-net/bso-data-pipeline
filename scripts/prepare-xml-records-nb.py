@@ -27,6 +27,7 @@ curatedRolesFile = "../data/source/nb-curation-roles.csv"
 curatedTypesFile = "../data/source/nb-curation-extracted-types.csv"
 curatedLevelsFile = "../data/source/nb-curation-extracted-levels.csv"
 imageSizesFile = "../data/source/nb-image-sizes.csv"
+additionalImagesFile = "../data/source/nb-additional-images.csv"
 externalDescriptorsFile = "../data/source/nb-external-descriptors.csv"
 
 # Column in CSV file used to match against IdName
@@ -138,7 +139,7 @@ def cleanImageUrls(record):
         imageElement.find('./ElementValue/TextValue').text = values[0]
     return record
 
-def loadRecordsToProcess(inputFiles):
+def loadRecordsToProcess(inputFiles, additionalImages):
     # Read input files
     root = etree.XML("<Collection/>")
     for inputFile in inputFiles:
@@ -165,9 +166,19 @@ def loadRecordsToProcess(inputFiles):
         if image is None and recordID not in parentIDs:
             orphans.append(recordID)
 
-    records = [d for d in records if d.get('Id') not in orphans]
+    records = [d for d in records if d.get('Id') not in orphans or d.get('Id') in additionalImages]
 
     return root, records
+
+def loadAdditionalImages(additionalImagesFile):
+    # Read additional image ids a list
+    additionalImages = []
+    with open(additionalImagesFile, 'r') as f:
+        reader = csv.reader(f)
+        next(reader)
+        for row in reader:
+            additionalImages.append(row[0])
+    return additionalImages
 
 def loadCuratedData(curatedDataFiles):
     # Read all curated data into a list
@@ -309,15 +320,23 @@ def addDescriptorIdentifier(record):
         mappingIdNameElement.text = cleandIdName
     return record
 
-def addImageSizes(record, imageSizes, imageSizesHash):
+def addImageSizes(record, imageSizes, imageSizesHash, additionalImages):
     # Image sizes are stored in a separate CSV file, which we previously generated based on the IIIF Manifests.
     # We add the image sizes to the XML here
     recordId = record.get('Id')
+    if recordId in additionalImages:
+        # We need to add the DataElement for the image
+        imageElement = etree.SubElement(record.find('DetailData'), 'DataElement')
+        imageElement.set('ElementId', '11040')
+        elementValue = etree.SubElement(imageElement, 'ElementValue')
+        etree.SubElement(elementValue, 'TextValue').text = "https://bso-iiif.swissartresearch.net/iiif/2/nb-" + recordId + "/full/full/0/default.jpg"
+
     imageElement = record.find('.//DataElement[@ElementId="11040"]/ElementValue')
-    if recordId in imageSizesHash:
-        sizes = imageSizes[imageSizesHash[recordId]]
-        etree.SubElement(imageElement, 'Width').text =  sizes['width']
-        etree.SubElement(imageElement, 'Height').text =  sizes['height']
+    if imageElement is not None:
+        if recordId in imageSizesHash:
+            sizes = imageSizes[imageSizesHash[recordId]]
+            etree.SubElement(imageElement, 'Width').text =  sizes['width']
+            etree.SubElement(imageElement, 'Height').text =  sizes['height']
     return record
 
 def getDateForDateElement(date):
@@ -586,7 +605,8 @@ def processDates(record):
     return record
 
 # Load Data
-root, records = loadRecordsToProcess(inputFiles)
+additionalImages = loadAdditionalImages(additionalImagesFile)
+root, records = loadRecordsToProcess(inputFiles, additionalImages)
 
 curatedData = loadCuratedData(curatedDataFiles)
 curatedLevels = loadCuratedLevels(curatedLevelsFile)
@@ -610,7 +630,7 @@ now = time.time()
 
 for record in tqdm(records[offset:offset+limit]):
     record = addCuratedDataToDescriptors(record, curatedData)
-    record = addImageSizes(record, imageSizes, imageSizesHash)
+    record = addImageSizes(record, imageSizes, imageSizesHash, additionalImages)
     record = addCuratedTypeData(record, curatedTypes)
     record = addCuratedLevelsData(record, curatedLevels)
     record = processFieldsWithMultipleValues(record)

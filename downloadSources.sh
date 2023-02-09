@@ -43,6 +43,7 @@ download "data/nb/nb-curation-extracted-levels.csv" "data/source/nb-curation-ext
 download "data/nb/nb-curation-extracted-types.csv" "data/source/nb-curation-extracted-types.csv"
 download "data/nb/nb-external-descriptors.csv" "data/source/nb-external-descriptors.csv"
 download "data/nb/nb-image-sizes.csv" "data/source/nb-image-sizes.csv"
+download "data/nb/nb-additional-images.csv" "data/source/nb-additional-images.csv"
 download "data/nb/source/WMC_Records_20201201.xml" "data/source/nb-records.xml"
 download "data/nb/source/Gugelman.xml" "data/source/nb-parentrecords.xml"
 
