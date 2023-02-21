@@ -73,7 +73,7 @@ download "data/sari/imageRegions.trig" "data/graphs/imageRegions.trig"
 download "data/sari/titleSimilarities.ttl" "data/graphs/titleSimilarities.ttl"
 download "data/sari/visualSimilarities.ttl" "data/graphs/visualSimilarities.ttl"
 download "data/sari/bso-vocabulary.trig" "data/ttl/additional/bso-vocabulary.trig"
-download "data/sari/color_schemes_local.ttl" "data/ttl/additional/colorSchemes.ttl"
+download "data/sari/color_schemes_local_ordered.ttl" "data/ttl/additional/colorSchemes.ttl"
 
 download "data/bso-thesaurus/bso-thesaurus.trig" "data/ttl/additional/bso-thesaurus.trig"
 download "data/additional/aat-events.ttl" "data/ttl/additional/aat-events.ttl"
