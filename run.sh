@@ -115,12 +115,12 @@ fi
 
 if [[ $NOPROMPT -ne 1 ]]
 then
-  read -p "Ingest similarities? (y/n)" -n 1 -r
+  read -p "Ingest classifications? (y/n)" -n 1 -r
   echo ""
 fi
 if [[ $NOPROMPT || $REPLY =~ ^[Yy]$ ]]
 then
-  docker exec $JOBSCONTAINER bash -c "task ingest-similarities"
+  docker exec $JOBSCONTAINER bash -c "task ingest-classifications"
 fi
 
 if [[ $NOPROMPT -ne 1 ]]
