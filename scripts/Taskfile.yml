@@ -254,6 +254,97 @@ tasks:
       - task: ingest-title-similarities
       - task: ingest-visual-similarities
       - task: ingest-color-schemes
+      - task: ingest-distances
+
+  ingest-color-schemes:
+    desc: Ingests the color schemes into the Blazegraph instance
+    sources:
+      - /data/graphs/colorSchemes.ttl
+    vars:
+      GRAPH: https://resource.swissartresearch.net/graph/colorSchemes
+    cmds:
+      - curl --silent -X POST {{.ENDPOINT}} --data-urlencode "update=DROP GRAPH <{{.GRAPH}}>" > /dev/null
+      - task: ingest-data-from-file
+        vars:
+          NAME: Color Schemes
+          TYPE: text/turtle
+          FILE: /data/graphs/colorSchemes.ttl
+          GRAPH: https://resource.swissartresearch.net/graph/colorSchemes
+
+  ingest-distances:
+    desc: Ingest computed distances between entities into the Blazegraph instance
+    sources:
+      - /data/graphs/distances-*.ttl
+    vars:
+      GRAPH: https://resource.swissartresearch.net/graph/distances
+    cmds:
+      - curl --silent -X POST {{.ENDPOINT}} --data-urlencode "update=DROP GRAPH <{{.GRAPH}}>" > /dev/null
+      - task: ingest-data-from-file
+        vars:
+          NAME: Distances
+          TYPE: text/turtle
+          FILE: /data/graphs/distances-birth_date_dist.ttl
+          GRAPH: https://resource.swissartresearch.net/graph/distances
+      - task: ingest-data-from-file
+        vars:
+          NAME: Distances
+          TYPE: text/turtle
+          FILE: /data/graphs/distances-birth_years_dist.ttl
+          GRAPH: https://resource.swissartresearch.net/graph/distances
+      - task: ingest-data-from-file
+        vars:
+          NAME: Distances
+          TYPE: text/turtle
+          FILE: /data/graphs/distances-ceation_role.ttl
+          GRAPH: https://resource.swissartresearch.net/graph/distances
+      - task: ingest-data-from-file
+        vars:
+          NAME: Distances
+          TYPE: text/turtle
+          FILE: /data/graphs/distances-creation_dist.ttl
+          GRAPH: https://resource.swissartresearch.net/graph/distances
+      - task: ingest-data-from-file
+        vars:
+          NAME: Distances
+          TYPE: text/turtle
+          FILE: /data/graphs/distances-death_date_dist.ttl
+          GRAPH: https://resource.swissartresearch.net/graph/distances
+      - task: ingest-data-from-file
+        vars:
+          NAME: Distances
+          TYPE: text/turtle
+          FILE: /data/graphs/distances-death_years_dist.ttl
+          GRAPH: https://resource.swissartresearch.net/graph/distances
+      - task: ingest-data-from-file
+        vars:
+          NAME: Distances
+          TYPE: text/turtle
+          FILE: /data/graphs/distances-labels_dist.ttl
+          GRAPH: https://resource.swissartresearch.net/graph/distances
+      - task: ingest-data-from-file
+        vars:
+          NAME: Distances
+          TYPE: text/turtle
+          FILE: /data/graphs/distances-production_dist.ttl
+          GRAPH: https://resource.swissartresearch.net/graph/distances
+      - task: ingest-data-from-file
+        vars:
+          NAME: Distances
+          TYPE: text/turtle
+          FILE: /data/graphs/distances-production_obj_dist.ttl
+          GRAPH: https://resource.swissartresearch.net/graph/distances
+      - task: ingest-data-from-file
+        vars:
+          NAME: Distances
+          TYPE: text/turtle
+          FILE: /data/graphs/distances-production_role_dist.ttl
+          GRAPH: https://resource.swissartresearch.net/graph/distances
+      - task: ingest-data-from-file
+        vars:
+          NAME: Distances
+          TYPE: text/turtle
+          FILE: /data/graphs/distances-visitem_dist.ttl
+          GRAPH: https://resource.swissartresearch.net/graph/distances
 
   ingest-title-similarities:
     desc: Ingests the title similarities into the Blazegraph instance
