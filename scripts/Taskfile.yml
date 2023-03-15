@@ -9,6 +9,26 @@ vars:
 
 tasks:
 
+  default:
+    desc: Runs the entire pipeline
+    silent: true
+    cmds:
+      - task: prepare-xml-records-zbz
+      - task: prepare-xml-records-nb
+      - task: prepare-xml-records-sff
+      - task: mapping-zbz
+      - task: mapping-nb
+      - task: mapping-sff
+      - task: retrieve-additional-data
+      - task: ingest-data-main
+      - task: ingest-data-additional
+      - task: ingest-classifications
+      - task: ingest-ontologies
+      - task: add-relations
+      - task: add-summaries
+      - task: cleanup
+
+
   add-relations:
     desc: Materialise triples defined through the queries/addRelations.sparql query in the Blazegraph instance
     cmds:
@@ -224,14 +244,16 @@ tasks:
           TYPE: application/rdf+xml
           GRAPH: http://iflastandards.info/ns/fr/frbr/frbroo/
 
-  ingest-similarities:
-    desc: Ingest the calculated similarities between entities
+  ingest-classifications:
+    desc: Ingest the calculated similarities and other classifications
     sources:
       - /data/graphs/titleSimilarities.ttl
       - /data/graphs/visualSimilarities.ttl
+      - /data/graphs
     cmds:
       - task: ingest-title-similarities
       - task: ingest-visual-similarities
+      - task: ingest-color-schemes
 
   ingest-title-similarities:
     desc: Ingests the title similarities into the Blazegraph instance
