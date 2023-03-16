@@ -10,6 +10,7 @@ import requests
 import urllib
 import unicodedata
 import time
+import re
 import sys
 
 sys.path.append("./helpers")
@@ -289,6 +290,18 @@ def processDates(record):
                     subfield.set("lowerDate", daterange['lower'])
     return record
 
+def removeInvalidDates(record):
+    subfieldsWithPotentiallyInvalidDates = ['Geburtsdatum', 'Sterbedatum']
+    for field in subfieldsWithPotentiallyInvalidDates:
+        xpath = "datafield/subfield[@code='%s']" % field
+        subfields = record.findall(xpath)
+        if subfields is not None:
+            for subfield in subfields:
+                # Check if text follows valid date format YYYY-MM-DD or YYYY
+                if not re.match(r'^\d{4}-\d{2}-\d{2}$', subfield.text) and not re.match(r'^\d{4}$', subfield.text):
+                    subfield.getparent().remove(subfield)
+    return record
+
 def splitMultiValueFields(record):
     # Adds separate datafields for datafields that contain multiple values
     # e.g. 264 sometimes contains several subfields with code a and b
@@ -402,6 +415,7 @@ for record in tqdm(records[offset:offset + limit]):
     record = addManifest(record)
     record = addImages(record)
     record = processDates(record)
+    record = removeInvalidDates(record)
 
     collection.clear()
     collection.append(record)
