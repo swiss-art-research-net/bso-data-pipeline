@@ -99,8 +99,13 @@ def extractIdentifiers(folder, sources):
     
     g = Graph() 
     for file in tqdm(files):
-        g.parse(file)
-        
+        fileGraph = Graph()
+        try:
+            fileGraph.parse(file, format='turtle')
+            g = g + fileGraph
+        except Exception as e:
+            print("Error parsing file", file, e)
+
     for source in sources:
         query = PREFIXES + "SELECT DISTINCT ?identifier WHERE { { ?s ?p ?identifier . } UNION { ?identifier ?p ?o .} FILTER(STRSTARTS(STR(?identifier), '" + identifierNamespaces[source] + "')) }"
         queryResults = g.query(query)
