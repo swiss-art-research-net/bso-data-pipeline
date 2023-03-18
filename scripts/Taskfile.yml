@@ -19,8 +19,9 @@ tasks:
       - task: mapping-zbz
       - task: mapping-nb
       - task: mapping-sff
-      - task: retrieve-additional-data
-      - task: ingest-data-main
+      - task: ingest-data-nb
+      - task: ingest-data-zbz
+      - task: ingest-data-sff
       - task: ingest-data-additional
       - task: ingest-classifications
       - task: ingest-ontologies
