@@ -72,7 +72,7 @@ download "data/sari/bso-roles-alignment.trig" "data/ttl/additional/bso-roles-ali
 download "data/sari/imageRegions.trig" "data/graphs/imageRegions.trig"
 download "data/sari/titleSimilarities.ttl" "data/graphs/titleSimilarities.ttl"
 download "data/sari/visualSimilarities.ttl" "data/graphs/visualSimilarities.ttl"
-download "data/sari/color_schemes_local_ordered.ttl" "data/graphs/additional/colorSchemes.ttl"
+download "data/sari/color_schemes_local_ordered.ttl" "data/graphs/colorSchemes.ttl"
 
 download "data/sari/distances-actors-all/birth_date_dist.ttl" "data/graphs/distances-birth_date_dist.ttl"
 download "data/sari/distances-actors-all/birth_years_dist.ttl" "data/graphs/distances-birth_years_dist.ttl"
