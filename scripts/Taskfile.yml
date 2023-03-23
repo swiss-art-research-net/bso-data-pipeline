@@ -142,7 +142,7 @@ tasks:
         for f in $(ls -1 {{.FOLDER}}/*.ttl); do
           echo "Ingesting file $count of $numfiles ($f)"
           curl --silent -X POST --data-binary "uri=file://$f" {{.ENDPOINT}}?context-uri={{if .GRAPH}}{{.GRAPH}}{{else}}file://$f{{end}} > /dev/null
-          count=$((count+1)) 
+          count=$((count+1))
         done
         for f in $(ls -1 {{.FOLDER}}/*.trig); do
           echo "Ingesting file $count of $numfiles ($f)"
@@ -255,7 +255,7 @@ tasks:
       - task: ingest-title-similarities
       - task: ingest-visual-similarities
       - task: ingest-color-schemes
-      - task: ingest-distances
+      #- task: ingest-distances
 
   ingest-color-schemes:
     desc: Ingests the color schemes into the Blazegraph instance
