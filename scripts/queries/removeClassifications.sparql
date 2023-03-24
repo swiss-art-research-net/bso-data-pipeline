@@ -1,0 +1,4 @@
+DROP GRAPH <https://resource.swissartresearch.net/graph/titleSimilarities>;
+DROP GRAPH <https://resource.swissartresearch.net/graph/visualSimilarities>;
+DROP GRAPH <https://resource.swissartresearch.net/graph/colorSchemes>;
+DROP GRAPH <https://resource.swissartresearch.net/graph/distances>
