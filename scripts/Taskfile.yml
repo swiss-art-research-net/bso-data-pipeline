@@ -375,6 +375,20 @@ tasks:
           FILE: /data/graphs/distances-visitem_dist.ttl
           ENDPOINT: '{{.ENDPOINT_SECONDARY}}'
           GRAPH: https://resource.swissartresearch.net/graph/distances
+      - task: ingest-data-from-big-file
+        vars:
+          NAME: Distances
+          TYPE: text/turtle
+          FILE: /data/graphs/distances-color-schemes-0.ttl
+          ENDPOINT: '{{.ENDPOINT_SECONDARY}}'
+          GRAPH: https://resource.swissartresearch.net/graph/distances
+      - task: ingest-data-from-big-file
+        vars:
+          NAME: Distances
+          TYPE: text/turtle
+          FILE: /data/graphs/distances-color-schemes-1.ttl
+          ENDPOINT: '{{.ENDPOINT_SECONDARY}}'
+          GRAPH: https://resource.swissartresearch.net/graph/distances
 
   ingest-title-similarities:
     desc: Ingests the title similarities into the Blazegraph instance
