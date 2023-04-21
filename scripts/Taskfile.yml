@@ -132,22 +132,6 @@ tasks:
       - echo "Ingest {{.NAME}}"
       - curl -X POST -H 'Content-Type:{{.TYPE}}' --data-binary '@{{.FILE}}' {{.ENDPOINT}}?context-uri={{.GRAPH}}
 
-  ingest-data-from-big-file:
-    vars:
-      CHUNK_SIZE: 100000
-      TEMP_DIR: /data/ttl/temp_chunks
-    cmds:
-      - # Create directory if it does not exist yet
-      - mkdir -p {{.TEMP_DIR}}
-      - rm -f {{.TEMP_DIR}}/*.ttl
-      - echo "Splitting {{.NAME}} into chunks"
-      - perl /scripts/chunkify_ttl.pl {{.FILE}} {{.CHUNK_SIZE}} {{.TEMP_DIR}}
-      - task: ingest-data-from-folder
-        vars:
-          FOLDER: '{{.TEMP_DIR}}'
-          GRAPH: '{{.GRAPH}}'
-      - rm -rf {{.TEMP_DIR}}
-
   ingest-data-from-folder:
     desc: Ingests data from a specified folder. If a named graph is specified (GRAPH), TTL files will be ingested into it. Otherwise, the filename will be used as named graph. Named Graphs specified in Trig files will be used as defined
     cmds:
@@ -271,7 +255,7 @@ tasks:
       - task: ingest-title-similarities
       - task: ingest-visual-similarities
       - task: ingest-color-schemes
-      - task: ingest-distances
+      #- task: ingest-distances
 
   ingest-color-schemes:
     desc: Ingests the color schemes into the Blazegraph instance
@@ -296,67 +280,67 @@ tasks:
       GRAPH: https://resource.swissartresearch.net/graph/distances
     cmds:
       - curl --silent -X POST {{.ENDPOINT}} --data-urlencode "update=DROP GRAPH <{{.GRAPH}}>" > /dev/null
-      - task: ingest-data-from-big-file
+      - task: ingest-data-from-file
         vars:
           NAME: Distances
           TYPE: text/turtle
           FILE: /data/graphs/distances-birth_date_dist.ttl
           GRAPH: https://resource.swissartresearch.net/graph/distances
-      - task: ingest-data-from-big-file
+      - task: ingest-data-from-file
         vars:
           NAME: Distances
           TYPE: text/turtle
           FILE: /data/graphs/distances-birth_years_dist.ttl
           GRAPH: https://resource.swissartresearch.net/graph/distances
-      - task: ingest-data-from-big-file
+      - task: ingest-data-from-file
         vars:
           NAME: Distances
           TYPE: text/turtle
           FILE: /data/graphs/distances-ceation_role.ttl
           GRAPH: https://resource.swissartresearch.net/graph/distances
-      - task: ingest-data-from-big-file
+      - task: ingest-data-from-file
         vars:
           NAME: Distances
           TYPE: text/turtle
           FILE: /data/graphs/distances-creation_dist.ttl
           GRAPH: https://resource.swissartresearch.net/graph/distances
-      - task: ingest-data-from-big-file
+      - task: ingest-data-from-file
         vars:
           NAME: Distances
           TYPE: text/turtle
           FILE: /data/graphs/distances-death_date_dist.ttl
           GRAPH: https://resource.swissartresearch.net/graph/distances
-      - task: ingest-data-from-big-file
+      - task: ingest-data-from-file
         vars:
           NAME: Distances
           TYPE: text/turtle
           FILE: /data/graphs/distances-death_years_dist.ttl
           GRAPH: https://resource.swissartresearch.net/graph/distances
-      - task: ingest-data-from-big-file
+      - task: ingest-data-from-file
         vars:
           NAME: Distances
           TYPE: text/turtle
           FILE: /data/graphs/distances-labels_dist.ttl
           GRAPH: https://resource.swissartresearch.net/graph/distances
-      - task: ingest-data-from-big-file
+      - task: ingest-data-from-file
         vars:
           NAME: Distances
           TYPE: text/turtle
           FILE: /data/graphs/distances-production_dist.ttl
           GRAPH: https://resource.swissartresearch.net/graph/distances
-      - task: ingest-data-from-big-file
+      - task: ingest-data-from-file
         vars:
           NAME: Distances
           TYPE: text/turtle
           FILE: /data/graphs/distances-production_obj_dist.ttl
           GRAPH: https://resource.swissartresearch.net/graph/distances
-      - task: ingest-data-from-big-file
+      - task: ingest-data-from-file
         vars:
           NAME: Distances
           TYPE: text/turtle
           FILE: /data/graphs/distances-production_role_dist.ttl
           GRAPH: https://resource.swissartresearch.net/graph/distances
-      - task: ingest-data-from-big-file
+      - task: ingest-data-from-file
         vars:
           NAME: Distances
           TYPE: text/turtle
