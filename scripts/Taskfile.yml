@@ -358,7 +358,7 @@ tasks:
         vars:
           NAME: Distances
           TYPE: text/turtle
-          FILE: /data/graphs/distances-ceation_role_dist.ttl
+          FILE: /data/graphs/distances-creation_role_dist.ttl
           ENDPOINT: '{{.ENDPOINT_SECONDARY}}'
           GRAPH: https://resource.swissartresearch.net/graph/distances
       - task: ingest-data-from-big-file
