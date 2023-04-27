@@ -57,26 +57,47 @@ To list available tasks, run:
 `task --list`
 
 This will output a list of tasks:
-```
-task: Available tasks for this project:
-* add-relations:                        Materialise triples defined through the queries/addRelations.sparql query in the Blazegraph instance
-* cleanup:                              Run Cleanup query (located in queries/cleanup.sparql)
-* delete-field-definitions:             Delete the field definitions from the Blazegraph instance
-* download-iiif-manifests:              Downloads the IIIF Manifests found in the ZBZ data source file
-* ingest-data-additional:               Ingest the TTL and Trig files located in the data/ttl/additional folder to the Blazegraph instance
-* ingest-data-main:                     Ingest the TTL files located in the data/ttl/main folder to the Blazegraph instance
-* ingest-data-nb:                       Ingest the TTL files located in the data/ttl/main/nb folder to the Blazegraph instance
-* ingest-data-nb-as-individual-graphs:  Ingest the TTL files located in the data/ttl/main/nb folder to the Blazegraph instance, placing each file into an individual named graph
-* ingest-data-zbz:                      Ingest the TTL files located in the data/ttl/main/zbz folder to the Blazegraph instance
-* ingest-data-zbz-as-individual-graphs: Ingest the TTL files located in the data/ttl/main/zbz folder to the Blazegraph instance, placing each file into an individual named graph
-* ingest-ontologies:                    Ingests the ontologies into individual named Graphs
-* mapping-nb:                           Map SNB XML data to CIDOC/RDF
-* mapping-zbz:                          Map ZBZ XML data to CIDOC/RDF
-* materialise-field-definitions:        Materialises the field definitions as propertes in the graph
-* prepare-xml-records-nb:               Extract individual records from the NB data
-* prepare-xml-records-zbz:              Convert the ZBZ data from JSON to individual XML Records
-* retrieve-gnd:                         Extracts relevant data from GND based on identifiers found in the mapped TTL files
-* retrieve-wikidata:                    Extracts relevant data from Wikidata based on identifiers found in the mapped TTL file                                         
+```task: Available tasks for this project:
+* add-relations:                              Materialise triples defined through the queries/addRelations.sparql query in the Blazegraph instance
+* add-summaries:                              Materialise summaries for the entities
+* cache-all-thumbnails:                       Cache thumbnails of all entities
+* cache-wikidata-thumbnails:                  Cache thumbnails of Wikidata entities
+* cleanup:                                    Run Cleanup query (located in queries/cleanup.sparql)
+* default:                                    Runs the entire pipeline
+* delete-field-definitions:                   Delete the field definitions stored in the database
+* delete-image-regions:                       Delete the generated image regions from the Blazegraph instance
+* download-iiif-manifests:                    Downloads the IIIF Manifests found in the ZBZ data source file
+* generate-dossier-thumbnails:                Generate thumbnails for the dossiers that contain (several) images
+* generate-iiif-manifests:                    Generates IIIF Manifests based on the data present in the triple store
+* ingest-classifications:                     Ingest the calculated similarities and other classifications
+* ingest-color-schemes:                       Ingests the color schemes into the Blazegraph instance
+* ingest-data-additional:                     Ingest the TTL and Trig files located in the data/ttl/additional folder to the Blazegraph instance.
+* ingest-data-from-folder:                    Ingests data from a specified folder. If a named graph is specified (GRAPH), TTL files will be ingested into it. Otherwise, the filename will be used as named graph. Named Graphs specified in Trig files will be used as defined
+* ingest-data-main:                           Ingest the TTL files located in the data/ttl/main folder to the Blazegraph instance
+* ingest-data-nb:                             Ingest the TTL files located in the data/ttl/main/nb folder to the Blazegraph instance
+* ingest-data-nb-as-individual-graphs:        Ingest the TTL files located in the data/ttl/main/nb folder to the Blazegraph instance, placing each file into an individual named graph
+* ingest-data-sff:                            Ingest the TTL files located in the data/ttl/main/sff folder to the Blazegraph instance
+* ingest-data-sff-as-individual-graphs:       Ingest the TTL files located in the data/ttl/main/sff folder to the Blazegraph instance, placing each file into an individual named graph
+* ingest-data-zbz:                            Ingest the TTL files located in the data/ttl/main/zbz folder to the Blazegraph instance
+* ingest-data-zbz-as-individual-graphs:       Ingest the TTL files located in the data/ttl/main/zbz folder to the Blazegraph instance, placing each file into an individual named graph
+* ingest-distances:                           Ingest computed distances between entities into the Blazegraph instance
+* ingest-ontologies:                          Ingests the ontologies into individual named Graphs
+* ingest-title-similarities:                  Ingests the title similarities into the Blazegraph instance
+* ingest-visual-similarities:                 Ingests the visual similarities into the Blazegraph instance
+* mapping-nb:                                 Map SNB XML data to CIDOC/RDF
+* mapping-sff:                                Map SFF XML data to CIDOC/RDF
+* mapping-zbz:                                Map ZBZ XML data to CIDOC/RDF
+* materialise-field-definitions:              Materialises the field definitions as propertes in the graph
+* prepare-xml-records-nb:                     Extract individual records from the NB data
+* prepare-xml-records-sff:                    Extract individual records from the SFF data
+* prepare-xml-records-zbz:                    Convert the ZBZ data from JSON to individual XML Records
+* retrieve-aat:                               Extracts relevant data from AAT based on identifiers found in the mapped TTL files
+* retrieve-additional-data:                   Retrieve additional reference data for the mapped data
+* retrieve-gnd:                               Extracts relevant data from GND based on identifiers found in the mapped TTL files
+* retrieve-loc:                               Extracts relevant data from Library of Congress based on identifiers found in the mapped TTL files
+* retrieve-wikidata:                          Extracts relevant data from Wikidata based on identifiers found in the mapped TTL files
+* retrieve-wikimedia-image-rights:            Retrieve the image rights metadata for the extracted images from Wikimedia Commons
+* update-image-regions:                       Updates the image regions from the provided Trig file. Regions that have been manually updated will are left unchanged                                  
 ```
 
 To run a specific task type `task` followed by the task name, e.g.:
