@@ -77,7 +77,7 @@ download "data/sari/color_schemes_local_ordered.ttl" "data/graphs/colorSchemes.t
 download "data/sari/distances-actors-all/birth_date_dist.ttl" "data/graphs/distances-birth_date_dist.ttl"
 download "data/sari/distances-actors-all/birth_years_dist.ttl" "data/graphs/distances-birth_years_dist.ttl"
 download "data/sari/distances-actors-all/creation_role_dist.ttl" "data/graphs/distances-creation_role_dist.ttl"
-download "data/sari/distances-actors-all/creation_dist.ttl" "data/graphs/distances-creation_dist.ttl"
+download "data/sari/distances-actors-all/creations_dist.ttl" "data/graphs/distances-creations_dist.ttl"
 download "data/sari/distances-actors-all/death_date_dist.ttl" "data/graphs/distances-death_date_dist.ttl"
 download "data/sari/distances-actors-all/death_years_dist.ttl" "data/graphs/distances-death_years_dist.ttl"
 download "data/sari/distances-actors-all/labels_dist.ttl" "data/graphs/distances-labels_dist.ttl"
