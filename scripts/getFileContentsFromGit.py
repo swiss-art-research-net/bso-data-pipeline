@@ -75,9 +75,11 @@ else:
     r = requests.post(url, data=json.dumps(data), headers=headers, auth=(username, token))
     downloadurl = r.json()['objects'][0]['actions']['download']['href']
 
-    response = requests.get(downloadurl)
 
-    with open(localfile, 'w', encoding='utf-8') as f:
-        f.write(response.content.decode('UTF-8', 'ignore'))
+    with requests.get(downloadurl, stream=True) as r:
+        r.raise_for_status()
+        with open(localfile, 'wb') as f:
+            for chunk in r.iter_content(chunk_size=8192): 
+                f.write(chunk)
 
 sys.stderr.write("Done!\n")
