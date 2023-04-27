@@ -85,6 +85,8 @@ download "data/sari/distances-actors-all/production_dist.ttl" "data/graphs/dista
 download "data/sari/distances-actors-all/production_obj_dist.ttl" "data/graphs/distances-production_obj_dist.ttl"
 download "data/sari/distances-actors-all/production_role_dist.ttl" "data/graphs/distances-production_role_dist.ttl"
 download "data/sari/distances-actors-all/visitem_dist.ttl" "data/graphs/distances-visitem_dist.ttl"
+download "data/sari/color-scheme-distances/color-scheme-dists-0.ttl" "data/graphs/distances-color-schemes-0.ttl"
+download "data/sari/color-scheme-distances/color-scheme-dists-1.ttl" "data/graphs/distances-color-schemes-1.ttl"
 
 download "data/sari/bso-vocabulary.trig" "data/ttl/additional/bso-vocabulary.trig"
 download "data/sari/additional-dates/external.ttl" "data/ttl/additional/additional-dates-external.ttl"
