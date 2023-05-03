@@ -36,6 +36,19 @@ INSERT {
 
 INSERT {
   GRAPH sari:relations {
+    ?parentPlace crm:P89_falls_within ?grandParentPlace .
+  }
+} WHERE {
+  ?place crm:P89_falls_within ?parentPlace .
+  ?place gn:parentADM2 ?parentPlace ;
+    gn:parentADM1 ?grandParentPlace .
+  FILTER NOT EXISTS {
+    ?place crm:P89_falls_within ?grandParentPlace .
+  }
+};
+
+INSERT {
+  GRAPH sari:relations {
     ?place crmdig:L54_is_same-as ?swisstopoPlace .
   }
 } WHERE {
