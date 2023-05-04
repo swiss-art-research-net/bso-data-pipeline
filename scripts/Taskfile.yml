@@ -237,6 +237,8 @@ tasks:
 
   ingest-ontologies:
     desc: Ingests the ontologies into individual named Graphs
+    sources:
+      - /mapping/schemas/*.rdfs
     cmds:
       - task: ingest-data-from-file
         vars:
