@@ -147,6 +147,7 @@ tasks:
         vars:
           FOLDER: '{{.TEMP_DIR}}'
           GRAPH: '{{.GRAPH}}'
+          ENDPOINT: '{{.ENDPOINT}}'
       - rm -rf {{.TEMP_DIR}}
 
   ingest-data-from-folder:
