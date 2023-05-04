@@ -139,6 +139,7 @@ tasks:
     vars:
       CHUNK_SIZE: 100000
       TEMP_DIR: /data/ttl/temp_chunks
+      ENDPOINT: '{{.ENDPOINT}}'
     cmds:
       - # Create directory if it does not exist yet
       - mkdir -p {{.TEMP_DIR}}
@@ -154,6 +155,8 @@ tasks:
 
   ingest-data-from-folder:
     desc: Ingests data from a specified folder. If a named graph is specified (GRAPH), TTL files will be ingested into it. Otherwise, the filename will be used as named graph. Named Graphs specified in Trig files will be used as defined
+    vars:
+      ENDPOINT: '{{.ENDPOINT}}'
     cmds:
       - |
         numfiles=$(ls -l {{.FOLDER}}/*.{ttl,trig} | wc -l)
