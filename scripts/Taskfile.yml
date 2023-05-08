@@ -139,6 +139,7 @@ tasks:
     vars:
       CHUNK_SIZE: 100000
       TEMP_DIR: /data/ttl/temp_chunks
+      ENDPOINT: '{{.ENDPOINT}}'
     cmds:
       - # Create directory if it does not exist yet
       - mkdir -p {{.TEMP_DIR}}
@@ -149,10 +150,13 @@ tasks:
         vars:
           FOLDER: '{{.TEMP_DIR}}'
           GRAPH: '{{.GRAPH}}'
+          ENDPOINT: '{{.ENDPOINT}}'
       - rm -rf {{.TEMP_DIR}}
 
   ingest-data-from-folder:
     desc: Ingests data from a specified folder. If a named graph is specified (GRAPH), TTL files will be ingested into it. Otherwise, the filename will be used as named graph. Named Graphs specified in Trig files will be used as defined
+    vars:
+      ENDPOINT: '{{.ENDPOINT}}'
     cmds:
       - |
         numfiles=$(ls -l {{.FOLDER}}/*.{ttl,trig} | wc -l)
@@ -238,6 +242,8 @@ tasks:
 
   ingest-ontologies:
     desc: Ingests the ontologies into individual named Graphs
+    sources:
+      - /mapping/schemas/*.rdfs
     cmds:
       - task: ingest-data-from-file
         vars:
