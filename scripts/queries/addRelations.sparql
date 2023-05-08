@@ -246,7 +246,8 @@ INSERT {
 
 INSERT {
   GRAPH sari:relations {
-    ?subject crm:P2_has_type ?dossierType .
+    ?subject crm:P2_has_type ?dossierType ;
+      crm:P109_has_current_or_former_curator ?sff .
   }
 } WHERE {
   BIND(<https://resource.swissartresearch.net/type/1525E0B2-4816-3D3F-AEC8-94BDE16CF0EC> as ?dossierType)
