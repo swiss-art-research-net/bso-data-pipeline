@@ -14,18 +14,18 @@ tasks:
     desc: Runs the entire pipeline
     silent: true
     cmds:
-      - task: prepare-xml-records-zbz
+      #- task: prepare-xml-records-zbz
       - task: prepare-xml-records-nb
-      - task: prepare-xml-records-sff
-      - task: mapping-zbz
+      #- task: prepare-xml-records-sff
+      #- task: mapping-zbz
       - task: mapping-nb
-      - task: mapping-sff
+      #- task: mapping-sff
       - task: ingest-data-nb
-      - task: ingest-data-zbz
-      - task: ingest-data-sff
+      #- task: ingest-data-zbz
+      #- task: ingest-data-sff
       - task: ingest-data-additional
-      - task: ingest-classifications
-      - task: ingest-distances
+      #- task: ingest-classifications
+      #- task: ingest-distances
       - task: ingest-ontologies
       - task: update-image-regions
       - task: add-relations
