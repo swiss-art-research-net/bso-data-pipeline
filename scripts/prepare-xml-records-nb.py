@@ -12,7 +12,7 @@ offset = int(sys.argv[2]) if len(sys.argv) > 2 else 0
 idsToOutput=str(sys.argv[3]) if len(sys.argv) > 3 else False
 
 # Set paths for input and output files
-inputFiles = ['../data/source/nb-records.xml', '../data/source/nb-parentrecords.xml']
+inputFiles = ['../data/source/nb-records.xml', '../data/source/nb-parentrecords.xml','../data/source/nb-GS-GRAF-ANSI_CH.xml', '../data/source/nb-GS-GRAF-ANSI_Ausland.xml'] # 
 outputDir = '/data/xml/nb'
 
 # List externally loaded csv files
