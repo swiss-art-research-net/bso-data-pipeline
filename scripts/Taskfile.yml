@@ -156,6 +156,7 @@ tasks:
           echo "Ingesting file $count of $numfiles ($f)"
           curl --silent -X POST --data-binary "uri=file://$f" {{.ENDPOINT}}{{if .GRAPH}}?context-uri={{.GRAPH}}{{end}} > /dev/null
           count=$((count+1)) 
+          mv $f $f.ingested
         done
         for f in $(ls -1 {{.FOLDER}}/*.ingested); do
           mv $f ${f%.ingested}
