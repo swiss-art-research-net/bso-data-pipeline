@@ -161,16 +161,27 @@ tasks:
       - |
         numfiles=$(ls -l {{.FOLDER}}/*.{ttl,trig} | wc -l)
         count=1
-        {{if .GRAPH}}curl --silent -X POST {{.ENDPOINT}} --data-urlencode "update=DROP GRAPH <{{.GRAPH}}>" > /dev/null{{end}}
+        # The graph is dropped before ingesting, except if some files have already been ingested
+        {{if .GRAPH}}
+        if [ $(ls -l {{.FOLDER}}/*.ingested 2>/dev/null | wc -l) -gt 0 ]; then
+          echo "Some files have already been ingested. Skipping DROP GRAPH"
+        else
+          curl --silent -X POST {{.ENDPOINT}} --data-urlencode "update=DROP GRAPH <{{.GRAPH}}>" > /dev/null
+        fi
+        {{end}}
         for f in $(ls -1 {{.FOLDER}}/*.ttl); do
           echo "Ingesting file $count of $numfiles ($f)"
           curl --silent -X POST --data-binary "uri=file://$f" {{.ENDPOINT}}?context-uri={{if .GRAPH}}{{.GRAPH}}{{else}}file://$f{{end}} > /dev/null
           count=$((count+1))
+          mv $f $f.ingested
         done
         for f in $(ls -1 {{.FOLDER}}/*.trig); do
           echo "Ingesting file $count of $numfiles ($f)"
           curl --silent -X POST --data-binary "uri=file://$f" {{.ENDPOINT}}{{if .GRAPH}}?context-uri={{.GRAPH}}{{end}} > /dev/null
           count=$((count+1)) 
+        done
+        for f in $(ls -1 {{.FOLDER}}/*.ingested); do
+          mv $f ${f%.ingested}
         done
 
   ingest-data-main:
