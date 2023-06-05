@@ -484,9 +484,11 @@ def matchDescriptorsWithElementValues(record, externalDescriptors, curatedNames)
                         for descriptor in recordDescriptors:
                             seeAlso = re.sub('[^A-Za-z\s]+', '', descriptor.find("SeeAlso").text.lower())
                             if seeAlso and any(token in seeAlso for token in tokens):
-                                value.append(copy.deepcopy(descriptor))
-                                descriptorFound = True
-                                break
+                                # Check if at least two tokens match
+                                if len([token for token in tokens if token in seeAlso]) > 1:
+                                    value.append(copy.deepcopy(descriptor))
+                                    descriptorFound = True
+                                    break
                         
                         # Sometimes no descriptor is present together with the record
                         # but there are matching descriptors elswehere in the dataset.
