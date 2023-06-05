@@ -33,6 +33,14 @@ externalDescriptorsFile = "../data/source/nb-external-descriptors.csv"
 # Column in CSV file used to match against IdName
 curatedKey = "Raw"
 
+COMMON_FIRSTNAMES = [
+    'Johann',
+    'Johannes',
+    'Hans',
+    'Hans-Jakob',
+    'Ludwig'
+]
+
 class NBExternalDescriptors:
 
     # Create a helper class to identify Person Descriptors among all records if no suitable
@@ -479,16 +487,17 @@ def matchDescriptorsWithElementValues(record, externalDescriptors, curatedNames)
                         # Split the name into tokens and remove tokens that are less than 3 characters long
                         tokens = re.sub('[^A-Za-z\s]+', '', matchedName.lower()).split()
                         tokens = [token for token in tokens if len(token) > 2]
+                        # Remove some common first names from the tokens so that we don't match based on them
+                        commonFirstnames = [d.lower() for d in COMMON_FIRSTNAMES]
+                        tokens = [token for token in tokens if token not in commonFirstnames]
 
                         # Check if any of the tokens occur in the SeeAlso field of any of the descriptors
                         for descriptor in recordDescriptors:
                             seeAlso = re.sub('[^A-Za-z\s]+', '', descriptor.find("SeeAlso").text.lower())
                             if seeAlso and any(token in seeAlso for token in tokens):
-                                # Check if at least two tokens match
-                                if len([token for token in tokens if token in seeAlso]) > 1:
-                                    value.append(copy.deepcopy(descriptor))
-                                    descriptorFound = True
-                                    break
+                                value.append(copy.deepcopy(descriptor))
+                                descriptorFound = True
+                                break
                         
                         # Sometimes no descriptor is present together with the record
                         # but there are matching descriptors elswehere in the dataset.
