@@ -13,6 +13,12 @@ services:
     - internal
 
   jobs:
+    healtchcheck:
+      test: task --list || exit 1
+      interval: 10m
+      timeout: 30s
+      retries: 2
+      start_period: 40s
     networks:
     - internal
 
@@ -26,8 +32,8 @@ services:
       test: wget -q http://0.0.0.0:8080 || exit 1
       interval: 1m30s
       timeout: 30s
-      retries: 5
-      start_period: 30s
+      retries: 2
+      start_period: 40s
     labels:
       - "autoheal=true"
     networks:
