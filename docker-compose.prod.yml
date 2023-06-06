@@ -26,7 +26,7 @@ services:
     - internal
 
   jobs:
-    healtchcheck:
+    healthcheck:
       test: task --list || exit 1
       interval: 10m
       timeout: 30s
