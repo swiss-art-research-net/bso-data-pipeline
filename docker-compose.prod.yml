@@ -22,6 +22,14 @@ services:
       LETSENCRYPT_HOST: ${HOST_NAME}
       VIRTUAL_HOST: ${HOST_NAME}
       VIRTUAL_PORT: 8080
+    healthcheck:
+      test: wget -q http://0.0.0.0:8080 || exit 1
+      interval: 1m30s
+      timeout: 30s
+      retries: 5
+      start_period: 30s
+    labels:
+      - "autoheal=true"
     networks:
     - internal
     - proxy
