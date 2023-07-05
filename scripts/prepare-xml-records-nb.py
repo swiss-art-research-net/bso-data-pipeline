@@ -101,6 +101,7 @@ class NBExternalDescriptors:
         # However, as the data updates, descriptors might become available.
         knownFalseMatches = [
             "Kuhn, Johann Jakob",
+            "Stein, Johann Conrad",
             "Ziegler, Johann Kaspar"
         ]
         tokens = re.sub('[^A-Za-z\s]+', '', name.lower()).split()
