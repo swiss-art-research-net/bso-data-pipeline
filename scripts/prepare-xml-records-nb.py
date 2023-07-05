@@ -34,6 +34,7 @@ externalDescriptorsFile = "../data/source/nb-external-descriptors.csv"
 curatedKey = "Raw"
 
 COMMON_FIRSTNAMES = [
+    'Conrad',
     'Johann',
     'Johannes',
     'Hans',
