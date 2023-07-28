@@ -45,7 +45,7 @@ download "swiss-art-research-net/bso-data" "data/nb/nb-curation-extracted-types.
 download "swiss-art-research-net/bso-data" "data/nb/nb-external-descriptors.csv" "data/source/nb-external-descriptors.csv"
 download "swiss-art-research-net/bso-data" "data/nb/nb-image-sizes.csv" "data/source/nb-image-sizes.csv"
 download "swiss-art-research-net/bso-data" "data/nb/nb-additional-images.csv" "data/source/nb-additional-images.csv"
-download "swiss-art-research-net/bso-data" "data/nb/source/WMC_Records_20201201.xml" "data/source/nb-records.xml"
+download "swiss-art-research-net/bso-data" "data/nb/source/WMC_Records_20230727.xml" "data/source/nb-records.xml"
 download "swiss-art-research-net/bso-data" "data/nb/source/Gugelman.xml" "data/source/nb-parentrecords.xml"
 
 download "swiss-art-research-net/bso-data" "data/sff/Werke.csv" "data/source/sff-werke.csv"
