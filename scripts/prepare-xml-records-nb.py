@@ -12,7 +12,7 @@ offset = int(sys.argv[2]) if len(sys.argv) > 2 else 0
 idsToOutput=str(sys.argv[3]) if len(sys.argv) > 3 else False
 
 # Set paths for input and output files
-inputFiles = ['../data/source/nb-records.xml', '../data/source/nb-parentrecords.xml','../data/source/nb-GS-GRAF-ANSI_CH.xml', '../data/source/nb-GS-GRAF-ANSI_Ausland.xml'] # 
+inputFiles = ['../data/source/nb-records.xml', '../data/source/nb-parentrecords.xml'] # 
 outputDir = '/data/xml/nb'
 
 # List externally loaded csv files
@@ -73,7 +73,11 @@ class NBExternalDescriptors:
     def getDescriptorForRecordAndName(self, recordId, name):
         for externalDescriptor in self.externalDescriptors:
             if externalDescriptor['recordId'] == recordId and externalDescriptor['matchedName'] == name:
-                return self.allPersonDescriptors[self.personDescriptorIdNameHash[externalDescriptor['idName']]]
+                try:
+                    result = self.allPersonDescriptors[self.personDescriptorIdNameHash[externalDescriptor['idName']]]
+                except:
+                    raise Exception("Descriptor not found for " + name + " (" + externalDescriptor['idName'] + ") in record " + recordId)
+                return result
         return False
     
     def getPersonDescriptorByName(self, recordId, name):
