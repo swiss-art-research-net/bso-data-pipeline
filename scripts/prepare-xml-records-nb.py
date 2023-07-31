@@ -96,7 +96,18 @@ class NBExternalDescriptors:
         # lastnames do not. These names are therefore excluded from the matching process.
         # However, as the data updates, descriptors might become available.
         knownFalseMatches = [
+            "A. Briquet et Meyer",
+            "Bachmann, Johann Caspar",
+            "Coste et Cie",
+            "lias, Friedrich Bernhard",
+            "Jeanneret et Borel",
+            "Jules Rigo et Cie.",
             "Kuhn, Johann Jakob",
+            "Le Roy, Jacques",
+            "Lithographie Bader et Cie",
+            "Saussure, Nicolas Théodore de",
+            "Steiger, F. von",
+            "Steiner, Johann Conrad",
             "Ziegler, Johann Kaspar"
         ]
         tokens = re.sub('[^A-Za-z\s]+', '', name.lower()).split()
