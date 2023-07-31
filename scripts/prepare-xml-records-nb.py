@@ -76,7 +76,7 @@ class NBExternalDescriptors:
                 try:
                     result = self.allPersonDescriptors[self.personDescriptorIdNameHash[externalDescriptor['idName']]]
                 except:
-                    raise Exception("Descriptor not found for " + name + " (" + externalDescriptor['idName'] + ") in record " + recordId)
+                    raise Exception("Descriptor not found for " + name + " (" + externalDescriptor['idName'] + ") in record " + recordId + "\nIf data has been updated, you  might need to remove the corresponding entry from the CSV file at " + self.externalDescriptorFilename)
                 return result
         return False
     
