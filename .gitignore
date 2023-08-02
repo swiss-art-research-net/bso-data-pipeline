@@ -21,4 +21,5 @@ __pycache__
 docker-compose.override.yml
 logs/
 services/researchplatform/apps/static/assets/no_auth/*.jpg
+docker/
 *.jnl
