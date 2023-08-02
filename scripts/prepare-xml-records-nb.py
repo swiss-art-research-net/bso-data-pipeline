@@ -12,7 +12,7 @@ offset = int(sys.argv[2]) if len(sys.argv) > 2 else 0
 idsToOutput=str(sys.argv[3]) if len(sys.argv) > 3 else False
 
 # Set paths for input and output files
-inputFiles = ['../data/source/nb-records.xml', '../data/source/nb-parentrecords.xml']
+inputFiles = ['../data/source/nb-records.xml', '../data/source/nb-parentrecords.xml'] 
 outputDir = '/data/xml/nb'
 
 # List externally loaded csv files
@@ -82,7 +82,11 @@ class NBExternalDescriptors:
     def getDescriptorForRecordAndName(self, recordId, name):
         for externalDescriptor in self.externalDescriptors:
             if externalDescriptor['recordId'] == recordId and externalDescriptor['matchedName'] == name:
-                return self.allPersonDescriptors[self.personDescriptorIdNameHash[externalDescriptor['idName']]]
+                try:
+                    result = self.allPersonDescriptors[self.personDescriptorIdNameHash[externalDescriptor['idName']]]
+                except:
+                    raise Exception("Descriptor not found for " + name + " (" + externalDescriptor['idName'] + ") in record " + recordId + "\nIf data has been updated, you  might need to remove the corresponding entry from the CSV file at " + self.externalDescriptorFilename)
+                return result
         return False
     
     def getPersonDescriptorByName(self, recordId, name):
@@ -101,7 +105,18 @@ class NBExternalDescriptors:
         # lastnames do not. These names are therefore excluded from the matching process.
         # However, as the data updates, descriptors might become available.
         knownFalseMatches = [
+            "A. Briquet et Meyer",
+            "Bachmann, Johann Caspar",
+            "Coste et Cie",
+            "lias, Friedrich Bernhard",
+            "Jeanneret et Borel",
+            "Jules Rigo et Cie.",
             "Kuhn, Johann Jakob",
+            "Le Roy, Jacques",
+            "Lithographie Bader et Cie",
+            "Saussure, Nicolas Théodore de",
+            "Steiger, F. von",
+            "Steiner, Johann Conrad",
             "Ziegler, Johann Kaspar"
         ]
         tokens = re.sub('[^A-Za-z\s]+', '', name.lower()).split()
