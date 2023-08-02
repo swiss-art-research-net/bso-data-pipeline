@@ -131,6 +131,8 @@ tasks:
           GRAPH: https://resource.swissartresearch.net/graph/external
 
   ingest-data-from-file:
+    vars:
+      ENDPOINT: '{{.ENDPOINT}}'
     cmds:
       - echo "Ingest {{.NAME}}"
       - curl -X POST -H 'Content-Type:{{.TYPE}}' --data-binary '@{{.FILE}}' {{.ENDPOINT}}?context-uri={{.GRAPH}}
