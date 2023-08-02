@@ -294,7 +294,7 @@ tasks:
       - task: ingest-title-similarities
       - task: ingest-visual-similarities
       - task: ingest-color-schemes
-      #- task: ingest-distances
+      - task: ingest-distances
 
   ingest-color-schemes:
     desc: Ingests the color schemes into the Blazegraph instance
