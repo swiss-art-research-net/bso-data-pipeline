@@ -4,6 +4,7 @@ version: '3'
 
 vars:
   ENDPOINT: http://blazegraph:8080/blazegraph/sparql
+  ENDPOINT_SECONDARY: http://blazegraph-secondary:8080/blazegraph/sparql
   GENERATOR_POLICY: /mapping/generator-policy.xml
   MAPPING_BATCH_SIZE: 10
 
@@ -24,7 +25,9 @@ tasks:
       - task: ingest-data-sff
       - task: ingest-data-additional
       - task: ingest-classifications
+      - task: ingest-distances
       - task: ingest-ontologies
+      - task: update-image-regions
       - task: add-relations
       - task: add-summaries
       - task: cleanup
@@ -128,12 +131,34 @@ tasks:
           GRAPH: https://resource.swissartresearch.net/graph/external
 
   ingest-data-from-file:
+    vars:
+      ENDPOINT: '{{.ENDPOINT}}'
     cmds:
       - echo "Ingest {{.NAME}}"
       - curl -X POST -H 'Content-Type:{{.TYPE}}' --data-binary '@{{.FILE}}' {{.ENDPOINT}}?context-uri={{.GRAPH}}
 
+  ingest-data-from-big-file:
+    vars:
+      CHUNK_SIZE: 100000
+      TEMP_DIR: /data/ttl/temp_chunks
+      ENDPOINT: '{{.ENDPOINT}}'
+    cmds:
+      - # Create directory if it does not exist yet
+      - mkdir -p {{.TEMP_DIR}}
+      - rm -f {{.TEMP_DIR}}/*.ttl
+      - echo "Splitting {{.NAME}} into chunks"
+      - perl /scripts/chunkify_ttl.pl {{.FILE}} {{.CHUNK_SIZE}} {{.TEMP_DIR}}
+      - task: ingest-data-from-folder
+        vars:
+          FOLDER: '{{.TEMP_DIR}}'
+          GRAPH: '{{.GRAPH}}'
+          ENDPOINT: '{{.ENDPOINT}}'
+      - rm -rf {{.TEMP_DIR}}
+
   ingest-data-from-folder:
     desc: Ingests data from a specified folder. If a named graph is specified (GRAPH), TTL files will be ingested into it. Otherwise, the filename will be used as named graph. Named Graphs specified in Trig files will be used as defined
+    vars:
+      ENDPOINT: '{{.ENDPOINT}}'
     cmds:
       - |
         numfiles=$(ls -l {{.FOLDER}}/*.{ttl,trig} | wc -l)
@@ -231,6 +256,8 @@ tasks:
 
   ingest-ontologies:
     desc: Ingests the ontologies into individual named Graphs
+    sources:
+      - /mapping/schemas/*.rdfs
     cmds:
       - task: ingest-data-from-file
         vars:
@@ -267,7 +294,7 @@ tasks:
       - task: ingest-title-similarities
       - task: ingest-visual-similarities
       - task: ingest-color-schemes
-      #- task: ingest-distances
+      - task: ingest-distances
 
   ingest-color-schemes:
     desc: Ingests the color schemes into the Blazegraph instance
@@ -276,12 +303,13 @@ tasks:
     vars:
       GRAPH: https://resource.swissartresearch.net/graph/colorSchemes
     cmds:
-      - curl --silent -X POST {{.ENDPOINT}} --data-urlencode "update=DROP GRAPH <{{.GRAPH}}>" > /dev/null
+      - curl --silent -X POST {{.ENDPOINT_SECONDARY}} --data-urlencode "update=DROP GRAPH <{{.GRAPH}}>" > /dev/null
       - task: ingest-data-from-file
         vars:
           NAME: Color Schemes
           TYPE: text/turtle
           FILE: /data/graphs/colorSchemes.ttl
+          ENDPOINT: '{{.ENDPOINT_SECONDARY}}'
           GRAPH: https://resource.swissartresearch.net/graph/colorSchemes
 
   ingest-distances:
@@ -291,73 +319,139 @@ tasks:
     vars:
       GRAPH: https://resource.swissartresearch.net/graph/distances
     cmds:
-      - curl --silent -X POST {{.ENDPOINT}} --data-urlencode "update=DROP GRAPH <{{.GRAPH}}>" > /dev/null
-      - task: ingest-data-from-file
+      - task: ingest-distances-birth
+      - task: ingest-distances-creations
+      - task: ingest-distances-death
+      - task: ingest-distances-labels
+      - task: ingest-distances-production
+      - task: ingest-distances-visitem
+      - task: ingest-distances-color
+  
+  ingest-distances-birth:
+    sources:
+      - /data/graphs/distances-birth*.ttl
+    cmds:
+      - task: ingest-data-from-big-file
         vars:
           NAME: Distances
           TYPE: text/turtle
           FILE: /data/graphs/distances-birth_date_dist.ttl
-          GRAPH: https://resource.swissartresearch.net/graph/distances
-      - task: ingest-data-from-file
+          ENDPOINT: '{{.ENDPOINT_SECONDARY}}'
+          GRAPH: https://resource.swissartresearch.net/graph/distances/birthdate
+      - task: ingest-data-from-big-file
         vars:
           NAME: Distances
           TYPE: text/turtle
           FILE: /data/graphs/distances-birth_years_dist.ttl
-          GRAPH: https://resource.swissartresearch.net/graph/distances
-      - task: ingest-data-from-file
+          ENDPOINT: '{{.ENDPOINT_SECONDARY}}'
+          GRAPH: https://resource.swissartresearch.net/graph/distances/birthyears
+
+  ingest-distances-color:
+    sources:
+      - /data/graphs/distances-color*.ttl
+    cmds:
+      - task: ingest-data-from-big-file
         vars:
           NAME: Distances
           TYPE: text/turtle
-          FILE: /data/graphs/distances-ceation_role.ttl
-          GRAPH: https://resource.swissartresearch.net/graph/distances
-      - task: ingest-data-from-file
+          FILE: /data/graphs/distances-color-schemes-0.ttl
+          ENDPOINT: '{{.ENDPOINT_SECONDARY}}'
+          GRAPH: https://resource.swissartresearch.net/graph/distances/color/0
+      - task: ingest-data-from-big-file
         vars:
           NAME: Distances
           TYPE: text/turtle
-          FILE: /data/graphs/distances-creation_dist.ttl
-          GRAPH: https://resource.swissartresearch.net/graph/distances
-      - task: ingest-data-from-file
+          FILE: /data/graphs/distances-color-schemes-1.ttl
+          ENDPOINT: '{{.ENDPOINT_SECONDARY}}'
+          GRAPH: https://resource.swissartresearch.net/graph/distances/color/1
+
+  ingest-distances-creations:
+    sources:
+      - /data/graphs/distances-creation*.ttl
+    cmds: 
+      - task: ingest-data-from-big-file
+        vars:
+          NAME: Distances
+          TYPE: text/turtle
+          FILE: /data/graphs/distances-creation_role_dist.ttl
+          ENDPOINT: '{{.ENDPOINT_SECONDARY}}'
+          GRAPH: https://resource.swissartresearch.net/graph/distances/creation/role
+      - task: ingest-data-from-big-file
+        vars:
+          NAME: Distances
+          TYPE: text/turtle
+          FILE: /data/graphs/distances-creations_dist.ttl
+          ENDPOINT: '{{.ENDPOINT_SECONDARY}}'
+          GRAPH: https://resource.swissartresearch.net/graph/distances/creations
+
+  ingest-distances-death:
+    sources:
+      - /data/graphs/distances-death*.ttl
+    cmds: 
+      - task: ingest-data-from-big-file
         vars:
           NAME: Distances
           TYPE: text/turtle
           FILE: /data/graphs/distances-death_date_dist.ttl
-          GRAPH: https://resource.swissartresearch.net/graph/distances
-      - task: ingest-data-from-file
+          ENDPOINT: '{{.ENDPOINT_SECONDARY}}'
+          GRAPH: https://resource.swissartresearch.net/graph/distances/deathdate
+      - task: ingest-data-from-big-file
         vars:
           NAME: Distances
           TYPE: text/turtle
           FILE: /data/graphs/distances-death_years_dist.ttl
-          GRAPH: https://resource.swissartresearch.net/graph/distances
-      - task: ingest-data-from-file
+          ENDPOINT: '{{.ENDPOINT_SECONDARY}}'
+          GRAPH: https://resource.swissartresearch.net/graph/distances/deathyears
+
+  ingest-distances-labels:
+    sources:
+      - /data/graphs/distances-labels*.ttl
+    cmds: 
+      - task: ingest-data-from-big-file
         vars:
           NAME: Distances
           TYPE: text/turtle
           FILE: /data/graphs/distances-labels_dist.ttl
-          GRAPH: https://resource.swissartresearch.net/graph/distances
-      - task: ingest-data-from-file
+          ENDPOINT: '{{.ENDPOINT_SECONDARY}}'
+          GRAPH: https://resource.swissartresearch.net/graph/distances/labels
+
+  ingest-distances-production:
+    sources:
+      - /data/graphs/distances-production*.ttl
+    cmds: 
+      - task: ingest-data-from-big-file
         vars:
           NAME: Distances
           TYPE: text/turtle
           FILE: /data/graphs/distances-production_dist.ttl
-          GRAPH: https://resource.swissartresearch.net/graph/distances
-      - task: ingest-data-from-file
+          ENDPOINT: '{{.ENDPOINT_SECONDARY}}'
+          GRAPH: https://resource.swissartresearch.net/graph/distances/production
+      - task: ingest-data-from-big-file
         vars:
           NAME: Distances
           TYPE: text/turtle
           FILE: /data/graphs/distances-production_obj_dist.ttl
-          GRAPH: https://resource.swissartresearch.net/graph/distances
-      - task: ingest-data-from-file
+          ENDPOINT: '{{.ENDPOINT_SECONDARY}}'
+          GRAPH: https://resource.swissartresearch.net/graph/distances/production/obj
+      - task: ingest-data-from-big-file
         vars:
           NAME: Distances
           TYPE: text/turtle
           FILE: /data/graphs/distances-production_role_dist.ttl
-          GRAPH: https://resource.swissartresearch.net/graph/distances
-      - task: ingest-data-from-file
+          ENDPOINT: '{{.ENDPOINT_SECONDARY}}'
+          GRAPH: https://resource.swissartresearch.net/graph/distances/production/role
+
+  ingest-distances-visitem:
+    sources:
+      - /data/graphs/distances-visitem*.ttl
+    cmds:
+      - task: ingest-data-from-big-file
         vars:
           NAME: Distances
           TYPE: text/turtle
           FILE: /data/graphs/distances-visitem_dist.ttl
-          GRAPH: https://resource.swissartresearch.net/graph/distances
+          ENDPOINT: '{{.ENDPOINT_SECONDARY}}'
+          GRAPH: https://resource.swissartresearch.net/graph/distances/visitem
 
   ingest-title-similarities:
     desc: Ingests the title similarities into the Blazegraph instance
@@ -366,12 +460,13 @@ tasks:
     vars:
       GRAPH: https://resource.swissartresearch.net/graph/titleSimilarities
     cmds:
-      - curl --silent -X POST {{.ENDPOINT}} --data-urlencode "update=DROP GRAPH <{{.GRAPH}}>" > /dev/null
+      - curl --silent -X POST {{.ENDPOINT_SECONDARY}} --data-urlencode "update=DROP GRAPH <{{.GRAPH}}>" > /dev/null
       - task: ingest-data-from-file
         vars:
           NAME: Title Similarities
           TYPE: text/turtle
           FILE: /data/graphs/titleSimilarities.ttl
+          ENDPOINT: '{{.ENDPOINT_SECONDARY}}'
           GRAPH: https://resource.swissartresearch.net/graph/titleSimilarities
 
   ingest-visual-similarities:
@@ -381,12 +476,13 @@ tasks:
     vars:
       GRAPH: https://resource.swissartresearch.net/graph/visualSimilarities
     cmds:
-      - curl --silent -X POST {{.ENDPOINT}} --data-urlencode "update=DROP GRAPH <{{.GRAPH}}>" > /dev/null
+      - curl --silent -X POST {{.ENDPOINT_SECONDARY}} --data-urlencode "update=DROP GRAPH <{{.GRAPH}}>" > /dev/null
       - task: ingest-data-from-file
         vars:
           NAME: Visual Similarities
           TYPE: text/turtle
           FILE: /data/graphs/visualSimilarities.ttl
+          ENDPOINT: '{{.ENDPOINT_SECONDARY}}'
           GRAPH: https://resource.swissartresearch.net/graph/visualSimilarities
 
   

@@ -12,7 +12,26 @@ services:
     networks:
     - internal
 
+
+  blazegraph-secondary:
+    healthcheck:
+      test: wget -q http://0.0.0.0:8080/blazegraph/sparql?query=SELECT%20%3Fs%20WHERE%20%7B%0A%20%20%3Fs%20%3Fp%20%3Fo%20%0A%7D%20LIMIT%2010 || exit 1
+      interval: 1m30s
+      timeout: 10s
+      retries: 2
+      start_period: 40s
+    labels:
+      - "autoheal=true"
+    networks:
+    - internal
+
   jobs:
+    healthcheck:
+      test: task --list || exit 1
+      interval: 10m
+      timeout: 30s
+      retries: 2
+      start_period: 40s
     networks:
     - internal
 
@@ -22,11 +41,27 @@ services:
       LETSENCRYPT_HOST: ${HOST_NAME}
       VIRTUAL_HOST: ${HOST_NAME}
       VIRTUAL_PORT: 8080
+    healthcheck:
+      test: wget -q http://0.0.0.0:8080 || exit 1
+      interval: 1m30s
+      timeout: 30s
+      retries: 2
+      start_period: 40s
+    labels:
+      - "autoheal=true"
     networks:
     - internal
     - proxy
   
   smapshotapi:
+    healthcheck:
+      test: wget -q http://0.0.0.0:5000 || exit 1
+      interval: 5m
+      timeout: 10s
+      retries: 2
+      start_period: 40s
+    labels:
+      - "autoheal=true"
     networks:
     - internal
 

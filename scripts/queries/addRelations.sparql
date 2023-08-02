@@ -36,6 +36,19 @@ INSERT {
 
 INSERT {
   GRAPH sari:relations {
+    ?parentPlace crm:P89_falls_within ?grandParentPlace .
+  }
+} WHERE {
+  ?place crm:P89_falls_within ?parentPlace .
+  ?place gn:parentADM2 ?parentPlace ;
+    gn:parentADM1 ?grandParentPlace .
+  FILTER NOT EXISTS {
+    ?place crm:P89_falls_within ?grandParentPlace .
+  }
+};
+
+INSERT {
+  GRAPH sari:relations {
     ?place crmdig:L54_is_same-as ?swisstopoPlace .
   }
 } WHERE {
@@ -233,7 +246,8 @@ INSERT {
 
 INSERT {
   GRAPH sari:relations {
-    ?subject crm:P2_has_type ?dossierType .
+    ?subject crm:P2_has_type ?dossierType ;
+      crm:P109_has_current_or_former_curator ?sff .
   }
 } WHERE {
   BIND(<https://resource.swissartresearch.net/type/1525E0B2-4816-3D3F-AEC8-94BDE16CF0EC> as ?dossierType)
