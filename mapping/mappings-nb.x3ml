@@ -2502,7 +2502,7 @@
                             <type>crm:E39_Actor</type>
                             <instance_generator name="URIwithTypeAndId_hashed">
                                 <arg name="type" type="constant">actor</arg>
-                                <arg name="id_HASHED_CONTENTS" type="xpath">if (../Descriptor/GND-Nummer/text()) then (../Descriptor/GND-Nummer/text()) else ( ../NormalisedName/text() )</arg>
+                                <arg name="id_HASHED_CONTENTS" type="xpath">if (../Descriptor/GND-Nummer/text()) then (../Descriptor/GND-Nummer/text()) else ( if (../Descriptor/IdNameForMapping/text()) then (../Descriptor/IdNameForMapping/text()) else (../NormalisedName/text()) )</arg>
                             </instance_generator>
                             <label_generator name="Literal">
                                 <arg name="text" type="xpath">text()</arg>
