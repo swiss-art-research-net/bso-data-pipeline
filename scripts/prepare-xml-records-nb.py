@@ -631,6 +631,29 @@ def processDates(record):
 
     return record
 
+def processLabels(record):
+    """
+    Some labels require preprocessing.
+    The newer NB data uses an underscore to separate a person's name from their role.
+    Before mapping, we remove this information as it is already present elsewhere.
+    e.g. Alexandre_[MalerIn/ZeichnerIn] -> Alexandre
+    """
+    elementIdsToProcess = ['10927']
+    dataElementXPath = '|'.join(["DetailData/DataElement[@ElementId='%s']" % d for d in elementIdsToProcess])
+    dataElementsToProcess = record.xpath(dataElementXPath)
+    if len(dataElementsToProcess):
+        for dataElement in dataElementsToProcess:
+            elementValues = dataElement.findall('./ElementValue')
+            for elementValue in elementValues:
+                text = elementValue.find("./TextValue").text
+                # Check if text matches pattern _\[.*\]
+                if re.search(r'_(\[.*\])', text):
+                    # Remove pattern
+                    text = re.sub(r'_(\[.*\])', '', text)
+                    elementValue.find("./TextValue").text = text
+    return record
+
+
 # Load Data
 additionalImages = loadAdditionalImages(additionalImagesFile)
 root, records = loadRecordsToProcess(inputFiles, additionalImages)
@@ -664,6 +687,7 @@ for record in tqdm(records[offset:offset+limit]):
     record = matchDescriptorsWithElementValues(record, externalDescriptors, curatedNames)
     record = addDescriptorIdentifier(record)
     record = processDates(record)
+    record = processLabels(record)
     record = cleanImageUrls(record)
 
     # Output each record individually
