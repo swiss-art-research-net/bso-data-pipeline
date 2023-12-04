@@ -47,7 +47,7 @@ services:
       - ./services/researchplatform/apps/bso/src:/bso-app-src
 
   platform:
-    image: swissartresearx/metaphacts-community:4.2.2
+    image: swissartresearx/metaphacts-community:4.3.0
     container_name: ${PROJECT_NAME}_platform
     restart: unless-stopped
     depends_on:
