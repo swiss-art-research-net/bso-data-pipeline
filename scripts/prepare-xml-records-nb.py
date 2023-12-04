@@ -576,7 +576,7 @@ def processFieldsWithMultipleValues(record):
     #              </ElementValue>
     #            </DataElement>
 
-    elementIdsWithMultipleNames = ['10817', '10927', '10107']
+    elementIdsWithMultipleNames = ['10817', '10927', '10107', '10915']
     dataElementXPath = '|'.join(["DetailData/DataElement[@ElementId='%s']" % d for d in elementIdsWithMultipleNames])
 
     dataElementsContainingNames = record.xpath(dataElementXPath)
