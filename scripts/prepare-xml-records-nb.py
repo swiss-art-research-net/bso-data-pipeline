@@ -320,7 +320,7 @@ def addCuratedDataToDescriptors(record, curatedData):
         thesaurus = descriptor.find("Thesaurus").text
         key = descriptor.find("IdName").text
         try:
-            dataToAdd = [d for d in curatedData if d['Thesaurus'] == thesaurus and d[CURATED_KEY] == key][0]
+            dataToAdd = [d for d in curatedData if d['Thesaurus'] == thesaurus and d[CURATED_KEY].replace(" ", "") == key.replace(" ", "")][0]
         except:
             continue
         for field in curatedFieldsToAdd:
