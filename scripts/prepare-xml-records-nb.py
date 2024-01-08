@@ -31,7 +31,7 @@ additionalImagesFile = "../data/source/nb-additional-images.csv"
 externalDescriptorsFile = "../data/source/nb-external-descriptors.csv"
 
 # Column in CSV file used to match against IdName
-curatedKey = "Raw"
+CURATED_KEY = "Raw"
 
 COMMON_FIRSTNAMES = [
     'Conrad',
@@ -320,7 +320,7 @@ def addCuratedDataToDescriptors(record, curatedData):
         thesaurus = descriptor.find("Thesaurus").text
         key = descriptor.find("IdName").text
         try:
-            dataToAdd = [d for d in curatedData if d['Thesaurus'] == thesaurus and d[curatedKey] == key][0]
+            dataToAdd = [d for d in curatedData if d['Thesaurus'] == thesaurus and d[CURATED_KEY].replace(" ", "") == key.replace(" ", "")][0]
         except:
             continue
         for field in curatedFieldsToAdd:
