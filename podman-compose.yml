@@ -82,6 +82,7 @@ services:
       LETSENCRYPT_HOST: ${HOST_NAME}
       VIRTUAL_HOST: ${HOST_NAME}
       VIRTUAL_PORT: 8080
+      JAVA_OPTS: -Xmx1g
     healthcheck:
       test: wget -q http://0.0.0.0:8080 || exit 1
       interval: 1m30s
@@ -95,8 +96,6 @@ services:
       - blazegraph
       - blazegraph-secondary
       - smapshotapi
-    environment:
-      - JAVA_OPTS=-Xmx1g
     logging:
       driver: json-file
       options:
