@@ -135,7 +135,7 @@ networks:
   internal:
   proxy:
     external:
-      name: nginx_proxy_network
+      name: sari_proxy_network
       
 volumes:
   3m-data:
