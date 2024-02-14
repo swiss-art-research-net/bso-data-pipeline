@@ -49,6 +49,11 @@ DELETE {
   <https://d-nb.info/gnd/> ?p ?o .
 };
 
+# Delete incorrect data
+DELETE DATA{
+  <https://resource.swissartresearch.net/actor/ACFADC4D-0762-37C5-A0A9-DCB07D4770F2> rdfs:label 'Moritz, Friedrich Wilhelm' .
+};
+
 # Merge duplicate entries
 #   When entries are duplicates in GND and different identifiers are used in the data,
 #   this results in separate entities for the same entity in our platform.
