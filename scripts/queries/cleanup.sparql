@@ -2,6 +2,7 @@
 PREFIX : <http://www.metaphacts.com/resource/>
 PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX search: <https://platform.swissartresearch.net/search/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 # Convert Point statements to wkt:literals
