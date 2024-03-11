@@ -96,4 +96,20 @@ DELETE {
     (<https://resource.swissartresearch.net/actor/6D02DDAA-B8FE-3678-A2A6-C157D8A5652D> <https://resource.swissartresearch.net/actor/45D34C28-76C0-3057-8821-F290716F511D> 'Pfenninger, Matthias')
     (<https://resource.swissartresearch.net/actor/C783BB53-A0FE-327A-A95E-3083F8BBBBFC> <https://resource.swissartresearch.net/actor/0158E007-77A3-3EAA-AA1B-F6B7E39A8DB9> 'Schellenberg, Johann Ulrich')
   }
+};
+
+# Delete persons that are not linked to any other entity
+DELETE {
+    ?person ?p1 ?o1  .
+    ?s2 ?p1 ?person .
+} WHERE {
+  ?person a search:Person .
+  FILTER NOT EXISTS {
+    ?thing crm:P14_carried_out_by|crm:P138_represents|crm:P23_transferred_title_from ?person
+  }
+  {
+    ?person ?p1 ?o1 .
+  } UNION {
+    ?s2 ?p1 ?person .
+  }
 }
