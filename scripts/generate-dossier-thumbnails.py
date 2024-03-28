@@ -195,7 +195,7 @@ def makeContactSheet(urls, *, cols=3, rows=3, width=500, height=500, margin=0, b
             print("Could not download",url)
             continue
         img = Image.open(BytesIO(response.content))
-        img = ImageOps.fit(img, (maxWidth, maxHeight), Image.ANTIALIAS)
+        img = ImageOps.fit(img, (maxWidth, maxHeight), Image.LANCZOS)
         imgs.append(img)
     
     sheet = Image.new('RGB',(width, height), bgColor)
