@@ -83,7 +83,7 @@ services:
       VIRTUAL_HOST: ${HOST_NAME}
       VIRTUAL_PORT: 8080
       JAVA_OPTS: -Xmx1g
-      CONTENT_SECURITY_POLICY: "default-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' blob: https://connectors.tableau.com/; img-src 'self' https: data: blob:; connect-src 'self' https://www.e-manuscripta.ch https://smapshot.heig-vd.ch bso-iiif.swissartresearch.net; style-src-elem 'self' 'unsafe-inline' fonts.googleapis.com; font-src 'self' fonts.gstatic.com; frame-src https://smapshot.heig-vd.ch;"
+      CONTENT_SECURITY_POLICY: "default-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' blob: https://connectors.tableau.com/; img-src 'self' https: data: blob:; connect-src 'self' https://www.e-manuscripta.ch https://www.e-rara.ch https://smapshot.heig-vd.ch bso-iiif.swissartresearch.net; style-src-elem 'self' 'unsafe-inline' fonts.googleapis.com; font-src 'self' fonts.gstatic.com; frame-src https://smapshot.heig-vd.ch;"
     healthcheck:
       test: wget -q http://0.0.0.0:8080 || exit 1
       interval: 1m30s
