@@ -4,7 +4,7 @@ services:
   blazegraph:
     image: docker.io/robcast/researchspace-blazegraph:2.2.0-20160908
     container_name: ${PROJECT_NAME}_blazegraph
-    restart: unless-stopped
+    restart: always
     environment:
       - JAVA_OPTS=-Xmx8g
     healthcheck:
@@ -29,7 +29,7 @@ services:
   blazegraph-secondary:
     image: docker.io/robcast/researchspace-blazegraph:2.2.0-20160908
     container_name: ${PROJECT_NAME}_blazegraph_secondary
-    restart: unless-stopped
+    restart: always
     environment:
       - JAVA_OPTS=-Xmx4g
     healthcheck:
@@ -55,7 +55,7 @@ services:
     build: ./services/jobs
     container_name: ${PROJECT_NAME}_jobs
     image: docker.io/swissartresearx/bso-jobs:1.0.2
-    restart: unless-stopped
+    restart: always
     environment:
       - HOST_LOCATION=${HOST_NAME}
     healthcheck:
@@ -90,7 +90,7 @@ services:
       timeout: 30s
       retries: 2
       start_period: 40s
-    restart: unless-stopped
+    restart: always
     labels:
       - "autoheal=true"
     depends_on:
@@ -128,7 +128,7 @@ services:
       - "autoheal=true"
     networks:
     - internal
-    restart: unless-stopped
+    restart: always
     volumes:
       - ./services/smapshotapi/src:/src
 
