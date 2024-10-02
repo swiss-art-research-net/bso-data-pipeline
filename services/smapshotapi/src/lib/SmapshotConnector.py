@@ -275,6 +275,25 @@ class SmapshotConnector:
         }
         return self.setImageAttributes(int(imageId), attributes)
 
+    def setImagePublishedState(self, imageId, published, newSate):
+        """
+        Set attributes for a given image id
+        :param imageId: The image id
+        :type imageId: int
+        :param published: Whether the image should be published
+        :type published: bool
+        :param newState: The new state of the image
+        :type newState: str
+        """
+        url = self._apiPath("/images/%d/state" % imageId)
+        headers = {'Authorization': 'Bearer %s' % self.TOKEN, 'accept': 'application/json', 'Content-Type': 'application/json'}
+        data = {
+            "publish": published,
+            "new_state": newSate
+        }
+        r = requests.put(url=url, headers=headers, data=json.dumps(data))
+        return r.json()
+
     def setImageRegion(self, imageId, iiifUrl, region):
         """
         Set the region and IIIF URL for a given image id

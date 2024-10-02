@@ -2,6 +2,7 @@
 PREFIX : <http://www.metaphacts.com/resource/>
 PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX search: <https://platform.swissartresearch.net/search/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 # Convert Point statements to wkt:literals
@@ -49,6 +50,11 @@ DELETE {
   <https://d-nb.info/gnd/> ?p ?o .
 };
 
+# Delete incorrect data
+DELETE DATA{
+  <https://resource.swissartresearch.net/actor/ACFADC4D-0762-37C5-A0A9-DCB07D4770F2> rdfs:label 'Moritz, Friedrich Wilhelm' .
+};
+
 # Merge duplicate entries
 #   When entries are duplicates in GND and different identifiers are used in the data,
 #   this results in separate entities for the same entity in our platform.
@@ -84,6 +90,27 @@ DELETE {
     (<https://resource.swissartresearch.net/actor/9DF4D3E5-6A8E-38EA-AAC8-DA0A88574825> <https://resource.swissartresearch.net/actor/777436B2-949A-3BD1-ACFE-9C71FCB4ACF3> 'Wolf, Caspar')
     (<https://resource.swissartresearch.net/actor/F28B9306-FC34-3EA0-8D28-9E4C7785DC17> <https://resource.swissartresearch.net/actor/44A35736-D202-3840-801C-FEDDC9340A43> 'Möllinger, Louise Franziska')
     (<https://resource.swissartresearch.net/actor/16D80A02-BF4C-3DB2-87F8-B5C9EE78BF4B> <https://resource.swissartresearch.net/actor/E35BC0A7-8F1C-3701-A4DF-C1BBBD23721F> 'Müller X.A.' )
-    (<https://resource.swissartresearch.net/actor/1D423C4A-93C6-339A-A24C-8A6875AB49DE> <resource.swissartresearch.net/actor/617EC792-D447-3945-A9BB-9E4FEB11CCF4> 'Muller, Théodore (1819 - 1879)')
+    (<https://resource.swissartresearch.net/actor/1D423C4A-93C6-339A-A24C-8A6875AB49DE> <https://resource.swissartresearch.net/actor/617EC792-D447-3945-A9BB-9E4FEB11CCF4> 'Muller, Théodore (1819 - 1879)')
+    (<https://resource.swissartresearch.net/actor/E73D97CB-4CF5-3FE8-B1C2-BDF8D32D2C2C> <https://resource.swissartresearch.net/actor/2C34FA7E-4D78-3282-865E-2234FC688D8B> 'Ruff u. Hofer')
+    (<https://resource.swissartresearch.net/actor/7366938B-0732-364B-B155-88DB2F70F795> <https://resource.swissartresearch.net/actor/DBDF55B5-7CB2-360A-B12C-8B84CBAF34C6> 'Rieter, Heinrich')
+    (<https://resource.swissartresearch.net/actor/51B3AE97-EEB1-315B-9057-3204003B920C> <https://resource.swissartresearch.net/actor/6B8798EB-E262-3228-A48B-191C76AC810B> 'Oberkogler, Georg Christoph Friedrich')
+    (<https://resource.swissartresearch.net/actor/6D02DDAA-B8FE-3678-A2A6-C157D8A5652D> <https://resource.swissartresearch.net/actor/45D34C28-76C0-3057-8821-F290716F511D> 'Pfenninger, Matthias')
+    (<https://resource.swissartresearch.net/actor/C783BB53-A0FE-327A-A95E-3083F8BBBBFC> <https://resource.swissartresearch.net/actor/0158E007-77A3-3EAA-AA1B-F6B7E39A8DB9> 'Schellenberg, Johann Ulrich')
+  }
+};
+
+# Delete persons that are not linked to any other entity
+DELETE {
+    ?person ?p1 ?o1  .
+    ?s2 ?p1 ?person .
+} WHERE {
+  ?person a search:Person .
+  FILTER NOT EXISTS {
+    ?thing crm:P14_carried_out_by|crm:P138_represents|crm:P23_transferred_title_from ?person
+  }
+  {
+    ?person ?p1 ?o1 .
+  } UNION {
+    ?s2 ?p1 ?person .
   }
 }
