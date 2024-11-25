@@ -34,8 +34,16 @@ fi
 mv "$dest_dir/SARI/"* "$dest_dir"
 rmdir "$dest_dir/SARI"
 
+# Rename .ttl files with spaces in their names
+echo "Renaming .ttl files with spaces in their names..."
+for file in "$dest_dir"/*.ttl; do
+    if [[ "$file" == *" "* ]]; then
+        mv "$file" "${file// /_}"
+    fi
+done
+
 # Delete the zip file
 rm -f downloaded_file.zip
 
 # Inform the user
-echo "The data from the SARI directory has been successfully downloaded and unpacked to $dest_dir."
+echo "The data from the SARI directory has been successfully downloaded, unpacked to $dest_dir, and .ttl files with spaces have been renamed."
