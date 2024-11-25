@@ -18,6 +18,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
 DROP GRAPH sari:mahMappings;
 
+# Add BSO types
 INSERT {
   GRAPH sari:mahMappings {
     ?subject a ?bsoType .
@@ -32,6 +33,30 @@ INSERT {
     }
 };
 
+
+# Replace entities that match exactly
+DELETE {
+  GRAPH graph:mah {
+    ?oldEntity ?p1 ?o1 .
+    ?s2 ?p2 ?oldEntity .
+  }
+} 
+INSERT {
+  GRAPH sari:mahMappings {
+    ?newEntity ?p1 ?o1 .
+    ?s2 ?p2 ?newEntity .
+    ?newEntity crmdig:L54_is_same-as ?oldEntity .
+  }
+} WHERE {
+  GRAPH graph:mah {
+    ?oldEntity skos:exactMatch ?match .
+  }
+  ?newEntity crmdig:L54_is_same-as ?match .
+  ?oldEntity ?p1 ?o1 .
+  ?s2 ?p2 ?oldEntity .
+};
+
+# Add visual item as work
 INSERT {
   GRAPH sari:mahMappings {
     ?subject crm:P128_carries ?work .
@@ -52,6 +77,7 @@ INSERT {
   }
 };
 
+# Add IIIF paths
 INSERT {
   GRAPH sari:mahMappings {
     ?subject crm:P128_carries ?work .
