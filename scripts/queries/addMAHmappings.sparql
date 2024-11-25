@@ -1,17 +1,20 @@
-PREFIX sari: <https://platform.swissartresearch.net/>
-PREFIX search: <https://platform.swissartresearch.net/search/>
 PREFIX : <http://www.metaphacts.com/resource/>
-PREFIX crmdig: <http://www.ics.forth.gr/isl/CRMdig/>
 PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
-PREFIX gndo: <https://d-nb.info/standards/elementset/gnd#>
+PREFIX crmdig: <http://www.ics.forth.gr/isl/CRMdig/>
 PREFIX dcterms: <http://purl.org/dc/terms/>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX frbroo: <http://iflastandards.info/ns/fr/frbr/frbroo/>
-PREFIX rds: <http://schema.swissartresearch.net/ontology/rds#>
-PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX gn: <http://www.geonames.org/ontology#>
-PREFIX schema: <http://schema.org/>
+PREFIX gndo: <https://d-nb.info/standards/elementset/gnd#>
 PREFIX graph: <https://resource.swissartresearch.net/graph/>
+PREFIX la: <https://linked.art/ns/terms/>
+PREFIX rds: <http://schema.swissartresearch.net/ontology/rds#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rso: <http://www.researchspace.org/ontology/>
+PREFIX sari: <https://platform.swissartresearch.net/>
+PREFIX schema: <http://schema.org/>
+PREFIX search: <https://platform.swissartresearch.net/search/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
 DROP GRAPH sari:mahMappings;
 
 INSERT {
@@ -25,11 +28,37 @@ INSERT {
   GRAPH graph:mah {
     ?subject crm:P62_depicts ?something .
     ?something a ?type .
-    BIND(URI(CONCAT(STR(?subject), '/bso_work')) AS ?work)
+    BIND(URI(CONCAT(STR(?subject), '/bso/work')) AS ?work)
     VALUES (?type ?bsoType) {
       (crm:E39_Actor search:Actor)
       (crm:E53_Place search:Place)
       (crm:E5_Event search:Event)
     }
+  }
+};
+
+INSERT {
+  GRAPH sari:mahMappings {
+    ?subject crm:P128_carries ?work .
+    ?work a crm:E36_Visual_Item .
+    ?work la:digitally_shown_by ?image .
+    ?image a crmdig:D1_Digital_Object .
+    ?image la:digitally_available_via ?iiif .
+    ?iiif a la:DigitalService ;
+      dcterms:conformsTo <http://iiif.io/api/image> ;
+      la:access_point ?access_point .
+    ?access_point a crmdig:D1_Digital_Object, rso:EX_Digital_Image .
+    
+  }
+} WHERE {
+  GRAPH graph:mah {
+    ?subject a crm:E22_Human-Made_Object ;
+      crm:P138i_has_representation ?image .
+    ?image rdf:value ?value .
+    FILTER(STRSTARTS(?value, 'https://www.mahmah.ch/imagezoom/?IIIF'))
+    BIND(URI(STRBEFORE(?value, '/full/')) AS ?iiif)
+    BIND(URI(CONCAT(STR(?subject), '/bso/image')) AS ?image)
+    BIND(URI(CONCAT(STR(?subject), '/bso/iiif')) AS ?iiif)
+    BIND(URI(CONCAT(STR(?subject), '/bso/iiif/access')) AS ?access_point)
   }
 }
