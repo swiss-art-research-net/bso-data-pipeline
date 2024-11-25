@@ -20,6 +20,20 @@ DROP GRAPH sari:mahMappings;
 
 INSERT {
   GRAPH sari:mahMappings {
+    ?subject a ?bsoType .
+  }
+} WHERE {
+  ?subject a ?type .
+    VALUES (?type ?bsoType) {
+      (crm:E22_Human-Made_Object search:Object)
+      (crm:E39_Actor search:Actor)
+      (crm:E53_Place search:Place)
+      (crm:E5_Event search:Event)
+    }
+};
+
+INSERT {
+  GRAPH sari:mahMappings {
     ?subject crm:P128_carries ?work .
     ?work a crm:E36_Visual_Item .
     ?work crm:P138_represents ?something .
