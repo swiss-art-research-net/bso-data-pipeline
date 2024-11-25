@@ -23,15 +23,22 @@ tasks:
       - task: ingest-data-nb
       - task: ingest-data-zbz
       - task: ingest-data-sff
+      - task: ingest-data-mah
       - task: ingest-data-additional
       - task: ingest-classifications
       - task: ingest-distances
       - task: ingest-ontologies
       - task: update-image-regions
+      - task: add-mah-mappings
       - task: add-relations
       - task: add-summaries
       - task: cleanup
 
+  add-mah-mappings:
+    desc: Add mappings for the MAH data
+    cmds:
+      - task: run-query-from-file
+        vars: {FILE: "queries/addMAHmappings.sparql"}
 
   add-relations:
     desc: Materialise triples defined through the queries/addRelations.sparql query in the Blazegraph instance
@@ -173,18 +180,18 @@ tasks:
         {{end}}
         for f in $(ls -1 {{.FOLDER}}/*.ttl); do
           echo "Ingesting file $count of $numfiles ($f)"
-          curl --silent -X POST --data-binary "uri=file://$f" {{.ENDPOINT}}?context-uri={{if .GRAPH}}{{.GRAPH}}{{else}}file://$f{{end}} > /dev/null
+          curl --silent -X POST --data-binary "uri=file://$f" "{{.ENDPOINT}}?context-uri={{if .GRAPH}}{{.GRAPH}}{{else}}file://$f{{end}}" > /dev/null
           count=$((count+1))
-          mv $f $f.ingested
+          mv "$f" "$f.ingested"
         done
         for f in $(ls -1 {{.FOLDER}}/*.trig); do
           echo "Ingesting file $count of $numfiles ($f)"
-          curl --silent -X POST --data-binary "uri=file://$f" {{.ENDPOINT}}{{if .GRAPH}}?context-uri={{.GRAPH}}{{end}} > /dev/null
+          curl --silent -X POST --data-binary "uri=file://$f" "{{.ENDPOINT}}{{if .GRAPH}}?context-uri={{.GRAPH}}{{end}}" > /dev/null
           count=$((count+1)) 
-          mv $f $f.ingested
+          mv "$f" "$f.ingested"
         done
         for f in $(ls -1 {{.FOLDER}}/*.ingested); do
-          mv $f ${f%.ingested}
+          mv "$f" "${f%.ingested}"
         done
 
   ingest-data-main:
@@ -196,6 +203,17 @@ tasks:
       - task: ingest-data-nb
       - task: ingest-data-zbz
       - task: ingest-data-sff
+      - task: ingest-data-mah
+
+  ingest-data-mah:
+    desc: Ingest the TTL files located in the data/ttl/main/mah folder to the Blazegraph instance
+    sources:
+      - /data/ttl/main/mah/*.ttl
+    cmds:
+      - task: ingest-data-from-folder
+        vars: 
+          FOLDER: /data/ttl/main/mah
+          GRAPH: https://resource.swissartresearch.net/graph/mah
 
   ingest-data-nb:
     desc: Ingest the TTL files located in the data/ttl/main/nb folder to the Blazegraph instance
