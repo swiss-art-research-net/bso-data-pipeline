@@ -26,6 +26,9 @@ INSERT {
 } WHERE {
   GRAPH graph:mah {
     ?subject a ?type .
+    FILTER EXISTS {
+      ?subject crm:P1_is_identified_by ?identifier .
+    }
   }
   VALUES (?type ?bsoType) {
     (crm:E22_Human-Made_Object search:Object)
@@ -40,15 +43,15 @@ INSERT {
   GRAPH sari:mahMappings {
     ?subject crm:P109_has_current_or_former_curator ?collection .
 
-    <https://d-nb.info/gnd/25478-2> a gndo:CorporateBody;
-      rdfs:label "Musée d'art et d'histoire (Genf)" .
+    ?collection a gndo:CorporateBody;
+      rdfs:label 'Musée d\'art et d\'histoire (Genf)' .
   }
 } WHERE {
   GRAPH graph:mah {
     ?subject a crm:E22_Human-Made_Object .
-    BIND( <https://d-nb.info/gnd/25478-2> as ?collection)
+    BIND(<https://d-nb.info/gnd/25478-2> as ?collection)
   }
-}
+};
 
 # Replace entities that match exactly
 DELETE {
