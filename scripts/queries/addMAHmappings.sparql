@@ -18,7 +18,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
 DROP GRAPH sari:mahMappings;
 
-# Add BSO types
+# Add BSO-specific types as shortcuts for the basic entity types
 INSERT {
   GRAPH sari:mahMappings {
     ?subject a ?bsoType .
@@ -38,12 +38,11 @@ INSERT {
   }
 };
 
-# Add collection data
+# Add metadata about the holding collection of the objects
 INSERT {
   GRAPH sari:mahMappings {
     ?subject crm:P109_has_current_or_former_curator ?collection .
-
-    ?collection a gndo:CorporateBody;
+    ?collection a gndo:CorporateBody, crm:E39_Actor;
       rdfs:label 'Musée d\'art et d\'histoire (Genf)' .
   }
 } WHERE {
@@ -53,7 +52,9 @@ INSERT {
   }
 };
 
-# Replace entities that match exactly
+# Identify exact matches between entities in the MAH graph and existing BSO entities.
+# If a match is found, replace the old entity with the new entity in the MAH graph
+# by redirecting all incoming and outgoing relationships.
 DELETE {
   GRAPH graph:mah {
     ?oldEntity ?p1 ?o1 .
@@ -75,7 +76,8 @@ INSERT {
   ?s2 ?p2 ?oldEntity .
 };
 
-# Add visual item as work
+# Add meta object for visual work as a carried by the E22 Human-Made Object.
+# This is for compatibility with the BSO data model.
 INSERT {
   GRAPH sari:mahMappings {
     ?subject crm:P128_carries ?work .
@@ -96,7 +98,7 @@ INSERT {
   }
 };
 
-# Add IIIF paths
+# Add the Linked.Art IIIF paths for the images of the objects
 INSERT {
   GRAPH sari:mahMappings {
     ?subject crm:P128_carries ?work .
