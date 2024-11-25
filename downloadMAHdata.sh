@@ -19,9 +19,9 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-# Unpack only the content of the SARI directory
+# Unpack only the content of the SARI directory directly into the destination directory
 echo "Unpacking the file..."
-unzip -o downloaded_file.zip "SARI/*" -d /tmp/extracted
+unzip -o downloaded_file.zip "SARI/*" -d "$dest_dir"
 
 # Check if the unzip was successful
 if [ $? -ne 0 ]; then
@@ -30,11 +30,11 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-# Move the content of SARI to the destination directory
-mv /tmp/extracted/SARI/* "$dest_dir"
+# Move the files out of the SARI subdirectory into the destination directory root
+mv "$dest_dir/SARI/"* "$dest_dir"
+rmdir "$dest_dir/SARI"
 
-# Clean up temporary files
-rm -rf /tmp/extracted
+# Delete the zip file
 rm -f downloaded_file.zip
 
 # Inform the user
