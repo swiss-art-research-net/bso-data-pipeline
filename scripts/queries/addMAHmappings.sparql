@@ -7,6 +7,7 @@ PREFIX gn: <http://www.geonames.org/ontology#>
 PREFIX gndo: <https://d-nb.info/standards/elementset/gnd#>
 PREFIX graph: <https://resource.swissartresearch.net/graph/>
 PREFIX la: <https://linked.art/ns/terms/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rds: <http://schema.swissartresearch.net/ontology/rds#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX rso: <http://www.researchspace.org/ontology/>
@@ -41,9 +42,9 @@ INSERT {
   GRAPH sari:mahMappings {
     ?subject crm:P128_carries ?work .
     ?work a crm:E36_Visual_Item .
-    ?work la:digitally_shown_by ?image .
-    ?image a crmdig:D1_Digital_Object .
-    ?image la:digitally_available_via ?iiif .
+    ?work la:digitally_shown_by ?iiif_image .
+    ?iiif_image a crmdig:D1_Digital_Object .
+    ?iiif_image la:digitally_available_via ?iiif .
     ?iiif a la:DigitalService ;
       dcterms:conformsTo <http://iiif.io/api/image> ;
       la:access_point ?access_point .
@@ -56,9 +57,9 @@ INSERT {
       crm:P138i_has_representation ?image .
     ?image rdf:value ?value .
     FILTER(STRSTARTS(?value, 'https://www.mahmah.ch/imagezoom/?IIIF'))
-    BIND(URI(STRBEFORE(?value, '/full/')) AS ?iiif)
-    BIND(URI(CONCAT(STR(?subject), '/bso/image')) AS ?image)
+    BIND(URI(STRBEFORE(?value, '/full/')) AS ?access_point)
+    BIND(URI(CONCAT(STR(?subject), '/bso/work')) AS ?work)
+    BIND(URI(CONCAT(STR(?subject), '/bso/image')) AS ?iiif_image)
     BIND(URI(CONCAT(STR(?subject), '/bso/iiif')) AS ?iiif)
-    BIND(URI(CONCAT(STR(?subject), '/bso/iiif/access')) AS ?access_point)
   }
 }
