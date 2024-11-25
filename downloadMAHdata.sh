@@ -19,18 +19,23 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-# Unpack the zip file
+# Unpack only the content of the SARI directory
 echo "Unpacking the file..."
-unzip -o downloaded_file.zip -d "$dest_dir"
+unzip -o downloaded_file.zip "SARI/*" -d /tmp/extracted
 
 # Check if the unzip was successful
 if [ $? -ne 0 ]; then
     echo "Error: Failed to unpack the zip file."
+    rm -f downloaded_file.zip
     exit 1
 fi
 
-# Delete the zip file
+# Move the content of SARI to the destination directory
+mv /tmp/extracted/SARI/* "$dest_dir"
+
+# Clean up temporary files
+rm -rf /tmp/extracted
 rm -f downloaded_file.zip
 
 # Inform the user
-echo "The data has been successfully downloaded and unpacked to $dest_dir. All OK!"
+echo "The data from the SARI directory has been successfully downloaded and unpacked to $dest_dir."
