@@ -24,15 +24,31 @@ INSERT {
     ?subject a ?bsoType .
   }
 } WHERE {
-  ?subject a ?type .
-    VALUES (?type ?bsoType) {
-      (crm:E22_Human-Made_Object search:Object)
-      (crm:E39_Actor search:Actor)
-      (crm:E53_Place search:Place)
-      (crm:E5_Event search:Event)
-    }
+  GRAPH graph:mah {
+    ?subject a ?type .
+  }
+  VALUES (?type ?bsoType) {
+    (crm:E22_Human-Made_Object search:Object)
+    (crm:E39_Actor search:Actor)
+    (crm:E53_Place search:Place)
+    (crm:E5_Event search:Event)
+  }
 };
 
+# Add collection data
+INSERT {
+  GRAPH sari:mahMappings {
+    ?subject crm:P109_has_current_or_former_curator ?collection .
+
+    <https://d-nb.info/gnd/25478-2> a gndo:CorporateBody;
+      rdfs:label "Musée d'art et d'histoire (Genf)" .
+  }
+} WHERE {
+  GRAPH graph:mah {
+    ?subject a crm:E22_Human-Made_Object .
+    BIND( <https://d-nb.info/gnd/25478-2> as ?collection)
+  }
+}
 
 # Replace entities that match exactly
 DELETE {
