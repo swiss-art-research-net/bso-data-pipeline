@@ -1,0 +1,35 @@
+PREFIX sari: <https://platform.swissartresearch.net/>
+PREFIX search: <https://platform.swissartresearch.net/search/>
+PREFIX : <http://www.metaphacts.com/resource/>
+PREFIX crmdig: <http://www.ics.forth.gr/isl/CRMdig/>
+PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
+PREFIX gndo: <https://d-nb.info/standards/elementset/gnd#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX frbroo: <http://iflastandards.info/ns/fr/frbr/frbroo/>
+PREFIX rds: <http://schema.swissartresearch.net/ontology/rds#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX gn: <http://www.geonames.org/ontology#>
+PREFIX schema: <http://schema.org/>
+PREFIX graph: <https://resource.swissartresearch.net/graph/>
+DROP GRAPH sari:mahMappings;
+
+INSERT {
+  GRAPH sari:mahMappings {
+    ?subject crm:P128_carries ?work .
+    ?work a crm:E36_Visual_Item .
+    ?work crm:P138_represents ?something .
+    ?something a ?bsoType
+  }
+} WHERE {
+  GRAPH graph:mah {
+    ?subject crm:P62_depicts ?something .
+    ?something a ?type .
+    BIND(URI(CONCAT(STR(?subject), '/bso_work')) AS ?work)
+    VALUES (?type ?bsoType) {
+      (crm:E39_Actor search:Actor)
+      (crm:E53_Place search:Place)
+      (crm:E5_Event search:Event)
+    }
+  }
+}
