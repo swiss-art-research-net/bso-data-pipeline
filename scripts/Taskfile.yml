@@ -29,10 +29,16 @@ tasks:
       - task: ingest-distances
       - task: ingest-ontologies
       - task: update-image-regions
+      - task: add-mah-mappings
       - task: add-relations
       - task: add-summaries
       - task: cleanup
 
+  add-mah-mappings:
+    desc: Add mappings for the MAH data
+    cmds:
+      - task: run-query-from-file
+        vars: {FILE: "queries/addMAHmappings.sparql"}
 
   add-relations:
     desc: Materialise triples defined through the queries/addRelations.sparql query in the Blazegraph instance
