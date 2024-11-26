@@ -70,6 +70,12 @@ INSERT {
 } WHERE {
   GRAPH graph:mah {
     ?oldEntity skos:exactMatch ?match .
+    ?match a ?type .
+  }
+  BIND(STRBEFORE(STRAFTER(STR(?match), '://'),'/') AS ?baseURI)
+  VALUES (?type ?baseURI) {
+    (crm:E39_Actor "d-nb.info")
+    (crm:E53_Place "geo.ld.admin.ch")
   }
   ?newEntity crmdig:L54_is_same-as ?match .
   ?oldEntity ?p1 ?o1 .
