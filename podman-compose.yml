@@ -75,7 +75,7 @@ services:
       - ./services/researchplatform/apps/bso/src:/bso-app-src
 
   platform:
-    image: docker.io/swissartresearx/metaphacts-community:4.3.0
+    image: docker.io/swissartresearx/metaphacts-community:4.3.3
     container_name: ${PROJECT_NAME}_platform
     environment:
       LETSENCRYPT_EMAIL: ${LETSENCRYPT_EMAIL}
